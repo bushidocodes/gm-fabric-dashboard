@@ -117,14 +117,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         enforce: "pre",
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter
-            },
-            loader: require.resolve("eslint-loader")
-          }
-        ],
+        loader: require.resolve("eslint-loader"),
+        options: {
+          formatter: eslintFormatter
+        },
         include: paths.appSrc
       },
       // ** ADDING/UPDATING LOADERS **
@@ -163,6 +159,12 @@ module.exports = {
           limit: 10000,
           name: "static/media/[name].[hash:8].[ext]"
         }
+      },
+      // Load Web Workers. This must happen before Babel
+      {
+        test: /(workers)\/\w+\.js$/,
+        include: paths.appSrc,
+        loader: require.resolve("worker-loader")
       },
       // Process JS with Babel.
       {

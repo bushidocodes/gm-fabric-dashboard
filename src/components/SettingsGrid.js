@@ -70,7 +70,7 @@ function SettingsGrid({ settings }) {
                   .confirm(
                     "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
                   )
-                  .then(() => Actions.clearDashboards());
+                  .then(() => Actions.setDashboardsToDefault());
               }}
               tabIndex={31}
             >

@@ -1,5 +1,3 @@
-import axios from "axios";
-import localforage from "localforage";
 import _ from "lodash";
 import {
   Effect,
@@ -13,18 +11,12 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 import { notification } from "uikit";
 
-import {
-  getBasename,
-  getRuntime,
-  generateThreadsEndpoint,
-  filterDashboardsByRuntime
-} from "./utils";
+import { getBasename, getRuntime, generateThreadsEndpoint } from "./utils";
 import { history } from "./index";
 import metrics from "./jumpstate/metrics";
 import settings from "./jumpstate/settings";
 import threadsTable from "./jumpstate/threadsTable";
 import dashboards from "./jumpstate/dashboards";
-import defaultDashboards from "./json/dashboards.json";
 
 // Effects / Asynchronous Actions
 
@@ -35,43 +27,14 @@ import defaultDashboards from "./json/dashboards.json";
 Effect("fetchMetrics", endpoints => {
   if (!endpoints) return;
   const runtime = getRuntime();
-  // This block allows us to direclty poll Envoy metrics from a single source
-  // Everything beyond the first endpoint is discarded
-  // The data is transformed from statsd format into a flat object of key/value pairs
-  if (runtime === "ENVOY") {
-    axios
-      .get(endpoints[0], { responseType: "text" }) // Only poll the first endpoint
-      .then(response => response.data)
-      // A statsd file contains key value pairs delimited by : and terminated by \n
-      .then(statsdTextFile => {
-        let results = {};
-        statsdTextFile
-          .split("\n")
-          .map(kv => kv.split(": "))
-          .forEach(([key, value]) => {
-            if (key) {
-              results[key] = Number(value);
-            }
-          });
-        return results;
-      })
-      .then(json => Actions.fetchMetricsSuccess(json))
-      .catch(err => Actions.fetchMetricsFailure(err));
-  } else {
-    Promise.all(
-      endpoints.map(endpoint => axios.get(endpoint, { responseType: "json" }))
-    )
-      .then(jsons => jsons.map(json => json.data))
-      .then(jsons => {
-        let results = {};
-        jsons.forEach(json => {
-          results = { ...results, ...json };
-        });
-        return results;
-      })
-      .then(json => Actions.fetchMetricsSuccess(json))
-      .catch(err => Actions.fetchMetricsFailure(err));
-  }
+  window.ajaxWorker
+    .postMessage({
+      type: "fetchMetrics",
+      runtime: runtime,
+      endpoints: endpoints
+    })
+    .then(json => Actions.fetchMetricsSuccess(json))
+    .catch(err => Actions.fetchMetricsFailure(err));
 });
 
 /**
@@ -89,8 +52,11 @@ Effect("fetchMetricsFailure", err => {
  */
 Effect("fetchThreads", (endpoint = generateThreadsEndpoint()) => {
   if (!endpoint) return;
-  axios
-    .get(endpoint, { responseType: "json" })
+  window.ajaxWorker
+    .postMessage({
+      type: "fetchThreads",
+      endpoint: endpoint
+    })
     .then(json => Actions.fetchThreadsSuccess(json.data))
     .catch(err => Actions.fetchThreadsFailure(err));
 });
@@ -127,11 +93,10 @@ Effect("stopPolling", (endpoints, interval) => {
 /**
  * Synchronous action that performs initial setup of localforage
  */
-Effect("initLocalForage", () => {
-  localforage.config({
-    name: `grey-matter-fabric-${getBasename()}`,
-    description:
-      "Persistent storage of Grey Matter Fabric dashboards and settings"
+Effect("initLocalStorage", () => {
+  window.localStorageWorker.postMessage({
+    type: "init",
+    basename: getBasename()
   });
 });
 
@@ -139,54 +104,28 @@ Effect("initLocalForage", () => {
  * Asynchronous action that fetches dashboards from localforage if they exist
  * and falls back to the default dashboards if not found
  */
-Effect("fetchDashboards", () => {
-  localforage
-    .getItem("dashboards")
-    .then(savedDashboards => {
-      const runtime = getState().settings.runtime;
-      if (
-        savedDashboards &&
-        _.every(savedDashboards, dashboard => dashboard.runtime === runtime)
-      ) {
-        console.log("fetchDashboards returned valid data: ", savedDashboards);
-        const dashboardsForRuntime = filterDashboardsByRuntime(
-          savedDashboards,
-          getState().settings.runtime
-        );
-        console.log("DBs: ", dashboardsForRuntime);
-        if (Object.keys(dashboardsForRuntime).length > 0) {
-          Actions.updateDashboardsRedux(dashboardsForRuntime);
-        }
-        Actions.updateDashboardsRedux(savedDashboards);
-      } else {
-        console.log(
-          "fetchDashboards data was null, so loading default dashboards"
-        );
-        const dashboardsForRuntime = filterDashboardsByRuntime(
-          defaultDashboards,
-          runtime
-        );
-        console.log("DBs: ", dashboardsForRuntime);
-        if (Object.keys(dashboardsForRuntime).length > 0) {
-          Actions.updateDashboardsRedux(dashboardsForRuntime);
-        }
-      }
+Effect("getDashboards", () => {
+  window.localStorageWorker
+    .postMessage({
+      type: "getDashboards",
+      runtime: getRuntime()
     })
-    .catch(err => console.log("fetchDashboards failed with ", err));
+    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
+    .catch(err => console.log("getDashboards failed with ", err));
 });
 
 /**
  * Asynchronous action that takes an updated dashboard, merges it into the dashboards
  * object and then writes it to Redux and local storage
  */
-Effect("updateDashboard", updatedDashboard => {
+Effect("setDashboard", updatedDashboard => {
   const dashboards = _.merge({}, getState().dashboards, updatedDashboard);
-  Actions.updateDashboardsRedux(dashboards);
-  localforage
-    .setItem("dashboards", dashboards)
-    .then(data =>
-      console.log("Successfully persisted dashboards to local storage: ", data)
-    )
+  window.localStorageWorker
+    .postMessage({
+      type: "setDashboards",
+      dashboards
+    })
+    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
     .catch(err =>
       console.log("Failed to persist dashboards to local storage: ", err)
     );
@@ -196,15 +135,15 @@ Effect("updateDashboard", updatedDashboard => {
  * Asynchronous action that clears all dashboard state from Redux and Local Storage,
  * forcing the defaults to reload.
  */
-Effect("clearDashboards", () => {
-  Actions.updateDashboardsRedux(defaultDashboards);
-  localforage
-    .removeItem("dashboards")
-    .then(data =>
-      console.log("Successfully cleared dashboards from local storage: ", data)
-    )
+Effect("setDashboardsToDefault", () => {
+  window.localStorageWorker
+    .postMessage({
+      type: "setDashboardsToDefault",
+      runtime: getRuntime()
+    })
+    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
     .catch(err =>
-      console.log("Failed to clear dashboards from local storage: ", err)
+      console.log("Failed to persist dashboards to local storage: ", err)
     );
 });
 

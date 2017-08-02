@@ -80,7 +80,7 @@ class GMGrid extends Component {
               [this.state.name, "grid", "layouts"],
               allLayouts
             );
-            Actions.updateDashboard(dashboardState);
+            Actions.setDashboard(dashboardState);
           }}
           rowHeight={dashboard.grid.rowHeight}
         >

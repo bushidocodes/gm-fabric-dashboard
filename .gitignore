@@ -9,9 +9,6 @@
 # production
 /build
 
-# Ignore the CSS file generate by less
-/src/style/index.css
-
 # Ignore build assets
 /build
 

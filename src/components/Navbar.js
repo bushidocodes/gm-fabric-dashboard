@@ -13,15 +13,15 @@ const Navbar = () => {
           style={{ width: "20px" }}
         />
         <span className="brand-text" id="logo-text">
-          {"Fabric"}
+          Fabric
         </span>
       </div>
 
       <a
         className="app-version"
         href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
-        target="_blank"
         rel="noopener noreferrer"
+        target="_blank"
       >
         {"0.1.1"}
       </a>

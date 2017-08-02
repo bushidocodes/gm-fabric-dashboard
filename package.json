@@ -39,6 +39,7 @@
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "2.0.6",
     "promise": "^8.0.1",
+    "promise-worker": "^1.1.1",
     "prop-types": "~15.5.8",
     "randomcolor": "^0.5.3",
     "react": "~15.6.1",
@@ -61,19 +62,20 @@
     "redux-logger": "~3.0.0",
     "reselect": "~3.0.0",
     "style-loader": "0.18.2",
-    "sw-precache-webpack-plugin": "^0.11.4",
     "uglify-js": "^2.8.29",
     "uikit": "~3.0.0-beta.21",
     "url-loader": "0.5.9",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
     "webpack-manifest-plugin": "^1.2.1",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "worker-loader": "^0.8.1"
   },
   "devDependencies": {
     "babel-plugin-lodash": "^3.2.11",
     "enzyme": "^2.9.1",
     "eslint-config-prettier": "^2.3.0",
+    "eslint-config-react-app": "^1.0.5",
     "eslint-plugin-prettier": "^2.1.2",
     "jest-cli": "^20.0.4",
     "jest-junit": "^2.1.0",
@@ -87,8 +89,8 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "eslint-prettier-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "lint-js": "eslint 'src'",
+    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "precommit": "lint-staged",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom"
@@ -101,14 +103,7 @@
     "*.scss": [
       "prettier --write",
       "git add"
-    ],
-    "*.less": [
-      "prettier --write",
-      "git add"
     ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -118,9 +113,6 @@
     "ancestorSeparator": " › ",
     "usePathForSuiteName": "true"
   },
-  "proxy-howto": "Use 9990 for gm-fabric-jvm, 9092 for gm-fabric-go, or 8081 for Envoy",
-  "proxy": "http://localhost:9990",
-  "homepage": "__BASE_URL__",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
@@ -157,5 +149,8 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "proxy-howto": "Use 9990 for gm-fabric-jvm, 9092 for gm-fabric-go, or 8081 for Envoy",
+  "proxy": "http://localhost:9990",
+  "homepage": "__BASE_URL__"
 }

@@ -6,13 +6,17 @@ import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 
-import registerServiceWorker from "./registerServiceWorker";
 import Container from "./components/Container";
 import store from "./store";
 import { getBasename } from "./utils";
-
-// Import root scss file, which includes the UIKit css and our custom theme
+import PromiseWorker from "promise-worker";
+import AjaxWorker from "./workers/ajax.js";
+import LocalStorageWorker from "./workers/localStorage.js";
 import "./style/index.scss";
+
+// Create a Web Worker and explicitly set reference as global variable
+window.ajaxWorker = new PromiseWorker(new AjaxWorker());
+window.localStorageWorker = new PromiseWorker(new LocalStorageWorker());
 
 // load the UIKit Icon plugin
 UIkit.use(Icons);
@@ -36,6 +40,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-registerServiceWorker();
-
-// <Route component={Container} path="/">

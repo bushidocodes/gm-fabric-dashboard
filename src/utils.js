@@ -1,6 +1,6 @@
 import dateFormat from "dateformat";
 import _ from "lodash";
-import Mathjs from "mathjs";
+import { round, unit } from "mathjs";
 import { createSelector } from "reselect";
 
 // Dashboard Utility Functions
@@ -35,8 +35,8 @@ export function getLatestAttribute(
   // keys from 0...n with values of undefined.
   const fullPath = _.get(props, path);
   if (fullPath && baseUnit && resultUnit && precision) {
-    return Mathjs.round(
-      Mathjs.unit(
+    return round(
+      unit(
         fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))],
         baseUnit
       ).toNumber(resultUnit),
@@ -79,8 +79,8 @@ export function getTimeSeriesOfValue(
       obj["time"] = Number(timestamp);
       obj["prettyTime"] = dateFormat(obj.time, "h:MMtt");
       if (baseUnit && resultUnit && precision) {
-        obj[attribute] = Mathjs.round(
-          Mathjs.unit(fullPath[timestamp], baseUnit).toNumber(resultUnit),
+        obj[attribute] = round(
+          unit(fullPath[timestamp], baseUnit).toNumber(resultUnit),
           precision
         );
       } else {
@@ -143,8 +143,8 @@ export function getTimeSeriesOfNetChange(
         let elapsedTimeInSeconds =
           (attribute.time - timeSeries[index - 1].time) / 1000;
         if (baseUnit && resultUnit && precision) {
-          obj[`${dataKey}PerSecond`] = Mathjs.round(
-            Mathjs.unit(
+          obj[`${dataKey}PerSecond`] = round(
+            unit(
               (attribute[dataKey] - timeSeries[index - 1][dataKey]) /
                 elapsedTimeInSeconds,
               baseUnit
@@ -152,7 +152,7 @@ export function getTimeSeriesOfNetChange(
             precision
           );
         } else {
-          obj[`${dataKey}PerSecond`] = Math.round(
+          obj[`${dataKey}PerSecond`] = round(
             (attribute[dataKey] - timeSeries[index - 1][dataKey]) /
               elapsedTimeInSeconds
           );
