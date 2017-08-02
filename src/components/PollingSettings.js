@@ -20,9 +20,6 @@ class PollingSettings extends Component {
 
   render() {
     const { isPolling } = this.props;
-    const buttonClass = isPolling
-      ? "uk-button uk-button-vertical uk-button-danger"
-      : "uk-button uk-button-vertical";
     const buttonIcon = isPolling ? "ban" : "play-circle";
     const buttonLabel = isPolling ? "Stop Polling" : "Resume Polling";
     return (
@@ -39,7 +36,9 @@ class PollingSettings extends Component {
         <div className="section-content">
           <div className="control-group control-group-polling-start-stop">
             <button
-              className={buttonClass}
+              className={
+                "btn btn-type-primary btn-icon-size-xl btn-outline-none btn-orientation-vertical"
+              }
               onClick={() => Actions.togglePolling()}
               tabIndex={20}
             >

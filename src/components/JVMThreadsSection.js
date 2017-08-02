@@ -16,49 +16,48 @@ class JVMThreadsSection extends Component {
       <div className="uk-card uk-card-default">
         <div className="thread-table-filter-buttons uk-button-group">
           <button
-            className="uk-button uk-button-default uk-button-small"
+            className="btn"
             disabled={!threadCounts.all}
             onClick={() => Actions.setThreadsFilter("all")}
             tabIndex={15}
           >
-            <span className="uk-text-bold uk-text-capitalize">
-              All Threads{" "}
-            </span>
-            <span className="uk-text-muted">
+            <span className="label">All Threads </span>
+            <span className="label">
               {threadCounts.all}
             </span>
           </button>
+
           <span className="uk-button-group uk-margin-left">
             <button
-              className="uk-button uk-button-default uk-button-small"
+              className="btn"
               disabled={!threadCounts.active}
               onClick={() => Actions.setThreadsFilter("active")}
               tabIndex={16}
             >
-              <span className="uk-text-bold uk-text-capitalize">Active </span>
-              <span className="uk-text-muted">
+              <span className="label">Active </span>
+              <span className="label">
                 {threadCounts.active}
               </span>
             </button>
             <button
-              className="uk-button uk-button-default uk-button-small"
+              className="btn"
               disabled={!threadCounts.idle}
               onClick={() => Actions.setThreadsFilter("idle")}
               tabIndex={17}
             >
-              <span className="uk-text-bold uk-text-capitalize">Idle </span>
-              <span className="uk-text-muted">
+              <span className="label">Idle </span>
+              <span className="label">
                 {threadCounts.idle}
               </span>
             </button>
             <button
-              className="uk-button uk-button-default uk-button-small"
+              className="btn"
               disabled={!threadCounts.stopped}
               onClick={() => Actions.setThreadsFilter("stopped")}
               tabIndex={18}
             >
-              <span className="uk-text-bold uk-text-capitalize">Stopped </span>
-              <span className="uk-text-muted">
+              <span className="label">Stopped </span>
+              <span className="label">
                 {threadCounts.stopped}
               </span>
             </button>

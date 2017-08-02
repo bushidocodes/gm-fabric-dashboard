@@ -42,11 +42,6 @@
     display: flex;
     flex-wrap: wrap;
 
-    header {
-      align-self: stretch;
-      flex: 0 0 100%;
-    }
-
     .control-group-polling-start-stop {
       flex: 0 0 $padding-base*20;
       align-self: stretch;

@@ -1,6 +1,7 @@
 // components/nav-widget.scss
 @import '../variables.scss';
 @import '../mixins.scss';
+@import 'buttons.scss';
 
 // Local Variables
 $nav-widget-background-color: $color-grey-1;
@@ -48,21 +49,17 @@ $go-up-icon-size: $padding-base * 2;
 
   .nav-go-up,
   .nav-siblings {
-    // @include mixin-button-style(
-    //   $nav-widget-text-color,
-    //   $nav-widget-background-color,
-    //   $nav-widget-background-color,
-    //   lighten
-    // );
-    // @include mixin-button-height($padding-base * 4);
-    text-align: center;
+    @include function-button-base();
+    @include function-button-size();
+    @include function-button-style(
+      $button-label-color-base: $color-white,
+      $button-background-color-base: $color-grey-1,
+      $button-outline-style: flat
+    );
     position: relative;
-    font-size: $font-size-base;
     max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     border-radius: 0;
+    height: $padding-base * 4;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .5);
 
     .icon {
@@ -74,8 +71,6 @@ $go-up-icon-size: $padding-base * 2;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-left: $padding-base * 0.5;
-      padding-right: $padding-base * 0.5;
     }
 
     &:hover {
@@ -86,6 +81,7 @@ $go-up-icon-size: $padding-base * 2;
   .nav-go-up {
     .label {
       text-align: left;
+      flex: 0 1 100%;
     }
   }
 

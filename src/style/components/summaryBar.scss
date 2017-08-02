@@ -1,6 +1,7 @@
 // components/summaryBar.scss
 @import '../variables.scss';
 @import '../mixins.scss';
+@import 'buttons.scss';
 
 // Local Variables
 $summary-bar-background-color: $color-black;
@@ -58,22 +59,18 @@ $summary-bar-card-text-color: $color-white;
   }
 
   .summary-bar-card-show-toggle {
-    width: $padding-base * 3;
+    @include function-button-base();
+    @include function-button-size();
+    @include function-button-style(
+      $button-label-color-base: $color-white,
+      $button-background-color-base: transparent,
+      $button-outline-style: raised
+    );
     padding: 0;
-    text-align: center;
 
     svg {
       transition: transform .05s ease;
     }
-
-    // @include mixin-button-height($padding-base * 3);
-    // @include mixin-button-style(
-    //   $summary-bar-card-text-color,
-    //   fadeout($summary-bar-background-color, 80%),
-    //   fadeout($summary-bar-background-color, 100%),
-    //   $degree: 12%,
-    //   $mode: lighten
-    // );
   }
 
   .summary-bar-card-body {
@@ -99,7 +96,7 @@ $summary-bar-card-text-color: $color-white;
   }
 
   .summary-bar-card-kv-key {
-    color: fadeout($summary-bar-card-text-color, 30%);
+    color: transparentize($summary-bar-card-text-color, .3);
     flex-basis: 40%;
     text-align: right;
   }

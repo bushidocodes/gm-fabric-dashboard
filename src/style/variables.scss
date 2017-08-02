@@ -18,8 +18,8 @@ $color-black: #000;
 $color-green: #0aab2a;
 $color-white: #fff;
 
-$color-content: fadeout($color-black, 20%);
-$color-content-muted: fadeout($color-black, 40%);
+$color-content: transparentize($color-black, .2);
+$color-content-muted: transparentize($color-black, .4);
 $color-highlight: $color-brand-primary;
 
 $color-sidebar-background: $color-black;

@@ -1,0 +1,238 @@
+// components/buttons.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+
+$button-font-size-base-default: $font-size-base;
+$button-font-weight-default: 500;
+$button-icon-size-default: 1.5em; // default: 1.5em
+$button-size-default: normal; // xs, sm, normal, lg, xl // default: normal
+$button-label-color-base-default: $color-content;
+
+$button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
+$button-content-spacing-base-default: $padding-base * .75;
+
+$button-background-color-base-default: $color-white;
+$button-border-color-base-default: $button-background-color-base-default;
+
+$button-border-width-base-default: 1px;
+$button-border-radius-base-default: $border-radius-default;
+
+$button-reaction-style-default: darken; // darken, lighten // default: darken
+$button-reaction-degree-default: 6%; // 0-100% // default: 6%
+
+$button-outline-style-default: raised-outline; // raised-outline, shadow, raised, outline, none // default: raised-outline
+$button-outline-style-depth-default: 6%; // 0–100% // default: 6%
+
+$button-hover-reaction-degree-default: $button-reaction-degree-default * .25;
+$button-active-reaction-degree-default: $button-reaction-degree-default * 2;
+$button-down-reaction-degree-default: $button-reaction-degree-default * 1;
+
+// Styles
+
+.btn {
+  @include function-button-base();
+
+  // Styles
+  &:not([class*="btn-type"]),
+  &.btn-default {
+    &:not([class*="btn-outline"]),
+    &.btn-outline-raised-outline {
+      @include function-button-style( $button-outline-style: raised-outline );
+    }
+    &.btn-outline-shadow {
+      @include function-button-style( $button-outline-style: shadow );
+    }
+    &.btn-outline-raised {
+      @include function-button-style( $button-outline-style: raised );
+    }
+    &.btn-outline-outline {
+      @include function-button-style( $button-outline-style: outline );
+    }
+    &.btn-outline-none {
+      @include function-button-style( $button-outline-style: none );
+    }
+  }
+  &.btn-type-danger {
+    &:not([class*="btn-outline"]),
+    &.btn-outline-raised-outline {
+      @include function-button-style(
+          $button-outline-style: raised-outline,
+          $button-background-color-base: red,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-shadow {
+      @include function-button-style(
+          $button-outline-style: shadow,
+          $button-background-color-base: red,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-raised {
+      @include function-button-style(
+          $button-outline-style: raised,
+          $button-background-color-base: red,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-outline {
+      @include function-button-style(
+          $button-outline-style: outline,
+          $button-background-color-base: red,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-none {
+      @include function-button-style(
+          $button-outline-style: none,
+          $button-background-color-base: red,
+          $button-label-color-base: $color-white );
+    }
+  }
+  &.btn-type-info {
+    &:not([class*="btn-outline"]),
+    &.btn-outline-raised-outline {
+      @include function-button-style(
+          $button-outline-style: raised-outline,
+          $button-background-color-base: blue,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-shadow {
+      @include function-button-style(
+          $button-outline-style: shadow,
+          $button-background-color-base: blue,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-raised {
+      @include function-button-style(
+          $button-outline-style: raised,
+          $button-background-color-base: blue,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-outline {
+      @include function-button-style(
+          $button-outline-style: outline,
+          $button-background-color-base: blue,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-none {
+      @include function-button-style(
+          $button-outline-style: none,
+          $button-background-color-base: blue,
+          $button-label-color-base: $color-white );
+    }
+  }
+  &.btn-type-warning {
+    &:not([class*="btn-outline"]),
+    &.btn-outline-raised-outline {
+      @include function-button-style(
+          $button-outline-style: raised-outline,
+          $button-background-color-base: orange,
+          $button-label-color-base: $color-black );
+    }
+    &.btn-outline-shadow {
+      @include function-button-style(
+          $button-outline-style: shadow,
+          $button-background-color-base: orange,
+          $button-label-color-base: $color-black );
+    }
+    &.btn-outline-raised {
+      @include function-button-style(
+          $button-outline-style: raised,
+          $button-background-color-base: orange,
+          $button-label-color-base: $color-black );
+    }
+    &.btn-outline-outline {
+      @include function-button-style(
+          $button-outline-style: outline,
+          $button-background-color-base: orange,
+          $button-label-color-base: $color-black );
+    }
+    &.btn-outline-none {
+      @include function-button-style(
+          $button-outline-style: none,
+          $button-background-color-base: orange,
+          $button-label-color-base: $color-black );
+    }
+  }
+  &.btn-type-primary {
+    &:not([class*="btn-outline"]),
+    &.btn-outline-raised-outline {
+      @include function-button-style(
+          $button-outline-style: raised-outline,
+          $button-background-color-base: $color-highlight,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-shadow {
+      @include function-button-style(
+          $button-outline-style: shadow,
+          $button-background-color-base: $color-highlight,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-raised {
+      @include function-button-style(
+          $button-outline-style: raised,
+          $button-background-color-base: $color-highlight,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-outline {
+      @include function-button-style(
+          $button-outline-style: outline,
+          $button-background-color-base: $color-highlight,
+          $button-label-color-base: $color-white );
+    }
+    &.btn-outline-none {
+      @include function-button-style(
+          $button-outline-style: none,
+          $button-background-color-base: $color-highlight,
+          $button-label-color-base: $color-white );
+    }
+  }
+
+  // Sizes
+  &:not([class*="btn-size"]),
+  &.btn-size-normal {
+    @include function-button-size();
+  }
+  &.btn-size-xs {
+    @include function-button-size(xs);
+  }
+  &.btn-size-sm {
+    @include function-button-size(sm);
+  }
+  &.btn-size-lg {
+    @include function-button-size(lg);
+  }
+  &.btn-size-xl {
+    @include function-button-size(xl);
+  }
+
+  // Icons
+  &:not([class*="btn-icon-size"]),
+  &.btn-icon-size-normal {
+    @include function-button-icon-size ();
+  }
+  &.btn-icon-size-xs {
+    @include function-button-icon-size ($button-icon-size-default * .5);
+  }
+  &.btn-icon-size-sm {
+    @include function-button-icon-size ($button-icon-size-default * .75);
+  }
+  &.btn-icon-size-lg {
+    @include function-button-icon-size ($button-icon-size-default * 1.25);
+  }
+  &.btn-icon-size-xl {
+    @include function-button-icon-size ($button-icon-size-default * 1.5);
+  }
+
+  // Orientations
+  &:not(.btn-orientation-vertical),
+  &.btn-orientation-horizontal {
+    @include function-button-orientation(
+      $button-content-orientation: horizontal
+    );
+  }
+  &.btn-orientation-vertical {
+    @include function-button-orientation(
+      $button-content-orientation: vertical
+    );
+  }
+}

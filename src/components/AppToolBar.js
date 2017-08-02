@@ -23,7 +23,7 @@ function AppToolBar({ pathname }) {
         )}
       </ol>
 
-      <NavLink className="uk-button settings-button" to="/settings">
+      <NavLink className="btn btn-outline-none settings-button" to="/settings">
         <span
           className="settings-cog icon"
           data-uk-icon="icon: cog; ratio: .84"

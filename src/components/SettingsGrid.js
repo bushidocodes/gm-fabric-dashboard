@@ -20,10 +20,7 @@ function SettingsGrid({ settings }) {
 
       <section className="layout-section settings-group-metrics-cache">
         <header>
-          <span
-            className="section-icon"
-            data-uk-icon={`icon: grid; ratio: 1`}
-          />
+          <span className="section-icon" data-uk-icon={`icon: grid;`} />
           <h3 className="section-title">Metrics Cache</h3>
         </header>
 
@@ -35,7 +32,7 @@ function SettingsGrid({ settings }) {
             </div>
 
             <button
-              className="uk-button"
+              className="btn"
               onClick={() => {
                 UIkit.modal
                   .confirm(
@@ -45,7 +42,7 @@ function SettingsGrid({ settings }) {
               }}
               tabIndex={30}
             >
-              <span className="icon" data-uk-icon={`icon: close; ratio: 1`} />
+              <span className="icon" data-uk-icon={`icon: close;`} />
               <span className="label">Clear Metrics Cache</span>
             </button>
           </div>
@@ -67,7 +64,7 @@ function SettingsGrid({ settings }) {
               <span className="readout-label">Custom Dashboards</span>
             </div>
             <button
-              className="uk-button"
+              className="btn btn-type-danger"
               onClick={() => {
                 UIkit.modal
                   .confirm(

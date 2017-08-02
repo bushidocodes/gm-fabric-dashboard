@@ -12,7 +12,9 @@ const Navbar = () => {
           src={decipherLogo}
           style={{ width: "20px" }}
         />
-        <span className="brand-text" id="logo-text">{'Fabric'}</span>
+        <span className="brand-text" id="logo-text">
+          {"Fabric"}
+        </span>
       </div>
 
       <a
@@ -21,16 +23,12 @@ const Navbar = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {'0.1.1'}
+        {"0.1.1"}
       </a>
 
-      <NavLink
-        className="uk-button settings-button"
-        to="/settings"
-      >
+      <NavLink className="btn settings-button" to="/settings">
         <span className="settings-cog" data-uk-icon="icon: cog; ratio: .84" />
       </NavLink>
-
     </nav>
   );
 };

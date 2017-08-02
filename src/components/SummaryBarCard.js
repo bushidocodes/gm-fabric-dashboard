@@ -53,7 +53,7 @@ export default class SummaryBarCard extends Component {
             this.props.chartTitle ||
             this.props.chartData) &&
             <button
-              className="summary-bar-card-show-toggle uk-button"
+              className="summary-bar-card-show-toggle"
               onClick={evt => {
                 evt.preventDefault();
                 this.setState({ isOpen: !this.state.isOpen });

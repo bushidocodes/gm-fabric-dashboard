@@ -67,7 +67,7 @@ $app-breadcrumb-color: $color-content;
   .app-version {
     @include mixin-version-text-styles;
     flex: 0 0 auto;
-    color: fade($brandbar-text-color, 50%);
+    color: transparentize($brandbar-text-color, .5);
     padding: 0 $padding-base;
 
     &:hover {
@@ -75,31 +75,23 @@ $app-breadcrumb-color: $color-content;
     }
   }
 
-  .uk-button {
+  .btn {
     justify-self: flex-end;
     flex: 0 0 auto;
+    @include function-button-icon-size(1.25em);
 
-    // @include mixin-button-style(
-    //   $toolbar-text-color,
-    //   $toolbar-background-color,
-    //   $toolbar-background-color,
-    //   6%,
-    //   darken
-    // );
-    // @include mixin-button-height($app-header-height * .85);
-  }
+    + .btn {
+      margin-left: $padding-base;
+      position: relative;
 
-  .uk-button + .uk-button {
-    margin-left: $padding-base;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: (-$padding-base / 2) - 1px;
-      height: 1em;
-      width: 1px;
-      background-color: $color-grey-3;
+      &:before {
+        content: '';
+        position: absolute;
+        left: (-$padding-base / 2) - 1px;
+        height: 1em;
+        width: 1px;
+        background-color: $color-grey-3;
+      }
     }
   }
 
