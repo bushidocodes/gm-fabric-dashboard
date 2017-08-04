@@ -19,7 +19,7 @@ export default class SummaryBarCard extends Component {
   };
 
   state = {
-    isOpen: false
+    isOpen: true
   };
 
   render() {

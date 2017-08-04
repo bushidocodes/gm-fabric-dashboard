@@ -13,7 +13,6 @@ import { cloneDeep, uniq } from "lodash";
 export function getDygraphOfValue(metrics, keys, labels = []) {
   let results = [];
   const options = { labels: [] };
-  // console.log("Getting ", metrics, keys, "with ", labels);
   if (!metrics || !keys) return [results, options];
   // Fallback to using keys directly if labels not present for every key
   let resLabels = labels.length === keys.length ? labels : keys;
@@ -23,7 +22,7 @@ export function getDygraphOfValue(metrics, keys, labels = []) {
   const validLabels = [];
   validKeys.forEach(key => {
     const idx = keys.indexOf(key);
-    validLabels.push(labels[idx]);
+    validLabels.push(resLabels[idx]);
   });
   // Exit with dummy output if none of the keys were in the metrics object
   if (validKeys.length === 0) return [results, options];
@@ -35,8 +34,7 @@ export function getDygraphOfValue(metrics, keys, labels = []) {
   results = timestamps.map(ts => {
     return [new Date(Number(ts)), ...validKeys.map(key => metrics[key][ts])];
   });
-  // console.log({ labels: ["time", ...resLabels] });
-  options.labels = ["time", ...resLabels];
+  options.labels = ["time", ...validLabels];
   return [results, options];
 }
 
@@ -50,7 +48,6 @@ export function getDygraphOfValue(metrics, keys, labels = []) {
  * @returns {Object[]}
  */
 export function mapDygraphKeysToNetChange(dygraphData, labelsToMap) {
-  console.log("Calling map to net change with ", dygraphData, labelsToMap);
   return _mapOverDygraphKeys(dygraphData, labelsToMap, _netChangeMapper);
 }
 
@@ -59,17 +56,15 @@ function _mapOverDygraphKeys(dygraphData, labelsToMap, mapperFunc) {
     return dygraphData;
   } else {
     let data = cloneDeep(dygraphData);
-    const [originalResults, { labels }] = data;
+    const [, { labels }] = data;
     labelsToMap.forEach((labelToMap, idx, arr) => {
       const positionOfLabelToMap = labels.indexOf(labelToMap);
       if (positionOfLabelToMap !== -1) {
-        console.log("ORIG", originalResults);
         data[0] = data[0].map((val, i, a) =>
           mapperFunc(val, i, a, positionOfLabelToMap)
         );
       }
     });
-    console.log("Mapping returning ", data);
     return data;
   }
 }
@@ -85,14 +80,10 @@ function _netChangeMapper(val, idx, arr, positionOfLabelToMap) {
     const currentVal = val[positionOfLabelToMap];
     const currentTime = val[0];
     const result = [...val];
-    console.log("elapsed", (currentTime - lastTime) / 1000);
     const netChange = Math.round(
       (currentVal - lastVal) / ((currentTime - lastTime) / 1000)
     );
-    console.log("net change", netChange);
-    console.log(typeof positionOfLabelToMap);
     result[positionOfLabelToMap] = netChange;
-    console.log(result);
     return result;
   }
 }

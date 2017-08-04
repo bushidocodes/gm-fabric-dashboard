@@ -47,7 +47,15 @@ registerPromiseWorker(message => {
       }
     case "fetchThreads":
       const { endpoint } = message;
-      return axios.get(endpoint, { responseType: "json" });
+      return axios.get(endpoint, { responseType: "json" }).then(res => {
+        if (!res.data) {
+          return Promise.reject(
+            "The data object didn't contain JSON as expected"
+          );
+        } else {
+          return res;
+        }
+      });
     default:
       console.log("Invalid Runtime");
   }

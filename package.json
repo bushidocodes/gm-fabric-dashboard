@@ -132,5 +132,5 @@
   },
   "proxy-howto": "Use 9990 for gm-fabric-jvm, 9092 for gm-fabric-go, or 8081 for Envoy",
   "proxy": "http://localhost:9990",
-  "homepage": "__BASE_URL__"
+  "homepage": "./"
 }

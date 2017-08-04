@@ -23,7 +23,6 @@ export default function GMLineChart({
   timeSeries,
   title
 }) {
-  console.log(timeSeries);
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <h3 style={{ paddingLeft: "15px", paddingTop: "3px" }}>

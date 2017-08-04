@@ -1,4 +1,5 @@
-import { createBrowserHistory, createHashHistory } from "history";
+// import { createBrowserHistory, createHashHistory } from "history";
+import { createHashHistory } from "history";
 import PromiseWorker from "promise-worker";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -9,7 +10,7 @@ import Icons from "uikit/dist/js/uikit-icons";
 
 import Container from "./components/Container";
 import store from "./store";
-import { getBasename } from "./utils/head";
+// import { getBasename } from "./utils/head";
 import AjaxWorker from "./workers/ajax.js";
 import LocalStorageWorker from "./workers/localStorage.js";
 
@@ -27,11 +28,14 @@ UIkit.use(Icons);
 
 // Use browserHistory if available. Otherwise, fallback to hashHistory.
 
-const createHistory =
-  window.history && window.history.pushState
-    ? createBrowserHistory
-    : createHashHistory;
-export const history = createHistory({ basename: `${getBasename()}` });
+// Force Hash History
+const createHistory = createHashHistory;
+// const createHistory =
+//   window.history && window.history.pushState
+//     ? createBrowserHistory
+//     : createHashHistory;
+export const history = createHistory();
+// export const history = createHistory({ basename: `${getBasename()}` });
 
 ReactDOM.render(
   <Provider store={store}>
