@@ -42,3 +42,12 @@ jobs:
           path: junit
       - store_artifacts:
           path: coverage
+      # run build!
+      - run: |
+          npm run build
+      - run: |
+          tar -czf build.tar.gz build
+      - store_artifacts:
+          path: bundlesize
+      - store_artifacts:
+          path: build.tar.gz
