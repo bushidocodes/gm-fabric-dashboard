@@ -1,16 +1,16 @@
-import React from "react";
+import _ from "lodash";
+import ms from "ms";
 import { PropTypes } from "prop-types";
+import React from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import ms from "ms";
-import _ from "lodash";
+
+import { getLatestAttribute, parseJSONString } from "../utils/latestAttribute";
+import { getServicename } from "../utils/head";
 import {
-  getLatestAttribute,
-  getServicename,
   getSparkLineOfValue,
-  getSparkLineOfNetChange,
-  parseJSONString
-} from "../utils";
+  getSparkLineOfNetChange
+} from "../utils/sparklines";
 import SummaryBarCard from "./SummaryBarCard";
 
 SummaryBar.propTypes = {

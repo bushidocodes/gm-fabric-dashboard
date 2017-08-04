@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
-import InputRange from "react-input-range";
-import _ from "lodash";
 import { Actions } from "jumpstate";
+import _ from "lodash";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
+import InputRange from "react-input-range";
 
 class PollingSettings extends Component {
   // This state is solely to allow smooth animation on the slider and the ability to debounce the

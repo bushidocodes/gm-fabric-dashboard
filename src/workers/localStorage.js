@@ -13,14 +13,15 @@ registerPromiseWorker(message => {
           "Persistent storage of Grey Matter Fabric dashboards and settings"
       });
     case "getDashboards":
-      const { runtime } = message;
       return localforage
         .getItem("dashboards")
         .then(savedDashboards => {
-          console.log("dashbaords:", savedDashboards);
           if (
             savedDashboards &&
-            _.every(savedDashboards, dashboard => dashboard.runtime === runtime)
+            _.every(
+              savedDashboards,
+              dashboard => dashboard.runtime === message.runtime
+            )
           ) {
             return savedDashboards;
           } else {
@@ -36,7 +37,7 @@ registerPromiseWorker(message => {
           console.log("Failed to persist dashboards to local storage: ", err)
         );
     case "setDashboardsToDefault":
-      return setDashboardsToDefault();
+      return setDashboardsToDefault(message.runtime);
     default:
       return Promise.reject(
         "Unknown message type provided to Local Storage Web Worker"

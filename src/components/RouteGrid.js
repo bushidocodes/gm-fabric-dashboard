@@ -4,13 +4,12 @@ import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
 
+import { getLatestAttribute } from "../utils/latestAttribute";
 import {
-  mergeTimeSeries,
-  getLatestAttribute,
-  getTimeSeriesOfNetChange,
-  getRouteMetrics,
-  getRouteTree
-} from "../utils";
+  mapDygraphKeysToNetChange,
+  getDygraphOfValue
+} from "../utils/dygraphs";
+import { getRouteMetrics, getRouteTree } from "../utils/route";
 import GMLineChart from "./GMLineChart";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -56,17 +55,21 @@ class SummaryGrid extends Component {
       routeTree && selectedRoute && routeTree[selectedRoute]
         ? Object.keys(routeTree[selectedRoute])
         : [];
-    const arrayOfRequestMetrics = routeVerbs.map(routeVerb =>
-      getTimeSeriesOfNetChange(
-        routeMetrics,
-        // Replace the root route with an empty string to avoid having an extra slash
+    const routeVerbKeys = routeVerbs.map(
+      // Replace the root route with an empty string to avoid having an extra slash
+      routeVerb =>
         `route${selectedRoute !== "/"
           ? selectedRoute
-          : ""}/${routeVerb}/requests`,
-        `${routeVerb.toLowerCase()} ${selectedRoute.slice(1)} Requests`
-      )
+          : ""}/${routeVerb}/requests`
     );
-    const requestsPerSecond = mergeTimeSeries(arrayOfRequestMetrics);
+    const routeVerbLabels = routeVerbs.map(
+      routeVerb =>
+        `${routeVerb.toLowerCase()} ${selectedRoute.slice(1)} Requests`
+    );
+    const requestsPerSecond = mapDygraphKeysToNetChange(
+      getDygraphOfValue(routeMetrics, routeVerbKeys, routeVerbLabels),
+      routeVerbLabels
+    );
     this.setState({
       selectedRoute,
       requestsPerSecond,

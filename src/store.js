@@ -11,12 +11,12 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 import { notification } from "uikit";
 
-import { getBasename, getRuntime, generateThreadsEndpoint } from "./utils";
 import { history } from "./index";
 import metrics from "./jumpstate/metrics";
 import settings from "./jumpstate/settings";
 import threadsTable from "./jumpstate/threadsTable";
 import dashboards from "./jumpstate/dashboards";
+import { getBasename, getRuntime, generateThreadsEndpoint } from "./utils/head";
 
 // Effects / Asynchronous Actions
 

@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import _ from "lodash";
 import { PropTypes } from "prop-types";
+import React, { Component } from "react";
+import { Responsive, WidthProvider } from "react-grid-layout";
 import Inspector from "react-json-inspector";
 import { connect } from "react-redux";
-import _ from "lodash";
-import { Responsive, WidthProvider } from "react-grid-layout";
+
 import GMLineChart from "./GMLineChart";
-import { getTimeSeriesOfValue } from "../utils";
+import { getDygraphOfValue } from "../utils/dygraphs";
+
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 class Explorer extends Component {
@@ -33,15 +35,16 @@ class Explorer extends Component {
     // Update If the keys are different in metrics
     if (!_.isEqual(nextState.headers, this.state.headers)) {
       return true;
-      // Or if the se lected object has changed
+      // Or if the selected object has changed
     } else if (this.state.selectedMetrics !== nextState.selectedMetrics) {
       return true;
-      // Or if the state of the selected object has changed
+      // Or if the current metrics object doesn't have the select metric for some reason
+    } else if (!this.props.metrics[this.state.selectedMetrics]) {
+      return true;
+      // Or if the selected metrics now has more timeseries metrics due to polling
     } else if (
-      !_.isEqual(
-        this.props.metrics[this.state.selectedMetrics],
-        this.props.metrics[this.state.selectedMetrics]
-      )
+      Object.keys(this.props.metrics[this.state.selectedMetrics]).length !==
+      Object.keys(nextProps.metrics[this.state.selectedMetrics]).length
     ) {
       return true;
     } else {
@@ -85,10 +88,9 @@ class Explorer extends Component {
           >
             {this.state.selectedMetrics !== ""
               ? <GMLineChart
-                  timeSeries={getTimeSeriesOfValue(
-                    metrics,
+                  timeSeries={getDygraphOfValue(metrics, [
                     this.state.selectedMetrics
-                  )}
+                  ])}
                   title={this.state.selectedMetrics}
                 />
               : <h2>Select a metric</h2>}

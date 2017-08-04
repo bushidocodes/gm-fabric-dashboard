@@ -1,8 +1,9 @@
-import React from "react";
+import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
+import React from "react";
 import { connect } from "react-redux";
 import UIkit from "uikit";
-import { Actions } from "jumpstate";
+
 import PollingSettings from "./PollingSettings";
 import "react-input-range/lib/css/index.css";
 

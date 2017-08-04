@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
-import JVMThreadsTable from "./JVMThreadsTable";
 import { Actions } from "jumpstate";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getVisibleThreads, getThreadCounts } from "../utils";
+
+import JVMThreadsTable from "./JVMThreadsTable";
+import { getVisibleThreads, getThreadCounts } from "../utils/threads";
 
 class JVMThreadsSection extends Component {
   static propTypes = {

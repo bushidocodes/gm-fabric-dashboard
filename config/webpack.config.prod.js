@@ -171,7 +171,8 @@ module.exports = {
         loader: require.resolve("babel-loader"),
         options: {
           compact: true,
-          plugins: ["lodash"]
+          plugins: ["lodash"],
+          presets: [require.resolve("babel-preset-react-app")]
         }
       },
       // The notation here is somewhat confusing.

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
-import { getRouteTree } from "../utils";
+
+import { getRouteTree } from "../utils/route";
 
 class RouteBar extends Component {
   static propTypes = {

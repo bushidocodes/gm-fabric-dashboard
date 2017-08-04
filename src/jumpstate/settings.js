@@ -4,7 +4,7 @@ import {
   getRuntime,
   generateEndpoints,
   generateThreadsEndpoint
-} from "../utils";
+} from "../utils/head";
 
 const settings = State({
   initial: {

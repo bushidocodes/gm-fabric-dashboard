@@ -1,20 +1,18 @@
-import { Actions } from "jumpstate";
 import _ from "lodash";
+import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Responsive, WidthProvider } from "react-grid-layout";
+import { connect } from "react-redux";
 
 import GMBasicMetrics from "./GMBasicMetrics";
 import GMLineChart from "./GMLineChart";
 import GMTable from "./GMTable";
 import {
-  getLatestAttribute,
-  getTimeSeriesOfValue,
-  getTimeSeriesOfNetChange,
-  mergeTimeSeries,
-  parseJSONString
-} from "../utils";
+  getDygraphOfValue,
+  mapDygraphKeysToNetChange
+} from "../utils/dygraphs";
+import { getLatestAttribute, parseJSONString } from "../utils/latestAttribute";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -105,30 +103,15 @@ class GMGrid extends Component {
                     expectedAttributes={chart.data.timeseries.map(
                       ts => ts.attribute
                     )}
-                    timeSeries={mergeTimeSeries(
-                      chart.data.timeseries.map(ts => {
-                        switch (ts.type) {
-                          case "netChange":
-                            return getTimeSeriesOfNetChange(
-                              metrics,
-                              ts.attribute,
-                              ts.label,
-                              ts.baseUnit,
-                              ts.resultUnit,
-                              ts.precision
-                            );
-                          case "value":
-                          default:
-                            return getTimeSeriesOfValue(
-                              metrics,
-                              ts.attribute,
-                              ts.label,
-                              ts.baseUnit,
-                              ts.resultUnit,
-                              ts.precision
-                            );
-                        }
-                      })
+                    timeSeries={mapDygraphKeysToNetChange(
+                      getDygraphOfValue(
+                        metrics,
+                        chart.data.timeseries.map(ts => ts.attribute),
+                        chart.data.timeseries.map(ts => ts.label)
+                      ),
+                      chart.data.timeseries
+                        .filter(ts => ts.type === "netChange")
+                        .map(ts => ts.label)
                     )}
                     title={chart.title}
                   />}

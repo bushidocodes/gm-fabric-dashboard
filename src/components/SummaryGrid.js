@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
-import { connect } from "react-redux";
-import { getLatestAttribute } from "../utils";
 import dateFormat from "dateformat";
 import ms from "ms";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { getLatestAttribute } from "../utils/latestAttribute";
 
 class SummaryGrid extends Component {
   static propTypes = {

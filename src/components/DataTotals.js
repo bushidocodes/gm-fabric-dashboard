@@ -1,6 +1,6 @@
-import React from "react";
-import { PropTypes } from "prop-types";
 import filesize from "filesize";
+import { PropTypes } from "prop-types";
+import React from "react";
 
 DataTotals.propTypes = {
   receivedBytes: PropTypes.number.isRequired,

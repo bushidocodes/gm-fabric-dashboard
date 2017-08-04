@@ -1,6 +1,7 @@
 import React from "react";
-import decipherLogo from "../images/decipherLogo.svg";
 import { NavLink } from "react-router-dom";
+
+import decipherLogo from "../images/decipherLogo.svg";
 
 const Navbar = () => {
   return (

@@ -1,20 +1,19 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Route, Redirect, Switch } from "react-router-dom";
 
 import AppBrandBar from "./AppBrandBar";
 import AppToolBar from "./AppToolBar";
-import SummaryBar from "./SummaryBar";
 import Explorer from "./Explorer";
 import GMGrid from "./GMGrid";
-import SummaryGrid from "./SummaryGrid";
-import SettingsGrid from "./SettingsGrid";
 import RouteBar from "./RouteBar";
 import RouteGrid from "./RouteGrid";
+import SettingsGrid from "./SettingsGrid";
+import SummaryBar from "./SummaryBar";
+import SummaryGrid from "./SummaryGrid";
 import ThreadsGrid from "./ThreadsGrid";
-import { Route, Redirect, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
 
 class Container extends Component {

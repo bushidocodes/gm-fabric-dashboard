@@ -1,7 +1,8 @@
-import React, { Component } from "react";
 import { PropTypes } from "prop-types";
-import IndicatorIcon from "./IndicatorIcon";
+import React, { Component } from "react";
 import Collapse from "react-collapse";
+
+import IndicatorIcon from "./IndicatorIcon";
 
 export default class JVMThreadsTableLineItem extends Component {
   static propTypes = {

@@ -1,17 +1,18 @@
+import { createBrowserHistory, createHashHistory } from "history";
+import PromiseWorker from "promise-worker";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createBrowserHistory, createHashHistory } from "history";
 import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 
 import Container from "./components/Container";
 import store from "./store";
-import { getBasename } from "./utils";
-import PromiseWorker from "promise-worker";
+import { getBasename } from "./utils/head";
 import AjaxWorker from "./workers/ajax.js";
 import LocalStorageWorker from "./workers/localStorage.js";
+
 import "./style/index.scss";
 
 // Create a Web Worker and explicitly set reference as global variable
