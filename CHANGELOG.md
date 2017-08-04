@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed Stylelint, Recharts
 
 ### Test Coverage: 3.5% ([0.2.1 Coverage Report])
+### Bundle Size: ~ 1.4 MB ([0.2.1 Bundle Size Report])
+### Production Build: ([0.2.1 Build])
 
 ## [0.2.0] - 2017-07-28
 ### Added
@@ -80,6 +82,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.1...HEAD
 [0.2.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.0...v0.2.1
 [0.2.1 Coverage Report]: https://347-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.2.1 Bundle Size Report]: https://350-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.2.1 Build]: https://350-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.2.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.1.1...v0.2.0
 [0.2.0 Coverage Report]: https://309-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.1.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.1.0...v0.1.1
