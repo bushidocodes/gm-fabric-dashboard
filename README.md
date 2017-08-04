@@ -6,10 +6,6 @@
 
 Gray Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Gray Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Golang and other languages is currently in progress.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-You can find the most recent version of the Create React App guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
 ## Prerequisites
 
 ### 1. Install Docker
@@ -20,22 +16,11 @@ Download and install the binary for [Mac](https://store.docker.com/editions/comm
 
 #### For a JVM-based microservice:
 
-Open ./public.index.html and ensure that `__BASE_RUNTIME__` is unset or set to `JVM`. (JVM is the default value).
+Open ./public/index.html and replace `__BASE_RUNTIME__` with `JVM`.
 
 Run `docker run -it -p 9990:9990 spmcbride1201/gm-fab-jvm`
 
 After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:9990/admin/metrics.json). If you see JSON data, you are ready to proceed.
-
-#### For experimental Envoy support:
-
-Open ./public.index.html and replace `__BASE_RUNTIME__` with `ENVOY`
-
-```bash
-cd docker
-docker-compose up -d
-```
-
-After starting the Envoy infrastructure, you should see a valid JSON file [at this endpoint](http://localhost:8081/stats). If you see JSON data, you are ready to proceed.
 
 ### 3. Install Node.js and the npm package manager via a version management tool
 
@@ -69,7 +54,7 @@ npm install
 
 This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits. 
 
-We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), [ESList](http://eslint.org/docs/user-guide/integrations), and [stylelint](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) plugins in your editor to use the projects style rules.
+We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), and [ESList](http://eslint.org/docs/user-guide/integrations) plugins in your editor to use the projects style rules.
 
 Additionally, if you are a VSCode user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
@@ -91,13 +76,20 @@ In order to support deployment of the dashboard to monitor a microservice that d
 
 For example, if you are going to deploy the dashboard to a microservice located  at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed. 
 
-If you intend to retrofit this dashboard on an existing Twitter Server based microservice, you likely will need to proxy `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads` to the expected path as outlined above.
+If you intend to retrofit this dashboard on an existing GM Fabric JVM microservice, you likely will need to proxy `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads` to the expected path as outlined above.
 
 In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
 
 In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GOLANG`, or `ENVOY`, defaulting to `JVM` if `__BASE_RUNTIME__` is not replaced. Currently, the `setPath.sh` script does not modify this template.
 
-#### `npm run lint-css` to validate that css follows the project style
+#### Note on experimental Envoy support:
 
-This will lint the LESS source files via the CLI. This option should only be required if you are
-unable to install a stylelint plugin for your editor of choice.
+GM Fabric Dashboard is currently undergoing work to support the GM Fabric ecosystem. While the dashboard currently does not support Envoy, we have started work on a docker-compose infrastructure to support future efforts in this area. 
+
+```bash
+cd docker
+docker-compose up -d
+```
+
+After starting the Envoy infrastructure, you should see a valid JSON file [at this endpoint](http://localhost:8081/stats).
+You should also see data flowing into [Graphite](http://localhost:9080/).

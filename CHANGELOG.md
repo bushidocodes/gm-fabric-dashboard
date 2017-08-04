@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.1] - 2017-08-04
+### Added
+- Implemented Prettier for CSS
+- Added Dygraphs, Worker-Loader, PromiseWorker, node-sass, sass-loader
+
+### Changed
+- Modified Graphite and other components in docker-compose infrastructure
+- Ejected from Create React App
+- Updated WebPack to 3.x and a bunch of other minor point releases
+- Refactored stylesheet source from from less to scss
+- Reimplemented GMLineChart using dygraphs
+- Reimplemented AJAX and LocalStorage functionality as Web Workers
+- Substantially refactored utils to use the simpler native dygraph structure
+
+### Removed
+- Removed Prometheus from docker-compose infrastructure
+- Removed Stylelint, Recharts
+
+### Test Coverage: 3.5% ([0.2.1 Coverage Report])
+
 ## [0.2.0] - 2017-07-28
 ### Added
 - Added preliminary docker-compose infrastructure for developing against Envoy and a timeseries database
@@ -57,9 +77,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.0...v0.1.1
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.0...v0.2.1
+[0.2.1 Coverage Report]: https://347-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.2.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.1.1...v0.2.0
 [0.2.0 Coverage Report]: https://309-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
-[0.1.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.1.1...v0.1.0
+[0.1.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.1.0...v0.1.1
 [0.1.1 Coverage Report]: https://258-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.1.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/5a0e78...v0.1.0
