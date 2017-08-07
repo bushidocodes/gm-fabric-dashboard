@@ -90,7 +90,6 @@ class GMGrid extends Component {
                 data-grid={chart.position}
                 key={chart.title}
                 style={{
-                  border: "solid",
                   overflow: "hidden"
                 }}
               >

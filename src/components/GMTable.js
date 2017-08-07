@@ -9,7 +9,7 @@ HTTPStats.propTypes = {
 
 export default function HTTPStats({ title, headers, rows = [] }) {
   return (
-    <div className="uk-card uk-card-small uk-card-body left-border">
+    <div className="uk-card uk-card-small uk-card-body">
       <h3 className="uk-card-title">
         {title}
       </h3>

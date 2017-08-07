@@ -92,7 +92,6 @@ class SummaryGrid extends Component {
             data-grid={{ x: 0, y: 0, w: 8, h: 10, minW: 3, minH: 4 }}
             key="routeRequestChart"
             style={{
-              border: "solid",
               overflow: "hidden"
             }}
           >
@@ -107,7 +106,6 @@ class SummaryGrid extends Component {
                 data-grid={{ x: 8, y: 0, w: 4, h: 10, minW: 2, minH: 3 }}
                 key={`${verbName}Stats`}
                 style={{
-                  border: "solid",
                   overflow: "hidden"
                 }}
               >

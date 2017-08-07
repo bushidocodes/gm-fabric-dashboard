@@ -67,7 +67,6 @@ class Explorer extends Component {
             data-grid={{ x: 0, y: 0, w: 4, h: 11, minW: 3, minH: 4 }}
             key="tree"
             style={{
-              border: "solid",
               overflow: "scroll"
             }}
           >
@@ -82,7 +81,6 @@ class Explorer extends Component {
             data-grid={{ x: 4, y: 0, w: 8, h: 11, minW: 3, minH: 4 }}
             key="graph"
             style={{
-              border: "solid",
               overflow: "hidden"
             }}
           >
