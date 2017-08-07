@@ -47,7 +47,7 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           data-uk-dropdown="mode: click; pos: bottom-justify; boundary: .nav-widget; boundary-align: true; offset: 1;"
         >
           <ol className="instances">
-            {Array(90).fill("shanberg").map((val, idx) =>
+            {Array(15).fill("shanberg").map((val, idx) =>
               <li key={idx}>
                 <Link to="">
                   Instance {idx + 1}
