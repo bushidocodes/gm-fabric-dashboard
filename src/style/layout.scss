@@ -3,6 +3,7 @@
 @import 'mixins.scss';
 
 // Local Variables
+$sidebar-width-base: 230px;
 
 // Helpers
 
@@ -18,7 +19,8 @@
 #app-container {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  align-items: stretch;
+  height: 100vh;
   padding-left: 0;
   padding-right: 0;
   overflow-x: hidden;
@@ -26,4 +28,29 @@
 
 .left-border {
   border-left: 1px solid #ddd;
+}
+
+.app-sidebar {
+  flex: 1 0 $sidebar-width-base;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-sidebar-background;
+}
+
+.app-content {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  background-color: $color-content-background;
+
+  .app-content-view {
+    flex: 1 1 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .app-footer {
+    flex: 0 0 $padding-base * 4;
+  }
 }

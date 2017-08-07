@@ -12,12 +12,9 @@ $summary-bar-card-text-color: $color-white;
 
 // Styles
 
-.summary-bar-container {
+.summary-bar {
+  flex: 1 1 100%;
   background-color: $summary-bar-background-color;
-  padding: 0;
-}
-
-[id=summary-bar] {
   box-shadow: inset -1px 0 rgba(0, 0, 0, .7);
 }
 

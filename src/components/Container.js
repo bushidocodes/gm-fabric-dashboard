@@ -6,11 +6,13 @@ import { withRouter, Route, Redirect, Switch } from "react-router-dom";
 
 import AppBrandBar from "./AppBrandBar";
 import AppToolBar from "./AppToolBar";
+import AppFooter from "./AppFooter";
 import Explorer from "./Explorer";
 import GMGrid from "./GMGrid";
 import RouteBar from "./RouteBar";
 import RouteGrid from "./RouteGrid";
 import SettingsGrid from "./SettingsGrid";
+import SidebarBranding from "./SidebarBranding";
 import SummaryBar from "./SummaryBar";
 import SummaryGrid from "./SummaryGrid";
 import ThreadsGrid from "./ThreadsGrid";
@@ -36,29 +38,30 @@ class Container extends Component {
   render() {
     return (
       <div id="app-container">
-        <nav
-          className="uk-width-1-6@s sidebar"
-          style={{ backgroundColor: "black" }}
-        >
+        <nav className="app-sidebar">
           <AppBrandBar />
           <SummaryBar />
+          <SidebarBranding />
         </nav>
-        <div className="uk-width-5-6@s">
+        <div className="app-content uk-width-5-6@s">
           <AppToolBar pathname={this.props.pathname} />
           <Route exact path="/" render={() => <Redirect to="/summary" />} />
-          <Switch>
-            {this.props.runtime === "JVM" &&
-              <Route component={SummaryGrid} path="/summary" />}
-            {this.props.runtime === "JVM" &&
-              <Route component={ThreadsGrid} path="/threads" />}
-            <Route component={Explorer} path="/explorer" />
-            <Route component={SettingsGrid} path="/settings" />
-            {this.props.runtime === "JVM" &&
-              <Route component={RouteBar} path="/route" />}
-            <Route component={GMGrid} path="/dashboard/:dashboardName" />
-            <Route component={NotFound} path="*" />
-          </Switch>
-          <Route component={RouteGrid} path="/route/:routeName" />
+          <div className="app-content-view">
+            <Switch>
+              {this.props.runtime === "JVM" &&
+                <Route component={SummaryGrid} path="/summary" />}
+              {this.props.runtime === "JVM" &&
+                <Route component={ThreadsGrid} path="/threads" />}
+              <Route component={Explorer} path="/explorer" />
+              <Route component={SettingsGrid} path="/settings" />
+              {this.props.runtime === "JVM" &&
+                <Route component={RouteBar} path="/route" />}
+              <Route component={GMGrid} path="/dashboard/:dashboardName" />
+              <Route component={NotFound} path="*" />
+            </Switch>
+            <Route component={RouteGrid} path="/route/:routeName" />
+          </div>
+          <AppFooter />
         </div>
       </div>
     );
