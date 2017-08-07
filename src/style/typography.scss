@@ -10,7 +10,16 @@
 // Styles
 
 * {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-stack-base;
+  font-weight: $font-weight-base;
 }
 
 h1 {
@@ -30,7 +39,8 @@ h4 {
 }
 
 body {
-  font-size: 16px;
+  font-size: $font-size-base;
+  font-family: $font-stack-base;
 }
 
 small {

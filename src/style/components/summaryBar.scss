@@ -50,6 +50,7 @@ $summary-bar-card-text-color: $color-white;
 
   .summary-bar-card-heading {
     font-size: $font-size-base;
+    font-weight: $font-weight-base + 100;
     margin: 0;
     flex: 1 1 100%;
     white-space: nowrap;
@@ -81,6 +82,7 @@ $summary-bar-card-text-color: $color-white;
   .summary-bar-card-kv {
     display: flex;
     padding: 0 $padding-base;
+    font-family: $font-stack-labels;
 
     &:last-child {
       margin-bottom: $padding-base;
