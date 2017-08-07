@@ -70,6 +70,8 @@ class GMGrid extends Component {
         <ResponsiveReactGridLayout
           breakpoints={dashboard.grid.breakpoints}
           cols={dashboard.grid.cols}
+          isDraggable={false}
+          isResizable={false}
           layouts={dashboard.grid.layouts}
           onLayoutChange={(currentLayout, allLayouts) => {
             const dashboardState = {};
