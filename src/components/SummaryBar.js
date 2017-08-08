@@ -78,7 +78,7 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           href="/threads"
           lines={[
             {
-              name: "# Threads",
+              name: "Threads",
               value: getLatestAttribute(metrics, "jvm/thread/count")
             }
           ]}

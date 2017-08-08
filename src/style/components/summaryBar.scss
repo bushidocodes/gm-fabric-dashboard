@@ -16,25 +16,28 @@ $summary-bar-card-text-color: $color-white;
   flex: 1 1 100%;
   background-color: $summary-bar-background-color;
   box-shadow: inset -1px 0 rgba(0, 0, 0, .7);
+  transition: all .15s ease;
+  user-select: none;
 }
 
 .summary-bar-card {
-  flex: 0 0 auto;
+  flex: 0 0 $padding-base*5;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: 0;
-  transition: all .1s ease;
+  position: relative;
+  transition: all .15s ease;
 
   .summary-bar-card-title {
     color: $summary-bar-card-text-color;
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     padding: $padding-base / 2;
-    border-top: 1px solid rgba(255, 255, 255, .25);
-    border-bottom: 1px solid transparent;
+    border-top: 1px solid
+      transparentize(invert($summary-bar-background-color), .85);
+    position: relative;
 
     > * {
       flex: 0 0 $padding-base*3;
@@ -48,8 +51,9 @@ $summary-bar-card-text-color: $color-white;
   .summary-bar-card-heading {
     font-size: $font-size-base;
     font-weight: $font-weight-base + 100;
-    margin: 0;
+    margin: .4em 0 0;
     flex: 1 1 100%;
+    align-self: stretch;
     white-space: nowrap;
     max-width: 100%;
     text-overflow: ellipsis;
@@ -60,11 +64,12 @@ $summary-bar-card-text-color: $color-white;
     @include function-button-base();
     @include function-button-size();
     @include function-button-style(
-      $button-label-color-base: $color-white,
+      $button-label-color-base: $color-grey-2,
       $button-background-color-base: transparent,
       $button-outline-style: raised
     );
     padding: 0;
+    transition: all .15s ease;
 
     svg {
       transition: transform .05s ease;
@@ -73,7 +78,12 @@ $summary-bar-card-text-color: $color-white;
 
   .summary-bar-card-body {
     padding: 0 0;
+    margin-top: -$padding-base*.25;
     color: $summary-bar-card-text-color;
+    transition: all .15s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
   }
 
   .summary-bar-card-kv {
@@ -105,7 +115,6 @@ $summary-bar-card-text-color: $color-white;
   }
 
   .summary-datapoint-line {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   &:first-of-type {
@@ -128,7 +137,10 @@ $summary-bar-card-text-color: $color-white;
   }
 
   &.open {
-    .summary-bar-card-body:not(:empty) {
+    .summary-bar-card-body {
+      transition: all .15s ease;
+      max-height: 100vh;
+      opacity: 1;
     }
 
     .summary-bar-card-show-toggle {
@@ -140,12 +152,8 @@ $summary-bar-card-text-color: $color-white;
 
   &.active {
     background-color: $summary-bar-card-active-background-color;
-
-    &.open {
-      .summary-bar-card-title {
-        margin-bottom: $padding-base;
-      }
-    }
+    box-shadow: inset 1px 0 $color-highlight;
+    cursor: default;
 
     &,
     &:hover,
@@ -153,7 +161,6 @@ $summary-bar-card-text-color: $color-white;
     &:focus {
       .summary-bar-card-title {
         border-top-color: transparent;
-        border-bottom-color: $color-highlight;
       }
 
       .summary-bar-card-heading {

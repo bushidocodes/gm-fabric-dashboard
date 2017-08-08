@@ -65,38 +65,37 @@ export default class SummaryBarCard extends Component {
               />
             </button>}
         </div>
-        {this.state.isOpen &&
-          <div className="uk-card-body summary-bar-card-body">
-            {lines.map(line =>
-              <div className="summary-bar-card-kv" key={line.name}>
-                <dt className="summary-bar-card-kv-key">
-                  {line.name}
-                </dt>
-                <dd className="summary-bar-card-kv-value">
-                  {line.value}
-                </dd>
-              </div>
-            )}
-            {chartTitle &&
-              <div>
-                {chartTitle}
-              </div>}
-            {chartData &&
-              <Sparklines
-                data={chartData}
-                preserveAspectRatio="xMaxYMin"
-                style={{ width: "100%" }}
-              >
-                <SparklinesLine
-                  style={{
-                    stroke: "currentColor",
-                    strokeWidth: 1,
-                    fill: "currentColor",
-                    fillOpacity: ".1"
-                  }}
-                />
-              </Sparklines>}
-          </div>}
+        <div className="uk-card-body summary-bar-card-body">
+          {lines.map(line =>
+            <div className="summary-bar-card-kv" key={line.name}>
+              <dt className="summary-bar-card-kv-key">
+                {line.name}
+              </dt>
+              <dd className="summary-bar-card-kv-value">
+                {line.value}
+              </dd>
+            </div>
+          )}
+          {chartTitle &&
+            <div>
+              {chartTitle}
+            </div>}
+          {chartData &&
+            <Sparklines
+              data={chartData}
+              preserveAspectRatio="xMaxYMin"
+              style={{ width: "100%" }}
+            >
+              <SparklinesLine
+                style={{
+                  stroke: "currentColor",
+                  strokeWidth: 1,
+                  fill: "currentColor",
+                  fillOpacity: ".1"
+                }}
+              />
+            </Sparklines>}
+        </div>
       </NavLink>
     );
   }
