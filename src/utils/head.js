@@ -12,8 +12,7 @@ export function getBasename() {
 }
 
 /**
- * getServicename is a utility function that extracts the service property from the HEAD of the index.html file. This is
- * the means by which a dashboard is configured to be served out on a deeply nested path.
+ * getServicename is a utility function that extracts the service property from the HEAD of the index.html file. 
  * @returns {String}
  */
 export function getServicename() {
@@ -22,6 +21,21 @@ export function getServicename() {
     return "Service";
   } else {
     return serviceName;
+  }
+}
+
+/**
+ * getBackButtonUrl is a utility function that extracts the back button's target
+ * URL from the HEAD of the index.html file.
+ * @returns {String}
+ */
+export function getBackButtonUrl() {
+  const backButtonUrl = document.head.querySelector("[property=backButtonUrl]")
+    .content;
+  if (backButtonUrl === "__BACK_BUTTON_URL__") {
+    return "http://www.deciphernow.com/";
+  } else {
+    return backButtonUrl;
   }
 }
 

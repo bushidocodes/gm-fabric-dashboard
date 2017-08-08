@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 
 import { getLatestAttribute, parseJSONString } from "../utils/latestAttribute";
-import { getServicename } from "../utils/head";
+import { getServicename, getBackButtonUrl } from "../utils/head";
 import {
   getSparkLineOfValue,
   getSparkLineOfNetChange
@@ -24,7 +24,7 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
   return (
     <div className="summary-bar">
       <div className="nav-widget">
-        <a className="nav-go-up">
+        <a className="nav-go-up" href={getBackButtonUrl()}>
           <span
             className="icon"
             data-uk-icon={`icon: chevron-left; ratio: 1`}
