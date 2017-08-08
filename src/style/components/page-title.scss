@@ -1,0 +1,20 @@
+// components/page-title.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+
+// Helpers
+@mixin styles-for-page-title-h1() {
+}
+
+// Styles
+.page-title {
+  padding: $padding-base $padding-base*2;
+
+  h1 {
+    @include styles-for-page-title-h1();
+    line-height: $padding-base * 5;
+    margin: 0;
+  }
+}

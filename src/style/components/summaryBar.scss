@@ -79,7 +79,7 @@ $summary-bar-card-text-color: $color-white;
   .summary-bar-card-kv {
     display: flex;
     padding: 0 $padding-base;
-    font-family: $font-stack-labels;
+    font-family: $font-stack-data;
 
     &:last-child {
       margin-bottom: $padding-base;
