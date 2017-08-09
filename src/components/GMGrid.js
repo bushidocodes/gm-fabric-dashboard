@@ -130,11 +130,11 @@ class GMGrid extends Component {
                   />}
                 {chart.type === "GMBasicMetrics" &&
                   <GMBasicMetrics
-                    detailLines={_.fromPairs(
-                      _.toPairs(chart.data.detailLines).map(pair => [
-                        pair[0],
-                        getLatestAttribute(metrics, pair[1])
-                      ])
+                    detailLines={chart.data.detailLines.map(
+                      ([heading, key]) => [
+                        heading,
+                        getLatestAttribute(metrics, key)
+                      ]
                     )}
                     title={chart.title}
                   />}

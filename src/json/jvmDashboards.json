@@ -80,6 +80,15 @@
             "h": 6,
             "minW": 3,
             "minH": 4
+          },
+          {
+            "i": "Response Status Codes",
+            "x": 0,
+            "y": 6,
+            "w": 4,
+            "h": 6,
+            "minW": 3,
+            "minH": 4
           }
         ],
         "md": [
@@ -109,6 +118,15 @@
             "h": 6,
             "minW": 3,
             "minH": 4
+          },
+          {
+            "i": "Response Status Codes",
+            "x": 0,
+            "y": 6,
+            "w": 4,
+            "h": 6,
+            "minW": 3,
+            "minH": 4
           }
         ],
         "sm": [
@@ -134,6 +152,15 @@
             "i": "Requests",
             "x": 8,
             "y": 0,
+            "w": 4,
+            "h": 6,
+            "minW": 3,
+            "minH": 4
+          },
+          {
+            "i": "Response Status Codes",
+            "x": 0,
+            "y": 6,
             "w": 4,
             "h": 6,
             "minW": 3,
@@ -210,6 +237,21 @@
           "rows": [
             ["http", "http/requests", "http/success"],
             ["https", "https/requests", "https/success"]
+          ]
+        }
+      },
+      {
+        "title": "Response Status Codes",
+        "type": "GMBasicMetrics",
+        "data": {
+          "detailLines": [
+            ["2XX", "status/2XX"],
+            ["200", "status/200"],
+            ["4XX", "status/4XX"],
+            ["400", "status/400"],
+            ["499", "status/499"],
+            ["5XX", "status/5XX"],
+            ["500", "status/500"]
           ]
         }
       }
@@ -533,47 +575,50 @@
         "title": "Timer Deviation",
         "type": "GMBasicMetrics",
         "data": {
-          "detailLines": {
-            "Count": "finagle/timer/deviation_ms.count",
-            "Average": "finagle/timer/deviation_ms.avg",
-            "Max": "finagle/timer/deviation_ms.max",
-            "Min": "finagle/timer/deviation_ms.min",
-            "Sum": "finagle/timer/deviation_ms.sum"
-          }
+          "detailLines": [
+            ["Count", "finagle/timer/deviation_ms.count"],
+            ["Average", "finagle/timer/deviation_ms.avg"],
+            ["Max", "finagle/timer/deviation_ms.max"],
+            ["Min", "finagle/timer/deviation_ms.min"],
+            ["Sum", "finagle/timer/deviation_ms.sum"]
+          ]
         }
       },
       {
         "title": "Pending Timer Tasks",
         "type": "GMBasicMetrics",
         "data": {
-          "detailLines": {
-            "Count": "finagle/timer/pending_tasks.count",
-            "Average": "finagle/timer/pending_tasks.avg",
-            "Max": "finagle/timer/pending_tasks.max",
-            "Min": "finagle/timer/pending_tasks.min",
-            "Sum": "finagle/timer/pending_tasks.sum"
-          }
+          "detailLines": [
+            ["Count", "finagle/timer/pending_tasks.count"],
+            ["Average", "finagle/timer/pending_tasks.avg"],
+            ["Max", "finagle/timer/pending_tasks.max"],
+            ["Min", "finagle/timer/pending_tasks.min"],
+            ["Sum", "finagle/timer/pending_tasks.sum"]
+          ]
         }
       },
       {
         "title": "Future Pool",
         "type": "GMBasicMetrics",
         "data": {
-          "detailLines": {
-            "Active Tasks": "finagle/future_pool/active_tasks",
-            "Completed Tasks": "finagle/futurePool/completed_tasks",
-            "Pool Size": "finagle/timer/pool_size"
-          }
+          "detailLines": [
+            ["Active Tasks", "finagle/future_pool/active_tasks"],
+            ["Completed Tasks", "finagle/futurePool/completed_tasks"],
+            ["Pool Size", "finagle/timer/pool_size"]
+          ]
         }
       },
       {
         "title": "Client Registry",
         "type": "GMBasicMetrics",
         "data": {
-          "detailLines": {
-            "Initial Resolution": "finagle/clientregistry/initialresolution_ms",
-            "Size": "finagle/clientregistry/size"
-          }
+          "detailLines": [
+            [
+              "Initial Resolution",
+              "finagle/clientregistry/initialresolution_ms"
+            ],
+            ["Size", "finagle/clientregistry/size"]
+          ]
         }
       }
     ]

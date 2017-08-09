@@ -1,9 +1,8 @@
-import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React from "react";
 
 GMBasicMetrics.propTypes = {
-  detailLines: PropTypes.object.isRequired,
+  detailLines: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired
 };
 
@@ -13,10 +12,10 @@ export default function GMBasicMetrics({ detailLines, title }) {
       <h3 className="kv-title">
         {title}
       </h3>
-      {_.map(detailLines, (value, key) =>
-        <div className="kv-pair" key={`${key}-${value}`}>
+      {detailLines.map(([heading, value]) =>
+        <div className="kv-pair" key={`${heading}-${value}`}>
           <div className="kv-key">
-            {key}
+            {heading}
           </div>
           <div className="kv-value">
             {value}{" "}
