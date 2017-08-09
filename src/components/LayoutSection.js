@@ -2,21 +2,22 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 LayoutSection.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   className: PropTypes.string,
   title: PropTypes.string.isRequired
 };
 
-function LayoutSection(props: { children?: any }, title, className) {
+function LayoutSection({ children, className, title }) {
   return (
-    <section className={"layout-section " + props.className}>
+    <section className={"layout-section " + className}>
       <header>
         <span className="section-icon" data-uk-icon={`icon: grid; ratio: 1`} />
         <h3 className="section-title">
-          {props.title}
+          {title}
         </h3>
       </header>
       <div className="section-content">
-        {props.children}
+        {children}
       </div>
     </section>
   );

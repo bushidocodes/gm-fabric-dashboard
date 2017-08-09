@@ -2,6 +2,8 @@ import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
+import Readout from "./Readout.js";
+import ReadoutItem from "./ReadoutItem.js";
 import UIkit from "uikit";
 
 import LayoutSection from "./LayoutSection";
@@ -24,12 +26,8 @@ function SettingsGrid({ settings }) {
         className={"settings-group-metrics-cache"}
         title={"Metrics Cache"}
       >
-        <div className="control-group">
-          <div className="readout">
-            <span className="readout-text">162.12 MB</span>
-            <span className="readout-label">Cache Size</span>
-          </div>
-
+        <Readout align={"center"}>
+          <ReadoutItem title={"Cache Size"} value={"162.12 MB"} />
           <button
             className="btn"
             onClick={() => {
@@ -44,18 +42,15 @@ function SettingsGrid({ settings }) {
             <span className="icon" data-uk-icon={`icon: close;`} />
             <span className="label">Clear Metrics Cache</span>
           </button>
-        </div>
+        </Readout>
       </LayoutSection>
 
       <LayoutSection
         className={"settings-group-user-dashboards"}
         title={"Custom Dashboards"}
       >
-        <div className="control-group control-group-clear-dashboards">
-          <div className="readout">
-            <span className="readout-text">0</span>
-            <span className="readout-label">Custom Dashboards</span>
-          </div>
+        <Readout align={"center"}>
+          <ReadoutItem title={"Custom Dashboards"} value={"0"} />
           <button
             className="btn btn-type-danger"
             onClick={() => {
@@ -70,7 +65,7 @@ function SettingsGrid({ settings }) {
             <span className="icon" data-uk-icon={`icon: close; ratio: 1`} />
             <span className="label">Reset Dashboards</span>
           </button>
-        </div>
+        </Readout>
       </LayoutSection>
     </div>
   );

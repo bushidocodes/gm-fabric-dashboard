@@ -3,24 +3,115 @@
 @import '../mixins.scss';
 
 // Local Variables
-$readout-text-size: $font-size-hero;
-$readout-label-size: $font-size-base;
-$readout-spacing-base: $padding-base;
+$readout-feature-background-color-base: $color-grey-4;
+$readout-feature-text-color-base: $color-content;
+$readout-feature-primary-background-color-base: $color-grey-1;
+$readout-feature-primary-text-color-base: $color-white;
 
 // Helpers
 
 // Styles
+.readout-dashboard-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex: 1 1 100%;
+}
+
 .readout {
+  flex: 0 1 300px;
   display: flex;
   flex-direction: column;
-  padding: $readout-spacing-base;
-  text-align: center;
+  align-items: stretch;
+  background-color: $readout-feature-background-color-base;
+  font-family: $font-stack-data;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: $border-radius-base;
+  font-weight: $font-weight-base - 100;
+  color: $readout-feature-text-color-base;
 
-  .readout-text {
-    font-size: $readout-text-size;
+  &.center {
+    text-align: center;
+
+    .readout-feature-data:first-child {
+      padding-left: 0;
+    }
   }
-  .readout-label {
-    font-size: $readout-label-size;
+
+  .readout-feature {
+    flex: 0 1 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: $padding-base $padding-base*.5;
+
+    + .readout-feature {
+      border-top: 1px solid darken($readout-feature-background-color-base, 10%);
+    }
+  }
+  .readout-feature-data {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: $padding-base 0;
+
+    &:first-child {
+      padding-left: $padding-base * 2;
+    }
+  }
+  .readout-feature-icon {
+    flex: 0 0 80px;
+    text-align: center;
+    span {
+      fillColor: #fff;
+    }
+  }
+  .readout-feature-title,
+  .readout-feature-value {
+    margin: 0;
+    line-height: 1;
+    flex: 1 1 100%;
+    color: inherit;
+  }
+  .readout-feature-title {
+    font-size: $font-size-sm;
+    font-family: $font-stack-data;
+  }
+  .readout-feature-value {
+    font-size: $font-size-hero;
+    word-break: break-all;
+  }
+  .readout-feature-detail {
+    font-size: $font-size-sm;
+  }
+
+  & + .readout {
+    margin-left: $padding-base;
+  }
+
+  &.readout-primary {
+    background-color: $readout-feature-primary-background-color-base;
+    color: $readout-feature-primary-text-color-base;
+
+    .readout-feature {
+      + .readout-feature {
+        border-top-color: darken(
+          $readout-feature-primary-background-color-base,
+          10%
+        );
+      }
+    }
+  }
+
+  .btn {
+    flex: 0 0 auto;
+    align-self: center;
+    margin: $padding-base;
   }
 }
 
