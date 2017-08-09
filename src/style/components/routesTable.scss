@@ -1,0 +1,102 @@
+// components/routesTable.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+
+// Helpers
+
+// Styles
+.routes-table {
+  // Define content widths
+  .routes-table-route {
+    flex-basis: 100%;
+  }
+  .routes-table-sparkline {
+    flex-basis: 240px;
+  }
+  .routes-table-total-requests {
+    flex-basis: 12em;
+  }
+  .routes-table-error-percent {
+    flex-basis: 12em;
+  }
+
+  [class*="err-pc-0"] {
+    color: mix($color-danger, $color-success, 0);
+  }
+  [class*="err-pc-1"] {
+    color: mix($color-danger, $color-success, 10%);
+  }
+  [class*="err-pc-2"] {
+    color: mix($color-danger, $color-success, 20%);
+  }
+  [class*="err-pc-3"] {
+    color: mix($color-danger, $color-success, 30%);
+  }
+  [class*="err-pc-4"] {
+    color: mix($color-danger, $color-success, 40%);
+  }
+  [class*="err-pc-5"] {
+    color: mix($color-danger, $color-success, 50%);
+  }
+  [class*="err-pc-6"] {
+    color: mix($color-danger, $color-success, 60%);
+  }
+  [class*="err-pc-7"] {
+    color: mix($color-danger, $color-success, 70%);
+  }
+  [class*="err-pc-8"] {
+    color: mix($color-danger, $color-success, 80%);
+  }
+  [class*="err-pc-9"] {
+    color: mix($color-danger, $color-success, 90%);
+  }
+  [class*="err-pc-100"] {
+    color: mix($color-danger, $color-success, 100%);
+  }
+
+  .routes-table-sparkline,
+  .routes-table-total-requests,
+  .routes-table-error-percent {
+    text-align: right;
+  }
+
+  .routes-table-route {
+    position: relative;
+
+    .route-viz-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: $padding-base * 2;
+      height: 4px;
+      content: '';
+      border-bottom: 1px solid;
+
+      .route-viz-fill {
+        position: absolute;
+        background-color: currentColor;
+        border-radius: 0 1px 0 0;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .routes-table-sparkline {
+    width: 240px;
+  }
+
+  .div-table-body {
+    .routes-table-sparkline {
+      height: 32px;
+      padding-top: 0;
+
+      svg {
+        height: 100%;
+      }
+    }
+  }
+}

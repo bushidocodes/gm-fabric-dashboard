@@ -9,8 +9,7 @@ import AppToolBar from "./AppToolBar";
 import AppFooter from "./AppFooter";
 import Explorer from "./Explorer";
 import GMGrid from "./GMGrid";
-import RouteBar from "./RouteBar";
-import RouteGrid from "./RouteGrid";
+import RoutesGrid from "./RoutesGrid";
 import SettingsGrid from "./SettingsGrid";
 import SidebarBranding from "./SidebarBranding";
 import SummaryBar from "./SummaryBar";
@@ -55,11 +54,10 @@ class Container extends Component {
               <Route component={Explorer} path="/explorer" />
               <Route component={SettingsGrid} path="/settings" />
               {this.props.runtime === "JVM" &&
-                <Route component={RouteBar} path="/route" />}
+                <Route component={RoutesGrid} path="/route" />}
               <Route component={GMGrid} path="/dashboard/:dashboardName" />
               <Route component={NotFound} path="*" />
             </Switch>
-            <Route component={RouteGrid} path="/route/:routeName" />
           </div>
           <AppFooter />
         </div>

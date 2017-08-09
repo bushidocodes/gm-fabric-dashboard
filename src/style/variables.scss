@@ -18,6 +18,9 @@ $color-black: #000;
 $color-green: #0aab2a;
 $color-white: #fff;
 
+$color-success: #0aab2a;
+$color-danger: $color-red;
+
 $color-content: transparentize($color-black, .2);
 $color-content-muted: transparentize($color-black, .4);
 $color-highlight: $color-brand-primary;

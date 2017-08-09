@@ -1,4 +1,4 @@
-import { toPairs } from "lodash";
+import _ from "lodash";
 
 /**
  * Returns spark line of a metric's value
@@ -9,7 +9,7 @@ import { toPairs } from "lodash";
  */
 export function getSparkLineOfValue(metrics, key) {
   if (!metrics || !key) return [0, 0];
-  const [, values] = toPairs(metrics[key]); //ignore value at index 0
+  const values = _.toPairs(metrics[key]).map(([, val]) => val); //ignore value at index 0
   if (!values || values.length < 2) return [0, 0];
   return values;
 }
@@ -23,12 +23,21 @@ export function getSparkLineOfValue(metrics, key) {
  */
 export function getSparkLineOfNetChange(metrics, key) {
   if (!metrics || !key) return [0, 0];
-  const [, values] = toPairs(metrics[key]); // Ignoring the keys
-  if (!values || values.length < 2) return [0, 0];
+  const values = _.toPairs(metrics[key]).map(([, val]) => val); // Ignoring the keys
+  const timestamps = _.toPairs(metrics[key]).map(([timestamp]) => timestamp); // Ignoring the keys
+  if (!values || values.length < 3) return [0, 0];
   // Map over the arrays to compute the net change, and drop the first value
-  return values
+  const results = values
     .map((value, idx, arr) => {
-      return idx === 0 ? 0 : value - arr[idx - 1];
+      const last = arr[idx - 1];
+      const currentTime = timestamps[idx];
+      const lastTime = timestamps[idx - 1];
+      return idx === 0
+        ? 0
+        : Math.round(
+            (Number(value) - Number(last)) / ((currentTime - lastTime) / 1000)
+          );
     })
     .slice(1);
+  return results;
 }

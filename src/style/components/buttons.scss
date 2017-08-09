@@ -23,10 +23,10 @@ $button-reaction-style-default: darken; // darken, lighten // default: darken
 $button-reaction-degree-default: 6%; // 0-100% // default: 6%
 
 $button-outline-style-default: raised-outline; // raised-outline, shadow, raised, outline, none // default: raised-outline
-$button-outline-style-depth-default: 6%; // 0–100% // default: 6%
+$button-outline-style-depth-default: 8%; // 0–100% // default: 6%
 
 $button-hover-reaction-degree-default: $button-reaction-degree-default * .25;
-$button-active-reaction-degree-default: $button-reaction-degree-default * 2;
+$button-active-reaction-degree-default: $button-reaction-degree-default * 1.5;
 $button-down-reaction-degree-default: $button-reaction-degree-default * 1;
 
 // Styles

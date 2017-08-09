@@ -3,8 +3,8 @@ import state from "./json/mockReduxState";
 const { getVisibleThreads, getThreadCounts } = require.requireActual(
   "./utils/threads"
 );
-const { getRouteMetrics, getRouteTree } = require.requireActual(
-  "./utils/route"
+const { getRoutesMetrics, getRoutesTree } = require.requireActual(
+  "./utils/routes"
 );
 
 describe("Reselect selector getVisibleThreads", () =>
@@ -38,7 +38,7 @@ describe("Reselect selector getThreadCounts", () =>
 
 describe("Reselect selector getRouteMetrics", () =>
   test("returns an object of the metrics that have a key containing the string `route`", () => {
-    expect(getRouteMetrics(state)).toEqual({
+    expect(getRoutesMetrics(state)).toEqual({
       "route/ping/GET/status/200": {
         "1500416014314": 1,
         "1500416029215": 1,
@@ -121,7 +121,7 @@ describe("Reselect selector getRouteMetrics", () =>
 
 describe("Reselect selector getRouteTree", () =>
   test("returns a hierarchical representation of the keys nested under their corresponding routes and HTTP verbs", () => {
-    expect(getRouteTree(state)).toEqual({
+    expect(getRoutesTree(state)).toEqual({
       "/ping": {
         GET: [
           "route/ping/GET/status/200",

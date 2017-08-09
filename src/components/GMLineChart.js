@@ -11,10 +11,10 @@ import DygraphContainer from "./DygraphContainer";
  */
 
 GMLineChart.propTypes = {
-  detailLines: PropTypes.array.isRequired,
-  expectedAttributes: PropTypes.array.isRequired,
+  detailLines: PropTypes.array,
+  expectedAttributes: PropTypes.array,
   timeSeries: PropTypes.array,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 };
 
 export default function GMLineChart({
