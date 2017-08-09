@@ -1,0 +1,68 @@
+// views/view-explorer.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+
+// Helpers
+
+// Styles
+.view-explorer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 $padding-base*2 $padding-base*2;
+  height: 100%;
+
+  .metrics-list {
+    flex: 0 0 300px;
+    background-color: $color-content-background;
+    position: relative;
+    margin-bottom: $padding-base * 2;
+  }
+
+  .metrics-graph-display {
+    flex: 1 1 100%;
+    background-color: $color-grey-4;
+
+    > * {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: $padding-base * 2;
+
+      div {
+        flex: 1 1 95%;
+      }
+
+      h3 {
+        flex: 0 0 auto;
+        word-break: break-all;
+        white-space: normal;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        margin: $padding-base;
+      }
+    }
+
+    p {
+      text-align: center;
+      opacity: .8;
+      flex: 1 1 100%;
+    }
+  }
+
+  @media all and (min-width: 1200px) {
+    flex-direction: row;
+
+    .metrics-list {
+      flex: 0 0 40%;
+      margin-right: $padding-base * 2;
+      margin-bottom: 0;
+    }
+
+    .metrics-graph-display {
+      flex: 0 0 60%;
+    }
+  }
+}

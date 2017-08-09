@@ -1,14 +1,11 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { Responsive, WidthProvider } from "react-grid-layout";
 import Inspector from "react-json-inspector";
 import { connect } from "react-redux";
 
 import GMLineChart from "./GMLineChart";
 import { getDygraphOfValue } from "../utils/dygraphs";
-
-const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 class Explorer extends Component {
   static propTypes = {
@@ -55,45 +52,25 @@ class Explorer extends Component {
   render() {
     const { metrics } = this.props;
     return (
-      <div>
-        <ResponsiveReactGridLayout
-          breakpoints={{ lg: 1200, md: 996, sm: 768 }}
-          cols={{ lg: 12, md: 8, sm: 4 }}
-          isDraggable={false}
-          isResizable={false}
-          rowHeight={60}
-        >
-          <div
-            data-grid={{ x: 0, y: 0, w: 4, h: 11, minW: 3, minH: 4 }}
-            key="tree"
-            style={{
-              overflow: "scroll"
-            }}
-          >
-            <Inspector
-              data={this.state.headers}
-              onClick={clicked =>
-                this.setState({ selectedMetrics: clicked.value })}
-              tabIndex={20}
-            />
-          </div>
-          <div
-            data-grid={{ x: 4, y: 0, w: 8, h: 11, minW: 3, minH: 4 }}
-            key="graph"
-            style={{
-              overflow: "hidden"
-            }}
-          >
-            {this.state.selectedMetrics !== ""
-              ? <GMLineChart
-                  timeSeries={getDygraphOfValue(metrics, [
-                    this.state.selectedMetrics
-                  ])}
-                  title={this.state.selectedMetrics}
-                />
-              : <h2>Select a metric</h2>}
-          </div>
-        </ResponsiveReactGridLayout>
+      <div className="view-explorer">
+        <div className="metrics-list">
+          <Inspector
+            data={this.state.headers}
+            onClick={clicked =>
+              this.setState({ selectedMetrics: clicked.value })}
+            tabIndex={20}
+          />
+        </div>
+        <div className="metrics-graph-display">
+          {this.state.selectedMetrics !== ""
+            ? <GMLineChart
+                timeSeries={getDygraphOfValue(metrics, [
+                  this.state.selectedMetrics
+                ])}
+                title={this.state.selectedMetrics}
+              />
+            : <p>Select a metric to display</p>}
+        </div>
       </div>
     );
   }
