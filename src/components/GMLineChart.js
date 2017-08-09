@@ -24,11 +24,12 @@ export default function GMLineChart({
   title
 }) {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <h3 style={{ paddingLeft: "15px", paddingTop: "3px" }}>
-        {title}
-      </h3>
-      <div style={{ width: "100%", height: "70%" }}>
+    <div className="chart line-chart">
+      {title &&
+        <h3 className="chart-title">
+          {title}
+        </h3>}
+      <div className="chart-content">
         {timeSeries[0].length === 0
           ? <div style={{ paddingLeft: "15px" }}>
               <div>No Data to Chart</div>
@@ -47,12 +48,14 @@ export default function GMLineChart({
             </div>
           : <DygraphContainer timeSeries={timeSeries} />}
       </div>
-      {detailLines &&
-        detailLines.map(element =>
-          <div key={element} style={{ paddingLeft: "15px" }}>
-            {element}
-          </div>
-        )}
+      <div className="chart-details">
+        {detailLines &&
+          detailLines.map(element =>
+            <div className="chart-detail" key={element}>
+              {element}
+            </div>
+          )}
+      </div>
     </div>
   );
 }

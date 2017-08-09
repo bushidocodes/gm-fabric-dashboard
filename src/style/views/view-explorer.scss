@@ -24,16 +24,13 @@
   .metrics-graph-display {
     flex: 1 1 100%;
     background-color: $color-grey-4;
+    position: relative;
 
     > * {
       display: flex;
       align-items: center;
       flex-direction: column;
       padding: $padding-base * 2;
-
-      div {
-        flex: 1 1 95%;
-      }
 
       h3 {
         flex: 0 0 auto;

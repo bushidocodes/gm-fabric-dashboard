@@ -79,11 +79,7 @@ export default class RoutesTableLineItem extends Component {
           {this.props.errorRate}
         </div>
 
-        <Collapse
-          className="table-drawer"
-          height={"300px"}
-          isOpened={this.state.isOpen}
-        >
+        <Collapse className="table-drawer" isOpened={this.state.isOpen}>
           <GMLineChart
             timeSeries={this.props.requestsPerSecond_dygraph}
             title={"Requests over Time for " + this.props.route}

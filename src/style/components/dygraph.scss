@@ -1,0 +1,54 @@
+// components/dygraph.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+
+// Helpers
+@mixin styles-for-title() {
+}
+
+@mixin styles-for-axis-labels() {
+}
+
+// Styles
+
+.dygraph-container {
+  font-family: $font-stack-data;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.dygraph-legend {
+  text-align: right;
+  position: relative;
+  color: transparentize($color-content, .2);
+  z-index: 10000;
+
+  > span {
+    font-weight: 500 !important;
+    background-color: inherit;
+
+    .dygraph-legend-line {
+      font-weight: 500 !important;
+    }
+  }
+}
+
+.dygraph-label {
+  opacity: .8;
+  color: $color-content;
+}
+
+.dygraph-title {
+  @include styles-for-title();
+}
+
+.dygraph-axis-label.dygraph-ylabel,
+.dygraph-axis-label.dygraph-xlabel,
+.dygraph-axis-label.dygraph-y2label {
+  @include styles-for-axis-labels();
+}

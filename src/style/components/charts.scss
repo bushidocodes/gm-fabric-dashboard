@@ -1,0 +1,55 @@
+// components/charts.scss
+@import '../variables.scss';
+@import '../mixins.scss';
+
+// Local Variables
+$graph-background-color: transparent;
+$graph-padding: $padding-base;
+
+// Helpers
+@mixin styles-for-chart-title() {
+  font-size: $font-size-lg;
+}
+
+@mixin styles-for-axis-labels() {
+}
+
+// Styles
+
+.chart {
+  font-family: $font-stack-data;
+  background-color: $graph-background-color;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid transparent;
+
+  .chart-title {
+    @include styles-for-chart-title();
+    margin: 0;
+    padding: $padding-base $padding-base*2;
+    flex: 1 0 $padding-base*5;
+    flex: 0 0 auto;
+  }
+
+  .chart-content {
+    flex: 1 1 100%;
+    padding: $graph-padding;
+    position: relative;
+  }
+
+  .chart-details {
+    display: none;
+    padding: $padding-base;
+    flex-direction: row;
+
+    &:not(:empty) {
+      display: flex;
+    }
+    .chart-detail {
+      padding: 0 $padding-base;
+    }
+  }
+}

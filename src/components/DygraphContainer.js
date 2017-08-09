@@ -49,7 +49,15 @@ export default class DygraphContainer extends React.Component {
   drawChart(elem, data, options) {
     // Dygraph Options
     options.labelsKMB = true; // Abbreviate with KMB
-    options.strokeWidth = 2.0; // Abbreviate with KMB
+    options.strokeWidth = 2.0;
+    options.legend = "always";
+    options.axisLineColor = "rgb(200, 200, 200)";
+    options.gridLineColor = "rgb(200, 200, 200)";
+    options.gridLinePattern = [1, 3];
+    options.animatedZooms = true;
+    options.drawAxesAtZero = true;
+    options.labelsSeparateLines = true;
+    options.includeZero = true;
     this.graph = new Dygraph(elem, data, options);
   }
 
@@ -60,7 +68,6 @@ export default class DygraphContainer extends React.Component {
         ref={elem => {
           this.div = elem;
         }}
-        style={{ width: "100%", height: "100%", paddingTop: "0px" }}
       />
     );
   }

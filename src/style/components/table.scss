@@ -5,7 +5,7 @@
 // Local Variables
 $table-row-divider-color: $color-grey-3;
 $table-row-height-basis: $padding-base * 4.5;
-$table-drawer-height: 340px;
+$table-drawer-height: 300px;
 
 // Helpers
 @mixin styles-for-rows() {
@@ -106,6 +106,10 @@ $table-drawer-height: 340px;
 
     .ReactCollapse--content {
       height: $table-drawer-height;
+    }
+
+    .dygraph-container {
+      height: $table-drawer-height * .65 !important;
     }
   }
 }
