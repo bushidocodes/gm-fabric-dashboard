@@ -37,9 +37,12 @@ $font-group-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 // Fonts for specific use
 $font-group-main-text: "Nunito";
 $font-group-data: "Rubik";
+$font-group-data-mono: "Source Code Pro";
 
 $font-stack-base: $font-group-main-text, $font-group-system;
 $font-stack-data: $font-group-data, $font-group-system;
+$font-stack-data-mono: $font-group-data-mono, $font-group-data,
+  $font-group-system;
 
 $line-height-base: 1.4;
 

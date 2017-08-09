@@ -74,9 +74,10 @@ export const getRoutesTable = createSelector(
             : `route${routePath}/${routeVerb}/status/2XX`;
         const totalRequests = getLatestAttribute(routesMetrics, requestsKey);
         const totalSuccesses = getLatestAttribute(routesMetrics, successesKey);
-        const errorRate = `${Math.round(
-          (totalRequests - totalSuccesses) / totalRequests * 100
-        )}%`;
+        const errorRate = _.round(
+          (totalRequests - totalSuccesses) / totalRequests * 100,
+          4
+        ).toFixed(4);
         let localObj = Object.assign(
           {},
           baseObj,

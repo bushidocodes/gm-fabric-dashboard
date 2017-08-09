@@ -21,6 +21,9 @@
   .routes-table-error-percent {
     flex-basis: 12em;
   }
+  .routes-table-monospace {
+    font-family: $font-stack-data-mono;
+  }
 
   [class*="err-pc-0"] {
     color: mix($color-danger, $color-success, 0);

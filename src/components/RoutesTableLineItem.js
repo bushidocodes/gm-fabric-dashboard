@@ -67,12 +67,13 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </div>
-        <div className="routes-table-total-requests">
+        <div className="routes-table-total-requests routes-table-monospace">
           {this.props.totalRequests}
         </div>
         <div
           className={
-            "routes-table-error-percent err-pc-" + this.props.errorRate
+            "routes-table-error-percent routes-table-monospace err-pc-" +
+            this.props.errorRate
           }
         >
           {this.props.errorRate}
