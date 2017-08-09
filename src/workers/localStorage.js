@@ -4,6 +4,13 @@ import _ from "lodash";
 import defaultJVMDashboards from "../json/jvmDashboards.json";
 
 registerPromiseWorker(message => {
+  // Bail immediately if the message lacks runtime or type attributes
+  if (!message.runtime) {
+    return Promise.reject("message.runtime is undefined");
+  }
+  if (!message.type) {
+    return Promise.reject("message.type is undefined");
+  }
   switch (message.type) {
     case "init":
       const { basename } = message;
@@ -25,7 +32,7 @@ registerPromiseWorker(message => {
           ) {
             return savedDashboards;
           } else {
-            return setDashboardsToDefault();
+            return setDashboardsToDefault(message.runtime);
           }
         })
         .catch(err => console.log("fetchDashboards failed with ", err));

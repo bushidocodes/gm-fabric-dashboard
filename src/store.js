@@ -94,10 +94,13 @@ Effect("stopPolling", (endpoints, interval) => {
  * Synchronous action that performs initial setup of localforage
  */
 Effect("initLocalStorage", () => {
-  window.localStorageWorker.postMessage({
-    type: "init",
-    basename: getBasename()
-  });
+  return window.localStorageWorker
+    .postMessage({
+      type: "init",
+      runtime: getRuntime(),
+      basename: getBasename()
+    })
+    .catch(err => console.error(err));
 });
 
 /**
@@ -123,6 +126,7 @@ Effect("setDashboard", updatedDashboard => {
   window.localStorageWorker
     .postMessage({
       type: "setDashboards",
+      runtime: getRuntime(),
       dashboards
     })
     .then(dashboards => Actions.updateDashboardsRedux(dashboards))

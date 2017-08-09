@@ -29,8 +29,15 @@ class Container extends Component {
   // This triggers hooks which initialize polling using the default parameters
   componentDidMount() {
     Actions.fetchMetrics(this.props.metricsEndpoints);
-    Actions.initLocalStorage();
-    Actions.getDashboards();
+    Actions.initLocalStorage()
+      .then(isInitialized => {
+        if (isInitialized) {
+          return Actions.getDashboards();
+        } else {
+          throw new Error("Local Storage failed to initialize");
+        }
+      })
+      .catch(err => console.error(err));
     if (this.props.runtime === "jvm") Actions.fetchThreads();
   }
 
