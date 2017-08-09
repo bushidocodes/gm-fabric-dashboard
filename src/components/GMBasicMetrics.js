@@ -9,24 +9,20 @@ GMBasicMetrics.propTypes = {
 
 export default function GMBasicMetrics({ detailLines, title }) {
   return (
-    <div className="data-table">
-      <h3>
+    <div className="kv kv-hero kv-highlight">
+      <h3 className="kv-title">
         {title}
       </h3>
-      <table className="uk-table">
-        <tbody>
-          {_.map(detailLines, (value, key) =>
-            <tr key={`${key}-${value}`}>
-              <td>
-                {key}
-              </td>
-              <td>
-                {value}{" "}
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      {_.map(detailLines, (value, key) =>
+        <div className="kv-pair" key={`${key}-${value}`}>
+          <div className="kv-key">
+            {key}
+          </div>
+          <div className="kv-value">
+            {value}{" "}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
