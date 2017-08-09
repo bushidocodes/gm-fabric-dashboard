@@ -11,7 +11,7 @@ const settings = State({
     baseUrl: "/",
     isPolling: true,
     pollingHasInitialized: false,
-    interval: 15000,
+    interval: 5000,
     metricsEndpoints: generateEndpoints(),
     threadsEndpoint: generateThreadsEndpoint(),
     pollingFailures: 0,
