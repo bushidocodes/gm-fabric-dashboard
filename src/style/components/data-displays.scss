@@ -16,7 +16,13 @@ $readout-feature-primary-text-color-base: $color-white;
   flex-direction: row;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
   flex: 1 1 100%;
+  margin: -$padding-base / 2;
+
+  > .readout {
+    margin: $padding-base / 2;
+  }
 }
 
 .readout {
@@ -88,10 +94,6 @@ $readout-feature-primary-text-color-base: $color-white;
   }
   .readout-feature-detail {
     font-size: $font-size-sm;
-  }
-
-  & + .readout {
-    margin-left: $padding-base;
   }
 
   &.readout-primary {
