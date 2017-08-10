@@ -17,6 +17,7 @@ import {
 } from "../utils/dygraphs";
 import { getLatestAttribute } from "../utils/latestAttribute";
 import { getErrorRate } from "../utils/routes";
+import { getServicename } from "../utils/head";
 
 class SummaryGrid extends Component {
   static propTypes = {
@@ -29,7 +30,7 @@ class SummaryGrid extends Component {
     const port = window.location.port || 80;
     return (
       <div>
-        <PageTitle title={"Service Name: Instance Name"} />
+        <PageTitle title={`${getServicename()}: Instance 1`} />
         <LayoutSection title={"Vitals"}>
           <div className="subsection">
             <div className="readout-dashboard-row">
