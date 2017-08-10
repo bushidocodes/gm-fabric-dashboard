@@ -49,6 +49,7 @@ $readout-feature-primary-text-color-base: $color-white;
 
   .readout-feature {
     flex: 0 1 100%;
+    min-height: 75px;
     display: flex;
     flex-direction: row;
     align-items: center;
