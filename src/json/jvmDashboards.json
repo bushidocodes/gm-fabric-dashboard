@@ -3,7 +3,7 @@
     "name": "HTTP",
     "runtime": "JVM",
     "summaryCard": {
-      "icon": "heart",
+      "icon": "world",
       "lines": [
         {
           "name": "HTTP",
@@ -261,6 +261,7 @@
     "name": "JVM",
     "runtime": "JVM",
     "summaryCard": {
+      "icon": "code",
       "chart": {
         "type": "value",
         "dataAttribute": "jvm/mem/current/used"
@@ -420,6 +421,7 @@
     "name": "Finagle",
     "runtime": "JVM",
     "summaryCard": {
+      "icon": "code",
       "lines": [
         {
           "name": "Active Tasks",

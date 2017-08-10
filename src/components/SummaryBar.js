@@ -61,6 +61,7 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
       {runtime === "JVM" &&
         <SummaryBarCard
           href="/summary"
+          icon="star"
           lines={[
             {
               name: "Uptime",
@@ -71,11 +72,17 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           title="Summary"
         />}
       {runtime === "JVM" &&
-        <SummaryBarCard href="/route" tabIndex={3} title="Routes" />}
+        <SummaryBarCard
+          href="/route"
+          icon="link"
+          tabIndex={3}
+          title="Routes"
+        />}
       {runtime === "JVM" &&
         <SummaryBarCard
           chartData={getSparkLineOfValue(metrics, "jvm/thread/count")}
           href="/threads"
+          icon="table"
           lines={[
             {
               name: "Threads",
@@ -124,7 +131,12 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           />
         );
       })}
-      <SummaryBarCard href={`/explorer`} tabIndex={8} title="Explorer" />
+      <SummaryBarCard
+        href={`/explorer`}
+        icon="search"
+        tabIndex={8}
+        title="Explorer"
+      />
     </div>
   );
 }

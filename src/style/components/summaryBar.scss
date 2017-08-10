@@ -34,7 +34,7 @@ $summary-bar-card-text-color: $color-white;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: $padding-base / 2;
+    padding: $padding-base $padding-base*.5;
     border-top: 1px solid transparentize($color-white, .85);
     position: relative;
 
@@ -45,12 +45,14 @@ $summary-bar-card-text-color: $color-white;
 
   .summary-bar-card-icon {
     margin-right: $padding-base / 2;
+    position: relative;
+    left: 2px;
   }
 
   .summary-bar-card-heading {
     font-size: $font-size-base;
     font-weight: $font-weight-base + 100;
-    margin: .4em 0 0;
+    margin: .2em 0 0;
     flex: 1 1 100%;
     align-self: stretch;
     white-space: nowrap;

@@ -44,7 +44,7 @@ export default class SummaryBarCard extends Component {
         <div className="summary-bar-card-title">
           <span
             className="summary-bar-card-icon"
-            data-uk-icon={`icon: ${icon || "grid"}; ratio: 1.4`}
+            data-uk-icon={`icon: ${icon || "grid"}; ratio: 1`}
           />
           <h1 className="summary-bar-card-heading">
             {title}
