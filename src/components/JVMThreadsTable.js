@@ -9,17 +9,16 @@ JVMThreadsTable.propTypes = {
 
 export default function JVMThreadsTable({ filteredThreadData = [] }) {
   return (
-    <div>
-      <h4 className="uk-clearfix uk-text-nowrap">
-        <div className="thread-table-icon" />
-        <div className="uk-text-truncate thread-table-state">State</div>
-        <div className="thread-table-id uk-text-truncate">ID</div>
-        <div className="uk-text-truncate thread-table-name">Name</div>
-        <div className="uk-text-truncate thread-table-daemon">Daemon</div>
-        <div className="uk-text-truncate thread-table-priority">Priority</div>
-      </h4>
-      <hr />
-      <ol className="threads-list uk-list">
+    <div className="div-table thread-table">
+      <div className="div-table-header thread-table-header">
+        <div className="thread-table-id">ID</div>
+        <div className="thread-table-state">State</div>
+        <div className="thread-table-stacktrace">Trace</div>
+        <div className="thread-table-name">Name</div>
+        <div className="thread-table-daemon">Daemon</div>
+        <div className="thread-table-priority">Priority</div>
+      </div>
+      <ol className="div-table-body thread-table-body">
         {filteredThreadData.map(
           ({ daemon, id, name, priority, stack, state }, arrIndex) => {
             return (

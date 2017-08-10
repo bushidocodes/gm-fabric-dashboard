@@ -10,16 +10,16 @@
 .routes-table {
   // Define content widths
   .routes-table-route {
-    flex-basis: 100%;
+    flex: 1 1 calc(240px - 12em - 12em);
   }
   .routes-table-sparkline {
-    flex-basis: 240px;
+    flex: 0 1 240px;
   }
   .routes-table-total-requests {
-    flex-basis: 12em;
+    flex: 0 1 12em;
   }
   .routes-table-error-percent {
-    flex-basis: 12em;
+    flex: 0 1 12em;
   }
   .routes-table-monospace {
     font-family: $font-stack-data-mono;
@@ -94,12 +94,17 @@
 
   .div-table-body {
     .routes-table-sparkline {
-      height: 32px;
-      padding-top: 0;
+      height: $padding-base * 3;
+      padding-top: $padding-base / 2;
+      padding-bottom: $padding-base / 2;
 
       svg {
-        height: 100%;
+        height: inherit;
       }
     }
+  }
+
+  .ReactCollapse--content {
+    height: 300px;
   }
 }

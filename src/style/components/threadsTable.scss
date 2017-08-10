@@ -8,82 +8,67 @@
 
 // Styles
 
-.thread-table-container {
-  padding-left: 150px;
-  padding-right: 150px;
-}
+.thread-table {
+  > .thread-table-body > li,
+  > .thread-table-header {
+    > .thread-table-id {
+      padding-left: $padding-base * 2;
+      flex: 0 1 4em;
+      text-align: left;
+    }
+    > .thread-table-state {
+      flex: 0 1 4em;
+      text-align: center;
+    }
+    > .thread-table-stacktrace {
+      flex: 0 1 4em;
+      text-align: left;
+    }
 
-.thread-table-filter-buttons {
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
+    > .thread-table-priority {
+      flex: 0 1 4em;
+    }
 
-.thread-table-icon,
-.thread-table-state,
-.thread-table-id,
-.thread-table-name,
-.thread-table-daemon,
-.thread-table-priority {
-  // @include uk-text-truncate();
+    > .thread-table-name {
+      flex: 1 1 auto;
+    }
 
-  width: 10%;
-  float: left;
-  overflow: hidden;
-}
+    > .thread-table-daemon {
+      text-align: right;
+      flex: 0 1 8em;
+    }
 
-.thread-table-state {
-  min-width: 30px;
-  width: 10%;
-}
-
-.thread-table-id {
-  // @include uk-text-muted();
-
-  min-width: 25px;
-}
-
-.thread-table-priority {
-  min-width: 25px;
-  float: left;
-}
-
-.thread-table-icon {
-  height: 28px;
-  width: 10%;
-  min-width: 25px;
-  position: -50px;
-
-  svg {
-    padding-top: 4px;
-  }
-}
-
-.thread-table-name {
-  // @include uk-text-truncate();
-
-  min-width: 100px;
-  width: 40%;
-}
-
-.threads-list > li > hr {
-  margin-top: 10px;
-}
-
-.thread-table-line-item-content {
-  // @include uk-background-muted();
-  // @include uk-text-left();
-  // @include uk-text-break();
-
-  div:first-child {
-    padding-top: 25px;
+    > .thread-table-priority {
+      text-align: right;
+      flex: 0 1 8em;
+      padding-right: $padding-base * 2;
+    }
   }
 
-  div {
-    padding-left: 25px;
-    padding-right: 25px;
+  .stack-trace-indicator {
+    opacity: .3;
+    transition: all .2s ease;
   }
 
-  div:last-child {
-    padding-bottom: 25px;
+  > .thread-table-body > li:hover,
+  .open-true {
+    .stack-trace-indicator {
+      opacity: 1;
+      transform: scale(1.125);
+    }
+  }
+
+  .open-true {
+    .table-drawer {
+      .ReactCollapse--content {
+      }
+    }
+  }
+
+  .table-drawer {
+    .ReactCollapse--content {
+      word-break: break-all;
+      padding: $padding-base*2 $padding-base*4;
+    }
   }
 }

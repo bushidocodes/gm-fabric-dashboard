@@ -18,14 +18,7 @@ class ThreadsGrid extends Component {
     const { threadsTable } = this.props;
     return (
       <div className="thread-table-container">
-        <div
-          className="uk-grid-match uk-grid-small uk-text-center"
-          data-uk-grid
-        >
-          <div className="uk-width-1-1@m">
-            <JVMThreadsSection threadsTable={threadsTable} />
-          </div>
-        </div>
+        <JVMThreadsSection threadsTable={threadsTable} />
       </div>
     );
   }

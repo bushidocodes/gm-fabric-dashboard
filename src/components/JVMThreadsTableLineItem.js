@@ -22,10 +22,10 @@ export default class JVMThreadsTableLineItem extends Component {
   indicatorColor(state) {
     switch (state) {
       case "RUNNABLE":
-        return "green";
+        return "#0aab2a";
       case "WAITING":
       case "TIMED_WAITING":
-        return "#E0D570";
+        return "#F5A623";
       case "TERMINATED":
       case "BLOCKED":
       case "NEW":
@@ -44,46 +44,61 @@ export default class JVMThreadsTableLineItem extends Component {
     const indicatorIcon = this.indicatorColor(state);
 
     return (
-      <li key={id}>
-        <div
-          className="thread-table-row uk-clearfix"
-          onClick={stack.length && this.toggleStack}
-          onKeyDown={evt => {
-            if (stack.length && evt.keyCode === 13) {
-              evt.preventDefault();
-              this.toggleStack();
-            }
-          }}
-          role="link"
-          style={stack.length ? { cursor: "pointer" } : {}}
-          tabIndex={arrIndex + 20}
-        >
-          <div className="thread-table-icon">
-            {stack.length ? (this.state.isOpen ? "-" : "+") : ""}
-          </div>
-          <div className="thread-table-state">
-            <IndicatorIcon alt={state} color={indicatorIcon} diameter={15} />
-          </div>
-          <div className="thread-table-id">{`${Number(id)}`}</div>
-          <div className="thread-table-name">
-            {name}
-          </div>
-          <div className="thread-table-daemon">
-            {daemon ? "Yes" : "No"}
-          </div>
-          <div className="thread-table-priority">
-            {priority}
-          </div>
+      <li
+        className={
+          stack.length
+            ? this.state.isOpen
+              ? "selectable open-true"
+              : "selectable open-false"
+            : ""
+        }
+        key={id}
+        onClick={stack.length && this.toggleStack}
+        onKeyDown={evt => {
+          if (stack.length && evt.keyCode === 13) {
+            evt.preventDefault();
+            this.toggleStack();
+          }
+        }}
+        role="link"
+        style={stack.length ? { cursor: "pointer" } : {}}
+        tabIndex={arrIndex + 20}
+      >
+        <div className="thread-table-id">{`${Number(id)}`}</div>
+        <div className="thread-table-state">
+          <IndicatorIcon alt={state} color={indicatorIcon} diameter={15} />
         </div>
-        <Collapse isOpened={this.state.isOpen}>
-          <div className="thread-table-line-item-content ">
+        <div className="thread-table-stacktrace">
+          {stack.length
+            ? <span
+                className="stack-trace-indicator icon"
+                data-uk-icon={"icon: table;"}
+              />
+            : ""}
+        </div>
+        <div className="thread-table-name">
+          {name}
+        </div>
+        <div className="thread-table-daemon">
+          {daemon ? "Yes" : "No"}
+        </div>
+        <div className="thread-table-priority">
+          {priority}
+        </div>
+        <Collapse
+          className="table-drawer"
+          isOpened={this.state.isOpen}
+          onClick={evt => {
+            evt.stopPropagation();
+          }}
+        >
+          <div>
             <div>{`java.lang.Thread.State: ${state}`}</div>
             {stack.map((value, index) =>
               <div key={index}>{`at ${value}`}</div>
             )}
           </div>
         </Collapse>
-        <hr />
       </li>
     );
   }

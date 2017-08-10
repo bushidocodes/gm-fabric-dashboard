@@ -5,14 +5,13 @@
 // Local Variables
 $table-row-divider-color: $color-grey-3;
 $table-row-height-basis: $padding-base * 4.5;
-$table-drawer-height: 300px;
+// $table-drawer-max-height: 300px;
 
 // Helpers
 @mixin styles-for-rows() {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: $table-row-height-basis;
   box-shadow: inset 0 -1px $table-row-divider-color;
   background-color: $color-content-background;
   overflow: hidden;
@@ -20,8 +19,12 @@ $table-drawer-height: 300px;
   &.selectable {
     position: relative;
 
+    &:focus {
+      outline: none;
+    }
+
     &.open-true {
-      height: $table-drawer-height;
+      height: auto;
     }
 
     &:hover {
@@ -32,6 +35,7 @@ $table-drawer-height: 300px;
 
 @mixin styles-for-cells() {
   flex: 1 1 15%;
+  text-align: left;
   min-height: $table-row-height-basis;
   position: relative;
   padding-right: $padding-base * 2;
@@ -74,6 +78,8 @@ $table-drawer-height: 300px;
   .div-table-header,
   .div-table-body > * {
     @include styles-for-rows;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .div-table-header > *,
@@ -92,24 +98,18 @@ $table-drawer-height: 300px;
   }
 
   .table-drawer {
-    display: block;
-    position: absolute;
+    min-height: 0px;
+    padding: 0;
     overflow: hidden;
-    height: $table-drawer-height;
-    padding: 0 $padding-base*2;
-    box-shadow: inset 0 1px $color-grey-3, inset 0 -1px $color-grey-3;
-    background-color: darken($color-content-background, 4%);
-    left: 0;
-    right: 0;
-    top: $table-row-height-basis;
-    bottom: 0;
+    flex: 0 0 100%;
+    cursor: default;
+    white-space: normal;
 
     .ReactCollapse--content {
-      height: $table-drawer-height;
-    }
-
-    .dygraph-container {
-      height: $table-drawer-height * .65 !important;
+      padding: $padding-base $padding-base*2;
+      overflow: hidden;
+      box-shadow: inset 0 1px $color-grey-3, inset 0 -1px $color-grey-3;
+      background-color: darken($color-content-background, 4%);
     }
   }
 }
