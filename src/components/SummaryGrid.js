@@ -9,19 +9,22 @@ import PageTitle from "./PageTitle.js";
 import Readout from "./Readout.js";
 import ReadoutItem from "./ReadoutItem.js";
 import LayoutSection from "./LayoutSection.js";
+import _ from "lodash";
 
 import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
 } from "../utils/dygraphs";
 import { getLatestAttribute } from "../utils/latestAttribute";
+import { getErrorRate } from "../utils/routes";
 
 class SummaryGrid extends Component {
   static propTypes = {
+    errorRate: PropTypes.number,
     metrics: PropTypes.object
   };
   render() {
-    const { metrics } = this.props;
+    const { errorRate, metrics } = this.props;
     const hostname = window.location.hostname;
     const port = window.location.port || 80;
     return (
@@ -45,12 +48,14 @@ class SummaryGrid extends Component {
                 <ReadoutItem
                   icon={"bolt"}
                   title={"Avg. Response Time"}
-                  value={"22.15ms"}
+                  value={ms(
+                    _.round(getLatestAttribute(metrics, "time/2XX.avg"), 3)
+                  )}
                 />
                 <ReadoutItem
                   icon={"warning"}
                   title={"Error Rate"}
-                  value={"0.120%"}
+                  value={`${errorRate}%`}
                 />
               </Readout>
 
@@ -90,8 +95,11 @@ class SummaryGrid extends Component {
   }
 }
 
-function mapStateToProps({ metrics }) {
-  return { metrics };
+function mapStateToProps(state) {
+  return {
+    metrics: state.metrics,
+    errorRate: getErrorRate(state)
+  };
 }
 
 export default connect(mapStateToProps)(SummaryGrid);

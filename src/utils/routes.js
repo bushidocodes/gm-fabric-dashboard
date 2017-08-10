@@ -12,6 +12,20 @@ const getMetrics = state => state.metrics;
 
 // Reselect Memoized Selectors
 
+export const getErrorRate = createSelector(getMetrics, metrics => {
+  if (Object.keys(metrics).length === 0) return Number(0).toFixed(4);
+  const totalRequests =
+    Number(getLatestAttribute(metrics, "http/requests")) +
+    Number(getLatestAttribute(metrics, "https/requests"));
+  const totalSuccesses =
+    Number(getLatestAttribute(metrics, "http/success")) +
+    Number(getLatestAttribute(metrics, "https/success"));
+  return _.round(
+    (totalRequests - totalSuccesses) / totalRequests * 100,
+    4
+  ).toFixed(4);
+});
+
 /**
  * A Reselect selector that filters the metrics and only returns the timeseries
  * that contain the string 'route' somewhere in the key.
@@ -51,6 +65,7 @@ function _buildRoutesTree(routeMetrics) {
   });
   return routeList;
 }
+
 /**
  * A reselect selector that builds the data required to render the RoutesTable component
  */

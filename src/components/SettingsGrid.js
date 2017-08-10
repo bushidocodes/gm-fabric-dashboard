@@ -5,16 +5,20 @@ import { connect } from "react-redux";
 import Readout from "./Readout.js";
 import ReadoutItem from "./ReadoutItem.js";
 import UIkit from "uikit";
+import objectSizeOf from "object-sizeof";
+import filesize from "filesize";
 
 import LayoutSection from "./LayoutSection";
 import PollingSettings from "./PollingSettings";
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {
+  metricsCacheSize: PropTypes.string,
+  numberOfDashboards: PropTypes.number,
   settings: PropTypes.object
 };
 
-function SettingsGrid({ settings }) {
+function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
   return (
     <div className="view-app-settings settings-grid">
       <PollingSettings
@@ -27,7 +31,7 @@ function SettingsGrid({ settings }) {
         title={"Metrics Cache"}
       >
         <Readout align={"center"}>
-          <ReadoutItem title={"Cache Size"} value={"162.12 MB"} />
+          <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
           <button
             className="btn"
             onClick={() => {
@@ -50,7 +54,7 @@ function SettingsGrid({ settings }) {
         title={"Custom Dashboards"}
       >
         <Readout align={"center"}>
-          <ReadoutItem title={"Custom Dashboards"} value={"0"} />
+          <ReadoutItem title={"Custom Dashboards"} value={numberOfDashboards} />
           <button
             className="btn btn-type-danger"
             onClick={() => {
@@ -71,8 +75,12 @@ function SettingsGrid({ settings }) {
   );
 }
 
-function mapStateToProps({ settings }) {
-  return { settings };
+function mapStateToProps({ settings, dashboards, metrics }) {
+  return {
+    settings,
+    numberOfDashboards: Object.keys(dashboards).length,
+    metricsCacheSize: filesize(objectSizeOf(metrics))
+  };
 }
 
 export default connect(mapStateToProps)(SettingsGrid);
