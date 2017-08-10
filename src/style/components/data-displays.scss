@@ -126,19 +126,19 @@ $readout-feature-primary-text-color-base: $color-white;
   font-family: $font-stack-data;
 
   .kv-title {
-    font-weight: $font-weight-base + 100;
+    font-weight: $font-weight-base;
     text-align: center;
     margin: 0;
   }
 
   &.kv-highlight {
     background-color: $color-grey-4;
-    border: 1px solid $color-grey-3;
     border-radius: $border-radius-base;
     padding: $padding-base;
   }
 
   &.kv-hero {
+    padding-top: $padding-base * 6;
     font-size: $font-size-lg;
     .kv-pair {
       padding-top: $padding-base / 4;
@@ -155,15 +155,22 @@ $readout-feature-primary-text-color-base: $color-white;
   }
 
   &.kv-table {
-    flex: 0 0 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    hr {
-      flex: 0 0 100%;
+    text-align: right;
+    .kv-header {
+      flex: 1 1 33%;
+      &:first-child {
+        margin-left: 33%;
+      }
+    }
+    .kv-value,
+    .kv-key {
+      flex: 1 1 33%;
+    }
+    .kv-pair {
+      padding-right: 15%;
     }
   }
+
   .kv-pair {
     display: flex;
     flex-direction: row;
@@ -173,10 +180,10 @@ $readout-feature-primary-text-color-base: $color-white;
     opacity: .65;
     flex: 1 1 50%;
     text-align: right;
-    padding-right: $padding-base;
   }
 
   .kv-value {
     flex: 1 1 50%;
+    padding-left: $padding-base;
   }
 }

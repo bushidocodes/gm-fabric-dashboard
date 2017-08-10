@@ -9,34 +9,34 @@ HTTPStats.propTypes = {
 
 export default function HTTPStats({ title, headers, rows = [] }) {
   return (
-    <div className="uk-card uk-card-small uk-card-body">
-      <h3 className="uk-card-title">
+    <div
+      className={
+        "kv kv-hero kv-highlight kv-table kv-headers-" + headers.length
+      }
+    >
+      <h3 className="kv-title">
         {title}
       </h3>
-      <table className="uk-table uk-table-justify">
-        <thead>
-          <tr>
-            <th />
-            {headers.map((headerCell, index) =>
-              <th key={`header-${index}`}>
-                {headerCell}
-              </th>
+      <div className="kv-pair">
+        {headers.map((headerCell, index) =>
+          <div className="kv-key kv-header" key={`header-${index}`}>
+            {headerCell}
+          </div>
+        )}
+      </div>
+      {rows.map((row, rowIndex) =>
+        <div className="kv-pair" key={`row-${rowIndex}`}>
+          {row &&
+            row.map((cell, cellIndex) =>
+              <div
+                className={cellIndex === 0 ? "kv-key" : "kv-value"}
+                key={`row-${rowIndex}-cell-${cellIndex}`}
+              >
+                {cell}
+              </div>
             )}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, rowIndex) =>
-            <tr key={`row-${rowIndex}`}>
-              {row &&
-                row.map((cell, cellIndex) =>
-                  <td key={`row-${rowIndex}-cell-${cellIndex}`}>
-                    {cell}
-                  </td>
-                )}
-            </tr>
-          )}
-        </tbody>
-      </table>
+        </div>
+      )}
     </div>
   );
 }
