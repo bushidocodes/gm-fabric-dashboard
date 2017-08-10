@@ -94,7 +94,10 @@ class RoutesGrid extends Component {
         <RoutesTable
           routes={this.sort(
             this.props.routes.filter(
-              routeObj => routeObj.route.indexOf(this.state.filterString) !== -1
+              routeObj =>
+                routeObj.route
+                  .toLowerCase()
+                  .indexOf(this.state.filterString.toLowerCase()) !== -1
             )
           )}
         />
