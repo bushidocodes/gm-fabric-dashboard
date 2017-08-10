@@ -17,6 +17,7 @@ server.get("/admin/metrics.json", (req, res) => {
   metrics[
     "route/images_MicroserviceEssOverviewpng/GET/requests"
   ] += requestsESS;
+  metrics["https/requests"] += requestsESS;
   metrics[
     "route/images_MicroserviceEssOverviewpng/GET/status/2XX"
   ] += successesESS;
@@ -26,6 +27,7 @@ server.get("/admin/metrics.json", (req, res) => {
   metrics[
     "route/images/MicroserviceEssOverview.png/GET/requests"
   ] += requestsESSDot;
+  metrics["https/requests"] += requestsESSDot;
   metrics[
     "route/images/MicroserviceEssOverview.png/GET/status/2XX"
   ] += successesESSDot;
@@ -33,6 +35,7 @@ server.get("/admin/metrics.json", (req, res) => {
   const requestsSearchPost = Math.floor(Math.random() * 10) + 1;
   const successesSearchPost = Math.floor(Math.random() * requestsSearchPost);
   metrics["route/odrive/_search/POST/requests"] += requestsSearchPost;
+  metrics["https/requests"] += requestsSearchPost;
   metrics["route/odrive/_search/POST/status/2XX"] += successesSearchPost;
 
   const requestsIndexSearchPost = Math.floor(Math.random() * 10) + 1;
@@ -40,11 +43,13 @@ server.get("/admin/metrics.json", (req, res) => {
     Math.random() * requestsIndexSearchPost
   );
   metrics["route/index__search/POST/requests"] += requestsIndexSearchPost;
+  metrics["https/requests"] += requestsIndexSearchPost;
   metrics["route/index__search/POST/status/2XX"] += successesIndexSearchPost;
 
   const requestsIndexGet = Math.floor(Math.random() * 10) + 1;
   const successesIndexGet = Math.floor(Math.random() * requestsIndexGet);
   metrics["route/GET/requests"] += requestsIndexGet;
+  metrics["https/requests"] += requestsIndexGet;
   metrics["route/GET/status/2XX"] += successesIndexGet;
 
   res.json(metrics);

@@ -3,11 +3,17 @@ import ms from "ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+import GMLineChart from "./GMLineChart.js";
 import PageTitle from "./PageTitle.js";
 import Readout from "./Readout.js";
 import ReadoutItem from "./ReadoutItem.js";
 import LayoutSection from "./LayoutSection.js";
 
+import {
+  getDygraphOfValue,
+  mapDygraphKeysToNetChange
+} from "../utils/dygraphs";
 import { getLatestAttribute } from "../utils/latestAttribute";
 
 class SummaryGrid extends Component {
@@ -64,7 +70,21 @@ class SummaryGrid extends Component {
           </div>
         </LayoutSection>
 
-        <LayoutSection title={"Statistics"} />
+        <LayoutSection title={"Statistics"}>
+          <div style={{ height: "250px" }}>
+            <GMLineChart
+              timeSeries={mapDygraphKeysToNetChange(
+                getDygraphOfValue(
+                  metrics,
+                  ["https/requests", "http/requests"],
+                  ["HTTPS", "HTTP"]
+                ),
+                ["HTTPS", "HTTP"]
+              )}
+              title="Requests Per Second"
+            />
+          </div>
+        </LayoutSection>
       </div>
     );
   }
