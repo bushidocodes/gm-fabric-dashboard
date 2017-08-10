@@ -5,9 +5,25 @@
 *:after,
 *:before {
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
 html {
   color: $color-content;
   font-size: $font-size-base;
+}
+
+:root,
+html,
+body,
+#root,
+#app-container {
+  -webkit-overflow-scrolling: auto;
+  overflow: hidden;
+}
+
+.app-sidebar,
+.app-content {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
 }

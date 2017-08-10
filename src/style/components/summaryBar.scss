@@ -4,8 +4,8 @@
 @import 'buttons.scss';
 
 // Local Variables
-$summary-bar-background-color: $color-black;
-$summary-bar-card-active-background-color: $color-grey-1;
+$summary-bar-background-color: transparentize($color-sidebar-background, .25);
+$summary-bar-card-active-background-color: transparentize($color-grey-1, .125);
 $summary-bar-card-text-color: $color-white;
 
 // Helpers
@@ -14,7 +14,6 @@ $summary-bar-card-text-color: $color-white;
 
 .summary-bar {
   flex: 1 1 100%;
-  background-color: $summary-bar-background-color;
   box-shadow: inset -1px 0 rgba(0, 0, 0, .7);
   transition: all .15s ease;
   user-select: none;
@@ -24,6 +23,7 @@ $summary-bar-card-text-color: $color-white;
   flex: 0 0 $padding-base*5;
   display: flex;
   flex-direction: column;
+  background-color: $summary-bar-background-color;
   padding: 0;
   position: relative;
   transition: all .15s ease;
@@ -35,8 +35,7 @@ $summary-bar-card-text-color: $color-white;
     flex-direction: row;
     align-items: flex-start;
     padding: $padding-base / 2;
-    border-top: 1px solid
-      transparentize(invert($summary-bar-background-color), .85);
+    border-top: 1px solid transparentize($color-white, .85);
     position: relative;
 
     > * {

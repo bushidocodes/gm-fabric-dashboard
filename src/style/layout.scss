@@ -31,10 +31,15 @@ $sidebar-width-base: 230px;
 }
 
 .app-sidebar {
+  height: 100vh;
   flex: 1 0 $sidebar-width-base;
   display: flex;
   flex-direction: column;
   background-color: $color-sidebar-background;
+  background-image: url('../images/gm-fabric-bg.jpg');
+  background-size: 300% auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
 
 .app-content {

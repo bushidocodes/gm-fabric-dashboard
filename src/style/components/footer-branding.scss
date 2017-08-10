@@ -14,11 +14,8 @@
 .sidebar-footer-branding {
   @include styles-for-footer-branding();
   position: relative;
-  flex: 0 0 110px;
+  flex: 0 0 auto;
   margin-top: $padding-base;
-  background-size: 300% auto;
-  background-repeat: no-repeat;
-  background-position: bottom center;
   display: flex;
   flex-direction: column;
   align-items: stretch;
