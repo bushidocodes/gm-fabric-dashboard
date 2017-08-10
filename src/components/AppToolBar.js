@@ -14,13 +14,17 @@ function AppToolBar({ pathname }) {
           <Link to="/">root</Link>
         </li>
         {//strip out leading slashes to get route as array
-        pathname.replace(/^\/|\/$/g, "").split("/").map((val, idx) =>
-          <li className="app-breadcrumb" key={val}>
-            <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
-              {val}
-            </Link>
-          </li>
-        )}
+        pathname
+          .replace(/^\/|\/$/g, "")
+          .replace("%2F", "/") // String out escaped slashes if found
+          .split("/")
+          .map((val, idx) =>
+            <li className="app-breadcrumb" key={val}>
+              <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
+                {val}
+              </Link>
+            </li>
+          )}
       </ol>
 
       <NavLink className="btn btn-outline-none settings-button" to="/settings">
