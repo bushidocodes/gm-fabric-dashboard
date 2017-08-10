@@ -12,6 +12,11 @@ import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
 } from "../utils/dygraphs";
+import {
+  getSparkLineOfValue,
+  getSparkLineOfNetChange
+} from "../utils/sparklines";
+
 import { getLatestAttribute, parseJSONString } from "../utils/latestAttribute";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
@@ -131,10 +136,39 @@ class GMGrid extends Component {
                 {chart.type === "GMBasicMetrics" &&
                   <GMBasicMetrics
                     detailLines={chart.data.detailLines.map(
-                      ([heading, key]) => [
-                        heading,
-                        getLatestAttribute(metrics, key)
-                      ]
+                      (
+                        [
+                          heading,
+                          key,
+                          priority,
+                          sparklineKey = null,
+                          sparklineType = null
+                        ]
+                      ) => {
+                        const results = [
+                          heading,
+                          getLatestAttribute(metrics, key),
+                          priority
+                        ];
+                        if (sparklineKey && sparklineType) {
+                          if (sparklineType === "value") {
+                            results.push(
+                              getSparkLineOfValue(
+                                this.props.metrics,
+                                sparklineKey
+                              )
+                            );
+                          } else if (sparklineType === "netChange") {
+                            results.push(
+                              getSparkLineOfNetChange(
+                                this.props.metrics,
+                                sparklineKey
+                              )
+                            );
+                          }
+                        }
+                        return results;
+                      }
                     )}
                     title={chart.title}
                   />}

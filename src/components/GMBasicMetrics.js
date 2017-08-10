@@ -1,5 +1,10 @@
 import { PropTypes } from "prop-types";
 import React from "react";
+import {
+  Sparklines,
+  SparklinesLine,
+  SparklinesReferenceLine
+} from "react-sparklines";
 
 GMBasicMetrics.propTypes = {
   detailLines: PropTypes.array.isRequired,
@@ -7,21 +12,51 @@ GMBasicMetrics.propTypes = {
 };
 
 export default function GMBasicMetrics({ detailLines, title }) {
+  console.log("detailLines are: ", detailLines);
   return (
     <div className="kv kv-hero kv-highlight">
       <h3 className="kv-title">
         {title}
       </h3>
-      {detailLines.map(([heading, value]) =>
-        <div className="kv-pair" key={`${heading}-${value}`}>
-          <div className="kv-key">
-            {heading}
+      {detailLines.map(([heading, value, priority, sparkline = []]) => {
+        console.log("Priority: ", priority);
+        return (
+          <div
+            className={`kv-pair kv-pair-${priority}`}
+            key={`${heading}-${value}`}
+          >
+            <div className={`kv-key kv-key-${priority}`}>
+              {heading}
+            </div>
+            <div className={`kv-value kv-value-${priority}`}>
+              {value}
+              {sparkline.length > 0 &&
+                <div className={`kv-sparkline kv-sparkline-${priority}`}>
+                  <Sparklines
+                    data={sparkline}
+                    height={32}
+                    preserveAspectRatio="xMaxYMin"
+                  >
+                    <SparklinesLine
+                      style={{
+                        stroke: "currentColor",
+                        strokeWidth: 1,
+                        fill: "none"
+                      }}
+                    />
+                    <SparklinesReferenceLine
+                      style={{
+                        stroke: "grey",
+                        opacity: "0.4"
+                      }}
+                      type="mean"
+                    />
+                  </Sparklines>
+                </div>}
+            </div>
           </div>
-          <div className="kv-value">
-            {value}{" "}
-          </div>
-        </div>
-      )}
+        );
+      })}
     </div>
   );
 }

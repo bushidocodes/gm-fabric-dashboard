@@ -58,34 +58,34 @@
             "i": "Connections",
             "x": 0,
             "y": 0,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Data Transfer Rates",
-            "x": 4,
+            "x": 6,
             "y": 0,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Requests",
-            "x": 8,
+            "x": 0,
             "y": 0,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Response Status Codes",
-            "x": 0,
-            "y": 6,
-            "w": 4,
+            "x": 6,
+            "y": 0,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
@@ -96,34 +96,34 @@
             "i": "Connections",
             "x": 0,
             "y": 0,
-            "w": 4,
+            "w": 8,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Data Transfer Rates",
-            "x": 4,
-            "y": 0,
-            "w": 4,
+            "x": 0,
+            "y": 6,
+            "w": 8,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Requests",
-            "x": 8,
-            "y": 0,
-            "w": 4,
+            "x": 0,
+            "y": 12,
+            "w": 8,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Response Status Codes",
-            "x": 0,
-            "y": 6,
-            "w": 4,
+            "x": 6,
+            "y": 18,
+            "w": 8,
             "h": 6,
             "minW": 3,
             "minH": 4
@@ -134,34 +134,34 @@
             "i": "Connections",
             "x": 0,
             "y": 0,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Data Transfer Rates",
-            "x": 4,
+            "x": 6,
             "y": 0,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Requests",
-            "x": 8,
-            "y": 0,
-            "w": 4,
+            "x": 0,
+            "y": 6,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
           },
           {
             "i": "Response Status Codes",
-            "x": 0,
+            "x": 6,
             "y": 6,
-            "w": 4,
+            "w": 6,
             "h": 6,
             "minW": 3,
             "minH": 4
@@ -245,13 +245,13 @@
         "type": "GMBasicMetrics",
         "data": {
           "detailLines": [
-            ["2XX", "status/2XX"],
-            ["200", "status/200"],
-            ["4XX", "status/4XX"],
-            ["400", "status/400"],
-            ["499", "status/499"],
-            ["5XX", "status/5XX"],
-            ["500", "status/500"]
+            ["2XX", "status/2XX", "primary", "status/2XX", "value"],
+            ["200", "status/200", "primary", "status/200", "value"],
+            ["4XX", "status/4XX", "normal", "status/4XX", "value"],
+            ["400", "status/400", "normal", "status/400", "value"],
+            ["499", "status/499", "normal", "status/499", "value"],
+            ["5XX", "status/5XX", "normal", "status/5XX", "value"],
+            ["500", "status/500", "normal", "status/500", "value"]
           ]
         }
       }
@@ -460,35 +460,35 @@
             "i": "Timer Deviation",
             "x": 0,
             "y": 0,
-            "w": 4,
-            "h": 5,
+            "w": 6,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
           {
             "i": "Pending Timer Tasks",
-            "x": 4,
+            "x": 6,
             "y": 0,
-            "w": 4,
-            "h": 5,
+            "w": 6,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
           {
             "i": "Future Pool",
-            "x": 8,
-            "y": 0,
-            "w": 4,
-            "h": 5,
+            "x": 0,
+            "y": 6,
+            "w": 6,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
           {
             "i": "Client Registry",
-            "x": 0,
-            "y": 5,
-            "w": 4,
-            "h": 5,
+            "x": 6,
+            "y": 6,
+            "w": 6,
+            "h": 6,
             "minW": 3,
             "minH": 5
           }
@@ -499,7 +499,7 @@
             "x": 0,
             "y": 0,
             "w": 4,
-            "h": 5,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
@@ -508,25 +508,25 @@
             "x": 4,
             "y": 0,
             "w": 4,
-            "h": 5,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
           {
             "i": "Future Pool",
-            "x": 8,
-            "y": 0,
+            "x": 0,
+            "y": 6,
             "w": 4,
-            "h": 5,
+            "h": 6,
             "minW": 3,
             "minH": 5
           },
           {
             "i": "Client Registry",
-            "x": 0,
-            "y": 5,
+            "x": 4,
+            "y": 6,
             "w": 4,
-            "h": 5,
+            "h": 6,
             "minW": 3,
             "minH": 5
           }
@@ -578,11 +578,23 @@
         "type": "GMBasicMetrics",
         "data": {
           "detailLines": [
-            ["Count", "finagle/timer/deviation_ms.count"],
-            ["Average", "finagle/timer/deviation_ms.avg"],
-            ["Max", "finagle/timer/deviation_ms.max"],
-            ["Min", "finagle/timer/deviation_ms.min"],
-            ["Sum", "finagle/timer/deviation_ms.sum"]
+            [
+              "Count",
+              "finagle/timer/deviation_ms.count",
+              "primary",
+              "finagle/timer/deviation_ms.count",
+              "value"
+            ],
+            [
+              "Average",
+              "finagle/timer/deviation_ms.avg",
+              "secondary",
+              "finagle/timer/deviation_ms.avg",
+              "value"
+            ],
+            ["Max", "finagle/timer/deviation_ms.max", "normal"],
+            ["Min", "finagle/timer/deviation_ms.min", "normal"],
+            ["Sum", "finagle/timer/deviation_ms.sum", "normal"]
           ]
         }
       },
@@ -591,11 +603,23 @@
         "type": "GMBasicMetrics",
         "data": {
           "detailLines": [
-            ["Count", "finagle/timer/pending_tasks.count"],
-            ["Average", "finagle/timer/pending_tasks.avg"],
-            ["Max", "finagle/timer/pending_tasks.max"],
-            ["Min", "finagle/timer/pending_tasks.min"],
-            ["Sum", "finagle/timer/pending_tasks.sum"]
+            [
+              "Count",
+              "finagle/timer/pending_tasks.count",
+              "primary",
+              "finagle/timer/pending_tasks.count",
+              "value"
+            ],
+            [
+              "Average",
+              "finagle/timer/pending_tasks.avg",
+              "secondary",
+              "finagle/timer/pending_tasks.avg",
+              "value"
+            ],
+            ["Max", "finagle/timer/pending_tasks.max", "normal"],
+            ["Min", "finagle/timer/pending_tasks.min", "normal"],
+            ["Sum", "finagle/timer/pending_tasks.sum", "normal"]
           ]
         }
       },
@@ -604,9 +628,21 @@
         "type": "GMBasicMetrics",
         "data": {
           "detailLines": [
-            ["Active Tasks", "finagle/future_pool/active_tasks"],
-            ["Completed Tasks", "finagle/futurePool/completed_tasks"],
-            ["Pool Size", "finagle/timer/pool_size"]
+            [
+              "Active Tasks",
+              "finagle/future_pool/active_tasks",
+              "primary",
+              "finagle/future_pool/active_tasks",
+              "value"
+            ],
+            [
+              "Completed Tasks",
+              "finagle/futurePool/completed_tasks",
+              "secondary",
+              "finagle/futurePool/completed_tasks",
+              "value"
+            ],
+            ["Pool Size", "finagle/timer/pool_size", "normal"]
           ]
         }
       },
@@ -615,11 +651,12 @@
         "type": "GMBasicMetrics",
         "data": {
           "detailLines": [
+            ["Size", "finagle/clientregistry/size", "primary"],
             [
               "Initial Resolution",
-              "finagle/clientregistry/initialresolution_ms"
-            ],
-            ["Size", "finagle/clientregistry/size"]
+              "finagle/clientregistry/initialresolution_ms",
+              "secondary"
+            ]
           ]
         }
       }
