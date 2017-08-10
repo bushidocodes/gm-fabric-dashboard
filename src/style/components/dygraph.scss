@@ -20,20 +20,42 @@
   right: 0;
   left: 0;
   bottom: 0;
+  background-color: inherit;
+
+  > * {
+    background-color: inherit;
+  }
 }
 
 .dygraph-legend {
   text-align: right;
-  position: relative;
+  position: absolute;
   color: transparentize($color-content, .2);
+  background-color: rgba(255, 255, 255, .9);
+  border-radius: $border-radius-base;
+  display: inline-block;
   z-index: 10000;
+  right: 0 !important;
+  left: auto !important;
+  transition: all .2s ease, color .2s ease;
+  color: transparent;
+  padding: $padding-base $padding-base*2 $padding-base;
+  opacity: 0;
+  min-width: 18em;
+
+  &,
+  [style*="bold"] {
+    font-weight: $font-weight-base !important;
+  }
+
+  :hover > & {
+    opacity: 1;
+    color: transparentize($color-content, .2);
+    transition: all .2s ease, color 1s ease;
+  }
 
   > span {
-    font-weight: 500 !important;
-    background-color: inherit;
-
     .dygraph-legend-line {
-      font-weight: 500 !important;
     }
   }
 }
