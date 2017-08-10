@@ -15,15 +15,19 @@ const getMetrics = state => state.metrics;
 export const getErrorRate = createSelector(getMetrics, metrics => {
   if (Object.keys(metrics).length === 0) return Number(0).toFixed(4);
   const totalRequests =
-    Number(getLatestAttribute(metrics, "http/requests")) +
-    Number(getLatestAttribute(metrics, "https/requests"));
+    Number(getLatestAttribute(metrics, "http/requests") || 0) +
+    Number(getLatestAttribute(metrics, "https/requests") || 0);
   const totalSuccesses =
-    Number(getLatestAttribute(metrics, "http/success")) +
-    Number(getLatestAttribute(metrics, "https/success"));
-  return _.round(
-    (totalRequests - totalSuccesses) / totalRequests * 100,
-    4
-  ).toFixed(4);
+    Number(getLatestAttribute(metrics, "http/success") || 0) +
+    Number(getLatestAttribute(metrics, "https/success") || 0);
+  if (totalRequests > 0) {
+    return _.round(
+      (totalRequests - totalSuccesses) / totalRequests * 100,
+      4
+    ).toFixed(4);
+  } else {
+    return Number(0).toFixed(4);
+  }
 });
 
 /**
