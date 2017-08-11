@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2017-08-10
+### Added
+- Significant amounts of UX polish
+- Added footer
+- Back button in sidebar can now be configured to point to a target URL via the backButtonUrl head attribute
+- Added numerous heads-up vitals to the summary component
+
+### Changed
+- Fixed a Local Storage Bug
+- Significantly changed the routes component to make it easier to diagnose issues and dive in for a closer look
+- Set the default polling rate to 5 seconds
+- Changed the default runtime to JVM, as this is the only currently supported runtime
+
+### Removed
+- Although moving and resizing grids was pretty cool, this functionality has been disabled until we have further enhanced the tools to create, edit, and delete dashboards, including defining new charts.
+
+### Test Coverage: 3.35% ([0.3.0 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.3.0 Bundle Size Report])
+### Production Build: ([0.3.0 Build])
+
 ## [0.2.1] - 2017-08-04
 ### Added
 - Implemented Prettier for CSS
@@ -81,7 +101,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.1...v0.3.0
+[0.3.0 Coverage Report]: https://493-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.3.0 Bundle Size Report]: https://493-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.3.0 Build]: https://493-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.2.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.0...v0.2.1
 [0.2.1 Coverage Report]: https://354-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.2.1 Bundle Size Report]: https://354-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
