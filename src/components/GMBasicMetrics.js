@@ -12,14 +12,12 @@ GMBasicMetrics.propTypes = {
 };
 
 export default function GMBasicMetrics({ detailLines, title }) {
-  console.log("detailLines are: ", detailLines);
   return (
     <div className="kv kv-hero kv-highlight">
       <h3 className="kv-title">
         {title}
       </h3>
       {detailLines.map(([heading, value, priority, sparkline = []]) => {
-        console.log("Priority: ", priority);
         return (
           <div
             className={`kv-pair kv-pair-${priority}`}

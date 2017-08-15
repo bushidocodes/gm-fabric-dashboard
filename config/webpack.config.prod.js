@@ -13,7 +13,6 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const paths = require("./paths");
 const getClientEnvironment = require("./env");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 var LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 var lodash = require("babel-plugin-lodash");
 
@@ -268,7 +267,7 @@ module.exports = {
     // Otherwise React will be compiled in the very slow development mode.
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
-    new UglifyJSPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       },

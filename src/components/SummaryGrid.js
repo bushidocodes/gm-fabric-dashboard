@@ -21,7 +21,7 @@ import { getServicename } from "../utils/head";
 
 class SummaryGrid extends Component {
   static propTypes = {
-    errorRate: PropTypes.number,
+    errorRate: PropTypes.string,
     metrics: PropTypes.object
   };
   render() {
