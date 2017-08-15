@@ -15,8 +15,9 @@ export default function Inspector({
   searchQuery,
   selectedMetric
 }) {
+  const lowerSearchQuery = searchQuery.toLowerCase();
   const filteredData = searchQuery
-    ? data.filter(i => i.indexOf(searchQuery) !== -1)
+    ? data.filter(i => i.toLowerCase().indexOf(lowerSearchQuery) !== -1)
     : data;
   return (
     <div className="inspector">
