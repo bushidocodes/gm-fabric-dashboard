@@ -27,7 +27,7 @@ export default function GMBasicMetrics({ detailLines, title }) {
               {heading}
             </div>
             <div className={`kv-value kv-value-${priority}`}>
-              {value}
+              {value.toLocaleString()}
               {sparkline.length > 0 &&
                 <div className={`kv-sparkline kv-sparkline-${priority}`}>
                   <Sparklines

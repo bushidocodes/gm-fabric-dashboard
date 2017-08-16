@@ -68,7 +68,7 @@ export default class RoutesTableLineItem extends Component {
           </Sparklines>
         </div>
         <div className="routes-table-total-requests routes-table-monospace">
-          {this.props.totalRequests}
+          {this.props.totalRequests.toLocaleString()}
         </div>
         <div
           className={

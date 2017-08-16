@@ -32,7 +32,7 @@ export default function HTTPStats({ title, headers, rows = [] }) {
                 className={cellIndex === 0 ? "kv-key" : "kv-value"}
                 key={`row-${rowIndex}-cell-${cellIndex}`}
               >
-                {cell}
+                {cell.toLocaleString()}
               </div>
             )}
         </div>

@@ -73,7 +73,7 @@ export function parseJSONString(line, metrics) {
             element.precision
           );
         } else {
-          return getLatestAttribute(metrics, element.value);
+          return getLatestAttribute(metrics, element.value).toLocaleString();
         }
       })
       .join(" ");
