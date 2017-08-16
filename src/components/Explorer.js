@@ -44,11 +44,10 @@ class Explorer extends Component {
     // Parse the current query parameters
     const query = qs.parse(this.props.location.search);
     // update with the new search query
-    const newQuery = qs.stringify(
-      Object.assign({}, query, {
-        searchQuery: q
-      })
-    );
+    const newQuery = qs.stringify({
+      ...query,
+      searchQuery: q
+    });
     // and push to router
     this.props.history.push({
       pathname: this.props.match.url,
@@ -62,11 +61,10 @@ class Explorer extends Component {
     // Escape the slashed to avoid confusing the router
     const escapedMetricsPath = clicked.innerText.replace(/\//g, "%2F");
     // Generate the new query string object
-    const newQuery = qs.stringify(
-      Object.assign({}, query, {
-        selectedMetric: escapedMetricsPath
-      })
-    );
+    const newQuery = qs.stringify({
+      ...query,
+      selectedMetric: escapedMetricsPath
+    });
     // Push the new state to the router
     this.props.history.push({
       pathname: this.props.match.url,
@@ -105,8 +103,6 @@ class Explorer extends Component {
   }
 }
 
-// TODO: Only pass in the selected metrics objects, not the entire metrics stores
-// This should reduce renders
 function mapStateToProps({ metrics }) {
   return {
     metrics,

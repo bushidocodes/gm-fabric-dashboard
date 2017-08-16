@@ -97,28 +97,24 @@ export const getRoutesTable = createSelector(
           (totalRequests - totalSuccesses) / totalRequests * 100,
           4
         ).toFixed(4);
-        let localObj = Object.assign(
-          {},
-          baseObj,
-          { verb: routeVerb },
-          {
-            totalRequests,
-            requestsPerSecond_sparkline: getSparkLineOfNetChange(
+        routes.push({
+          ...baseObj,
+          errorRate,
+          totalRequests,
+          verb: routeVerb,
+          requestsPerSecond_sparkline: getSparkLineOfNetChange(
+            routesMetrics,
+            requestsKey
+          ),
+          requestsPerSecond_dygraph: mapDygraphKeysToNetChange(
+            getDygraphOfValue(
               routesMetrics,
-              requestsKey
-            ),
-            requestsPerSecond_dygraph: mapDygraphKeysToNetChange(
-              getDygraphOfValue(
-                routesMetrics,
-                [requestsKey],
-                ["Requests Per Second"]
-              ),
+              [requestsKey],
               ["Requests Per Second"]
             ),
-            errorRate
-          }
-        );
-        routes.push(localObj);
+            ["Requests Per Second"]
+          )
+        });
       });
     });
     return routes;

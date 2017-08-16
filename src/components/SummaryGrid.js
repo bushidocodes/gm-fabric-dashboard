@@ -27,7 +27,9 @@ class SummaryGrid extends Component {
   render() {
     const { errorRate, metrics } = this.props;
     const hostname = window.location.hostname;
-    const port = window.location.port || 80;
+    const port =
+      window.location.port ||
+      (window.location.protocol === "https:" ? 443 : 80);
     return (
       <div>
         <PageTitle title={`${getServicename()}: Instance 1`} />
