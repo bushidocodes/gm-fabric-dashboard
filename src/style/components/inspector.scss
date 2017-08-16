@@ -3,18 +3,17 @@
 @import '../mixins.scss';
 
 // Local Variables
+$toolbar-height: $padding-base * 7;
 
 // Helpers
 
 // Styles
-
 .inspector {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 0 auto;
   font-family: $font-stack-data;
   padding-top: $padding-base * 5;
   line-height: 1.2;
@@ -24,31 +23,17 @@
 }
 
 .inspector__data {
-  position: absolute;
-  overflow-x: hidden;
-  width: 100%;
-  top: 56px;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  overflow-scroll: touch;
   margin: 0 auto;
   overflow-y: scroll;
   word-break: break-all;
-}
-
-.inspector__key {
-  display: inline-block;
-  width: 2.5em;
-  text-align: right;
-  color: $color-content;
-  opacity: .5;
-  flex: 0 0 2.5em;
-}
-.inspector__value {
-  margin-left: $padding-base;
-  color: saturate(darken($color-highlight, 5%), 5%);
-  word-break: break-all;
-  flex: 1 1 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 $padding-base;
+  z-index: 1;
 }
 
 .inspector__search {
@@ -98,116 +83,39 @@
   top: 0;
   left: 0;
   right: 0;
-  height: $padding-base * 7;
+  height: $toolbar-height;
   padding: $padding-base;
   display: flex;
   align-items: stretch;
 }
 
-.inspector,
-.inspector__toolbar + .inspector__leaf {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.inspector__toolbar + .inspector__leaf {
-  overflow-y: scroll;
-  overflow-scroll: touch;
-  padding: $padding-base*7 $padding-base*3 $padding-base*2 $padding-base*2;
-}
-
 .inspector__line {
   display: block;
-  position: relative;
   cursor: pointer;
   display: flex;
-  padding-top: $padding-base * .5;
-  padding-bottom: $padding-base * .5;
+  padding: $padding-base*.5 $padding-base;
   word-wrap: break-word;
-}
+  transition: all .2s ease;
+  border-radius: $border-radius-base;
 
-.inspector__line__selected {
-  background: $color-highlight;
-}
+  &:first-child {
+    margin-top: $toolbar-height;
+  }
 
-.inspector__line::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-}
+  &:hover {
+    color: $color-highlight;
+  }
 
-.inspector__line:hover::after {
-  // background: rgba(0, 0, 0, 0.06);
-}
-.inspector__line:hover .inspector__value {
-  text-decoration: underline;
-}
+  &:active {
+    color: $color-highlight;
+    transform: scale(0.9875);
+    transition-duration: 0;
+  }
 
-.inspector__leaf_composite > .inspector__line {
-  cursor: pointer;
-}
-
-.inspector__radio,
-.inspector__flatpath {
-  display: none;
-}
-
-.inspector__value {
-}
-
-.inspector__search {
-}
-
-.inspector__key {
-}
-
-.inspector__value_helper,
-.inspector__value_null,
-.inspector__not-found {
-  // color: #b0b0b0;
-}
-
-.inspector__value_string {
-  // color: #798953;
-}
-
-.inspector__value_boolean {
-  // color: #75b5aa;
-}
-
-.inspector__value_number {
-  // color: #d28445;
-}
-
-.inspector__hl {
-  background: $color-highlight;
-  color: #fff;
-  box-shadow: 0 0 0 3px $color-highlight;
-  border-radius: $border-radius-base - 2px;
-}
-
-.inspector__show-original {
-  // display: inline-block;
-  // padding: 0 6px;
-  // color: #666;
-  cursor: pointer;
-}
-
-.inspector__show-original:hover {
-  // color: #111;
-}
-
-.inspector__show-original::before {
-  content: '⥂';
-}
-
-.inspector__show-original:hover::after {
-  content: 'expand';
+  &[class*="selected"] {
+    background: $color-highlight;
+    color: #fff;
+    transform: scale(1.0125);
+    z-index: 999999;
+  }
 }

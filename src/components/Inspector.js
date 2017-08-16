@@ -30,22 +30,20 @@ export default function Inspector({
           value={searchQuery}
         />
       </div>
-      <div className="inspector__data">
-        {data.length > 0 &&
-          <ul>
-            {filteredData.map(key =>
-              <li
-                className={`inspector__line ${selectedMetric === key
-                  ? "inspector__line__selected"
-                  : ""}`}
-                key={key}
-                onClick={evt => onClick(evt.target)}
-              >
-                {key}
-              </li>
-            )}
-          </ul>}
-      </div>
+      {data.length > 0 &&
+        <ul className="inspector__data">
+          {filteredData.map(key =>
+            <li
+              className={`inspector__line ${selectedMetric === key
+                ? "inspector__line__selected"
+                : ""}`}
+              key={key}
+              onClick={evt => onClick(evt.target)}
+            >
+              {key}
+            </li>
+          )}
+        </ul>}
     </div>
   );
 }
