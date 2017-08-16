@@ -56,6 +56,7 @@ server.get("/admin/metrics.json", (req, res) => {
 });
 
 server.get("/admin/threads", (req, res) => {
+  threads["threads"]["2"]["priority"] = Math.floor(Math.random() * 10) + 1;
   res.json(threads);
 });
 
