@@ -16,7 +16,7 @@ import metrics from "./jumpstate/metrics";
 import settings from "./jumpstate/settings";
 import threadsTable from "./jumpstate/threadsTable";
 import dashboards from "./jumpstate/dashboards";
-import { getBasename, getRuntime, generateThreadsEndpoint } from "./utils/head";
+import { getRuntime, getThreadsEndpoint } from "./utils/head";
 
 // Effects / Asynchronous Actions
 
@@ -50,7 +50,7 @@ Effect("fetchMetricsFailure", err => {
 /**
  * Action that fetches threads information (JVM) and stores in Redux
  */
-Effect("fetchThreads", (endpoint = generateThreadsEndpoint()) => {
+Effect("fetchThreads", (endpoint = getThreadsEndpoint()) => {
   if (!endpoint) return;
   window.ajaxWorker
     .postMessage({
@@ -98,7 +98,7 @@ Effect("initLocalStorage", () => {
     .postMessage({
       type: "init",
       runtime: getRuntime(),
-      basename: getBasename()
+      basename: window.location.href.split("#")[0] //everything up to the hash
     })
     .catch(err => console.error(err));
 });

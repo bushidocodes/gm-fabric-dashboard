@@ -2,24 +2,20 @@ import { State } from "jumpstate";
 
 import {
   getRuntime,
-  generateEndpoints,
-  generateThreadsEndpoint
+  getMetricsEndpoint,
+  getThreadsEndpoint
 } from "../utils/head";
 
 const settings = State({
   initial: {
-    baseUrl: "/",
     isPolling: true,
     pollingHasInitialized: false,
     interval: 5000,
-    metricsEndpoints: generateEndpoints(),
-    threadsEndpoint: generateThreadsEndpoint(),
+    metricsEndpoints: getMetricsEndpoint(),
+    threadsEndpoint: getThreadsEndpoint(),
     pollingFailures: 0,
     runtime: getRuntime(),
     threadsFilter: "all"
-  },
-  setBaseUrl(state, payload) {
-    return { ...state, baseUrl: payload };
   },
   setPollingAsInitialized(state, payload) {
     return { ...state, pollingHasInitialized: true };
@@ -32,6 +28,12 @@ const settings = State({
   },
   setMetricsEndpoints(state, payload) {
     return { ...state, metricsEndpoints: payload };
+  },
+  setThreadsEndpoints(state, payload) {
+    return { ...state, threadsEndpoint: payload };
+  },
+  setRuntime(state, payload) {
+    return { ...state, runtime: payload };
   },
   setThreadsFilter(state, payload) {
     return { ...state, threadsFilter: payload };

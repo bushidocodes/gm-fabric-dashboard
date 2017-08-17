@@ -6,10 +6,6 @@ pattern="static/js/main.*.js"
 JS_BUNDLE=( $pattern )
 echo $JS_BUNDLE
 
-# Quit if the parameter is empty
-[[ -z "$1" ]] && { echo "No path was entered." ; exit 1; }
-
-
 # If parameter is undo, ask for confirmation and restore backup.
 if [ "$1" == "undo" ]; then
     echo "It looks like you want to revert to a clean backup"
@@ -22,23 +18,21 @@ if [ "$1" == "undo" ]; then
     exit 1
 fi
 
+# Check for required parameters
+RUNTIME=$(printf "%q" "$1")
+
+[[ -z "$1" ]] && { echo "No runtime was entered." ; exit 1; }
+[[ -z "$2" ]] && { echo "No service name was entered." ; exit 1; }
+[[ -z "$3" ]] && { echo "No back URL was entered." ; exit 1; }
+[[ -z "$4" ]] && { echo "No metrics URL was entered." ; exit 1; }
+# Check for threadsURL if runtime if JVM
+[[ "$1" == "JVM" ]  && [ -z "$5" ]] && { echo "No threads URL was entered." ; exit 1; }
+
 echo "{$1}"
-if [[ $1 != */gmadmin/ ]]
-then
-  echo 'Your path does not terminate in /gmadmin/'
-  echo 'This path MUST terminate in /gmadmin/ to properly infer the absolute paths'
-  echo 'of the metrics to scrape. The app uses a RegExp to replace /gmadmin/ with the following:'
-  echo 'For JVM, /admin/metrics.json and /admin/threads'
-  echo 'For Golang, /admin/metrics'
-  exit 1
-else  
-  BASEURL=$(printf "%q" "$1")
   echo 'It looks like you want to deploy the dashboard to' $BASEURL
   echo 'The app uses a RegExp to replace /gmadmin/ with the following:'
   echo 'For JVM, /admin/metrics.json and /admin/threads'
   echo 'For Golang, /admin/metrics'
-fi
-# Check to make sure argument exists. Quit otherwise.
 
 read -p "Are you sure? " -n 1 -r
 echo    # (optional) move to a new line

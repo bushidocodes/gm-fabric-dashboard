@@ -1,17 +1,4 @@
 /**
- * getBasename is a utility function that extracts the baseurl property from the HEAD of the index.html file. This is
- * the means by which a dashboard is configured to be served out on a deeply nested path.
- * @returns {String}
- */
-export function getBasename() {
-  if (process.env.NODE_ENV === "production") {
-    return document.head.querySelector("[property=baseUrl]").content;
-  } else {
-    return "/gmadmin/";
-  }
-}
-
-/**
  * getServicename is a utility function that extracts the service property from the HEAD of the index.html file. 
  * @returns {String}
  */
@@ -52,20 +39,21 @@ export function getRuntime() {
 }
 
 /**
- * generateEndpoints is a utility function that returns the endpoints that should be scraped for current runtime
- * This should ONLY be used to populate the initial Redux state
+ * getMetricsEndpoint is a utility function that returns the initial metrics endpoints
+ * that should be scraped for current runtime. This should ONLY be used to populate the
+ * initial Redux state
  * @returns {String[]}
  */
-export function generateEndpoints() {
-  switch (getRuntime()) {
-    case "ENVOY":
-      return [getBasename().replace("/gmadmin/", "/stats")];
-    case "JVM":
-      return [getBasename().replace("/gmadmin/", "/admin/metrics.json")];
-    case "GOLANG":
-      return [getBasename().replace("/gmadmin/", "/admin/metrics")];
-    default:
-      return [];
+export function getMetricsEndpoint() {
+  const metricsEndpoint = document.head.querySelector(
+    "[property=metricsEndpoint]"
+  ).content;
+  if (process.env.NODE_ENV === `development` && getRuntime() === "JVM") {
+    return ["admin/metrics.json"];
+  } else if (metricsEndpoint !== "__METRICS_ENDPOINT__") {
+    return [metricsEndpoint];
+  } else {
+    return [];
   }
 }
 
@@ -74,12 +62,16 @@ export function generateEndpoints() {
  * This should ONLY be used to populate the initial Redux state
  * @returns {String}
  */
-export function generateThreadsEndpoint() {
-  switch (getRuntime()) {
-    case "JVM":
-      return getBasename().replace("/gmadmin/", "/admin/threads");
-    case "GOLANG":
-    default:
-      return "";
+export function getThreadsEndpoint() {
+  const threadsEndpoint = document.head.querySelector(
+    "[property=threadsEndpoint]"
+  ).content;
+  const runtime = getRuntime();
+  if (process.env.NODE_ENV === `development` && runtime === "JVM") {
+    return "admin/threads";
+  } else if (process.env.NODE_ENV === `production` && runtime === "JVM") {
+    return threadsEndpoint;
+  } else {
+    return "";
   }
 }
