@@ -39,6 +39,7 @@
 
 .app-footer {
   user-select: none;
+  overflow: hidden;
   padding: $padding-base*.5;
   display: flex;
   flex-direction: row;
@@ -52,7 +53,7 @@
   }
 
   .long-logo {
-    flex: 1 1 33%;
+    flex: 0 1 auto;
     text-align: left;
     padding: 0 $padding-base;
     transition: all .2s ease;
@@ -71,15 +72,22 @@
   .copyright {
     margin: 0;
     text-transform: uppercase;
-    flex: 1 1 33%;
+    flex: 1 1 100%;
     letter-spacing: .03em;
-    opacity: .8;
     text-align: center;
+    transition: opacity .2s ease;
     cursor: default;
+    z-index: -1;
+    opacity: 0;
+
+    @media all and (min-width: 800px) {
+      opacity: .8;
+      z-index: 1;
+    }
   }
 
   .links {
-    flex: 1 1 33%;
+    flex: 0 0 auto;
     text-align: right;
     padding: 0 0 0 $padding-base;
 
