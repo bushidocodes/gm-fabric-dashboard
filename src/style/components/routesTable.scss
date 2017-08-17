@@ -108,3 +108,31 @@
     height: 300px;
   }
 }
+
+.no-routes-found-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  user-select: none;
+  cursor: default;
+  .content {
+    font-size: $font-size-hero;
+    border: 1px solid $color-warning;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    color: $color-content;
+    border-radius: $border-radius-base * 2;
+    flex-basis: 600px;
+    padding: $padding-base * 8 $padding-base * 4;
+    padding-top: $padding-base * 8;
+    padding-bottom: $padding-base * 8;
+    margin: $padding-base * 4;
+    span {
+      margin-left: 20px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ const router = jsonServer.router();
 const middlewares = jsonServer.defaults();
 const metrics = require("./metrics.json");
 const threads = require("./threads.json");
+const _ = require("lodash");
 
 //
 
@@ -12,6 +13,7 @@ server.use(middlewares);
 
 // Add custom routes before JSON Server router
 server.get("/admin/metrics.json", (req, res) => {
+  // Uncomment this block to simulate random amounts of requests and failures
   const requestsESS = Math.floor(Math.random() * 10) + 1;
   const successesESS = Math.floor(Math.random() * requestsESS);
   metrics[
@@ -51,8 +53,13 @@ server.get("/admin/metrics.json", (req, res) => {
   metrics["route/GET/requests"] += requestsIndexGet;
   metrics["https/requests"] += requestsIndexGet;
   metrics["route/GET/status/2XX"] += successesIndexGet;
-
   res.json(metrics);
+
+  // Uncomment this block to have a microservice with no reported routes
+  // const filteredMetrics = _.omitBy(metrics, (value, key) =>
+  //   key.includes("route")
+  // );
+  // res.json(filteredMetrics);
 });
 
 server.get("/admin/threads", (req, res) => {

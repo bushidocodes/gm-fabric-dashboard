@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import RoutesTable from "./RoutesTable";
+import RoutesTableToolbar from "./RoutesTableToolbar";
 
 import { getRoutesTable } from "../utils/routes";
 
@@ -55,54 +56,39 @@ class RoutesGrid extends Component {
     }
   }
 
+  setFilterString = filterString => this.setState({ filterString });
+
   render() {
-    return (
-      <div className="routes-table-container">
-        <div className="toolbar">
-          <div className="toolbar-left">
-            <form>
-              <input
-                className="form-control"
-                onChange={evt =>
-                  this.setState({ filterString: evt.target.value })}
-                placeholder="Search Routes"
-                type="search"
-                value={this.state.filterString}
-              />
-            </form>
-          </div>
-          <div className="toolbar-right">
-            <div className="uk-button-group">
-              <button className="btn">
-                <span className="label">Sort</span>
-                <span className="icon" data-uk-icon="icon: triangle-down" />
-              </button>
-              <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
-                <ul className="uk-nav uk-dropdown-nav">
-                  <li onClick={evt => this.setKeyToSortBy("route")}>Route</li>
-                  <li onClick={evt => this.setKeyToSortBy("totalRequests")}>
-                    Total Requests
-                  </li>
-                  <li onClick={evt => this.setKeyToSortBy("errorRate")}>
-                    Error %
-                  </li>
-                </ul>
-              </div>
-            </div>
+    if (this.props.routes && this.props.routes.length > 0) {
+      return (
+        <div className="routes-table-container">
+          <RoutesTableToolbar
+            filterString={this.state.filterString}
+            setFilterString={this.setFilterString}
+            setKeyToSortBy={this.setKeyToSortBy}
+          />
+          <RoutesTable
+            routes={this.sort(
+              this.props.routes.filter(
+                routeObj =>
+                  routeObj.route
+                    .toLowerCase()
+                    .indexOf(this.state.filterString.toLowerCase()) !== -1
+              )
+            )}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div className="no-routes-found-error">
+          <div className="content">
+            <icon data-uk-icon="icon: warning; ratio: 1.8" />
+            <span>No Routes Found </span>
           </div>
         </div>
-        <RoutesTable
-          routes={this.sort(
-            this.props.routes.filter(
-              routeObj =>
-                routeObj.route
-                  .toLowerCase()
-                  .indexOf(this.state.filterString.toLowerCase()) !== -1
-            )
-          )}
-        />
-      </div>
-    );
+      );
+    }
   }
 }
 
