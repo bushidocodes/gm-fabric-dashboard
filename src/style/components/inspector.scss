@@ -21,7 +21,7 @@ $toolbar-height: $padding-base * 7;
   border-radius: $border-radius-base;
 }
 
-.inspector__data {
+.inspector-data {
   overflow-scroll: touch;
   margin: 0 auto;
   overflow-y: scroll;
@@ -35,22 +35,7 @@ $toolbar-height: $padding-base * 7;
   z-index: 1;
 }
 
-.inspector__key {
-  display: inline-block;
-  width: 2.5em;
-  text-align: right;
-  color: contrast-color($color-content-background);
-  opacity: .5;
-  flex: 0 0 2.5em;
-}
-.inspector__value {
-  margin-left: $padding-base;
-  color: darken-color($color-highlight, 5%);
-  word-break: break-all;
-  flex: 1 1 100%;
-}
-
-.inspector__search {
+.inspector-search {
   @include function-button-base();
   @include function-button-style();
   @include function-button-size();
@@ -91,7 +76,7 @@ $toolbar-height: $padding-base * 7;
   }
 }
 
-.inspector__toolbar {
+.inspector-toolbar {
   z-index: 100;
   position: absolute;
   top: 0;
@@ -103,7 +88,7 @@ $toolbar-height: $padding-base * 7;
   align-items: stretch;
 }
 
-.inspector__line {
+.inspector-item {
   display: block;
   cursor: pointer;
   display: flex;
@@ -126,7 +111,7 @@ $toolbar-height: $padding-base * 7;
     transition-duration: 0;
   }
 
-  &[class*="selected"] {
+  &[class*="active"] {
     background: $color-highlight;
     color: #fff;
     transform: scale(1.0125);

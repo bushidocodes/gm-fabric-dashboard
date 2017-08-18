@@ -21,9 +21,9 @@ export default function Inspector({
     : data;
   return (
     <div className="inspector">
-      <div className="inspector__toolbar">
+      <div className="inspector-toolbar">
         <input
-          className="inspector__search"
+          className="inspector-search"
           onChange={evt => onSearch(evt.target.value)}
           placeholder="Search"
           type="search"
@@ -31,11 +31,11 @@ export default function Inspector({
         />
       </div>
       {data.length > 0 &&
-        <ul className="inspector__data">
+        <ul className="inspector-data">
           {filteredData.map(key =>
             <li
-              className={`inspector__line ${selectedMetric === key
-                ? "inspector__line__selected"
+              className={`inspector-item ${selectedMetric === key
+                ? "active"
                 : ""}`}
               key={key}
               onClick={evt => onClick(evt.target)}
