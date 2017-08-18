@@ -4,24 +4,26 @@
 @import 'buttons.scss';
 
 // Local Variables
-$nav-widget-background-color: $color-grey-1;
-$nav-widget-text-color: $color-white;
+$nav-widget-background-color: contrast-color($color-sidebar-background, 12%);
 $go-up-icon-size: $padding-base * 2;
 
 // Helpers
+$nav-widget-text-color: contrast-color($nav-widget-background-color);
+
 @mixin nav-siblings-dropdown-style {
-  background-color: $color-grey-1;
-  color: $color-white;
+  background-color: $nav-widget-background-color;
+  color: $nav-widget-text-color;
   font-size: $font-size-base;
-  border-radius: $border-radius-default;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .2);
+  border-radius: $border-radius-base;
+  box-shadow: 0 0 0 1px transparentize($nav-widget-background-color, .2);
 
   a {
-    color: $color-white;
-    box-shadow: inset 0 -1px rgba(0, 0, 0, .25);
+    color: inherit;
+    box-shadow: inset 0 -1px edge-color($nav-widget-background-color);
+    background-color: $nav-widget-background-color;
 
     &:hover {
-      background-color: lighten($color-grey-1, 6%);
+      background-color: contrast-color($nav-widget-background-color, 6%);
     }
   }
 
@@ -39,7 +41,7 @@ $go-up-icon-size: $padding-base * 2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-radius: $border-radius-default;
+  border-radius: $border-radius-base;
   margin: $padding-base / 4;
   overflow: hidden;
 
@@ -52,15 +54,14 @@ $go-up-icon-size: $padding-base * 2;
     @include function-button-base();
     @include function-button-size();
     @include function-button-style(
-      $button-label-color-base: $color-white,
-      $button-background-color-base: $color-grey-1,
+      $button-background-color-base: $nav-widget-background-color,
       $button-outline-style: flat
     );
     position: relative;
     max-width: 100%;
     border-radius: 0;
     height: $padding-base * 4;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 1px edge-color($nav-widget-background-color);
 
     .icon {
       color: $color-highlight;

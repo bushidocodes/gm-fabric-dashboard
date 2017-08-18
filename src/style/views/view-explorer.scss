@@ -14,16 +14,19 @@
   padding: 0 $padding-base*2 $padding-base*2;
   height: 100%;
 
+  .metrics-list,
+  .metrics-graph-display {
+    background-color: contrast-color($color-content-background, 4%);
+  }
+
   .metrics-list {
     flex: 0 0 300px;
-    background-color: $color-content-background;
     position: relative;
     margin-bottom: $padding-base * 2;
   }
 
   .metrics-graph-display {
     flex: 1 1 100%;
-    background-color: $color-grey-4;
     position: relative;
 
     .chart {

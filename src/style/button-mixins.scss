@@ -7,16 +7,17 @@ $button-font-size-base-default: $font-size-base;
 $button-font-weight-default: 500;
 $button-icon-size-default: 1.5em; // default: 1.5em
 $button-size-default: normal; // xs, sm, normal, lg, xl // default: normal
-$button-label-color-base-default: $color-content;
+$button-background-color-base-default: $color-white;
+$button-border-color-base-default: $button-background-color-base-default;
+$button-label-color-base-default: contrast-color(
+  $button-background-color-base-default
+);
 
 $button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
 $button-content-spacing-base-default: $padding-base * .75;
 
-$button-background-color-base-default: $color-white;
-$button-border-color-base-default: $button-background-color-base-default;
-
 $button-border-width-base-default: 1px;
-$button-border-radius-base-default: $border-radius-default;
+$button-border-radius-base-default: $border-radius-base;
 
 $button-reaction-style-default: darken; // darken, lighten // default: darken
 $button-reaction-degree-default: 6%; // 0-100% // default: 6%
@@ -113,8 +114,8 @@ $button-font-weight: $button-font-weight-default) {
 }
 
 @mixin function-button-style(
-$button-label-color-base: $button-label-color-base-default,
 $button-background-color-base: $button-background-color-base-default,
+$button-label-color-base: contrast-color($button-background-color-base),
 $button-border-color-base: $button-background-color-base,
 $button-border-width-base: $button-border-width-base-default,
 $button-border-radius-base: $button-border-radius-base-default,
@@ -166,249 +167,249 @@ $button-font-weight: $button-font-weight-default) {
   @if $button-reaction-style == darken {
     // Hover styles
     $hover-background-styles: (
-      background-color: darken($button-background-color-base, $button-hover-reaction-degree)
+      background-color: darker-color($button-background-color-base, $button-hover-reaction-degree)
     );
     $hover-label-styles: (
-      color: darken($button-label-color-base, $button-hover-reaction-degree)
+      color: darker-color($button-label-color-base, $button-hover-reaction-degree)
     );
     $hover-border-styles: (
-      border-color: darken($button-border-color-base, $button-hover-reaction-degree)
+      border-color: darker-color($button-border-color-base, $button-hover-reaction-degree)
     );
     // Down styles
     $down-background-styles: (
-      background-color: darken($button-background-color-base, $button-hover-reaction-degree +
+      background-color: darker-color($button-background-color-base, $button-hover-reaction-degree +
             $button-down-reaction-degree)
     );
     $down-label-styles: (
-      color: darken($button-label-color-base, $button-hover-reaction-degree +
+      color: darker-color($button-label-color-base, $button-hover-reaction-degree +
             $button-down-reaction-degree)
     );
     $down-border-styles: (
-      border-color: darken($button-border-color-base, $button-hover-reaction-degree +
+      border-color: darker-color($button-border-color-base, $button-hover-reaction-degree +
             $button-down-reaction-degree)
     );
     // Active styles
     $active-background-styles: (
-      background-color: darken($button-background-color-base, $button-active-reaction-degree)
+      background-color: darker-color($button-background-color-base, $button-active-reaction-degree)
     );
     $active-label-styles: (
-      color: darken($button-label-color-base, $button-active-reaction-degree)
+      color: darker-color($button-label-color-base, $button-active-reaction-degree)
     );
     $active-border-styles: (
-      border-color: darken($button-border-color-base, $button-active-reaction-degree)
+      border-color: darker-color($button-border-color-base, $button-active-reaction-degree)
     );
     // Active Down styles
     $active-down-background-styles: (
-      background-color: darken($button-background-color-base, $button-active-reaction-degree +
+      background-color: darker-color($button-background-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
     $active-down-label-styles: (
-      color: darken($button-label-color-base, $button-active-reaction-degree +
+      color: darker-color($button-label-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
     $active-down-border-styles: (
-      border-color: darken($button-border-color-base, $button-active-reaction-degree +
+      border-color: darker-color($button-border-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
   } @else {
     // Assume button reaction style == lighten
     // Hover styles
     $hover-background-styles: (
-      background-color: lighten($button-background-color-base, $button-hover-reaction-degree)
+      background-color: lighten-color($button-background-color-base, $button-hover-reaction-degree)
     );
     $hover-label-styles: (
-      color: lighten($button-label-color-base, $button-hover-reaction-degree)
+      color: lighten-color($button-label-color-base, $button-hover-reaction-degree)
     );
     $hover-border-style: (
-      border-color: lighten($button-border-color-base, $button-hover-reaction-degree)
+      border-color: lighten-color($button-border-color-base, $button-hover-reaction-degree)
     );
     // Down styles
     $down-background-styles: (
-      background-color: lighten($button-background-color-base, $button-hover-reaction-degree +
+      background-color: lighten-color($button-background-color-base, $button-hover-reaction-degree +
             $button-down-reaction-degree)
     );
     $down-label-styles: (
-      color: lighten($button-label-color-base, $button-down-reaction-degree)
+      color: lighten-color($button-label-color-base, $button-down-reaction-degree)
     );
     $down-border-style: (
-      border-color: lighten($button-border-color-base, $button-down-reaction-degree)
+      border-color: lighten-color($button-border-color-base, $button-down-reaction-degree)
     );
     // Active styles
     $active-background-styles: (
-      background-color: lighten($button-background-color-base, $button-active-reaction-degree)
+      background-color: lighten-color($button-background-color-base, $button-active-reaction-degree)
     );
     $active-label-styles: (
-      color: lighten($button-label-color-base, $button-active-reaction-degree)
+      color: lighten-color($button-label-color-base, $button-active-reaction-degree)
     );
     $active-border-styles: (
-      border-color: lighten($button-border-color-base, $button-active-reaction-degree)
+      border-color: lighten-color($button-border-color-base, $button-active-reaction-degree)
     );
     // Active Down styles
     $active-down-background-styles: (
-      background-color: lighten($button-background-color-base, $button-active-reaction-degree +
+      background-color: lighten-color($button-background-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
     $active-down-label-styles: (
-      color: lighten($button-label-color-base, $button-active-reaction-degree +
+      color: lighten-color($button-label-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
     $active-down-border-styles: (
-      border-color: lighten($button-border-color-base, $button-active-reaction-degree +
+      border-color: lighten-color($button-border-color-base, $button-active-reaction-degree +
             $button-down-reaction-degree)
     );
   }
 
   @if $button-outline-style == shadow {
     $static-border-bottom-styles: (
-      border-bottom-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
     );
     $hover-border-bottom-styles: (
-      border-bottom-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
     );
     $down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
     );
     $active-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
     );
     $active-down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
     );
   } @else if $button-outline-style == raised-outline {
     // Static styles
     $static-border-styles: (
-      border-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+      border-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
     );
     $static-border-top-styles: (
-      border-top-color: lighten(map-get($static-border-styles, border-color), $button-outline-style-depth *
+      border-top-color: lighten-color(map-get($static-border-styles, border-color), $button-outline-style-depth *
             .5)
     );
     $static-border-bottom-styles: (
-      border-bottom-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
     );
     // Hover styles
     $hover-border-styles: (
-      border-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+      border-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
     );
     $hover-border-top-styles: (
-      border-top-color: lighten(map-get($hover-border-styles, border-color), $button-outline-style-depth *
+      border-top-color: lighten-color(map-get($hover-border-styles, border-color), $button-outline-style-depth *
             .5)
     );
     $hover-border-bottom-styles: (
-      border-bottom-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
     );
     // Down styles
     $down-border-styles: (
-      border-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+      border-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
     );
     $down-border-top-styles: (
-      border-top-color: lighten(map-get($down-border-styles, border-color), $button-outline-style-depth *
+      border-top-color: lighten-color(map-get($down-border-styles, border-color), $button-outline-style-depth *
             .5)
     );
     $down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
     );
     // Active styles
     $active-border-styles: (
-      border-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+      border-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
     );
     $active-border-top-styles: (
-      border-top-color: lighten(map-get($active-border-styles, border-color), $button-outline-style-depth *
+      border-top-color: lighten-color(map-get($active-border-styles, border-color), $button-outline-style-depth *
             .5)
     );
     $active-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
     );
     // Active Down styles
     $active-down-border-styles: (
-      border-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+      border-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
     );
     $active-down-border-top-styles: (
-      border-top-color: lighten(map-get($active-down-border-styles, border-color), $button-outline-style-depth *
+      border-top-color: lighten-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth *
             .5)
     );
     $active-down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
     );
   } @else if $button-outline-style == raised {
     // Static styles
     $static-border-top-styles: (
-      border-top-color: lighten(map-get($static-border-styles, border-color), $button-outline-style-depth)
+      border-top-color: lighten-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
     );
     $static-border-bottom-styles: (
-      border-bottom-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
     );
     // Hover styles
     $hover-border-top-styles: (
-      border-top-color: lighten(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+      border-top-color: lighten-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
     );
     $hover-border-bottom-styles: (
-      border-bottom-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
     );
     // Down styles
     $down-border-top-styles: (
-      border-top-color: lighten(map-get($down-border-styles, border-color), $button-outline-style-depth)
+      border-top-color: lighten-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
     );
     $down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
     );
     // Active styles
     $active-border-top-styles: (
-      border-top-color: lighten(map-get($active-border-styles, border-color), $button-outline-style-depth)
+      border-top-color: lighten-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
     );
     $active-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
     );
     // Active Down styles
     $active-down-border-top-styles: (
-      border-top-color: lighten(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+      border-top-color: lighten-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
     );
     $active-down-border-bottom-styles: (
-      border-bottom-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+      border-bottom-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
     );
   } @else if $button-outline-style == outline {
     @if $button-reaction-style == darken {
       // Static styles
       $static-border-styles: (
-        border-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
       );
       // Hover styles
       $hover-border-styles: (
-        border-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
       );
       // Down styles
       $down-border-styles: (
-        border-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
       );
       // Active styles
       $active-border-styles: (
-        border-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
       );
       // Active Down styles
       $active-down-border-styles: (
-        border-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
       );
     } @else {
       // Assume button-reaction-style == lighten
       // Static styles
       $static-border-styles: (
-        border-color: darken(map-get($static-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
       );
       // Hover styles
       $hover-border-styles: (
-        border-color: darken(map-get($hover-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
       );
       // Down styles
       $down-border-styles: (
-        border-color: darken(map-get($down-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
       );
       // Active styles
       $active-border-styles: (
-        border-color: darken(map-get($active-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
       );
       // Active Down styles
       $active-down-border-styles: (
-        border-color: darken(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
+        border-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
       );
     }
   }
@@ -558,15 +559,15 @@ $button-font-weight: $button-font-weight-default) {
   &[disabled]:active {
     cursor: default;
     opacity: .8;
-    background-color: darken(
+    background-color: darker-color(
       desaturate($button-background-color-base, 100%),
       $button-reaction-degree
     );
-    border-color: darken(
+    border-color: darker-color(
       desaturate($button-border-color-base, 100%),
       $button-reaction-degree
     );
-    color: darken(
+    color: darker-color(
       desaturate($button-label-color-base, 100%),
       $button-reaction-degree
     );

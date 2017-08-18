@@ -4,17 +4,19 @@
 @import 'buttons.scss';
 
 // Local Variables
-$summary-bar-background-color: transparentize($color-sidebar-background, .25);
-$summary-bar-card-active-background-color: transparentize($color-grey-1, .125);
-$summary-bar-card-text-color: $color-white;
+$summary-bar-background-color: $color-sidebar-background;
 
 // Helpers
+$summary-bar-card-active-background-color: contrast-color(
+  $summary-bar-background-color,
+  12%
+);
+$summary-bar-card-text-color: contrast-color($summary-bar-background-color);
 
 // Styles
 
 .summary-bar {
   flex: 1 1 100%;
-  box-shadow: inset -1px 0 rgba(0, 0, 0, .7);
   transition: all .15s ease;
   user-select: none;
 }
@@ -35,7 +37,7 @@ $summary-bar-card-text-color: $color-white;
     flex-direction: row;
     align-items: flex-start;
     padding: $padding-base $padding-base*.5;
-    border-top: 1px solid transparentize($color-white, .85);
+    border-top: 1px solid edge-color($summary-bar-background-color);
     position: relative;
 
     > * {
@@ -65,7 +67,7 @@ $summary-bar-card-text-color: $color-white;
     @include function-button-base();
     @include function-button-size();
     @include function-button-style(
-      $button-label-color-base: $color-grey-2,
+      $button-label-color-base: contrast-color($summary-bar-background-color, 60%),
       $button-background-color-base: transparent,
       $button-outline-style: raised
     );
@@ -111,7 +113,6 @@ $summary-bar-card-text-color: $color-white;
     text-align: right;
   }
   .summary-bar-card-kv-value {
-    color: $color-white;
     flex-basis: 60%;
   }
 
@@ -160,10 +161,6 @@ $summary-bar-card-text-color: $color-white;
     &:hover,
     &:active,
     &:focus {
-      .summary-bar-card-title {
-        border-top-color: transparent;
-      }
-
       .summary-bar-card-heading {
         font-weight: 600;
       }

@@ -7,7 +7,7 @@
 // Helpers
 @mixin styles-for-footer-branding() {
   text-align: center;
-  color: $color-white;
+  color: contrast-color($color-sidebar-background);
 }
 
 // Styles
@@ -43,7 +43,7 @@
   padding: $padding-base*.5;
   display: flex;
   flex-direction: row;
-  color: lighten($color-content, 10%);
+  color: contrast-color($color-content-background, 80%);
   font-size: $font-size-sm;
   align-items: center;
 
@@ -92,7 +92,7 @@
     padding: 0 0 0 $padding-base;
 
     a {
-      color: $color-grey-2;
+      color: contrast-color($color-content-background, 40%);
       padding: 0 $padding-base;
 
       &:hover {

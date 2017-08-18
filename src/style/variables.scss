@@ -1,33 +1,62 @@
 // variables.scss
+@import 'functions.scss';
 
 // Color
-$decipher-green: #0aab2a;
-$decipher-green-hover: darken($decipher-green, 5%);
-$decipher-green-active: darken($decipher-green, 10%);
-$decipher-black: #000;
-$decipher-black-hover: lighten($decipher-black, 5%);
-$decipher-black-active: lighten($decipher-black, 10%);
-
 $color-brand-primary: #0aab2a;
-$color-grey-1: #4a4a4a;
-$color-grey-2: #9b9b9b;
-$color-grey-3: #ededed;
-$color-grey-4: #f8f8f8;
+$color-brand-secondary: #0aab2a;
+
 $color-red: #d0021b;
 $color-black: #000;
 $color-green: #0aab2a;
 $color-white: #fff;
 
-$color-success: #0aab2a;
-$color-warning: #f5a623;
-$color-danger: $color-red;
-
-$color-content: transparentize($color-black, .2);
-$color-content-muted: transparentize($color-black, .4);
 $color-highlight: $color-brand-primary;
 
+$color-success: #0aab2a;
+$color-danger: red;
+$color-warning: #f5a623;
+$color-info: blue;
+
+// Theme Configuration
 $color-sidebar-background: $color-black;
 $color-content-background: $color-white;
+$border-radius-base: 3px;
+$padding-base: 8px;
+
+// Contrasts
+$dark-on-light-contrast-enhancement-ratio: 2;
+$contrast-interval: 4%;
+$color-content: transparentize(contrast-color($color-content-background), .1);
+$color-content-muted: transparentize($color-content, .2);
+
+// Color Ranges
+$colors-datarange-blue-to-red: #3a76b1, #6993c2, #95b2d2, #c4d2e1, #f1f1f1,
+  #e8cdd2, #dfa9b0, #d48491, #ca6070;
+$colors-datarange-blueberry-kiwi: #1d334c, #486488, #d4e3ef, #76a834, #d2e3b4;
+$colors-datarange-seaweed: #1eb0d4, #127389, #1aa34e, #128a42, #bed857;
+$colors-datarange-rainbow: custom-color-range(
+  $base-color-1: complement($color-brand-primary),
+  $type: qualitative,
+  $size: 4
+);
+$colors-datarange-subtle: custom-color-range(
+  $base-color-1: $color-brand-primary,
+  $type: quantitative,
+  $direction: to-dark,
+  $size: 18
+);
+$colors-datarange-desert: custom-color-range(
+  $base-color-1: #e0c39c,
+  $type: quantitative,
+  $direction: to-dark,
+  $size: 8
+);
+$colors-datarange-autumn: custom-color-range(
+  $base-color-1: orange,
+  $type: quantitative,
+  $direction: to-light,
+  $size: 4
+);
 
 // Typography
 
@@ -54,10 +83,3 @@ $font-size-lg: 18px;
 $font-size-base: 14px;
 $font-size-sm: 11px;
 $font-size-xs: 9px;
-
-// Layout
-$padding-base: 8px;
-
-// Other
-$border-radius-default: 3px;
-$border-radius-base: 3px;

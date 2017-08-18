@@ -4,7 +4,6 @@
 
 // Local Variables
 $section-icon-size: $padding-base * 3;
-$section-border-color: $color-grey-3;
 $section-border-width: 1px;
 $section-header-spacing: $padding-base $padding-base*2;
 $section-header-icon-spacing: $padding-base;
@@ -12,6 +11,7 @@ $section-header-title-size: $font-size-lg;
 $section-content-padding: $padding-base;
 
 // Helpers
+$section-border-color: edge-color($color-content-background);
 
 @mixin section-title-styles() {
 }
@@ -29,6 +29,7 @@ $section-content-padding: $padding-base;
     align-items: center;
     padding: $section-header-spacing;
     border-top: $section-border-width solid $section-border-color;
+    color: contrast-color($color-content-background);
 
     > .section-icon {
       flex: 0 0 auto;
@@ -37,6 +38,7 @@ $section-content-padding: $padding-base;
 
     > .section-title {
       @include section-title-styles();
+      color: inherit;
       font-size: $section-header-title-size;
       margin: 0;
     }

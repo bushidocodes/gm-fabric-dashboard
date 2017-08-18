@@ -1,0 +1,134 @@
+// functions.scss
+
+// Color Functions
+
+// Darken the color, but add a touch of saturation for a more natural shadow look
+@function darker-color(
+  $color,
+  $percent) {
+  // If the element has any substantial color to it, then you can mess with the saturation
+  @if saturation($color) > 10 {
+    @return saturate(darken($color, $percent), $percent);
+  } @else {
+    // Otherwise, don't add color where there wasn't any to start with
+    @return darken($color, $percent);
+  }
+}
+
+// Darken the color, but wash out the color a bit, for a more natural highlighted look
+@function lighter-color(
+  $color,
+  $percent) {
+  // If the element has any substantial color to it, then you can mess with the saturation
+  @if saturation($color) > 10 {
+    @return desaturate(lighten($color, $percent), $percent);
+  } @else {
+    // Otherwise, don't add color where there wasn't any to start with
+    @return lighten($color, $percent);
+  }
+}
+
+// Derive a readable content color from the background color of an element
+@function contrast-color(
+  $background-color,
+  $contrast: 100%) {
+  @if lightness($background-color) > 50 {
+    @return mix(#000, $background-color, $contrast);
+  } @else {
+    // Increase the contrast base for inverted colors, because light is strange
+    $enhanced-contrast: $contrast * $dark-on-light-contrast-enhancement-ratio;
+    @if $enhanced-contrast > 100% {
+      $enhanced-contrast: 100%;
+    }
+    @return mix(invert(#000), $background-color, $enhanced-contrast);
+  }
+}
+
+// Derive a subtle keyline color for element separators
+@function edge-color(
+  $background-color,
+  $contrast: 8%) {
+  // If the element is very dark, use a light edge color
+  @if lightness($background-color) < 10 {
+    $enhanced-contrast: $contrast * $dark-on-light-contrast-enhancement-ratio;
+    @if $enhanced-contrast > 100% {
+      $enhanced-contrast: 100%;
+    }
+    @return lighter-color($background-color, $enhanced-contrast);
+  } @else {
+    // Otherwise, use a natural dark edge color
+    @return darker-color($background-color, $contrast);
+  }
+}
+
+// Create a range of colors for use in data displays or widgets
+@function custom-color-range(
+  $base-color-1: blue,
+  $type: qualitative,
+  $direction: to-dark,
+  $size: 12,
+  $variance: .5
+) {
+  // Initialize the list with the first color
+  $colors: $base-color-1;
+  // Reset the saturation and lightness to neutral starting point
+  $hue-of-base-color-1: hsl(hue($base-color-1), 50%, 50%);
+
+  // Single-color scales indicating more or less of a value
+  @if $type == 'quantitative' {
+    $color-change-per-increment: percentage(1 / $size) * $variance;
+    $color-increments: $size;
+
+    @if $direction == 'to-light' {
+      // Set the first color and reset the list with the new first color
+      $starting-color: darker-color(
+        $hue-of-base-color-1,
+         (($color-change-per-increment) * ($color-increments / 2))
+      );
+      // Reset the list with the new first color
+      $colors: $starting-color;
+      // Lighten the color as we proceed
+      @for $i from 1 through $size - 1 {
+        $colors: append(
+          $colors,
+          lighter-color($starting-color, $color-change-per-increment * $i)
+        );
+      }
+    } @else if $direction == 'to-dark' {
+      // Darken to prepare for processing
+
+      // Set the first color and reset the list with the new first color
+      $starting-color: lighter-color(
+        $hue-of-base-color-1,
+         (($color-change-per-increment) * ($color-increments / 2))
+      );
+      $colors: $starting-color;
+      // Darken the color as we proceed
+      @for $i from 1 through $size - 1 {
+        $colors: append(
+          $colors,
+          darker-color($starting-color, $color-change-per-increment * $i)
+        );
+      }
+    }
+
+    @return $colors;
+
+    // Multi-color scales indicating different kinds of thing
+  } @else if $type == 'qualitative' {
+    // Change the color by an equal amount each time, with the total equalling a full rotation
+    $color-change-per-increment: (1 / $size) * 360;
+    // Reset the list with the first color
+    $colors: $base-color-1;
+
+    @for $i from 1 through $size - 1 {
+      // Shift the hue as we go along
+      $colors: append(
+        $colors,
+        adjust-hue($base-color-1, $color-change-per-increment * $i)
+      );
+    }
+
+    @return $colors;
+  }
+}

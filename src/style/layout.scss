@@ -40,6 +40,17 @@ $sidebar-width-base: 230px;
   background-size: 300% auto;
   background-repeat: no-repeat;
   background-position: bottom center;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-right: 1px solid edge-color($color-sidebar-background);
+  }
 }
 
 .app-content {

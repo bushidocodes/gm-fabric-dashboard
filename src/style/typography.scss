@@ -20,6 +20,7 @@ h5,
 h6 {
   font-family: $font-stack-base;
   font-weight: $font-weight-base;
+  color: inherit;
 }
 
 h1 {
@@ -53,7 +54,7 @@ small {
 }
 
 .uk-text-primary {
-  color: $decipher-green !important;
+  color: $color-brand-primary !important;
 }
 
 a {

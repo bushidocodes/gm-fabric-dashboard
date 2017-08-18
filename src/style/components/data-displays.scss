@@ -1,17 +1,23 @@
 // components/data-displays.scss
 @import '../variables.scss';
 @import '../mixins.scss';
+@import '../functions.scss';
 
 // Local Variables
-$readout-feature-background-color-base: $color-grey-4;
-$readout-feature-text-color-base: $color-content;
-$readout-feature-primary-background-color-base: $color-grey-1;
+$readout-feature-background-contrast: 4%;
+$readout-feature-background-color-base: contrast-color(
+  $color-content-background,
+  $readout-feature-background-contrast
+);
+$readout-feature-primary-background-color-base: $color-highlight;
 $readout-feature-primary-text-color-base: $color-white;
+$readout-dashboard-colors: $colors-datarange-rainbow;
 
 // Helpers
 
 // Styles
 .readout-dashboard-row {
+  content: $colors-datarange-rainbow;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -22,6 +28,18 @@ $readout-feature-primary-text-color-base: $color-white;
 
   > .readout {
     margin: $padding-base / 2;
+    flex-grow: 1;
+  }
+
+  @for $i from 1 through length($readout-dashboard-colors) {
+    $background-color: nth($readout-dashboard-colors, $i);
+    .readout:nth-child(#{$i}n) {
+      color: contrast-color($background-color, 95%);
+      background-image: linear-gradient(
+        $background-color,
+        darker-color($background-color, 8%)
+      );
+    }
   }
 }
 
@@ -30,14 +48,17 @@ $readout-feature-primary-text-color-base: $color-white;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background-color: $readout-feature-background-color-base;
+  background-color: contrast-color(
+    $color-content-background,
+    $readout-feature-background-contrast
+  );
   font-family: $font-stack-data;
   list-style: none;
   padding: 0;
   margin: 0;
   border-radius: $border-radius-base;
   font-weight: $font-weight-base - 100;
-  color: $readout-feature-text-color-base;
+  color: contrast-color($readout-feature-background-color-base);
 
   &.center {
     text-align: center;
@@ -54,10 +75,19 @@ $readout-feature-primary-text-color-base: $color-white;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
     padding: $padding-base $padding-base*.5;
 
     + .readout-feature {
-      border-top: 1px solid darken($readout-feature-background-color-base, 10%);
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-top: 1px solid currentColor;
+        opacity: .125;
+      }
     }
   }
   .readout-feature-data {
@@ -75,7 +105,7 @@ $readout-feature-primary-text-color-base: $color-white;
     flex: 0 0 80px;
     text-align: center;
     span {
-      fillColor: #fff;
+      fillColor: currentcolor;
     }
   }
   .readout-feature-title,
@@ -103,7 +133,7 @@ $readout-feature-primary-text-color-base: $color-white;
 
     .readout-feature {
       + .readout-feature {
-        border-top-color: darken(
+        border-top-color: darken-color(
           $readout-feature-primary-background-color-base,
           10%
         );
@@ -132,7 +162,7 @@ $readout-feature-primary-text-color-base: $color-white;
   }
 
   &.kv-highlight {
-    background-color: $color-grey-4;
+    background-color: contrast-color($color-content-background, 4%);
     border-radius: $border-radius-base;
     padding: $padding-base;
   }
@@ -185,7 +215,7 @@ $readout-feature-primary-text-color-base: $color-white;
         bottom: 0;
         left: 4em;
         right: 4em;
-        border-top: 1px solid rgba(0, 0, 0, .1);
+        border-top: 1px solid edge-color($color-content-background);
         border-left: 8em solid transparent;
         border-right: 8em solid transparent;
       }
