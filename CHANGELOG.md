@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.1] - 2017-08-18
+### Added
+- Colors! The app now has sass through the use of sophisticated SCSS mixins and functions. This is implemented on the Summary page and provides us a strong foundation for expanded use of colors in the future.
+- Created a new Inspector element for the explorer view that is React Fiber ready and allows faster searching across a large corpus of metrics. Search time has gone from ~3 seconds to near instant.
+- The Explorer is now route driven to allow users to send each other specific views by copy/pasting the URL.
+- The edge port now properly shows 443 or 80 depending on if TLS is used.
+- Large numbers are not styled appropriately based on operating system and browser locale settings. For example, this means that one thousand point one is 1,000.1 in the US and 1.000,1 in Germany.
+### Changed
+- Modified Webpack config to use prepacked UglifyJS
+- Improved the mock GM-Fabric-JVM endpoint, including fixing the threads endpoint, adding a single randomized element to ensure that the threads components were dynamically updating as expected, and providing a means to simulate a microservice not reporting any known HTTP/HTTPS routes
+- Updated numerous dependencies. Most significantly, this including updating to React 16.0.0-beta.5 to allow us a means to troubleshoot UI components that are incompatible with the new React Fiber architecture.
+### Removed
+- Removed dependencies on JSON-Inspector and UglifyJS
+
+### Test Coverage: 3.29% ([0.3.1 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.3.1 Bundle Size Report])
+### Production Build: ([0.3.1 Build])
+
 ## [0.3.0] - 2017-08-10
 ### Added
 - Significant amounts of UX polish
@@ -101,7 +119,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.0...v0.3.1
+[0.3.1 Coverage Report]: https://538-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.3.1 Bundle Size Report]: https://538-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.3.1 Build]: https://538-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.3.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.2.1...v0.3.0
 [0.3.0 Coverage Report]: https://493-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.3.0 Bundle Size Report]: https://493-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
