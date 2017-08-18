@@ -2,7 +2,7 @@ import React from "react";
 
 import decipherLogo from "../images/decipherLogo.svg";
 
-const AppVersion = "0.3.0";
+const AppVersion = "0.3.1";
 const BrandName = "Fabric";
 const BrandLogo = decipherLogo;
 
