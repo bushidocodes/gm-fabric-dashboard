@@ -64,6 +64,35 @@ $sidebar-width-base: 230px;
     flex: 1 1 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 1;
+    padding-top: 1px;
+
+    &:before,
+    &:after {
+      content: '';
+      background-color: $color-content-background;
+      pointer-events: none;
+      height: 1px;
+      position: absolute;
+      top: -134px;
+      height: 135px;
+      bottom: auto;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+    }
+
+    &:after {
+      position: fixed;
+      background-color: transparentize(
+        edge-color($color-content-background, 30%),
+        .7
+      );
+      z-index: 1000;
+      height: 1px;
+      top: 34px;
+    }
   }
 
   .app-footer {
