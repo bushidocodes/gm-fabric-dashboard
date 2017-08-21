@@ -3,169 +3,30 @@
 @import '../mixins.scss';
 
 // Local Variables
+// Variables for Buttons are contained in button-mixins.scss
 
-$button-font-size-base-default: $font-size-base;
-$button-font-weight-default: 500;
-$button-icon-size-default: 1.5em; // default: 1.5em
-$button-size-default: normal; // xs, sm, normal, lg, xl // default: normal
-$button-background-color-base-default: $color-white;
-$button-border-color-base-default: $button-background-color-base-default;
-$button-label-color-base-default: contrast-color(
-  $button-background-color-base-default
-);
-
-$button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
-$button-content-spacing-base-default: $padding-base * .75;
-
-$button-border-width-base-default: 1px;
-$button-border-radius-base-default: $border-radius-base;
-
-$button-reaction-style-default: darken; // darken, lighten // default: darken
-$button-reaction-degree-default: 6%; // 0-100% // default: 6%
-
-$button-outline-style-default: raised-outline; // raised-outline, shadow, raised, outline, none // default: raised-outline
-$button-outline-style-depth-default: 8%; // 0–100% // default: 6%
-
-$button-hover-reaction-degree-default: $button-reaction-degree-default * .25;
-$button-active-reaction-degree-default: $button-reaction-degree-default * 1.5;
-$button-down-reaction-degree-default: $button-reaction-degree-default * 1;
+// Helpers
 
 // Styles
-
 .btn {
   @include function-button-base();
 
   // Styles
   &:not([class*="btn-type"]),
   &.btn-default {
-    &:not([class*="btn-outline"]),
-    &.btn-outline-raised-outline {
-      @include function-button-style( $button-outline-style: raised-outline );
-    }
-    &.btn-outline-shadow {
-      @include function-button-style( $button-outline-style: shadow );
-    }
-    &.btn-outline-raised {
-      @include function-button-style( $button-outline-style: raised );
-    }
-    &.btn-outline-outline {
-      @include function-button-style( $button-outline-style: outline );
-    }
-    &.btn-outline-none {
-      @include function-button-style( $button-outline-style: none );
-    }
+    @include button-style-set();
   }
   &.btn-type-danger {
-    &:not([class*="btn-outline"]),
-    &.btn-outline-raised-outline {
-      @include function-button-style(
-          $button-outline-style: raised-outline,
-          $button-background-color-base: $color-danger);
-    }
-    &.btn-outline-shadow {
-      @include function-button-style(
-          $button-outline-style: shadow,
-          $button-background-color-base: $color-danger);
-    }
-    &.btn-outline-raised {
-      @include function-button-style(
-          $button-outline-style: raised,
-          $button-background-color-base: $color-danger);
-    }
-    &.btn-outline-outline {
-      @include function-button-style(
-          $button-outline-style: outline,
-          $button-background-color-base: $color-danger);
-    }
-    &.btn-outline-none {
-      @include function-button-style(
-          $button-outline-style: none,
-          $button-background-color-base: $color-danger);
-    }
+    @include button-style-set($color-danger);
   }
   &.btn-type-info {
-    &:not([class*="btn-outline"]),
-    &.btn-outline-raised-outline {
-      @include function-button-style(
-          $button-outline-style: raised-outline,
-          $button-background-color-base: $color-info);
-    }
-    &.btn-outline-shadow {
-      @include function-button-style(
-          $button-outline-style: shadow,
-          $button-background-color-base: $color-info);
-    }
-    &.btn-outline-raised {
-      @include function-button-style(
-          $button-outline-style: raised,
-          $button-background-color-base: $color-info);
-    }
-    &.btn-outline-outline {
-      @include function-button-style(
-          $button-outline-style: outline,
-          $button-background-color-base: $color-info);
-    }
-    &.btn-outline-none {
-      @include function-button-style(
-          $button-outline-style: none,
-          $button-background-color-base: $color-info);
-    }
+    @include button-style-set($color-info);
   }
   &.btn-type-warning {
-    &:not([class*="btn-outline"]),
-    &.btn-outline-raised-outline {
-      @include function-button-style(
-          $button-outline-style: raised-outline,
-          $button-background-color-base: $color-warning);
-    }
-    &.btn-outline-shadow {
-      @include function-button-style(
-          $button-outline-style: shadow,
-          $button-background-color-base: $color-warning);
-    }
-    &.btn-outline-raised {
-      @include function-button-style(
-          $button-outline-style: raised,
-          $button-background-color-base: $color-warning);
-    }
-    &.btn-outline-outline {
-      @include function-button-style(
-          $button-outline-style: outline,
-          $button-background-color-base: $color-warning);
-    }
-    &.btn-outline-none {
-      @include function-button-style(
-          $button-outline-style: none,
-          $button-background-color-base: $color-warning);
-    }
+    @include button-style-set($color-warning);
   }
   &.btn-type-primary {
-    &:not([class*="btn-outline"]),
-    &.btn-outline-raised-outline {
-      @include function-button-style(
-          $button-outline-style: raised-outline,
-          $button-background-color-base: $color-brand-primary);
-    }
-    &.btn-outline-shadow {
-      @include function-button-style(
-          $button-outline-style: shadow,
-          $button-background-color-base: $color-brand-primary);
-    }
-    &.btn-outline-raised {
-      @include function-button-style(
-          $button-outline-style: raised,
-          $button-background-color-base: $color-brand-primary);
-    }
-    &.btn-outline-outline {
-      @include function-button-style(
-          $button-outline-style: outline,
-          $button-background-color-base: $color-brand-primary);
-    }
-    &.btn-outline-none {
-      @include function-button-style(
-          $button-outline-style: none,
-          $button-background-color-base: $color-brand-primary);
-    }
+    @include button-style-set($color-brand-primary);
   }
 
   // Sizes

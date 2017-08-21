@@ -573,3 +573,67 @@ $button-font-weight: $button-font-weight-default) {
     );
   }
 }
+
+@mixin button-style-set($base-color: null) {
+  &:not([class*="btn-outline"]),
+  &.btn-outline-raised-outline {
+    @if $base-color {
+      @include function-button-style(
+        $button-outline-style: raised-outline,
+        $button-background-color-base: $base-color
+      );
+    } @else {
+      @include function-button-style(
+        $button-outline-style: raised-outline
+      );
+    }
+  }
+  &.btn-outline-shadow {
+    @if $base-color {
+      @include function-button-style(
+      $button-outline-style: shadow,
+      $button-background-color-base: $base-color
+    );
+    } @else {
+      @include function-button-style(
+      $button-outline-style: shadow
+    );
+    }
+  }
+  &.btn-outline-raised {
+    @if $base-color {
+      @include function-button-style(
+      $button-outline-style: raised,
+      $button-background-color-base: $base-color
+    );
+    } @else {
+      @include function-button-style(
+      $button-outline-style: raised
+    );
+    }
+  }
+  &.btn-outline-outline {
+    @if $base-color {
+      @include function-button-style(
+      $button-outline-style: outline,
+      $button-background-color-base: $base-color
+    );
+    } @else {
+      @include function-button-style(
+      $button-outline-style: outline
+    );
+    }
+  }
+  &.btn-outline-none {
+    @if $base-color {
+      @include function-button-style(
+      $button-outline-style: none,
+      $button-background-color-base: $base-color
+    );
+    } @else {
+      @include function-button-style(
+      $button-outline-style: none
+    );
+    }
+  }
+}
