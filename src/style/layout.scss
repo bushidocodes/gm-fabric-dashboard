@@ -36,10 +36,6 @@ $sidebar-width-base: 230px;
   display: flex;
   flex-direction: column;
   background-color: $color-sidebar-background;
-  background-image: url('../images/gm-fabric-bg.jpg');
-  background-size: 300% auto;
-  background-repeat: no-repeat;
-  background-position: bottom center;
   position: relative;
 
   &:after {

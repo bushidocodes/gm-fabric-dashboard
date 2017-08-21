@@ -1,8 +1,8 @@
 import React from "react";
 
-const SidebarBranding = () => {
+const SidebarFooter = () => {
   return (
-    <footer className="sidebar-footer-branding">
+    <footer className="sidebar-footer">
       <a
         href="http://deciphernow.com/grey-matter"
         rel="noopener noreferrer"
@@ -14,4 +14,4 @@ const SidebarBranding = () => {
   );
 };
 
-export default SidebarBranding;
+export default SidebarFooter;

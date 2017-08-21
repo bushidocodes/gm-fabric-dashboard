@@ -11,7 +11,7 @@ import Explorer from "./Explorer";
 import GMGrid from "./GMGrid";
 import RoutesGrid from "./RoutesGrid";
 import SettingsGrid from "./SettingsGrid";
-import SidebarBranding from "./SidebarBranding";
+import SidebarFooter from "./SidebarFooter";
 import SummaryBar from "./SummaryBar";
 import SummaryGrid from "./SummaryGrid";
 import ThreadsGrid from "./ThreadsGrid";
@@ -47,7 +47,7 @@ class Container extends Component {
         <nav className="app-sidebar">
           <AppBrandBar />
           <SummaryBar />
-          <SidebarBranding />
+          <SidebarFooter />
         </nav>
         <div className="app-content uk-width-5-6@s">
           <AppToolBar pathname={this.props.pathname} />
