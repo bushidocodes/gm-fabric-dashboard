@@ -31,16 +31,17 @@
 // Derive a readable content color from the background color of an element
 @function contrast-color(
   $background-color,
-  $contrast: 100%) {
+  $contrast: 100%,
+  $intent-color: null) {
   @if lightness($background-color) > 50 {
-    @return mix(#000, $background-color, $contrast);
+    @return mix(if($intent-color, $intent-color, #000), $background-color, $contrast);
   } @else {
     // Increase the contrast base for inverted colors, because light is strange
     $enhanced-contrast: $contrast * $dark-on-light-contrast-enhancement-ratio;
     @if $enhanced-contrast > 100% {
       $enhanced-contrast: 100%;
     }
-    @return mix(invert(#000), $background-color, $enhanced-contrast);
+    @return mix(if($intent-color, $intent-color, invert(#000)), $background-color, $enhanced-contrast);
   }
 }
 

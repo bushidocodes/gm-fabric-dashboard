@@ -31,12 +31,14 @@ export default function GMLineChart({
         </h3>}
       <div className="chart-content">
         {timeSeries[0].length === 0
-          ? <div style={{ paddingLeft: "15px" }}>
-              <div>No Data to Chart</div>
+          ? <div className="chart-empty">
+              <h1>
+                <i data-uk-icon={`icon: warning`} /> No Chartable Data
+              </h1>
               {expectedAttributes &&
                 expectedAttributes.length > 0 &&
                 <div>
-                  These expected metrics were not found:
+                  <p>Could not find the following metrics:</p>
                   <ul>
                     {expectedAttributes.map(attribute =>
                       <li key={attribute}>

@@ -4,6 +4,7 @@
 @import 'mixins.scss';
 
 // Local Variables
+$inline-icon-spacing: .25em;
 
 // Helpers
 
@@ -21,6 +22,15 @@ h6 {
   font-family: $font-stack-base;
   font-weight: $font-weight-base;
   color: inherit;
+
+  [class*="icon"] {
+    vertical-align: .085em; // Magic number. Seems to correspond roughly to descender height
+
+    svg {
+      height: 1em;
+      width: 1em;
+    }
+  }
 }
 
 h1 {

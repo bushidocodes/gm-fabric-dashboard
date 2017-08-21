@@ -3,7 +3,7 @@
 @import '../mixins.scss';
 
 // Local Variables
-$graph-background-color: transparent;
+$graph-background-color: contrast-color($color-content-background, 4%);
 $graph-padding: $padding-base;
 
 // Helpers
@@ -36,8 +36,13 @@ $graph-padding: $padding-base;
 
   .chart-content {
     flex: 1 1 100%;
-    padding: $graph-padding;
+    display: flex;
+    flex-direction: column;
     position: relative;
+
+    > * {
+      margin: $graph-padding;
+    }
   }
 
   .chart-details {
@@ -50,6 +55,37 @@ $graph-padding: $padding-base;
     }
     .chart-detail {
       padding: 0 $padding-base;
+    }
+  }
+
+  .chart-empty {
+    padding: $padding-base;
+    flex: 1 0 auto;
+
+    h1,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: contrast-color($graph-background-color, 100%, $color-warning);
+      font-weight: bold;
+      font-size: $font-size-lg;
+      padding-bottom: $padding-base * 2;
+      margin-bottom: $padding-base * 2;
+      border-bottom: 1px solid edge-color($graph-background-color);
+    }
+
+    p,
+    ul {
+      color: $color-content-muted;
+    }
+
+    ul {
+      padding-left: $padding-base * 2;
+      list-style: circle;
     }
   }
 }
