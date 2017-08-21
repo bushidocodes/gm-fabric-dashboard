@@ -73,28 +73,25 @@ export default class SummaryBarCard extends Component {
               </dt>
               <dd className="summary-bar-card-kv-value">
                 {line.value}
+                {chartData &&
+                  <Sparklines
+                    data={chartData}
+                    preserveAspectRatio="xMaxYMin"
+                    style={{ width: "100%" }}
+                    title={chartTitle}
+                  >
+                    <SparklinesLine
+                      style={{
+                        stroke: "currentColor",
+                        strokeWidth: 1,
+                        fill: "currentColor",
+                        fillOpacity: "0"
+                      }}
+                    />
+                  </Sparklines>}
               </dd>
             </div>
           )}
-          {chartTitle &&
-            <div>
-              {chartTitle}
-            </div>}
-          {chartData &&
-            <Sparklines
-              data={chartData}
-              preserveAspectRatio="xMaxYMin"
-              style={{ width: "100%" }}
-            >
-              <SparklinesLine
-                style={{
-                  stroke: "currentColor",
-                  strokeWidth: 1,
-                  fill: "currentColor",
-                  fillOpacity: ".1"
-                }}
-              />
-            </Sparklines>}
         </div>
       </NavLink>
     );
