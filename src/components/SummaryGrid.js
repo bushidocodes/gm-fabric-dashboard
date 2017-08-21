@@ -47,7 +47,7 @@ class SummaryGrid extends Component {
                 />
               </Readout>
 
-              <Readout type={"readout-primary"}>
+              <Readout type={"primary"}>
                 <ReadoutItem
                   icon={"bolt"}
                   title={"Avg. Response Time"}
