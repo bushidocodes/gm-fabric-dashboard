@@ -22,16 +22,15 @@ import { getRuntime, getThreadsEndpoint } from "./utils/head";
 
 /**
  * Async Action that fetches metrics and calls success or failure actions.
- * endpoints is an array of strings containing URL endpoints
+ * endpoint is an string containing the target URL of the metrics endpoint
  */
-Effect("fetchMetrics", endpoints => {
-  if (!endpoints) return;
-  const runtime = getRuntime();
+Effect("fetchMetrics", endpoint => {
+  if (!endpoint) return;
   window.ajaxWorker
     .postMessage({
       type: "fetchMetrics",
-      runtime: runtime,
-      endpoints: endpoints
+      runtime: getRuntime(),
+      endpoint: endpoint
     })
     .then(json => Actions.fetchMetricsSuccess(json))
     .catch(err => Actions.fetchMetricsFailure(err));
@@ -72,13 +71,12 @@ Effect("fetchThreadsFailure", err => {
 /**
  * Action that starts a polling interval for scraping metrics, overwriting if needed
  */
-Effect("startPolling", function({ endpoints, interval }) {
-  const refreshMetricsFunctionFactory = endpoints => () => {
-    const eps = endpoints;
-    if (eps && eps.length) Actions.fetchMetrics(eps);
+Effect("startPolling", function({ endpoint, interval }) {
+  const refreshMetricsFunctionFactory = endpoint => () => {
+    if (endpoint) Actions.fetchMetrics(endpoint);
   };
   window.refreshMetricsInterval = window.setInterval(
-    refreshMetricsFunctionFactory(endpoints),
+    refreshMetricsFunctionFactory(endpoint),
     interval
   );
 });
@@ -86,7 +84,7 @@ Effect("startPolling", function({ endpoints, interval }) {
 /**
  * Action that clears the polling interval for metrics scraping
  */
-Effect("stopPolling", (endpoints, interval) => {
+Effect("stopPolling", (endpoint, interval) => {
   clearInterval(window.refreshMetricsInterval);
 });
 
@@ -158,7 +156,7 @@ Hook((action, getState) => {
   if (!getState().settings.pollingHasInitialized) {
     Actions.setPollingAsInitialized();
     Actions.startPolling({
-      endpoints: getState().settings.metricsEndpoints,
+      endpoint: getState().settings.metricsEndpoint,
       interval: getState().settings.interval
     });
   }
@@ -194,7 +192,7 @@ Hook((action, getState) => {
 Hook((action, getState) => {
   if (action.type === "togglePolling" && getState().settings.isPolling) {
     Actions.startPolling({
-      endpoints: getState().settings.metricsEndpoints,
+      endpoint: getState().settings.metricsEndpoint,
       interval: getState().settings.interval
     });
   }
@@ -205,7 +203,7 @@ Hook((action, getState) => {
   if (action.type === "setInterval") {
     Actions.stopPolling();
     Actions.startPolling({
-      endpoints: getState().settings.metricsEndpoints,
+      endpoint: getState().settings.metricsEndpoint,
       interval: getState().settings.interval
     });
   }
@@ -216,7 +214,7 @@ Hook((action, getState) => {
   if (action.type === "setInterval") {
     Actions.stopPolling();
     Actions.startPolling({
-      endpoints: getState().settings.metricsEndpoints,
+      endpoint: getState().settings.metricsEndpoint,
       interval: getState().settings.interval
     });
   }

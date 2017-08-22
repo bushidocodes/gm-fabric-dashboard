@@ -11,7 +11,7 @@ const settings = State({
     isPolling: true,
     pollingHasInitialized: false,
     interval: 5000,
-    metricsEndpoints: getMetricsEndpoint(),
+    metricsEndpoint: getMetricsEndpoint(),
     threadsEndpoint: getThreadsEndpoint(),
     pollingFailures: 0,
     runtime: getRuntime(),
@@ -26,8 +26,8 @@ const settings = State({
   setInterval(state, payload) {
     return { ...state, interval: payload };
   },
-  setMetricsEndpoints(state, payload) {
-    return { ...state, metricsEndpoints: payload };
+  setMetricsEndpoint(state, payload) {
+    return { ...state, metricsEndpoint: payload };
   },
   setThreadsEndpoints(state, payload) {
     return { ...state, threadsEndpoint: payload };

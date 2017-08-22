@@ -20,7 +20,7 @@ import NotFound from "./NotFound";
 class Container extends Component {
   static propTypes = {
     children: PropTypes.any,
-    metricsEndpoints: PropTypes.array,
+    metricsEndpoint: PropTypes.string,
     pathname: PropTypes.string,
     runtime: PropTypes.string
   };
@@ -28,7 +28,7 @@ class Container extends Component {
   // Perform an initial fetch of metrics on mount.
   // This triggers hooks which initialize polling using the default parameters
   componentDidMount() {
-    Actions.fetchMetrics(this.props.metricsEndpoints);
+    Actions.fetchMetrics(this.props.metricsEndpoint);
     Actions.initLocalStorage()
       .then(isInitialized => {
         if (isInitialized) {
@@ -74,10 +74,10 @@ class Container extends Component {
 }
 
 function mapStateToProps({
-  settings: { metricsEndpoints, runtime },
+  settings: { metricsEndpoint, runtime },
   routing: { location: { pathname } }
 }) {
-  return { metricsEndpoints, runtime, pathname };
+  return { metricsEndpoint, runtime, pathname };
 }
 
 export default withRouter(connect(mapStateToProps)(Container));

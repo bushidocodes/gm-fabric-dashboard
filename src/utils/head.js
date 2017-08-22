@@ -42,23 +42,23 @@ export function getRuntime() {
  * getMetricsEndpoint is a utility function that returns the initial metrics endpoints
  * that should be scraped for current runtime. This should ONLY be used to populate the
  * initial Redux state
- * @returns {String[]}
+ * @returns {String}
  */
 export function getMetricsEndpoint() {
   const metricsEndpoint = document.head.querySelector(
     "[property=metricsEndpoint]"
   ).content;
   if (process.env.NODE_ENV === `development` && getRuntime() === "JVM") {
-    return ["admin/metrics.json"];
+    return "admin/metrics.json";
   } else if (metricsEndpoint !== "__METRICS_ENDPOINT__") {
-    return [metricsEndpoint];
+    return metricsEndpoint;
   } else {
-    return [];
+    return "";
   }
 }
 
 /**
- * generateThreadEndpoints is a utility function that returns the endpoints that should be scraped for current runtime
+ * generateThreadEndpoint is a utility function that returns the endpoint that should be scraped for the current runtime
  * This should ONLY be used to populate the initial Redux state
  * @returns {String}
  */
