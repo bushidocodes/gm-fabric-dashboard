@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import Readout from "./Readout.js";
+import Button from "./Button.js";
 import ReadoutItem from "./ReadoutItem.js";
 import UIkit from "uikit";
 import objectSizeOf from "object-sizeof";
@@ -16,6 +17,22 @@ SettingsGrid.propTypes = {
   metricsCacheSize: PropTypes.string,
   numberOfDashboards: PropTypes.number,
   settings: PropTypes.object
+};
+
+const clearCacheClickAction = () => {
+  UIkit.modal
+    .confirm(
+      "Are you sure that you want to clear the cached metrics data? This action cannot be undone."
+    )
+    .then(() => Actions.clearMetrics());
+};
+
+const resetDashboardsClickAction = () => {
+  UIkit.modal
+    .confirm(
+      "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
+    )
+    .then(() => Actions.setDashboardsToDefault());
 };
 
 function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
@@ -32,20 +49,12 @@ function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
       >
         <Readout align={"center"}>
           <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
-          <button
-            className="btn"
-            onClick={() => {
-              UIkit.modal
-                .confirm(
-                  "Are you sure that you want to clear the cached metrics data? This action in irreversible."
-                )
-                .then(() => Actions.clearMetrics());
-            }}
+          <Button
+            clickAction={clearCacheClickAction}
+            icon="close"
+            label="Clear Metrics Cache"
             tabIndex={30}
-          >
-            <span className="icon" data-uk-icon={`icon: close;`} />
-            <span className="label">Clear Metrics Cache</span>
-          </button>
+          />
         </Readout>
       </LayoutSection>
 
@@ -55,20 +64,13 @@ function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
       >
         <Readout align={"center"}>
           <ReadoutItem title={"Custom Dashboards"} value={numberOfDashboards} />
-          <button
-            className="btn btn-type-danger"
-            onClick={() => {
-              UIkit.modal
-                .confirm(
-                  "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
-                )
-                .then(() => Actions.setDashboardsToDefault());
-            }}
+          <Button
+            clickAction={resetDashboardsClickAction}
+            icon="close"
+            label="Reset Dashboards"
             tabIndex={31}
-          >
-            <span className="icon" data-uk-icon={`icon: close; ratio: 1`} />
-            <span className="label">Reset Dashboards</span>
-          </button>
+            type="danger"
+          />
         </Readout>
       </LayoutSection>
     </div>

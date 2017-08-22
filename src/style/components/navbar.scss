@@ -83,6 +83,10 @@ $app-breadcrumb-color: contrast-color($color-content-background);
     flex: 0 0 auto;
     @include function-button-icon-size(1.25em);
 
+    .label {
+      @include hidden();
+    }
+
     + .btn {
       margin-left: $padding-base;
       position: relative;

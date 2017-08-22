@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import NavButton from "./NavButton.js";
 
 AppToolBar.propTypes = {
   pathname: PropTypes.string.isRequired
@@ -27,12 +28,12 @@ function AppToolBar({ pathname }) {
           )}
       </ol>
 
-      <NavLink className="btn btn-outline-none settings-button" to="/settings">
-        <span
-          className="settings-cog icon"
-          data-uk-icon="icon: cog; ratio: .84"
-        />
-      </NavLink>
+      <NavButton
+        icon={"cog"}
+        label={"Settings"}
+        outline={"none"}
+        to={"/settings"}
+      />
     </nav>
   );
 }

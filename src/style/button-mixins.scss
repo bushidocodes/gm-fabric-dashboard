@@ -50,6 +50,18 @@ $button-font-weight: $button-font-weight-default) {
   > * {
     flex: 0 1 auto;
   }
+
+  .label-suffix,
+  .label-prefix {
+    opacity: .5;
+  }
+
+  .label-suffix {
+    margin-left: $padding-base;
+  }
+  .label-prefix {
+    margin-right: $padding-base;
+  }
 }
 
 @mixin function-button-size(

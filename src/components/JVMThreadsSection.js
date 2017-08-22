@@ -1,6 +1,7 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import Button from "./Button.js";
 import { connect } from "react-redux";
 
 import JVMThreadsTable from "./JVMThreadsTable";
@@ -17,52 +18,35 @@ class JVMThreadsSection extends Component {
       <div className="">
         <div className="toolbar">
           <div className="toolbar-center">
-            <button
-              className="btn"
+            <Button
+              clickAction={() => Actions.setThreadsFilter("all")}
               disabled={!threadCounts.all}
-              onClick={() => Actions.setThreadsFilter("all")}
+              label={"All Threads"}
+              suffix={threadCounts.all}
               tabIndex={15}
-            >
-              <span className="label">All Threads </span>
-              <span className="label">
-                {threadCounts.all}
-              </span>
-            </button>
-
+            />
             <span className="uk-button-group uk-margin-left">
-              <button
-                className="btn"
+              <Button
+                clickAction={() => Actions.setThreadsFilter("active")}
                 disabled={!threadCounts.active}
-                onClick={() => Actions.setThreadsFilter("active")}
+                label={"Active"}
+                suffix={threadCounts.active}
                 tabIndex={16}
-              >
-                <span className="label">Active </span>
-                <span className="label">
-                  {threadCounts.active}
-                </span>
-              </button>
-              <button
-                className="btn"
+              />
+              <Button
+                clickAction={() => Actions.setThreadsFilter("idle")}
                 disabled={!threadCounts.idle}
-                onClick={() => Actions.setThreadsFilter("idle")}
+                label={"Idle"}
+                suffix={threadCounts.idle}
                 tabIndex={17}
-              >
-                <span className="label">Idle </span>
-                <span className="label">
-                  {threadCounts.idle}
-                </span>
-              </button>
-              <button
-                className="btn"
+              />
+              <Button
+                clickAction={() => Actions.setThreadsFilter("stopped")}
                 disabled={!threadCounts.stopped}
-                onClick={() => Actions.setThreadsFilter("stopped")}
+                label={"Stopped"}
+                suffix={threadCounts.stopped}
                 tabIndex={18}
-              >
-                <span className="label">Stopped </span>
-                <span className="label">
-                  {threadCounts.stopped}
-                </span>
-              </button>
+              />
             </span>
           </div>
         </div>

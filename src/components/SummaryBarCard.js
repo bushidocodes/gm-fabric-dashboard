@@ -1,6 +1,7 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "./Button.js";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 
 export default class SummaryBarCard extends Component {
@@ -52,18 +53,15 @@ export default class SummaryBarCard extends Component {
           {(this.props.lines.length > 0 ||
             this.props.chartTitle ||
             this.props.chartData) &&
-            <button
-              className="summary-bar-card-show-toggle"
-              onClick={evt => {
+            <Button
+              clickAction={evt => {
                 evt.preventDefault();
                 this.setState({ isOpen: !this.state.isOpen });
               }}
-            >
-              <span
-                className="summary-card-accordion-arrow"
-                data-uk-icon={`icon: chevron-left; ratio: 1`}
-              />
-            </button>}
+              icon={"chevron-left"}
+              label={"Details"}
+              outline={"none"}
+            />}
         </div>
         <div className="uk-card-body summary-bar-card-body">
           {lines.map(line =>

@@ -1,6 +1,7 @@
 import { Actions } from "jumpstate";
 import _ from "lodash";
 import { PropTypes } from "prop-types";
+import Button from "./Button.js";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
@@ -35,21 +36,16 @@ class PollingSettings extends Component {
         </header>
         <div className="section-content">
           <div className="control-group control-group-polling-start-stop">
-            <button
-              className={
-                "btn btn-type-primary btn-icon-size-xl btn-outline-none btn-orientation-vertical"
-              }
-              onClick={() => Actions.togglePolling()}
+            <Button
+              clickAction={() => Actions.togglePolling()}
+              icon={buttonIcon}
+              iconSize={"xl"}
+              label={buttonLabel}
+              orientation={"vertical"}
+              outline={"none"}
               tabIndex={20}
-            >
-              <span
-                className="icon"
-                data-uk-icon={`icon: ` + buttonIcon + `; ratio: 2`}
-              />
-              <span className="label">
-                {buttonLabel}
-              </span>
-            </button>
+              type={"primary"}
+            />
           </div>
 
           <div className="control-group control-group-polling-interval">

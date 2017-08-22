@@ -63,9 +63,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     color: $summary-bar-card-text-color;
   }
 
-  .summary-bar-card-show-toggle {
-    @include function-button-base();
-    @include function-button-size();
+  .btn[title="Details"] {
     @include function-button-style(
       $button-label-color-base: contrast-color($summary-bar-background-color, 60%),
       $button-background-color-base: transparent,
@@ -73,6 +71,10 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     );
     padding: 0;
     transition: all .15s ease;
+
+    .label {
+      @include hidden();
+    }
 
     svg {
       transition: transform .05s ease;
@@ -145,7 +147,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
       opacity: 1;
     }
 
-    .summary-bar-card-show-toggle {
+    .btn[title="Details"] {
       svg {
         transform: rotate(-90deg);
       }
