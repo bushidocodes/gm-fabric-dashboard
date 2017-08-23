@@ -10,6 +10,8 @@ import Icons from "uikit/dist/js/uikit-icons";
 
 import Container from "./components/Container";
 import store from "./store";
+
+// All scripts in the workers directory are loaded by WebPack via worker-loader
 import AjaxWorker from "./workers/ajax.js";
 import LocalStorageWorker from "./workers/localStorage.js";
 

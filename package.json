@@ -86,6 +86,7 @@
     "jest-junit": "^2.1.0",
     "json-server": "^0.12.0",
     "lodash-webpack-plugin": "^0.11.4",
+    "moxios": "^0.4.0",
     "node-sass": "^4.5.3",
     "prettier": "^1.5.3",
     "react-addons-test-utils": "~15.6.0",
@@ -103,8 +104,14 @@
     "mock-jvm": "node json-mock/gm-fabric-jvm.js"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"],
-    "*.scss": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -115,8 +122,12 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -128,14 +139,24 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx"
+    ]
   },
   "babel": {
-    "presets": ["react-app"]
+    "presets": [
+      "react-app"
+    ]
   },
   "proxy-howto": "Use 9990 for gm-fabric-jvm, 9092 for gm-fabric-go, or 8081 for Envoy",
   "proxy": "http://localhost:9990",

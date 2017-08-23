@@ -56,7 +56,7 @@ Effect("fetchThreads", (endpoint = getThreadsEndpoint()) => {
       type: "fetchThreads",
       endpoint: endpoint
     })
-    .then(json => Actions.fetchThreadsSuccess(json.data))
+    .then(json => Actions.fetchThreadsSuccess(json))
     .catch(err => Actions.fetchThreadsFailure(err));
 });
 
