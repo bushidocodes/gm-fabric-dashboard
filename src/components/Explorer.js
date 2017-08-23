@@ -93,6 +93,7 @@ class Explorer extends Component {
         <div className="metrics-graph-display">
           {selectedMetric && this.props.keys.indexOf(selectedMetric) !== -1
             ? <GMLineChart
+                height={"max"}
                 timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
                 title={selectedMetric}
               />
