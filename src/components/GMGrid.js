@@ -109,6 +109,7 @@ class GMGrid extends Component {
                     expectedAttributes={chart.data.timeseries.map(
                       ts => ts.attribute
                     )}
+                    height="max"
                     timeSeries={mapDygraphKeysToNetChange(
                       getDygraphOfValue(
                         metrics,

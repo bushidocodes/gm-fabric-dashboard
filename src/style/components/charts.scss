@@ -3,8 +3,9 @@
 @import '../mixins.scss';
 
 // Local Variables
-$graph-background-color: contrast-color($color-content-background, 4%);
-$graph-padding: $padding-base;
+$chart-background-color: transparent;
+$chart-spacing: $padding-base*2 50px $padding-base*2 0;
+$chart-height-base: 250px;
 
 // Helpers
 @mixin styles-for-chart-title() {
@@ -14,11 +15,15 @@ $graph-padding: $padding-base;
 @mixin styles-for-axis-labels() {
 }
 
+@mixin chart-height($height) {
+  height: $height;
+}
+
 // Styles
 
 .chart {
   font-family: $font-stack-data;
-  background-color: $graph-background-color;
+  background-color: $chart-background-color;
   width: 100%;
   height: 100%;
   display: flex;
@@ -36,12 +41,10 @@ $graph-padding: $padding-base;
 
   .chart-content {
     flex: 1 1 100%;
-    display: flex;
-    flex-direction: column;
     position: relative;
 
     > * {
-      margin: $graph-padding;
+      margin: $chart-spacing;
     }
   }
 
@@ -70,12 +73,12 @@ $graph-padding: $padding-base;
     }
 
     h1 {
-      color: contrast-color($graph-background-color, 100%, $color-warning);
+      color: contrast-color($chart-background-color, 100%, $color-warning);
       font-weight: bold;
       font-size: $font-size-lg;
       padding-bottom: $padding-base * 2;
       margin-bottom: $padding-base * 2;
-      border-bottom: 1px solid edge-color($graph-background-color);
+      border-bottom: 1px solid edge-color($chart-background-color);
     }
 
     p,
@@ -87,5 +90,30 @@ $graph-padding: $padding-base;
       padding-left: $padding-base * 2;
       list-style: circle;
     }
+  }
+
+  &.chart-height-xs {
+    @include chart-height($chart-height-base * .5);
+  }
+
+  &.chart-height-sm {
+    @include chart-height($chart-height-base * .75);
+  }
+
+  &.chart-height-normal {
+    @include chart-height($chart-height-base);
+  }
+
+  &.chart-height-lg {
+    @include chart-height($chart-height-base * 1.25);
+  }
+
+  &.chart-height-xl {
+    @include chart-height($chart-height-base * 1.5);
+  }
+
+  &:not([class*="chart-height-"]),
+  &.chart-height-max {
+    height: 100%;
   }
 }

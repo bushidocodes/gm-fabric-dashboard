@@ -79,19 +79,17 @@ class SummaryGrid extends Component {
         </LayoutSection>
 
         <LayoutSection title={"Statistics"}>
-          <div style={{ height: "250px" }}>
-            <GMLineChart
-              timeSeries={mapDygraphKeysToNetChange(
-                getDygraphOfValue(
-                  metrics,
-                  ["https/requests", "http/requests"],
-                  ["HTTPS", "HTTP"]
-                ),
+          <GMLineChart
+            timeSeries={mapDygraphKeysToNetChange(
+              getDygraphOfValue(
+                metrics,
+                ["https/requests", "http/requests"],
                 ["HTTPS", "HTTP"]
-              )}
-              title="Requests Per Second"
-            />
-          </div>
+              ),
+              ["HTTPS", "HTTP"]
+            )}
+            title="Requests Per Second"
+          />
         </LayoutSection>
       </div>
     );

@@ -13,18 +13,26 @@ import DygraphContainer from "./DygraphContainer";
 GMLineChart.propTypes = {
   detailLines: PropTypes.array,
   expectedAttributes: PropTypes.array,
+  height: PropTypes.oneOf(["xs", "sm", "normal", "lg", "xl", "max"]),
   timeSeries: PropTypes.array,
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
+};
+
+GMLineChart.defaultProps = {
+  height: "normal"
 };
 
 export default function GMLineChart({
   detailLines,
   expectedAttributes,
+  height,
   timeSeries,
   title
 }) {
   return (
-    <div className="chart line-chart">
+    <div
+      className={"chart line-chart" + (height && ` chart-height-${height}`: "")}
+    >
       {title &&
         <h3 className="chart-title">
           {title}
