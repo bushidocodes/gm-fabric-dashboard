@@ -73,7 +73,8 @@ class RoutesGrid extends Component {
                 routeObj =>
                   routeObj.route
                     .toLowerCase()
-                    .indexOf(this.state.filterString.toLowerCase()) !== -1
+                    .indexOf(this.state.filterString.trim().toLowerCase()) !==
+                  -1
               )
             )}
           />
@@ -83,7 +84,7 @@ class RoutesGrid extends Component {
       return (
         <div className="no-routes-found-error">
           <div className="content">
-            <icon data-uk-icon="icon: warning; ratio: 1.8" />
+            <span data-uk-icon="icon: warning; ratio: 1.8" />
             <span>No Routes Found </span>
           </div>
         </div>

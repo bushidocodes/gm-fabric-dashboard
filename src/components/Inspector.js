@@ -6,7 +6,7 @@ export default class Inspector extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     onClick: PropTypes.func.isRequired,
-    onSearch: PropTypes.function,
+    onSearch: PropTypes.func,
     searchQuery: PropTypes.string,
     selectedMetric: PropTypes.string
   };

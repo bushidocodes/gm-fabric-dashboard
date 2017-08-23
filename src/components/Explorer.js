@@ -46,7 +46,7 @@ class Explorer extends Component {
     // update with the new search query
     const newQuery = qs.stringify({
       ...query,
-      searchQuery: q
+      searchQuery: q.trim().toLowerCase()
     });
     // and push to router
     this.props.history.push({
