@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.2] - 2017-08-23
+### Added
+- Improved style and responsiveness
+### Changed
+- Refactored AJAX web worker for improved error handling
+- Improvement deployment process to help us prepare for new features
+- Improved use of History API by Explorer component
+
+### Test Coverage: 5.55% ([0.3.2 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.3.2 Bundle Size Report])
+### Production Build: ([0.3.2 Build])
+
 ## [0.3.1] - 2017-08-18
 ### Added
 - Colors! The app now has sass through the use of sophisticated SCSS mixins and functions. This is implemented on the Summary page and provides us a strong foundation for expanded use of colors in the future.
@@ -119,7 +131,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.1...v0.3.2
+[0.3.2 Coverage Report]: https://606-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.3.2 Bundle Size Report]: https://606-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.3.2 Build]: https://606-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.3.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.0...v0.3.1
 [0.3.1 Coverage Report]: https://538-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.3.1 Bundle Size Report]: https://538-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
