@@ -163,9 +163,17 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     &:hover,
     &:active,
     &:focus {
+      .summary-bar-card-title {
+        border-top-color: transparent;
+      }
+
       .summary-bar-card-heading {
         font-weight: 600;
       }
+    }
+
+    + .summary-bar-card .summary-bar-card-title {
+      border-top-color: transparent;
     }
   }
 }
