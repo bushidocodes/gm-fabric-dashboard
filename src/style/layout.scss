@@ -37,6 +37,7 @@ $sidebar-width-base: 230px;
   flex-direction: column;
   background-color: $color-sidebar-background;
   position: relative;
+  z-index: 2;
 
   &:after {
     content: '';
