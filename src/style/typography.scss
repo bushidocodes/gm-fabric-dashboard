@@ -72,3 +72,11 @@ a {
     text-decoration: none;
   }
 }
+
+.content-type-code {
+  font-family: $font-stack-code;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: $font-size-base * .85;
+  line-height: $line-height-base * 1.1;
+}

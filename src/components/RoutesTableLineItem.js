@@ -29,7 +29,7 @@ export default class RoutesTableLineItem extends Component {
   render() {
     return (
       <li
-        className={"selectable open-" + this.state.isOpen}
+        className={this.state.isOpen ? "selectable open" : "selectable"}
         onClick={this.toggleDrawer}
         onKeyDown={evt => {
           if (evt.keyCode === 13) {

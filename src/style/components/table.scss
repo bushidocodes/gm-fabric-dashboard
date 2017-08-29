@@ -5,7 +5,6 @@
 // Local Variables
 $table-row-divider-color: edge-color($color-content-background);
 $table-row-height-basis: $padding-base * 4.5;
-// $table-drawer-max-height: 300px;
 
 // Helpers
 @mixin styles-for-rows() {
@@ -18,17 +17,21 @@ $table-row-height-basis: $padding-base * 4.5;
 
   &.selectable {
     position: relative;
+    cursor: pointer;
 
     &:focus {
       outline: none;
     }
 
-    &.open-true {
+    &.open {
       height: auto;
+      background-color: contrast-color($color-content-background, 4%);
     }
 
-    &:hover {
-      background-color: contrast-color($color-content-background, 2%);
+    &:not(.open) {
+      &:hover {
+        background-color: contrast-color($color-content-background, 2%);
+      }
     }
   }
 }
@@ -106,11 +109,9 @@ $table-row-height-basis: $padding-base * 4.5;
     white-space: normal;
 
     .ReactCollapse--content {
-      padding: $padding-base $padding-base*2;
+      margin: 0 $padding-base*2;
       overflow: hidden;
-      box-shadow: inset 0 1px contrast-color($color-content-background, 8%),
-        inset 0 -1px contrast-color($color-content-background, 8%);
-      background-color: contrast-color($color-content-background, 4%);
+      box-shadow: inset 0 1px contrast-color($color-content-background, 8%);
     }
   }
 }

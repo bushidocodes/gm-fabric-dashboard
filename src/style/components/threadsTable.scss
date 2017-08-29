@@ -58,17 +58,29 @@
     }
   }
 
-  .open-true {
-    .table-drawer {
-      .ReactCollapse--content {
-      }
+  .table-drawer {
+    .ReactCollapse--content {
+      padding: $padding-base*2;
     }
   }
 
-  .table-drawer {
-    .ReactCollapse--content {
-      word-break: break-all;
-      padding: $padding-base*2 $padding-base*4;
+  .stack-trace {
+    counter-reset: stack-trace; /* Set a counter named 'section', and it`s initial value is 0. */
+
+    > div:not(:first-child) {
+      counter-increment: stack-trace;
+      position: relative;
+      margin-left: 1.5em;
+
+      &:before {
+        content: counter(stack-trace);
+        position: absolute;
+        text-align: right;
+        width: 5em;
+        right: calc(100% + #{$padding-base});
+        top: 0;
+        opacity: .25;
+      }
     }
   }
 }

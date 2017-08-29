@@ -47,9 +47,7 @@ export default class JVMThreadsTableLineItem extends Component {
       <li
         className={
           stack.length
-            ? this.state.isOpen
-              ? "selectable open-true"
-              : "selectable open-false"
+            ? this.state.isOpen ? "selectable open" : "selectable"
             : ""
         }
         key={id}
@@ -92,7 +90,7 @@ export default class JVMThreadsTableLineItem extends Component {
             evt.stopPropagation();
           }}
         >
-          <div>
+          <div className="stack-trace content-type-code">
             <div>{`java.lang.Thread.State: ${state}`}</div>
             {stack.map((value, index) =>
               <div key={index}>{`at ${value}`}</div>
