@@ -33,7 +33,7 @@
   $background-color,
   $contrast: 100%,
   $intent-color: null) {
-  @if lightness($background-color) > 50 {
+  @if lightness($background-color) > 65 {
     @return mix(if($intent-color, $intent-color, #000), $background-color, $contrast);
   } @else {
     // Increase the contrast base for inverted colors, because light is strange
@@ -63,12 +63,14 @@
 }
 
 // Create a range of colors for use in data displays or widgets
+// $base-color-2 is only required when $type is divergent, and otherwise ignored
 @function custom-color-range(
   $base-color-1: blue,
   $type: qualitative,
   $direction: to-dark,
   $size: 12,
-  $variance: .5
+  $variance: .5,
+  $base-color-2: null
 ) {
   // Initialize the list with the first color
   $colors: $base-color-1;
@@ -129,6 +131,24 @@
         adjust-hue($base-color-1, $color-change-per-increment * $i)
       );
     }
+
+    @return $colors;
+
+    // Two-color scales
+  } @else if $type == 'divergent' {
+    // Set the start color
+    $colors: $base-color-1;
+
+    // Set the middle colors
+    @for $i from 1 through $size - 2 {
+      $colors: append(
+        $colors,
+        mix($base-color-2, $base-color-1,  (100% / $size) * $i)
+      );
+    }
+
+    // Set the end color
+    $colors: append($colors, $base-color-2);
 
     @return $colors;
   }

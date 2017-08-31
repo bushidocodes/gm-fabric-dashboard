@@ -53,6 +53,7 @@ export default class DygraphContainer extends React.Component {
     options.legend = "always";
     options.axisLineColor = "rgb(200, 200, 200)";
     options.gridLineColor = "rgb(200, 200, 200)";
+    options.colors = ["#0aab2a", "#002e6e"];
     options.gridLinePattern = [1, 3];
     options.animatedZooms = true;
     options.drawAxesAtZero = true;

@@ -11,13 +11,17 @@ $readout-feature-background-color-base: contrast-color(
 );
 $readout-feature-primary-background-color-base: $color-highlight;
 $readout-feature-primary-text-color-base: $color-white;
-$readout-dashboard-colors: $colors-datarange-rainbow;
+$readout-dashboard-colors: custom-color-range(
+  $base-color-1: $color-brand-primary,
+  $base-color-2: $color-brand-secondary,
+  $type: divergent,
+  $size: 4
+);
 
 // Helpers
 
 // Styles
 .readout-dashboard-row {
-  content: $colors-datarange-rainbow;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -34,10 +38,10 @@ $readout-dashboard-colors: $colors-datarange-rainbow;
   @for $i from 1 through length($readout-dashboard-colors) {
     $background-color: nth($readout-dashboard-colors, $i);
     .readout:nth-child(#{$i}n) {
-      color: contrast-color($background-color, 95%);
+      color: contrast-color($background-color, 100%);
       background-image: linear-gradient(
-        $background-color,
-        darker-color($background-color, 8%)
+        lighter-color($background-color, 2%),
+        darker-color($background-color, 2%)
       );
     }
   }
