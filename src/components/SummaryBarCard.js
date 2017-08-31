@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "./Button.js";
-import { Sparklines, SparklinesLine } from "react-sparklines";
+import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 
 export default class SummaryBarCard extends Component {
   static propTypes = {
@@ -70,23 +70,32 @@ export default class SummaryBarCard extends Component {
                 {line.name}
               </dt>
               <dd className="summary-bar-card-kv-value">
-                {line.value}
+                <span className="value-text">
+                  {line.value}
+                </span>
                 {chartData &&
-                  <Sparklines
-                    data={chartData}
-                    preserveAspectRatio="xMaxYMin"
-                    style={{ width: "100%" }}
-                    title={chartTitle}
-                  >
-                    <SparklinesLine
-                      style={{
-                        stroke: "currentColor",
-                        strokeWidth: 1,
-                        fill: "currentColor",
-                        fillOpacity: "0"
-                      }}
-                    />
-                  </Sparklines>}
+                  <div className="sparkline-container">
+                    <Sparklines
+                      className="summary-datapoint-line"
+                      data={chartData}
+                      // limit={30}
+                      margin={3}
+                      // preserveAspectRatio="xMaxYMin"
+                      svgHeight={20}
+                      svgWidth={120}
+                      title={chartTitle}
+                    >
+                      <SparklinesSpots />
+                      <SparklinesLine
+                        style={{
+                          stroke: "currentColor",
+                          strokeWidth: "2",
+                          fill: "currentColor",
+                          fillOpacity: "0"
+                        }}
+                      />
+                    </Sparklines>
+                  </div>}
               </dd>
             </div>
           )}

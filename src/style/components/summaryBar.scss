@@ -26,6 +26,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
   display: flex;
   flex-direction: column;
   background-color: $summary-bar-background-color;
+  text-shadow: 1px 1px $summary-bar-background-color;
   padding: 0;
   position: relative;
   transition: all .15s ease;
@@ -89,13 +90,17 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     max-height: 0;
     overflow: hidden;
     opacity: 0;
+
+    > *:last-child {
+      margin-bottom: $padding-base;
+    }
   }
 
   .summary-bar-card-kv {
     display: flex;
     padding: 0 spacing-scale(1);
     font-family: $font-stack-data;
-
+    position: relative;
     &:last-child {
       margin-bottom: spacing-scale(1);
     }
@@ -116,6 +121,28 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
   }
   .summary-bar-card-kv-value {
     flex-basis: 60%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    position: relative;
+
+    .value-text {
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .sparkline-container {
+      flex: 1 1 100px;
+      overflow: hidden;
+      opacity: .5;
+    }
+    svg {
+      position: absolute;
+      right: 0;
+      height: 20px;
+      width: 120px;
+      top: 0;
+    }
   }
 
   .summary-datapoint-line {
@@ -133,6 +160,12 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
       $summary-bar-card-active-background-color,
       60%
     );
+    text-shadow: 1px 1px
+      mix(
+        $summary-bar-background-color,
+        $summary-bar-card-active-background-color,
+        60%
+      );
   }
 
   &:active,
@@ -157,6 +190,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
   &.active {
     background-color: $summary-bar-card-active-background-color;
     box-shadow: inset 1px 0 $color-highlight;
+    text-shadow: 1px 1px $summary-bar-card-active-background-color;
     cursor: default;
 
     &,
