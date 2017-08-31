@@ -93,6 +93,6 @@ $sidebar-width-base: 230px;
   }
 
   .app-footer {
-    flex: 0 0 $padding-base * 4;
+    flex: 0 0 spacing-scale(4);
   }
 }

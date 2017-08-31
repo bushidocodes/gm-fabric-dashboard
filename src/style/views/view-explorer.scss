@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding: 0 $padding-base*2 $padding-base*2;
+  padding: 0 spacing-scale(2) spacing-scale(2);
   height: 100%;
 
   .metrics-list,
@@ -22,7 +22,7 @@
   .metrics-list {
     flex: 0 0 300px;
     position: relative;
-    margin-bottom: $padding-base * 2;
+    margin-bottom: spacing-scale(2);
   }
 
   .metrics-graph-display {
@@ -47,7 +47,7 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      padding: $padding-base * 2;
+      padding: spacing-scale(2);
 
       h3 {
         flex: 0 0 auto;
@@ -55,7 +55,7 @@
         white-space: normal;
         max-width: 100%;
         text-overflow: ellipsis;
-        margin: $padding-base;
+        margin: spacing-scale(1);
       }
     }
 
@@ -71,7 +71,7 @@
 
     .metrics-list {
       flex: 0 0 40%;
-      margin-right: $padding-base * 2;
+      margin-right: spacing-scale(2);
       margin-bottom: 0;
     }
 

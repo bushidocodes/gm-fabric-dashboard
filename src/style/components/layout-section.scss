@@ -3,12 +3,12 @@
 @import '../mixins.scss';
 
 // Local Variables
-$section-icon-size: $padding-base * 3;
+$section-icon-size: spacing-scale(3);
 $section-border-width: 1px;
-$section-header-spacing: $padding-base $padding-base*2;
-$section-header-icon-spacing: $padding-base;
+$section-header-spacing: spacing-scale(1) spacing-scale(2);
+$section-header-icon-spacing: spacing-scale(1);
 $section-header-title-size: $font-size-lg;
-$section-content-padding: $padding-base;
+$section-content-padding: spacing-scale(1);
 
 // Helpers
 $section-border-color: edge-color($color-content-background);
@@ -18,7 +18,7 @@ $section-border-color: edge-color($color-content-background);
 
 // Styles
 .layout-section {
-  margin-bottom: $padding-base * 4;
+  margin-bottom: spacing-scale(4);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -58,7 +58,7 @@ $section-border-color: edge-color($color-content-background);
       justify-content: center;
 
       + .subsection {
-        margin-top: $padding-base * 3;
+        margin-top: spacing-scale(3);
       }
     }
   }

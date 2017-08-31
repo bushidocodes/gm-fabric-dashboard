@@ -3,14 +3,14 @@
 @import '../mixins.scss';
 
 // Local Variables
-$app-header-height: $padding-base*4.25;
+$app-header-height: spacing-scale(4.25);
 $app-header-font-size: $font-size-base;
 
 $brandbar-background-color: $color-sidebar-background;
 $brandbar-text-color: contrast-color($color-sidebar-background);
 $brandbar-brand-logo-size: 26px;
 $brandbar-brand-text-size: 16px;
-$brandbar-brand-spacing: $padding-base;
+$brandbar-brand-spacing: spacing-scale(1);
 
 $toolbar-background-color: $color-content-background;
 $toolbar-text-color: contrast-color($color-content-background);
@@ -35,7 +35,7 @@ $app-breadcrumb-color: contrast-color($color-content-background);
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: $padding-base / 2;
+  padding-right: spacing-scale(.5);
   font-size: $app-header-font-size;
   color: $brandbar-text-color;
 
@@ -70,7 +70,7 @@ $app-breadcrumb-color: contrast-color($color-content-background);
     @include mixin-version-text-styles;
     flex: 0 0 auto;
     opacity: .5;
-    padding: 0 $padding-base;
+    padding: 0 spacing-scale(1);
     color: inherit;
 
     &:hover {
@@ -88,13 +88,13 @@ $app-breadcrumb-color: contrast-color($color-content-background);
     }
 
     + .btn {
-      margin-left: $padding-base;
+      margin-left: spacing-scale(1);
       position: relative;
 
       &:before {
         content: '';
         position: absolute;
-        left: (-$padding-base / 2) - 1px;
+        left: spacing-scale(-.5) - 1px;
         height: 1em;
         width: 1px;
         background-color: contrast-color($toolbar-background-color, 50%);
@@ -122,7 +122,7 @@ $app-breadcrumb-color: contrast-color($color-content-background);
         transform: scaleX(.5);
         display: flex;
         opacity: .5;
-        padding: 0 $padding-base * .5;
+        padding: 0 spacing-scale(.5);
       }
 
       a {
@@ -130,7 +130,7 @@ $app-breadcrumb-color: contrast-color($color-content-background);
         max-width: 100%;
         white-space: nowrap;
         text-overflow: ellipsis;
-        padding: $padding-base 0;
+        padding: spacing-scale(1) 0;
         color: inherit;
       }
 
@@ -140,7 +140,7 @@ $app-breadcrumb-color: contrast-color($color-content-background);
         }
 
         a {
-          padding-left: $padding-base * 2;
+          padding-left: spacing-scale(2);
         }
       }
     }

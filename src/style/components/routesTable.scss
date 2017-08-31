@@ -72,7 +72,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      right: $padding-base * 2;
+      right: spacing-scale(2);
       height: 4px;
       content: '';
       border-bottom: 1px solid;
@@ -94,9 +94,9 @@
 
   .div-table-body {
     .routes-table-sparkline {
-      height: $padding-base * 3;
-      padding-top: $padding-base / 2;
-      padding-bottom: $padding-base / 2;
+      height: spacing-scale(3);
+      padding-top: spacing-scale(.5);
+      padding-bottom: spacing-scale(.5);
 
       svg {
         height: inherit;
@@ -127,10 +127,10 @@
     color: $color-content;
     border-radius: $border-radius-base * 2;
     flex-basis: 600px;
-    padding: $padding-base * 8 $padding-base * 4;
-    padding-top: $padding-base * 8;
-    padding-bottom: $padding-base * 8;
-    margin: $padding-base * 4;
+    padding: spacing-scale(8) spacing-scale(4);
+    padding-top: spacing-scale(8);
+    padding-bottom: spacing-scale(8);
+    margin: spacing-scale(4);
     span {
       margin-left: 20px;
     }

@@ -10,11 +10,11 @@
 
 // Styles
 .page-title {
-  padding: $padding-base $padding-base*2;
+  padding: spacing-scale(1) spacing-scale(2);
 
   h1 {
     @include styles-for-page-title-h1();
-    line-height: $padding-base * 5;
+    line-height: spacing-scale(5);
     margin: 0;
   }
 }

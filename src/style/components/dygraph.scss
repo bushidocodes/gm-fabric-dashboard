@@ -39,7 +39,7 @@
   left: auto !important;
   transition: all .2s ease, color .2s ease;
   color: transparent;
-  padding: $padding-base $padding-base*2 $padding-base;
+  padding: spacing-scale(1) spacing-scale(2) spacing-scale(1);
   opacity: 0;
   min-width: 18em;
 

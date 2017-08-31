@@ -3,7 +3,7 @@
 @import '../mixins.scss';
 
 // Local Variables
-$toolbar-height: $padding-base * 7;
+$toolbar-height: spacing-scale(7);
 
 // Helpers
 
@@ -15,7 +15,7 @@ $toolbar-height: $padding-base * 7;
   bottom: 0;
   left: 0;
   font-family: $font-stack-data;
-  padding-top: $padding-base * 5;
+  padding-top: spacing-scale(5);
   line-height: 1.2;
   height: 100%;
   border-radius: $border-radius-base;
@@ -31,7 +31,7 @@ $toolbar-height: $padding-base * 7;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 $padding-base;
+  padding: 0 spacing-scale(1);
   z-index: 1;
 }
 
@@ -83,7 +83,7 @@ $toolbar-height: $padding-base * 7;
   left: 0;
   right: 0;
   height: $toolbar-height;
-  padding: $padding-base;
+  padding: spacing-scale(1);
   display: flex;
   align-items: stretch;
 }
@@ -92,7 +92,7 @@ $toolbar-height: $padding-base * 7;
   display: block;
   cursor: pointer;
   display: flex;
-  padding: $padding-base*.5 $padding-base;
+  padding: spacing-scale(.5) spacing-scale(1);
   word-wrap: break-word;
   transition: all .2s ease;
   border-radius: $border-radius-base;

@@ -14,7 +14,7 @@ $button-label-color-base-default: contrast-color(
 );
 
 $button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
-$button-content-spacing-base-default: $padding-base * .75;
+$button-content-spacing-base-default: spacing-scale(.75);
 
 $button-border-width-base-default: 1px;
 $button-border-radius-base-default: $border-radius-base;
@@ -57,10 +57,10 @@ $button-font-weight: $button-font-weight-default) {
   }
 
   .label-suffix {
-    margin-left: $padding-base;
+    margin-left: spacing-scale(1);
   }
   .label-prefix {
-    margin-right: $padding-base;
+    margin-right: spacing-scale(1);
   }
 }
 

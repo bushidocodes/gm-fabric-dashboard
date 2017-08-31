@@ -133,3 +133,8 @@
     @return $colors;
   }
 }
+
+// Scales
+@function spacing-scale($factor) {
+  @return $padding-base * $factor;
+}

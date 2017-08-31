@@ -50,8 +50,8 @@ h4 {
 }
 
 hr {
-  margin-top: $padding-base / 2;
-  margin-bottom: $padding-base / 2;
+  margin-top: spacing-scale(.5);
+  margin-bottom: spacing-scale(.5);
 }
 
 body {

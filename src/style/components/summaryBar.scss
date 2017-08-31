@@ -22,7 +22,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
 }
 
 .summary-bar-card {
-  flex: 0 0 $padding-base*5;
+  flex: 0 0 spacing-scale(5);
   display: flex;
   flex-direction: column;
   background-color: $summary-bar-background-color;
@@ -36,17 +36,17 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: $padding-base $padding-base*.5;
+    padding: spacing-scale(1) spacing-scale(.5);
     border-top: 1px solid edge-color($summary-bar-background-color);
     position: relative;
 
     > * {
-      flex: 0 0 $padding-base*3;
+      flex: 0 0 spacing-scale(3);
     }
   }
 
   .summary-bar-card-icon {
-    margin-right: $padding-base / 2;
+    margin-right: spacing-scale(.5);
     position: relative;
     left: 2px;
   }
@@ -83,7 +83,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
 
   .summary-bar-card-body {
     padding: 0 0;
-    margin-top: -$padding-base*.25;
+    margin-top: -spacing-scale(.25);
     color: $summary-bar-card-text-color;
     transition: all .15s ease;
     max-height: 0;
@@ -93,11 +93,11 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
 
   .summary-bar-card-kv {
     display: flex;
-    padding: 0 $padding-base;
+    padding: 0 spacing-scale(1);
     font-family: $font-stack-data;
 
     &:last-child {
-      margin-bottom: $padding-base;
+      margin-bottom: spacing-scale(1);
     }
   }
 
@@ -106,7 +106,7 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
     font-size: $font-size-sm;
     font-weight: 500;
     flex: 1 1;
-    padding: $padding-base / 4;
+    padding: spacing-scale(.25);
   }
 
   .summary-bar-card-kv-key {
@@ -179,11 +179,11 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
 }
 
 .service-bar-title {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: spacing-scale(1);
+  padding-bottom: spacing-scale(1);
   font-weight: 300;
 
   > span > svg {
-    margin-bottom: 8px;
+    margin-bottom: spacing-scale(1);
   }
 }

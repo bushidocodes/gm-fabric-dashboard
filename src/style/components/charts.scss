@@ -4,7 +4,7 @@
 
 // Local Variables
 $chart-background-color: transparent;
-$chart-spacing: $padding-base*2 50px $padding-base*2 0;
+$chart-spacing: spacing-scale(1);
 $chart-height-base: 250px;
 
 // Helpers
@@ -34,8 +34,8 @@ $chart-height-base: 250px;
   .chart-title {
     @include styles-for-chart-title();
     margin: 0;
-    padding: $padding-base $padding-base*2;
-    flex: 1 0 $padding-base*5;
+    padding: spacing-scale(1) spacing-scale(2);
+    flex: 1 0 spacing-scale(5);
     flex: 0 0 auto;
   }
 
@@ -50,19 +50,19 @@ $chart-height-base: 250px;
 
   .chart-details {
     display: none;
-    padding: $padding-base;
+    padding: spacing-scale(1);
     flex-direction: row;
 
     &:not(:empty) {
       display: flex;
     }
     .chart-detail {
-      padding: 0 $padding-base;
+      padding: 0 spacing-scale(1);
     }
   }
 
   .chart-empty {
-    padding: $padding-base;
+    padding: spacing-scale(1);
     flex: 1 0 auto;
 
     h1,
@@ -76,8 +76,8 @@ $chart-height-base: 250px;
       color: contrast-color($chart-background-color, 100%, $color-warning);
       font-weight: bold;
       font-size: $font-size-lg;
-      padding-bottom: $padding-base * 2;
-      margin-bottom: $padding-base * 2;
+      padding-bottom: spacing-scale(2);
+      margin-bottom: spacing-scale(2);
       border-bottom: 1px solid edge-color($chart-background-color);
     }
 
@@ -87,7 +87,7 @@ $chart-height-base: 250px;
     }
 
     ul {
-      padding-left: $padding-base * 2;
+      padding-left: spacing-scale(2);
       list-style: circle;
     }
   }
