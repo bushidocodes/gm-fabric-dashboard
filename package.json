@@ -102,7 +102,8 @@
     "precommit": "lint-staged",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
-    "mock-jvm": "node json-mock/gm-fabric-jvm.js"
+    "mock-jvm": "node json-mock/gm-fabric-jvm.js",
+    "mock-go": "node json-mock/go/gm-fabric-go.js"
   },
   "lint-staged": {
     "*.js": [
