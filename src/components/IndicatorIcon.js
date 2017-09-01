@@ -11,9 +11,7 @@ function IndicatorIcon({ alt, diameter, color }) {
   return (
     <span data-uk-tooltip="pos: bottom-left" title={alt}>
       <svg height={diameter} width={diameter}>
-        <title>
-          {alt}
-        </title>
+        <title>{alt}</title>
         <circle
           cx={diameter * 0.5}
           cy={diameter * 0.5}

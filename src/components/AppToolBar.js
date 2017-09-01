@@ -19,13 +19,13 @@ function AppToolBar({ pathname }) {
           .replace(/^\/|\/$/g, "")
           .replace("%2F", "/") // String out escaped slashes if found
           .split("/")
-          .map((val, idx) =>
+          .map((val, idx) => (
             <li className="app-breadcrumb" key={val}>
               <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
                 {val}
               </Link>
             </li>
-          )}
+          ))}
       </ol>
 
       <NavButton

@@ -11,22 +11,16 @@ ReadoutItem.propTypes = {
 function ReadoutItem({ title, value, icon, detail }) {
   return (
     <li className="readout-feature">
-      {icon &&
+      {icon && (
         <div
           className="readout-feature-icon"
           data-uk-icon={`icon: ${icon || "grid"}; ratio: 1.8`}
-        />}
+        />
+      )}
       <div className="readout-feature-data">
-        <h2 className="readout-feature-title">
-          {title}
-        </h2>
-        <span className="readout-feature-value">
-          {value}
-        </span>
-        {detail &&
-          <span className="readout-feature-detail">
-            {detail}
-          </span>}
+        <h2 className="readout-feature-title">{title}</h2>
+        <span className="readout-feature-value">{value}</span>
+        {detail && <span className="readout-feature-detail">{detail}</span>}
       </div>
     </li>
   );

@@ -8,9 +8,7 @@ PageTitle.propTypes = {
 function PageTitle({ title }) {
   return (
     <div className="page-title">
-      <h1>
-        {title}
-      </h1>
+      <h1>{title}</h1>
     </div>
   );
 }

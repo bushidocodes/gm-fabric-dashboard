@@ -6,14 +6,17 @@
  */
 export function formatStatsd(statsdText) {
   let results = {};
-  statsdText.split("\n").map(kv => kv.split(": ")).forEach(([key, value]) => {
-    if (key && value) {
-      // Cast to a number and filter out NaNs
-      const valueAsNumber = Number(value);
-      if (!Number.isNaN(valueAsNumber)) {
-        results[key] = Number(value);
+  statsdText
+    .split("\n")
+    .map(kv => kv.split(": "))
+    .forEach(([key, value]) => {
+      if (key && value) {
+        // Cast to a number and filter out NaNs
+        const valueAsNumber = Number(value);
+        if (!Number.isNaN(valueAsNumber)) {
+          results[key] = Number(value);
+        }
       }
-    }
-  });
+    });
   return results;
 }

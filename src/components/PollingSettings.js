@@ -30,9 +30,7 @@ class PollingSettings extends Component {
             className="section-icon"
             data-uk-icon={`icon: grid; ratio: 1`}
           />
-          <h3 className="section-title">
-            {"Polling"}
-          </h3>
+          <h3 className="section-title">{"Polling"}</h3>
         </header>
         <div className="section-content">
           <div className="control-group control-group-polling-start-stop">

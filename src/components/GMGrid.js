@@ -98,7 +98,7 @@ class GMGrid extends Component {
                   overflow: "hidden"
                 }}
               >
-                {chart.type === "GMLineChart" &&
+                {chart.type === "GMLineChart" && (
                   <GMLineChart
                     detailLines={
                       chart.data.detailLines &&
@@ -121,8 +121,9 @@ class GMGrid extends Component {
                         .map(ts => ts.label)
                     )}
                     title={chart.title}
-                  />}
-                {chart.type === "GMTable" &&
+                  />
+                )}
+                {chart.type === "GMTable" && (
                   <GMTable
                     headers={chart.data.headers}
                     rows={chart.data.rows.map((row, outerIdx) => {
@@ -133,8 +134,9 @@ class GMGrid extends Component {
                       });
                     })}
                     title={chart.title}
-                  />}
-                {chart.type === "GMBasicMetrics" &&
+                  />
+                )}
+                {chart.type === "GMBasicMetrics" && (
                   <GMBasicMetrics
                     detailLines={chart.data.detailLines.map(
                       (
@@ -172,7 +174,8 @@ class GMGrid extends Component {
                       }
                     )}
                     title={chart.title}
-                  />}
+                  />
+                )}
               </div>
             );
           })}

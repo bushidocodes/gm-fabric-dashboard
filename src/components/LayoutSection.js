@@ -12,13 +12,9 @@ function LayoutSection({ children, className, title }) {
     <section className={"layout-section " + className}>
       <header>
         <span className="section-icon" data-uk-icon={`icon: grid; ratio: 1`} />
-        <h3 className="section-title">
-          {title}
-        </h3>
+        <h3 className="section-title">{title}</h3>
       </header>
-      <div className="section-content">
-        {children}
-      </div>
+      <div className="section-content">{children}</div>
     </section>
   );
 }

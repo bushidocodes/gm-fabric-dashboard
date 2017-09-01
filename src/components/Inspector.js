@@ -33,9 +33,9 @@ export default class Inspector extends Component {
             type="search"
           />
         </div>
-        {data.length > 0 &&
+        {data.length > 0 && (
           <ul className="inspector-data">
-            {filteredData.map(key =>
+            {filteredData.map(key => (
               <li
                 className={`inspector-item ${selectedMetric === key
                   ? "active"
@@ -45,8 +45,9 @@ export default class Inspector extends Component {
               >
                 {key}
               </li>
-            )}
-          </ul>}
+            ))}
+          </ul>
+        )}
       </div>
     );
   }

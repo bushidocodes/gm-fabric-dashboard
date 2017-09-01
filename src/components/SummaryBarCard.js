@@ -47,12 +47,10 @@ export default class SummaryBarCard extends Component {
             className="summary-bar-card-icon"
             data-uk-icon={`icon: ${icon || "grid"}; ratio: 1`}
           />
-          <h1 className="summary-bar-card-heading">
-            {title}
-          </h1>
+          <h1 className="summary-bar-card-heading">{title}</h1>
           {(this.props.lines.length > 0 ||
             this.props.chartTitle ||
-            this.props.chartData) &&
+            this.props.chartData) && (
             <Button
               clickAction={evt => {
                 evt.preventDefault();
@@ -61,14 +59,13 @@ export default class SummaryBarCard extends Component {
               icon={"chevron-left"}
               label={"Details"}
               outline={"none"}
-            />}
+            />
+          )}
         </div>
         <div className="uk-card-body summary-bar-card-body">
-          {lines.map(line =>
+          {lines.map(line => (
             <div className="summary-bar-card-kv" key={line.name}>
-              <dt className="summary-bar-card-kv-key">
-                {line.name}
-              </dt>
+              <dt className="summary-bar-card-kv-key">{line.name}</dt>
               <dd className="summary-bar-card-kv-value">
                 <span className="value-text">
                   {line.value}
@@ -98,7 +95,7 @@ export default class SummaryBarCard extends Component {
                   </div>}
               </dd>
             </div>
-          )}
+          ))}
         </div>
       </NavLink>
     );

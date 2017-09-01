@@ -46,9 +46,13 @@ export default class JVMThreadsTableLineItem extends Component {
     return (
       <li
         className={
-          stack.length
-            ? this.state.isOpen ? "selectable open" : "selectable"
-            : ""
+          stack.length ? this.state.isOpen ? (
+            "selectable open"
+          ) : (
+            "selectable"
+          ) : (
+            ""
+          )
         }
         key={id}
         onClick={stack.length && this.toggleStack}
@@ -67,22 +71,18 @@ export default class JVMThreadsTableLineItem extends Component {
           <IndicatorIcon alt={state} color={indicatorIcon} diameter={15} />
         </div>
         <div className="thread-table-stacktrace">
-          {stack.length
-            ? <span
-                className="stack-trace-indicator icon"
-                data-uk-icon={"icon: table;"}
-              />
-            : ""}
+          {stack.length ? (
+            <span
+              className="stack-trace-indicator icon"
+              data-uk-icon={"icon: table;"}
+            />
+          ) : (
+            ""
+          )}
         </div>
-        <div className="thread-table-name">
-          {name}
-        </div>
-        <div className="thread-table-daemon">
-          {daemon ? "Yes" : "No"}
-        </div>
-        <div className="thread-table-priority">
-          {priority}
-        </div>
+        <div className="thread-table-name">{name}</div>
+        <div className="thread-table-daemon">{daemon ? "Yes" : "No"}</div>
+        <div className="thread-table-priority">{priority}</div>
         <Collapse
           className="table-drawer"
           isOpened={this.state.isOpen}
@@ -92,9 +92,9 @@ export default class JVMThreadsTableLineItem extends Component {
         >
           <div className="stack-trace content-type-code">
             <div>{`java.lang.Thread.State: ${state}`}</div>
-            {stack.map((value, index) =>
+            {stack.map((value, index) => (
               <div key={index}>{`at ${value}`}</div>
-            )}
+            ))}
           </div>
         </Collapse>
       </li>

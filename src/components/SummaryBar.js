@@ -29,14 +29,10 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
             className="icon"
             data-uk-icon={`icon: chevron-left; ratio: 1`}
           />
-          <span className="label">
-            {getServicename()}
-          </span>
+          <span className="label">{getServicename()}</span>
         </a>
         <a className="nav-siblings">
-          <span className="label">
-            {"Instance 1"}
-          </span>
+          <span className="label">{"Instance 1"}</span>
           <span
             className="icon"
             data-uk-icon={`icon: triangle-down; ratio: 1`}
@@ -47,18 +43,18 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           data-uk-dropdown="mode: click; pos: bottom-justify; boundary: .nav-widget; boundary-align: true; offset: 1;"
         >
           <ol className="instances">
-            {Array(15).fill("shanberg").map((val, idx) =>
-              <li key={idx}>
-                <Link to="">
-                  Instance {idx + 1}
-                </Link>
-              </li>
-            )}
+            {Array(15)
+              .fill("shanberg")
+              .map((val, idx) => (
+                <li key={idx}>
+                  <Link to="">Instance {idx + 1}</Link>
+                </li>
+              ))}
           </ol>
         </div>
       </div>
 
-      {runtime === "JVM" &&
+      {runtime === "JVM" && (
         <SummaryBarCard
           href="/summary"
           icon="star"
@@ -70,15 +66,12 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           ]}
           tabIndex={1}
           title="Summary"
-        />}
-      {runtime === "JVM" &&
-        <SummaryBarCard
-          href="/route"
-          icon="link"
-          tabIndex={3}
-          title="Routes"
-        />}
-      {runtime === "JVM" &&
+        />
+      )}
+      {runtime === "JVM" && (
+        <SummaryBarCard href="/route" icon="link" tabIndex={3} title="Routes" />
+      )}
+      {runtime === "JVM" && (
         <SummaryBarCard
           chartData={getSparkLineOfValue(metrics, "jvm/thread/count")}
           href="/threads"
@@ -91,7 +84,8 @@ function SummaryBar({ dashboards, metrics, interval, runtime }) {
           ]}
           tabIndex={4}
           title="Threads"
-        />}
+        />
+      )}
       {_.toPairs(dashboards).map(([key, value]) => {
         const hasValidChart = _.has(value, "summaryCard.chart.type"); // && _.has(dashboard, 'summaryCard.chart.dataAttribute')
         const lines = value.summaryCard.lines.map(line => ({

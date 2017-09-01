@@ -91,13 +91,15 @@ class Explorer extends Component {
           />
         </div>
         <div className="metrics-graph-display">
-          {selectedMetric && this.props.keys.indexOf(selectedMetric) !== -1
-            ? <GMLineChart
-                height={"max"}
-                timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
-                title={selectedMetric}
-              />
-            : <p>Select a metric to display</p>}
+          {selectedMetric && this.props.keys.indexOf(selectedMetric) !== -1 ? (
+            <GMLineChart
+              height={"max"}
+              timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
+              title={selectedMetric}
+            />
+          ) : (
+            <p>Select a metric to display</p>
+          )}
         </div>
       </div>
     );

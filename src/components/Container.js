@@ -54,14 +54,17 @@ class Container extends Component {
           <Route exact path="/" render={() => <Redirect to="/summary" />} />
           <div className="app-content-view">
             <Switch>
-              {this.props.runtime === "JVM" &&
-                <Route component={SummaryGrid} path="/summary" />}
-              {this.props.runtime === "JVM" &&
-                <Route component={ThreadsGrid} path="/threads" />}
+              {this.props.runtime === "JVM" && (
+                <Route component={SummaryGrid} path="/summary" />
+              )}
+              {this.props.runtime === "JVM" && (
+                <Route component={ThreadsGrid} path="/threads" />
+              )}
               <Route component={Explorer} path="/explorer" />
               <Route component={SettingsGrid} path="/settings" />
-              {this.props.runtime === "JVM" &&
-                <Route component={RoutesGrid} path="/route" />}
+              {this.props.runtime === "JVM" && (
+                <Route component={RoutesGrid} path="/route" />
+              )}
               <Route component={GMGrid} path="/dashboard/:dashboardName" />
               <Route component={NotFound} path="*" />
             </Switch>

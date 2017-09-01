@@ -25,7 +25,7 @@ export default function RoutesTable({ routes = [] }) {
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline,
             totalRequests
-          }) =>
+          }) => (
             <RoutesTableLineItem
               errorRate={errorRate}
               key={`${route}/${verb}`}
@@ -35,6 +35,7 @@ export default function RoutesTable({ routes = [] }) {
               totalRequests={totalRequests}
               verb={verb}
             />
+          )
         )}
       </ol>
     </div>

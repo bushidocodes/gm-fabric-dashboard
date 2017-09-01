@@ -56,17 +56,9 @@ function Button({
     >
       {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
       <span className="label">
-        {prefix
-          ? <span className="label-prefix">
-              {prefix}
-            </span>
-          : ""}
+        {prefix ? <span className="label-prefix">{prefix}</span> : ""}
         {label}
-        {suffix
-          ? <span className="label-suffix">
-              {suffix}
-            </span>
-          : ""}
+        {suffix ? <span className="label-suffix">{suffix}</span> : ""}
       </span>
     </button>
   );

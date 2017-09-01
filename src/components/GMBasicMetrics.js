@@ -14,21 +14,17 @@ GMBasicMetrics.propTypes = {
 export default function GMBasicMetrics({ detailLines, title }) {
   return (
     <div className="kv kv-hero kv-highlight">
-      <h3 className="kv-title">
-        {title}
-      </h3>
+      <h3 className="kv-title">{title}</h3>
       {detailLines.map(([heading, value, priority, sparkline = []]) => {
         return (
           <div
             className={`kv-pair kv-pair-${priority}`}
             key={`${heading}-${value}`}
           >
-            <div className={`kv-key kv-key-${priority}`}>
-              {heading}
-            </div>
+            <div className={`kv-key kv-key-${priority}`}>{heading}</div>
             <div className={`kv-value kv-value-${priority}`}>
               {value.toLocaleString()}
-              {sparkline.length > 0 &&
+              {sparkline.length > 0 && (
                 <div className={`kv-sparkline kv-sparkline-${priority}`}>
                   <Sparklines
                     data={sparkline}
@@ -50,7 +46,8 @@ export default function GMBasicMetrics({ detailLines, title }) {
                       type="mean"
                     />
                   </Sparklines>
-                </div>}
+                </div>
+              )}
             </div>
           </div>
         );

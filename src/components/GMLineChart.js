@@ -33,38 +33,36 @@ export default function GMLineChart({
     <div
       className={"chart line-chart" + (height && ` chart-height-${height}`: "")}
     >
-      {title &&
-        <h3 className="chart-title">
-          {title}
-        </h3>}
+      {title && <h3 className="chart-title">{title}</h3>}
       <div className="chart-content">
-        {timeSeries[0].length === 0
-          ? <div className="chart-empty">
-              <h1>
-                <i data-uk-icon={`icon: warning`} /> No Chartable Data
-              </h1>
-              {expectedAttributes &&
-                expectedAttributes.length > 0 &&
-                <div>
-                  <p>Could not find the following metrics:</p>
-                  <ul>
-                    {expectedAttributes.map(attribute =>
-                      <li key={attribute}>
-                        {attribute}
-                      </li>
-                    )}
-                  </ul>
-                </div>}
-            </div>
-          : <DygraphContainer timeSeries={timeSeries} />}
+        {timeSeries[0].length === 0 ? (
+          <div className="chart-empty">
+            <h1>
+              <i data-uk-icon={`icon: warning`} /> No Chartable Data
+            </h1>
+            {expectedAttributes &&
+            expectedAttributes.length > 0 && (
+              <div>
+                <p>Could not find the following metrics:</p>
+                <ul>
+                  {expectedAttributes.map(attribute => (
+                    <li key={attribute}>{attribute}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : (
+          <DygraphContainer timeSeries={timeSeries} />
+        )}
       </div>
       <div className="chart-details">
         {detailLines &&
-          detailLines.map(element =>
+          detailLines.map(element => (
             <div className="chart-detail" key={element}>
               {element}
             </div>
-          )}
+          ))}
       </div>
     </div>
   );
