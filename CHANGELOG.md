@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.3] - 2017-09-01
+### Changed
+- Minor style changes
+- Updated dependencies
+
+### Test Coverage: 5.53% ([0.3.3 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.3.3 Bundle Size Report])
+### Production Build: ([0.3.3 Build])
+
 ## [0.3.2] - 2017-08-23
 ### Added
 - Improved style and responsiveness
@@ -131,7 +140,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.2...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.3...HEAD
+[0.3.3]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.3...v0.3.3
+[0.3.3 Coverage Report]: https://653-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.3.3 Bundle Size Report]: https://653-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.3.3 Build]: https://653-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.3.2]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.1...v0.3.2
 [0.3.2 Coverage Report]: https://606-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.3.2 Bundle Size Report]: https://606-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
