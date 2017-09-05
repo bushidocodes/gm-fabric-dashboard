@@ -31,7 +31,7 @@ export default function GMLineChart({
 }) {
   return (
     <div
-      className={"chart line-chart" + (height && ` chart-height-${height}`: "")}
+      className={"chart line-chart" + (height ? ` chart-height-${height}` : "")}
     >
       {title && <h3 className="chart-title">{title}</h3>}
       <div className="chart-content">

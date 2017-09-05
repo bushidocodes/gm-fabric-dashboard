@@ -27,6 +27,26 @@ export function main(message) {
             .then(data => _.omitBy(data, value => Number.isNaN(value)))
         );
       }
+    // Temporaryily commented out pending further commit
+    // } else if (runtime === "GOLANG") {
+    // } else {
+    //   return Promise.all(
+    //     endpoints.map(endpoint =>
+    //       axios.get(endpoint, { responseType: "json" })
+    //     )
+    //   )
+    //     .then(jsons => jsons.map(json => json.data))
+    //     .then(jsons => {
+    //       let results = {};
+    //       jsons.forEach(json => {
+    //         results = { ...results, ...json };
+    //       });
+    //       return results;
+    //     })
+    //     .then(results => {
+    //       return results;
+    //     });
+    // }
     case "fetchThreads":
       return axios
         .get(message.endpoint, { responseType: "json" })

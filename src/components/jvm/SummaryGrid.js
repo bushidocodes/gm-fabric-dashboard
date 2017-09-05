@@ -3,21 +3,21 @@ import ms from "ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import GMLineChart from "./GMLineChart.js";
-import PageTitle from "./PageTitle.js";
-import Readout from "./Readout.js";
-import ReadoutItem from "./ReadoutItem.js";
-import LayoutSection from "./LayoutSection.js";
 import _ from "lodash";
+
+import GMLineChart from "../GMLineChart.js";
+import PageTitle from "../PageTitle.js";
+import Readout from "../Readout.js";
+import ReadoutItem from "../ReadoutItem.js";
+import LayoutSection from "../LayoutSection.js";
 
 import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
-} from "../utils/dygraphs";
-import { getLatestAttribute } from "../utils/latestAttribute";
-import { getErrorRate } from "../utils/routes";
-import { getServicename } from "../utils/head";
+} from "../../utils/dygraphs";
+import { getLatestAttribute } from "../../utils/latestAttribute";
+import { getErrorRate } from "../../utils/routes";
+import { getServicename } from "../../utils/head";
 
 class SummaryGrid extends Component {
   static propTypes = {
@@ -47,7 +47,7 @@ class SummaryGrid extends Component {
                 />
               </Readout>
 
-              <Readout type={"primary"}>
+              <Readout type={"readout-primary"}>
                 <ReadoutItem
                   icon={"bolt"}
                   title={"Avg. Response Time"}
@@ -79,17 +79,19 @@ class SummaryGrid extends Component {
         </LayoutSection>
 
         <LayoutSection title={"Statistics"}>
-          <GMLineChart
-            timeSeries={mapDygraphKeysToNetChange(
-              getDygraphOfValue(
-                metrics,
-                ["https/requests", "http/requests"],
+          <div style={{ height: "250px" }}>
+            <GMLineChart
+              timeSeries={mapDygraphKeysToNetChange(
+                getDygraphOfValue(
+                  metrics,
+                  ["https/requests", "http/requests"],
+                  ["HTTPS", "HTTP"]
+                ),
                 ["HTTPS", "HTTP"]
-              ),
-              ["HTTPS", "HTTP"]
-            )}
-            title="Requests Per Second"
-          />
+              )}
+              title="Requests Per Second"
+            />
+          </div>
         </LayoutSection>
       </div>
     );

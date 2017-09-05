@@ -7,6 +7,12 @@ DataTotals.propTypes = {
   sentBytes: PropTypes.number.isRequired
 };
 
+/**
+ * Simple card component that expresses total uploads and downloads
+ * @param {Object} props 
+ * @param {number} props.receivedBytes 
+ * @param {number} props.sentBytes 
+ */
 export default function DataTotals({ receivedBytes, sentBytes }) {
   return (
     <div className="uk-card uk-card-small uk-card-body left-border">

@@ -1,13 +1,13 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 
-import JVMThreadsTableLineItem from "./JVMThreadsTableLineItem";
+import ThreadsTableLineItem from "./ThreadsTableLineItem";
 
-JVMThreadsTable.propTypes = {
+ThreadsTable.propTypes = {
   filteredThreadData: PropTypes.array
 };
 
-export default function JVMThreadsTable({ filteredThreadData = [] }) {
+export default function ThreadsTable({ filteredThreadData = [] }) {
   return (
     <div className="div-table thread-table">
       <div className="div-table-header thread-table-header">
@@ -22,7 +22,7 @@ export default function JVMThreadsTable({ filteredThreadData = [] }) {
         {filteredThreadData.map(
           ({ daemon, id, name, priority, stack, state }, arrIndex) => {
             return (
-              <JVMThreadsTableLineItem
+              <ThreadsTableLineItem
                 {...{ daemon, name, priority, stack, state }}
                 arrIndex={arrIndex}
                 id={Number(id)}

@@ -48,8 +48,17 @@ export function getMetricsEndpoint() {
   const metricsEndpoint = document.head.querySelector(
     "[property=metricsEndpoint]"
   ).content;
-  if (process.env.NODE_ENV === `development` && getRuntime() === "JVM") {
-    return "admin/metrics.json";
+  // Default endpoints when in dev mode. Assume JVM by default
+  if (process.env.NODE_ENV === `development`) {
+    const runtime = getRuntime();
+    switch (runtime) {
+      case "GOLANG":
+        return "metrics";
+      case "JVM":
+      default:
+        return "admin/metrics.json";
+    }
+    // Otherwise use the actual configuration
   } else if (metricsEndpoint !== "__METRICS_ENDPOINT__") {
     return metricsEndpoint;
   } else {

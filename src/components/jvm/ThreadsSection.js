@@ -1,13 +1,13 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Button from "./Button.js";
+import Button from "../Button.js";
 import { connect } from "react-redux";
 
-import JVMThreadsTable from "./JVMThreadsTable";
-import { getVisibleThreads, getThreadCounts } from "../utils/threads";
+import ThreadsTable from "./ThreadsTable";
+import { getVisibleThreads, getThreadCounts } from "../../utils/threads";
 
-class JVMThreadsSection extends Component {
+class ThreadsSection extends Component {
   static propTypes = {
     threadCounts: PropTypes.object,
     threads: PropTypes.array
@@ -50,7 +50,7 @@ class JVMThreadsSection extends Component {
             </span>
           </div>
         </div>
-        <JVMThreadsTable filteredThreadData={threads} />
+        <ThreadsTable filteredThreadData={threads} />
       </div>
     );
   }
@@ -61,4 +61,4 @@ const mapStateToProps = state => ({
   threadCounts: getThreadCounts(state)
 });
 
-export default connect(mapStateToProps)(JVMThreadsSection);
+export default connect(mapStateToProps)(ThreadsSection);

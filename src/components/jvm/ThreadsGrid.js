@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import JVMThreadsSection from "./JVMThreadsSection";
+import ThreadsSection from "./ThreadsSection";
 
 class ThreadsGrid extends Component {
   static propTypes = {
@@ -18,7 +18,7 @@ class ThreadsGrid extends Component {
     const { threadsTable } = this.props;
     return (
       <div className="thread-table-container">
-        <JVMThreadsSection threadsTable={threadsTable} />
+        <ThreadsSection threadsTable={threadsTable} />
       </div>
     );
   }

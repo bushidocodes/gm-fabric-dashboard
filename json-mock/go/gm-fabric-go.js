@@ -8,12 +8,12 @@ const metrics = require("./metrics.json");
 server.use(middlewares);
 
 // Add custom routes before JSON Server router
-server.get("/admin/metrics.json", (req, res) => {
+server.get("/metrics", (req, res) => {
   res.json(metrics);
 });
 
 // Use default router
 server.use(router);
-server.listen(9990, () => {
-  console.log("Mocking GM-Fabric-Go on localhost:9990/admin/metrics.json");
+server.listen(9092, () => {
+  console.log("Mocking GM-Fabric-Go on localhost:9092/metrics");
 });

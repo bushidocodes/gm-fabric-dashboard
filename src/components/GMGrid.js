@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
@@ -28,48 +27,120 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
  */
 class GMGrid extends Component {
   static propTypes = {
-    dashboards: PropTypes.object.isRequired,
+    dashboard: PropTypes.object,
     match: PropTypes.object.isRequired,
     metrics: PropTypes.object.isRequired,
     name: PropTypes.string
   };
 
-  state = {
-    name: ""
-  };
-
-  componentWillMount() {
-    this.setName(this.props);
-  }
-  componentWillReceiveProps(nextProps) {
-    this.setName(nextProps);
-  }
-
-  setName(props) {
-    const nameInURL =
-      _.hasIn(props, ["match", "params", "dashboardName"]) &&
-      props.match.params.dashboardName.replace("%2F", "/").toLowerCase();
-    if (nameInURL !== this.state.name) this.setState({ name: nameInURL });
-  }
-
-  getDashboard() {
-    const selectedDashboardName =
-      _.hasIn(this.props, ["match", "params", "dashboardName"]) &&
-      this.props.match.params.dashboardName.replace("%2F", "/").toLowerCase();
-    return [
-      selectedDashboardName,
-      this.props.dashboards[selectedDashboardName]
-    ]; // This should be case insensitive at all times
-  }
-
-  render() {
+  /**
+   * renderChart is a mapper function that takes a chart object and renders the appropriate component with the appropriate state
+   * @param {Object} chart 
+   * @param {string} chart.type - String representing the chart type (GMLineChart, GMTable, GMBasicMetrics)
+   * @param {Object} chart.data
+   * @param {Object[][]} chart.data.detailLines - Array of array of objects. The elements of the top level array are in the format expected by the parseJSONString utility function
+   * @param {Object[]} chart.data.timeseries - Array of complex timeseries objects. Has a "type" attribute with a string signifying the type of timeseries (e.g. netChange)
+   */
+  renderChart(chart) {
     const { metrics } = this.props;
-    const dashboard = this.state.name
-      ? this.props.dashboards[this.state.name]
-      : undefined;
+    switch (chart.type) {
+      case "GMLineChart":
+        return (
+          <GMLineChart
+            detailLines={
+              chart.data.detailLines &&
+              chart.data.detailLines.map(line => parseJSONString(line, metrics))
+            }
+            expectedAttributes={chart.data.timeseries.map(ts => ts.attribute)}
+            height="max"
+            timeSeries={mapDygraphKeysToNetChange(
+              getDygraphOfValue(
+                metrics,
+                chart.data.timeseries.map(ts => ts.attribute),
+                chart.data.timeseries.map(ts => ts.label)
+              ),
+              chart.data.timeseries
+                .filter(ts => ts.type === "netChange")
+                .map(ts => ts.label)
+            )}
+            title={chart.title}
+          />
+        );
+      case "GMTable":
+        return (
+          <GMTable
+            headers={chart.data.headers}
+            rows={chart.data.rows.map((row, outerIdx) => {
+              return row.map((cell, innerIdx) => {
+                return innerIdx > 0 ? getLatestAttribute(metrics, cell) : cell;
+              });
+            })}
+            title={chart.title}
+          />
+        );
+      case "GMBasicMetrics":
+        return (
+          <GMBasicMetrics
+            detailLines={chart.data.detailLines.map(
+              (
+                [
+                  heading,
+                  key,
+                  priority,
+                  sparklineKey = null,
+                  sparklineType = null
+                ]
+              ) => {
+                const results = [
+                  heading,
+                  getLatestAttribute(metrics, key),
+                  priority
+                ];
+                if (sparklineKey && sparklineType) {
+                  if (sparklineType === "value") {
+                    results.push(
+                      getSparkLineOfValue(this.props.metrics, sparklineKey)
+                    );
+                  } else if (sparklineType === "netChange") {
+                    results.push(
+                      getSparkLineOfNetChange(this.props.metrics, sparklineKey)
+                    );
+                  }
+                }
+                return results;
+              }
+            )}
+            title={chart.title}
+          />
+        );
+      default:
+        return "";
+    }
+  }
 
-    if (!dashboard)
-      return <div>{`Dashboard ${this.state.name} does not exist`}</div>;
+  /**
+   * Event handler for updating the layout of charts on the GMGrid. It is triggered by drag-and-drop actions on the charts
+   * Note that this also seems to always be called on inital render
+   * @param {*} allLayouts 
+   */
+  updateDashboardLayout(allLayouts) {
+    const updatedDashboard = Object.assign({}, this.props.dashboard, {
+      grid: {
+        layouts: allLayouts
+      }
+    });
+    // Namespace the dashboard properly and dispatch Jumpstate Effect to update Redux
+    // We need to cast to lowercase to avoid duplicate entries
+    Actions.setDashboard({
+      [this.props.dashboard.name.toLowerCase()]: updatedDashboard
+    });
+  }
+
+  /**
+   * Renders a dashboard as a responsive grid
+   * @param {*} dashboard 
+   */
+  renderDashboard(dashboard) {
     return (
       <div>
         <ResponsiveReactGridLayout
@@ -78,115 +149,41 @@ class GMGrid extends Component {
           isDraggable={false}
           isResizable={false}
           layouts={dashboard.grid.layouts}
-          onLayoutChange={(currentLayout, allLayouts) => {
-            const dashboardState = {};
-            _.set(
-              dashboardState,
-              [this.state.name, "grid", "layouts"],
-              allLayouts
-            );
-            Actions.setDashboard(dashboardState);
-          }}
+          onLayoutChange={(currentLayout, allLayouts) =>
+            this.updateDashboardLayout(allLayouts)}
           rowHeight={dashboard.grid.rowHeight}
         >
-          {dashboard.charts.map(chart => {
-            return (
-              <div
-                data-grid={chart.position}
-                key={chart.title}
-                style={{
-                  overflow: "hidden"
-                }}
-              >
-                {chart.type === "GMLineChart" && (
-                  <GMLineChart
-                    detailLines={
-                      chart.data.detailLines &&
-                      chart.data.detailLines.map(line =>
-                        parseJSONString(line, metrics)
-                      )
-                    }
-                    expectedAttributes={chart.data.timeseries.map(
-                      ts => ts.attribute
-                    )}
-                    height="max"
-                    timeSeries={mapDygraphKeysToNetChange(
-                      getDygraphOfValue(
-                        metrics,
-                        chart.data.timeseries.map(ts => ts.attribute),
-                        chart.data.timeseries.map(ts => ts.label)
-                      ),
-                      chart.data.timeseries
-                        .filter(ts => ts.type === "netChange")
-                        .map(ts => ts.label)
-                    )}
-                    title={chart.title}
-                  />
-                )}
-                {chart.type === "GMTable" && (
-                  <GMTable
-                    headers={chart.data.headers}
-                    rows={chart.data.rows.map((row, outerIdx) => {
-                      return row.map((cell, innerIdx) => {
-                        return innerIdx > 0
-                          ? getLatestAttribute(metrics, cell)
-                          : cell;
-                      });
-                    })}
-                    title={chart.title}
-                  />
-                )}
-                {chart.type === "GMBasicMetrics" && (
-                  <GMBasicMetrics
-                    detailLines={chart.data.detailLines.map(
-                      (
-                        [
-                          heading,
-                          key,
-                          priority,
-                          sparklineKey = null,
-                          sparklineType = null
-                        ]
-                      ) => {
-                        const results = [
-                          heading,
-                          getLatestAttribute(metrics, key),
-                          priority
-                        ];
-                        if (sparklineKey && sparklineType) {
-                          if (sparklineType === "value") {
-                            results.push(
-                              getSparkLineOfValue(
-                                this.props.metrics,
-                                sparklineKey
-                              )
-                            );
-                          } else if (sparklineType === "netChange") {
-                            results.push(
-                              getSparkLineOfNetChange(
-                                this.props.metrics,
-                                sparklineKey
-                              )
-                            );
-                          }
-                        }
-                        return results;
-                      }
-                    )}
-                    title={chart.title}
-                  />
-                )}
-              </div>
-            );
-          })}
+          {dashboard.charts.map(chart => (
+            <div
+              data-grid={chart.position}
+              key={chart.title}
+              style={{
+                overflow: "hidden"
+              }}
+            >
+              {this.renderChart(chart)}
+            </div>
+          ))}
         </ResponsiveReactGridLayout>
       </div>
     );
   }
+
+  render() {
+    const { dashboard } = this.props;
+    if (!dashboard) {
+      return <div>{`Dashboard does not exist`}</div>;
+    } else {
+      return this.renderDashboard(dashboard);
+    }
+  }
 }
 
-function mapStateToProps({ dashboards, metrics }) {
-  return { dashboards, metrics };
+function mapStateToProps({ dashboards, metrics }, ownProps) {
+  return {
+    metrics,
+    dashboard: dashboards[ownProps.match.params.dashboardName]
+  };
 }
 
 export default connect(mapStateToProps)(GMGrid);

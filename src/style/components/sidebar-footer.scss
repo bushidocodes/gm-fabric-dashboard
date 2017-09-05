@@ -1,6 +1,6 @@
 // layout.scss
-@import 'variables.scss';
-@import 'mixins.scss';
+@import "variables.scss";
+@import "mixins.scss";
 
 // Local Variables
 
@@ -8,7 +8,8 @@
 
 // Styles
 .app-sidebar {
-  background-image: url('../images/gm-fabric-bg.jpg');
+  // Moved to inline style to get WebPack to import as expected
+  // background-image: url('../images/gm-fabric-bg.jpg');
   background-size: 300% auto;
   background-repeat: no-repeat;
   background-position: bottom -50px center;

@@ -2,6 +2,7 @@ import registerPromiseWorker from "promise-worker/register";
 import localforage from "localforage";
 import _ from "lodash";
 import defaultJVMDashboards from "../json/jvmDashboards.json";
+import defaultGolangDashboards from "../json/golangDashboards.json";
 
 registerPromiseWorker(message => {
   // Bail immediately if the message lacks runtime or type attributes
@@ -20,22 +21,20 @@ registerPromiseWorker(message => {
           "Persistent storage of Grey Matter Fabric dashboards and settings"
       });
     case "getDashboards":
-      return localforage
-        .getItem("dashboards")
-        .then(savedDashboards => {
-          if (
-            savedDashboards &&
-            _.every(
-              savedDashboards,
-              dashboard => dashboard.runtime === message.runtime
-            )
-          ) {
-            return savedDashboards;
-          } else {
-            return setDashboardsToDefault(message.runtime);
-          }
-        })
-        .catch(err => console.log("fetchDashboards failed with ", err));
+      return localforage.getItem("dashboards").then(savedDashboards => {
+        if (
+          savedDashboards &&
+          _.every(
+            savedDashboards,
+            dashboard => dashboard.runtime === message.runtime
+          )
+        ) {
+          return savedDashboards;
+        } else {
+          return setDashboardsToDefault(message.runtime);
+        }
+      });
+    // .catch(err => console.log("getDashboards failed with ", err));
     case "setDashboards":
       const { dashboards } = message;
       return localforage
@@ -56,6 +55,8 @@ function setDashboardsToDefault(runtime) {
   switch (runtime) {
     case "JVM":
       return localforage.setItem("dashboards", defaultJVMDashboards);
+    case "GOLANG":
+      return localforage.setItem("dashboards", defaultGolangDashboards);
     default:
       return Promise.reject(
         "Invalid Runtime provided to setDashboardToDefault"

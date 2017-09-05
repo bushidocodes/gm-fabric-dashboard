@@ -7,6 +7,7 @@ AppToolBar.propTypes = {
   pathname: PropTypes.string.isRequired
 };
 
+/** Bar at top of main content with breadcrumbs represending client routing and a link to settings */
 function AppToolBar({ pathname }) {
   return (
     <nav className="app-header app-toolbar">

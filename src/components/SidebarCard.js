@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Button from "./Button.js";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 
-export default class SummaryBarCard extends Component {
+export default class SidebarCard extends Component {
   static propTypes = {
     chartData: PropTypes.array,
     chartTitle: PropTypes.string,
@@ -67,10 +67,8 @@ export default class SummaryBarCard extends Component {
             <div className="summary-bar-card-kv" key={line.name}>
               <dt className="summary-bar-card-kv-key">{line.name}</dt>
               <dd className="summary-bar-card-kv-value">
-                <span className="value-text">
-                  {line.value}
-                </span>
-                {chartData &&
+                <span className="value-text">{line.value}</span>
+                {chartData && (
                   <div className="sparkline-container">
                     <Sparklines
                       className="summary-datapoint-line"
@@ -92,7 +90,8 @@ export default class SummaryBarCard extends Component {
                         }}
                       />
                     </Sparklines>
-                  </div>}
+                  </div>
+                )}
               </dd>
             </div>
           ))}

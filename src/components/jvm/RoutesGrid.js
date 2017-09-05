@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import RoutesTable from "./RoutesTable";
 import RoutesTableToolbar from "./RoutesTableToolbar";
 
-import { getRoutesTable } from "../utils/routes";
+import { getRoutesTable } from "../../utils/routes";
 
 class RoutesGrid extends Component {
   static propTypes = {

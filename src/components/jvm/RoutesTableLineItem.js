@@ -6,7 +6,7 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
-import GMLineChart from "./GMLineChart";
+import GMLineChart from "../GMLineChart";
 
 export default class RoutesTableLineItem extends Component {
   static propTypes = {

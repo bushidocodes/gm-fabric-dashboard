@@ -6,6 +6,7 @@ const AppVersion = "0.3.3";
 const BrandName = "Fabric";
 const BrandLogo = decipherLogo;
 
+/** Sidebar Branding and Versioning */
 const AppBrandBar = () => {
   return (
     <nav className="app-header app-brandbar">

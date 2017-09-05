@@ -2,6 +2,7 @@ import React from "react";
 
 import longLogo from "../images/decipher-logo-long.png";
 
+/** Company branding and social media footer content */
 const AppFooter = () => {
   return (
     <footer className="app-footer">

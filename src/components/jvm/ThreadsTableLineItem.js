@@ -2,9 +2,9 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import Collapse from "react-collapse";
 
-import IndicatorIcon from "./IndicatorIcon";
+import IndicatorIcon from "../IndicatorIcon";
 
-export default class JVMThreadsTableLineItem extends Component {
+export default class ThreadsTableLineItem extends Component {
   static propTypes = {
     arrIndex: PropTypes.number,
     daemon: PropTypes.bool,

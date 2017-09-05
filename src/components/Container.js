@@ -9,14 +9,18 @@ import AppToolBar from "./AppToolBar";
 import AppFooter from "./AppFooter";
 import Explorer from "./Explorer";
 import GMGrid from "./GMGrid";
-import RoutesGrid from "./RoutesGrid";
-import SettingsGrid from "./SettingsGrid";
-import SidebarFooter from "./SidebarFooter";
-import SummaryBar from "./SummaryBar";
-import SummaryGrid from "./SummaryGrid";
-import ThreadsGrid from "./ThreadsGrid";
 import NotFound from "./NotFound";
+import RoutesGridJVM from "./jvm/RoutesGrid";
+import SettingsGrid from "./SettingsGrid";
+import Sidebar from "./Sidebar";
+import SidebarFooter from "./SidebarFooter";
+import SummaryGridJVM from "./jvm/SummaryGrid";
+import SummaryGridGolang from "./golang/SummaryGrid";
+import ThreadsGridJVM from "./jvm/ThreadsGrid";
 
+import GMFabricBg from "../images/gm-fabric-bg.jpg";
+
+/** Base React Component of UI  */
 class Container extends Component {
   static propTypes = {
     children: PropTypes.any,
@@ -25,10 +29,11 @@ class Container extends Component {
     runtime: PropTypes.string
   };
 
-  // Perform an initial fetch of metrics on mount.
-  // This triggers hooks which initialize polling using the default parameters
+  /** Perform initial setup when the App first loads */
   componentDidMount() {
+    // Perform an initial fetch of metrics from the metrics endpoint
     Actions.fetchMetrics(this.props.metricsEndpoint);
+    // Initialize Local storage and then fetch dashboards
     Actions.initLocalStorage()
       .then(isInitialized => {
         if (isInitialized) {
@@ -38,36 +43,79 @@ class Container extends Component {
         }
       })
       .catch(err => console.error(err));
+    // Perform initial fetch of threads data if runtime is JVM
     if (this.props.runtime === "jvm") Actions.fetchThreads();
+  }
+
+  /**
+   * Generate React Router v4 JSX routes based on the current runtime
+   * @param {string} runtime - The application runtime
+   */
+  generateRoutes(runtime) {
+    switch (runtime) {
+      case "JVM":
+        return (
+          <Switch>
+            {/* Custom Runtime Specific Stuff */}
+            <Route component={SummaryGridJVM} path="/summary" />
+            <Route component={ThreadsGridJVM} path="/threads" />
+            <Route component={RoutesGridJVM} path="/route" />
+            {/* General Routes shared by all runtimes */}
+            <Route component={Explorer} path="/explorer" />
+            <Route component={SettingsGrid} path="/settings" />
+            {/* Catch all route for dynamically generated dashboards */}
+            <Route component={GMGrid} path="/:dashboardName" />
+            {/* Should never match, but included just in case */}
+            <Route component={NotFound} path="*" />
+          </Switch>
+        );
+      case "GOLANG":
+        return (
+          <Switch>
+            {/* Custom Runtime Specific Stuff */}
+            <Route component={SummaryGridGolang} path="/summary" />
+            {/* General Routes shared by all runtimes */}
+            <Route component={Explorer} path="/explorer" />
+            <Route component={SettingsGrid} path="/settings" />
+            {/* Catch all route for dynamically generated dashboards */}
+            <Route component={GMGrid} path="/:dashboardName" />
+            {/* Should never match, but included just in case */}
+            <Route component={NotFound} path="*" />
+          </Switch>
+        );
+      default:
+        return (
+          <Switch>
+            {/* General Routes shared by all runtimes */}
+            <Route component={Explorer} path="/explorer" />
+            <Route component={SettingsGrid} path="/settings" />
+            {/* Catch all route for dynamically generated dashboards */}
+            <Route component={GMGrid} path="/:dashboardName" />
+            {/* Should never match, but included just in case */}
+            <Route component={NotFound} path="*" />
+          </Switch>
+        );
+    }
   }
 
   render() {
     return (
       <div id="app-container">
-        <nav className="app-sidebar">
+        {/* Note: the following backgroundImage tag was inlined to get the URL to properly resolve.*/}
+        {/* This is currently resulting in a flicker on initial load, as the inline styles load first.*/}
+        <nav
+          className="app-sidebar"
+          style={{ backgroundImage: `url(${GMFabricBg})` }}
+        >
           <AppBrandBar />
-          <SummaryBar />
+          <Sidebar />
           <SidebarFooter />
         </nav>
         <div className="app-content uk-width-5-6@s">
           <AppToolBar pathname={this.props.pathname} />
           <Route exact path="/" render={() => <Redirect to="/summary" />} />
           <div className="app-content-view">
-            <Switch>
-              {this.props.runtime === "JVM" && (
-                <Route component={SummaryGrid} path="/summary" />
-              )}
-              {this.props.runtime === "JVM" && (
-                <Route component={ThreadsGrid} path="/threads" />
-              )}
-              <Route component={Explorer} path="/explorer" />
-              <Route component={SettingsGrid} path="/settings" />
-              {this.props.runtime === "JVM" && (
-                <Route component={RoutesGrid} path="/route" />
-              )}
-              <Route component={GMGrid} path="/dashboard/:dashboardName" />
-              <Route component={NotFound} path="*" />
-            </Switch>
+            {this.generateRoutes(this.props.runtime)}
           </div>
           <AppFooter />
         </div>
