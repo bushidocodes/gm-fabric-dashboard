@@ -103,7 +103,8 @@
     "start": "node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
     "mock-jvm": "node json-mock/gm-fabric-jvm.js",
-    "mock-go": "node json-mock/go/gm-fabric-go.js"
+    "mock-go": "node json-mock/go/gm-fabric-go.js",
+    "mock-poa": "node json-mock/poa/gm-fabric-poa.js"
   },
   "lint-staged": {
     "*.js": [
