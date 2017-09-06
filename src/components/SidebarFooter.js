@@ -1,5 +1,6 @@
 import React from "react";
 
+/** Bottom component of sidebar */
 const SidebarFooter = () => {
   return (
     <footer className="sidebar-footer">

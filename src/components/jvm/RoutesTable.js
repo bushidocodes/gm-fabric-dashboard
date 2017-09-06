@@ -7,6 +7,12 @@ RoutesTable.propTypes = {
   routes: PropTypes.array
 };
 
+/**
+ * Header and 0..n rows of routes data
+ * @export
+ * @param {any} { routes = [] } 
+ * @returns 
+ */
 export default function RoutesTable({ routes = [] }) {
   return (
     <div className="div-table routes-table">

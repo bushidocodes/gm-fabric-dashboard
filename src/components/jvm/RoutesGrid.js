@@ -7,6 +7,12 @@ import RoutesTableToolbar from "./RoutesTableToolbar";
 
 import { getRoutesTable } from "../../utils/routes";
 
+/**
+ * Parent container of RoutesTable and RoutesTableToolbar
+ * Contains sort and filter logic for RoutesTable
+ * @class RoutesGrid
+ * @extends {Component}
+ */
 class RoutesGrid extends Component {
   static propTypes = {
     routes: PropTypes.array.isRequired

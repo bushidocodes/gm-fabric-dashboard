@@ -22,6 +22,11 @@ GMLineChart.defaultProps = {
   height: "normal"
 };
 
+/**
+ * Title, Dygraph-based chart, and optional lines of text
+ * Validates timeseries data and displays error messages if a chart cannot be displayed.
+ * @param {Object} props 
+ */
 export default function GMLineChart({
   detailLines,
   expectedAttributes,

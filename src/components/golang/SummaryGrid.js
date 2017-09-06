@@ -11,6 +11,11 @@ import { getLatestAttribute } from "../../utils/latestAttribute";
 import { getErrorRate } from "../../utils/routes";
 import { getServicename } from "../../utils/head";
 
+/**
+ * Static Summary page for Golang runtime
+ * @class SummaryGrid
+ * @extends {Component}
+ */
 class SummaryGrid extends Component {
   static propTypes = {
     errorRate: PropTypes.string,

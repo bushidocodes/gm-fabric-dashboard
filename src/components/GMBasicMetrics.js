@@ -11,6 +11,10 @@ GMBasicMetrics.propTypes = {
   title: PropTypes.string.isRequired
 };
 
+/**
+ * Basic component for rendering a group of related metrics. Includes sparklines
+ * @param {Object} props - refer to propTypes 
+ */
 export default function GMBasicMetrics({ detailLines, title }) {
   return (
     <div className="kv kv-hero kv-highlight">

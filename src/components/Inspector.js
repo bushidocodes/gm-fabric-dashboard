@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import _ from "lodash";
 
+/** Filterable list of selectable string */
 export default class Inspector extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,

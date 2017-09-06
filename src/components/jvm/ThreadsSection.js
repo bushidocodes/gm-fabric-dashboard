@@ -7,6 +7,11 @@ import { connect } from "react-redux";
 import ThreadsTable from "./ThreadsTable";
 import { getVisibleThreads, getThreadCounts } from "../../utils/threads";
 
+/**
+ * Section containing a ThreadsTable and buttons to control what is rendered in that table
+ * @class ThreadsSection
+ * @extends {Component}
+ */
 class ThreadsSection extends Component {
   static propTypes = {
     threadCounts: PropTypes.object,
@@ -14,6 +19,7 @@ class ThreadsSection extends Component {
   };
   render() {
     const { threadCounts, threads } = this.props;
+    //TODO: figure out why there's an empty className on the parent DIV
     return (
       <div className="">
         <div className="toolbar">

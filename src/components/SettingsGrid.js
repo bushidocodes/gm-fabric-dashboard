@@ -14,34 +14,25 @@ import PollingSettings from "./PollingSettings";
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {
+  isPolling: PropTypes.bool,
   metricsCacheSize: PropTypes.string,
   numberOfDashboards: PropTypes.number,
-  settings: PropTypes.object
+  pollingInterval: PropTypes.number
 };
 
-const clearCacheClickAction = () => {
-  UIkit.modal
-    .confirm(
-      "Are you sure that you want to clear the cached metrics data? This action cannot be undone."
-    )
-    .then(() => Actions.clearMetrics());
-};
-
-const resetDashboardsClickAction = () => {
-  UIkit.modal
-    .confirm(
-      "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
-    )
-    .then(() => Actions.setDashboardsToDefault());
-};
-
-function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
+/**
+ * Settings Page containing controls for things like polling rate, local storage, etc.
+ * @param {Object} props - See proptypes for details
+ */
+function SettingsGrid({
+  isPolling,
+  metricsCacheSize,
+  numberOfDashboards,
+  pollingInterval
+}) {
   return (
     <div className="view-app-settings settings-grid">
-      <PollingSettings
-        interval={settings.interval}
-        isPolling={settings.isPolling}
-      />
+      <PollingSettings interval={pollingInterval} isPolling={isPolling} />
 
       <LayoutSection
         className={"settings-group-metrics-cache"}
@@ -79,10 +70,27 @@ function SettingsGrid({ metricsCacheSize, numberOfDashboards, settings }) {
 
 function mapStateToProps({ settings, dashboards, metrics }) {
   return {
-    settings,
+    pollingInterval: settings.interval, // TODO: Inverval is too vague. Rename
+    isPolling: settings.isPolling,
     numberOfDashboards: Object.keys(dashboards).length,
     metricsCacheSize: filesize(objectSizeOf(metrics))
   };
 }
 
 export default connect(mapStateToProps)(SettingsGrid);
+
+const clearCacheClickAction = () => {
+  UIkit.modal
+    .confirm(
+      "Are you sure that you want to clear the cached metrics data? This action cannot be undone."
+    )
+    .then(() => Actions.clearMetrics());
+};
+
+const resetDashboardsClickAction = () => {
+  UIkit.modal
+    .confirm(
+      "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
+    )
+    .then(() => Actions.setDashboardsToDefault());
+};

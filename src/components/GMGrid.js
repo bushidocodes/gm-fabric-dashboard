@@ -21,9 +21,8 @@ import { getLatestAttribute, parseJSONString } from "../utils/latestAttribute";
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 /**
- * Reuseable component for rendering a grid
- *
- * Pulls the dashboard matching URL param from Redux and renders it.
+ * Retrieves the dynamic JSON-based state from Redux for the dashboard matching the
+ * React Router URL parameter and renders the appropriate UI components.
  */
 class GMGrid extends Component {
   static propTypes = {
@@ -34,7 +33,7 @@ class GMGrid extends Component {
   };
 
   /**
-   * renderChart is a mapper function that takes a chart object and renders the appropriate component with the appropriate state
+   * Mapper function that takes a chart object and renders the appropriate component with the appropriate state
    * @param {Object} chart 
    * @param {string} chart.type - String representing the chart type (GMLineChart, GMTable, GMBasicMetrics)
    * @param {Object} chart.data
@@ -121,7 +120,7 @@ class GMGrid extends Component {
   /**
    * Event handler for updating the layout of charts on the GMGrid. It is triggered by drag-and-drop actions on the charts
    * Note that this also seems to always be called on inital render
-   * @param {*} allLayouts 
+   * @param {Object} allLayouts 
    */
   updateDashboardLayout(allLayouts) {
     const updatedDashboard = Object.assign({}, this.props.dashboard, {
@@ -138,9 +137,10 @@ class GMGrid extends Component {
 
   /**
    * Renders a dashboard as a responsive grid
-   * @param {*} dashboard 
+   * @param {Object} dashboard 
    */
   renderDashboard(dashboard) {
+    // While this parent div looks superfluous, it is needed to ensure the proper vertical heigh of the dashboard
     return (
       <div>
         <ResponsiveReactGridLayout

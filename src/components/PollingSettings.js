@@ -5,15 +5,18 @@ import Button from "./Button.js";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
+/** 
+ * Control to start/stop polling and change the polling rate
+ * Styled to resemble a Readout and intended to be a child of SettingsGrid
+ */
 class PollingSettings extends Component {
-  // This state is solely to allow smooth animation on the slider and the ability to debounce the
-  // dispatch of the setInterval action creator.
-
   static propTypes = {
     interval: PropTypes.number.isRequired,
     isPolling: PropTypes.bool.isRequired
   };
 
+  // Use local state to have a "loosely" controlled component whereby the slider
+  // slides smoothly and changes to Redux are debounced.
   state = {
     localInterval: this.props.interval / 1000,
     debouncedSetInterval: _.debounce(Actions.setInterval, 1000)

@@ -6,7 +6,16 @@ RoutesTableToolbar.propTypes = {
   setFilterString: PropTypes.func.isRequired,
   setKeyToSortBy: PropTypes.func.isRequired
 };
-
+/**
+ * UI controls for filtering and sorting the RoutesTable
+ * @export
+ * @param {any} {
+ *   filterString,
+ *   setFilterString,
+ *   setKeyToSortBy
+ * } 
+ * @returns JSX.Element
+ */
 export default function RoutesTableToolbar({
   filterString,
   setFilterString,

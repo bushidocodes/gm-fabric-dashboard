@@ -9,9 +9,9 @@ DataTotals.propTypes = {
 
 /**
  * Simple card component that expresses total uploads and downloads
- * @param {Object} props 
- * @param {number} props.receivedBytes 
- * @param {number} props.sentBytes 
+ * @export
+ * @param {Object} { receivedBytes, sentBytes } 
+ * @returns 
  */
 export default function DataTotals({ receivedBytes, sentBytes }) {
   return (

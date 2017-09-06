@@ -2,12 +2,18 @@ import Dygraph from "dygraphs/index.es5.js";
 import { isEqual } from "lodash";
 import { PropTypes } from "prop-types";
 import React from "react";
+import _ from "lodash";
 
 /**
- * Reuseable Dygraph-based Line Chart component for rendering a time series
- *
+ * Reuseable Dygraph-based Line Chart component for rendering time series data
+ * 
  * Required Props include title (the string to show at that top of the card) and time series (the data to render).
- * Optional props include any number of detailLines, an array of strings listed below the line chart.
+ * 
+ * Optional props include detailLines, an array of strings listed below the line chart.
+ * 
+ * @export
+ * @class DygraphContainer
+ * @extends {React.Component}
  */
 export default class DygraphContainer extends React.Component {
   static propTypes = {
@@ -19,6 +25,13 @@ export default class DygraphContainer extends React.Component {
     this.drawChart(this.div, data, options);
   }
 
+  /**
+   * Instruct the existing Dygraph to update when new data is passed in as props or when labels change
+   * All other changes in the options object are ignored
+   * Also, resize the dygraph every time the component receives props
+   * @param {Object} nextProps 
+   * @memberof DygraphContainer
+   */
   componentWillReceiveProps(nextProps) {
     const [oldData, oldOptions] = this.props.timeSeries;
     const [newData, newOptions] = nextProps.timeSeries;
@@ -36,29 +49,46 @@ export default class DygraphContainer extends React.Component {
     this.graph.resize();
   }
 
+  /** Block React from ever updating and use Dygraph methods to update the physical DOM */
   shouldComponentUpdate() {
     return false;
   }
 
+  /** Clean up when the component unmounts */
   componentWillUnmount() {
-    // Clean up the dygraph
     this.graph.destroy();
     delete this.graph;
   }
 
+  /**
+   * Renders a dygraph to a physical DOM node
+   * 
+   * @param {any} elem - Physical DOM node where the Dygraph should render
+   * @param {any} data - Timeseries data powering the Dygraph
+   * @param {any} options - Various options for how a Dygraph should look at feel.
+   * @memberof DygraphContainer
+   */
   drawChart(elem, data, options) {
-    // Dygraph Options
-    options.labelsKMB = true; // Abbreviate with KMB
-    options.strokeWidth = 2.0;
-    options.legend = "always";
-    options.axisLineColor = "rgb(200, 200, 200)";
-    options.gridLineColor = "rgb(200, 200, 200)";
-    options.colors = ["#0aab2a", "#002e6e"];
-    options.gridLinePattern = [1, 3];
-    options.animatedZooms = true;
-    options.drawAxesAtZero = true;
-    options.labelsSeparateLines = true;
-    options.includeZero = true;
+    // Default Dygraph Options
+    options.labelsKMB = _.has(options, "labelsKMB") ? options.labelsKMB : true; // Abbreviate with KMB
+    options.strokeWidth = options.strokeWidth || 2.0;
+    options.legend = options.legend || "always";
+    options.axisLineColor = options.axisLineColor || "rgb(200, 200, 200)";
+    options.gridLineColor = options.gridLineColor || "rgb(200, 200, 200)";
+    options.colors = options.colors || ["#0aab2a", "#002e6e"];
+    options.gridLinePattern = options.gridLinePattern || [1, 3];
+    options.animatedZooms = _.has(options, "animatedZooms")
+      ? options.animatedZooms
+      : true;
+    options.drawAxesAtZero = _.has(options, "drawAxesAtZero")
+      ? options.drawAxesAtZero
+      : true;
+    options.labelsSeparateLines = _.has(options, "labelsSeparateLines")
+      ? options.labelsSeparateLines
+      : true;
+    options.includeZero = _.has(options, "includeZero")
+      ? options.includeZero
+      : true;
     this.graph = new Dygraph(elem, data, options);
   }
 

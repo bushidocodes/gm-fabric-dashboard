@@ -1,13 +1,17 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 
-HTTPStats.propTypes = {
+GMTable.propTypes = {
   headers: PropTypes.array.isRequired,
   rows: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired
 };
 
-export default function HTTPStats({ title, headers, rows = [] }) {
+/**
+ * Basic spreadsheet-style table view showing mupltiple columns and multiple rows
+ * @param {Object} props 
+ */
+export default function GMTable({ title, headers, rows = [] }) {
   return (
     <div
       className={

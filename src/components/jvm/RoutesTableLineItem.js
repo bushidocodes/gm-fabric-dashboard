@@ -8,6 +8,12 @@ import {
 } from "react-sparklines";
 import GMLineChart from "../GMLineChart";
 
+/**
+ * A row of data in RoutesTable 
+ * @export
+ * @class RoutesTableLineItem
+ * @extends {Component}
+ */
 export default class RoutesTableLineItem extends Component {
   static propTypes = {
     errorRate: PropTypes.string.isRequired,

@@ -5,6 +5,12 @@ import { connect } from "react-redux";
 
 import ThreadsSection from "./ThreadsSection";
 
+/**
+ * Very redundant feeling wrapper container that contains a ThreadsSection
+ * TODO: Refactor to combide seciond and grid and break out threads control likt RoutesTableToolbar
+ * @class ThreadsGrid
+ * @extends {Component}
+ */
 class ThreadsGrid extends Component {
   static propTypes = {
     threadsTable: PropTypes.array

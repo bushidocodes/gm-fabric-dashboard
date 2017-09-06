@@ -4,6 +4,12 @@ import Collapse from "react-collapse";
 
 import IndicatorIcon from "../IndicatorIcon";
 
+/**
+ * Line Item containing threads data. Intended to be child of TreadsTable 
+ * @export
+ * @class ThreadsTableLineItem
+ * @extends {Component}
+ */
 export default class ThreadsTableLineItem extends Component {
   static propTypes = {
     arrIndex: PropTypes.number,
@@ -16,9 +22,15 @@ export default class ThreadsTableLineItem extends Component {
   };
 
   state = {
-    isOpen: false
+    isOpen: false // Is the drawer with the stacktrace open or not
   };
 
+  /**
+   * Takes a state and returns a corresponding color associated with that state
+   * @param {string} state 
+   * @returns string
+   * @memberof ThreadsTableLineItem
+   */
   indicatorColor(state) {
     switch (state) {
       case "RUNNABLE":
@@ -35,6 +47,10 @@ export default class ThreadsTableLineItem extends Component {
     }
   }
 
+  /**
+   * Toggles the stacktrace drawer open or closed
+   * @memberof ThreadsTableLineItem
+   */
   toggleStack = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };

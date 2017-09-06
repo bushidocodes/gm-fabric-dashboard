@@ -7,6 +7,10 @@ IndicatorIcon.propTypes = {
   diameter: PropTypes.number.isRequired
 };
 
+/**
+ * Wrapper for a custom circular SVG used to provide color indicator lights
+ * @param {Object} props - see propTypes 
+ */
 function IndicatorIcon({ alt, diameter, color }) {
   return (
     <span data-uk-tooltip="pos: bottom-left" title={alt}>

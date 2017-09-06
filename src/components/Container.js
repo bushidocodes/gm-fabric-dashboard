@@ -50,6 +50,7 @@ class Container extends Component {
   /**
    * Generate React Router v4 JSX routes based on the current runtime
    * @param {string} runtime - The application runtime
+   * @memberof Container
    */
   generateRoutes(runtime) {
     switch (runtime) {

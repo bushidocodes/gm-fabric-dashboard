@@ -7,6 +7,10 @@ LayoutSection.propTypes = {
   title: PropTypes.string.isRequired
 };
 
+/**
+ * Section of a static dashboard, complete with header and icon
+ * @param {Object} props - refer to propTypes 
+ */
 function LayoutSection({ children, className, title }) {
   return (
     <section className={"layout-section " + className}>

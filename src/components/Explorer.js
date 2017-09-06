@@ -8,6 +8,12 @@ import Inspector from "./Inspector";
 import { getDygraphOfValue } from "../utils/dygraphs";
 import qs from "query-string";
 
+/**
+ * General purpose component for rendering any arbitrary timeseries data stored in Redux
+ * Uses Inspector to search and select keys.
+ * @class Explorer
+ * @extends {Component}
+ */
 class Explorer extends Component {
   static propTypes = {
     history: PropTypes.object,
@@ -40,6 +46,11 @@ class Explorer extends Component {
     }
   }
 
+  /**
+   * Search function invoked by Inspector when user searches in the search bar
+   * This is debounced inside of Inspector
+   * @param {string} q - search query
+   */
   onSearch(q) {
     // Parse the current query parameters
     const query = qs.parse(this.props.location.search);
@@ -55,6 +66,11 @@ class Explorer extends Component {
     });
   }
 
+  /**
+   * click handler for selecting an Item in the Inspector component 
+   * @param {Object} clicked 
+   * @memberof Explorer
+   */
   onClick(clicked) {
     // Parse the current query parameters
     const query = qs.parse(this.props.location.search);

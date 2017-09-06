@@ -7,6 +7,12 @@ ThreadsTable.propTypes = {
   filteredThreadData: PropTypes.array
 };
 
+/**
+ * Table of threads containing a header and 0..n lineitems
+ * @export
+ * @param {any} { filteredThreadData = [] } 
+ * @returns JSX.Element
+ */
 export default function ThreadsTable({ filteredThreadData = [] }) {
   return (
     <div className="div-table thread-table">
