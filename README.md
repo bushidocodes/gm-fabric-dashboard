@@ -14,13 +14,17 @@ Download and install the binary for [Mac](https://store.docker.com/editions/comm
 
 ### 2. Use docker to start an example Grey Matter Microservice
 
-#### For a JVM-based microservice:
+### For a JVM-based microservice:
 
-Open ./public/index.html and replace `__BASE_RUNTIME__` with `JVM`.
+Run `docker run -it -p 1337:9990 spmcbride1201/gm-fab-jvm`
 
-Run `docker run -it -p 9990:9990 spmcbride1201/gm-fab-jvm`
+After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/admin/metrics.json). If you see JSON data, you are ready to proceed.
 
-After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:9990/admin/metrics.json). If you see JSON data, you are ready to proceed.
+### For a Go-based microservice:
+
+Run `docker run -it -p 1337:10001 drfogout/metricssimple`
+
+After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/metrics). If you see JSON data, you are ready to proceed.#
 
 ### 3. Install Node.js and the npm package manager via a version management tool
 
@@ -38,6 +42,10 @@ git clone https://github.com/DecipherNow/gm-fabric-dashboard.git
 cd gm-fabric-dashboard
 npm install
 ```
+
+## Configuration 
+
+Edit `./public/index.html` and replace `__BASE_RUNTIME__` with `JVM` if running a gm-fabric-jvm microservice or `GOLANG` if running a gm-fabric-go microservice
 
 ## Use
 

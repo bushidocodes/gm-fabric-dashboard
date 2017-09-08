@@ -16,7 +16,7 @@ import {
   mapDygraphKeysToNetChange
 } from "../../utils/dygraphs";
 import { getLatestAttribute } from "../../utils/latestAttribute";
-import { getErrorRate } from "../../utils/routes";
+import { getErrorRate } from "../../utils/jvm/selectors";
 import { getServicename } from "../../utils/head";
 
 class SummaryGrid extends Component {

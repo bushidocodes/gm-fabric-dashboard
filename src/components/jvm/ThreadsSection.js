@@ -5,7 +5,7 @@ import Button from "../Button.js";
 import { connect } from "react-redux";
 
 import ThreadsTable from "./ThreadsTable";
-import { getVisibleThreads, getThreadCounts } from "../../utils/threads";
+import { getVisibleThreads, getThreadCounts } from "../../utils/jvm/selectors";
 
 /**
  * Section containing a ThreadsTable and buttons to control what is rendered in that table

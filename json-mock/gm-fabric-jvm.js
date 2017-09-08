@@ -80,6 +80,6 @@ server.use((req, res, next) => {
 
 // Use default router
 server.use(router);
-server.listen(9990, () => {
+server.listen(1337, () => {
   console.log("JSON Server is running and mocking GM-Fabric-JVM");
 });

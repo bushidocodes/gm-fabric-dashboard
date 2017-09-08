@@ -4,6 +4,8 @@ const router = jsonServer.router();
 const middlewares = jsonServer.defaults();
 const metrics = require("./metrics.json");
 
+const PORT = 1337;
+
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
@@ -14,6 +16,6 @@ server.get("/metrics", (req, res) => {
 
 // Use default router
 server.use(router);
-server.listen(9092, () => {
-  console.log("Mocking GM-Fabric-Go on localhost:9092/metrics");
+server.listen(PORT, () => {
+  console.log(`Mocking GM-Fabric-Go on localhost:${PORT}/metrics`);
 });

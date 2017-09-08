@@ -1,1 +1,119 @@
-{}
+{
+  "go": {
+    "name": "Go",
+    "runtime": "GOLANG",
+    "summaryCard": {
+      "icon": "code"
+    },
+    "grid": {
+      "breakpoints": {
+        "lg": 1200,
+        "md": 996,
+        "sm": 768
+      },
+      "cols": {
+        "lg": 12,
+        "md": 8,
+        "sm": 4
+      },
+      "layouts": {
+        "lg": [
+          { "i": "Heap", "x": 0, "y": 0, "w": 6, "h": 9, "minW": 4, "minH": 5 },
+          {
+            "i": "Goroutines",
+            "x": 6,
+            "y": 0,
+            "w": 6,
+            "h": 9,
+            "minW": 4,
+            "minH": 5
+          }
+        ],
+        "md": [
+          { "i": "Heap", "x": 0, "y": 0, "w": 6, "h": 9, "minW": 4, "minH": 5 },
+          {
+            "i": "Goroutines",
+            "x": 6,
+            "y": 0,
+            "w": 6,
+            "h": 9,
+            "minW": 4,
+            "minH": 5
+          }
+        ],
+        "sm": [
+          { "i": "Heap", "x": 0, "y": 0, "w": 6, "h": 9, "minW": 4, "minH": 5 },
+          {
+            "i": "Goroutines",
+            "x": 6,
+            "y": 0,
+            "w": 6,
+            "h": 9,
+            "minW": 4,
+            "minH": 5
+          }
+        ]
+      },
+      "rowHeight": 60
+    },
+    "charts": [
+      {
+        "title": "Heap",
+        "type": "GMLineChart",
+        "data": {
+          "detailLines": [
+            [
+              {
+                "type": "string",
+                "value": "Garbage Collection Runs:"
+              },
+              {
+                "type": "latest",
+                "value": "go_metrics/runtime/total_gc_runs",
+                "precision": 3
+              }
+            ],
+            [
+              {
+                "type": "string",
+                "value": "Total GC Pause:"
+              },
+              {
+                "type": "latest",
+                "value": "go_metrics/runtime/total_gc_pause_ns",
+                "precision": 3,
+                "baseUnit": "ns",
+                "resultUnit": "ms"
+              },
+              {
+                "type": "string",
+                "value": "ms"
+              }
+            ]
+          ],
+          "timeseries": [
+            {
+              "type": "value",
+              "attribute": "go_metrics/runtime/heap_objects",
+              "label": "Objects in Heap",
+              "precision": 0
+            }
+          ]
+        }
+      },
+      {
+        "title": "Goroutines",
+        "type": "GMLineChart",
+        "data": {
+          "timeseries": [
+            {
+              "type": "value",
+              "attribute": "go_metrics/runtime/num_goroutines",
+              "label": "# of allocated goroutines"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

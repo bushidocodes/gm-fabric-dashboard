@@ -5,17 +5,18 @@ import { connect } from "react-redux";
 import RoutesTable from "./RoutesTable";
 import RoutesTableToolbar from "./RoutesTableToolbar";
 
-import { getRoutesTable } from "../../utils/jvm/selectors";
+import { getRoutesTable } from "../../utils/golang/selectors";
 
 /**
- * Parent container of RoutesTable and RoutesTableToolbar
+ * Golang Routes Container
+ * Parent of RoutesTable and RoutesTableToolbar
  * Contains sort and filter logic for RoutesTable
  * @class RoutesGrid
  * @extends {Component}
  */
 class RoutesGrid extends Component {
   static propTypes = {
-    routes: PropTypes.array.isRequired
+    routes: PropTypes.array
   };
 
   constructor(props) {

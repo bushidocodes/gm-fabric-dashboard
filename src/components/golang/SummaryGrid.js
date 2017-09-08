@@ -2,13 +2,14 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import GMLineChart from "../GMLineChart.js";
 import PageTitle from "../PageTitle.js";
 import Readout from "../Readout.js";
 import ReadoutItem from "../ReadoutItem.js";
 import LayoutSection from "../LayoutSection.js";
 
+import { getDygraphOfValue } from "../../utils/dygraphs";
 import { getLatestAttribute } from "../../utils/latestAttribute";
-import { getErrorRate } from "../../utils/routes";
 import { getServicename } from "../../utils/head";
 
 /**
@@ -18,7 +19,6 @@ import { getServicename } from "../../utils/head";
  */
 class SummaryGrid extends Component {
   static propTypes = {
-    errorRate: PropTypes.string,
     metrics: PropTypes.object
   };
   render() {
@@ -33,6 +33,24 @@ class SummaryGrid extends Component {
         <LayoutSection title={"Vitals"}>
           <div className="subsection">
             <div className="readout-dashboard-row">
+              <Readout type={"readout-primary"}>
+                <ReadoutItem
+                  icon={"bolt"}
+                  title={"Avg. Response Time"}
+                  value={`${getLatestAttribute(
+                    metrics,
+                    "route/all/latency_ms.avg",
+                    3,
+                    "ms",
+                    "s"
+                  )} s`}
+                />
+                <ReadoutItem
+                  icon={"warning"}
+                  title={"Error Total"}
+                  value={getLatestAttribute(metrics, "route/all/errors.count")}
+                />
+              </Readout>
               <Readout>
                 <ReadoutItem
                   icon={"server"}
@@ -42,7 +60,35 @@ class SummaryGrid extends Component {
                 <ReadoutItem
                   icon={"server"}
                   title={"Percent Utilized"}
-                  value={`${getLatestAttribute(metrics, "system/cpu.pct")}%`}
+                  value={`${getLatestAttribute(
+                    metrics,
+                    "system/cpu.pct",
+                    3
+                  )} %`}
+                />
+              </Readout>
+              <Readout>
+                <ReadoutItem
+                  icon={"server"}
+                  title={"Memory Used"}
+                  value={`${getLatestAttribute(
+                    metrics,
+                    "memory/used",
+                    3,
+                    "B",
+                    "GB"
+                  )} GB`}
+                />
+                <ReadoutItem
+                  icon={"server"}
+                  title={"Memory Available"}
+                  value={`${getLatestAttribute(
+                    metrics,
+                    "memory/available",
+                    3,
+                    "B",
+                    "GB"
+                  )} GB`}
                 />
               </Readout>
 
@@ -53,6 +99,18 @@ class SummaryGrid extends Component {
             </div>
           </div>
         </LayoutSection>
+        <LayoutSection title={"Statistics"}>
+          <div style={{ height: "250px" }}>
+            <GMLineChart
+              timeSeries={getDygraphOfValue(
+                metrics,
+                ["memory/used_percent", "system/cpu.pct"],
+                ["% Memory Used", "% CPU Used"]
+              )}
+              title="Resource Utilization"
+            />
+          </div>
+        </LayoutSection>
       </div>
     );
   }
@@ -60,8 +118,7 @@ class SummaryGrid extends Component {
 
 function mapStateToProps(state) {
   return {
-    metrics: state.metrics,
-    errorRate: getErrorRate(state)
+    metrics: state.metrics
   };
 }
 

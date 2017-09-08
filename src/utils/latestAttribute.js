@@ -24,27 +24,30 @@ import { round, unit } from "mathjs";
 export function getLatestAttribute(
   metrics,
   key,
+  precision,
   baseUnit,
-  resultUnit,
-  precision
+  resultUnit
 ) {
   if (!metrics || !key) return 0;
   // _.has is not suitable because some object become arrays and auto insert
   // keys from 0...n with values of undefined.
   const fullPath = _.get(metrics, key);
-  if (fullPath && baseUnit && resultUnit && precision) {
-    return round(
-      unit(
-        fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))],
-        baseUnit
-      ).toNumber(resultUnit),
-      precision
-    );
-  }
   if (fullPath) {
-    return fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))];
+    const latestAttribute =
+      fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))];
+    if (baseUnit && resultUnit && precision) {
+      return round(
+        unit(latestAttribute, baseUnit).toNumber(resultUnit),
+        precision
+      );
+    } else if (precision) {
+      return round(latestAttribute, precision);
+    } else {
+      return latestAttribute;
+    }
+  } else {
+    return 0;
   }
-  return 0;
 }
 
 /**
@@ -68,9 +71,9 @@ export function parseJSONString(line, metrics) {
           return getLatestAttribute(
             metrics,
             element.value,
+            element.precision,
             element.baseUnit,
-            element.resultUnit,
-            element.precision
+            element.resultUnit
           );
         } else {
           return getLatestAttribute(metrics, element.value).toLocaleString();

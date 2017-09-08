@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { generateSidebarCards } from "../utils/dashboards";
+import { generateSidebarCards } from "../utils/selectors";
 
 import JVMSidebarContent from "./jvm/SidebarContent";
 import GolangSidebarContent from "./golang/SidebarContent";
@@ -16,7 +16,7 @@ import { withRouter } from "react-router-dom";
  */
 class SidebarContent extends Component {
   static propTypes = {
-    metrics: PropTypes.object,
+    metrics: PropTypes.object.isRequired,
     runtime: PropTypes.string,
     sidebarCards: PropTypes.array
   };

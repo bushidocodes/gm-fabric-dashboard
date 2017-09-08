@@ -1,10 +1,10 @@
 import state from "./json/mockReduxState";
 
 const { getVisibleThreads, getThreadCounts } = require.requireActual(
-  "./utils/threads"
+  "./utils/jvm/selectors"
 );
 const { getRoutesMetrics, getRoutesTree } = require.requireActual(
-  "./utils/routes"
+  "./utils/selectors"
 );
 
 describe("Reselect selector getVisibleThreads", () =>
@@ -122,16 +122,6 @@ describe("Reselect selector getRouteMetrics", () =>
 describe("Reselect selector getRouteTree", () =>
   test("returns a hierarchical representation of the keys nested under their corresponding routes and HTTP verbs", () => {
     expect(getRoutesTree(state)).toEqual({
-      "/ping": {
-        GET: [
-          "route/ping/GET/status/200",
-          "route/ping/GET/time/200.count",
-          "route/ping/GET/status/2XX",
-          "route/ping/GET/requests",
-          "route/ping/GET/response_size.count",
-          "route/ping/GET/time.count",
-          "route/ping/GET/time/2XX.count"
-        ]
-      }
+      "/ping": ["GET"]
     });
   }));
