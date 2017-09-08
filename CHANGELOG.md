@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.4.0] - 2017-09-08
+### Added
+- Experimental support for gm-fabric-go microservices
+### Changes
+- Updated dependencies
+- Simplified use of Webpack Dev Server proxy
+- Substantial internal refactoring to separate out runtime-specific components into modules
+
+### Test Coverage: 4.27% ([0.4.0 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.4.0 Bundle Size Report])
+### Production Build: ([0.4.0 Build])
+
 ## [0.3.3] - 2017-09-01
 ### Changed
 - Minor style changes
@@ -140,7 +152,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.3...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.3...v0.4.0
+[0.4.0 Coverage Report]: https://682-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.4.0 Bundle Size Report]: https://682-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.4.0 Build]: https://682ß-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.3.3]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.3.3...v0.3.3
 [0.3.3 Coverage Report]: https://653-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.3.3 Bundle Size Report]: https://653-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html

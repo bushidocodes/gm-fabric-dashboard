@@ -17,7 +17,7 @@ export default class FunctionsTableLineItem extends Component {
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
     outThroughput: PropTypes.number.isRequired,
-    throughput_dygraph: PropTypes.object.isRequired
+    throughput_dygraph: PropTypes.array.isRequired
   };
 
   state = {
