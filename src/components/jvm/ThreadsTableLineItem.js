@@ -71,7 +71,7 @@ export default class ThreadsTableLineItem extends Component {
           )
         }
         key={id}
-        onClick={stack.length && this.toggleStack}
+        onClick={stack.length > 0 ? this.toggleStack : () => {}}
         onKeyDown={evt => {
           if (stack.length && evt.keyCode === 13) {
             evt.preventDefault();
