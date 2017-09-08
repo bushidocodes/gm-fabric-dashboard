@@ -1,8 +1,8 @@
 import registerPromiseWorker from "promise-worker/register";
 import localforage from "localforage";
 import _ from "lodash";
-import defaultJVMDashboards from "../json/jvmDashboards.json";
-import defaultGolangDashboards from "../json/golangDashboards.json";
+import defaultJVMDashboards from "../json/jvm/dashboards.json";
+import defaultGolangDashboards from "../json/golang/dashboards.json";
 
 registerPromiseWorker(message => {
   // Bail immediately if the message lacks runtime or type attributes

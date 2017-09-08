@@ -4,9 +4,12 @@ import { NavLink } from "react-router-dom";
 import Button from "./Button.js";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 
-/** 
+/**
  * Navigational card rendered within the sidebar. Links to dashboards and contains
  * rollup metrics and sparklines
+ * @export
+ * @class SidebarCard
+ * @extends {Component}
  */
 export default class SidebarCard extends Component {
   static propTypes = {
@@ -77,9 +80,7 @@ export default class SidebarCard extends Component {
                     <Sparklines
                       className="summary-datapoint-line"
                       data={chartData}
-                      // limit={30}
                       margin={3}
-                      // preserveAspectRatio="xMaxYMin"
                       svgHeight={20}
                       svgWidth={120}
                       title={chartTitle}

@@ -7,7 +7,7 @@ const BrandName = "Fabric";
 const BrandLogo = decipherLogo;
 
 /** Sidebar Branding and Versioning */
-const AppBrandBar = () => {
+const SidebarHeader = () => {
   return (
     <nav className="app-header app-brandbar">
       <div className="brand">
@@ -29,4 +29,4 @@ const AppBrandBar = () => {
   );
 };
 
-export default AppBrandBar;
+export default SidebarHeader;

@@ -1,6 +1,6 @@
 // layout.scss
-@import 'variables.scss';
-@import 'mixins.scss';
+@import "variables.scss";
+@import "mixins.scss";
 
 // Local Variables
 $sidebar-width-base: 230px;
@@ -40,7 +40,7 @@ $sidebar-width-base: 230px;
   z-index: 2;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -67,7 +67,7 @@ $sidebar-width-base: 230px;
 
     &:before,
     &:after {
-      content: '';
+      content: "";
       background-color: $color-content-background;
       pointer-events: none;
       height: 1px;
@@ -84,7 +84,7 @@ $sidebar-width-base: 230px;
       position: fixed;
       background-color: transparentize(
         edge-color($color-content-background, 30%),
-        .7
+        0.7
       );
       z-index: 1000;
       height: 1px;
