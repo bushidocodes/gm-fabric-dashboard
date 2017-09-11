@@ -19,7 +19,8 @@ import "./style/index.scss";
 
 // Create a Web Worker and explicitly set reference as global variable
 window.ajaxWorker = new PromiseWorker(new AjaxWorker());
-window.localStorageWorker = new PromiseWorker(new LocalStorageWorker());
+// localStorage functionality is disabled for the initial release
+// window.localStorageWorker = new PromiseWorker(new LocalStorageWorker());
 
 // load the UIKit Icon plugin
 UIkit.use(Icons);

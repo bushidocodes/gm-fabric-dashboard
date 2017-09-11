@@ -25,18 +25,20 @@ class Container extends Component {
 
   /** Perform initial setup when the App first loads */
   componentDidMount() {
+    // Note: Disabled use of local forage for initial release
     // Perform an initial fetch of metrics from the metrics endpoint
-    Actions.fetchMetrics(this.props.metricsEndpoint);
+    // Actions.fetchMetrics(this.props.metricsEndpoint);
     // Initialize Local storage and then fetch dashboards
-    Actions.initLocalStorage()
-      .then(isInitialized => {
-        if (isInitialized) {
-          return Actions.getDashboards();
-        } else {
-          throw new Error("Local Storage failed to initialize");
-        }
-      })
-      .catch(err => console.error(err));
+    // Actions.initLocalStorage()
+    //   .then(isInitialized => {
+    //     if (isInitialized) {
+    //       return Actions.getDashboards();
+    //     } else {
+    //       throw new Error("Local Storage failed to initialize");
+    //     }
+    //   })
+    //   .catch(err => console.error(err));
+    Actions.loadDashboardsFromJSON();
     // Perform initial fetch of threads data if runtime is JVM
     if (this.props.runtime === "jvm") Actions.fetchThreads();
   }

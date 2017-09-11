@@ -1,4 +1,4 @@
-import { Actions } from "jumpstate";
+// import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
@@ -123,16 +123,18 @@ class GMGrid extends Component {
    * @param {Object} allLayouts 
    */
   updateDashboardLayout(allLayouts) {
-    const updatedDashboard = Object.assign({}, this.props.dashboard, {
-      grid: {
-        layouts: allLayouts
-      }
-    });
+    return;
+    // Disabled for initial release
+    // const updatedDashboard = Object.assign({}, this.props.dashboard, {
+    //   grid: {
+    //     layouts: allLayouts
+    //   }
+    // });
     // Namespace the dashboard properly and dispatch Jumpstate Effect to update Redux
     // We need to cast to lowercase to avoid duplicate entries
-    Actions.setDashboard({
-      [this.props.dashboard.name.toLowerCase()]: updatedDashboard
-    });
+    // Actions.setDashboard({
+    //   [this.props.dashboard.name.toLowerCase()]: updatedDashboard
+    // });
   }
 
   /**

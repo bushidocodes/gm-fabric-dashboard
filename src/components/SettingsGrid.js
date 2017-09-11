@@ -49,6 +49,7 @@ function SettingsGrid({
         </Readout>
       </LayoutSection>
 
+      {/** Disabled for initial release
       <LayoutSection
         className={"settings-group-user-dashboards"}
         title={"Custom Dashboards"}
@@ -64,6 +65,7 @@ function SettingsGrid({
           />
         </Readout>
       </LayoutSection>
+      **/}
     </div>
   );
 }
@@ -87,10 +89,11 @@ const clearCacheClickAction = () => {
     .then(() => Actions.clearMetrics());
 };
 
-const resetDashboardsClickAction = () => {
-  UIkit.modal
-    .confirm(
-      "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
-    )
-    .then(() => Actions.setDashboardsToDefault());
-};
+// Disabled for intitial release
+// const resetDashboardsClickAction = () => {
+//   UIkit.modal
+//     .confirm(
+//       "Are you sure that you want to clear dashboard state? This will revert all dashboards to default."
+//     )
+//     .then(() => Actions.setDashboardsToDefault());
+// };

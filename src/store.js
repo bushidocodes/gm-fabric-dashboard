@@ -1,9 +1,10 @@
-import _ from "lodash";
+// Commented out imports are used by currently disabled local storage functionality
+// import _ from "lodash";
 import {
   Effect,
   Actions,
   Hook,
-  getState,
+  // getState,
   CreateJumpstateMiddleware
 } from "jumpstate";
 import { routerReducer, routerMiddleware } from "react-router-redux";
@@ -17,6 +18,8 @@ import settings from "./jumpstate/settings";
 import threadsTable from "./jumpstate/threadsTable";
 import dashboards from "./jumpstate/dashboards";
 import { getRuntime, getThreadsEndpoint } from "./utils/head";
+import defaultJVMDashboards from "./json/jvm/dashboards.json";
+import defaultGolangDashboards from "./json/golang/dashboards.json";
 
 // Effects / Asynchronous Actions
 
@@ -88,65 +91,85 @@ Effect("stopPolling", (endpoint, interval) => {
   clearInterval(window.refreshMetricsInterval);
 });
 
+// Note: the following methods are disabled to bypass use of local forage for the initial release
+
 /**
  * Synchronous action that performs initial setup of localforage
  */
-Effect("initLocalStorage", () => {
-  return window.localStorageWorker
-    .postMessage({
-      type: "init",
-      runtime: getRuntime(),
-      basename: window.location.href.split("#")[0] //everything up to the hash
-    })
-    .catch(err => console.error(err));
-});
+// Effect("initLocalStorage", () => {
+//   return window.localStorageWorker
+//     .postMessage({
+//       type: "init",
+//       runtime: getRuntime(),
+//       basename: window.location.href.split("#")[0] //everything up to the hash
+//     })
+//     .catch(err => console.error(err));
+// });
 
 /**
  * Asynchronous action that fetches dashboards from localforage if they exist
  * and falls back to the default dashboards if not found
  */
-Effect("getDashboards", () => {
-  window.localStorageWorker
-    .postMessage({
-      type: "getDashboards",
-      runtime: getRuntime()
-    })
-    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
-    .catch(err => console.log("getDashboards failed with ", err));
-});
+// Effect("getDashboards", () => {
+//   window.localStorageWorker
+//     .postMessage({
+//       type: "getDashboards",
+//       runtime: getRuntime()
+//     })
+//     .then(dashboards => Actions.updateDashboardsRedux(dashboards))
+//     .catch(err => console.log("getDashboards failed with ", err));
+// });
 
 /**
  * Asynchronous action that takes an updated dashboard, merges it into the dashboards
  * object and then writes it to Redux and local storage
  */
-Effect("setDashboard", updatedDashboard => {
-  const dashboards = _.merge({}, getState().dashboards, updatedDashboard);
-  window.localStorageWorker
-    .postMessage({
-      type: "setDashboards",
-      runtime: getRuntime(),
-      dashboards
-    })
-    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
-    .catch(err =>
-      console.log("Failed to persist dashboards to local storage: ", err)
-    );
-});
+// Effect("setDashboard", updatedDashboard => {
+//   const dashboards = _.merge({}, getState().dashboards, updatedDashboard);
+//   window.localStorageWorker
+//     .postMessage({
+//       type: "setDashboards",
+//       runtime: getRuntime(),
+//       dashboards
+//     })
+//     .then(dashboards => Actions.updateDashboardsRedux(dashboards))
+//     .catch(err =>
+//       console.log("Failed to persist dashboards to local storage: ", err)
+//     );
+// });
 
 /**
  * Asynchronous action that clears all dashboard state from Redux and Local Storage,
  * forcing the defaults to reload.
  */
-Effect("setDashboardsToDefault", () => {
-  window.localStorageWorker
-    .postMessage({
-      type: "setDashboardsToDefault",
-      runtime: getRuntime()
-    })
-    .then(dashboards => Actions.updateDashboardsRedux(dashboards))
-    .catch(err =>
-      console.log("Failed to persist dashboards to local storage: ", err)
-    );
+// Effect("setDashboardsToDefault", () => {
+//   window.localStorageWorker
+//     .postMessage({
+//       type: "setDashboardsToDefault",
+//       runtime: getRuntime()
+//     })
+//     .then(dashboards => Actions.updateDashboardsRedux(dashboards))
+//     .catch(err =>
+//       console.log("Failed to persist dashboards to local storage: ", err)
+//     );
+// });
+
+/**
+ * This effect is a temporary alternative to directly load the dashboard JSON without use of the
+ * localStorage worker. The intended use of this Effect is to disable local forage functionality
+ * during the initial release
+ */
+Effect("loadDashboardsFromJSON", () => {
+  // Check runtime and pass the runtime appropriate JSON file to Actions.updateDashboardsRedux
+  const runtime = getRuntime();
+  switch (runtime) {
+    case "JVM":
+      return Actions.updateDashboardsRedux(defaultJVMDashboards);
+    case "GOLANG":
+      return Actions.updateDashboardsRedux(defaultGolangDashboards);
+    default:
+      return;
+  }
 });
 
 // Hooks
