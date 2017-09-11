@@ -1,10 +1,9 @@
 // typography.scss
 
-@import 'variables.scss';
-@import 'mixins.scss';
+@import "variables.scss";
+@import "mixins.scss";
 
-// Local Variables
-$inline-icon-spacing: .25em;
+$inline-icon-spacing: 0.25em;
 
 // Helpers
 
@@ -24,7 +23,7 @@ h6 {
   color: inherit;
 
   [class*="icon"] {
-    vertical-align: .085em; // Magic number. Seems to correspond roughly to descender height
+    vertical-align: 0.085em; // Magic number. Seems to correspond roughly to descender height
 
     svg {
       height: 1em;
@@ -50,8 +49,8 @@ h4 {
 }
 
 hr {
-  margin-top: spacing-scale(.5);
-  margin-bottom: spacing-scale(.5);
+  margin-top: spacing-scale(0.5);
+  margin-bottom: spacing-scale(0.5);
 }
 
 body {
@@ -77,6 +76,6 @@ a {
   font-family: $font-stack-code;
   white-space: pre-wrap;
   word-break: break-all;
-  font-size: $font-size-base * .85;
+  font-size: $font-size-base * 0.85;
   line-height: $line-height-base * 1.1;
 }
