@@ -13,7 +13,8 @@ import store from "./store";
 
 // All scripts in the workers directory are loaded by WebPack via worker-loader
 import AjaxWorker from "./workers/ajax.js";
-import LocalStorageWorker from "./workers/localStorage.js";
+// Disabled LocalStorage Worker for initial release
+// import LocalStorageWorker from "./workers/localStorage.js";
 
 import "./style/index.scss";
 
