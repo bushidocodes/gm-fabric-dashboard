@@ -3,7 +3,29 @@
     "name": "Go",
     "runtime": "GOLANG",
     "summaryCard": {
-      "icon": "code"
+      "icon": "code",
+      "chart": {
+        "type": "value",
+        "dataAttribute": "go_metrics/runtime/alloc_bytes"
+      },
+      "lines": [
+        {
+          "name": "Heap Used",
+          "value": [
+            {
+              "type": "latest",
+              "value": "go_metrics/runtime/alloc_bytes",
+              "baseUnit": "B",
+              "resultUnit": "MB",
+              "precision": 3
+            },
+            {
+              "type": "string",
+              "value": "MB"
+            }
+          ]
+        }
+      ]
     },
     "grid": {
       "breakpoints": {
@@ -94,9 +116,19 @@
           "timeseries": [
             {
               "type": "value",
-              "attribute": "go_metrics/runtime/heap_objects",
-              "label": "Objects in Heap",
-              "precision": 0
+              "attribute": "go_metrics/runtime/alloc_bytes",
+              "label": "Go Heap Used (MB)",
+              "precision": 0,
+              "baseUnit": "B",
+              "resultUnit": "MB"
+            },
+            {
+              "type": "value",
+              "attribute": "go_metrics/runtime/sys_bytes",
+              "label": "Go Heap Size (MB)",
+              "precision": 0,
+              "baseUnit": "B",
+              "resultUnit": "MB"
             }
           ]
         }

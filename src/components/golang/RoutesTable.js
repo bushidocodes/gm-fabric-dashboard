@@ -19,9 +19,9 @@ export default function RoutesTable({ routes = [] }) {
     <div className="div-table routes-table">
       <div className="div-table-header">
         <div className="routes-table-route">Route</div>
-        <div className="routes-table-sparkline">In Throughput</div>
-        <div className="routes-table-total-requests">Out Throughput</div>
-        <div className="routes-table-error-percent">Error Count</div>
+        <div className="routes-table-sparkline">Requests/sec</div>
+        <div className="routes-table-total-requests">Requests</div>
+        <div className="routes-table-error-percent">Error %</div>
         <div className="routes-table-error-percent">Latency 50%</div>
         <div className="routes-table-error-percent">Latency 99%</div>
       </div>
@@ -31,21 +31,21 @@ export default function RoutesTable({ routes = [] }) {
             route,
             verb,
             errorsCount,
-            inThroughput,
-            outThroughput,
             latency50,
             latency99,
-            throughput_dygraph
+            requests,
+            requestsPerSecond_dygraph,
+            requestsPerSecond_sparkline
           }) => (
             <RoutesTableLineItem
               errorsCount={errorsCount}
-              inThroughput={inThroughput}
               key={`${route}/${verb}`}
               latency50={latency50}
               latency99={latency99}
-              outThroughput={outThroughput}
+              requests={requests}
+              requestsPerSecond_dygraph={requestsPerSecond_dygraph}
+              requestsPerSecond_sparkline={requestsPerSecond_sparkline}
               route={`${route} `}
-              throughput_dygraph={throughput_dygraph}
               verb={verb}
             />
           )

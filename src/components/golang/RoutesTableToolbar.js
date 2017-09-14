@@ -43,12 +43,7 @@ export default function RoutesTableToolbar({
           <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
             <ul className="uk-nav uk-dropdown-nav">
               <li onClick={evt => setKeyToSortBy("route")}>Route</li>
-              <li onClick={evt => setKeyToSortBy("inThroughput")}>
-                In Throughput
-              </li>
-              <li onClick={evt => setKeyToSortBy("outThroughput")}>
-                Out Throughput
-              </li>
+              <li onClick={evt => setKeyToSortBy("requests")}>Requests</li>
               <li onClick={evt => setKeyToSortBy("errorCount")}>Error Count</li>
               <li onClick={evt => setKeyToSortBy("latency50")}>Latency 50%</li>
               <li onClick={evt => setKeyToSortBy("latency99")}>Latency 99%</li>

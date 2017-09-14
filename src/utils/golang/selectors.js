@@ -3,7 +3,8 @@ import _ from "lodash";
 
 import { getLatestAttribute } from "../latestAttribute";
 import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
-import { getDygraphOfValue } from "../dygraphs";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
+import { getSparkLineOfNetChange } from "../sparklines";
 
 /**
  * A reselect selector that builds the data required to render the RoutesTable component
@@ -37,13 +38,13 @@ export const getRoutesTable = createSelector(
           routePath === "/"
             ? `route/${routeVerb}/latency_ms.p99`
             : `route${routePath}/${routeVerb}/latency_ms.p99`;
+        const requestsKey =
+          routePath === "/"
+            ? `route/${routeVerb}/requests`
+            : `route${routePath}/${routeVerb}/requests`;
 
-        const throughput_dygraph = getDygraphOfValue(
-          routesMetrics,
-          [inThroughputKey, outThroughputKey],
-          ["Throughput In", "Throughput Out"]
-        );
         const errorsCount = getLatestAttribute(routesMetrics, errorsCountKey);
+        const requests = getLatestAttribute(routesMetrics, requestsKey);
         const inThroughput = getLatestAttribute(routesMetrics, inThroughputKey);
         const outThroughput = getLatestAttribute(
           routesMetrics,
@@ -51,6 +52,14 @@ export const getRoutesTable = createSelector(
         );
         const latency50 = getLatestAttribute(routesMetrics, latency50Key);
         const latency99 = getLatestAttribute(routesMetrics, latency99Key);
+        const requestsPerSecond_dygraph = mapDygraphKeysToNetChange(
+          getDygraphOfValue(routesMetrics, [requestsKey], ["Requests"]),
+          ["Requests"]
+        );
+        const requestsPerSecond_sparkline = getSparkLineOfNetChange(
+          routesMetrics,
+          requestsKey
+        );
         routesTable.push({
           ...baseObj,
           verb: routeVerb,
@@ -59,7 +68,9 @@ export const getRoutesTable = createSelector(
           outThroughput,
           latency50,
           latency99,
-          throughput_dygraph
+          requests,
+          requestsPerSecond_dygraph,
+          requestsPerSecond_sparkline
         });
       });
     });
@@ -117,6 +128,7 @@ function _getFunctionsTable(funcs, funcMetrics) {
     ["errorsCount", "errors.count"],
     ["inThroughput", "in_throughput"],
     ["outThroughput", "out_throughput"],
+    ["requests", "requests"],
     ["latencyAvg", "latency_ms.avg"],
     ["latencyCount", "latency_ms.count"],
     ["latencyMax", "latency_ms.max"],
@@ -134,10 +146,19 @@ function _getFunctionsTable(funcs, funcMetrics) {
     labelKeyPairs.forEach(([label, key]) => {
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);
     });
-    res["throughput_dygraph"] = getDygraphOfValue(
+    res[
+      "requestsPerSecond_dygraph"
+    ] = mapDygraphKeysToNetChange(
+      getDygraphOfValue(
+        funcMetrics,
+        [`function/${func}/requests`],
+        ["Requests"]
+      ),
+      ["Requests"]
+    );
+    res["requestsPerSecond_sparkline"] = getSparkLineOfNetChange(
       funcMetrics,
-      [`function/${func}/in_throughput`, `function/${func}/out_throughput`],
-      ["Throughput In", "Throughput Out"]
+      `function/${func}/requests`
     );
     return res;
   });

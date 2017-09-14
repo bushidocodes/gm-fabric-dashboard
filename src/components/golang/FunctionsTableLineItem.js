@@ -1,6 +1,12 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import Collapse from "react-collapse";
+import {
+  Sparklines,
+  SparklinesLine,
+  SparklinesReferenceLine
+} from "react-sparklines";
+
 import GMLineChart from "../GMLineChart";
 
 /**
@@ -17,7 +23,9 @@ export default class FunctionsTableLineItem extends Component {
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
     outThroughput: PropTypes.number.isRequired,
-    throughput_dygraph: PropTypes.array.isRequired
+    requests: PropTypes.number.isRequired,
+    requestsPerSecond_dygraph: PropTypes.array.isRequired,
+    requestsPerSecond_sparkline: PropTypes.array.isRequired
   };
 
   state = {
@@ -29,6 +37,11 @@ export default class FunctionsTableLineItem extends Component {
   };
 
   render() {
+    const errorPercent =
+      (1 -
+        (this.props.requests - this.props.errorsCount) / this.props.requests) *
+      100;
+
     return (
       <li
         className={this.state.isOpen ? "selectable open" : "selectable"}
@@ -42,14 +55,38 @@ export default class FunctionsTableLineItem extends Component {
         role="link"
       >
         <div className="routes-table-route">{this.props.func}</div>
-        <div className="routes-table-total-requests routes-table-monospace">
-          {this.props.inThroughput}
+        <div className="routes-table-sparkline">
+          <Sparklines
+            data={this.props.requestsPerSecond_sparkline}
+            height={32}
+            preserveAspectRatio="xMaxYMin"
+          >
+            <SparklinesLine
+              style={{
+                stroke: "currentColor",
+                strokeWidth: 1,
+                fill: "none"
+              }}
+            />
+            <SparklinesReferenceLine
+              style={{
+                stroke: "grey",
+                opacity: "0.4"
+              }}
+              type="mean"
+            />
+          </Sparklines>
         </div>
         <div className={"routes-table-error-percent routes-table-monospace"}>
-          {this.props.outThroughput}
+          {this.props.requests}
         </div>
-        <div className={"routes-table-total-requests routes-table-monospace"}>
-          {this.props.errorsCount}
+        <div
+          className={
+            "routes-table-error-percent routes-table-monospace err-pc-" +
+            errorPercent
+          }
+        >
+          {`${errorPercent}%`}
         </div>
         <div className={"routes-table-total-requests routes-table-monospace"}>
           {this.props.latency50}
@@ -66,8 +103,8 @@ export default class FunctionsTableLineItem extends Component {
           }}
         >
           <GMLineChart
-            timeSeries={this.props.throughput_dygraph}
-            title={"Throughput over time for " + this.props.func}
+            timeSeries={this.props.requestsPerSecond_dygraph}
+            title={"Requests Per Second for " + this.props.func}
           />
         </Collapse>
       </li>
