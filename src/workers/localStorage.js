@@ -5,10 +5,11 @@ import defaultJVMDashboards from "../json/jvm/dashboards.json";
 import defaultGolangDashboards from "../json/golang/dashboards.json";
 
 registerPromiseWorker(message => {
+  // Temporarily disabled
   // Bail immediately if the message lacks runtime or type attributes
-  if (!message.runtime) {
-    return Promise.reject("message.runtime is undefined");
-  }
+  // if (!message.runtime) {
+  //   return Promise.reject("message.runtime is undefined");
+  // }
   if (!message.type) {
     return Promise.reject("message.type is undefined");
   }
@@ -52,14 +53,14 @@ registerPromiseWorker(message => {
 });
 
 function setDashboardsToDefault(runtime) {
-  switch (runtime) {
-    case "JVM":
-      return localforage.setItem("dashboards", defaultJVMDashboards);
-    case "GOLANG":
-      return localforage.setItem("dashboards", defaultGolangDashboards);
-    default:
-      return Promise.reject(
-        "Invalid Runtime provided to setDashboardToDefault"
-      );
-  }
+  // switch (runtime) {
+  //   case "JVM":
+  //     return localforage.setItem("dashboards", defaultJVMDashboards);
+  //   default:
+  //     return Promise.reject(
+  //       "Invalid Runtime provided to setDashboardToDefault"
+  //     );
+  // }
+  // Hacky fix pending overhaul of dashboards logic
+  return localforage.setItem("dashboards", defaultJVMDashboards);
 }

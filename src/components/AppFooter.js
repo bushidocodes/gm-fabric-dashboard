@@ -2,8 +2,11 @@ import React from "react";
 
 import longLogo from "../images/decipher-logo-long.png";
 
-/** Company branding and social media footer content */
-const AppFooter = () => {
+/**
+ * Stateless functional React component that renders company branding and social media footer content
+ * @returns JSX.Element
+ */
+export default function AppFooter() {
   return (
     <footer className="app-footer">
       <a
@@ -40,6 +43,4 @@ const AppFooter = () => {
       </div>
     </footer>
   );
-};
-
-export default AppFooter;
+}

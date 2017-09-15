@@ -1,25 +1,51 @@
+import { PropTypes } from "prop-types";
 import React from "react";
-import SidebarContent from "./SidebarContent";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+
+import FabricSidebarContent from "./fabric/SidebarContent";
+import InstanceSidebarContent from "./instance/SidebarContent";
 import SidebarFooter from "./SidebarFooter";
 import SidebarHeader from "./SidebarHeader";
-import SidebarNavWidget from "./SidebarNavWidget";
+import FabricSidebarNavWidget from "./fabric/SidebarNavWidget";
+import InstanceSidebarNavWidget from "./instance/SidebarNavWidget";
+
+import { getFabricServer } from "../utils/head";
+
+Sidebar.propTypes = {
+  runtime: PropTypes.string
+};
 
 /**
  * Main Sidebar component 
  * @export
  * @returns JSX.Element
  */
-export default function Sidebar() {
-  /* Note: the following backgroundImage tag was inlined to get the URL to properly resolve.*/
-  /* This is currently resulting in a flicker on initial load, as the inline styles load first.*/
+function Sidebar({ runtime }) {
   return (
     <nav className="app-sidebar">
       <SidebarHeader />
-      <div className="summary-bar">
-        <SidebarNavWidget />
-        <SidebarContent />
-      </div>
+      {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
+      {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
+      {/* index.html via the head utils */}
+      {getFabricServer() ? (
+        <div className="summary-bar">
+          <FabricSidebarNavWidget />
+          <FabricSidebarContent />
+        </div>
+      ) : (
+        <div className="summary-bar">
+          <InstanceSidebarNavWidget />
+          <InstanceSidebarContent runtime={runtime} />
+        </div>
+      )}
       <SidebarFooter />
     </nav>
   );
 }
+
+function mapStateToProps({ settings: { runtime } }) {
+  return { runtime };
+}
+
+export default withRouter(connect(mapStateToProps)(Sidebar));

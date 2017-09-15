@@ -1,9 +1,10 @@
 import { Actions } from "jumpstate";
 import _ from "lodash";
 import { PropTypes } from "prop-types";
-import Button from "./Button.js";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
+
+import Button from "./library/Button.js";
 
 /** 
  * Control to start/stop polling and change the polling rate
@@ -19,7 +20,7 @@ class PollingSettings extends Component {
   // slides smoothly and changes to Redux are debounced.
   state = {
     localInterval: this.props.interval / 1000,
-    debouncedSetInterval: _.debounce(Actions.setInterval, 1000)
+    debouncedSetInterval: _.debounce(Actions.changeInterval, 1000)
   };
 
   render() {
@@ -38,7 +39,13 @@ class PollingSettings extends Component {
         <div className="section-content">
           <div className="control-group control-group-polling-start-stop">
             <Button
-              clickAction={() => Actions.togglePolling()}
+              clickAction={() => {
+                if (isPolling) {
+                  Actions.stopPolling();
+                } else {
+                  Actions.startPolling({});
+                }
+              }}
               icon={buttonIcon}
               iconSize={"xl"}
               label={buttonLabel}

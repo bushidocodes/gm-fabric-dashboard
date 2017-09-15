@@ -1,9 +1,28 @@
+// Utils for running with a Fabric Server
+
 /**
- * getServicename is a utility function that extracts the service property from the HEAD of the index.html file. 
+ * getFabricServer is a utility function that extracts the fabricServer property
+ * from the HEAD of the index.html file.
  * @returns {String}
  */
-export function getServicename() {
-  const serviceName = document.head.querySelector("[property=service]").content;
+export function getFabricServer() {
+  const fabricServer = document.head.querySelector("[property=fabricServer]")
+    .content;
+  return fabricServer !== "__FABRIC_SERVER__" ? fabricServer : null;
+}
+
+// Utils for running without a Fabric Server
+
+/**
+ * getServiceName is a utility function that extracts the serviceName property
+ * from the HEAD of the index.html file.
+ * @returns {String}
+ */
+export function getServiceName() {
+  // Explicitly return null if running with Fabric Server
+  if (getFabricServer()) return null;
+  const serviceName = document.head.querySelector("[property=serviceName]")
+    .content;
   if (serviceName === "__SERVICE_NAME__") {
     return "Service";
   } else {
@@ -17,6 +36,8 @@ export function getServicename() {
  * @returns {String}
  */
 export function getBackButtonUrl() {
+  // Explicitly return null if running with Fabric Server
+  if (getFabricServer()) return null;
   const backButtonUrl = document.head.querySelector("[property=backButtonUrl]")
     .content;
   if (backButtonUrl === "__BACK_BUTTON_URL__") {
@@ -32,9 +53,11 @@ export function getBackButtonUrl() {
  * @returns {String}
  */
 export function getRuntime() {
+  // Explicitly return null if running with Fabric Server
+  if (getFabricServer()) return null;
   const metaRuntime = document.head.querySelector("[property=runtime]").content;
   const runtime =
-    metaRuntime.indexOf("__BASE_RUNTIME") !== -1 ? "JVM" : `${metaRuntime}`; //default to JVM
+    metaRuntime.indexOf("__RUNTIME") !== -1 ? "JVM" : `${metaRuntime}`; //default to JVM
   return runtime;
 }
 
@@ -45,6 +68,8 @@ export function getRuntime() {
  * @returns {String}
  */
 export function getMetricsEndpoint() {
+  // Explicitly return null if running with Fabric Server
+  if (getFabricServer()) return null;
   const metricsEndpoint = document.head.querySelector(
     "[property=metricsEndpoint]"
   ).content;
@@ -72,6 +97,8 @@ export function getMetricsEndpoint() {
  * @returns {String}
  */
 export function getThreadsEndpoint() {
+  // Explicitly return null if running with Fabric Server
+  if (getFabricServer()) return null;
   const threadsEndpoint = document.head.querySelector(
     "[property=threadsEndpoint]"
   ).content;

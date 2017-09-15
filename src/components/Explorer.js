@@ -1,12 +1,13 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
+import qs from "query-string";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import GMLineChart from "./GMLineChart";
 import Inspector from "./Inspector";
+import GMLineChart from "./library/GMLineChart";
+
 import { getDygraphOfValue } from "../utils/dygraphs";
-import qs from "query-string";
 
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux

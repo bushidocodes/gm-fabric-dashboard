@@ -6,6 +6,9 @@ import {
   getSparkLineOfValue,
   getSparkLineOfNetChange
 } from "../utils/sparklines";
+
+// TODO: Revisit architecture here
+// This import makes me feel like generateSidebarCards should not be a selector
 import SidebarCard from "../components/SidebarCard";
 
 // Reselect Input Selectors
@@ -13,14 +16,17 @@ import SidebarCard from "../components/SidebarCard";
 export const getMetrics = state => state.metrics;
 export const getRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
+export const getSelectedInstance = state => state.settings.selectedInstance;
+export const getSelectedService = state => state.settings.selectedService;
 
 /**
  * Reselect selector that generates SidebarCard components from JSON
  */
 export const generateSidebarCards = createSelector(
-  [getDashboards, getMetrics],
-  (dashboards, metrics) => {
+  [getDashboards, getMetrics, getSelectedService, getSelectedInstance],
+  (dashboards, metrics, service, instance) => {
     if (Object.keys(dashboards).length > 0) {
+      const prefix = service && instance ? `/${service}/${instance}` : "";
       return _.toPairs(dashboards).map(([key, value]) => {
         let chartData, chartTitle, lines;
         // Render lines of text if present
@@ -49,7 +55,7 @@ export const generateSidebarCards = createSelector(
           <SidebarCard
             chartData={chartData}
             chartTitle={chartTitle}
-            href={`/${key}`}
+            href={`${prefix}/${key}`}
             icon={value.summaryCard.icon}
             key={`/${key}`}
             lines={lines}

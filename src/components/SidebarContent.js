@@ -1,13 +1,16 @@
+// import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import { generateSidebarCards } from "../utils/selectors";
-
-import JVMSidebarContent from "./jvm/SidebarContent";
-import GolangSidebarContent from "./golang/SidebarContent";
-import DefaultSidebarContent from "./default/SidebarContent";
 import { withRouter } from "react-router-dom";
+
+// import SidebarCard from "./SidebarCard";
+
+import JVMSidebarContent from "./instance/jvm/SidebarContent";
+import GolangSidebarContent from "./instance/golang/SidebarContent";
+import DefaultSidebarContent from "./instance/default/SidebarContent";
+
+// import { generateSidebarCards } from "../../utils/selectors";
 
 /**
  * Main area of Sidebar containing one or more SidebarCards
@@ -16,25 +19,56 @@ import { withRouter } from "react-router-dom";
  */
 class SidebarContent extends Component {
   static propTypes = {
+    basePath: PropTypes.string,
     metrics: PropTypes.object.isRequired,
     runtime: PropTypes.string,
+    // serviceName: PropTypes.string,
     sidebarCards: PropTypes.array
   };
 
   render() {
-    const { metrics, runtime, sidebarCards } = this.props;
+    const {
+      basePath,
+      metrics,
+      runtime,
+      // serviceName,
+      // services,
+      // instanceID,
+      sidebarCards
+    } = this.props;
+    // Render Services if the path does not contain a selected service or instances
+    // _.map(services[serviceName].instances, ({ instanceID }) => {
+    //   return (
+    //     <SidebarCard
+    //       href={`/${services[serviceName].path}/${instanceID}`}
+    //       icon="star"
+    //       key={instanceID}
+    //       title={instanceID}
+    //     />
+    //   );
+    // });
+
     switch (runtime) {
       case "JVM":
         return (
-          <JVMSidebarContent metrics={metrics} sidebarCards={sidebarCards} />
+          <JVMSidebarContent
+            basePath={basePath}
+            metrics={metrics}
+            sidebarCards={sidebarCards}
+          />
         );
       case "GOLANG":
         return (
-          <GolangSidebarContent metrics={metrics} sidebarCards={sidebarCards} />
+          <GolangSidebarContent
+            basePath={basePath}
+            metrics={metrics}
+            sidebarCards={sidebarCards}
+          />
         );
       default:
         return (
           <DefaultSidebarContent
+            basePath={basePath}
             metrics={metrics}
             sidebarCards={sidebarCards}
           />
@@ -43,12 +77,18 @@ class SidebarContent extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   const { metrics, settings: { runtime } } = state;
+  const { match: { params: { serviceName, instanceID } } } = ownProps;
   return {
     metrics,
-    sidebarCards: generateSidebarCards(state),
-    runtime
+    basePath: serviceName && instanceID ? `/${serviceName}/${instanceID}` : "",
+    runtime:
+      state.fabric.services &&
+      ownProps.match.params.serviceName &&
+      state.fabric.services[ownProps.match.params.serviceName]
+        ? state.fabric.services[ownProps.match.params.serviceName].runtime
+        : runtime
   };
 }
 

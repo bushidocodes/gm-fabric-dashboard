@@ -18,7 +18,7 @@ describe("AJAX Web Worker", () => {
       response: metrics
     });
     ajaxWorker({
-      type: "fetchMetrics",
+      type: "fetchMetricsWithoutServer",
       runtime: "JVM",
       endpoint: "/admin/metrics.json"
     })
@@ -35,7 +35,7 @@ describe("AJAX Web Worker", () => {
         "cluster.clock.upstream_cx_close_notify: 0\n"
     });
     ajaxWorker({
-      type: "fetchMetrics",
+      type: "fetchMetricsWithoutServer",
       runtime: "ENVOY",
       endpoint: "/stats"
     })

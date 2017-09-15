@@ -1,16 +1,18 @@
+import filesize from "filesize";
 import { Actions } from "jumpstate";
+import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
-import Readout from "./Readout.js";
-import Button from "./Button.js";
-import ReadoutItem from "./ReadoutItem.js";
 import UIkit from "uikit";
-import objectSizeOf from "object-sizeof";
-import filesize from "filesize";
 
-import LayoutSection from "./LayoutSection";
 import PollingSettings from "./PollingSettings";
+
+import Readout from "./library/Readout.js";
+import Button from "./library/Button.js";
+import ReadoutItem from "./library/ReadoutItem.js";
+import LayoutSection from "./library/LayoutSection";
+
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {

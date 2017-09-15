@@ -3,7 +3,7 @@ import { State } from "jumpstate";
 // State Objects
 const metrics = State({
   initial: {},
-  fetchMetricsSuccess(state, payload) {
+  setMetrics(state, payload) {
     const result = { ...state };
     const timestamp = Date.now() + "";
     Object.keys(payload).forEach(metric => {

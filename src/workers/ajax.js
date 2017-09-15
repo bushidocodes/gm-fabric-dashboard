@@ -9,7 +9,28 @@ registerPromiseWorker(message => main(message));
 // Main function of promise externalized to make unit tests easier
 export function main(message) {
   switch (message.type) {
-    case "fetchMetrics":
+    case "fetchServicesFromServer":
+      if (message.fabricServer) {
+        return axios
+          .get(`${message.fabricServer}/services`, { responseType: "json" })
+          .then(response => response.data)
+          .then(arrayOfServices => _.mapKeys(arrayOfServices, "name"));
+      } else {
+        return Promise.reject("Invalid endpoint");
+      }
+    case "fetchMetricsWithServer":
+      if (!message.fabricServer)
+        return Promise.reject("Missing Fabric Server Endpoint");
+      if (!message.instanceID) return Promise.reject("Missing Instance ID");
+      return (
+        axios
+          .get(`${message.fabricServer}/metrics/${message.instanceID}`)
+          .then(response => response.data)
+          // Cast all values to numerics and filter out NaNs
+          .then(data => _.mapValues(data, value => Number(value)))
+          .then(data => _.omitBy(data, value => Number.isNaN(value)))
+      );
+    case "fetchMetricsWithoutServer":
       // This block allows us to directly poll Envoy metrics
       // The data is transformed from statsd format into a flat object of key/value pairs
       if (message.runtime === "ENVOY") {
@@ -27,26 +48,13 @@ export function main(message) {
             .then(data => _.omitBy(data, value => Number.isNaN(value)))
         );
       }
-    // Temporaryily commented out pending further commit
-    // } else if (runtime === "GOLANG") {
-    // } else {
-    //   return Promise.all(
-    //     endpoints.map(endpoint =>
-    //       axios.get(endpoint, { responseType: "json" })
-    //     )
-    //   )
-    //     .then(jsons => jsons.map(json => json.data))
-    //     .then(jsons => {
-    //       let results = {};
-    //       jsons.forEach(json => {
-    //         results = { ...results, ...json };
-    //       });
-    //       return results;
-    //     })
-    //     .then(results => {
-    //       return results;
-    //     });
-    // }
+    case "fetchThreadsFromServer":
+      if (!message.serverEndpoint)
+        return Promise.reject("Missing endpoint of Fabric Server");
+      if (!message.instanceID) return Promise.reject("Missing Instance ID");
+      return axios.get(
+        `${message.serverEndpoint}/threads/${message.instanceId}`
+      );
     case "fetchThreads":
       return axios
         .get(message.endpoint, { responseType: "json" })

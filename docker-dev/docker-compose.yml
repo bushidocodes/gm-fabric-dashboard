@@ -1,0 +1,47 @@
+version: '3'
+
+networks:
+  dev: {}
+
+services:
+  dashboard:
+    build: ./dashboard
+    image: fabric/dashboard
+    networks:
+      - dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ../:/home/ubuntu/dashboard/
+    depends_on:
+      - zk
+    command: bash -c "npm install && http-server build"
+
+  nginx:
+    build: ./nginx
+    image: fabric/nginx
+    networks:
+      - dev
+    ports:
+      - 443:443
+    depends_on:
+      - dashboard
+      - mock
+
+  #-- Not yet used
+  zk:
+    image: wurstmeister/zookeeper:3.4.6
+    networks:
+      - dev
+    ports:
+      - 2181:2181
+
+  mock:
+    image: spmcbride1201/gm-fab-jvm
+    networks:
+      - dev
+    ports:
+      - 9990:9990
+      - 8888:8888
+      - 8999:8999
+      - 9090:9090

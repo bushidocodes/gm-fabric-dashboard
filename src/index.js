@@ -1,4 +1,3 @@
-// import { createBrowserHistory, createHashHistory } from "history";
 import { createHashHistory } from "history";
 import PromiseWorker from "promise-worker";
 import React from "react";
@@ -8,7 +7,7 @@ import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 
-import Container from "./components/Container";
+import App from "./components/App";
 import store from "./store";
 
 // All scripts in the workers directory are loaded by WebPack via worker-loader
@@ -32,7 +31,7 @@ export const history = createHashHistory();
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Container />
+      <App />
     </Router>
   </Provider>,
   document.getElementById("root")

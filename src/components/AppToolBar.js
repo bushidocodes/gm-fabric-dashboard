@@ -1,13 +1,18 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
-import NavButton from "./NavButton.js";
+
+import NavButton from "./library/NavButton";
 
 AppToolBar.propTypes = {
   pathname: PropTypes.string.isRequired
 };
 
-/** Bar at top of main content with breadcrumbs represending client routing and a link to settings */
+/**
+ * Stateless functional React component that renders the bar at top of main content with breadcrumbs represending client routing and a link to settings
+ * @param {Object} props - See propTypes
+ * @returns JSX.Element
+ */
 function AppToolBar({ pathname }) {
   return (
     <nav className="app-header app-toolbar">
