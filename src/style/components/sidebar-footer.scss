@@ -8,8 +8,7 @@
 
 // Styles
 .app-sidebar {
-  // Moved to inline style to get WebPack to import as expected
-  // background-image: url('../images/gm-fabric-bg.jpg');
+  background-image: url("../images/gm-fabric-bg.jpg");
   background-size: 300% auto;
   background-repeat: no-repeat;
   background-position: bottom -50px center;
