@@ -95,7 +95,10 @@
     "react-addons-test-utils": "~15.6.0",
     "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack-bundle-analyzer": "^2.9.0"
+    "webpack-bundle-analyzer": "^2.9.0",
+    "@storybook/react": "^3.2.8",
+    "@storybook/addon-actions": "^3.2.6",
+    "@storybook/addon-links": "^3.2.6"
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -109,7 +112,9 @@
     "mock-jvm": "node json-mock/gm-fabric-jvm.js",
     "mock-go": "node json-mock/go/gm-fabric-go.js",
     "mock-poa": "node json-mock/poa/gm-fabric-poa.js",
-    "mock-sds": "node json-mock/sds.js"
+    "mock-sds": "node json-mock/sds.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "*.js": [
