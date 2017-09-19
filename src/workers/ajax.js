@@ -18,6 +18,15 @@ export function main(message) {
       } else {
         return Promise.reject("Invalid endpoint");
       }
+    case "fetchGroups":
+      if (message.fabricServer) {
+        return axios
+          .get(`${message.fabricServer}/groups`, { responseType: "json" })
+          .then(response => response.data)
+          .then(arrayOfGroups => _.mapKeys(arrayOfGroups, "id"));
+      } else {
+        return Promise.reject("Invalid endpoint");
+      }
     case "fetchMetricsWithServer":
       if (!message.fabricServer)
         return Promise.reject("Missing Fabric Server Endpoint");
