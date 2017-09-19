@@ -9,7 +9,7 @@ registerPromiseWorker(message => main(message));
 // Main function of promise externalized to make unit tests easier
 export function main(message) {
   switch (message.type) {
-    case "fetchServicesFromServer":
+    case "fetchServices":
       if (message.fabricServer) {
         return axios
           .get(`${message.fabricServer}/services`, { responseType: "json" })

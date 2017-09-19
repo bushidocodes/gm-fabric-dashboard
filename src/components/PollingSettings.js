@@ -1,4 +1,3 @@
-import { Actions } from "jumpstate";
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
@@ -12,21 +11,25 @@ import Button from "./library/Button.js";
  */
 class PollingSettings extends Component {
   static propTypes = {
+    changePollingInterval: PropTypes.func.isRequired,
     interval: PropTypes.number.isRequired,
-    isPolling: PropTypes.bool.isRequired
+    isPollingInstance: PropTypes.bool.isRequired,
+    startPolling: PropTypes.func.isRequired,
+    stopPolling: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired
   };
 
   // Use local state to have a "loosely" controlled component whereby the slider
   // slides smoothly and changes to Redux are debounced.
   state = {
     localInterval: this.props.interval / 1000,
-    debouncedSetInterval: _.debounce(Actions.changeInterval, 1000)
+    debouncedSetInterval: _.debounce(this.props.changePollingInterval, 1000)
   };
 
   render() {
-    const { isPolling } = this.props;
-    const buttonIcon = isPolling ? "ban" : "play-circle";
-    const buttonLabel = isPolling ? "Stop Polling" : "Resume Polling";
+    const { isPollingInstance, stopPolling, startPolling, title } = this.props;
+    const buttonIcon = isPollingInstance ? "ban" : "play-circle";
+    const buttonLabel = isPollingInstance ? "Stop Polling" : "Resume Polling";
     return (
       <section className="layout-section settings-group-polling">
         <header>
@@ -34,16 +37,16 @@ class PollingSettings extends Component {
             className="section-icon"
             data-uk-icon={`icon: grid; ratio: 1`}
           />
-          <h3 className="section-title">{"Polling"}</h3>
+          <h3 className="section-title">{title}</h3>
         </header>
         <div className="section-content">
           <div className="control-group control-group-polling-start-stop">
             <Button
               clickAction={() => {
-                if (isPolling) {
-                  Actions.stopPolling();
+                if (isPollingInstance) {
+                  stopPolling();
                 } else {
-                  Actions.startPolling({});
+                  startPolling();
                 }
               }}
               icon={buttonIcon}

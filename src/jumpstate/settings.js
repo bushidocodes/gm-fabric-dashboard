@@ -14,31 +14,43 @@ import {
 // to be statically configured in the index.html head and populated immediately.
 const settings = State({
   initial: {
-    isPolling: false,
-    interval: 5000,
     fabricServer: getFabricServer(),
+    isPollingFabric: false,
+    isPollingInstance: false,
+    instancePollingInterval: 5000,
+    fabricPollingInterval: 5000,
     metricsEndpoint: !getFabricServer() ? getMetricsEndpoint() : null,
-    threadsEndpoint: !getFabricServer() ? getThreadsEndpoint() : null,
-    selectedInstance: null,
-    selectedService: null,
     metricsPollingFailures: 0,
     runtime: !getFabricServer() ? getRuntime() : null,
+    selectedInstance: null,
+    selectedService: null,
+    servicesPollingFailures: 0,
+    threadsEndpoint: !getFabricServer() ? getThreadsEndpoint() : null,
     threadsFilter: "all"
-  },
-  setPolling(state, payload) {
-    return { ...state, isPolling: payload };
-  },
-  setInterval(state, payload) {
-    return { ...state, interval: payload };
   },
   setFabricServer(state, payload) {
     return { ...state, fabricServer: payload };
   },
+  setInstancePollingInterval(state, payload) {
+    return { ...state, instancePollingInterval: payload };
+  },
+  setInstancePolling(state, payload) {
+    return { ...state, isPollingInstance: payload };
+  },
+  setFabricPollingInterval(state, payload) {
+    return { ...state, fabricPollingInterval: payload };
+  },
+  setFabricPolling(state, payload) {
+    return { ...state, isPollingFabric: payload };
+  },
   setMetricsEndpoint(state, payload) {
     return { ...state, metricsEndpoint: payload };
   },
-  setThreadsEndpoints(state, payload) {
-    return { ...state, threadsEndpoint: payload };
+  setMetricsPollingFailures(state, payload) {
+    return { ...state, metricsPollingFailures: payload };
+  },
+  setRuntime(state, payload) {
+    return { ...state, runtime: payload };
   },
   setSelectedInstance(state, payload) {
     return { ...state, selectedInstance: payload };
@@ -46,14 +58,14 @@ const settings = State({
   setSelectedService(state, payload) {
     return { ...state, selectedService: payload };
   },
-  setRuntime(state, payload) {
-    return { ...state, runtime: payload };
+  setServicesPollingFailures(state, payload) {
+    return { ...state, servicesPollingFailures: payload };
+  },
+  setThreadsEndpoints(state, payload) {
+    return { ...state, threadsEndpoint: payload };
   },
   setThreadsFilter(state, payload) {
     return { ...state, threadsFilter: payload };
-  },
-  setMetricsPollingFailures(state, payload) {
-    return { ...state, metricsPollingFailures: payload };
   }
 });
 

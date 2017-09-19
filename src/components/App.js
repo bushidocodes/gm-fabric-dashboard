@@ -21,7 +21,7 @@ class App extends Component {
   static propTypes = {
     children: PropTypes.any,
     dashboards: PropTypes.object,
-    interval: PropTypes.number,
+    instancePollingInterval: PropTypes.number.isRequired,
     metricsEndpoint: PropTypes.string,
     pathname: PropTypes.string,
     runtime: PropTypes.string,
@@ -34,18 +34,20 @@ class App extends Component {
     const fabricServer = getFabricServer();
     if (fabricServer) {
       console.log("Fabric Server Detected");
-      // Perform an initial fetch of services from the server
-      Actions.fetchServicesFromServer();
+      // Begin polling Fabric-wide metrics from the Fabric Server
+      Actions.startPollingFabric();
     } else {
       console.log("Fabric Server Not Detected");
       // Load the dashboard for the runtime
       Actions.loadDashboardsFromJSON();
-      // Perform an initial fetch of metrics from the metrics endpoint
-      Actions.fetchMetrics(this.props.metricsEndpoint);
-      // And toggle polling to true
-      Actions.startPollingWithoutServer({
+      // And begin polling instance metrics directly from the microservice
+      console.log(
+        this.props.metricsEndpoint,
+        this.props.instancePollingInterval
+      );
+      Actions.startPollingInstanceWithoutServer({
         endpoint: this.props.metricsEndpoint,
-        interval: this.props.interval
+        interval: this.props.instancePollingInterval
       });
       // Perform initial fetch of threads data if runtime is JVM
       if (this.props.runtime === "jvm") Actions.fetchThreads();
@@ -106,13 +108,18 @@ function mapStateToProps({
   dashboards,
   fabric: { services },
   routing: { location: { pathname } },
-  settings: { interval, metricsEndpoint, runtime, selectedService }
+  settings: {
+    instancePollingInterval,
+    metricsEndpoint,
+    runtime,
+    selectedService
+  }
 }) {
   return {
     dashboards,
     services,
     selectedService,
-    interval,
+    instancePollingInterval,
     metricsEndpoint,
     pathname,
     runtime

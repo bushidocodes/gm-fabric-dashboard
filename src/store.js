@@ -18,37 +18,123 @@ import metrics from "./jumpstate/metrics";
 import settings from "./jumpstate/settings";
 import threadsTable from "./jumpstate/threadsTable";
 import dashboards from "./jumpstate/dashboards";
-import { clearIntervalIfNeeded } from "./utils";
+import {
+  clearInstanceIntervalIfNeeded,
+  clearFabricIntervalIfNeeded
+} from "./utils";
 import { getRuntime, getThreadsEndpoint, getFabricServer } from "./utils/head";
 import defaultJVMDashboards from "./json/jvm/dashboards.json";
 import defaultGolangDashboards from "./json/golang/dashboards.json";
 
 /**
  * Async Jumpstate Effect that instructs AJAX Worker to fetch services from the Fabric Server
+ * @param {any} [fabricServer=getState().settings.fabricServer] 
+ * @returns 
  */
-Effect(
-  "fetchServicesFromServer",
-  (fabricServer = getState().settings.fabricServer) => {
-    if (!fabricServer) {
-      return;
-    }
-    window.ajaxWorker
-      .postMessage({
-        type: "fetchServicesFromServer",
-        fabricServer: fabricServer
-      })
-      .then(results => Actions.fetchServicesSuccess(results))
-      .catch(err => console.log("ERR:", err));
-    // TODO: Add feedback to user if server is not available.
+function fetchServicesEffect(fabricServer = getState().settings.fabricServer) {
+  if (!fabricServer) {
+    return;
   }
-);
+  window.ajaxWorker
+    .postMessage({
+      type: "fetchServices",
+      fabricServer: fabricServer
+    })
+    .then(results => Actions.fetchServicesSuccess(results))
+    .catch(err => Actions.fetchServicesFailure(err));
+}
+Effect("fetchServices", fetchServicesEffect);
+
+/**
+ * Async Jumpstate Effect that handles successful fetches of services from the Fabric Server
+ * Resets the failure counter and updates redux with the current services
+ * @param {any} services 
+ * @param {any} [servicesPollingFailures=getState().settings.servicesPollingFailures] 
+ */
+function fetchServicesSuccessEffect(
+  services,
+  servicesPollingFailures = getState().settings.servicesPollingFailures
+) {
+  if (servicesPollingFailures > 0) {
+    Actions.setServicesPollingFailures(0);
+  }
+  Actions.setServices(services);
+}
+Effect("fetchServicesSuccess", fetchServicesSuccessEffect);
+
+/**
+ * Action that handles errors when fetching services from a Fabric Server, notifying the user via a popup and the console
+ * and incrementing a counter that disables the polling interval on repeat failures.
+ * 
+ * Arguments:
+ * - err - An error
+ */
+Effect("fetchServicesFailure", err => {
+  const servicesPollingFailures = getState().settings.servicesPollingFailures;
+  console.log("Failed: ", servicesPollingFailures);
+  // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
+  // so notify the user and stop polling
+  if (servicesPollingFailures > 3) {
+    notification(
+      "Automatically disabling the fetching of services after three attempts.", //TODO: Add settings config for services polling
+      {
+        status: "danger",
+        timeout: 86400000
+      }
+    );
+    Actions.setServicesPollingFailures(0);
+    Actions.stopPollingFabric();
+    // Otherwise just increment the counter and warn the user;
+  } else {
+    notification("Fetching Services failed", { status: "danger" });
+    console.log("Fetching Services failed", err);
+    Actions.setServicesPollingFailures(servicesPollingFailures + 1);
+  }
+});
+
+/**
+ * Async Jumpstate effect used to change the polling interval used to retrieve Fabric-wide
+ * data from the Fabric Server
+ */
+Effect("changeFabricPollingInterval", interval => {
+  Actions.stopPollingFabric();
+  Actions.setFabricPollingInterval(interval);
+  Actions.startPollingFabric();
+});
+
+/**
+ * Action that starts a polling interval for retrieving services from the Fabric Server
+ */
+Effect("startPollingFabric", function(
+  interval = getState().settings.fabricPollingInterval
+) {
+  // We need to make sure we clear any existing
+  clearFabricIntervalIfNeeded();
+  // Update Redux, so the UI components update
+  Actions.setFabricPolling(true);
+  // Perform an initial fetch
+  Actions.fetchServices();
+  // And then start the interval
+  window.refreshFabricIntervalID = setInterval(Actions.fetchServices, interval);
+});
+
+/**
+ * Action that clears the polling interval for metrics scraping
+ */
+Effect("stopPollingFabric", () => {
+  // We need to make sure we clear any existing intervals
+  clearFabricIntervalIfNeeded();
+  // Update Redux, so the UI components update
+  Actions.setFabricPolling(false);
+});
 
 /**
  * Asyncronous Jumpstate Effect used to select a microservice instance
  * Because the dashboard only allows a single microservice instance to be selected and polled at any given time,
  * this clears the resets the polling interval and metrics cache each time a new microservice instance is selected
+ * @param {any} { instanceID, serviceName } 
  */
-Effect("selectInstance", ({ instanceID, serviceName }) => {
+function selectInstanceEffect({ instanceID, serviceName }) {
   const { fabric, settings } = getState();
   if (instanceID !== settings.selectedInstance) {
     // Check if the new instances is a different microservice and update as needed
@@ -57,13 +143,12 @@ Effect("selectInstance", ({ instanceID, serviceName }) => {
     }
     Actions.setSelectedInstance(instanceID);
     // Stop Polling
-    Actions.stopPolling();
+    Actions.stopPollingInstance();
     // Clear Metrics when we change instances
     Actions.clearMetrics();
     // and then start polling
-    Actions.startPollingWithServer(instanceID);
+    Actions.startPollingInstanceWithServer(instanceID);
     // and then load dashboards
-    // TODO: Pass runtime
     const runtime =
       fabric && fabric.services && fabric.services[serviceName]
         ? fabric.services[serviceName].runtime
@@ -75,7 +160,8 @@ Effect("selectInstance", ({ instanceID, serviceName }) => {
       Actions.loadDashboardsFromJSON(runtime);
     }
   }
-});
+}
+Effect("selectInstance", selectInstanceEffect);
 
 /**
  * Action that checks if we have a fabric server and calls the appropriate function to fetch metrics
@@ -162,7 +248,7 @@ Effect("fetchMetricsFailure", err => {
       }
     );
     Actions.setMetricsPollingFailures(0);
-    Actions.stopPolling();
+    Actions.stopPollingInstance();
     // Otherwise just increment the counter and warn the user;
   } else {
     notification("Fetching Metrics failed", { status: "danger" });
@@ -196,50 +282,52 @@ Effect("fetchThreadsFailure", err => {
 /**
  * Action that checks if we have a fabric server and calls the appropriate polling function
  */
-Effect("startPolling", args => {
-  console.log("startPolling");
-  Actions.setPolling(true);
+Effect("startPollingInstance", args => {
+  console.log("startPollingInstance");
+  Actions.setInstancePolling(true);
   const fabricServer = getState().settings.fabricServer;
   if (fabricServer) {
-    Actions.startPollingWithServer(args);
+    Actions.startPollingInstanceWithServer(args);
   } else {
-    Actions.startPollingWithoutServer(args);
+    Actions.startPollingInstanceWithoutServer(args);
   }
 });
 
 /**
  * Action that starts a polling interval for scraping metrics directly
  */
-Effect("startPollingWithoutServer", function({
-  endpoint = getState().settings.metricsEndpoint,
-  interval = getState().settings.interval
-}) {
-  console.log("startPollingWithoutServer", endpoint, interval);
-  // We need to make sure we clear any existing
-  clearIntervalIfNeeded();
-  // Update Redux, so the UI components update
-  Actions.setPolling(true);
-  // Perform an initial fetch
-  Actions.fetchMetrics(endpoint);
-  // And then start the interval
-  window.refreshMetricsIntervalID = setInterval(
-    Actions.fetchMetricsWithoutServer,
-    interval,
-    endpoint
-  );
-});
+Effect(
+  "startPollingInstanceWithoutServer",
+  ({
+    endpoint = getState().settings.metricsEndpoint,
+    interval = getState().settings.instancePollingInterval
+  }) => {
+    // We need to make sure we clear any existing
+    clearInstanceIntervalIfNeeded();
+    // Update Redux, so the UI components update
+    Actions.setInstancePolling(true);
+    // Perform an initial fetch
+    Actions.fetchMetrics(endpoint);
+    // And then start the interval
+    window.refreshMetricsIntervalID = setInterval(
+      Actions.fetchMetricsWithoutServer,
+      interval,
+      endpoint
+    );
+  }
+);
 
 /**
  * Action that starts a polling interval for scraping metrics indirectly via a Fabric Server
  */
-Effect("startPollingWithServer", function({
+Effect("startPollingInstanceWithServer", function({
   instanceID = getState().settings.selectedInstance,
-  interval = getState().settings.interval
+  interval = getState().settings.instancePollingInterval
 }) {
   // We need to make sure we clear any existing
-  clearIntervalIfNeeded();
+  clearInstanceIntervalIfNeeded();
   // Update Redux, so the UI components update
-  Actions.setPolling(true);
+  Actions.setInstancePolling(true);
   // Perform an initial fetch
   Actions.fetchMetricsWithServer(instanceID);
   // And then start the interval
@@ -253,25 +341,27 @@ Effect("startPollingWithServer", function({
 /**
  * Action that clears the polling interval for metrics scraping
  */
-Effect("stopPolling", (endpoint, interval) => {
+Effect("stopPollingInstance", () => {
   // We need to make sure we clear any existing intervals
-  clearIntervalIfNeeded();
+  clearInstanceIntervalIfNeeded();
   // Update Redux, so the UI components update
-  Actions.setPolling(false);
+  Actions.setInstancePolling(false);
 });
 
 /**
  * Async Jumpstate effect used to change the polling interval 
  */
-Effect("changeInterval", interval => {
-  Actions.stopPolling();
-  Actions.setInterval(interval);
+Effect("changeInstancePollingInterval", interval => {
+  Actions.stopPollingInstance();
+  Actions.setInstancePollingInterval(interval);
 
   if (getState().settings.fabricServer) {
-    Actions.startPollingWithServer();
+    if (getState().settings.selectedInstance) {
+      Actions.startPollingInstanceWithServer();
+    }
   } else {
-    Actions.startPolling({
-      interval: getState().settings.interval
+    Actions.startPollingInstance({
+      interval: getState().settings.instancePollingInterval
     });
   }
 });

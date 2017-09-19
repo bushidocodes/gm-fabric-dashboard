@@ -16,10 +16,13 @@ import LayoutSection from "./library/LayoutSection";
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {
-  isPolling: PropTypes.bool,
+  fabricPollingInterval: PropTypes.number,
+  fabricServer: PropTypes.string,
+  instancePollingInterval: PropTypes.number,
+  isPollingFabric: PropTypes.bool,
+  isPollingInstance: PropTypes.bool,
   metricsCacheSize: PropTypes.string,
-  numberOfDashboards: PropTypes.number,
-  pollingInterval: PropTypes.number
+  numberOfDashboards: PropTypes.number
 };
 
 /**
@@ -27,14 +30,34 @@ SettingsGrid.propTypes = {
  * @param {Object} props - See proptypes for details
  */
 function SettingsGrid({
-  isPolling,
+  fabricPollingInterval,
+  fabricServer,
+  isPollingFabric,
+  isPollingInstance,
   metricsCacheSize,
   numberOfDashboards,
-  pollingInterval
+  instancePollingInterval
 }) {
   return (
     <div className="view-app-settings settings-grid">
-      <PollingSettings interval={pollingInterval} isPolling={isPolling} />
+      {fabricServer && (
+        <PollingSettings
+          changePollingInterval={Actions.changeFabricPollingInterval}
+          stopPolling={Actions.stopPollingFabric}
+          startPolling={Actions.startPollingFabric}
+          interval={fabricPollingInterval}
+          isPollingInstance={isPollingFabric}
+          title="Fabric Polling"
+        />
+      )}
+      <PollingSettings
+        changePollingInterval={Actions.changeInstancePollingInterval}
+        stopPolling={Actions.stopPollingInstance}
+        startPolling={Actions.startPollingInstance}
+        interval={instancePollingInterval}
+        isPollingInstance={isPollingInstance}
+        title={fabricServer ? "Instance Polling" : "Polling"}
+      />
 
       <LayoutSection
         className={"settings-group-metrics-cache"}
@@ -74,8 +97,11 @@ function SettingsGrid({
 
 function mapStateToProps({ settings, dashboards, metrics }) {
   return {
-    pollingInterval: settings.interval, // TODO: Inverval is too vague. Rename
-    isPolling: settings.isPolling,
+    fabricPollingInterval: settings.fabricPollingInterval,
+    fabricServer: settings.fabricServer,
+    instancePollingInterval: settings.instancePollingInterval,
+    isPollingFabric: settings.isPollingFabric,
+    isPollingInstance: settings.isPollingInstance,
     numberOfDashboards: Object.keys(dashboards).length,
     metricsCacheSize: filesize(objectSizeOf(metrics))
   };

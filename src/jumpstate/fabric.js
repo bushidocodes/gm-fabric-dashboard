@@ -8,7 +8,7 @@ const fabric = State({
   setGroups(state, groups) {
     return { ...state, groups };
   },
-  fetchServicesSuccess(state, services) {
+  setServices(state, services) {
     return { ...state, services };
   }
 });

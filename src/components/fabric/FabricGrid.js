@@ -20,7 +20,7 @@ class FabricGrid extends Component {
   }
   componentDidMount() {
     // Refresh services from the Fabric Server every time this loads
-    Actions.fetchServicesFromServer();
+    Actions.fetchServices();
   }
 
   setFilterString = filterString => this.setState({ filterString });
