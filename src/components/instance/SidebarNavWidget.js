@@ -7,7 +7,7 @@ import { getBackButtonUrl } from "../../utils/head";
 
 SidebarNavWidget.propTypes = {
   history: PropTypes.object,
-  services: PropTypes.object.isRequired
+  services: PropTypes.object
 };
 
 /**

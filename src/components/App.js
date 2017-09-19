@@ -41,10 +41,6 @@ class App extends Component {
       // Load the dashboard for the runtime
       Actions.loadDashboardsFromJSON();
       // And begin polling instance metrics directly from the microservice
-      console.log(
-        this.props.metricsEndpoint,
-        this.props.instancePollingInterval
-      );
       Actions.startPollingInstanceWithoutServer({
         endpoint: this.props.metricsEndpoint,
         interval: this.props.instancePollingInterval

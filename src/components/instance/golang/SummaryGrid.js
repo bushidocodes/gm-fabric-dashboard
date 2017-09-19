@@ -49,7 +49,6 @@ class SummaryGrid extends Component {
     const port =
       window.location.port ||
       (window.location.protocol === "https:" ? 443 : 80);
-    console.log(allRequests, allErrors, errorRate);
     const uptime = startTime > 0 ? Date.now() - startTime : 0;
     return (
       <div>

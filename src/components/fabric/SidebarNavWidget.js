@@ -8,7 +8,7 @@ import { trimID } from "../../utils";
 
 SidebarNavWidget.propTypes = {
   history: PropTypes.object,
-  services: PropTypes.object.isRequired
+  services: PropTypes.object
 };
 
 /**
