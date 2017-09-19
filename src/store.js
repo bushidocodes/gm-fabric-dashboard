@@ -48,8 +48,8 @@ Effect("fetchServices", fetchServicesEffect);
 /**
  * Async Jumpstate Effect that handles successful fetches of services from the Fabric Server
  * Resets the failure counter and updates redux with the current services
- * @param {any} services 
- * @param {any} [servicesPollingFailures=getState().settings.servicesPollingFailures] 
+ * @param {Object} services - Results object containing services
+ * @param {number} [servicesPollingFailures=getState().settings.servicesPollingFailures] 
  */
 function fetchServicesSuccessEffect(
   services,
@@ -65,11 +65,9 @@ Effect("fetchServicesSuccess", fetchServicesSuccessEffect);
 /**
  * Action that handles errors when fetching services from a Fabric Server, notifying the user via a popup and the console
  * and incrementing a counter that disables the polling interval on repeat failures.
- * 
- * Arguments:
- * - err - An error
+ * @param {Object} err - Error object
  */
-Effect("fetchServicesFailure", err => {
+function fetchServicesFailureEffect(err) {
   const servicesPollingFailures = getState().settings.servicesPollingFailures;
   console.log("Failed: ", servicesPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
@@ -90,22 +88,26 @@ Effect("fetchServicesFailure", err => {
     console.log("Fetching Services failed", err);
     Actions.setServicesPollingFailures(servicesPollingFailures + 1);
   }
-});
+}
+Effect("fetchServicesFailure", fetchServicesFailureEffect);
 
 /**
  * Async Jumpstate effect used to change the polling interval used to retrieve Fabric-wide
  * data from the Fabric Server
+ * @param {number} interval - fabric polling interval
  */
-Effect("changeFabricPollingInterval", interval => {
+function changeFabricPollingIntervalEffect(interval) {
   Actions.stopPollingFabric();
   Actions.setFabricPollingInterval(interval);
   Actions.startPollingFabric();
-});
+}
+Effect("changeFabricPollingInterval", changeFabricPollingIntervalEffect);
 
 /**
  * Action that starts a polling interval for retrieving services from the Fabric Server
+ * @param {number} [interval=getState().settings.fabricPollingInterval] - fabric polling interval
  */
-Effect("startPollingFabric", function(
+function startPollingFabricEffect(
   interval = getState().settings.fabricPollingInterval
 ) {
   // We need to make sure we clear any existing
@@ -116,23 +118,27 @@ Effect("startPollingFabric", function(
   Actions.fetchServices();
   // And then start the interval
   window.refreshFabricIntervalID = setInterval(Actions.fetchServices, interval);
-});
+}
+Effect("startPollingFabric", startPollingFabricEffect);
 
 /**
  * Action that clears the polling interval for metrics scraping
  */
-Effect("stopPollingFabric", () => {
+function stopPollingFabricEffect() {
   // We need to make sure we clear any existing intervals
   clearFabricIntervalIfNeeded();
   // Update Redux, so the UI components update
   Actions.setFabricPolling(false);
-});
+}
+Effect("stopPollingFabric", stopPollingFabricEffect);
 
 /**
  * Asyncronous Jumpstate Effect used to select a microservice instance
  * Because the dashboard only allows a single microservice instance to be selected and polled at any given time,
  * this clears the resets the polling interval and metrics cache each time a new microservice instance is selected
- * @param {any} { instanceID, serviceName } 
+ * @param {Object} jumpstateObject
+ * @param {string} jumpstateObject.instanceID
+ * @param {string} jumpstateObject.serviceName
  */
 function selectInstanceEffect({ instanceID, serviceName }) {
   const { fabric, settings } = getState();
@@ -165,27 +171,25 @@ Effect("selectInstance", selectInstanceEffect);
 
 /**
  * Action that checks if we have a fabric server and calls the appropriate function to fetch metrics
- * 
- * Arguments:
- * - arg - an arbitrary argument of an unknown type that is passed through to fetchMetricsWithServer or fetchMetricsWithoutServer
+ * @param {any} arg - an arbitrary argument of an unknown type that is passed through to fetchMetricsWithServer or fetchMetricsWithoutServer
  */
-Effect("fetchMetrics", arg => {
+function fetchMetricsEffect(arg) {
   const fabricServer = getState().settings.fabricServer;
   if (fabricServer) {
     Actions.fetchMetricsWithServer(arg);
   } else {
     Actions.fetchMetricsWithoutServer(arg);
   }
-});
+}
+Effect("fetchMetrics", fetchMetricsEffect);
 
 /**
  * Async Jumpstate Effect that instructs the AJAX worker to fetchMetricsWithoutServer and calls success or failure actions
  * depending on if the PromiseWorker resolves or rejects
- * 
- * Arguments:
- * - endpoint - a string containing the target URL of the metrics endpoint
+ * @param {string} endpoint - a string containing the target URL of the metrics endpoint
+ * @returns 
  */
-Effect("fetchMetricsWithoutServer", endpoint => {
+function fetchMetricsWithoutServerEffect(endpoint) {
   if (!endpoint) return;
   window.ajaxWorker
     .postMessage({
@@ -195,46 +199,51 @@ Effect("fetchMetricsWithoutServer", endpoint => {
     })
     .then(json => Actions.fetchMetricsSuccess(json))
     .catch(err => Actions.fetchMetricsFailure(err));
-});
+}
+Effect("fetchMetricsWithoutServer", fetchMetricsWithoutServerEffect);
 
 /**
  * Async Jumpstate Effect that instructs the AJAX worker to fetchMetricsWithServer and calls success or failure actions
- * depending on if the PromiseWorker resolves or rejects
- * 
- * Arguments:
- * - endpoint - a string containing the target URL of the metrics endpoint
+ * depending on if the PromiseWorker resolves or rejects the promise
+ * @param {string} [instanceID=getState().settings.instanceID] 
+ * @returns 
  */
-Effect(
-  "fetchMetricsWithServer",
-  (instanceID = getState().settings.instanceID) => {
-    const fabricServer = getState().settings.fabricServer || getFabricServer();
-    if (!fabricServer || !instanceID) return;
-    window.ajaxWorker
-      .postMessage({
-        type: "fetchMetricsWithServer",
-        fabricServer: fabricServer,
-        instanceID: instanceID
-      })
-      .then(json => Actions.fetchMetricsSuccess(json))
-      .catch(err => Actions.fetchMetricsFailure(err));
-  }
-);
+function fetchMetricsWithServerEffect(
+  instanceID = getState().settings.instanceID
+) {
+  const fabricServer = getState().settings.fabricServer || getFabricServer();
+  if (!fabricServer || !instanceID) return;
+  window.ajaxWorker
+    .postMessage({
+      type: "fetchMetricsWithServer",
+      fabricServer: fabricServer,
+      instanceID: instanceID
+    })
+    .then(json => Actions.fetchMetricsSuccess(json))
+    .catch(err => Actions.fetchMetricsFailure(err));
+}
+Effect("fetchMetricsWithServer", fetchMetricsWithServerEffect);
 
-Effect("fetchMetricsSuccess", metrics => {
+/**
+ * Async Jumpstate Effect that handles successful fetches of metrics from the Fabric Server
+ * Resets the failure counter and updates redux with the current metrics object
+ * 
+ * @param {Object} metrics 
+ */
+function fetchMetricsSuccessEffect(metrics) {
   if (getState().settings.metricsPollingFailures > 0) {
     Actions.setMetricsPollingFailures(0);
   }
   Actions.setMetrics(metrics);
-});
+}
+Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
 
 /**
  * Action that handles fetch thread errors, notifying the user via a popup and the console
  * and incrementing a counter that disables the polling interval on repeat failures.
- * 
- * Arguments:
- * - err - An error
+ * @param {Object} err 
  */
-Effect("fetchMetricsFailure", err => {
+function fetchMetricsFailureHandler(err) {
   const metricsPollingFailures = getState().settings.metricsPollingFailures;
   console.log("Failed: ", metricsPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
@@ -255,12 +264,15 @@ Effect("fetchMetricsFailure", err => {
     console.log("Fetching Metrics failed", err);
     Actions.setMetricsPollingFailures(metricsPollingFailures + 1);
   }
-});
+}
+Effect("fetchMetricsFailure", fetchMetricsFailureHandler);
 
 /**
  * Action that fetches threads information (JVM) and stores in Redux
+ * @param {string} [endpoint=getThreadsEndpoint()] 
+ * @returns 
  */
-Effect("fetchThreads", (endpoint = getThreadsEndpoint()) => {
+function fetchThreadsEffect(endpoint = getThreadsEndpoint()) {
   if (!endpoint) return;
   window.ajaxWorker
     .postMessage({
@@ -269,21 +281,24 @@ Effect("fetchThreads", (endpoint = getThreadsEndpoint()) => {
     })
     .then(json => Actions.fetchThreadsSuccess(json))
     .catch(err => Actions.fetchThreadsFailure(err));
-});
+}
+Effect("fetchThreads", fetchThreadsEffect);
 
 /**
  * Action that handles fetch thread errors, notifying the user via a popup and the console
+ * @param {Object} err 
  */
-Effect("fetchThreadsFailure", err => {
+function fetchThreadsFailureEffect(err) {
   notification("Fetching Threads Data failed", { status: "danger" });
   console.log("Fetching Threads failed", err);
-});
+}
+Effect("fetchThreadsFailure", fetchThreadsFailureEffect);
 
 /**
  * Action that checks if we have a fabric server and calls the appropriate polling function
+ * @param {any} args 
  */
-Effect("startPollingInstance", args => {
-  console.log("startPollingInstance");
+function startPollingInstanceEffect(args) {
   Actions.setInstancePolling(true);
   const fabricServer = getState().settings.fabricServer;
   if (fabricServer) {
@@ -291,39 +306,54 @@ Effect("startPollingInstance", args => {
   } else {
     Actions.startPollingInstanceWithoutServer(args);
   }
-});
+}
+Effect("startPollingInstance", startPollingInstanceEffect);
 
 /**
  * Action that starts a polling interval for scraping metrics directly
+ * @param {Object} [{
+ *     endpoint = getState().settings.metricsEndpoint,
+ *     interval = getState().settings.instancePollingInterval
+ *   }={}] 
  */
-Effect(
-  "startPollingInstanceWithoutServer",
-  ({
+function startPollingInstanceWithoutServerEffect(
+  {
     endpoint = getState().settings.metricsEndpoint,
     interval = getState().settings.instancePollingInterval
-  }) => {
-    // We need to make sure we clear any existing
-    clearInstanceIntervalIfNeeded();
-    // Update Redux, so the UI components update
-    Actions.setInstancePolling(true);
-    // Perform an initial fetch
-    Actions.fetchMetrics(endpoint);
-    // And then start the interval
-    window.refreshMetricsIntervalID = setInterval(
-      Actions.fetchMetricsWithoutServer,
-      interval,
-      endpoint
-    );
-  }
+  } = {}
+) {
+  // We need to make sure we clear any existing
+  clearInstanceIntervalIfNeeded();
+  // Update Redux, so the UI components update
+  Actions.setInstancePolling(true);
+  // Perform an initial fetch
+  Actions.fetchMetrics(endpoint);
+  // And then start the interval
+  window.refreshMetricsIntervalID = setInterval(
+    Actions.fetchMetricsWithoutServer,
+    interval,
+    endpoint
+  );
+}
+
+Effect(
+  "startPollingInstanceWithoutServer",
+  startPollingInstanceWithoutServerEffect
 );
 
 /**
  * Action that starts a polling interval for scraping metrics indirectly via a Fabric Server
+ * @param {Object} [{
+ *     instanceID = getState().settings.selectedInstance,
+ *     interval = getState().settings.instancePollingInterval
+ *   }={}] 
  */
-Effect("startPollingInstanceWithServer", function({
-  instanceID = getState().settings.selectedInstance,
-  interval = getState().settings.instancePollingInterval
-}) {
+function startPollingInstanceWithServerEffect(
+  {
+    instanceID = getState().settings.selectedInstance,
+    interval = getState().settings.instancePollingInterval
+  } = {}
+) {
   // We need to make sure we clear any existing
   clearInstanceIntervalIfNeeded();
   // Update Redux, so the UI components update
@@ -336,22 +366,25 @@ Effect("startPollingInstanceWithServer", function({
     interval,
     instanceID
   );
-});
+}
+Effect("startPollingInstanceWithServer", startPollingInstanceWithServerEffect);
 
 /**
  * Action that clears the polling interval for metrics scraping
  */
-Effect("stopPollingInstance", () => {
+function stopPollingInstanceEffect() {
   // We need to make sure we clear any existing intervals
   clearInstanceIntervalIfNeeded();
   // Update Redux, so the UI components update
   Actions.setInstancePolling(false);
-});
+}
+Effect("stopPollingInstance", stopPollingInstanceEffect);
 
 /**
  * Async Jumpstate effect used to change the polling interval 
+ * @param {number} interval 
  */
-Effect("changeInstancePollingInterval", interval => {
+function changeInstancePollingIntervalEffect(interval) {
   Actions.stopPollingInstance();
   Actions.setInstancePollingInterval(interval);
 
@@ -364,7 +397,8 @@ Effect("changeInstancePollingInterval", interval => {
       interval: getState().settings.instancePollingInterval
     });
   }
-});
+}
+Effect("changeInstancePollingInterval", changeInstancePollingIntervalEffect);
 
 // Note: the following methods are disabled to bypass use of local forage for the initial release
 
@@ -433,8 +467,10 @@ Effect("changeInstancePollingInterval", interval => {
  * This effect is a temporary alternative to directly load the dashboard JSON without use of the
  * localStorage worker. The intended use of this Effect is to disable local forage functionality
  * during the initial release
+ * @param {string} [runtime=getRuntime()] 
+ * @returns 
  */
-Effect("loadDashboardsFromJSON", (runtime = getRuntime()) => {
+function loadDashboardsFromJSONEffect(runtime = getRuntime()) {
   // Check runtime and pass the runtime appropriate JSON file to Actions.updateDashboardsRedux
   switch (runtime) {
     case "JVM":
@@ -444,7 +480,8 @@ Effect("loadDashboardsFromJSON", (runtime = getRuntime()) => {
     default:
       return;
   }
-});
+}
+Effect("loadDashboardsFromJSON", loadDashboardsFromJSONEffect);
 
 // Prepare Redux Middlewares
 const middlewares = [];
