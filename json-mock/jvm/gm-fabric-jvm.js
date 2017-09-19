@@ -6,8 +6,6 @@ const metrics = require("./metrics.json");
 const threads = require("./threads.json");
 const _ = require("lodash");
 
-//
-
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
 
