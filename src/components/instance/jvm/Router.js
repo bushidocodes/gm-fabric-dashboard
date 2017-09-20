@@ -9,7 +9,6 @@ import RoutesGrid from "./RoutesGrid";
 import Explorer from "../../Explorer";
 import GMGrid from "../../library/GMGrid";
 import NotFound from "../../library/NotFound";
-import SettingsGrid from "../../SettingsGrid";
 
 Router.propTypes = {
   baseURL: PropTypes.string
@@ -36,7 +35,6 @@ export default function Router({ baseURL }) {
       <Route component={RoutesGrid} path={`${prefix}/route`} />
       {/* General Routes shared by all runtimes */}
       <Route component={Explorer} path={`${prefix}/explorer`} />
-      <Route component={SettingsGrid} path={`${prefix}/settings`} />
       {/* Catch all route for dynamically generated dashboards */}
       <Route component={GMGrid} path={`${prefix}/:dashboardName`} />
       {/* Should never match, but included just in case */}
