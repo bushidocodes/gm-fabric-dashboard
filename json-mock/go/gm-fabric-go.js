@@ -3,8 +3,7 @@ const server = jsonServer.create();
 const router = jsonServer.router();
 const middlewares = jsonServer.defaults();
 const metrics = require("./metrics.json");
-
-const PORT = 1337;
+const { PORT } = require("../constants");
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);

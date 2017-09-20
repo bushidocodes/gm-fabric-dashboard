@@ -5,6 +5,7 @@ const middlewares = jsonServer.defaults();
 const metrics = require("./metrics.json");
 const threads = require("./threads.json");
 const _ = require("lodash");
+const { PORT } = require("../constants");
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
@@ -78,6 +79,8 @@ server.use((req, res, next) => {
 
 // Use default router
 server.use(router);
-server.listen(1337, () => {
-  console.log("JSON Server is running and mocking GM-Fabric-JVM");
+server.listen(PORT, () => {
+  console.log(
+    `JSON Server is running on port ${PORT} and mocking GM-Fabric-JVM`
+  );
 });

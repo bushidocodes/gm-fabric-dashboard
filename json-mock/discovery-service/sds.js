@@ -7,6 +7,7 @@ const jvmMetrics = require("../jvm/metrics.json");
 const jvmThreads = require("../jvm/threads.json");
 const goMetrics = require("../go/metrics.json");
 const _ = require("lodash");
+const { PORT } = require("../constants");
 
 // Copy the metrics JSON into objects for each instance so they increment separately
 // const metricsStore = {};
@@ -92,9 +93,9 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
 
 // Use default router
 server.use(router);
-server.listen(9990, () => {
+server.listen(PORT, () => {
   console.log(
-    "JSON Server is running on port 9990 and mocking the Service Discovery Service"
+    `JSON Server is running on port ${PORT} and mocking the Service Discovery Service`
   );
 });
 
