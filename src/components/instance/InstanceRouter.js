@@ -9,7 +9,8 @@ import GolangRouter from "./golang/Router";
 import JVMRouter from "./jvm/Router";
 
 /**
- * InstanceRouter is an intermediate router that 
+ * InstanceRouter is an intermediate router that is responsible for directing to the appropriate runtime-specific router
+ * and optionally calling Actions.selectInstance when running with a Fabric Server
  * @export
  * @param {Object} props - see propTypes
  * @returns JSX.Element
