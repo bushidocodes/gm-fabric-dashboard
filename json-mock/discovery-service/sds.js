@@ -1,4 +1,4 @@
-const { services, groups } = require("./data");
+const { services } = require("./data");
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router();
@@ -19,10 +19,6 @@ instances.forEach(instance => {
 });
 
 server.use(middlewares);
-
-server.get("/groups", (req, res) => {
-  res.json(groups);
-});
 
 server.get("/instances", (req, res) => {
   if (req.query.serviceId) {

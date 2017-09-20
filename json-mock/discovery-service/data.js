@@ -2,7 +2,7 @@ const services = [
   {
     id: "7c2024fbc7c6cd81a310577d519ac47e",
     name: "Batcomputer",
-    group: "0af453a8bd27001e5ebad832b7b80ec1",
+    group: "Batcave",
     counts: {
       current: 3,
       minimum: 1,
@@ -22,7 +22,7 @@ const services = [
   {
     id: "ee0fa3669fea7e9a0a00000c46bca56",
     name: "Batcave Defense Systems",
-    group: "0af453a8bd27001e5ebad832b7b80ec1",
+    group: "Batcave",
     counts: {
       current: 3,
       minimum: 1,
@@ -41,14 +41,6 @@ const services = [
   }
 ];
 
-const groups = [
-  {
-    id: "0af453a8bd27001e5ebad832b7b80ec1",
-    name: "Batcave"
-  }
-];
-
 module.exports = {
-  services,
-  groups
+  services
 };

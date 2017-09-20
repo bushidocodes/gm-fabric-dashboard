@@ -83,26 +83,6 @@ describe("AJAX Web Worker", () => {
       })
     ).rejects.toMatch("Invalid Message");
   });
-
-  it("fetches groups from the discovery service and maps them with a key of ID", done => {
-    moxios.stubRequest("server/groups", {
-      status: 200,
-      response: groups
-    });
-    ajaxWorker({
-      type: "fetchGroups",
-      fabricServer: "server"
-    })
-      .then(result =>
-        expect(result).toMatchObject({
-          "0af453a8bd27001e5ebad832b7b80ec1": {
-            id: "0af453a8bd27001e5ebad832b7b80ec1",
-            name: "Batcave"
-          }
-        })
-      )
-      .then(() => done());
-  });
   it("fetches services from the discovery service and maps them with a key of name", done => {
     moxios.stubRequest("server/services", {
       status: 200,
@@ -117,7 +97,7 @@ describe("AJAX Web Worker", () => {
           Batcomputer: {
             id: "7c2024fbc7c6cd81a310577d519ac47e",
             name: "Batcomputer",
-            group: "0af453a8bd27001e5ebad832b7b80ec1",
+            group: "Batcave",
             counts: {
               current: 3,
               minimum: 1,
@@ -137,7 +117,7 @@ describe("AJAX Web Worker", () => {
           "Batcave Defense Systems": {
             id: "ee0fa3669fea7e9a0a00000c46bca56",
             name: "Batcave Defense Systems",
-            group: "0af453a8bd27001e5ebad832b7b80ec1",
+            group: "Batcave",
             counts: {
               current: 3,
               minimum: 1,
