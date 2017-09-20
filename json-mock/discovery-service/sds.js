@@ -31,40 +31,20 @@ server.get("/services", (req, res) => {
   }
 });
 
-// Takes optional query strings of service and version
-server.get("/instances", (req, res) => {
-  if (req.query.service) {
-    let match;
-    match = instances.filter(
-      instance => instance.service === req.query.service
-    );
-    // If version was also provided as a query param, filter out the desired version
-    if (req.query.version) {
-      match = match.filter(instance => instance.version === req.query.version);
-    }
-    res.json(match);
-  } else {
-    res.json(instances);
-  }
-});
-
 server.get("/metrics/:service/:version/:instance", (req, res) => {
   const { service, version, instance } = req.params;
-  const serviceObj = servicesObj[service + version];
-  if (serviceObj && serviceObj.runtime) {
-    const serviceInstances = instances.filter(
-      instance => instance.service === service && instance.version === version
-    );
-    if (
-      serviceInstances
-        .map(instanceObj => instanceObj.instance)
-        .includes(instance)
-    ) {
-      if (serviceObj.runtime === "JVM") {
-        res.json(jvmMetrics);
-      } else if (service.runtime === "GO") {
-        res.json(goMetrics);
-      }
+  const selectedService = services.find(
+    serviceObj => serviceObj.name === service && serviceObj.version === version
+  );
+  if (
+    selectedService &&
+    selectedService.runtime &&
+    selectedService.instances.includes(instance)
+  ) {
+    if (selectedService.runtime === "JVM") {
+      res.json(jvmMetrics);
+    } else if (selectedService.runtime === "GO") {
+      res.json(goMetrics);
     }
   }
   res.status(404).end();
@@ -73,19 +53,16 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
 // Note: Just returning the same object for all of the instances.
 server.get("/threads/:service/:version/:instance", (req, res) => {
   const { service, version, instance } = req.params;
-  const serviceObj = servicesObj[service + version];
-  if (serviceObj && serviceObj.runtime) {
-    const serviceInstances = instances.filter(
-      instance => instance.service === service && instance.version === version
-    );
-    if (
-      serviceInstances
-        .map(instanceObj => instanceObj.instance)
-        .includes(instance)
-    ) {
-      if (serviceObj.runtime === "JVM") {
-        res.json(jvmThreads);
-      }
+  const selectedService = services.find(
+    serviceObj => serviceObj.name === service && serviceObj.version === version
+  );
+  if (
+    selectedService &&
+    selectedService.runtime &&
+    selectedService.instances.includes(instance)
+  ) {
+    if (selectedService.runtime === "JVM") {
+      res.json(jvmThreads);
     }
   }
   res.status(404).end();
