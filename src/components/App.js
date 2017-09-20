@@ -26,6 +26,7 @@ class App extends Component {
     pathname: PropTypes.string,
     runtime: PropTypes.string,
     selectedService: PropTypes.string,
+    selectedServiceVersion: PropTypes.string,
     services: PropTypes.object
   };
 
@@ -62,16 +63,27 @@ class App extends Component {
     }
   }
 
-  componentWillUpdate({ dashboards, services, selectedService }) {
+  componentWillUpdate({
+    dashboards,
+    services,
+    selectedService,
+    selectedServiceVersion
+  }) {
     // If the app initially loads before we've gotten a response from the Fabric Server, load the dynamic dashboards
     // once we figure out the runtime
     if (
       Object.keys(dashboards).length === 0 &&
       Object.keys(services).length > 0 &&
-      selectedService
+      selectedService &&
+      selectedServiceVersion
     ) {
-      console.log("Loading dashboards");
-      Actions.loadDashboardsFromJSON(services[selectedService].runtime);
+      console.log(
+        "Loading dashboards",
+        `${selectedService}|${selectedServiceVersion}`
+      );
+      Actions.loadDashboardsFromJSON(
+        services[`${selectedService}|${selectedServiceVersion}`].runtime
+      );
     }
   }
 
@@ -108,13 +120,15 @@ function mapStateToProps({
     instancePollingInterval,
     metricsEndpoint,
     runtime,
-    selectedService
+    selectedService,
+    selectedServiceVersion
   }
 }) {
   return {
     dashboards,
     services,
     selectedService,
+    selectedServiceVersion,
     instancePollingInterval,
     metricsEndpoint,
     pathname,

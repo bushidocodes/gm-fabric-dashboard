@@ -14,17 +14,26 @@ export function main(message) {
         return axios
           .get(`${message.fabricServer}/services`, { responseType: "json" })
           .then(response => response.data)
-          .then(arrayOfServices => _.mapKeys(arrayOfServices, "name"));
+          .then(arrayOfServices =>
+            arrayOfServices.reduce((result, service) => {
+              result[`${service.name}|${service.version}`] = service;
+              return result;
+            }, {})
+          );
       } else {
         return Promise.reject("Invalid endpoint");
       }
     case "fetchMetricsWithServer":
       if (!message.fabricServer)
         return Promise.reject("Missing Fabric Server Endpoint");
+      if (!message.service) return Promise.reject("Missing Service Name");
+      if (!message.version) return Promise.reject("Missing Service Version");
       if (!message.instanceID) return Promise.reject("Missing Instance ID");
       return (
         axios
-          .get(`${message.fabricServer}/metrics/${message.instanceID}`)
+          .get(
+            `${message.fabricServer}/metrics/${message.service}/${message.version}/${message.instanceID}`
+          )
           .then(response => response.data)
           // Cast all values to numerics and filter out NaNs
           .then(data => _.mapValues(data, value => Number(value)))

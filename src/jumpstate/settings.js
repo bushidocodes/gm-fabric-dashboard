@@ -23,6 +23,7 @@ const settings = State({
     metricsPollingFailures: 0,
     runtime: !getFabricServer() ? getRuntime() : null,
     selectedInstance: null,
+    selectedServiceVersion: null,
     selectedService: null,
     servicesPollingFailures: 0,
     threadsEndpoint: !getFabricServer() ? getThreadsEndpoint() : null,
@@ -57,6 +58,9 @@ const settings = State({
   },
   setSelectedService(state, payload) {
     return { ...state, selectedService: payload };
+  },
+  setSelectedServiceVersion(state, payload) {
+    return { ...state, selectedServiceVersion: payload };
   },
   setServicesPollingFailures(state, payload) {
     return { ...state, servicesPollingFailures: payload };

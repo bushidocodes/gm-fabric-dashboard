@@ -21,17 +21,35 @@ class InstanceRouter extends Component {
     instanceID: PropTypes.string, // Route param passed from Fabric Router if running under Fabric Server
     runtime: PropTypes.string.isRequired,
     selectedInstance: PropTypes.string,
-    serviceName: PropTypes.string // Route param passed from Fabric Router if running under Fabric Server
+    selectedService: PropTypes.string,
+    selectedServiceVersion: PropTypes.string,
+    serviceName: PropTypes.string, // Route param passed from Fabric Router if running under Fabric Server
+    serviceVersion: PropTypes.string // Route param passed from Fabric Router if running under Fabric Server
   };
 
   // Lifecycle hook used to fire selectInstance if needed when running under a Fabric Server
   componentWillMount() {
     // If we were passed a serviceName and instanceID, we assume we are running under a Fabric Server
-    const { instanceID, selectedInstance, serviceName } = this.props;
-    if (serviceName && instanceID && instanceID !== selectedInstance) {
+    const {
+      instanceID,
+      selectedInstance,
+      selectedService,
+      selectedServiceVersion,
+      serviceName,
+      serviceVersion
+    } = this.props;
+    if (
+      serviceName &&
+      serviceVersion &&
+      instanceID &&
+      (serviceName !== selectedService ||
+        serviceVersion !== selectedServiceVersion ||
+        instanceID !== selectedInstance)
+    ) {
       Actions.selectInstance({
         instanceID,
-        serviceName
+        serviceName,
+        serviceVersion
       });
     }
   }
@@ -63,6 +81,8 @@ class InstanceRouter extends Component {
 
 function mapStateToProps(state) {
   return {
+    selectedService: state.settings.selectedService,
+    selectedServiceVersion: state.settings.selectedServiceVersion,
     selectedInstance: state.settings.selectedInstance
   };
 }

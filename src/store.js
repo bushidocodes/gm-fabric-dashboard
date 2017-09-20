@@ -140,12 +140,15 @@ Effect("stopPollingFabric", stopPollingFabricEffect);
  * @param {string} jumpstateObject.instanceID
  * @param {string} jumpstateObject.serviceName
  */
-function selectInstanceEffect({ instanceID, serviceName }) {
+function selectInstanceEffect({ instanceID, serviceName, serviceVersion }) {
   const { fabric, settings } = getState();
   if (instanceID !== settings.selectedInstance) {
-    // Check if the new instances is a different microservice and update as needed
+    // Check if the new instance is a different microservice and update as needed
     if (serviceName && serviceName !== settings.selectedService) {
       Actions.setSelectedService(serviceName);
+    }
+    if (serviceVersion && serviceVersion !== settings.selectedServiceVersion) {
+      Actions.setSelectedServiceVersion(serviceVersion);
     }
     Actions.setSelectedInstance(instanceID);
     // Stop Polling
@@ -156,8 +159,10 @@ function selectInstanceEffect({ instanceID, serviceName }) {
     Actions.startPollingInstanceWithServer(instanceID);
     // and then load dashboards
     const runtime =
-      fabric && fabric.services && fabric.services[serviceName]
-        ? fabric.services[serviceName].runtime
+      fabric &&
+      fabric.services &&
+      fabric.services[`${serviceName}|${serviceVersion}`]
+        ? fabric.services[`${serviceName}|${serviceVersion}`].runtime
         : "";
     // Note: If we don't know the runtime we ran this function before getting a response from the Fabric server
     // so we don't know what type of runtime the microservice is
@@ -212,12 +217,16 @@ function fetchMetricsWithServerEffect(
   instanceID = getState().settings.instanceID
 ) {
   const fabricServer = getState().settings.fabricServer || getFabricServer();
+  const service = getState().settings.selectedService || "";
+  const version = getState().settings.selectedServiceVersion || "";
   if (!fabricServer || !instanceID) return;
   window.ajaxWorker
     .postMessage({
       type: "fetchMetricsWithServer",
-      fabricServer: fabricServer,
-      instanceID: instanceID
+      fabricServer,
+      service,
+      version,
+      instanceID
     })
     .then(json => Actions.fetchMetricsSuccess(json))
     .catch(err => Actions.fetchMetricsFailure(err));

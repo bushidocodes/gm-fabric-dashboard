@@ -16,6 +16,7 @@ import {
 } from "../../../utils/dygraphs";
 import { getLatestAttribute } from "../../../utils/latestAttribute";
 import { getServiceName } from "../../../utils/head";
+import { trimID } from "../../../utils";
 
 /**
  * Static Summary page for Golang runtime
@@ -24,10 +25,18 @@ import { getServiceName } from "../../../utils/head";
  */
 class SummaryGrid extends Component {
   static propTypes = {
-    metrics: PropTypes.object
+    metrics: PropTypes.object,
+    selectedInstance: PropTypes.string,
+    selectedService: PropTypes.string,
+    selectedServiceVersion: PropTypes.string
   };
   render() {
-    const { metrics } = this.props;
+    const {
+      metrics,
+      selectedInstance,
+      selectedService,
+      selectedServiceVersion
+    } = this.props;
     const startTime = getLatestAttribute(metrics, "system/start_time");
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
@@ -52,7 +61,12 @@ class SummaryGrid extends Component {
     const uptime = startTime > 0 ? Date.now() - startTime : 0;
     return (
       <div>
-        <PageTitle title={`${getServiceName()}: Instance 1`} />
+        <PageTitle
+          title={`${selectedService ||
+            getServiceName()} ${selectedServiceVersion} : ${trimID(
+            selectedInstance
+          )}`}
+        />
         <LayoutSection title={"Vitals"}>
           <div className="subsection">
             <div className="readout-dashboard-row">
@@ -128,7 +142,10 @@ class SummaryGrid extends Component {
 
 function mapStateToProps(state) {
   return {
-    metrics: state.metrics
+    metrics: state.metrics,
+    selectedService: state.settings.selectedService,
+    selectedServiceVersion: state.settings.selectedServiceVersion,
+    selectedInstance: state.settings.selectedInstance
   };
 }
 

@@ -31,7 +31,7 @@ export function FabricSidebarContent({ services }) {
         }}
       />
       <Route
-        path="/:serviceName/:instanceID"
+        path="/:serviceName/:serviceVersion/:instanceID"
         component={InstanceSidebarContent}
       />
     </Switch>

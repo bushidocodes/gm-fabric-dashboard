@@ -34,14 +34,16 @@ function FabricRouter({ services }) {
     <Switch>
       <Route component={SettingsGrid} exact path="/settings" />
       <Route
-        path="/:serviceName/:instanceID/"
-        render={({ match: { url, params: { serviceName, instanceID } } }) => {
+        path="/:serviceName/:version/:instanceID/"
+        render={({
+          match: { url, params: { serviceName, version, instanceID } }
+        }) => {
           const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
 
           // Lookup the runtime of the microservice named serviceName
           const runtime =
-            services && serviceName && services[serviceName]
-              ? services[serviceName].runtime
+            services && serviceName && services[`${serviceName}|${version}`]
+              ? services[`${serviceName}|${version}`].runtime
               : "";
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
@@ -50,6 +52,7 @@ function FabricRouter({ services }) {
               runtime={runtime}
               baseURL={baseURL}
               serviceName={serviceName}
+              serviceVersion={version}
               instanceID={instanceID}
             />
           );
@@ -59,6 +62,17 @@ function FabricRouter({ services }) {
       <Route
         exact
         path="/:serviceName/"
+        render={({ location: { pathname } }) => {
+          // Blacklist known top level routes in render just in case.
+          // Since we're in a switch and this route is last, this shouldn't be needed
+          if (pathname !== "/settings") {
+            return <Redirect to={`/`} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/:serviceName/:version/"
         render={({ location: { pathname } }) => {
           // Blacklist known top level routes in render just in case.
           // Since we're in a switch and this route is last, this shouldn't be needed

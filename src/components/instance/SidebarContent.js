@@ -79,15 +79,21 @@ class SidebarContent extends Component {
 
 function mapStateToProps(state, ownProps) {
   const { metrics, settings: { runtime } } = state;
-  const { match: { params: { serviceName, instanceID } } } = ownProps;
+  const {
+    match: { params: { serviceName, serviceVersion, instanceID } }
+  } = ownProps;
   return {
     metrics,
-    basePath: serviceName && instanceID ? `/${serviceName}/${instanceID}` : "",
+    basePath:
+      serviceName && serviceVersion && instanceID
+        ? `/${serviceName}/${serviceVersion}/${instanceID}`
+        : "",
     runtime:
       state.fabric.services &&
-      ownProps.match.params.serviceName &&
-      state.fabric.services[ownProps.match.params.serviceName]
-        ? state.fabric.services[ownProps.match.params.serviceName].runtime
+      serviceName &&
+      serviceVersion &&
+      state.fabric.services[`${serviceName}|${serviceVersion}`]
+        ? state.fabric.services[`${serviceName}|${serviceVersion}`].runtime
         : runtime,
     sidebarCards: generateSidebarCards(state)
   };

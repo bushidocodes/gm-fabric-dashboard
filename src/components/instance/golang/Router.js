@@ -1,34 +1,41 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 import SummaryGrid from "./SummaryGrid";
 import RoutesGrid from "./RoutesGrid";
 import FunctionsGrid from "./FunctionsGrid";
 
 import Explorer from "../../Explorer";
-import SettingsGrid from "../../SettingsGrid";
 import GMGrid from "../../library/GMGrid";
 import NotFound from "../../library/NotFound";
 
+Router.propTypes = {
+  baseURL: PropTypes.string
+};
 /**
  * Golang Runtime Router
  * @export
  * @returns JSX.Element
  */
-export default function Router() {
+export default function Router({ baseURL }) {
+  const prefix = baseURL || "";
   return (
     <Switch>
       {/* Root Redirect */}
-      <Route exact path="/" render={() => <Redirect to="/summary" />} />
+      <Route
+        exact
+        path={baseURL ? prefix : "/"}
+        render={() => <Redirect to={`${prefix}/summary`} />}
+      />
       {/* Custom Runtime Specific Stuff */}
-      <Route component={SummaryGrid} path="/summary" />
-      <Route component={RoutesGrid} path="/routes" />
-      <Route component={FunctionsGrid} path="/functions" />
+      <Route component={SummaryGrid} path={`${prefix}/summary`} />
+      <Route component={RoutesGrid} path={`${prefix}/routes`} />
+      <Route component={FunctionsGrid} path={`${prefix}/functions`} />
       {/* General Routes shared by all runtimes */}
-      <Route component={Explorer} path="/explorer" />
-      <Route component={SettingsGrid} path="/settings" />
+      <Route component={Explorer} path={`${prefix}/explorer`} />
       {/* Catch all route for dynamically generated dashboards */}
-      <Route component={GMGrid} path="/:dashboardName" />
+      <Route component={GMGrid} path={`${prefix}/:dashboardName`} />
       {/* Should never match, but included just in case */}
       <Route component={NotFound} path="*" />
     </Switch>

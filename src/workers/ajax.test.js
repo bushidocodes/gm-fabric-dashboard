@@ -2,7 +2,7 @@ import moxios from "moxios";
 import { main as ajaxWorker } from "./ajax";
 import metrics from "../../json-mock/jvm/metrics";
 import threads from "../../json-mock/jvm/threads";
-import { services, groups } from "../../json-mock/discovery-service/data";
+import { services } from "../../json-mock/discovery-service/data";
 
 describe("AJAX Web Worker", () => {
   beforeEach(() => {
@@ -94,45 +94,39 @@ describe("AJAX Web Worker", () => {
     })
       .then(result =>
         expect(result).toMatchObject({
-          Batcomputer: {
-            id: "7c2024fbc7c6cd81a310577d519ac47e",
+          "Batcomputer|1.0": {
             name: "Batcomputer",
+            version: "1.0",
             group: "Batcave",
-            counts: {
-              current: 3,
-              minimum: 1,
-              maximum: 6
-            },
-            metered: true,
-            threaded: true,
-            documentation: null,
-            authorized: true,
-            runtime: "JVM",
             instances: [
               "ee0fa3669fea7e9a0adea649c46bca56",
               "8bedb4551e801f38bf149001a72a1127",
               "d9de3a9c26c6c84daaf1ceb40559d659"
-            ]
-          },
-          "Batcave Defense Systems": {
-            id: "ee0fa3669fea7e9a0a00000c46bca56",
-            name: "Batcave Defense Systems",
-            group: "Batcave",
-            counts: {
-              current: 3,
-              minimum: 1,
-              maximum: 6
-            },
+            ],
+            minimum: 1,
+            maximum: 6,
             metered: true,
             threaded: true,
-            documentation: null,
-            authorized: false,
-            runtime: "JVM",
+            documentation: "https://en.wikipedia.org/wiki/Batcomputer",
+            authorized: true,
+            runtime: "JVM"
+          },
+          "Batcave Defense Systems|3.1": {
+            name: "Batcave Defense Systems",
+            version: "3.1",
+            group: "Batcave",
             instances: [
               "ee0f0000000a7e9a0adea649c46bca56",
               "8bedb4551e801f38bf149000002a1127",
               "d000009c26c6c84daaf1ceb40559d659"
-            ]
+            ],
+            minimum: 1,
+            maximum: 6,
+            metered: true,
+            threaded: true,
+            documentation: null,
+            authorized: false,
+            runtime: "GOLANG"
           }
         })
       )

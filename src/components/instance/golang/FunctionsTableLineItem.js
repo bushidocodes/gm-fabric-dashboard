@@ -18,10 +18,8 @@ export default class FunctionsTableLineItem extends Component {
   static propTypes = {
     errorsCount: PropTypes.number.isRequired,
     func: PropTypes.string.isRequired,
-    inThroughput: PropTypes.number.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
-    outThroughput: PropTypes.number.isRequired,
     requests: PropTypes.number.isRequired,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired

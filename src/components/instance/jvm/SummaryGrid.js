@@ -25,14 +25,16 @@ class SummaryGrid extends Component {
     errorRate: PropTypes.string,
     metrics: PropTypes.object,
     selectedInstance: PropTypes.string,
-    selectedService: PropTypes.string
+    selectedService: PropTypes.string,
+    selectedServiceVersion: PropTypes.string
   };
   render() {
     const {
       errorRate,
       metrics,
       selectedInstance,
-      selectedService
+      selectedService,
+      selectedServiceVersion
     } = this.props;
     const hostname = window.location.hostname;
     const port =
@@ -41,7 +43,8 @@ class SummaryGrid extends Component {
     return (
       <div>
         <PageTitle
-          title={`${selectedService || getServiceName()}: ${trimID(
+          title={`${selectedService ||
+            getServiceName()} ${selectedServiceVersion} : ${trimID(
             selectedInstance
           )}`}
         />
@@ -114,6 +117,7 @@ function mapStateToProps(state) {
   return {
     metrics: state.metrics,
     selectedService: state.settings.selectedService,
+    selectedServiceVersion: state.settings.selectedServiceVersion,
     selectedInstance: state.settings.selectedInstance,
     errorRate: getErrorRate(state)
   };

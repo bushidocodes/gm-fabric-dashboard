@@ -18,15 +18,26 @@ export const getRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
 export const getSelectedInstance = state => state.settings.selectedInstance;
 export const getSelectedService = state => state.settings.selectedService;
+export const getSelectedServiceVersion = state =>
+  state.settings.selectedServiceVersion;
 
 /**
  * Reselect selector that generates SidebarCard components from JSON
  */
 export const generateSidebarCards = createSelector(
-  [getDashboards, getMetrics, getSelectedService, getSelectedInstance],
-  (dashboards, metrics, service, instance) => {
+  [
+    getDashboards,
+    getMetrics,
+    getSelectedService,
+    getSelectedServiceVersion,
+    getSelectedInstance
+  ],
+  (dashboards, metrics, service, version, instance) => {
     if (Object.keys(dashboards).length > 0) {
-      const prefix = service && instance ? `/${service}/${instance}` : "";
+      const prefix =
+        service && version && instance
+          ? `/${service}/${version}/${instance}`
+          : "";
       return _.toPairs(dashboards).map(([key, value]) => {
         let chartData, chartTitle, lines;
         // Render lines of text if present

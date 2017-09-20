@@ -6,6 +6,7 @@ import SidebarCard from "../../SidebarCard";
 import { getLatestAttribute } from "../../../utils/latestAttribute";
 
 SidebarContent.propTypes = {
+  basePath: PropTypes.string,
   metrics: PropTypes.object.isRequired,
   sidebarCards: PropTypes.array
 };
@@ -16,13 +17,13 @@ SidebarContent.propTypes = {
  * @param {Object} props - See propTypes
  * @returns JSX.Element
  */
-export default function SidebarContent({ metrics, sidebarCards }) {
+export default function SidebarContent({ basePath, metrics, sidebarCards }) {
   const startTime = getLatestAttribute(metrics, "system/start_time");
   const uptime = startTime > 0 ? Date.now() - startTime : 0;
   return (
     <div>
       <SidebarCard
-        href={`/summary`}
+        href={`${basePath}/summary`}
         icon="star"
         lines={[
           {
@@ -34,7 +35,7 @@ export default function SidebarContent({ metrics, sidebarCards }) {
         title="Summary"
       />
       <SidebarCard
-        href={`/routes`}
+        href={`${basePath}/routes`}
         icon="link"
         lines={[
           {
@@ -48,7 +49,7 @@ export default function SidebarContent({ metrics, sidebarCards }) {
         title="Routes"
       />
       <SidebarCard
-        href={`/functions`}
+        href={`${basePath}/functions`}
         icon="code"
         lines={[
           {
@@ -61,7 +62,7 @@ export default function SidebarContent({ metrics, sidebarCards }) {
       />
       {sidebarCards}
       <SidebarCard
-        href={`/explorer`}
+        href={`${basePath}/explorer`}
         icon="search"
         tabIndex={8}
         title="Explorer"

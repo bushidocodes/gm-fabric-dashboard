@@ -25,9 +25,11 @@ const servicesObj = _.mapKeys(
 // Takes a optional query string of group
 server.get("/services", (req, res) => {
   if (req.query.group) {
-    res.json(_.filter(services, service => service.group === req.query.group));
+    return res.json(
+      _.filter(services, service => service.group === req.query.group)
+    );
   } else {
-    res.json(services);
+    return res.json(services);
   }
 });
 
@@ -42,12 +44,12 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
     selectedService.instances.includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
-      res.json(jvmMetrics);
-    } else if (selectedService.runtime === "GO") {
-      res.json(goMetrics);
+      return res.json(jvmMetrics);
+    } else if (selectedService.runtime === "GOLANG") {
+      return res.json(goMetrics);
     }
   }
-  res.status(404).end();
+  return res.status(404).end();
 });
 
 // Note: Just returning the same object for all of the instances.
@@ -62,10 +64,10 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
     selectedService.instances.includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
-      res.json(jvmThreads);
+      return res.json(jvmThreads);
     }
   }
-  res.status(404).end();
+  return res.status(404).end();
 });
 
 // Use default router

@@ -16,7 +16,7 @@ export default function FabricTable({ services = [] }) {
             <FabricTableLineItem
               service={service}
               arrIndex={arrIndex}
-              key={service.id}
+              key={service.name}
             />
           );
         })}

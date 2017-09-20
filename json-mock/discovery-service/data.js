@@ -26,7 +26,7 @@ const services = [
     authorized: false,
     metered: true,
     threaded: true,
-    runtime: "JVM",
+    runtime: "GOLANG",
     instances: [
       "ee0f0000000a7e9a0adea649c46bca56",
       "8bedb4551e801f38bf149000002a1127",

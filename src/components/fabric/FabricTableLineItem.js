@@ -56,14 +56,16 @@ export default class FabricTableLineItem extends Component {
       arrIndex,
       service: {
         authorized,
-        counts: { maximum, minimum },
         // documentation,
         // group,
         instances,
+        maximum,
+        minimum,
         // metered,
-        name
+        name,
         // runtime,
-        // threaded
+        // threaded,
+        version
       }
     } = this.props;
     // const indicatorIcon = this.indicatorColor(state);
@@ -94,7 +96,7 @@ export default class FabricTableLineItem extends Component {
         <div className="thread-table-state">
           <IndicatorIcon alt={"state"} color={indicatorIcon} diameter={15} />
         </div>
-        <div className="thread-table-name">{name}</div>
+        <div className="thread-table-name">{`${name} v${version}`}</div>
         <div className="thread-table-stacktrace">
           {instances.length ? (
             <span
@@ -122,7 +124,7 @@ export default class FabricTableLineItem extends Component {
               {this.padArray(instances, maximum).map((instance, index) => {
                 if (instance !== "") {
                   return (
-                    <Link key={instance} to={`/${name}/${instance}`}>
+                    <Link key={instance} to={`/${name}/${version}/${instance}`}>
                       <li
                         className={`instance-slot ${index === minimum
                           ? "instance-min"
