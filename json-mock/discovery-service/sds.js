@@ -1,62 +1,93 @@
-const { services } = require("./data");
+const { services, instances } = require("./data");
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router();
 const middlewares = jsonServer.defaults();
-const metrics = require("../jvm/metrics.json");
-const threads = require("../jvm/threads.json");
+const jvmMetrics = require("../jvm/metrics.json");
+const jvmThreads = require("../jvm/threads.json");
+const goMetrics = require("../go/metrics.json");
 const _ = require("lodash");
 
 // Copy the metrics JSON into objects for each instance so they increment separately
-
-const instances = services.reduce((instances, service) => {
-  return [...instances, ...service.instances];
-}, []);
-
-const metricsStore = {};
-instances.forEach(instance => {
-  metricsStore[instance] = Object.assign({}, metrics);
-});
+// const metricsStore = {};
+// instances.forEach(instance => {
+//   metricsStore[instance] = Object.assign({}, jvmMetrics);
+// });
 
 server.use(middlewares);
 
-server.get("/instances", (req, res) => {
-  if (req.query.serviceId) {
-    const match = services.find(service => service.id === req.query.serviceId);
-    if (!match) {
-      res.json([]);
-    } else {
-      res.json(match.instances);
-    }
-  } else {
-    res.json(instances);
-  }
-});
+const servicesObj = _.mapKeys(
+  services,
+  service => service.name + service.version
+);
 
-// Takes a query string of groupId c
+// Takes a optional query string of group
 server.get("/services", (req, res) => {
-  if (req.query.groupId) {
-    res.json(
-      _.filter(services, service => service.group === req.query.groupId)
-    );
+  if (req.query.group) {
+    res.json(_.filter(services, service => service.group === req.query.group));
   } else {
     res.json(services);
   }
 });
 
-server.get("/metrics/:instanceId", (req, res) => {
-  const { instanceId } = req.params;
-  if (Object.keys(metricsStore).includes(instanceId)) {
-    res.json(metricsStore[instanceId]);
+// Takes optional query strings of service and version
+server.get("/instances", (req, res) => {
+  if (req.query.service) {
+    let match;
+    match = instances.filter(
+      instance => instance.service === req.query.service
+    );
+    // If version was also provided as a query param, filter out the desired version
+    if (req.query.version) {
+      match = match.filter(instance => instance.version === req.query.version);
+    }
+    res.json(match);
   } else {
-    res.status(404).end();
+    res.json(instances);
   }
 });
 
+server.get("/metrics/:service/:version/:instance", (req, res) => {
+  const { service, version, instance } = req.params;
+  const serviceObj = servicesObj[service + version];
+  if (serviceObj && serviceObj.runtime) {
+    const serviceInstances = instances.filter(
+      instance => instance.service === service && instance.version === version
+    );
+    if (
+      serviceInstances
+        .map(instanceObj => instanceObj.instance)
+        .includes(instance)
+    ) {
+      if (serviceObj.runtime === "JVM") {
+        res.json(jvmMetrics);
+      } else if (service.runtime === "GO") {
+        res.json(goMetrics);
+      }
+    }
+  }
+  res.status(404).end();
+});
+
 // Note: Just returning the same object for all of the instances.
-server.get("/threads/:instanceId", (req, res) => {
-  threads["threads"]["2"]["priority"] = Math.floor(Math.random() * 10) + 1;
-  res.json(threads);
+server.get("/threads/:service/:version/:instance", (req, res) => {
+  const { service, version, instance } = req.params;
+  const serviceObj = servicesObj[service + version];
+  if (serviceObj && serviceObj.runtime) {
+    const serviceInstances = instances.filter(
+      instance => instance.service === service && instance.version === version
+    );
+    if (
+      serviceInstances
+        .map(instanceObj => instanceObj.instance)
+        .includes(instance)
+    ) {
+      if (serviceObj.runtime === "JVM") {
+        res.json(jvmThreads);
+      }
+    }
+  }
+  res.status(404).end();
 });
 
 // Use default router
