@@ -4,12 +4,7 @@ import { getLatestAttribute } from "../latestAttribute";
 import { getSparkLineOfNetChange } from "../sparklines";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 
-import {
-  getMetrics,
-  getRuntime,
-  getRoutesTree,
-  getRoutesMetrics
-} from "../selectors";
+import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 
 // JVM - Specific Redux state
 const getCurrentThreads = state => state.threadsTable;
@@ -37,8 +32,8 @@ export const getErrorRate = createSelector(getMetrics, metrics => {
  * A reselect selector that builds the data required to render the RoutesTable component
  */
 export const getRoutesTable = createSelector(
-  [getRoutesTree, getRoutesMetrics, getRuntime],
-  (routesTree, routesMetrics, runtime) => {
+  [getRoutesTree, getRoutesMetrics],
+  (routesTree, routesMetrics) => {
     // Now build the table
     const routesTable = [];
     const routesPaths = Object.keys(routesTree);

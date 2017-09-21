@@ -14,8 +14,8 @@
     value is anything other than __FABRIC_SERVER__, the app runs in Fabric Server 
     mode and the attributes for "running without a Fabric Server" are ignored
   -->
-  <meta property="fabricServer" content="http://localhost:1337">
-  <!-- <meta property="fabricServer" content="__FABRIC_SERVER__"> -->
+  <!-- <meta property="fabricServer" content="http://localhost:1337"> -->
+  <meta property="fabricServer" content="__FABRIC_SERVER__">
 
   <!-- Attributes for running without a Fabric Server -->
 
@@ -24,7 +24,7 @@
     that the dashboard will scrape. Valid options include:
     JVM, GOLANG, and ENVOY.
   -->
-  <meta property="runtime" content="__RUNTIME__">
+  <!-- <meta property="runtime" content="JVM"> -->
 
   <!-- 
     serviceName is the name associated with the endpoint that the dashboard will 

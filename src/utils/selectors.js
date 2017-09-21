@@ -14,13 +14,56 @@ import SidebarCard from "../components/SidebarCard";
 // Reselect Input Selectors
 
 export const getMetrics = state => state.metrics;
-export const getRuntime = state => state.settings.runtime;
+export const getStaticRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
+export const getServices = state => state.fabric.services;
+export const getFabricServer = state => state.settings.fabricServer;
 export const getSelectedInstance = state => state.settings.selectedInstance;
-export const getSelectedService = state => state.settings.selectedService;
+export const getSelectedServiceName = state => state.settings.selectedService;
 export const getSelectedServiceVersion = state =>
   state.settings.selectedServiceVersion;
 
+/**
+ * Reselect selector that generates the key used in the Redux store for services
+ * composed of a service name and a service version delimited by `|`
+ */
+export const getSelectedServiceKey = createSelector(
+  [getSelectedServiceName, getSelectedServiceVersion],
+  (selectedService, selectedServiceVersion) =>
+    `${selectedService}|${selectedServiceVersion}`
+);
+
+/**
+ * Reselect selector that returns the current selected service from the Redux store
+ * if it is found and null if not found
+ */
+export const getSelectedService = createSelector(
+  [getSelectedServiceKey, getServices],
+  (key, services) => {
+    if (Object.keys(services).indexOf(key) !== -1) {
+      return services[key];
+    } else {
+      return null;
+    }
+  }
+);
+
+/**
+ * Reselect selector that returns the current runtime
+ * When running with a Fabric Server, this is either the runtime attribute of
+ * the currently selected service or null
+ * When running without a Fabric Server, this is the staticRuntime value
+ */
+export const getRuntime = createSelector(
+  [getFabricServer, getSelectedService, getStaticRuntime],
+  (fabricServer, service, staticRuntime) => {
+    if (fabricServer) {
+      return service ? service.runtime : null;
+    } else {
+      return staticRuntime;
+    }
+  }
+);
 /**
  * Reselect selector that generates SidebarCard components from JSON
  */
@@ -28,7 +71,7 @@ export const generateSidebarCards = createSelector(
   [
     getDashboards,
     getMetrics,
-    getSelectedService,
+    getSelectedServiceName,
     getSelectedServiceVersion,
     getSelectedInstance
   ],

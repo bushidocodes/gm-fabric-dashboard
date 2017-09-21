@@ -11,6 +11,7 @@ import FabricRouter from "./fabric/FabricRouter";
 import InstanceRouter from "./instance/InstanceRouter";
 
 import { getFabricServer } from "../utils/head";
+import { getRuntime } from "../utils/selectors";
 
 /**
  * Base React Component of GM Fabric Dashboard
@@ -19,15 +20,11 @@ import { getFabricServer } from "../utils/head";
  */
 class App extends Component {
   static propTypes = {
-    children: PropTypes.any,
     dashboards: PropTypes.object,
     instancePollingInterval: PropTypes.number.isRequired,
     metricsEndpoint: PropTypes.string,
     pathname: PropTypes.string,
-    runtime: PropTypes.string,
-    selectedService: PropTypes.string,
-    selectedServiceVersion: PropTypes.string,
-    services: PropTypes.object
+    runtime: PropTypes.string
   };
 
   /** Perform initial setup when the App first loads */
@@ -63,27 +60,12 @@ class App extends Component {
     }
   }
 
-  componentWillUpdate({
-    dashboards,
-    services,
-    selectedService,
-    selectedServiceVersion
-  }) {
+  componentWillUpdate({ dashboards, runtime }) {
     // If the app initially loads before we've gotten a response from the Fabric Server, load the dynamic dashboards
     // once we figure out the runtime
-    if (
-      Object.keys(dashboards).length === 0 &&
-      Object.keys(services).length > 0 &&
-      selectedService &&
-      selectedServiceVersion
-    ) {
-      console.log(
-        "Loading dashboards",
-        `${selectedService}|${selectedServiceVersion}`
-      );
-      Actions.loadDashboardsFromJSON(
-        services[`${selectedService}|${selectedServiceVersion}`].runtime
-      );
+    if (Object.keys(dashboards).length === 0 && runtime) {
+      console.log(`Loading dashboards for ${runtime}`);
+      Actions.loadDashboardsFromJSON(runtime);
     }
   }
 
@@ -112,27 +94,18 @@ class App extends Component {
 
 // pathname is used to populate breadcrumbs
 // interval, metricsEndpoint, and runtime are used to start polling if running without a Fabric Server
-function mapStateToProps({
-  dashboards,
-  fabric: { services },
-  routing: { location: { pathname } },
-  settings: {
-    instancePollingInterval,
-    metricsEndpoint,
-    runtime,
-    selectedService,
-    selectedServiceVersion
-  }
-}) {
+function mapStateToProps(state) {
+  const {
+    dashboards,
+    routing: { location: { pathname } },
+    settings: { instancePollingInterval, metricsEndpoint }
+  } = state;
   return {
     dashboards,
-    services,
-    selectedService,
-    selectedServiceVersion,
     instancePollingInterval,
     metricsEndpoint,
     pathname,
-    runtime
+    runtime: getRuntime(state)
   };
 }
 
