@@ -24,7 +24,7 @@ import {
 } from "./utils";
 import { getRuntime, getThreadsEndpoint, getFabricServer } from "./utils/head";
 import defaultJVMDashboards from "./json/jvm/dashboards.json";
-import defaultGolangDashboards from "./json/golang/dashboards.json";
+import defaultGoDashboards from "./json/go/dashboards.json";
 
 /**
  * Async Jumpstate Effect that instructs AJAX Worker to fetch services from the Fabric Server
@@ -484,8 +484,8 @@ function loadDashboardsFromJSONEffect(runtime = getRuntime()) {
   switch (runtime) {
     case "JVM":
       return Actions.updateDashboardsRedux(defaultJVMDashboards);
-    case "GOLANG":
-      return Actions.updateDashboardsRedux(defaultGolangDashboards);
+    case "GO":
+      return Actions.updateDashboardsRedux(defaultGoDashboards);
     default:
       return;
   }

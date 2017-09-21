@@ -7,7 +7,7 @@ RoutesTableToolbar.propTypes = {
   setKeyToSortBy: PropTypes.func.isRequired
 };
 /**
- * UI controls for filtering and sorting the Golang RoutesTable
+ * UI controls for filtering and sorting the Go RoutesTable
  * @export
  * @param {any} {
  *   filterString,

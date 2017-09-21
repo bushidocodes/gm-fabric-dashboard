@@ -4,7 +4,7 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Gray Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Gray Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Golang and other languages is currently in progress.
+Gray Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Gray Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ npm install
 
 ## Configuration 
 
-Edit `./public/index.html` and replace `__BASE_RUNTIME__` with `JVM` if running a gm-fabric-jvm microservice or `GOLANG` if running a gm-fabric-go microservice
+Edit `./public/index.html` and replace `__BASE_RUNTIME__` with `JVM` if running a gm-fabric-jvm microservice or `GO` if running a gm-fabric-go microservice
 
 ## Use
 
@@ -88,7 +88,7 @@ If you intend to retrofit this dashboard on an existing GM Fabric JVM microservi
 
 In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
 
-In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GOLANG`, or `ENVOY`, defaulting to `JVM` if `__BASE_RUNTIME__` is not replaced. Currently, the `setPath.sh` script does not modify this template.
+In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GO`, or `ENVOY`. Currently, the `setPath.sh` script does not modify this template.
 
 #### Note on experimental Envoy support:
 

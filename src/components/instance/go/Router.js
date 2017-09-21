@@ -14,7 +14,7 @@ Router.propTypes = {
   baseURL: PropTypes.string
 };
 /**
- * Golang Runtime Router
+ * Go Runtime Router
  * @export
  * @returns JSX.Element
  */

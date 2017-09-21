@@ -26,6 +26,3 @@ server.listen(9092, () => {
   console.log("Mocking POA on localhost:9092");
   console.log("Metrics at /system, /metrics, and /gometrics");
 });
-
-// Issues now that we won't have a backend
-// Golang metrics are not

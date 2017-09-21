@@ -9,7 +9,7 @@ import {
 import GMLineChart from "../../library/GMLineChart";
 
 /**
- * A row of data in the Golang FunctionsTable 
+ * A row of data in the Go FunctionsTable 
  * @export
  * @class FunctionsTableLineItem
  * @extends {Component}

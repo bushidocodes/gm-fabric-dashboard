@@ -1,7 +1,7 @@
 {
   "go": {
     "name": "Go",
-    "runtime": "GOLANG",
+    "runtime": "GO",
     "summaryCard": {
       "icon": "code",
       "chart": {

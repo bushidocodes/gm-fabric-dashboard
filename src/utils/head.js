@@ -77,7 +77,7 @@ export function getMetricsEndpoint() {
   if (process.env.NODE_ENV === `development`) {
     const runtime = getRuntime();
     switch (runtime) {
-      case "GOLANG":
+      case "GO":
         return "metrics";
       case "JVM":
       default:

@@ -45,7 +45,7 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
   ) {
     if (selectedService.runtime === "JVM") {
       return res.json(jvmMetrics);
-    } else if (selectedService.runtime === "GOLANG") {
+    } else if (selectedService.runtime === "GO") {
       return res.json(goMetrics);
     }
   }

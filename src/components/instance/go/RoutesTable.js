@@ -8,7 +8,7 @@ RoutesTable.propTypes = {
 };
 
 /**
- * Golang Routes Table 
+ * Go Routes Table 
  * Includes a Header and maps 0..n rows of routes data to RoutesTableLineItems
  * @export
  * @param {any} { routes = [] } 

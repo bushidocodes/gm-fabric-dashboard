@@ -10,7 +10,7 @@ import {
 import GMLineChart from "../../library/GMLineChart";
 
 /**
- * A row of data in the Golang RoutesTable 
+ * A row of data in the Go RoutesTable 
  * @export
  * @class RoutesTableLineItem
  * @extends {Component}

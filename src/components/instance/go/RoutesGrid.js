@@ -2,28 +2,28 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import FunctionsTable from "./FunctionsTable";
-import FunctionsTableToolbar from "./FunctionsTableToolbar";
+import RoutesTable from "./RoutesTable";
+import RoutesTableToolbar from "./RoutesTableToolbar";
 
-import { getFunctionsTable } from "../../../utils/golang/selectors";
+import { getRoutesTable } from "../../../utils/go/selectors";
 
 /**
- * Golang Functions Container
- * Parent of FunctionsTable and FunctionsTableToolbar
- * Contains sort and filter logic for FunctionsTable
- * @class FunctionsGrid
+ * Go Routes Container
+ * Parent of RoutesTable and RoutesTableToolbar
+ * Contains sort and filter logic for RoutesTable
+ * @class RoutesGrid
  * @extends {Component}
  */
-class FunctionsGrid extends Component {
+class RoutesGrid extends Component {
   static propTypes = {
-    funcs: PropTypes.array
+    routes: PropTypes.array
   };
 
   constructor(props) {
     super(props);
     this.state = {
       filterString: "",
-      keyToSortBy: "func",
+      keyToSortBy: "route",
       ascending: true
     };
     this.sort = this.sort.bind(this);
@@ -31,13 +31,13 @@ class FunctionsGrid extends Component {
   }
 
   /**
-   * Helper function that takes the funcs passed as props and sorts according to how keyToSortBy and ascending is set
+   * Helper function that takes the routes passed as props and sorts according to how keyToSortBy and ascending is set
    * in the local state object.
-   * @param {Array} funcs 
+   * @param {Array} routes 
    */
-  sort(funcs) {
+  sort(routes) {
     const { keyToSortBy, ascending } = this.state;
-    return funcs.sort((a, b) => {
+    return routes.sort((a, b) => {
       if (a[keyToSortBy] > b[keyToSortBy]) {
         return ascending ? 1 : -1;
       } else if (a[keyToSortBy] < b[keyToSortBy]) {
@@ -66,19 +66,19 @@ class FunctionsGrid extends Component {
   setFilterString = filterString => this.setState({ filterString });
 
   render() {
-    if (this.props.funcs && this.props.funcs.length > 0) {
+    if (this.props.routes && this.props.routes.length > 0) {
       return (
         <div className="routes-table-container">
-          <FunctionsTableToolbar
+          <RoutesTableToolbar
             filterString={this.state.filterString}
             setFilterString={this.setFilterString}
             setKeyToSortBy={this.setKeyToSortBy}
           />
-          <FunctionsTable
-            funcs={this.sort(
-              this.props.funcs.filter(
-                funcObj =>
-                  funcObj.func
+          <RoutesTable
+            routes={this.sort(
+              this.props.routes.filter(
+                routeObj =>
+                  routeObj.route
                     .toLowerCase()
                     .indexOf(this.state.filterString.trim().toLowerCase()) !==
                   -1
@@ -92,7 +92,7 @@ class FunctionsGrid extends Component {
         <div className="no-routes-found-error">
           <div className="content">
             <span data-uk-icon="icon: warning; ratio: 1.8" />
-            <span>No Functions Found </span>
+            <span>No Routes Found </span>
           </div>
         </div>
       );
@@ -102,8 +102,8 @@ class FunctionsGrid extends Component {
 
 function mapStateToProps(state) {
   return {
-    funcs: getFunctionsTable(state)
+    routes: getRoutesTable(state)
   };
 }
 
-export default connect(mapStateToProps)(FunctionsGrid);
+export default connect(mapStateToProps)(RoutesGrid);

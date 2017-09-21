@@ -19,7 +19,7 @@ import { getServiceName } from "../../../utils/head";
 import { trimID } from "../../../utils";
 
 /**
- * Static Summary page for Golang runtime
+ * Static Summary page for Go runtime
  * @class SummaryGrid
  * @extends {Component}
  */

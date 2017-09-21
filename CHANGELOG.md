@@ -145,7 +145,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Resolved outstanding ESLINT errors
 
 ### Removed
-- Removed static React components built for Grey Matter Fabric golang microservices
+- Removed static React components built for Grey Matter Fabric Go microservices
 - Removed ESLint rules that are now handled by Prettier
 
 ### Test Coverage: 4% ([0.1.1 Coverage Report])

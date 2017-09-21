@@ -126,7 +126,7 @@ describe("AJAX Web Worker", () => {
             threaded: true,
             documentation: null,
             authorized: false,
-            runtime: "GOLANG"
+            runtime: "GO"
           }
         })
       )

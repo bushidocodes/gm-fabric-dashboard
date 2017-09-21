@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import DefaultRouter from "./default/Router";
-import GolangRouter from "./golang/Router";
+import GoRouter from "./go/Router";
 import JVMRouter from "./jvm/Router";
 
 /**
@@ -68,11 +68,12 @@ class InstanceRouter extends Component {
 
   render() {
     const { baseURL, runtime } = this.props;
+    console.log(`Runtime Agnostic Instance Router sees runtime of ${runtime}`);
     switch (runtime) {
       case "JVM":
         return <JVMRouter baseURL={baseURL} />;
-      case "GOLANG":
-        return <GolangRouter baseURL={baseURL} />;
+      case "GO":
+        return <GoRouter baseURL={baseURL} />;
       default:
         return <DefaultRouter baseURL={baseURL} />;
     }

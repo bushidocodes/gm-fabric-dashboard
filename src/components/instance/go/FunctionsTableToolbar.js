@@ -7,7 +7,7 @@ FunctionsTableToolbar.propTypes = {
   setKeyToSortBy: PropTypes.func.isRequired
 };
 /**
- * UI controls for filtering and sorting the Golang FunctionsTable
+ * UI controls for filtering and sorting the Go FunctionsTable
  * @export
  * @param {any} {
  *   filterString,

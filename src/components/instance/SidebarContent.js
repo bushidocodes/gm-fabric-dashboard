@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom";
 // import SidebarCard from "./SidebarCard";
 
 import JVMSidebarContent from "./jvm/SidebarContent";
-import GolangSidebarContent from "./golang/SidebarContent";
+import GoSidebarContent from "./go/SidebarContent";
 import DefaultSidebarContent from "./default/SidebarContent";
 
 import { generateSidebarCards } from "../../utils/selectors";
@@ -57,9 +57,9 @@ class SidebarContent extends Component {
             sidebarCards={sidebarCards}
           />
         );
-      case "GOLANG":
+      case "GO":
         return (
-          <GolangSidebarContent
+          <GoSidebarContent
             basePath={basePath}
             metrics={metrics}
             sidebarCards={sidebarCards}

@@ -12,7 +12,7 @@ SidebarContent.propTypes = {
 };
 
 /**
- * Golang Sidebar Content
+ * Go Sidebar Content
  * @export
  * @param {Object} props - See propTypes
  * @returns JSX.Element

@@ -8,7 +8,7 @@ FunctionsTable.propTypes = {
 };
 
 /**
- * Golang Functions Table 
+ * Go Functions Table 
  * Includes a Header and maps 0..n rows of functions data to FunctionsTableLineItems
  * @export
  * @param {any} { funcs = [] } 
