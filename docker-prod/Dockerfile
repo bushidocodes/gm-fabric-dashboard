@@ -1,11 +1,11 @@
 FROM node:8
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY ./package.json /app
-COPY ./index.js /app
+COPY ./server/* ./
 
-CMD ["npm install"]
-CMD ["node", "index.js"]
+RUN npm install
 
-EXPOSE 8000
+CMD [ "node", "index.js" ]
+
+EXPOSE 1337
