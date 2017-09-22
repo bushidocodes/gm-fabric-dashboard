@@ -2,7 +2,9 @@ FROM node:8
 
 WORKDIR /usr/src/app
 
-COPY ./server/* ./
+COPY ./docker-prod/server/* ./
+
+COPY ./build ./build
 
 RUN npm install
 

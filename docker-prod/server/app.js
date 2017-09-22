@@ -18,13 +18,11 @@ app.use(
 );
 
 // Serve static assets, and do not automatically direct to the index
-app.use(
-  express.static(path.resolve(__dirname, "..", "build"), { index: false })
-);
+app.use(express.static(path.resolve(__dirname, "build"), { index: false }));
 
 // Always return the main index.html, so react-router render the route in the client
 app.get("*", (req, res) => {
-  readFile(path.resolve(__dirname, "..", "build", "index.html"), "utf8")
+  readFile(path.resolve(__dirname, "build", "index.html"), "utf8")
     .then(data => data.replace(/__FABRIC_SERVER__/g, fabricServer))
     .then(data => res.send(data))
     .catch(err => console.log(err));
