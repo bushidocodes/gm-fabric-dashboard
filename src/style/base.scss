@@ -1,5 +1,5 @@
 // base.scss
-@import 'variables.scss';
+@import "variables.scss";
 
 *,
 *:after,
@@ -22,8 +22,8 @@ body,
   overflow: hidden;
 }
 
-.app-sidebar,
-.app-content {
-  -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
-}
+// .app-sidebar,
+// .app-content {
+//   -webkit-overflow-scrolling: touch;
+//   overflow-y: scroll;
+// }

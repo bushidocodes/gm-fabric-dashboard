@@ -1,51 +1,34 @@
-import { PropTypes } from "prop-types";
-import React from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import styled from "styled-components";
+import { edgeColor } from "../style/styleFunctions";
+import { COLOR_SIDEBAR_BACKGROUND } from "../style/styleVariables";
+import mesh from "../images/gm-fabric-bg.jpg";
 
-import FabricSidebarContent from "./fabric/SidebarContent";
-import InstanceSidebarContent from "./instance/SidebarContent";
-import SidebarFooter from "./SidebarFooter";
-import SidebarHeader from "./SidebarHeader";
-import FabricSidebarNavWidget from "./fabric/SidebarNavWidget";
-import InstanceSidebarNavWidget from "./instance/SidebarNavWidget";
+const SIDEBAR_WIDTH_BASE = "230px";
 
-import { getFabricServer } from "../utils/head";
+const Sidebar = styled.nav`
+  background-image: url(${mesh});
+  background-size: 300% auto;
+  background-repeat: no-repeat;
+  background-position: bottom -50px center;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  height: 100vh;
+  flex: 1 0 ${SIDEBAR_WIDTH_BASE};
+  display: flex;
+  flex-direction: column;
+  background-color: ${COLOR_SIDEBAR_BACKGROUND.string()};
+  position: relative;
+  z-index: 2;
 
-Sidebar.propTypes = {
-  runtime: PropTypes.string
-};
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-right: 1px solid ${edgeColor(COLOR_SIDEBAR_BACKGROUND)};
+  }
+`;
 
-/**
- * Main Sidebar component 
- * @export
- * @returns JSX.Element
- */
-function Sidebar({ runtime }) {
-  return (
-    <nav className="app-sidebar">
-      <SidebarHeader />
-      {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
-      {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
-      {/* index.html via the head utils */}
-      {getFabricServer() ? (
-        <div className="summary-bar">
-          <FabricSidebarNavWidget />
-          <FabricSidebarContent />
-        </div>
-      ) : (
-        <div className="summary-bar">
-          <InstanceSidebarNavWidget />
-          <InstanceSidebarContent runtime={runtime} />
-        </div>
-      )}
-      <SidebarFooter />
-    </nav>
-  );
-}
-
-function mapStateToProps({ settings: { runtime } }) {
-  return { runtime };
-}
-
-export default withRouter(connect(mapStateToProps)(Sidebar));
+export default Sidebar;

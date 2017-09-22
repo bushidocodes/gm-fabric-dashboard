@@ -1,4 +1,8 @@
 import { Actions } from "jumpstate";
+import styled from "styled-components";
+import { edgeColor } from "../style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "../style/styleVariables";
+
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -6,12 +10,66 @@ import { withRouter } from "react-router-dom";
 
 import AppToolBar from "./AppToolBar";
 import AppFooter from "./AppFooter";
-import Sidebar from "./Sidebar";
+import SidebarContainer from "./SidebarContainer";
 import FabricRouter from "./fabric/FabricRouter";
 import InstanceRouter from "./instance/InstanceRouter";
 
 import { getFabricServer } from "../utils/head";
 import { getRuntime } from "../utils/selectors";
+
+const AppContainer = styled.div`
+  overflow-scrolling: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: hidden;
+`;
+
+const AppContent = styled.div`
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  background-color: ${COLOR_CONTENT_BACKGROUND};
+`;
+
+const AppContentView = styled.div`
+  flex: 1 1 100%;
+  overflow-y: scroll;
+  overflow-scrolling: touch;
+  position: relative;
+  z-index: 1;
+  padding-top: 1px;
+
+  &:before,
+  &:after {
+    content: "";
+    background-color: ${COLOR_CONTENT_BACKGROUND};
+    pointer-events: none;
+    height: 1px;
+    position: absolute;
+    top: -134px;
+    height: 135px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+  }
+
+  &:after {
+    position: fixed;
+    background-color: ${edgeColor(COLOR_CONTENT_BACKGROUND, 0.3).fade(0.7)});
+    z-index: 1000;
+    height: 1px;
+    top: 34px;
+  }
+`;
 
 /**
  * Base React Component of GM Fabric Dashboard
@@ -71,11 +129,11 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app-container">
-        <Sidebar />
-        <div className="app-content uk-width-5-6@s">
+      <AppContainer>
+        <SidebarContainer />
+        <AppContent className="uk-width-5-6@s">
           <AppToolBar pathname={this.props.pathname} />
-          <div className="app-content-view">
+          <AppContentView>
             {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
             {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
             {/* index.html via the head utils */}
@@ -84,10 +142,10 @@ class App extends Component {
             ) : (
               <InstanceRouter runtime={this.props.runtime} />
             )}
-          </div>
+          </AppContentView>
           <AppFooter />
-        </div>
-      </div>
+        </AppContent>
+      </AppContainer>
     );
   }
 }

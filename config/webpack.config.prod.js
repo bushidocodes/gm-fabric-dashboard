@@ -172,7 +172,7 @@ module.exports = {
         loader: require.resolve("babel-loader"),
         options: {
           compact: true,
-          plugins: ["lodash"],
+          plugins: ["lodash", "styled-components"],
           presets: [require.resolve("babel-preset-react-app")]
         }
       },

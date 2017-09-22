@@ -11,45 +11,45 @@
 // @mixin hook-card() { color: #000; }
 
 // 4. Import UIkit.
-@import '../../node_modules/uikit/src/scss/uikit-theme.scss';
+@import "../../node_modules/uikit/src/scss/uikit-theme.scss";
 
 // Base
-@import 'base.scss';
-@import 'functions.scss';
-@import 'layout.scss';
-@import 'typography.scss';
+@import "base.scss";
+@import "functions.scss";
+@import "layout.scss";
+@import "typography.scss";
 
 // Components
-@import 'components/buttons.scss';
-@import 'components/charts.scss';
-@import 'components/data-displays.scss';
-@import 'components/dygraph.scss';
-@import 'components/forms.scss';
-@import 'components/footer-branding.scss';
-@import 'components/inspector.scss';
-@import 'components/instances.scss';
-@import 'components/layout-section.scss';
-@import 'components/nav-widget.scss';
-@import 'components/navbar.scss';
-@import 'components/page-title.scss';
-@import 'components/reactInputRange.scss';
-@import 'components/recharts.scss';
-@import 'components/routesTable.scss';
-@import 'components/sidebar-footer.scss';
-@import 'components/summaryBar.scss';
-@import 'components/summaryGrid.scss';
-@import 'components/table.scss';
-@import 'components/threadsTable.scss';
-@import 'components/toolbar.scss';
-@import 'components/uikit-fixes.scss';
+@import "components/buttons.scss";
+@import "components/charts.scss";
+@import "components/data-displays.scss";
+@import "components/dygraph.scss";
+@import "components/forms.scss";
+// @import "components/footer-branding.scss";
+@import "components/inspector.scss";
+@import "components/instances.scss";
+@import "components/layout-section.scss";
+@import "components/nav-widget.scss";
+// @import 'components/navbar.scss';
+// @import "components/page-title.scss";
+@import "components/reactInputRange.scss";
+@import "components/recharts.scss";
+@import "components/routesTable.scss";
+// @import "components/sidebar-footer.scss";
+@import "components/summaryBar.scss";
+@import "components/summaryGrid.scss";
+@import "components/table.scss";
+@import "components/threadsTable.scss";
+@import "components/toolbar.scss";
+@import "components/uikit-fixes.scss";
 
 // Hard Copied Stylesheets from 3rd party react components
 // These styles might become stale or out of sync with the
 // components that they reference
-@import 'components/react-grid-layout.css';
-@import 'components/react-resizable.css';
+@import "components/react-grid-layout.css";
+@import "components/react-resizable.css";
 
 // Views
-@import 'views/view-finagle-stats.scss';
-@import 'views/view-app-settings.scss';
-@import 'views/view-explorer.scss';
+@import "views/view-finagle-stats.scss";
+@import "views/view-app-settings.scss";
+@import "views/view-explorer.scss";

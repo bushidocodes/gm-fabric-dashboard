@@ -172,7 +172,7 @@ module.exports = {
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
           cacheDirectory: true,
-          plugins: ["lodash"],
+          plugins: ["lodash", "styled-components"],
           presets: [require.resolve("babel-preset-react-app")]
         }
       },
