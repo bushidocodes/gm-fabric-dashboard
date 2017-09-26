@@ -17,7 +17,7 @@ const APP_HEADER_FONT_SIZE = FONT_SIZE_BASE;
 
 const BRANDBAR_BACKGROUND_COLOR = COLOR_SIDEBAR_BACKGROUND.string();
 const BRANDBAR_TEXT_COLOR = contrastColor(COLOR_SIDEBAR_BACKGROUND).string();
-const BRANDBAR_BRAND_SPACING = spacingScale(1);
+const BRANDBAR_BRAND_SPACING = spacingScale(0.25);
 
 const AppBrandBar = styled.nav`
   background-color: ${BRANDBAR_BACKGROUND_COLOR};
@@ -68,6 +68,10 @@ const AppVersionLink = styled.a`
 
 /** Sidebar Branding and Versioning */
 const SidebarHeader = () => {
+  console.log(
+    "height:",
+    parseInt(APP_HEADER_HEIGHT, 10) - parseInt(BRANDBAR_BRAND_SPACING, 10)
+  );
   return (
     <AppBrandBar>
       <BrandContainer>

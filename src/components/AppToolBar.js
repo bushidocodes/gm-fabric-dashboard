@@ -42,6 +42,9 @@ const Breadcrumb = styled.li`
     text-overflow: ellipsis;
     padding: 8px 0;
     color: inherit;
+    &:hover {
+      color: black;
+    }
   }
 
   &:first-child {
