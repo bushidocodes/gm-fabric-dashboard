@@ -17,16 +17,17 @@ const Footer = styled.footer`
   > * {
     flex: 0 0 auto;
   }
+`;
 
-  a {
-    color: inherit;
-    display: block;
-    opacity: 0.8;
-    padding: ${spacingScale(1)};
+const FooterLink = styled.a`
+  color: #fff;
+  display: block;
+  opacity: 0.8;
+  padding: ${spacingScale(1)};
 
-    &:hover {
-      opacity: 1;
-    }
+  &:hover {
+    color: #fff;
+    opacity: 1;
   }
 `;
 
@@ -34,13 +35,13 @@ const Footer = styled.footer`
 const SidebarFooter = () => {
   return (
     <Footer>
-      <a
+      <FooterLink
         href="http://deciphernow.com/grey-matter"
         rel="noopener noreferrer"
         target="_blank"
       >
         Grey Matter
-      </a>
+      </FooterLink>
     </Footer>
   );
 };

@@ -92,6 +92,7 @@ function AppToolBar({ pathname }) {
       </Breadcrumbs>
 
       <NavButton
+        hideLabel
         icon={"cog"}
         label={"Settings"}
         outline={"none"}

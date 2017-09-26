@@ -58,9 +58,10 @@ const AppVersionLink = styled.a`
   flex: 0 0 auto;
   opacity: 0.5;
   padding: 0 8px;
-  color: inherit;
+  color: white;
 
   &:hover {
+    color: white;
     opacity: 1;
   }
 `;

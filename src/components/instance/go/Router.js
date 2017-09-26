@@ -5,6 +5,7 @@ import { PropTypes } from "prop-types";
 import SummaryGrid from "./SummaryGrid";
 import RoutesGrid from "./RoutesGrid";
 import FunctionsGrid from "./FunctionsGrid";
+import SettingsGrid from "../../SettingsGrid";
 
 import Explorer from "../../Explorer";
 import GMGrid from "../../library/GMGrid";
@@ -33,6 +34,8 @@ export default function Router({ baseURL }) {
       <Route component={RoutesGrid} path={`${prefix}/routes`} />
       <Route component={FunctionsGrid} path={`${prefix}/functions`} />
       {/* General Routes shared by all runtimes */}
+      {/* Only route to settings if this we aren't using FabricRouter */}
+      {!baseURL && <Route component={SettingsGrid} exact path="/settings" />}
       <Route component={Explorer} path={`${prefix}/explorer`} />
       {/* Catch all route for dynamically generated dashboards */}
       <Route component={GMGrid} path={`${prefix}/:dashboardName`} />
