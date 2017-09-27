@@ -8,6 +8,9 @@ import { Button, Welcome } from "@storybook/react/demo";
 
 import GMServiceCard from "../src/components/library/GMServiceCard";
 import GMServiceListItem from "../src/components/library/GMServiceListItem";
+import GroupingHeader from "../src/components/library/GroupingHeader";
+import SectionCardsView from "../src/components/library/SectionCardsView";
+import SectionListView from "../src/components/library/SectionListView";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -150,3 +153,200 @@ storiesOf("Service List Item", module)
       />
     </ul>
   ));
+
+storiesOf("Grouping Header", module)
+  .add("with icon and 'Sample' title", () => (
+    <GroupingHeader headerTitle="Sample headerTitle" />
+  ))
+  .add("with icon and 'Grey Matter Services' headerTitle", () => (
+    <GroupingHeader headerTitle="Grey Matter Services" />
+  ))
+  .add("with icon and 'MEME Services' headerTitle", () => (
+    <GroupingHeader headerTitle="MEME Services" />
+  ))
+  .add("with icon and 'Down' headerTitle", () => (
+    <GroupingHeader headerTitle="Down" />
+  ))
+  .add("with icon and 'Warning' headerTitle", () => (
+    <GroupingHeader headerTitle="Warning" />
+  ))
+  .add("with icon and 'Stable' headerTitle", () => (
+    <GroupingHeader headerTitle="Stable" />
+  ));
+
+// mock data is at the end of file
+storiesOf(
+  "Section Cards View",
+  module
+).add("with grouping header and group of cards", () => (
+  <SectionCardsView dataArr={groupingByStatusCardsViewMockData} />
+));
+
+storiesOf(
+  "Section List View",
+  module
+).add("with grouping header and group of lists", () => (
+  <SectionListView dataArr={groupingByHeadingListViewMockData} />
+));
+
+// mock data for Section Cards View
+const groupingByStatusCardsViewMockData = [
+  {
+    headerTitle: "Stable",
+    name: "Awesome Service 1",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Down",
+    name: "Awesome Service 2",
+    version: "1.5",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Warning",
+    name: "Awesome Service 3",
+    version: "1.7",
+    docsLink: "http://www.deciphernow.com",
+    state: "warning"
+  },
+  {
+    headerTitle: "Stable",
+    name: "Awesome Service 4",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Stable",
+    name: "Awesome Service 5",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Down",
+    name: "Awesome Service 6",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Down",
+    name: "Awesome Service 7",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Stable",
+    name: "Awesome Service 8",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Stable",
+    name: "Awesome Service 9",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Down",
+    name: "Awesome Service 10",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Warning",
+    name: "Awesome Service 11",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "warning"
+  }
+];
+
+// mock data for Section List View
+const groupingByHeadingListViewMockData = [
+  {
+    headerTitle: "Grey Matter Services",
+    name: "Awesome Service 1",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 2",
+    version: "1.5",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Grey Matter Services",
+    name: "Awesome Service 3",
+    version: "1.7",
+    docsLink: "http://www.deciphernow.com",
+    state: "warning"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 4",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Grey Matter Services",
+    name: "Awesome Service 5",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 6",
+    version: "1.2",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "Grey Matter Services",
+    name: "Awesome Service 7",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 8",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 9",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "healthy"
+  },
+  {
+    headerTitle: "Grey Matter Services",
+    name: "Awesome Service 10",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "error"
+  },
+  {
+    headerTitle: "MEME Services",
+    name: "Awesome Service 11",
+    version: "1.1",
+    docsLink: "http://www.deciphernow.com",
+    state: "warning"
+  }
+];
