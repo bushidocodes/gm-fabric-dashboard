@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch Beta 47 (45359) - http://www.bohemiancoding.com/sketch -->
     <title>icon-chevron-right</title>
-    <desc>Created with Sketch.</desc>
+    <desc>Created with Sketch Beta.</desc>
     <defs></defs>
-    <g id="Elements-/-Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="chevron-right" stroke-width="2" stroke="#FFFFFF">
+    <g id="Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron-right" stroke-width="2" stroke="#000">
             <polyline id="Arrow" points="10 8 15 13.0592741 10 18.1"></polyline>
         </g>
     </g>

@@ -1,0 +1,7 @@
+<svg width="10px" height="6px" viewBox="0 0 10 6">
+  <desc>SVG handrolled by Decipher Tech Studios</desc>
+  <polygon
+    points="0,0 10,0 5,5"
+    style={{ fill: "black", stroke: "black" }}
+  />
+</svg>

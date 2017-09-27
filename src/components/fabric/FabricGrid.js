@@ -15,7 +15,10 @@ class FabricGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterString: ""
+      filterString: "",
+      groupByAttribute: "Status",
+      sortByAttribute: "Name",
+      displayType: "Card"
     };
   }
   componentDidMount() {
@@ -24,6 +27,9 @@ class FabricGrid extends Component {
   }
 
   setFilterString = filterString => this.setState({ filterString });
+  setGroupByAttribute = groupByAttribute => this.setState({ groupByAttribute });
+  setSortByAttribute = sortByAttribute => this.setState({ sortByAttribute });
+  setDisplayType = displayType => this.setState({ displayType });
 
   render() {
     const { services } = this.props;
@@ -31,8 +37,14 @@ class FabricGrid extends Component {
       return (
         <div className="routes-table-container">
           <FabricTableToolbar
+            displayType={this.state.displayType}
+            setDisplayType={this.setDisplayType}
             filterString={this.state.filterString}
             setFilterString={this.setFilterString}
+            groupByAttribute={this.state.groupByAttribute}
+            setGroupByAttribute={this.setGroupByAttribute}
+            sortByAttribute={this.state.sortByAttribute}
+            setSortByAttribute={this.setSortByAttribute}
           />
           <FabricTable
             services={services.filter(

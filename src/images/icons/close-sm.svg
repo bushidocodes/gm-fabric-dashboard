@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch Beta 47 (45359) - http://www.bohemiancoding.com/sketch -->
     <title>icon-close-sm</title>
-    <desc>Created with Sketch.</desc>
+    <desc>Created with Sketch Beta.</desc>
     <defs></defs>
-    <g id="Elements-/-Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="close-sm" fill="#FFFFFF">
+    <g id="Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="close-sm" fill="#000">
             <path d="M12.5836309,11.5229708 L9.28033009,8.21966991 C8.98743687,7.9267767 8.51256313,7.9267767 8.21966991,8.21966991 C7.9267767,8.51256313 7.9267767,8.98743687 8.21966991,9.28033009 L11.5229708,12.5836309 L8.21966991,15.8869318 C7.9267767,16.179825 7.9267767,16.6546988 8.21966991,16.947592 C8.51256313,17.2404852 8.98743687,17.2404852 9.28033009,16.947592 L12.5836309,13.6442911 L15.8869318,16.947592 C16.179825,17.2404852 16.6546988,17.2404852 16.947592,16.947592 C17.2404852,16.6546988 17.2404852,16.179825 16.947592,15.8869318 L13.6442911,12.5836309 L16.947592,9.28033009 C17.2404852,8.98743687 17.2404852,8.51256313 16.947592,8.21966991 C16.6546988,7.9267767 16.179825,7.9267767 15.8869318,8.21966991 L12.5836309,11.5229708 Z" id="Combined-Shape"></path>
         </g>
     </g>

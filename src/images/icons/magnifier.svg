@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch Beta 47 (45359) - http://www.bohemiancoding.com/sketch -->
     <title>icon-magnifier</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Elements-/-Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="magnifier" fill-rule="nonzero" fill="#FFFFFF">
-            <path d="M14,19.5 C9.85786438,19.5 6.5,16.1421356 6.5,12 C6.5,7.85786438 9.85786438,4.5 14,4.5 C18.1421356,4.5 21.5,7.85786438 21.5,12 C21.5,16.1421356 18.1421356,19.5 14,19.5 Z M14,18.5 C17.5898509,18.5 20.5,15.5898509 20.5,12 C20.5,8.41014913 17.5898509,5.5 14,5.5 C10.4101491,5.5 7.5,8.41014913 7.5,12 C7.5,15.5898509 10.4101491,18.5 14,18.5 Z" id="Oval"></path>
-            <polygon id="Line-2" points="9 16.2928932 4.29289322 21 5 21.7071068 9.70710678 17"></polygon>
+    <desc>Created with Sketch Beta.</desc>
+    <defs>
+        <path d="M11.2867479,16.7132521 L7,21 L6,20 L10.2867479,15.7132521 C9.48089873,14.6917868 9,13.4020534 9,12 C9,8.6862915 11.6862915,6 15,6 C18.3137085,6 21,8.6862915 21,12 C21,15.3137085 18.3137085,18 15,18 C13.5979466,18 12.3082132,17.5191013 11.2867479,16.7132521 Z M15,16 C17.209139,16 19,14.209139 19,12 C19,9.790861 17.209139,8 15,8 C12.790861,8 11,9.790861 11,12 C11,14.209139 12.790861,16 15,16 Z" id="path-1"></path>
+    </defs>
+    <g id="Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="magnifier">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Oval" fill="#000" fill-rule="nonzero" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>
