@@ -25,6 +25,7 @@ export default function ListSections({ items }) {
     <SectionItems>
       {items.map(item => (
         <GMServiceListItem
+          key={`${item.name}${item.version}`}
           name={item.name}
           state={item.state}
           version={item.version}

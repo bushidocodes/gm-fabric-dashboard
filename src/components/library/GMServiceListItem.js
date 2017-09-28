@@ -53,7 +53,7 @@ const DocLink = styled.a`
 `;
 
 GMServiceListItem.propTypes = {
-  // docsLink: PropTypes.string,
+  docsLink: PropTypes.string,
   name: PropTypes.string.isRequired,
   state: PropTypes.string,
   version: PropTypes.string
