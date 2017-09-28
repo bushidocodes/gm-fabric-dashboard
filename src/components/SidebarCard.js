@@ -12,6 +12,7 @@ import Button from "./library/Button.js";
  * @class SidebarCard
  * @extends {Component}
  */
+
 export default class SidebarCard extends Component {
   static propTypes = {
     chartData: PropTypes.array,

@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import Sections from "./Sections";
+import CardSections from "./CardSections";
 
 import GroupingHeader from "./GroupingHeader";
 
@@ -49,7 +49,7 @@ export default function SectionCardsView({ dataArr }) {
             <GroupingHeader headerTitle={header} />
           </SectionHeader>
           <SectionContent>
-            <Sections headerTitle={header} items={dataArr} />
+            <CardSections headerTitle={header} items={dataArr} />
           </SectionContent>
           {i !== headers.length - 1 && headers.length > 1 ? (
             <HorizontalRule>

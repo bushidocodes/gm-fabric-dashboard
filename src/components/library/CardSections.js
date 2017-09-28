@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import GMServiceCard from "./GMServiceCard";
 
-Sections.propTypes = {
+CardSections.propTypes = {
   headerTitle: PropTypes.string.isRequired,
   items: PropTypes.array.isRequired
 };
@@ -18,7 +18,7 @@ const ContentItems = styled.div`
  * Render section(s) with grouping header and group of cards
  *
  */
-export default function Sections({ headerTitle, items }) {
+export default function CardSections({ headerTitle, items }) {
   items = items.filter(item => item.headerTitle === headerTitle);
 
   return (
