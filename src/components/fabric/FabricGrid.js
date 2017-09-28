@@ -4,8 +4,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
 
-import FabricTable from "./FabricTable";
 import FabricTableToolbar from "./FabricTableToolbar";
+import FabricMainView from "./FabricMainView";
 
 class FabricGrid extends Component {
   static propTypes = {
@@ -16,7 +16,7 @@ class FabricGrid extends Component {
     super(props);
     this.state = {
       filterString: "",
-      groupByAttribute: "Status",
+      groupByAttribute: "State",
       sortByAttribute: "Name",
       displayType: "Card"
     };
@@ -46,13 +46,10 @@ class FabricGrid extends Component {
             sortByAttribute={this.state.sortByAttribute}
             setSortByAttribute={this.setSortByAttribute}
           />
-          <FabricTable
-            services={services.filter(
-              service =>
-                service.name
-                  .toLowerCase()
-                  .indexOf(this.state.filterString.trim().toLowerCase()) !== -1
-            )}
+          <FabricMainView
+            displayType={this.state.displayType}
+            groupByAttribute={this.state.groupByAttribute}
+            services={this.props.services}
           />
         </div>
       );

@@ -22,6 +22,7 @@ export default function CardSections({ items }) {
     <ContentItems>
       {items.map(item => (
         <GMServiceCard
+          key={`${item.name}${item.version}`}
           name={item.name}
           version={item.version}
           docsLink={item.docsLink}

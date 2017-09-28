@@ -32,31 +32,39 @@ const HorizontalRule = styled.hr`
 // docsLink: URL to the documentation
 // state: string equal to "healthy", "warning", or "error"
 SectionCardsView.propTypes = {
-  dataArr: PropTypes.array.isRequired
+  dataArr: PropTypes.array.isRequired,
+  groupByAttribute: PropTypes.string.isRequired
 };
 
 // What if we have card that don't have a header value?
-export default function SectionCardsView({ dataArr }) {
-  const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
-  const headers = Object.keys(dataGroupedByHeader);
-
-  return (
-    <div>
-      {headers.map((header, i) => (
+export default function SectionCardsView({ groupByAttribute, dataArr }) {
+  if (groupByAttribute !== "None") {
+    const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
+    const headers = Object.keys(dataGroupedByHeader);
+    return (
+      <div>
+        {headers.map((header, i) => (
+          <SectionContainer key={header}>
+            <SectionHeader>
+              <GroupingHeader headerTitle={header} />
+            </SectionHeader>
+            <SectionContent>
+              <CardSections items={dataGroupedByHeader[header]} />
+            </SectionContent>
+            {i !== headers.length - 1 && <HorizontalRule />}
+          </SectionContainer>
+        ))}
+      </div>
+    );
+  } else {
+    return (
+      <div>
         <SectionContainer>
-          <SectionHeader>
-            <GroupingHeader headerTitle={header} />
-          </SectionHeader>
           <SectionContent>
-            <CardSections
-              headerTitle={header}
-              items={dataGroupedByHeader[header]}
-            />
+            <CardSections items={dataArr} />
           </SectionContent>
-          {console.log(i, headers.length, i !== headers.length - 1)}
-          {i !== headers.length - 1 && <HorizontalRule />}
         </SectionContainer>
-      ))}
-    </div>
-  );
+      </div>
+    );
+  }
 }
