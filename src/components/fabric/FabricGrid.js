@@ -32,7 +32,13 @@ class FabricGrid extends Component {
   setDisplayType = displayType => this.setState({ displayType });
 
   render() {
-    const { services } = this.props;
+    const { services = [] } = this.props;
+    const filteredServices = services.filter(
+      service =>
+        service.name
+          .toLowerCase()
+          .indexOf(this.state.filterString.toLowerCase()) !== -1
+    );
     if (services && services.length > 0) {
       return (
         <div className="routes-table-container">
@@ -49,7 +55,7 @@ class FabricGrid extends Component {
           <FabricMainView
             displayType={this.state.displayType}
             groupByAttribute={this.state.groupByAttribute}
-            services={this.props.services}
+            services={filteredServices}
           />
         </div>
       );
