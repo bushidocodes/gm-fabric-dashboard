@@ -183,12 +183,13 @@ storiesOf("Section Cards View", module)
     <SectionCardsView dataArr={groupingByStatusCardsViewMockData} />
   ));
 
-storiesOf(
-  "Section List View",
-  module
-).add("with grouping header and group of lists", () => (
-  <SectionListView dataArr={groupingByHeadingListViewMockData} />
-));
+storiesOf("Section List View", module)
+  .add("with a grouping header and group of lists", () => (
+    <SectionListView dataArr={singleGroupingByHeadingListViewMockData} />
+  ))
+  .add("with multiple grouping headers and groups of lists", () => (
+    <SectionListView dataArr={groupingByHeadingListViewMockData} />
+  ));
 
 // mock data for Section Cards View
 const groupingByStatusCardsViewMockData = [
@@ -355,3 +356,7 @@ const groupingByHeadingListViewMockData = [
     state: "warning"
   }
 ];
+
+const singleGroupingByHeadingListViewMockData = groupingByHeadingListViewMockData.filter(
+  elem => elem.headerTitle === "MEME Services"
+);
