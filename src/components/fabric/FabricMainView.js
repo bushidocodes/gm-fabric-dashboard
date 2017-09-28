@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import SectionCardsView from "../library/SectionCardsView";
+import SectionListView from "../library/SectionListView";
 
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,
@@ -36,7 +37,12 @@ export default function FabricMainView({
       />
     );
   } else if (displayType === "Table") {
-    return <div>Tables are better</div>;
+    return (
+      <SectionListView
+        groupByAttribute={groupByAttribute}
+        dataArr={mappedServices}
+      />
+    );
   }
 }
 
