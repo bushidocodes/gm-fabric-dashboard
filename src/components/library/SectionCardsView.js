@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import CardSections from "./CardSections";
+import _ from "lodash";
 
 import GroupingHeader from "./GroupingHeader";
 
@@ -16,11 +17,10 @@ const SectionContainer = styled.div`
 const SectionHeader = styled.div`display: flex;`;
 const SectionContent = styled.div`display: flex;`;
 
-const HorizontalRule = styled.div`
+const HorizontalRule = styled.hr`
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  border-width: 0.2px;
   width: 100%;
   color: #f6f6f6;
 `;
@@ -35,11 +35,10 @@ SectionCardsView.propTypes = {
   dataArr: PropTypes.array.isRequired
 };
 
+// What if we have card that don't have a header value?
 export default function SectionCardsView({ dataArr }) {
-  // get unique headers
-  let headers = dataArr
-    .map(item => item.headerTitle)
-    .filter((value, index, self) => self.indexOf(value) === index);
+  const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
+  const headers = Object.keys(dataGroupedByHeader);
 
   return (
     <div>
@@ -49,15 +48,13 @@ export default function SectionCardsView({ dataArr }) {
             <GroupingHeader headerTitle={header} />
           </SectionHeader>
           <SectionContent>
-            <CardSections headerTitle={header} items={dataArr} />
+            <CardSections
+              headerTitle={header}
+              items={dataGroupedByHeader[header]}
+            />
           </SectionContent>
-          {i !== headers.length - 1 && headers.length > 1 ? (
-            <HorizontalRule>
-              <hr />
-            </HorizontalRule>
-          ) : (
-            <div />
-          )}
+          {console.log(i, headers.length, i !== headers.length - 1)}
+          {i !== headers.length - 1 && <HorizontalRule />}
         </SectionContainer>
       ))}
     </div>
