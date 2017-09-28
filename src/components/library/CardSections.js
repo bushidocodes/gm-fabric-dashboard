@@ -20,7 +20,7 @@ const ContentItems = styled.div`
 export default function CardSections({ items }) {
   return (
     <ContentItems>
-      {items.map((item, i) => (
+      {items.map(item => (
         <GMServiceCard
           name={item.name}
           version={item.version}

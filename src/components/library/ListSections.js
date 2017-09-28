@@ -34,15 +34,13 @@ const SectionItems = styled.div`
 `;
 
 export default function ListSections({ headerTitle, items }) {
-  items = items.filter(item => item.headerTitle === headerTitle);
-
   return (
     <SectionContent>
       <SectionHeader>
         <GroupingHeader headerTitle={headerTitle} />
       </SectionHeader>
       <SectionItems>
-        {items.map((item, i) => (
+        {items.map(item => (
           <GMServiceListItem
             name={item.name}
             state={item.state}

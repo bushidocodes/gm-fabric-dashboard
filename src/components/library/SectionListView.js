@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import _ from "lodash";
 
 import styled from "styled-components";
 
@@ -24,20 +25,18 @@ const SectionContainer = styled.div`
   flex-wrap: nowrap;
 `;
 
-const HorizontalRule = styled.div`
+const HorizontalRule = styled.hr`
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
-  border-width: 1px;
   width: 100%;
   color: #f6f6f6;
 `;
 
 export default function SectionListView({ dataArr }) {
   // get unique headers
-  let headers = dataArr
-    .map(item => item.headerTitle)
-    .filter((value, index, self) => self.indexOf(value) === index);
+  const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
+  const headers = Object.keys(dataGroupedByHeader);
 
   return (
     <div>
@@ -45,13 +44,7 @@ export default function SectionListView({ dataArr }) {
         <SectionContainer>
           <ListSections headerTitle={header} items={dataArr} />
 
-          {i !== headers.length - 1 && headers.length > 1 ? (
-            <HorizontalRule>
-              <hr />
-            </HorizontalRule>
-          ) : (
-            <div />
-          )}
+          {i !== headers.length - 1 && <HorizontalRule />}
         </SectionContainer>
       ))}
     </div>
