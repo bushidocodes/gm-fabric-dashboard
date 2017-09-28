@@ -175,12 +175,13 @@ storiesOf("Grouping Header", module)
   ));
 
 // mock data is at the end of file
-storiesOf(
-  "Section Cards View",
-  module
-).add("with grouping header and group of cards", () => (
-  <SectionCardsView dataArr={groupingByStatusCardsViewMockData} />
-));
+storiesOf("Section Cards View", module)
+  .add("with a single grouping header and group of cards", () => (
+    <SectionCardsView dataArr={singleGroupingByStatusCardsViewMockData} />
+  ))
+  .add("with multiple grouping headers and groups of cards", () => (
+    <SectionCardsView dataArr={groupingByStatusCardsViewMockData} />
+  ));
 
 storiesOf(
   "Section List View",
@@ -269,6 +270,10 @@ const groupingByStatusCardsViewMockData = [
     state: "warning"
   }
 ];
+
+const singleGroupingByStatusCardsViewMockData = groupingByStatusCardsViewMockData.filter(
+  elem => elem.headerTitle === "Warning"
+);
 
 // mock data for Section List View
 const groupingByHeadingListViewMockData = [
