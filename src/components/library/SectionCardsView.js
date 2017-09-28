@@ -1,8 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import Sections from "./Sections";
 
-import GMServiceCard from "./GMServiceCard";
-import GMServiceListItem from "./GMServiceListItem";
 import GroupingHeader from "./GroupingHeader";
 
 import styled from "styled-components";
@@ -17,12 +16,6 @@ const SectionContainer = styled.div`
 const SectionHeader = styled.div`display: flex;`;
 const SectionContent = styled.div`display: flex;`;
 
-const ContentItems = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
 const HorizontalRule = styled.div`
   margin-top: 1em;
   margin-left: auto;
@@ -32,29 +25,15 @@ const HorizontalRule = styled.div`
   color: #f6f6f6;
 `;
 
-/**
- * Render section(s) with grouping header and group of cards
- *
- */
-function Sections(props) {
-  let headerTitle = props.headerTitle;
-  let items = props.items;
-
-  items = items.filter(item => item.headerTitle === headerTitle);
-
-  return (
-    <ContentItems>
-      {items.map((item, i) => (
-        <GMServiceCard
-          name={item.name}
-          version={item.version}
-          docsLink={item.docsLink}
-          state={item.state}
-        />
-      ))}
-    </ContentItems>
-  );
-}
+// Array of { headerTitle, name, version, docsLink, state }
+// headerTitle: Thing that we group by
+// name: Name of the service
+// version: Version of the service
+// docsLink: URL to the documentation
+// state: string equal to "healthy", "warning", or "error"
+SectionCardsView.propTypes = {
+  dataArr: PropTypes.array.isRequired
+};
 
 export default function SectionCardsView({ dataArr }) {
   // get unique headers
