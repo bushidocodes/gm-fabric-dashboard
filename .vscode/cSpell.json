@@ -1,56 +1,61 @@
+// cSpell Settings
 {
-  // cSpell Settings
-  // Version of the setting file.  Always 0.1
-  "version": "0.1",
-  // language - current active spelling language
-  "language": "en",
-  // words - list of words to be always considered correct
-  "words": [
-    "Ikit",
-    "uikit",
-    "jumpstate",
-    "Sparkline",
-    "Sparklines",
-    "filesize",
-    "timestamps",
-    "camelize",
-    "stylelint",
-    "microservices",
-    "microservice",
-    "labelledby",
-    "reselect",
-    "Stateful",
-    "clearfix",
-    "nowrap",
-    "jsons",
-    "\"jest-junit-reporter\"",
-    "junit",
-    "lessc",
-    "randomcolor",
-    "timeseries",
-    "metric's",
-    "GO",
-    "localforage",
-    "onupdatefound",
-    "onstatechange",
-    "Middlewares",
-    "middlewares",
-    "Roboto",
-    "Powerline",
-    "Menlo",
-    "monospace",
-    "gmadmin",
-    "clientregistry",
-    "precached",
-    "linebreak",
-    "Finalizer",
-    "multilines",
-    "Memoized",
-    "Resizable",
-    "precommit"
-  ],
-  // flagWords - list of words to be always considered incorrect
-  // This is useful for offensive words and common spelling errors.
-  // For example "hte" should be "the"
-  "flagWords": ["hte"]
+    // cSpell Settings
+    // Version of the setting file.  Always 0.1
+    "version": "0.1",
+    // language - current active spelling language
+    "language": "en",
+    // words - list of words to be always considered correct
+    "words": [
+        "\"jest-junit-reporter\"",
+        "Customizations",
+        "Finalizer",
+        "GO",
+        "Ikit",
+        "Memoized",
+        "Menlo",
+        "Middlewares",
+        "Powerline",
+        "Resizable",
+        "Roboto",
+        "Sparkline",
+        "Sparklines",
+        "Stateful",
+        "camelize",
+        "clearfix",
+        "clientregistry",
+        "filesize",
+        "gitignore",
+        "gmadmin",
+        "jsons",
+        "jumpstate",
+        "junit",
+        "labelledby",
+        "lessc",
+        "linebreak",
+        "localforage",
+        "metric's",
+        "microservice",
+        "microservices",
+        "middlewares",
+        "monospace",
+        "multilines",
+        "nowrap",
+        "onstatechange",
+        "onupdatefound",
+        "precached",
+        "precommit",
+        "randomcolor",
+        "reselect",
+        "stylelint",
+        "timeseries",
+        "timestamps",
+        "uikit"
+    ],
+    // flagWords - list of words to be always considered incorrect
+    // This is useful for offensive words and common spelling errors.
+    // For example "hte" should be "the"
+    "flagWords": [
+        "hte"
+    ]
 }
