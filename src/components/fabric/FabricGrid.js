@@ -55,6 +55,7 @@ class FabricGrid extends Component {
           <FabricMainView
             displayType={this.state.displayType}
             groupByAttribute={this.state.groupByAttribute}
+            sortByAttribute={this.state.sortByAttribute}
             services={filteredServices}
           />
         </div>

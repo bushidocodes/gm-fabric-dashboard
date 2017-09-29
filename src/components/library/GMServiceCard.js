@@ -75,15 +75,15 @@ export default function GMServiceCard({
     cardFontColor,
     cardBorderBottomColor;
   switch (state) {
-    case "error":
+    case "Down":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = "DarkRed";
       cardFontColor = "white";
       break;
-    case "warning":
+    case "Warning":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = "#ffcc00";
       cardFontColor = "black";
       break;
-    case "healthy":
+    case "Stable":
     default:
       cardBackgroundColor = "white";
       cardBorderColor = "lightgray";

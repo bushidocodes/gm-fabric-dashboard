@@ -61,18 +61,21 @@ GMServiceListItem.propTypes = {
 
 export default function GMServiceListItem({ name, state, version, docsLink }) {
   // Style based on the state of the service
-  console.log("docslink", docsLink);
+
   let indicatorIconColor;
+
   switch (state) {
-    case "error":
-      indicatorIconColor = "red";
+    case "Down":
+      indicatorIconColor = "darkred";
       break;
-    case "warning":
+    case "Warning":
       indicatorIconColor = "orange";
       break;
-    case "healthy":
-    default:
+    case "Stable":
       indicatorIconColor = "green";
+      break;
+    default:
+      indicatorIconColor = "black";
   }
   return (
     <Line>

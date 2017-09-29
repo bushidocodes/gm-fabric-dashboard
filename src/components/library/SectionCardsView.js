@@ -30,17 +30,28 @@ const HorizontalRule = styled.hr`
 // name: Name of the service
 // version: Version of the service
 // docsLink: URL to the documentation
-// state: string equal to "healthy", "warning", or "error"
+// state: string equal to "Stable", "Warning", or "Down"
 SectionCardsView.propTypes = {
   dataArr: PropTypes.array.isRequired,
-  groupByAttribute: PropTypes.string.isRequired
+  groupByAttribute: PropTypes.string.isRequired,
+  sortByAttribute: PropTypes.string.isRequired
 };
 
 // What if we have card that don't have a header value?
-export default function SectionCardsView({ groupByAttribute, dataArr }) {
+export default function SectionCardsView({
+  groupByAttribute,
+  sortByAttribute,
+  dataArr
+}) {
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
     const headers = Object.keys(dataGroupedByHeader);
+
+    // sort using lodash ._orderBy function
+    // sortByAttribute => 'Name' || 'State' || Date Last Updated
+    // pass 'sortByAttribute' as the sortkey
+    // _.orderBy(collection, [iteratees=[_.identity]], [orders])
+
     return (
       <div>
         {headers.map((header, i) => (
@@ -49,7 +60,13 @@ export default function SectionCardsView({ groupByAttribute, dataArr }) {
               <GroupingHeader headerTitle={header} />
             </SectionHeader>
             <SectionContent>
-              <CardSections items={dataGroupedByHeader[header]} />
+              <CardSections
+                items={_.orderBy(
+                  dataGroupedByHeader[header],
+                  [sortByAttribute.toLowerCase()],
+                  ["asc"]
+                )}
+              />
             </SectionContent>
             {i !== headers.length - 1 && <HorizontalRule />}
           </SectionContainer>
@@ -61,7 +78,13 @@ export default function SectionCardsView({ groupByAttribute, dataArr }) {
       <div>
         <SectionContainer>
           <SectionContent>
-            <CardSections items={dataArr} />
+            <CardSections
+              items={_.orderBy(
+                dataArr,
+                [sortByAttribute.toLowerCase()],
+                ["asc"]
+              )}
+            />
           </SectionContent>
         </SectionContainer>
       </div>

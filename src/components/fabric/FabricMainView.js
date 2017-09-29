@@ -6,12 +6,14 @@ import SectionListView from "../library/SectionListView";
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,
   groupByAttribute: PropTypes.string.isRequired,
-  services: PropTypes.array.isRequired
+  services: PropTypes.array.isRequired,
+  sortByAttribute: PropTypes.string.isRequired
 };
 
 export default function FabricMainView({
   displayType,
   groupByAttribute,
+  sortByAttribute,
   services
 }) {
   // Do data transformation stuff
@@ -23,8 +25,8 @@ export default function FabricMainView({
       docsLink: service.documentation,
       state: computeState(
         service.instances.length,
-        service.maximum,
-        service.minimum
+        service.minimum,
+        service.maximum
       )
     };
   });
@@ -33,6 +35,7 @@ export default function FabricMainView({
     return (
       <SectionCardsView
         groupByAttribute={groupByAttribute}
+        sortByAttribute={sortByAttribute}
         dataArr={mappedServices}
       />
     );
@@ -40,6 +43,7 @@ export default function FabricMainView({
     return (
       <SectionListView
         groupByAttribute={groupByAttribute}
+        sortByAttribute={sortByAttribute}
         dataArr={mappedServices}
       />
     );
@@ -48,14 +52,14 @@ export default function FabricMainView({
 
 function computeState(count, min, max) {
   if (count < min) {
-    return "Error";
+    return "Down";
   } else if (count > min && count < max) {
-    return "Healthy";
+    return "Stable";
   } else if (count >= max && max !== min) {
     return "Warning";
   } else {
     console.log("computeState did not match as expected");
-    return "Error";
+    return "Down";
   }
 }
 

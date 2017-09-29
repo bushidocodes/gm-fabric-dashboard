@@ -12,12 +12,7 @@ import GroupingHeader from "./GroupingHeader";
 // name: Name of the service
 // version: Version of the service
 // docsLink: URL to the documentation
-// state: string equal to "healthy", "warning", or "error"
-
-SectionListView.propTypes = {
-  dataArr: PropTypes.array.isRequired,
-  groupByAttribute: PropTypes.string.isRequired
-};
+// state: string equal to "Stable", "Warning", or "Down"
 
 // styled components
 const SectionContainer = styled.div`
@@ -46,7 +41,17 @@ const HorizontalRule = styled.hr`
   color: #f6f6f6;
 `;
 
-export default function SectionListView({ groupByAttribute, dataArr }) {
+SectionListView.propTypes = {
+  dataArr: PropTypes.array.isRequired,
+  groupByAttribute: PropTypes.string.isRequired,
+  sortByAttribute: PropTypes.string.isRequired
+};
+
+export default function SectionListView({
+  groupByAttribute,
+  sortByAttribute,
+  dataArr
+}) {
   // get unique headers
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
@@ -59,7 +64,13 @@ export default function SectionListView({ groupByAttribute, dataArr }) {
               <GroupingHeader headerTitle={header} />
             </SectionHeader>
             <SectionContent>
-              <ListSections items={dataGroupedByHeader[header]} />
+              <ListSections
+                items={_.orderBy(
+                  dataGroupedByHeader[header],
+                  [sortByAttribute.toLowerCase()],
+                  ["asc"]
+                )}
+              />
             </SectionContent>
             {i !== headers.length - 1 && <HorizontalRule />}
           </SectionContainer>
@@ -71,7 +82,13 @@ export default function SectionListView({ groupByAttribute, dataArr }) {
       <div>
         <SectionContainer>
           <SectionContent>
-            <ListSections items={dataArr} />
+            <ListSections
+              items={_.orderBy(
+                dataArr,
+                [sortByAttribute.toLowerCase()],
+                ["asc"]
+              )}
+            />
           </SectionContent>
         </SectionContainer>
       </div>
