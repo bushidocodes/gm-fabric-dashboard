@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import SectionCardsView from "../library/SectionCardsView";
-import SectionListView from "../library/SectionListView";
+import GMServiceCardView from "../library/GMServiceCardView";
+import GMServiceListView from "../library/GMServiceListView";
 
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,
@@ -33,7 +33,7 @@ export default function FabricMainView({
 
   if (displayType === "Card") {
     return (
-      <SectionCardsView
+      <GMServiceCardView
         groupByAttribute={groupByAttribute}
         sortByAttribute={sortByAttribute}
         dataArr={mappedServices}
@@ -41,7 +41,7 @@ export default function FabricMainView({
     );
   } else if (displayType === "Table") {
     return (
-      <SectionListView
+      <GMServiceListView
         groupByAttribute={groupByAttribute}
         sortByAttribute={sortByAttribute}
         dataArr={mappedServices}

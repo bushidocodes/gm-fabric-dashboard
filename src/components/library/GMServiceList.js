@@ -9,7 +9,7 @@ import styled from "styled-components";
  *
  */
 
-ListSections.propTypes = {
+GMServiceList.propTypes = {
   items: PropTypes.array.isRequired
 };
 
@@ -20,7 +20,7 @@ const SectionItems = styled.div`
   flex-direction: column;
 `;
 
-export default function ListSections({ items }) {
+export default function GMServiceList({ items }) {
   return (
     <SectionItems>
       {items.map(item => (

@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import GMServiceCard from "./GMServiceCard";
 
-CardSections.propTypes = {
+GMServiceCardCollection.propTypes = {
   items: PropTypes.array.isRequired
 };
 
@@ -17,7 +17,7 @@ const ContentItems = styled.div`
  * Render section(s) with grouping header and group of cards
  *
  */
-export default function CardSections({ items }) {
+export default function GMServiceCardCollection({ items }) {
   return (
     <ContentItems>
       {items.map(item => (

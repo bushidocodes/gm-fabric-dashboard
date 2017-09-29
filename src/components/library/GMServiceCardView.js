@@ -1,37 +1,21 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import GMServiceCardCollection from "./GMServiceCardCollection";
 import _ from "lodash";
+
+import GroupingHeader from "./GroupingHeader";
 
 import styled from "styled-components";
 
-import ListSections from "./ListSections";
-import GroupingHeader from "./GroupingHeader";
-
-// Array of { headerTitle, name, version, docsLink, state }
-// headerTitle: Thing that we group by
-// name: Name of the service
-// version: Version of the service
-// docsLink: URL to the documentation
-// state: string equal to "Stable", "Warning", or "Down"
-
 // styled components
-const SectionContainer = styled.div`
+const GMServiceCardView = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5px 10px 20px 10px;
-  flex-wrap: nowrap;
+  padding: 10px;
 `;
 
-const SectionContent = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const SectionHeader = styled.div`
-  width: 100%;
-  display: flex;
-  margin: 0 0 10px 0;
-`;
+const SectionHeader = styled.div`display: flex;`;
+const SectionContent = styled.div`display: flex;`;
 
 const HorizontalRule = styled.hr`
   margin-top: 1em;
@@ -41,30 +25,42 @@ const HorizontalRule = styled.hr`
   color: #f6f6f6;
 `;
 
-SectionListView.propTypes = {
+// Array of { headerTitle, name, version, docsLink, state }
+// headerTitle: Thing that we group by
+// name: Name of the service
+// version: Version of the service
+// docsLink: URL to the documentation
+// state: string equal to "Stable", "Warning", or "Down"
+SectionCardsView.propTypes = {
   dataArr: PropTypes.array.isRequired,
   groupByAttribute: PropTypes.string.isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
-export default function SectionListView({
+// What if we have card that don't have a header value?
+export default function SectionCardsView({
   groupByAttribute,
   sortByAttribute,
   dataArr
 }) {
-  // get unique headers
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
     const headers = Object.keys(dataGroupedByHeader);
+
+    // sort using lodash ._orderBy function
+    // sortByAttribute => 'Name' || 'State' || Date Last Updated
+    // pass 'sortByAttribute' as the sortkey
+    // _.orderBy(collection, [iteratees=[_.identity]], [orders])
+
     return (
       <div>
         {headers.map((header, i) => (
-          <SectionContainer key={header}>
+          <GMServiceCardView key={header}>
             <SectionHeader>
               <GroupingHeader headerTitle={header} />
             </SectionHeader>
             <SectionContent>
-              <ListSections
+              <GMServiceCardCollection
                 items={_.orderBy(
                   dataGroupedByHeader[header],
                   [sortByAttribute.toLowerCase()],
@@ -73,16 +69,16 @@ export default function SectionListView({
               />
             </SectionContent>
             {i !== headers.length - 1 && <HorizontalRule />}
-          </SectionContainer>
+          </GMServiceCardView>
         ))}
       </div>
     );
   } else {
     return (
       <div>
-        <SectionContainer>
+        <GMServiceCardView>
           <SectionContent>
-            <ListSections
+            <GMServiceCardCollection
               items={_.orderBy(
                 dataArr,
                 [sortByAttribute.toLowerCase()],
@@ -90,7 +86,7 @@ export default function SectionListView({
               )}
             />
           </SectionContent>
-        </SectionContainer>
+        </GMServiceCardView>
       </div>
     );
   }
