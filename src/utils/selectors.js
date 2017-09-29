@@ -16,7 +16,9 @@ import SidebarCard from "../components/SidebarCard";
 export const getMetrics = state => state.metrics;
 export const getStaticRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
+
 export const getServices = state => state.fabric.services;
+
 export const getFabricServer = state => state.settings.fabricServer;
 export const getSelectedInstance = state => state.settings.selectedInstance;
 export const getSelectedServiceName = state => state.settings.selectedService;
@@ -165,5 +167,39 @@ function _buildRoutesTree(routeMetrics) {
     }, {});
   } else {
     return {};
+  }
+}
+
+/**
+ * Reselect selector that transforms service data to include
+ * {name, version, docsLink, state}
+ */
+
+// get service values and return the mapped data
+export const getSideBarContent = createSelector(getServices, services =>
+  _.values(services).map(service => {
+    return {
+      name: service.name,
+      version: service.version,
+      docsLink: service.documentation,
+      state: computeState(
+        service.instances.length,
+        service.minimum,
+        service.maximum
+      )
+    };
+  })
+);
+
+function computeState(count, min, max) {
+  if (count < min) {
+    return "Down";
+  } else if (count > min && count < max) {
+    return "Stable";
+  } else if (count >= max && max !== min) {
+    return "Warning";
+  } else {
+    console.log("computeState did not match as expected");
+    return "Down";
   }
 }

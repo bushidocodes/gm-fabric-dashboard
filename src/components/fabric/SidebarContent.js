@@ -7,6 +7,8 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import SidebarCard from "../SidebarCard";
 import InstanceSidebarContent from "../instance/SidebarContent";
 
+import { getSideBarContent } from "../../utils/selectors";
+
 FabricSidebarContent.propTypes = {
   services: PropTypes.object
 };
@@ -18,13 +20,13 @@ export function FabricSidebarContent({ services }) {
         exact
         path="/"
         render={() => {
-          return _.map(services, ({ name }) => {
+          return _.map(services, ({ state }) => {
             return (
               <SidebarCard
-                href={`/${name}`}
+                href={`/${state}`}
                 icon="star"
-                key={name}
-                title={name}
+                key={state}
+                title={state}
               />
             );
           });
@@ -39,9 +41,8 @@ export function FabricSidebarContent({ services }) {
 }
 
 function mapStateToProps(state) {
-  const { fabric: { services } } = state;
   return {
-    services
+    services: getSideBarContent(state)
   };
 }
 
