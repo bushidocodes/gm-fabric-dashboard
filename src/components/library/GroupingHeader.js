@@ -30,7 +30,7 @@ export default function GroupingHeader({ headerTitle }) {
       indicatorIconColor = "red";
       break;
     case "Warning":
-      indicatorIconColor = "yellow";
+      indicatorIconColor = "#ffcc00";
       break;
     case "Stable":
       indicatorIconColor = "green";

@@ -32,6 +32,91 @@ const services = [
       "8bedb4551e801f38bf149000002a1127",
       "d000009c26c6c84daaf1ceb40559d659"
     ]
+  },
+  {
+    name: "Whacky Hidden Missile Silo",
+    version: "1.7",
+    group: "Batcave",
+    minimum: 4,
+    maximum: 6,
+    documentation: null,
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: "GO",
+    instances: [
+      "ee0f0000000a7e9a0adea649c46bca56",
+      "8bedb4551e801f38bf149000002a1127",
+      "d000009c26c6c84daaf1ceb40559d659"
+    ]
+  },
+  {
+    name: "Funky System",
+    version: "1.7",
+    group: "Some Group",
+    minimum: 5,
+    maximum: 6,
+    documentation: null,
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: "GO",
+    instances: [
+      "ee0f0000000a7e9a0adea649c46bca56",
+      "8bedb4551e801f38bf149000002a1127",
+      "d000009c26c6c84daaf1ceb40559d659"
+    ]
+  },
+  {
+    name: "Some System",
+    version: "1.7",
+    group: "Some Group",
+    minimum: 1,
+    maximum: 2,
+    documentation: null,
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: "GO",
+    instances: [
+      "ee0f0000000a7e9a0adea649c46bca56",
+      "8bedb4551e801f38bf149000002a1127",
+      "d000009c26c6c84daaf1ceb40559d659"
+    ]
+  },
+  {
+    name: "AAA System",
+    version: "1.7",
+    group: "AAA Group",
+    minimum: 1,
+    maximum: 2,
+    documentation: null,
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: "GO",
+    instances: [
+      "ee0f0000000a7e9a0adea649c46bca56",
+      "8bedb4551e801f38bf149000002a1127",
+      "d000009c26c6c84daaf1ceb40559d659"
+    ]
+  },
+  {
+    name: "ZZZ System",
+    version: "1.7",
+    group: "AAA Group",
+    minimum: 1,
+    maximum: 2,
+    documentation: null,
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: "GO",
+    instances: [
+      "ee0f0000000a7e9a0adea649c46bca56",
+      "8bedb4551e801f38bf149000002a1127",
+      "d000009c26c6c84daaf1ceb40559d659"
+    ]
   }
 ];
 

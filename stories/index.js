@@ -36,28 +36,28 @@ storiesOf("Service Card", module)
       docsLink="http://www.deciphernow.com"
     />
   ))
-  .add("with title, version, documentation link, and healthy state", () => (
+  .add("with title, version, documentation link, and Stable state", () => (
     <GMServiceCard
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="healthy"
+      state="Stable"
     />
   ))
-  .add("with title, version, documentation link, and warning state", () => (
+  .add("with title, version, documentation link, and Warning state", () => (
     <GMServiceCard
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="warning"
+      state="Warning"
     />
   ))
-  .add("with title, version, documentation link, and error state", () => (
+  .add("with title, version, documentation link, and Error state", () => (
     <GMServiceCard
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="error"
+      state="Error"
     />
   ))
   .add("in a row", () => (
@@ -66,25 +66,25 @@ storiesOf("Service Card", module)
         name="Awesome Service"
         version="1.1"
         docsLink="http://www.deciphernow.com"
-        state="healthy"
+        state="Stable"
       />
       <GMServiceCard
         name="Awesome Service 2"
         version="1.0"
         docsLink="http://www.deciphernow.com"
-        state="error"
+        state="Error"
       />
       <GMServiceCard
         name="Awesome Service 3"
         version="1.1"
         docsLink="http://www.deciphernow.com"
-        state="warning"
+        state="Warning"
       />
       <GMServiceCard
         name="Awesome Service 4"
         version="3.1"
         docsLink="http://www.deciphernow.com"
-        state="healthy"
+        state="Stable"
       />
     </div>
   ));
@@ -101,28 +101,28 @@ storiesOf("Service List Item", module)
       docsLink="http://www.deciphernow.com"
     />
   ))
-  .add("with title, version, documentation link, and healthy state", () => (
+  .add("with title, version, documentation link, and Stable state", () => (
     <GMServiceListItem
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="healthy"
+      state="Stable"
     />
   ))
-  .add("with title, version, documentation link, and warning state", () => (
+  .add("with title, version, documentation link, and Warning state", () => (
     <GMServiceListItem
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="warning"
+      state="Warning"
     />
   ))
-  .add("with title, version, documentation link, and error state", () => (
+  .add("with title, version, documentation link, and Error state", () => (
     <GMServiceListItem
       name="Awesome Service"
       version="1.1"
       docsLink="http://www.deciphernow.com"
-      state="error"
+      state="Error"
     />
   ))
   .add("in a list", () => (
@@ -131,25 +131,25 @@ storiesOf("Service List Item", module)
         name="Awesome Service"
         version="1.1"
         docsLink="http://www.deciphernow.com"
-        state="healthy"
+        state="Stable"
       />
       <GMServiceListItem
         name="Awesome Service 2"
         version="1.0"
         docsLink="http://www.deciphernow.com"
-        state="error"
+        state="Error"
       />
       <GMServiceListItem
         name="Awesome Service 3"
         version="1.1"
         docsLink="http://www.deciphernow.com"
-        state="warning"
+        state="Warning"
       />
       <GMServiceListItem
         name="Awesome Service 4"
         version="3.1"
         docsLink="http://www.deciphernow.com"
-        state="healthy"
+        state="Stable"
       />
     </ul>
   ));
@@ -198,77 +198,77 @@ const groupingByStatusCardsViewMockData = [
     name: "Awesome Service 1",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 2",
     version: "1.5",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Warning",
     name: "Awesome Service 3",
     version: "1.7",
     docsLink: "http://www.deciphernow.com",
-    state: "warning"
+    state: "Warning"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 4",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 5",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 6",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 7",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 8",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 9",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 10",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Warning",
     name: "Awesome Service 11",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "warning"
+    state: "Warning"
   }
 ];
 
@@ -283,77 +283,77 @@ const groupingByHeadingListViewMockData = [
     name: "Awesome Service 1",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 2",
     version: "1.5",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 3",
     version: "1.7",
     docsLink: "http://www.deciphernow.com",
-    state: "warning"
+    state: "Warning"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 4",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 5",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 6",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 7",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 8",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 9",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "healthy"
+    state: "Stable"
   },
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 10",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "error"
+    state: "Error"
   },
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 11",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "warning"
+    state: "Warning"
   }
 ];
 
