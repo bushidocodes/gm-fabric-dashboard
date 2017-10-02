@@ -6,7 +6,7 @@ import Collapse from "react-collapse";
 
 import styled from "styled-components";
 
-import SidebarContentSectionItem from "./SidebarContentSectionItem";
+import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import IndicatorIcon from "../library/IndicatorIcon";
 
@@ -41,7 +41,7 @@ const ItemCount = styled.span`
 
 const Down = styled.span`align: center;`;
 
-export default class SidebarContentSection extends Component {
+export default class FabricSidebarContentSection extends Component {
   state = {
     isOpen: false
   };
@@ -83,7 +83,7 @@ export default class SidebarContentSection extends Component {
                 evt.stopPropagation();
               }}
             >
-              <SidebarContentSectionItem
+              <FabricSidebarContentSectionItem
                 href={docsLink}
                 key={state}
                 title={name}
@@ -114,7 +114,7 @@ function getColor(state) {
   }
 }
 
-SidebarContentSection.propTypes = {
+FabricSidebarContentSection.propTypes = {
   header: PropTypes.string.isRequired,
   services: PropTypes.array.isRequired
 };

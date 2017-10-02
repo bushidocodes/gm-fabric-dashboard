@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import FabricSidebarContent from "./fabric/SidebarContent";
+import FabricSidebarContent from "./fabric/FabricSidebarContent";
 import InstanceSidebarContent from "./instance/SidebarContent";
 import Sidebar from "./Sidebar";
 import SidebarFooter from "./SidebarFooter";
@@ -18,7 +18,7 @@ SidebarContainer.propTypes = {
 };
 
 /**
- * Main Sidebar component 
+ * Main Sidebar component
  * @export
  * @returns JSX.Element
  */

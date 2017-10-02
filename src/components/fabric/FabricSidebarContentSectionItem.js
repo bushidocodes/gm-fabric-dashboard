@@ -21,13 +21,13 @@ const Box2 = styled.span`
   font-size: 0.8em;
 `;
 
-SidebarContentSectionItem.propTypes = {
+FabricSidebarContentSectionItem.propTypes = {
   docsLink: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired,
   version: PropTypes.string.isRequired
 };
 
-export default function SidebarContentSectionItem({
+export default function FabricSidebarContentSectionItem({
   docsLink,
   title,
   version

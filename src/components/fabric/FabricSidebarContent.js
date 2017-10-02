@@ -1,10 +1,9 @@
-import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import SidebarContentSection from "./SidebarContentSection";
+import FabricSidebarContentSection from "./FabricSidebarContentSection";
 import TriangleDown from "../library/TriangleDown";
 import IndicatorIcon from "../library/IndicatorIcon";
 
@@ -81,7 +80,7 @@ class FabricSidebarContent extends Component {
         >
           {sidebarHeaders.map(header => (
             <Section>
-              <SidebarContentSection
+              <FabricSidebarContentSection
                 header={header}
                 services={services.filter(
                   service =>
