@@ -9,8 +9,8 @@ import { Button, Welcome } from "@storybook/react/demo";
 import GMServiceCard from "../src/components/library/GMServiceCard";
 import GMServiceListItem from "../src/components/library/GMServiceListItem";
 import GroupingHeader from "../src/components/library/GroupingHeader";
-import SectionCardsView from "../src/components/library/SectionCardsView";
-import SectionListView from "../src/components/library/SectionListView";
+import GMServiceCardCollection from "../src/components/library/GMServiceCardCollection";
+import GMServiceList from "../src/components/library/GMServiceList";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -177,18 +177,18 @@ storiesOf("Grouping Header", module)
 // mock data is at the end of file
 storiesOf("Section Cards View", module)
   .add("with a single grouping header and group of cards", () => (
-    <SectionCardsView dataArr={singleGroupingByStatusCardsViewMockData} />
+    <GMServiceCardCollection items={singleGroupingByStatusCardsViewMockData} />
   ))
   .add("with multiple grouping headers and groups of cards", () => (
-    <SectionCardsView dataArr={groupingByStatusCardsViewMockData} />
+    <GMServiceCardCollection items={groupingByStatusCardsViewMockData} />
   ));
 
 storiesOf("Section List View", module)
   .add("with a grouping header and group of lists", () => (
-    <SectionListView dataArr={singleGroupingByHeadingListViewMockData} />
+    <GMServiceList items={singleGroupingByHeadingListViewMockData} />
   ))
   .add("with multiple grouping headers and groups of lists", () => (
-    <SectionListView dataArr={groupingByHeadingListViewMockData} />
+    <GMServiceList items={groupingByHeadingListViewMockData} />
   ));
 
 // mock data for Section Cards View
