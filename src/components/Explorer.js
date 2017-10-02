@@ -3,11 +3,80 @@ import { PropTypes } from "prop-types";
 import qs from "query-string";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import styled from "styled-components";
 import Inspector from "./Inspector";
 import GMLineChart from "./library/GMLineChart";
 
 import { getDygraphOfValue } from "../utils/dygraphs";
+import { contrastColor, spacingScale } from "../style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "../style/styleVariables";
+
+const ViewExplorer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 ${spacingScale(2)} ${spacingScale(2)};
+  height: 100%;
+  @media all and (min-width: 1200px) {
+    flex-direction: row;
+  }
+`;
+
+const MetricsList = styled.div`
+  background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};
+  flex: 0 0 300px;
+  position: relative;
+  margin-bottom: ${spacingScale(2)};
+  @media all and (min-width: 1200px) {
+    flex: 0 0 40%;
+    margin-right: ${spacingScale(2)};
+    margin-bottom: 0;
+  }
+`;
+
+const MetricsGraphDisplay = styled.div`
+  background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};
+  flex: 1 1 100%;
+  position: relative;
+  @media all and (min-width: 1200px) {
+    flex: 0 0 60%;
+  }
+  .chart {
+    display: flex;
+    align-items: stretch;
+
+    .chart-title {
+      flex: 0 0 auto;
+    }
+
+    .chart-content {
+      flex: 1 1 100%;
+      position: relative;
+    }
+  }
+
+  > * {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: spacingScale(2);
+
+    h3 {
+      flex: 0 0 auto;
+      word-break: break-all;
+      white-space: normal;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      margin: spacingScale(1);
+    }
+  }
+
+  p {
+    text-align: center;
+    opacity: 0.8;
+    flex: 1 1 100%;
+  }
+`;
 
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux
@@ -96,8 +165,8 @@ class Explorer extends Component {
       ? query.selectedMetric.replace(/%2F/g, "/")
       : undefined;
     return (
-      <div className="view-explorer">
-        <div className="metrics-list">
+      <ViewExplorer>
+        <MetricsList>
           <Inspector
             data={keys}
             onClick={this.onClick.bind(this)}
@@ -106,8 +175,8 @@ class Explorer extends Component {
             selectedMetric={selectedMetric}
             tabIndex={20}
           />
-        </div>
-        <div className="metrics-graph-display">
+        </MetricsList>
+        <MetricsGraphDisplay>
           {selectedMetric && this.props.keys.indexOf(selectedMetric) !== -1 ? (
             <GMLineChart
               height={"max"}
@@ -117,8 +186,8 @@ class Explorer extends Component {
           ) : (
             <p>Select a metric to display</p>
           )}
-        </div>
-      </div>
+        </MetricsGraphDisplay>
+      </ViewExplorer>
     );
   }
 }
