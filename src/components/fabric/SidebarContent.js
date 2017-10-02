@@ -2,11 +2,11 @@ import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-import SidebarCard from "../SidebarCard";
-import InstanceSidebarContent from "../instance/SidebarContent";
 import SidebarContentSection from "./SidebarContentSection";
+import TriangleDown from "../library/TriangleDown";
+import IndicatorIcon from "../library/IndicatorIcon";
 
 import { getSideBarContent } from "../../utils/selectors";
 
@@ -15,9 +15,36 @@ import Collapse from "react-collapse";
 import styled from "styled-components";
 
 // styled components
-const Header = styled.div`color: green;`;
 
-export class FabricSidebarContent extends Component {
+const Services = styled.div`
+  padding: 10px 0 10px;
+  background-color: #666666;
+  border-radius: 5px;
+`;
+const Header = styled.div`
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const HeaderPart1 = styled.span`
+  // flex-grow: 3;
+  min-width: 75%;
+`;
+
+const HeaderPart2 = styled.span`
+  // flex-grow: 1;
+  text-align: right;
+  margin: 0 10px 0 0;
+  justify-content: flex-end;
+`;
+
+const Section = styled.div`margin: 10px 0 10px;`;
+
+const HeaderIcon = styled.span`margin: 0 10px 0 10px;`;
+
+class FabricSidebarContent extends Component {
   state = {
     isOpen: false
   };
@@ -28,24 +55,43 @@ export class FabricSidebarContent extends Component {
 
   render() {
     const { services } = this.props;
-    console.log("services sidebarcontent", services);
 
     // use hard-coded headers or pass them down?
     // using hard-coded headers for now as they are fixed
     const sidebarHeaders = ["STABLE", "WARNING", "DOWN"];
 
     return (
-      <div>
-        <div>hello</div>
-        {sidebarHeaders.map(header => (
-          <SidebarContentSection
-            header={header}
-            services={services.filter(
-              service => service.state.toLowerCase() === header.toLowerCase()
-            )}
-          />
-        ))}
-      </div>
+      <Services>
+        <Header onClick={this.toggleStack}>
+          <HeaderPart1>
+            <HeaderIcon>
+              <IndicatorIcon color={"white"} diameter={12} />
+            </HeaderIcon>
+            Services
+          </HeaderPart1>
+          <HeaderPart2>
+            <TriangleDown fill="white" stroke="white" />
+          </HeaderPart2>
+        </Header>
+        <Collapse
+          isOpened={this.state.isOpen}
+          onClick={evt => {
+            evt.stopPropagation();
+          }}
+        >
+          {sidebarHeaders.map(header => (
+            <Section>
+              <SidebarContentSection
+                header={header}
+                services={services.filter(
+                  service =>
+                    service.state.toLowerCase() === header.toLowerCase()
+                )}
+              />
+            </Section>
+          ))}
+        </Collapse>
+      </Services>
     );
   }
 }

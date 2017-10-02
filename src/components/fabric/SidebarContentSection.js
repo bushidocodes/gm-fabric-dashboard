@@ -6,30 +6,40 @@ import Collapse from "react-collapse";
 
 import styled from "styled-components";
 
-import SidebarCard from "../SidebarCard";
 import SidebarContentSectionItem from "./SidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import IndicatorIcon from "../library/IndicatorIcon";
 
 // styled components
 const Header = styled.div`
-  color: green;
+  color: white;
+  display: flex;
+  background-color: #333333;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  border: 2px solid #333333;
+  border-bottom-color: ${props => props.borderBottomColor};
+`;
+
+const HeaderPart1 = styled.span`min-width: 75%;`;
+
+const HeaderPart2 = styled.span`
+  text-align: left;
+  margin: 0 10px 0 0;
+  font-size: 0.8em;
+  align-items: center;
   display: flex;
 `;
 
-const HeaderPart1 = styled.span`
-  // flex-grow: 3;
-  min-width: 75%;
-`;
-
-const HeaderPart2 = styled.span`
-  // flex-grow: 1;
-  text-align: left;
-  margin: 0 10px 0 0;
-`;
-
 const HeaderIcon = styled.span`margin: 0 10px 0 10px;`;
-const ItemCount = styled.span`margin: 0 5px 0 10px;`;
+const ItemCount = styled.span`
+  margin: 0 5px 0 10px;
+  text-align: bottom;
+`;
+
+const Down = styled.span`align: center;`;
 
 export default class SidebarContentSection extends Component {
   state = {
@@ -43,10 +53,13 @@ export default class SidebarContentSection extends Component {
   render() {
     const { header, services } = this.props;
 
-    console.log("services sidebarcontentsection", services);
     return (
       <div>
-        <Header key={header} onClick={this.toggleStack}>
+        <Header
+          key={header}
+          onClick={this.toggleStack}
+          borderBottomColor={getColor(header)}
+        >
           <HeaderPart1>
             <HeaderIcon>
               <IndicatorIcon color={"lightblue"} diameter={12} />
@@ -55,7 +68,9 @@ export default class SidebarContentSection extends Component {
           </HeaderPart1>
           <HeaderPart2>
             {services.length > 1 && <ItemCount>{services.length}</ItemCount>}
-            <TriangleDown fill="gray" stroke="gray" />
+            <Down>
+              <TriangleDown fill="white" stroke="white" />
+            </Down>
           </HeaderPart2>
         </Header>
 
@@ -79,6 +94,23 @@ export default class SidebarContentSection extends Component {
         })}
       </div>
     );
+  }
+}
+
+function getColor(state) {
+  let color;
+
+  switch (state.toLowerCase()) {
+    case "warning":
+      color = "#ffcc00";
+      return color;
+    case "down":
+      color = "DarkRed";
+      return color;
+    case "stable":
+    default:
+      color = "green";
+      return color;
   }
 }
 

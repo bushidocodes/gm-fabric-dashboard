@@ -6,6 +6,8 @@ import styled from "styled-components";
 const Container = styled.div`
   color: white;
   display: flex;
+  align-items: center;
+  padding: 5px 0 5px 0;
 `;
 
 const Box1 = styled.span`
@@ -16,6 +18,7 @@ const Box1 = styled.span`
 const Box2 = styled.span`
   text-align: right;
   margin: 0 0 0 10px;
+  font-size: 0.8em;
 `;
 
 SidebarContentSectionItem.propTypes = {
