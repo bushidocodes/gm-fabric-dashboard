@@ -91,9 +91,6 @@ export default function FabricTableToolbar({
             <ul className="uk-nav uk-dropdown-nav">
               <li onClick={() => setSortByAttribute("Name")}>Name</li>
               <li onClick={() => setSortByAttribute("State")}>State</li>
-              <li onClick={() => setSortByAttribute("Date Last Updated")}>
-                Date Last Updated
-              </li>
             </ul>
           </div>
         </div>

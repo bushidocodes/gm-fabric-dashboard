@@ -48,7 +48,7 @@ export default function SectionCardsView({
     const headers = Object.keys(dataGroupedByHeader);
 
     // sort using lodash ._orderBy function
-    // sortByAttribute => 'Name' || 'State' || Date Last Updated
+    // sortByAttribute => 'Name' || 'State'
     // pass 'sortByAttribute' as the sortkey
     // _.orderBy(collection, [iteratees=[_.identity]], [orders])
 
