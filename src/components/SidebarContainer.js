@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import FabricSidebarContent from "./fabric/FabricSidebarContent";
+import SidebarContent from "./SidebarContent";
 import InstanceSidebarContent from "./instance/SidebarContent";
 import Sidebar from "./Sidebar";
 import SidebarFooter from "./SidebarFooter";
@@ -32,7 +32,7 @@ function SidebarContainer({ runtime }) {
       {getFabricServer() ? (
         <div className="summary-bar">
           <FabricSidebarNavWidget />
-          <FabricSidebarContent />
+          <SidebarContent />
         </div>
       ) : (
         <div className="summary-bar">
