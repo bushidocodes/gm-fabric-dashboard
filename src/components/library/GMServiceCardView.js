@@ -32,8 +32,8 @@ const HorizontalRule = styled.hr`
 // docsLink: URL to the documentation
 // state: string equal to "Stable", "Warning", or "Down"
 SectionCardsView.propTypes = {
-  dataArr: PropTypes.array.isRequired,
   groupByAttribute: PropTypes.string.isRequired,
+  services: PropTypes.array.isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
@@ -41,10 +41,10 @@ SectionCardsView.propTypes = {
 export default function SectionCardsView({
   groupByAttribute,
   sortByAttribute,
-  dataArr
+  services
 }) {
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
+    const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
     const headers = Object.keys(dataGroupedByHeader);
 
     // sort using lodash ._orderBy function
@@ -80,7 +80,7 @@ export default function SectionCardsView({
           <SectionContent>
             <GMServiceCardCollection
               items={_.orderBy(
-                dataArr,
+                services,
                 [sortByAttribute.toLowerCase()],
                 ["asc"]
               )}

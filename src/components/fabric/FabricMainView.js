@@ -27,7 +27,8 @@ export default function FabricMainView({
         service.instances.length,
         service.minimum,
         service.maximum
-      )
+      ),
+      instances: service.instances
     };
   });
 
@@ -36,7 +37,7 @@ export default function FabricMainView({
       <GMServiceCardView
         groupByAttribute={groupByAttribute}
         sortByAttribute={sortByAttribute}
-        dataArr={mappedServices}
+        services={mappedServices}
       />
     );
   } else if (displayType === "Table") {
@@ -44,7 +45,7 @@ export default function FabricMainView({
       <GMServiceListView
         groupByAttribute={groupByAttribute}
         sortByAttribute={sortByAttribute}
-        dataArr={mappedServices}
+        services={mappedServices}
       />
     );
   }

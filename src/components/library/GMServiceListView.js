@@ -7,13 +7,6 @@ import styled from "styled-components";
 import GMServiceList from "./GMServiceList";
 import GroupingHeader from "./GroupingHeader";
 
-// Array of { headerTitle, name, version, docsLink, state }
-// headerTitle: Thing that we group by
-// name: Name of the service
-// version: Version of the service
-// docsLink: URL to the documentation
-// state: string equal to "Stable", "Warning", or "Down"
-
 // styled components
 const SectionContainer = styled.div`
   display: flex;
@@ -42,19 +35,19 @@ const HorizontalRule = styled.hr`
 `;
 
 GMServiceListView.propTypes = {
-  dataArr: PropTypes.array.isRequired,
   groupByAttribute: PropTypes.string.isRequired,
+  services: PropTypes.array.isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
 export default function GMServiceListView({
   groupByAttribute,
   sortByAttribute,
-  dataArr
+  services
 }) {
   // get unique headers
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(dataArr, item => item.headerTitle);
+    const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
     const headers = Object.keys(dataGroupedByHeader);
     return (
       <div>
@@ -84,7 +77,7 @@ export default function GMServiceListView({
           <SectionContent>
             <GMServiceList
               items={_.orderBy(
-                dataArr,
+                services,
                 [sortByAttribute.toLowerCase()],
                 ["asc"]
               )}

@@ -26,6 +26,7 @@ export default function GMServiceList({ items }) {
       {items.map(item => (
         <GMServiceListItem
           key={`${item.name}${item.version}`}
+          instances={item.instances}
           name={item.name}
           state={item.state}
           version={item.version}

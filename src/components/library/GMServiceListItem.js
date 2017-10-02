@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import IndicatorIcon from "./IndicatorIcon";
+import Collapse from "react-collapse";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -12,13 +14,13 @@ const Line = styled.div`
 `;
 
 const LineLeft = styled.div`
-  flex: 0 1 80%;
+  flex: 1 1 auto;
   display: flex;
   min-width: 70%;
 `;
 
 const LineRight = styled.div`
-  flex: 0 1 20%;
+  flex: 0 1 auto;
   text-align: right;
 `;
 const IconWrapper = styled.span`
@@ -40,10 +42,18 @@ const ItemVersion = styled.span`
   align-items: center;
 `;
 
-const ServiceLink = styled.a`
+const ServiceLink = styled.div`
+  width: 100%;
   cursor: pointer;
   text-decoration: none;
   color: black;
+  &:focus {
+    outline: none;
+    background-color: #eee;
+  }
+  &:hover {
+    background-color: #eee;
+  }
 `;
 
 const DocLink = styled.a`
@@ -52,49 +62,91 @@ const DocLink = styled.a`
   color: black;
 `;
 
-GMServiceListItem.propTypes = {
-  docsLink: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  state: PropTypes.string,
-  version: PropTypes.string
-};
+const InstanceList = styled.ul`margin-left: 15px;`;
 
-export default function GMServiceListItem({ name, state, version, docsLink }) {
-  // Style based on the state of the service
+const InstanceListItem = styled.li`list-style-type: none;`;
 
-  let indicatorIconColor;
+export default class GMServiceListItem extends Component {
+  static propTypes = {
+    docsLink: PropTypes.string,
+    instances: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired,
+    state: PropTypes.string,
+    version: PropTypes.string
+  };
+  state = {
+    isOpen: false
+  };
 
-  switch (state) {
-    case "Down":
-      indicatorIconColor = "darkred";
-      break;
-    case "Warning":
-      indicatorIconColor = "orange";
-      break;
-    case "Stable":
-      indicatorIconColor = "green";
-      break;
-    default:
-      indicatorIconColor = "black";
+  toggleDrawer = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  render() {
+    const { instances = [], name, state, version, docsLink } = this.props;
+    console.log(this.props);
+    // Style based on the state of the service
+
+    let indicatorIconColor;
+
+    switch (state) {
+      case "Down":
+        indicatorIconColor = "darkred";
+        break;
+      case "Warning":
+        indicatorIconColor = "orange";
+        break;
+      case "Stable":
+        indicatorIconColor = "green";
+        break;
+      default:
+        indicatorIconColor = "black";
+    }
+    return (
+      <div>
+        <Line>
+          <LineLeft>
+            <ServiceLink
+              onClick={instances.length > 0 ? this.toggleDrawer : () => {}}
+              onKeyDown={evt => {
+                if (
+                  instances.length &&
+                  (evt.keyCode === 13 || evt.keyCode === 32)
+                ) {
+                  evt.preventDefault();
+                  this.toggleDrawer();
+                }
+              }}
+              role="Link"
+              tabIndex="0"
+            >
+              <IconWrapper>
+                <IndicatorIcon color={indicatorIconColor} diameter={10} />
+              </IconWrapper>
+              <ItemName>{name}</ItemName>
+              <ItemVersion>{version}</ItemVersion>
+            </ServiceLink>
+          </LineLeft>
+          <LineRight>
+            {docsLink && <DocLink href={docsLink}>Docs</DocLink>}
+          </LineRight>
+        </Line>
+        <Collapse
+          className="table-drawer"
+          isOpened={this.state.isOpen}
+          onClick={evt => {
+            evt.stopPropagation();
+          }}
+        >
+          <InstanceList>
+            {instances.map(instance => (
+              <InstanceListItem>
+                <Link to={`/${name}/${version}/${instance}`}> {instance} </Link>
+              </InstanceListItem>
+            ))}
+          </InstanceList>
+        </Collapse>
+      </div>
+    );
   }
-  return (
-    <Line>
-      <LineLeft>
-        <ServiceLink href={docsLink}>
-          <IconWrapper>
-            <IndicatorIcon color={indicatorIconColor} diameter={10} />
-          </IconWrapper>
-          <ItemName>{name}</ItemName>
-          <ItemVersion>{version}</ItemVersion>
-        </ServiceLink>
-      </LineLeft>
-      <LineRight>
-        <DocLink href={docsLink}>
-          <IconWrapper>
-            <IndicatorIcon color={"gray"} diameter={15} />
-          </IconWrapper>
-        </DocLink>
-      </LineRight>
-    </Line>
-  );
 }
