@@ -69,7 +69,7 @@
   $type: qualitative,
   $direction: to-dark,
   $size: 12,
-  $variance: .5,
+  $variance: 0.5,
   $base-color-2: null
 ) {
   // Initialize the list with the first color
@@ -78,11 +78,11 @@
   $hue-of-base-color-1: hsl(hue($base-color-1), 50%, 50%);
 
   // Single-color scales indicating more or less of a value
-  @if $type == 'quantitative' {
+  @if $type == "quantitative" {
     $color-change-per-increment: percentage(1 / $size) * $variance;
     $color-increments: $size;
 
-    @if $direction == 'to-light' {
+    @if $direction == "to-light" {
       // Set the first color and reset the list with the new first color
       $starting-color: darker-color(
         $hue-of-base-color-1,
@@ -97,7 +97,7 @@
           lighter-color($starting-color, $color-change-per-increment * $i)
         );
       }
-    } @else if $direction == 'to-dark' {
+    } @else if $direction == "to-dark" {
       // Darken to prepare for processing
 
       // Set the first color and reset the list with the new first color
@@ -118,7 +118,7 @@
     @return $colors;
 
     // Multi-color scales indicating different kinds of thing
-  } @else if $type == 'qualitative' {
+  } @else if $type == "qualitative" {
     // Change the color by an equal amount each time, with the total equalling a full rotation
     $color-change-per-increment: (1 / $size) * 360;
     // Reset the list with the first color
@@ -135,7 +135,7 @@
     @return $colors;
 
     // Two-color scales
-  } @else if $type == 'divergent' {
+  } @else if $type == "divergent" {
     // Set the start color
     $colors: $base-color-1;
 
@@ -154,7 +154,7 @@
   }
 }
 
-// Scales
+// Scales (some factor times 8px)
 @function spacing-scale($factor) {
   @return $padding-base * $factor;
 }
