@@ -20,20 +20,17 @@ const Services = styled.div`
   background-color: #666666;
   border-radius: 5px;
 `;
-const Header = styled.div`
+
+export const Header = styled.div`
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-const HeaderPart1 = styled.span`
-  // flex-grow: 3;
-  min-width: 75%;
-`;
+export const HeaderLeft = styled.span`min-width: 75%;`;
 
-const HeaderPart2 = styled.span`
-  // flex-grow: 1;
+export const HeaderRight = styled.span`
   text-align: right;
   margin: 0 10px 0 0;
   justify-content: flex-end;
@@ -62,15 +59,15 @@ class FabricSidebarContent extends Component {
     return (
       <Services>
         <Header onClick={this.toggleStack}>
-          <HeaderPart1>
+          <HeaderLeft>
             <HeaderIcon>
               <IndicatorIcon color={"white"} diameter={12} />
             </HeaderIcon>
             Services
-          </HeaderPart1>
-          <HeaderPart2>
+          </HeaderLeft>
+          <HeaderRight>
             <TriangleDown fill="white" stroke="white" />
-          </HeaderPart2>
+          </HeaderRight>
         </Header>
         <Collapse
           isOpened={this.state.isOpen}

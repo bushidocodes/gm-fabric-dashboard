@@ -9,28 +9,18 @@ import styled from "styled-components";
 import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import IndicatorIcon from "../library/IndicatorIcon";
+import { HeaderLeft, HeaderRight } from "./FabricSidebarContent";
 
-// styled components
-const Header = styled.div`
+const SectionHeader = styled.div`
   color: white;
   display: flex;
   background-color: #333333;
   align-items: center;
   justify-content: space-between;
-  border-bottom-width: 2px;
+  border-bottom-width: 1px;
   border-radius: 5px;
-  border: 2px solid #333333;
+  border: 1px solid #333333;
   border-bottom-color: ${props => props.borderBottomColor};
-`;
-
-const HeaderPart1 = styled.span`min-width: 75%;`;
-
-const HeaderPart2 = styled.span`
-  text-align: left;
-  margin: 0 10px 0 0;
-  font-size: 0.8em;
-  align-items: center;
-  display: flex;
 `;
 
 const HeaderIcon = styled.span`margin: 0 10px 0 10px;`;
@@ -55,29 +45,30 @@ export default class FabricSidebarContentSection extends Component {
 
     return (
       <div>
-        <Header
+        <SectionHeader
           key={header}
           onClick={this.toggleStack}
           borderBottomColor={getColor(header)}
         >
-          <HeaderPart1>
+          <HeaderLeft>
             <HeaderIcon>
               <IndicatorIcon color={"lightblue"} diameter={12} />
             </HeaderIcon>
             {header}
-          </HeaderPart1>
-          <HeaderPart2>
+          </HeaderLeft>
+          <HeaderRight>
             {services.length > 1 && <ItemCount>{services.length}</ItemCount>}
             <Down>
               <TriangleDown fill="white" stroke="white" />
             </Down>
-          </HeaderPart2>
-        </Header>
+          </HeaderRight>
+        </SectionHeader>
 
         {_.map(services, ({ name, state, version, docsLink }) => {
-          docsLink = docsLink || "example.com";
+          // docsLink = docsLink || "example.com";
           return (
             <Collapse
+              key={`${name}${version}`}
               isOpened={this.state.isOpen}
               onClick={evt => {
                 evt.stopPropagation();
@@ -97,20 +88,21 @@ export default class FabricSidebarContentSection extends Component {
   }
 }
 
+/**
+ *
+ * Takes string representation of state and returns corresponding color string(orange-tan, dark red, green) for border-color/icon
+ * @param {string} state
+ * @returns {string}
+ */
 function getColor(state) {
-  let color;
-
   switch (state.toLowerCase()) {
     case "warning":
-      color = "#ffcc00";
-      return color;
+      return "#ffcc00"; // color orange-tan
     case "down":
-      color = "DarkRed";
-      return color;
+      return "DarkRed";
     case "stable":
     default:
-      color = "green";
-      return color;
+      return "green";
   }
 }
 
