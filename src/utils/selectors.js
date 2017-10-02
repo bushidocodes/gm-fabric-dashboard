@@ -191,6 +191,13 @@ export const getSideBarContent = createSelector(getServices, services =>
   })
 );
 
+/**
+ * Computes and returns string representation of state for a service
+ * @param {number} count  - service.instances.length (number of instances)
+ * @param {number} min - service.minimum
+ * @param {number} max - service.maximum
+ * @returns {string} - "Down" || "Stable" || "Warning"
+ */
 function computeState(count, min, max) {
   if (count < min) {
     return "Down";
