@@ -105,13 +105,13 @@ export default function GMServiceCard({
       <Version>
         {version}
         {version &&
-        docsLink && (
-          <SvgContainer>
-            <svg>
-              <Circle />
-            </svg>
-          </SvgContainer>
-        )}
+          docsLink && (
+            <SvgContainer>
+              <svg>
+                <Circle />
+              </svg>
+            </SvgContainer>
+          )}
         {docsLink && (
           <DocsLink cardFontColor={cardFontColor} href={docsLink}>
             <IndicatorIcon color={"gray"} diameter={10} />

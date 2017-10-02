@@ -46,16 +46,16 @@ export default function GMLineChart({
               <i data-uk-icon={`icon: warning`} /> No Chartable Data
             </h1>
             {expectedAttributes &&
-            expectedAttributes.length > 0 && (
-              <div>
-                <p>Could not find the following metrics:</p>
-                <ul>
-                  {expectedAttributes.map(attribute => (
-                    <li key={attribute}>{attribute}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              expectedAttributes.length > 0 && (
+                <div>
+                  <p>Could not find the following metrics:</p>
+                  <ul>
+                    {expectedAttributes.map(attribute => (
+                      <li key={attribute}>{attribute}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
           </div>
         ) : (
           <DygraphContainer timeSeries={timeSeries} />

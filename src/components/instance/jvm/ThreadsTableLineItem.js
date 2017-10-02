@@ -62,13 +62,9 @@ export default class ThreadsTableLineItem extends Component {
     return (
       <li
         className={
-          stack.length ? this.state.isOpen ? (
-            "selectable open"
-          ) : (
-            "selectable"
-          ) : (
-            ""
-          )
+          stack.length
+            ? this.state.isOpen ? "selectable open" : "selectable"
+            : ""
         }
         key={id}
         onClick={stack.length > 0 ? this.toggleStack : () => {}}

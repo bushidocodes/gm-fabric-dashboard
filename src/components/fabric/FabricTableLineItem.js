@@ -73,13 +73,11 @@ export default class FabricTableLineItem extends Component {
     return (
       <li
         className={
-          instances.length ? this.state.isOpen ? (
-            "selectable open-true"
-          ) : (
-            "selectable open-false"
-          ) : (
-            ""
-          )
+          instances.length
+            ? this.state.isOpen
+              ? "selectable open-true"
+              : "selectable open-false"
+            : ""
         }
         key={name}
         onClick={instances.length && this.toggleStack}
