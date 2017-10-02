@@ -84,7 +84,6 @@ export default class GMServiceListItem extends Component {
 
   render() {
     const { instances = [], name, state, version, docsLink } = this.props;
-    console.log(this.props);
     // Style based on the state of the service
 
     let indicatorIconColor;
@@ -140,7 +139,7 @@ export default class GMServiceListItem extends Component {
         >
           <InstanceList>
             {instances.map(instance => (
-              <InstanceListItem>
+              <InstanceListItem key={instance}>
                 <Link to={`/${name}/${version}/${instance}`}> {instance} </Link>
               </InstanceListItem>
             ))}

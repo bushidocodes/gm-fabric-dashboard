@@ -68,10 +68,6 @@ const AppVersionLink = styled.a`
 
 /** Sidebar Branding and Versioning */
 const SidebarHeader = () => {
-  console.log(
-    "height:",
-    parseInt(APP_HEADER_HEIGHT, 10) - parseInt(BRANDBAR_BRAND_SPACING, 10)
-  );
   return (
     <AppBrandBar>
       <BrandContainer>

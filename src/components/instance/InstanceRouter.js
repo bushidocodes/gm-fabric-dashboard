@@ -68,7 +68,6 @@ class InstanceRouter extends Component {
 
   render() {
     const { baseURL, runtime } = this.props;
-    console.log(`Runtime Agnostic Instance Router sees runtime of ${runtime}`);
     switch (runtime) {
       case "JVM":
         return <JVMRouter baseURL={baseURL} />;
