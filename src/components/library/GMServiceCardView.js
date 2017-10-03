@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import GMServiceCardCollection from "./GMServiceCardCollection";
 import _ from "lodash";
 
-import GroupingHeader from "./GroupingHeader";
+import GMServiceHeader from "./GMServiceHeader";
 
 import styled from "styled-components";
 
@@ -57,7 +57,7 @@ export default function SectionCardsView({
         {headers.map((header, i) => (
           <GMServiceCardView key={header}>
             <SectionHeader>
-              <GroupingHeader headerTitle={header} />
+              <GMServiceHeader headerTitle={header} showStatusIcon />
             </SectionHeader>
             <SectionContent>
               <GMServiceCardCollection

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import IndicatorIcon from "./IndicatorIcon";
 import Collapse from "react-collapse";
 import { Link } from "react-router-dom";
+import StatusIcon from "./StatusIcon";
 
 import styled from "styled-components";
 
@@ -23,10 +24,10 @@ const LineRight = styled.div`
   flex: 0 1 auto;
   text-align: right;
 `;
-const IconWrapper = styled.span`
-  display: inline-flex;
-  margin: 0 0 0 5px;
-  align-items: center;
+const IconWrapper = styled.div`
+  display: inline-block;
+  width: 15px;
+  height: 15px;
 `;
 const ItemName = styled.span`
   display: inline-flex;
@@ -84,23 +85,7 @@ export default class GMServiceListItem extends Component {
 
   render() {
     const { instances = [], name, state, version, docsLink } = this.props;
-    // Style based on the state of the service
 
-    let indicatorIconColor;
-
-    switch (state) {
-      case "Down":
-        indicatorIconColor = "darkred";
-        break;
-      case "Warning":
-        indicatorIconColor = "orange";
-        break;
-      case "Stable":
-        indicatorIconColor = "green";
-        break;
-      default:
-        indicatorIconColor = "black";
-    }
     return (
       <div>
         <Line>
@@ -120,7 +105,7 @@ export default class GMServiceListItem extends Component {
               tabIndex="0"
             >
               <IconWrapper>
-                <IndicatorIcon color={indicatorIconColor} diameter={10} />
+                <StatusIcon status={state} />
               </IconWrapper>
               <ItemName>{name}</ItemName>
               <ItemVersion>{version}</ItemVersion>

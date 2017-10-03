@@ -5,7 +5,7 @@ import _ from "lodash";
 import styled from "styled-components";
 
 import GMServiceList from "./GMServiceList";
-import GroupingHeader from "./GroupingHeader";
+import GMServiceHeader from "./GMServiceHeader";
 
 // styled components
 const SectionContainer = styled.div`
@@ -54,7 +54,7 @@ export default function GMServiceListView({
         {headers.map((header, i) => (
           <SectionContainer key={header}>
             <SectionHeader>
-              <GroupingHeader headerTitle={header} />
+              <GMServiceHeader headerTitle={header} />
             </SectionHeader>
             <SectionContent>
               <GMServiceList

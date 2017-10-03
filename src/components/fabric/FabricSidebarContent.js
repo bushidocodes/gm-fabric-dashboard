@@ -54,7 +54,7 @@ class FabricSidebarContent extends Component {
 
     // use hard-coded headers or pass them down?
     // using hard-coded headers for now as they are fixed
-    const sidebarHeaders = ["STABLE", "WARNING", "DOWN"];
+    const microserviceStatuses = ["STABLE", "WARNING", "DOWN"];
 
     return (
       <Services>
@@ -75,13 +75,13 @@ class FabricSidebarContent extends Component {
             evt.stopPropagation();
           }}
         >
-          {sidebarHeaders.map(header => (
+          {microserviceStatuses.map(status => (
             <Section>
               <FabricSidebarContentSection
-                header={header}
+                status={status}
                 services={services.filter(
                   service =>
-                    service.state.toLowerCase() === header.toLowerCase()
+                    service.state.toLowerCase() === status.toLowerCase()
                 )}
               />
             </Section>

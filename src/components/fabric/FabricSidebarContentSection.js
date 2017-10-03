@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
-import IndicatorIcon from "../library/IndicatorIcon";
+import StatusIcon from "../library/StatusIcon";
 import { HeaderLeft, HeaderRight } from "./FabricSidebarContent";
 
 const SectionHeader = styled.div`
@@ -23,7 +23,13 @@ const SectionHeader = styled.div`
   border-bottom-color: ${props => props.borderBottomColor};
 `;
 
-const HeaderIcon = styled.span`margin: 0 10px 0 10px;`;
+const IconWrapper = styled.div`
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+`;
 const ItemCount = styled.span`
   margin: 0 5px 0 10px;
   text-align: bottom;
@@ -32,6 +38,11 @@ const ItemCount = styled.span`
 const Down = styled.span`align: center;`;
 
 export default class FabricSidebarContentSection extends Component {
+  static propTypes = {
+    services: PropTypes.array.isRequired,
+    status: PropTypes.string.isRequired
+  };
+
   state = {
     isOpen: false
   };
@@ -41,20 +52,20 @@ export default class FabricSidebarContentSection extends Component {
   };
 
   render() {
-    const { header, services } = this.props;
+    const { status, services } = this.props;
 
     return (
       <div>
         <SectionHeader
-          key={header}
+          key={status}
           onClick={this.toggleStack}
-          borderBottomColor={getColor(header)}
+          borderBottomColor={getColor(status)}
         >
           <HeaderLeft>
-            <HeaderIcon>
-              <IndicatorIcon color={"lightblue"} diameter={12} />
-            </HeaderIcon>
-            {header}
+            <IconWrapper>
+              <StatusIcon status={status} />
+            </IconWrapper>
+            {status}
           </HeaderLeft>
           <HeaderRight>
             {services.length > 1 && <ItemCount>{services.length}</ItemCount>}
@@ -105,8 +116,3 @@ function getColor(state) {
       return "green";
   }
 }
-
-FabricSidebarContentSection.propTypes = {
-  header: PropTypes.string.isRequired,
-  services: PropTypes.array.isRequired
-};
