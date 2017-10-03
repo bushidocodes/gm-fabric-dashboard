@@ -8,9 +8,11 @@ import { Button, Welcome } from "@storybook/react/demo";
 
 import GMServiceCard from "../src/components/library/GMServiceCard";
 import GMServiceListItem from "../src/components/library/GMServiceListItem";
-import GroupingHeader from "../src/components/library/GroupingHeader";
+import GMServiceHeader from "../src/components/library/GMServiceHeader";
 import GMServiceCardCollection from "../src/components/library/GMServiceCardCollection";
 import GMServiceList from "../src/components/library/GMServiceList";
+import ShapeIcon from "../src/components/library/ShapeIcon";
+import StatusIcon from "../src/components/library/StatusIcon";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -156,22 +158,22 @@ storiesOf("Service List Item", module)
 
 storiesOf("Grouping Header", module)
   .add("with icon and 'Sample' title", () => (
-    <GroupingHeader headerTitle="Sample headerTitle" />
+    <GMServiceHeader headerTitle="Sample headerTitle" />
   ))
   .add("with icon and 'Grey Matter Services' headerTitle", () => (
-    <GroupingHeader headerTitle="Grey Matter Services" />
+    <GMServiceHeader headerTitle="Grey Matter Services" />
   ))
   .add("with icon and 'MEME Services' headerTitle", () => (
-    <GroupingHeader headerTitle="MEME Services" />
+    <GMServiceHeader headerTitle="MEME Services" />
   ))
   .add("with icon and 'Down' headerTitle", () => (
-    <GroupingHeader headerTitle="Down" />
+    <GMServiceHeader headerTitle="Down" />
   ))
   .add("with icon and 'Warning' headerTitle", () => (
-    <GroupingHeader headerTitle="Warning" />
+    <GMServiceHeader headerTitle="Warning" />
   ))
   .add("with icon and 'Stable' headerTitle", () => (
-    <GroupingHeader headerTitle="Stable" />
+    <GMServiceHeader headerTitle="Stable" />
   ));
 
 // mock data is at the end of file
@@ -360,3 +362,18 @@ const groupingByHeadingListViewMockData = [
 const singleGroupingByHeadingListViewMockData = groupingByHeadingListViewMockData.filter(
   elem => elem.headerTitle === "MEME Services"
 );
+
+storiesOf("Shape Icons", module)
+  .add("Red Circle", () => <ShapeIcon color="red" shape="circle" />)
+  .add("Yellow Square", () => <ShapeIcon color="yellow" shape="square" />)
+  .add("Thick Yellow Square", () => (
+    <ShapeIcon color="yellow" shape="square" thickBorder />
+  ))
+  .add("Green Triangle", () => (
+    <ShapeIcon color="lightgreen" shape="triangle" />
+  ));
+
+storiesOf("Status Icons", module)
+  .add("Down", () => <StatusIcon status="down" />)
+  .add("Stable", () => <StatusIcon status="stable" />)
+  .add("Warning", () => <StatusIcon status="warning" />);
