@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import IndicatorIcon from "./IndicatorIcon";
+import { mapStatusToColor } from "../../style/styleFunctions";
 
 import styled from "styled-components";
 
@@ -44,6 +45,9 @@ const ServiceLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   color: ${props => props.cardFontColor};
+  &:hover {
+    color: ${props => props.cardFontColor};
+  }
 `;
 
 const DocsLink = styled.a`
@@ -56,7 +60,7 @@ GMServiceCard.propTypes = {
   docsLink: PropTypes.string,
   height: PropTypes.string,
   name: PropTypes.string.isRequired,
-  state: PropTypes.string,
+  status: PropTypes.string,
   version: PropTypes.string,
   width: PropTypes.string
 };
@@ -65,30 +69,31 @@ export default function GMServiceCard({
   docsLink,
   height = "110px",
   name,
-  state,
+  status,
   version,
   width = "160px"
 }) {
-  // Style based on the state of the service
+  // Style based on the status of the service
   let cardBackgroundColor,
     cardBorderColor,
     cardFontColor,
     cardBorderBottomColor;
-  switch (state) {
+  const baseColor = mapStatusToColor(status).string();
+  switch (status) {
     case "Down":
-      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = "DarkRed";
+      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "white";
       break;
     case "Warning":
-      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = "#ffcc00";
+      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "black";
       break;
     case "Stable":
     default:
       cardBackgroundColor = "white";
       cardBorderColor = "lightgray";
-      cardBorderBottomColor = "green";
-      cardFontColor = "green";
+      cardBorderBottomColor = baseColor;
+      cardFontColor = baseColor;
   }
   return (
     <CardContainer

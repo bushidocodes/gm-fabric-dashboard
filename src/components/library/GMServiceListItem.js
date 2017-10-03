@@ -72,7 +72,7 @@ export default class GMServiceListItem extends Component {
     docsLink: PropTypes.string,
     instances: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
-    state: PropTypes.string,
+    status: PropTypes.string,
     version: PropTypes.string
   };
   state = {
@@ -84,7 +84,7 @@ export default class GMServiceListItem extends Component {
   };
 
   render() {
-    const { instances = [], name, state, version, docsLink } = this.props;
+    const { instances = [], name, status, version, docsLink } = this.props;
 
     return (
       <div>
@@ -105,7 +105,7 @@ export default class GMServiceListItem extends Component {
               tabIndex="0"
             >
               <IconWrapper>
-                <StatusIcon status={state} />
+                <StatusIcon status={status} />
               </IconWrapper>
               <ItemName>{name}</ItemName>
               <ItemVersion>{version}</ItemVersion>

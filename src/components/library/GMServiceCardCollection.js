@@ -26,7 +26,7 @@ export default function GMServiceCardCollection({ items }) {
           name={item.name}
           version={item.version}
           docsLink={item.docsLink}
-          state={item.state}
+          status={item.state}
         />
       ))}
     </ContentItems>

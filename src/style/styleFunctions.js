@@ -2,7 +2,10 @@ import Color from "color";
 
 import {
   DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO,
-  PADDING_BASE
+  PADDING_BASE,
+  COLOR_SUCCESS,
+  COLOR_DANGER,
+  COLOR_WARNING
 } from "./styleVariables";
 
 /**
@@ -66,5 +69,22 @@ export function edgeColor(backgroundColor, contrast = 0.08) {
   } else {
     // Otherwise, use a natural dark edge color
     return backgroundColor.darken(contrast);
+  }
+}
+
+/**
+ *
+ * Takes string representation of the status of a microservice and returns corresponding color * @param {string} state
+ * @returns {Object} // a Color object
+ */
+export function mapStatusToColor(status) {
+  switch (status.toLowerCase()) {
+    case "warning":
+      return COLOR_WARNING; // color orange-tan
+    case "stable":
+      return COLOR_SUCCESS;
+    case "down":
+    default:
+      return COLOR_DANGER;
   }
 }

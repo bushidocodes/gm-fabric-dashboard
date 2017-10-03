@@ -10,6 +10,7 @@ import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import StatusIcon from "../library/StatusIcon";
 import { HeaderLeft, HeaderRight } from "./FabricSidebarContent";
+import { mapStatusToColor } from "../../style/styleFunctions";
 
 const SectionHeader = styled.div`
   color: white;
@@ -59,7 +60,7 @@ export default class FabricSidebarContentSection extends Component {
         <SectionHeader
           key={status}
           onClick={this.toggleStack}
-          borderBottomColor={getColor(status)}
+          borderBottomColor={mapStatusToColor(status).string()}
         >
           <HeaderLeft>
             <IconWrapper>
@@ -96,23 +97,5 @@ export default class FabricSidebarContentSection extends Component {
         })}
       </div>
     );
-  }
-}
-
-/**
- *
- * Takes string representation of state and returns corresponding color string(orange-tan, dark red, green) for border-color/icon
- * @param {string} state
- * @returns {string}
- */
-function getColor(state) {
-  switch (state.toLowerCase()) {
-    case "warning":
-      return "#ffcc00"; // color orange-tan
-    case "down":
-      return "DarkRed";
-    case "stable":
-    default:
-      return "green";
   }
 }

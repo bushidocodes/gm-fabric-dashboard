@@ -28,7 +28,7 @@ export default function GMServiceList({ items }) {
           key={`${item.name}${item.version}`}
           instances={item.instances}
           name={item.name}
-          state={item.state}
+          status={item.state}
           version={item.version}
           docsLink={item.docsLink}
         />
