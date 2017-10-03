@@ -15,7 +15,7 @@ const borderWidth = "1px";
 const fontWeight = 500;
 const lineHeight = LINE_HEIGHT_BASE;
 
-const GMButtonBase = styled.button`
+export const GMButtonBase = styled.button`
   box-sizing: border-box;
   user-select: none;
   font-weight: ${fontWeight};

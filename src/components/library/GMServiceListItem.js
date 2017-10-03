@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import IndicatorIcon from "./IndicatorIcon";
 import Collapse from "react-collapse";
 import { Link } from "react-router-dom";
 import StatusIcon from "./StatusIcon";
