@@ -17,6 +17,19 @@ const services = [
     ]
   },
   {
+    name: "Nora Fries Cryostasis",
+    version: "1.0",
+    group: "Batcave",
+    minimum: 1,
+    maximum: 6,
+    documentation: "https://en.wikipedia.org/wiki/Nora_Fries",
+    authorized: true,
+    metered: true,
+    threaded: true,
+    runtime: "JVM",
+    instances: []
+  },
+  {
     name: "Batcave Defense Systems",
     version: "3.1",
     group: "Batcave",
