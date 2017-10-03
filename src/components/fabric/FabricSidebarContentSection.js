@@ -69,7 +69,7 @@ export default class FabricSidebarContentSection extends Component {
             {status}
           </HeaderLeft>
           <HeaderRight>
-            {services.length > 1 && <ItemCount>{services.length}</ItemCount>}
+            {services.length > 0 && <ItemCount>{services.length}</ItemCount>}
             <Down>
               <TriangleDown fill="white" stroke="white" />
             </Down>
