@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.6.0] - 2017-10-03
+### Added
+- Added support for polling of groups from the "Fabric Server" discovery service
+- Implemented Phase 0 Services view, including searching and filtering
+- Implemented an interim solution for selection of instances from the table view.
+- Added unit tests for trimID
+- Improved in-line comments throughout the app
+- Created production-ready Docker image to facilitate new Docker-based deployment process.
+### Changes
+- Implemented React Storybook for development of UI components in isolation from the larger app
+- Began process of refactoring sass into Styled-Components based React components
+- Updated dependencies, including React 16.0 and Enzyme 3.
+
+### Test Coverage: 3.45% ([0.6.0 Coverage Report])
+### Bundle Size: ~ 1.5 MB ([0.6.0 Bundle Size Report])
+### Production Build: ([0.6.0 Build])
+
 ## [0.5.0] - 2017-09-15
 ### Added
 - Improved dashboard support for the gm-fabric-go microservice metrics API
@@ -167,7 +184,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.5.0...v0.6.0
+[0.6.0 Coverage Report]: https://781-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.6.0 Bundle Size Report]: https://781-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.6.0 Build]: https://781-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.5.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.4.0...v0.5.0
 [0.5.0 Coverage Report]: https://703-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.5.0 Bundle Size Report]: https://703-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html

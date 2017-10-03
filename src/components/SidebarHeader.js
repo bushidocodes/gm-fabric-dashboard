@@ -9,7 +9,7 @@ import {
 } from "../style/styleVariables";
 import { contrastColor, spacingScale } from "../style/styleFunctions";
 
-const AppVersion = "0.5.0";
+const AppVersion = "0.6.0";
 const BrandName = "Fabric";
 
 const APP_HEADER_HEIGHT = spacingScale(4.25);
