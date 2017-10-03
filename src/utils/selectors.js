@@ -198,15 +198,12 @@ export const getSideBarContent = createSelector(getServices, services =>
  * @param {number} max - service.maximum
  * @returns {string} - "Down" || "Stable" || "Warning"
  */
-function computeState(count, min, max) {
-  if (count < min) {
+export function computeState(count, min, max) {
+  if (count === 0) {
     return "Down";
-  } else if (count > min && count < max) {
+  } else if (count >= min && count <= max) {
     return "Stable";
-  } else if (count >= max && max !== min) {
-    return "Warning";
   } else {
-    console.log("computeState did not match as expected");
-    return "Down";
+    return "Warning";
   }
 }
