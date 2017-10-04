@@ -64,7 +64,10 @@ export default function SectionCardsView({
         {headers.map((header, i) => (
           <GMServiceCardView key={header}>
             <SectionHeader>
-              <GMServiceHeader headerTitle={header} showStatusIcon />
+              <GMServiceHeader
+                headerTitle={header}
+                showStatusIcon={groupByAttribute === "State"}
+              />
             </SectionHeader>
             <SectionContent>
               <GMServiceCardCollection
