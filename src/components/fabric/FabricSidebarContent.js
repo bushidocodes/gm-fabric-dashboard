@@ -16,6 +16,7 @@ import {
   COLOR_HIGHLIGHT
 } from "../../style/styleVariables";
 import { contrastColor, spacingScale } from "../../style/styleFunctions";
+import { microserviceStatuses } from "../../utils/constants";
 
 import Collapse from "react-collapse";
 
@@ -68,11 +69,6 @@ class FabricSidebarContent extends Component {
 
   render() {
     const { services } = this.props;
-
-    // use hard-coded headers or pass them down?
-    // using hard-coded headers for now as they are fixed
-    const microserviceStatuses = ["STABLE", "WARNING", "DOWN"];
-
     return (
       <ServicesActive>
         <Header onClick={this.toggleStack}>

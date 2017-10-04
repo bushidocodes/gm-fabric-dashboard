@@ -7,6 +7,7 @@ import {
 } from "../../style/styleVariables";
 import { edgeColor } from "../../style/styleFunctions";
 import _ from "lodash";
+import { microserviceStatuses } from "../../utils/constants";
 
 import GMServiceHeader from "./GMServiceHeader";
 
@@ -52,12 +53,11 @@ export default function SectionCardsView({
 }) {
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
-    const headers = Object.keys(dataGroupedByHeader);
-
-    // sort using lodash ._orderBy function
-    // sortByAttribute => 'Name' || 'State'
-    // pass 'sortByAttribute' as the sortkey
-    // _.orderBy(collection, [iteratees=[_.identity]], [orders])
+    // If we are grouping by state, we always want to group our services in the order "Down, Warning, Stable"
+    const headers =
+      groupByAttribute === "State"
+        ? microserviceStatuses
+        : Object.keys(dataGroupedByHeader);
 
     return (
       <div>

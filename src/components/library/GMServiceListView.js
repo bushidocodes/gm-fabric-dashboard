@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import _ from "lodash";
+import { microserviceStatuses } from "../../utils/constants";
 
 import styled from "styled-components";
 
@@ -49,7 +50,12 @@ export default function GMServiceListView({
   // get unique headers
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
-    const headers = Object.keys(dataGroupedByHeader);
+    // If we are grouping by state, we always want to group our services in the order "Down, Warning, Stable"
+    const headers =
+      groupByAttribute === "State"
+        ? microserviceStatuses
+        : Object.keys(dataGroupedByHeader);
+
     return (
       <div>
         {headers.map((header, i) => (
