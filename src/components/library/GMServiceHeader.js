@@ -4,23 +4,27 @@ import StatusIcon from "./StatusIcon";
 
 import styled from "styled-components";
 import ServicesIcon from "../../images/icons/services.svg";
+import { FONT_SIZE_LG } from "../../style/styleVariables";
+import { spacingScale } from "../../style/styleFunctions";
 
 const Heading = styled.div`
-  font-size: 1.5em;
+  font-size: ${FONT_SIZE_LG};
   text-align: left;
-  color: gray;
   vertical-align: text-bottom;
-  padding: 0 0 0 0px;
-  height: 40px;
+  padding: 0;
+  height: ${spacingScale(5)};
+  display: flex;
+  align-items: center;
 `;
 
 const IconWrapper = styled.div`
-  display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: ${spacingScale(3)};
+  height: ${spacingScale(3)};
+  position: relative;
+  top: -4px;
 `;
 
-const HeaderTitle = styled.span`padding: 0 0 0 10px;`;
+const HeaderTitle = styled.span`margin-left: ${spacingScale(1)};`;
 
 GMServiceHeader.propTypes = {
   headerTitle: PropTypes.string.isRequired,

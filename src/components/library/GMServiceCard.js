@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import IndicatorIcon from "./IndicatorIcon";
 import { mapStatusToColor } from "../../style/styleFunctions";
+import {
+  BORDER_RADIUS_BASE,
+  PADDING_BASE,
+  FONT_SIZE_BASE,
+  FONT_SIZE_SM
+} from "../../style/styleVariables";
 
 import styled from "styled-components";
 
@@ -10,10 +16,13 @@ const CardContainer = styled.div`
   background-color: ${props => props.cardBackgroundColor};
   border: 1px solid ${props => props.cardBorderColor};
   border-bottom-color: ${props => props.cardBorderBottomColor};
+  border-radius: ${BORDER_RADIUS_BASE};
   width: ${props => props.width};
   height: ${props => props.height};
-  margin: 5px;
-  padding: 15px;
+  margin: ${parseInt(PADDING_BASE, 10) / 2}px;
+  padding: ${parseInt(PADDING_BASE, 10) * 1.5}px
+    ${parseInt(PADDING_BASE, 10) * 1.5}px ${parseInt(PADDING_BASE, 10)}px;
+  font-size: ${FONT_SIZE_SM};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,7 +30,7 @@ const CardContainer = styled.div`
 
 const Title = styled.div`
   text-align: left;
-  font-size: 1.2em;
+  font-size: ${FONT_SIZE_BASE};
 `;
 
 const Version = styled.div`
@@ -91,7 +100,7 @@ export default function GMServiceCard({
     case "Stable":
     default:
       cardBackgroundColor = "white";
-      cardBorderColor = "lightgray";
+      cardBorderColor = "rgba(0,0,0,.05)";
       cardBorderBottomColor = baseColor;
       cardFontColor = baseColor;
   }

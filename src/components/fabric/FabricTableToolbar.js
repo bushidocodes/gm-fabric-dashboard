@@ -8,9 +8,9 @@ import {
 } from "../library/GMTableToolbar";
 import {
   StyledButton,
-  RoundedLeft,
-  RoundedRight,
-  SecondaryText
+  ButtonRoundedLeft,
+  ButtonRoundedRight,
+  ButtonSecondaryText
 } from "../library/GMButtons";
 import SearchInput from "../library/GMSearchInput";
 import TriangleDown from "../library/TriangleDown";
@@ -53,26 +53,26 @@ export default class FabricTableToolbar extends Component {
           </form>
         </ToolbarLeft>
         <ToolbarCenter>
-          <RoundedLeft
+          <ButtonRoundedLeft
             selected={displayType === "Card"}
             onClick={() => setDisplayType("Card")}
           >
             <img alt="Select Card View" style={{ height: "22px" }} src={Card} />
             <span>Cards</span>
-          </RoundedLeft>
-          <RoundedRight
+          </ButtonRoundedLeft>
+          <ButtonRoundedRight
             selected={displayType === "Table"}
             onClick={() => setDisplayType("Table")}
           >
             <img alt="Select List View" style={{ height: "22px" }} src={List} />
             <span>Table</span>
-          </RoundedRight>
+          </ButtonRoundedRight>
         </ToolbarCenter>
         <ToolbarRight>
           <div className="uk-button-group">
             <StyledButton>
               <span>Group</span>
-              <SecondaryText>{groupByAttribute}</SecondaryText>
+              <ButtonSecondaryText>{groupByAttribute}</ButtonSecondaryText>
               <TriangleDown />
             </StyledButton>
             <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
@@ -87,7 +87,7 @@ export default class FabricTableToolbar extends Component {
           <div className="uk-button-group">
             <StyledButton>
               <span>Sort</span>
-              <SecondaryText>{sortByAttribute}</SecondaryText>
+              <ButtonSecondaryText>{sortByAttribute}</ButtonSecondaryText>
               <TriangleDown />
             </StyledButton>
             <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">

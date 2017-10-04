@@ -10,29 +10,69 @@ import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import StatusIcon from "../library/StatusIcon";
 import { HeaderLeft, HeaderRight } from "./FabricSidebarContent";
-import { mapStatusToColor } from "../../style/styleFunctions";
+import {
+  FONT_SIZE_SM,
+  COLOR_SIDEBAR_BACKGROUND
+} from "../../style/styleVariables";
+import {
+  mapStatusToColor,
+  spacingScale,
+  contrastColor
+} from "../../style/styleFunctions";
 
 const SectionHeader = styled.div`
-  color: white;
+  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.35)
+    .hsl()
+    .string()};
   display: flex;
-  background-color: #333333;
+  font-size: ${FONT_SIZE_SM};
+  letter-spacing: 0.06em;
   align-items: center;
+  font-weight: 700;
   justify-content: space-between;
-  border-bottom-width: 1px;
-  border-radius: 5px;
-  border: 1px solid #333333;
-  border-bottom-color: ${props => props.borderBottomColor};
+  padding: ${spacingScale(0.25)} 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.65)
+        .hsl()
+        .string()},
+      ${props => props.borderBottomColor}
+    );
+  }
+
+  &:hover {
+    color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.1)
+      .hsl()
+      .string()};
+    cursor: pointer;
+  }
+  &:active {
+    color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0)
+      .hsl()
+      .string()};
+  }
 `;
 
 const IconWrapper = styled.div`
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
+  width: ${spacingScale(2)};
+  height: ${spacingScale(2)};
+  margin-left: ${spacingScale(0.75)};
+  margin-right: ${spacingScale(0.75)};
+  position: relative;
+  top: -2px;
 `;
 const ItemCount = styled.span`
-  margin: 0 5px 0 10px;
+  margin: 0 ${spacingScale(0.5)} 0 ${spacingScale(1)};
   text-align: bottom;
 `;
 

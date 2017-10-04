@@ -1,6 +1,11 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import GMServiceCardCollection from "./GMServiceCardCollection";
+import {
+  COLOR_CONTENT_BACKGROUND,
+  PADDING_BASE
+} from "../../style/styleVariables";
+import { edgeColor } from "../../style/styleFunctions";
 import _ from "lodash";
 
 import GMServiceHeader from "./GMServiceHeader";
@@ -11,18 +16,20 @@ import styled from "styled-components";
 const GMServiceCardView = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
+  &:first-of-type {
+    border-top: 0;
+  }
 `;
 
-const SectionHeader = styled.div`display: flex;`;
-const SectionContent = styled.div`display: flex;`;
-
-const HorizontalRule = styled.hr`
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  color: #f6f6f6;
+const SectionHeader = styled.div`
+  display: flex;
+  padding: ${PADDING_BASE} ${parseInt(PADDING_BASE, 10) * 2}px 0;
+`;
+const SectionContent = styled.div`
+  display: flex;
+  padding: 0 ${parseInt(PADDING_BASE, 10) * 2}px
+    ${parseInt(PADDING_BASE, 10) * 3}px;
 `;
 
 // Array of { headerTitle, name, version, docsLink, state }
@@ -68,7 +75,6 @@ export default function SectionCardsView({
                 )}
               />
             </SectionContent>
-            {i !== headers.length - 1 && <HorizontalRule />}
           </GMServiceCardView>
         ))}
       </div>

@@ -8,6 +8,14 @@ import TriangleDown from "../library/TriangleDown";
 import IndicatorIcon from "../library/IndicatorIcon";
 
 import { getSideBarContent } from "../../utils/selectors";
+import {
+  COLOR_SIDEBAR_BACKGROUND,
+  BORDER_RADIUS_BASE,
+  FONT_SIZE_BASE,
+  FONT_SIZE_SM,
+  COLOR_HIGHLIGHT
+} from "../../style/styleVariables";
+import { contrastColor, spacingScale } from "../../style/styleFunctions";
 
 import Collapse from "react-collapse";
 
@@ -16,9 +24,15 @@ import styled from "styled-components";
 // styled components
 
 const Services = styled.div`
-  padding: 10px 0 10px;
-  background-color: #666666;
-  border-radius: 5px;
+  margin: 2px;
+  padding: ${spacingScale(0.75)} 0 ${spacingScale(0.5)};
+  min-height: ${spacingScale(4.25)};
+  background-color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.71).string()};
+  border-radius: ${BORDER_RADIUS_BASE};
+`;
+
+const ServicesActive = Services.extend`
+  box-shadow: -1px 0 0 0 ${COLOR_HIGHLIGHT.hsl().string()};
 `;
 
 export const Header = styled.div`
@@ -26,19 +40,22 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: ${FONT_SIZE_BASE};
 `;
 
 export const HeaderLeft = styled.span`min-width: 75%;`;
 
 export const HeaderRight = styled.span`
   text-align: right;
-  margin: 0 10px 0 0;
+  margin: 0 ${spacingScale(1)} 0 0;
   justify-content: flex-end;
+  font-size: ${FONT_SIZE_SM};
+  opacity: 0.8;
 `;
 
-const Section = styled.div`margin: 10px 0 10px;`;
+const Section = styled.div`margin: ${spacingScale(1)} 0 0;`;
 
-const HeaderIcon = styled.span`margin: 0 10px 0 10px;`;
+const HeaderIcon = styled.span`margin: 0 ${spacingScale(1)};`;
 
 class FabricSidebarContent extends Component {
   state = {
@@ -57,7 +74,7 @@ class FabricSidebarContent extends Component {
     const microserviceStatuses = ["STABLE", "WARNING", "DOWN"];
 
     return (
-      <Services>
+      <ServicesActive>
         <Header onClick={this.toggleStack}>
           <HeaderLeft>
             <HeaderIcon>
@@ -87,7 +104,7 @@ class FabricSidebarContent extends Component {
             </Section>
           ))}
         </Collapse>
-      </Services>
+      </ServicesActive>
     );
   }
 }

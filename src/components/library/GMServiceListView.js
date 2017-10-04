@@ -6,32 +6,33 @@ import styled from "styled-components";
 
 import GMServiceList from "./GMServiceList";
 import GMServiceHeader from "./GMServiceHeader";
+import { COLOR_CONTENT_BACKGROUND } from "../../style/styleVariables";
+import { edgeColor, spacingScale } from "../../style/styleFunctions";
 
 // styled components
 const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5px 10px 20px 10px;
+  margin: ${spacingScale(1)} 0 0;
+  border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
   flex-wrap: nowrap;
-`;
 
-const SectionContent = styled.div`
-  display: flex;
-  flex-direction: column;
+  &:first-of-type {
+    border-top: 0;
+  }
 `;
 
 const SectionHeader = styled.div`
   width: 100%;
   display: flex;
-  margin: 0 0 10px 0;
+  margin: 0;
+  padding: 0 ${spacingScale(2)};
 `;
 
-const HorizontalRule = styled.hr`
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  color: #f6f6f6;
+const SectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 ${spacingScale(1)};
 `;
 
 GMServiceListView.propTypes = {
@@ -65,7 +66,6 @@ export default function GMServiceListView({
                 )}
               />
             </SectionContent>
-            {i !== headers.length - 1 && <HorizontalRule />}
           </SectionContainer>
         ))}
       </div>

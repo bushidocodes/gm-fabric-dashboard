@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 import StatusIcon from "./StatusIcon";
 
 import styled from "styled-components";
+import { COLOR_HIGHLIGHT, FONT_SIZE_XS } from "../../style/styleVariables";
+import { spacingScale } from "../../style/styleFunctions";
 
 const Line = styled.div`
   display: flex;
-  height: 30px;
+  height: ${spacingScale(3)};
   flex-direction: row;
   width: 100%;
+  padding: 0 ${spacingScale(2)};
 `;
 
 const LineLeft = styled.div`
@@ -23,20 +26,25 @@ const LineRight = styled.div`
   flex: 0 1 auto;
   text-align: right;
 `;
+
 const IconWrapper = styled.div`
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  position: relative;
+  top: -3px;
+  margin-right: ${spacingScale(1)};
+  width: ${spacingScale(3)};
+  height: ${spacingScale(3)};
 `;
+
 const ItemName = styled.span`
   display: inline-flex;
-  margin: 0 0 0 5px;
+  margin-right: ${spacingScale(1)};
   align-items: center;
 `;
 
 const ItemVersion = styled.span`
-  font-size: 0.7em;
-  margin: 0 0 0 5px;
+  font-size: ${FONT_SIZE_XS};
+  margin: 0 0 0 ${spacingScale(0.25)};
   color: gray;
   display: inline-flex;
   align-items: center;
@@ -47,13 +55,7 @@ const ServiceLink = styled.div`
   cursor: pointer;
   text-decoration: none;
   color: black;
-  &:focus {
-    outline: none;
-    background-color: #eee;
-  }
-  &:hover {
-    background-color: #eee;
-  }
+  outline: none;
 `;
 
 const DocLink = styled.a`
@@ -62,9 +64,26 @@ const DocLink = styled.a`
   color: black;
 `;
 
-const InstanceList = styled.ul`margin-left: 15px;`;
+const InstanceList = styled.ul`margin: 0 0 0 ${spacingScale(2)};`;
 
-const InstanceListItem = styled.li`list-style-type: none;`;
+const InstanceListItem = styled.li`
+  list-style-type: none;
+  a {
+    opacity: 0.8;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: ${COLOR_HIGHLIGHT.hsl()
+        .darken(0.2)
+        .string()};
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+`;
 
 export default class GMServiceListItem extends Component {
   static propTypes = {

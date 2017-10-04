@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 import GMServiceListItem from "./GMServiceListItem";
+import { spacingScale } from "../../style/styleFunctions";
 
 import styled from "styled-components";
 /**
@@ -16,8 +17,12 @@ GMServiceList.propTypes = {
 const SectionItems = styled.div`
   width: 100%;
   display: flex;
-  margin: 0 0 10px 0;
+  margin: -${spacingScale(0.5)} 0 0;
   flex-direction: column;
+
+  > div {
+    margin: ${spacingScale(0.5)} 0;
+  }
 `;
 
 export default function GMServiceList({ items }) {

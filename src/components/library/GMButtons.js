@@ -1,11 +1,18 @@
 import styled from "styled-components";
+import {
+  BORDER_RADIUS_BASE,
+  FONT_SIZE_BASE,
+  FONT_SIZE_SM
+} from "../../style/styleVariables";
+import { spacingScale } from "../../style/styleFunctions";
 
 export const StyledButton = styled.button`
   background-color: ${props => (props.selected ? "lightgray" : "white")};
   box-sizing: border-box;
   user-select: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: ${FONT_SIZE_BASE};
+  border-radius: ${BORDER_RADIUS_BASE};
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -16,29 +23,34 @@ export const StyledButton = styled.button`
   align-items: center;
   cursor: pointer;
   overflow: hidden;
+
+  & + & {
+    margin-left: ${spacingScale(0.5)};
+  }
 `;
 
-export const RoundedLeft = StyledButton.extend`
+export const ButtonRoundedLeft = StyledButton.extend`
   border: 1px solid;
   border-color: #d6d7db;
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  padding-left: 20px;
-  padding-right: 20px;
+  border-top-left-radius: ${BORDER_RADIUS_BASE};
+  border-bottom-left-radius: ${BORDER_RADIUS_BASE};
+  padding-left: ${spacingScale(1)};
+  padding-right: ${spacingScale(1)};
 `;
 
-export const RoundedRight = StyledButton.extend`
+export const ButtonRoundedRight = StyledButton.extend`
   border: 1px solid;
   border-color: #d6d7db;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-  padding-left: 20px;
-  padding-right: 20px;
+  border-top-right-radius: ${BORDER_RADIUS_BASE};
+  border-bottom-right-radius: ${BORDER_RADIUS_BASE};
+  padding-left: ${spacingScale(1)};
+  padding-right: ${spacingScale(1)};
 `;
 
-export const SecondaryText = styled.span`
-  margin-left: 5px;
-  margin-top: 3px;
+export const ButtonSecondaryText = styled.span`
+  margin-left: ${spacingScale(0.5)};
   opacity: 0.6;
-  font-size: 12px;
+  font-size: ${FONT_SIZE_SM};
 `;
+
+export const ButtonGroup = styled.div``;

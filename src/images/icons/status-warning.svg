@@ -1,0 +1,40 @@
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M0,0 L26,0 L26,27 L0,27 L0,0 Z M11.5,9 L11,10.0262801 L11.5,14 L11,14.5 L11,17 L12,18 L14,18 L15,17 L15,14.5 L14.5,14 L15,10.0262801 L14.5,9 L11.5,9 Z" id="path-1"></path>
+        <path d="M13.8468583,5.36325889 L21.9902272,18.4723234 C22.2816549,18.9414591 22.1375941,19.5580176 21.6684584,19.8494453 C21.5100456,19.9478516 21.3272715,20 21.1407818,20 L4.80424764,20 C4.25196289,20 3.80424764,19.5522847 3.80424764,19 C3.80424764,18.8125803 3.85691709,18.6289327 3.95624934,18.4700011 L12.1494146,5.36093656 C12.442125,4.89260003 13.0590754,4.75022687 13.5274119,5.0429372 C13.6569646,5.12390762 13.7662427,5.23348515 13.8468583,5.36325889 Z" id="path-3"></path>
+        <path d="M13.8468583,5.36325889 L21.9902272,18.4723234 C22.2816549,18.9414591 22.1375941,19.5580176 21.6684584,19.8494453 C21.5100456,19.9478516 21.3272715,20 21.1407818,20 L4.80424764,20 C4.25196289,20 3.80424764,19.5522847 3.80424764,19 C3.80424764,18.8125803 3.85691709,18.6289327 3.95624934,18.4700011 L12.1494146,5.36093656 C12.442125,4.89260003 13.0590754,4.75022687 13.5274119,5.0429372 C13.6569646,5.12390762 13.7662427,5.23348515 13.8468583,5.36325889 Z M12.997413,5.8909355 L4.80424764,19 L21.1407818,19 L12.997413,5.8909355 Z" id="path-5"></path>
+        <path d="M12,15 L14,15 L14,17 L12,17 L12,15 Z M12,10 L14,10 L14,12.0070282 L13.5,14 L12.5,14 L12,12.0070282 L12,10 Z" id="path-7"></path>
+    </defs>
+    <g id="Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Glyphs-/-State-/-Warning">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask"></g>
+            <g id="Glyphs-/-Frame-/-Triangle-/-B" mask="url(#mask-2)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Background" fill-rule="nonzero"></g>
+                <g id="Colors-/-Brand-/-Orange" opacity="0.198369565" mask="url(#mask-4)" fill-rule="evenodd" fill="#F5A623">
+                    <rect id="Color" x="0" y="0" width="26" height="27"></rect>
+                </g>
+                <mask id="mask-6" fill="white">
+                    <use xlink:href="#path-5"></use>
+                </mask>
+                <g id="Stroke" fill-rule="nonzero"></g>
+                <g id="Colors-/-Brand-/-Orange" mask="url(#mask-6)" fill-rule="evenodd" fill="#F5A623">
+                    <rect id="Color" x="0" y="0" width="26" height="27"></rect>
+                </g>
+            </g>
+            <mask id="mask-8" fill="white">
+                <use xlink:href="#path-7"></use>
+            </mask>
+            <g id="Combined-Shape"></g>
+            <g id="Colors-/-Brand-/-Orange" mask="url(#mask-8)" fill="#F5A623">
+                <rect id="Color" x="0" y="0" width="26" height="27"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
