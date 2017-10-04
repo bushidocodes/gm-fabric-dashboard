@@ -1,5 +1,6 @@
 "use strict";
 
+require("babel-polyfill");
 const autoprefixer = require("autoprefixer");
 const path = require("path");
 const webpack = require("webpack");
@@ -35,6 +36,8 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   entry: [
+    // require "babel-polyfill" at the top of the entry point -- resolves object.assign
+    "babel-polyfill",
     // Include an alternative client for WebpackDevServer. A client's job is to
     // connect to WebpackDevServer by a socket and get notified about changes.
     // When you save a file, the client will either apply hot updates (in case
