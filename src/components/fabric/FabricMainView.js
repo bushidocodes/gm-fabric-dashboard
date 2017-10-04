@@ -11,6 +11,7 @@ FabricMainView.propTypes = {
   sortByAttribute: PropTypes.string.isRequired
 };
 
+// receive filtered 'services' from FabricGrid
 export default function FabricMainView({
   displayType,
   groupByAttribute,

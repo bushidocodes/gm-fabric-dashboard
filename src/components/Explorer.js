@@ -137,8 +137,8 @@ class Explorer extends Component {
   }
 
   /**
-   * click handler for selecting an Item in the Inspector component 
-   * @param {Object} clicked 
+   * click handler for selecting an Item in the Inspector component
+   * @param {Object} clicked
    * @memberof Explorer
    */
   onClick(clicked) {

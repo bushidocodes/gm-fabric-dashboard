@@ -101,5 +101,5 @@ function mapStateToProps(state) {
 export default withRouter(connect(mapStateToProps)(FabricSidebarContent));
 
 FabricSidebarContent.propTypes = {
-  services: PropTypes.object
+  services: PropTypes.array
 };

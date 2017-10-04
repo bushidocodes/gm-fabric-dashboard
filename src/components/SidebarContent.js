@@ -11,7 +11,7 @@ import { getSideBarContent } from "../utils/selectors";
 // 'new' sidebarContent that routes to FabricSidebarContent || InstanceSidebarContent
 
 SidebarContent.propTypes = {
-  services: PropTypes.object
+  services: PropTypes.array
 };
 
 function SidebarContent({ services }) {
