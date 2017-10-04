@@ -93,7 +93,7 @@ class FabricSidebarContent extends Component {
           }}
         >
           {microserviceStatuses.map(status => (
-            <Section>
+            <Section key={status}>
               <FabricSidebarContentSection
                 status={status}
                 services={services.filter(

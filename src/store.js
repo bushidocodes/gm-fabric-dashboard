@@ -28,8 +28,8 @@ import defaultGoDashboards from "./json/go/dashboards.json";
 
 /**
  * Async Jumpstate Effect that instructs AJAX Worker to fetch services from the Fabric Server
- * @param {any} [fabricServer=getState().settings.fabricServer] 
- * @returns 
+ * @param {any} [fabricServer=getState().settings.fabricServer]
+ * @returns
  */
 function fetchServicesEffect(fabricServer = getState().settings.fabricServer) {
   if (!fabricServer) {
@@ -49,7 +49,7 @@ Effect("fetchServices", fetchServicesEffect);
  * Async Jumpstate Effect that handles successful fetches of services from the Fabric Server
  * Resets the failure counter and updates redux with the current services
  * @param {Object} services - Results object containing services
- * @param {number} [servicesPollingFailures=getState().settings.servicesPollingFailures] 
+ * @param {number} [servicesPollingFailures=getState().settings.servicesPollingFailures]
  */
 function fetchServicesSuccessEffect(
   services,
@@ -192,7 +192,7 @@ Effect("fetchMetrics", fetchMetricsEffect);
  * Async Jumpstate Effect that instructs the AJAX worker to fetchMetricsWithoutServer and calls success or failure actions
  * depending on if the PromiseWorker resolves or rejects
  * @param {string} endpoint - a string containing the target URL of the metrics endpoint
- * @returns 
+ * @returns
  */
 function fetchMetricsWithoutServerEffect(endpoint) {
   if (!endpoint) return;
@@ -210,8 +210,8 @@ Effect("fetchMetricsWithoutServer", fetchMetricsWithoutServerEffect);
 /**
  * Async Jumpstate Effect that instructs the AJAX worker to fetchMetricsWithServer and calls success or failure actions
  * depending on if the PromiseWorker resolves or rejects the promise
- * @param {string} [instanceID=getState().settings.instanceID] 
- * @returns 
+ * @param {string} [instanceID=getState().settings.instanceID]
+ * @returns
  */
 function fetchMetricsWithServerEffect(
   instanceID = getState().settings.instanceID
@@ -236,8 +236,8 @@ Effect("fetchMetricsWithServer", fetchMetricsWithServerEffect);
 /**
  * Async Jumpstate Effect that handles successful fetches of metrics from the Fabric Server
  * Resets the failure counter and updates redux with the current metrics object
- * 
- * @param {Object} metrics 
+ *
+ * @param {Object} metrics
  */
 function fetchMetricsSuccessEffect(metrics) {
   if (getState().settings.metricsPollingFailures > 0) {
@@ -250,7 +250,7 @@ Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
 /**
  * Action that handles fetch thread errors, notifying the user via a popup and the console
  * and incrementing a counter that disables the polling interval on repeat failures.
- * @param {Object} err 
+ * @param {Object} err
  */
 function fetchMetricsFailureHandler(err) {
   const metricsPollingFailures = getState().settings.metricsPollingFailures;
@@ -278,8 +278,8 @@ Effect("fetchMetricsFailure", fetchMetricsFailureHandler);
 
 /**
  * Action that fetches threads information (JVM) and stores in Redux
- * @param {string} [endpoint=getThreadsEndpoint()] 
- * @returns 
+ * @param {string} [endpoint=getThreadsEndpoint()]
+ * @returns
  */
 function fetchThreadsEffect(endpoint = getThreadsEndpoint()) {
   if (!endpoint) return;
@@ -295,7 +295,7 @@ Effect("fetchThreads", fetchThreadsEffect);
 
 /**
  * Action that handles fetch thread errors, notifying the user via a popup and the console
- * @param {Object} err 
+ * @param {Object} err
  */
 function fetchThreadsFailureEffect(err) {
   notification("Fetching Threads Data failed", { status: "danger" });
@@ -305,7 +305,7 @@ Effect("fetchThreadsFailure", fetchThreadsFailureEffect);
 
 /**
  * Action that checks if we have a fabric server and calls the appropriate polling function
- * @param {any} args 
+ * @param {any} args
  */
 function startPollingInstanceEffect(args) {
   Actions.setInstancePolling(true);
@@ -323,7 +323,7 @@ Effect("startPollingInstance", startPollingInstanceEffect);
  * @param {Object} [{
  *     endpoint = getState().settings.metricsEndpoint,
  *     interval = getState().settings.instancePollingInterval
- *   }={}] 
+ *   }={}]
  */
 function startPollingInstanceWithoutServerEffect(
   {
@@ -355,7 +355,7 @@ Effect(
  * @param {Object} [{
  *     instanceID = getState().settings.selectedInstance,
  *     interval = getState().settings.instancePollingInterval
- *   }={}] 
+ *   }={}]
  */
 function startPollingInstanceWithServerEffect(
   {
@@ -390,8 +390,8 @@ function stopPollingInstanceEffect() {
 Effect("stopPollingInstance", stopPollingInstanceEffect);
 
 /**
- * Async Jumpstate effect used to change the polling interval 
- * @param {number} interval 
+ * Async Jumpstate effect used to change the polling interval
+ * @param {number} interval
  */
 function changeInstancePollingIntervalEffect(interval) {
   Actions.stopPollingInstance();
@@ -476,8 +476,8 @@ Effect("changeInstancePollingInterval", changeInstancePollingIntervalEffect);
  * This effect is a temporary alternative to directly load the dashboard JSON without use of the
  * localStorage worker. The intended use of this Effect is to disable local forage functionality
  * during the initial release
- * @param {string} [runtime=getRuntime()] 
- * @returns 
+ * @param {string} [runtime=getRuntime()]
+ * @returns
  */
 function loadDashboardsFromJSONEffect(runtime = getRuntime()) {
   // Check runtime and pass the runtime appropriate JSON file to Actions.updateDashboardsRedux
