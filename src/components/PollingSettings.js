@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
+import PollIcon from "../images/icons/poll.svg";
 import Button from "./library/Button.js";
 
 /** 
@@ -33,10 +34,9 @@ class PollingSettings extends Component {
     return (
       <section className="layout-section settings-group-polling">
         <header>
-          <span
-            className="section-icon"
-            data-uk-icon={`icon: grid; ratio: 1`}
-          />
+          <span className="section-icon">
+            <img src={PollIcon} alt="" />
+          </span>
           <h3 className="section-title">{title}</h3>
         </header>
         <div className="section-content">

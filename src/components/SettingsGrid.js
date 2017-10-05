@@ -12,6 +12,7 @@ import Readout from "./library/Readout.js";
 import Button from "./library/Button.js";
 import ReadoutItem from "./library/ReadoutItem.js";
 import LayoutSection from "./library/LayoutSection";
+import TapeIcon from "../images/icons/tape.svg";
 
 import "react-input-range/lib/css/index.css";
 
@@ -61,6 +62,7 @@ function SettingsGrid({
 
       <LayoutSection
         className={"settings-group-metrics-cache"}
+        icon={TapeIcon}
         title={"Metrics Cache"}
       >
         <Readout align={"center"}>
