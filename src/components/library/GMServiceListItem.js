@@ -52,7 +52,7 @@ const ItemVersion = styled.span`
 
 const ServiceLink = styled.div`
   width: 100%;
-  cursor: pointer;
+  cursor: ${props => props.cursor};
   text-decoration: none;
   color: black;
   outline: none;
@@ -109,6 +109,7 @@ export default class GMServiceListItem extends Component {
         <Line>
           <LineLeft>
             <ServiceLink
+              cursor={instances.length > 0 ? "pointer" : "not-allowed"}
               onClick={instances.length > 0 ? this.toggleDrawer : () => {}}
               onKeyDown={evt => {
                 if (
