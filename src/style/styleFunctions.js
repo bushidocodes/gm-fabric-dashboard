@@ -77,7 +77,7 @@ export function edgeColor(backgroundColor, contrast = 0.08) {
  * Takes string representation of the status of a microservice and returns corresponding color * @param {string} state
  * @returns {Object} // a Color object
  */
-export function mapStatusToColor(status) {
+export function mapStatusToColor(status = "") {
   switch (status.toLowerCase()) {
     case "warning":
       return COLOR_WARNING; // color orange-tan

@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import GMServiceCardView from "../library/GMServiceCardView";
 import GMServiceListView from "../library/GMServiceListView";
-import { computeState } from "../../utils/selectors";
+import { computeStatus } from "../../utils/selectors";
 
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,
@@ -25,7 +25,7 @@ export default function FabricMainView({
       name: service.name,
       version: service.version,
       docsLink: service.documentation,
-      state: computeState(
+      status: computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum
@@ -55,8 +55,8 @@ export default function FabricMainView({
 
 function computeHeaderTitle(groupByAttribute, service) {
   switch (groupByAttribute) {
-    case "State":
-      return computeState(
+    case "Status":
+      return computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum

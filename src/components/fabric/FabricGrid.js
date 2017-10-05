@@ -20,7 +20,7 @@ class FabricGrid extends Component {
     super(props);
     this.state = {
       query: "",
-      groupByAttribute: "State",
+      groupByAttribute: "Status",
       sortByAttribute: "Name",
       displayType: "Card"
     };

@@ -78,7 +78,7 @@ export default class FabricTableToolbar extends Component {
             <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
               <ul className="uk-nav uk-dropdown-nav">
                 <li onClick={() => setGroupByAttribute("Owner")}>Owner</li>
-                <li onClick={() => setGroupByAttribute("State")}>State</li>
+                <li onClick={() => setGroupByAttribute("Status")}>Status</li>
                 <li onClick={() => setGroupByAttribute("None")}>None</li>
               </ul>
             </div>
@@ -93,7 +93,7 @@ export default class FabricTableToolbar extends Component {
             <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
               <ul className="uk-nav uk-dropdown-nav">
                 <li onClick={() => setSortByAttribute("Name")}>Name</li>
-                <li onClick={() => setSortByAttribute("State")}>State</li>
+                <li onClick={() => setSortByAttribute("Status")}>Status</li>
               </ul>
             </div>
           </div>

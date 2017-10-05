@@ -93,10 +93,9 @@ class FabricSidebarContent extends Component {
             <Section key={status}>
               <FabricSidebarContentSection
                 status={status}
-                services={services.filter(
-                  service =>
-                    service.state.toLowerCase() === status.toLowerCase()
-                )}
+                services={services.filter(service => {
+                  return service.status.toLowerCase() === status.toLowerCase();
+                })}
               />
             </Section>
           ))}

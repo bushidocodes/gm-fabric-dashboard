@@ -182,7 +182,7 @@ export const getSideBarContent = createSelector(getServices, services =>
       name: service.name,
       version: service.version,
       docsLink: service.documentation,
-      state: computeState(
+      status: computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum
@@ -192,13 +192,13 @@ export const getSideBarContent = createSelector(getServices, services =>
 );
 
 /**
- * Computes and returns string representation of state for a service
+ * Computes and returns string representation of status for a service
  * @param {number} count  - service.instances.length (number of instances)
  * @param {number} min - service.minimum
  * @param {number} max - service.maximum
  * @returns {string} - "Down" || "Stable" || "Warning"
  */
-export function computeState(count, min, max) {
+export function computeStatus(count, min, max) {
   if (count === 0) {
     return "Down";
   } else if (count >= min && count <= max) {

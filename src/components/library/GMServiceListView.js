@@ -50,9 +50,9 @@ export default function GMServiceListView({
   // get unique headers
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
-    // If we are grouping by state, we always want to group our services in the order "Down, Warning, Stable"
+    // If we are grouping by status, we always want to group our services in the order "Down, Warning, Stable"
     const headers =
-      groupByAttribute === "State"
+      groupByAttribute === "Status"
         ? microserviceStatuses
         : Object.keys(dataGroupedByHeader);
 

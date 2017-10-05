@@ -33,12 +33,12 @@ const SectionContent = styled.div`
     ${parseInt(PADDING_BASE, 10) * 3}px;
 `;
 
-// Array of { headerTitle, name, version, docsLink, state }
+// Array of { headerTitle, name, version, docsLink, status }
 // headerTitle: Thing that we group by
 // name: Name of the service
 // version: Version of the service
 // docsLink: URL to the documentation
-// state: string equal to "Stable", "Warning", or "Down"
+// status: string equal to "Stable", "Warning", or "Down"
 SectionCardsView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,
   services: PropTypes.array.isRequired,
@@ -55,7 +55,7 @@ export default function SectionCardsView({
     const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
     // If we are grouping by state, we always want to group our services in the order "Down, Warning, Stable"
     const headers =
-      groupByAttribute === "State"
+      groupByAttribute === "Status"
         ? microserviceStatuses
         : Object.keys(dataGroupedByHeader);
 
@@ -66,7 +66,7 @@ export default function SectionCardsView({
             <SectionHeader>
               <GMServiceHeader
                 headerTitle={header}
-                showStatusIcon={groupByAttribute === "State"}
+                showStatusIcon={groupByAttribute === "Status"}
               />
             </SectionHeader>
             <SectionContent>
