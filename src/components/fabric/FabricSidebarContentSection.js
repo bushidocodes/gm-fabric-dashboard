@@ -21,7 +21,7 @@ import {
 } from "../../style/styleFunctions";
 
 const SectionHeader = styled.div`
-  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.35)
+  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.2)
     .hsl()
     .string()};
   display: flex;
@@ -29,7 +29,7 @@ const SectionHeader = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.06em;
   align-items: center;
-  font-weight: 700;
+  font-weight: 800;
   justify-content: space-between;
   padding: ${spacingScale(0.25)} 0;
   position: relative;
@@ -65,10 +65,10 @@ const SectionHeader = styled.div`
 
 const IconWrapper = styled.div`
   display: inline-block;
-  width: ${spacingScale(2)};
-  height: ${spacingScale(2)};
-  margin-left: ${spacingScale(0.75)};
-  margin-right: ${spacingScale(0.75)};
+  width: ${spacingScale(2.625)};
+  height: ${spacingScale(2.625)};
+  margin-left: ${spacingScale(0.5)};
+  margin-right: ${spacingScale(0.5)};
   position: relative;
   top: -2px;
 `;
