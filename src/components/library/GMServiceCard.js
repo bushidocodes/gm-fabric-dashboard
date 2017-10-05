@@ -5,14 +5,23 @@ import {
   BORDER_RADIUS_BASE,
   PADDING_BASE,
   FONT_SIZE_BASE,
-  FONT_SIZE_SM
+  FONT_SIZE_SM,
+  FONT_STACK_DATA
 } from "../../style/styleVariables";
+import Color from "color";
 
 import styled from "styled-components";
 
 const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
-  background-color: ${props => props.cardBackgroundColor};
+  background-image: linear-gradient(
+    ${props => Color(props.cardBackgroundColor).string()},
+    ${props =>
+      Color(props.cardBackgroundColor)
+        .hsl()
+        .rotate(-10)
+        .string()}
+  );
   border: 1px solid ${props => props.cardBorderColor};
   border-bottom-color: ${props => props.cardBorderBottomColor};
   border-radius: ${BORDER_RADIUS_BASE};
@@ -30,11 +39,14 @@ const CardContainer = styled.div`
 const Title = styled.div`
   text-align: left;
   font-size: ${FONT_SIZE_BASE};
+  font-family: ${FONT_STACK_DATA};
+  font-weight: ${props => props.cardFontWeight};
 `;
 
 const Version = styled.div`
   display: flex;
   align-items: flex-end;
+  font-weight: ${parseInt(props => props.cardFontWeight, 10) + 100};
 `;
 const Circle = styled.circle`
   cx: 10;
@@ -85,23 +97,29 @@ export default function GMServiceCard({
   let cardBackgroundColor,
     cardBorderColor,
     cardFontColor,
+    cardFontWeight,
     cardBorderBottomColor;
   const baseColor = mapStatusToColor(status).string();
   switch (status) {
     case "Down":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "white";
+      cardFontWeight = "500";
       break;
     case "Warning":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "black";
+      cardFontWeight = "400";
       break;
     case "Stable":
     default:
       cardBackgroundColor = "white";
       cardBorderColor = "rgba(0,0,0,.05)";
       cardBorderBottomColor = baseColor;
-      cardFontColor = baseColor;
+      cardFontWeight = "400";
+      cardFontColor = Color(baseColor)
+        .darken(0.2)
+        .string();
   }
   return (
     <CardContainer
@@ -113,9 +131,9 @@ export default function GMServiceCard({
       height={height}
     >
       <ServiceLink href={docsLink} cardFontColor={cardFontColor}>
-        <Title>{name}</Title>
+        <Title cardFontWeight={cardFontWeight}>{name}</Title>
       </ServiceLink>
-      <Version>
+      <Version cardFontWeight={cardFontWeight}>
         {version}
         {version &&
           docsLink && (
