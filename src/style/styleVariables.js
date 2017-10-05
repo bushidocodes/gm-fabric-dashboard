@@ -12,7 +12,7 @@ import SourceCodePro400 from "./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf"
 export const COLOR_BRAND_PRIMARY = Color("#0aab2a");
 export const COLOR_BRAND_SECONDARY = Color("#002e6e");
 
-export const COLOR_RED = Color("#d0021b");
+export const COLOR_RED = Color("#E4251A");
 export const COLOR_BLACK = Color("#000");
 export const COLOR_GREEN = Color("#0aab2a");
 export const COLOR_WHITE = Color("#fff");
@@ -20,7 +20,7 @@ export const COLOR_WHITE = Color("#fff");
 export const COLOR_HIGHLIGHT = COLOR_BRAND_PRIMARY;
 export const COLOR_SUCCESS = Color("#0aab2a");
 export const COLOR_DANGER = Color("red");
-export const COLOR_WARNING = Color("#f5a623");
+export const COLOR_WARNING = Color("#FAC60F");
 export const COLOR_INFO = Color("blue");
 
 // Theme Configuration
