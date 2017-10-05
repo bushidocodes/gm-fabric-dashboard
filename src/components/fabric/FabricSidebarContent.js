@@ -60,7 +60,7 @@ const HeaderIcon = styled.span`margin: 0 ${spacingScale(1)};`;
 
 class FabricSidebarContent extends Component {
   state = {
-    isOpen: false
+    isOpen: true
   };
 
   toggleStack = () => {
@@ -84,6 +84,7 @@ class FabricSidebarContent extends Component {
         </Header>
         <Collapse
           isOpened={this.state.isOpen}
+          hasNestedCollapse={true}
           onClick={evt => {
             evt.stopPropagation();
           }}
