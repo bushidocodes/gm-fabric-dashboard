@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 
 import FabricSidebarContentSection from "./FabricSidebarContentSection";
 import TriangleDown from "../library/TriangleDown";
-import IndicatorIcon from "../library/IndicatorIcon";
 
 import { getSideBarContent } from "../../utils/selectors";
 import {
@@ -21,6 +20,7 @@ import { microserviceStatuses } from "../../utils/constants";
 import Collapse from "react-collapse";
 
 import styled from "styled-components";
+import ServicesIcon from "../../images/icons/servicesWhite.svg";
 
 // styled components
 
@@ -74,7 +74,7 @@ class FabricSidebarContent extends Component {
         <Header onClick={this.toggleStack}>
           <HeaderLeft>
             <HeaderIcon>
-              <IndicatorIcon color={"white"} diameter={12} />
+              <img src={ServicesIcon} alt="" />
             </HeaderIcon>
             Services
           </HeaderLeft>
