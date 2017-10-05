@@ -15,8 +15,8 @@ IMAGEID=$(docker images deciphernow/gm-fabric-dashboard:latest --format "{{.ID}}
 # TODO: Accept optional versioned tag
 # docker tag 0566e9ea8bed deciphernow/gm-fabric-dashboard:0.6.0
 
-echo "Are you sure you want to publishing $IMAGEID to Docker Hub as latest"
-read -p "Are you sure? " -n 1 -r
+echo "Are you sure you want to publish $IMAGEID to Docker Hub as latest"
+read -p "Y/y or N/n? " -n 1 -r
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
   docker push deciphernow/gm-fabric-dashboard
 fi
