@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import IndicatorIcon from "./IndicatorIcon";
 import { mapStatusToColor } from "../../style/styleFunctions";
 import {
   BORDER_RADIUS_BASE,
@@ -41,8 +40,8 @@ const Circle = styled.circle`
   cx: 10;
   cy: 10;
   r: 1;
-  stroke: black;
-  fill: black;
+  stroke: ${props => props.color};
+  fill: ${props => props.color};
 `;
 
 const SvgContainer = styled.span`
@@ -122,13 +121,13 @@ export default function GMServiceCard({
           docsLink && (
             <SvgContainer>
               <svg>
-                <Circle />
+                <Circle color={cardFontColor} />
               </svg>
             </SvgContainer>
           )}
         {docsLink && (
           <DocsLink cardFontColor={cardFontColor} href={docsLink}>
-            <IndicatorIcon color={"gray"} diameter={10} />
+            Docs
           </DocsLink>
         )}
       </Version>
