@@ -26,6 +26,7 @@ const SectionHeader = styled.div`
     .string()};
   display: flex;
   font-size: ${FONT_SIZE_SM};
+  text-transform: uppercase;
   letter-spacing: 0.06em;
   align-items: center;
   font-weight: 700;
