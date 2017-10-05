@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
   user-select: none;
   font-weight: 600;
   font-size: ${FONT_SIZE_BASE};
-  border-radius: ${parseInt(BORDER_RADIUS_BASE - 1)}px;
+  border-radius: ${parseInt(BORDER_RADIUS_BASE - 1, 10)}px;
   line-height: 1.4;
   text-transform: none;
   text-align: center;
