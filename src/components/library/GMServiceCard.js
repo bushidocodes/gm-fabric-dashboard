@@ -19,7 +19,7 @@ const CardContainer = styled.div`
     ${props =>
       Color(props.cardBackgroundColor)
         .hsl()
-        .rotate(-10)
+        .rotate(-7)
         .string()}
   );
   border: 1px solid ${props => props.cardBorderColor};
@@ -46,7 +46,7 @@ const Title = styled.div`
 const Version = styled.div`
   display: flex;
   align-items: flex-end;
-  font-weight: ${parseInt(props => props.cardFontWeight, 10) + 100};
+  font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
 `;
 const Circle = styled.circle`
   cx: 10;
