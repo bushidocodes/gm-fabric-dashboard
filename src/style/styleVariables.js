@@ -2,6 +2,12 @@ import Color from "color";
 
 import { contrastColor } from "./styleFunctions";
 import { injectGlobal } from "styled-components";
+import Nunito400 from "./fonts/Nunito/Nunito-Regular.ttf";
+import Nunito600 from "./fonts/Nunito/Nunito-SemiBold.ttf";
+import Rubik400 from "./fonts/Rubik/Rubik-Regular.ttf";
+import Rubik500 from "./fonts/Rubik/Rubik-Medium.ttf";
+import Rubik700 from "./fonts/Rubik/Rubik-Bold.ttf";
+import SourceCodePro400 from "./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf";
 
 export const COLOR_BRAND_PRIMARY = Color("#0aab2a");
 export const COLOR_BRAND_SECONDARY = Color("#002e6e");
@@ -71,15 +77,37 @@ injectGlobal`
     font-family: "Nunito";
     font-style: normal;
     font-weight: 400;
-    src: url("./fonts/Nunito/Nunito-Regular.ttf");
+    src: url(${Nunito400});
+  }
+  @font-face {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    src: url(${Nunito600});
   }
   @font-face {
     font-family: "Rubik";
-    src: url("./fonts/Rubik/Rubik-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    src: url(${Rubik400});
+  }
+  @font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    src: url(${Rubik500})
+  }
+  @font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    src: url(${Rubik700});
   }
   @font-face {
     font-family: "SourceCodePro";
-    src: url("./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
+    src: url(${SourceCodePro400});
   }
 `;
 
