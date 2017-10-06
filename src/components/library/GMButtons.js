@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
   user-select: none;
   font-weight: 600;
   font-size: ${FONT_SIZE_BASE};
-  border-radius: ${parseInt(BORDER_RADIUS_BASE - 1, 10)}px;
+  border-radius: ${parseInt(BORDER_RADIUS_BASE, 10) - 1}px;
   line-height: 1.4;
   text-transform: none;
   text-align: center;
@@ -43,10 +43,12 @@ export const StyledButton = styled.button`
     color: inherit;
   }
 
+  &:focus,
   &:active {
     background-color: ${props =>
       props.selected ? BUTTON_COLOR_ACTIVE_ACTIVE : BUTTON_COLOR_ACTIVE};
     color: inherit;
+    outline: 0;
   }
 `;
 

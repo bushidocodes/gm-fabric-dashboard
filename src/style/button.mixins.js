@@ -48,14 +48,14 @@ export const GMButtonBase = styled.button`
 
 /**
  * CSS-in-JS
- * 
+ *
  * @export
- * @param {any} buttonSize 
- * @param {any} [buttonFontSize=FONT_SIZE_BASE] 
- * @param {string} [buttonIconSize="1.5em"] 
- * @param {any} [buttonBorderRadius=BORDER_RADIUS_BASE] 
- * @param {any} [buttonContentSpacing=spacingScale(0.75)] 
- * @returns 
+ * @param {any} buttonSize
+ * @param {any} [buttonFontSize=FONT_SIZE_BASE]
+ * @param {string} [buttonIconSize="1.5em"]
+ * @param {any} [buttonBorderRadius=BORDER_RADIUS_BASE]
+ * @param {any} [buttonContentSpacing=spacingScale(0.75)]
+ * @returns
  */
 export function buttonSizeMixin(
   buttonSize,
@@ -88,7 +88,7 @@ export function buttonSizeMixin(
     case "xl":
       return css`
         font-size: ${Math.ceil(buttonFontSize * 1.75)};
-        border-radius: ${buttonBorderRadius * 1.25};
+        border-radius: ${parseInt(buttonBorderRadius, 10) * 1.25}px;
         padding: ${buttonContentSpacing * 0.5} ${buttonContentSpacing * 1};
       `;
     case "normal":
