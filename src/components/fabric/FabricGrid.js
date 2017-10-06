@@ -25,19 +25,17 @@ class FabricGrid extends Component {
       displayType: "Card"
     };
     this.onChange = this.onChange.bind(this);
-    this.updateUrl = this.updateUrl.bind(this);
-
     // Debounce
     this.updateUrl = _.debounce(this.updateUrl, 500);
   }
 
   componentWillMount() {
     // Parse the current query parameter
-    const queryParam = qs.parse(this.props.location.search) || "";
+    const { searchQuery = "" } = qs.parse(this.props.location.search);
 
     // when the page is hard refreshed with a query parameter, set the query as the url parameter
-    if (queryParam !== "" && this.state.query === "") {
-      this.setState({ query: queryParam.searchQuery });
+    if (searchQuery && this.state.query === "") {
+      this.setState({ query: searchQuery });
     }
   }
 
@@ -48,11 +46,11 @@ class FabricGrid extends Component {
 
   componentWillReceiveProps(nextProps) {
     // Parse the nextProps query parameter
-    const queryParam = qs.parse(nextProps.location.search) || "";
+    const { searchQuery = "" } = qs.parse(nextProps.location.search);
 
     // when the user hits backspace button, the url updates to the previous query.  if the previous query is not the current query, update this.state.query.  this updates the search
-    if (queryParam.searchQuery !== this.state.query) {
-      this.setState({ query: queryParam.searchQuery });
+    if (searchQuery !== this.state.query) {
+      this.setState({ query: searchQuery });
     }
   }
 
@@ -65,10 +63,10 @@ class FabricGrid extends Component {
    * @param {string} query
    */
   onChange = query => {
-    this.setState({ query });
-
-    // updateUrl() is debounced in constructor.
-    this.updateUrl();
+    // placing a callback to verify that the state is updated before calling this.updateUrl
+    this.setState({ query }, () => {
+      this.updateUrl();
+    });
   };
 
   /**
