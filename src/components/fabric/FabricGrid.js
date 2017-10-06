@@ -46,6 +46,16 @@ class FabricGrid extends Component {
     Actions.fetchServices();
   }
 
+  componentWillReceiveProps(nextProps) {
+    // Parse the nextProps query parameter
+    const queryParam = qs.parse(nextProps.location.search) || "";
+
+    // when the user hits backspace button, the url updates to the previous query.  if the previous query is not the current query, update this.state.query.  this updates the search
+    if (queryParam.searchQuery !== this.state.query) {
+      this.setState({ query: queryParam.searchQuery });
+    }
+  }
+
   setGroupByAttribute = groupByAttribute => this.setState({ groupByAttribute });
   setSortByAttribute = sortByAttribute => this.setState({ sortByAttribute });
   setDisplayType = displayType => this.setState({ displayType });
