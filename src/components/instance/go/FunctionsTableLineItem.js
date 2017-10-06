@@ -9,7 +9,7 @@ import {
 import GMLineChart from "../../library/GMLineChart";
 
 /**
- * A row of data in the Go FunctionsTable 
+ * A row of data in the Go FunctionsTable
  * @export
  * @class FunctionsTableLineItem
  * @extends {Component}
@@ -34,10 +34,15 @@ export default class FunctionsTableLineItem extends Component {
   };
 
   render() {
-    const errorPercent =
-      (1 -
-        (this.props.requests - this.props.errorsCount) / this.props.requests) *
-      100;
+    // initialize errorPercent as zero and calculate errorPercent if number of requests is not zero
+    let errorPercent = 0;
+    if (this.props.requests !== 0) {
+      errorPercent =
+        (1 -
+          (this.props.requests - this.props.errorsCount) /
+            this.props.requests) *
+        100;
+    }
 
     return (
       <li
