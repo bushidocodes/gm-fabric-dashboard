@@ -62,7 +62,9 @@ class FabricGrid extends Component {
    * @param {string} searchQuery
    */
   onSearchInputChange = searchQuery => {
-    // placing a callback to verify that the state is updated before calling this.updateUrl
+    // Since the user is interacting with a controlled component, we need to immediately
+    // update local state before calling this.encodeAndPushHistory to update the browser's
+    // query string
     this.setState({ searchQuery }, () => {
       this.encodeAndPushHistory();
     });
