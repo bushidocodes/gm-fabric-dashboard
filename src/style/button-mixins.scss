@@ -49,6 +49,7 @@ $button-font-weight: $button-font-weight-default) {
 
   > * {
     flex: 0 1 auto;
+    flex-basis: 2em;
   }
 
   .label-suffix,
@@ -119,6 +120,7 @@ $button-font-weight: $button-font-weight-default) {
     flex-direction: row;
     > :not(:first-child) {
       margin-left: $button-content-spacing-base;
+      flex-basis: 2em;
     }
   } @else if $button-content-orientation == vertical {
     padding-top: $button-content-spacing-base;
