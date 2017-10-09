@@ -7,18 +7,23 @@ import ThreadsSection from "./ThreadsSection";
 
 /**
  * Very redundant feeling wrapper container that contains a ThreadsSection
- * TODO: Refactor to combide seciond and grid and break out threads control likt RoutesTableToolbar
+ * TODO: Refactor to combine section and grid and break out threads control like RoutesTableToolbar
  * @class ThreadsGrid
  * @extends {Component}
  */
 class ThreadsGrid extends Component {
   static propTypes = {
+    threadsEndpoint: PropTypes.string,
     threadsTable: PropTypes.array
   };
 
   componentDidMount() {
     // Refresh Threads on every mount
-    Actions.fetchThreads();
+    if (this.props.threadsEndpoint) {
+      Actions.fetchThreads(this.props.threadsEndpoint);
+    } else {
+      Actions.fetchThreads();
+    }
   }
 
   render() {
@@ -31,8 +36,25 @@ class ThreadsGrid extends Component {
   }
 }
 
-function mapStateToProps({ metrics: { threadsTable } }) {
-  return { threadsTable };
+function mapStateToProps({
+  metrics: { threadsTable },
+  settings: {
+    fabricServer,
+    selectedService,
+    selectedServiceVersion,
+    selectedInstance
+  }
+}) {
+  return {
+    threadsTable,
+    threadsEndpoint:
+      fabricServer &&
+      selectedService &&
+      selectedServiceVersion &&
+      selectedInstance
+        ? `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
+        : null
+  };
 }
 
 export default connect(mapStateToProps)(ThreadsGrid);
