@@ -1,6 +1,10 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 
+const spanWidth = {
+  flexBasis: "2em"
+};
+
 RoutesTableToolbar.propTypes = {
   filterString: PropTypes.string.isRequired,
   setFilterString: PropTypes.func.isRequired,
@@ -13,7 +17,7 @@ RoutesTableToolbar.propTypes = {
  *   filterString,
  *   setFilterString,
  *   setKeyToSortBy
- * } 
+ * }
  * @returns JSX.Element
  */
 export default function RoutesTableToolbar({
@@ -37,8 +41,14 @@ export default function RoutesTableToolbar({
       <div className="toolbar-right">
         <div className="uk-button-group">
           <button className="btn">
-            <span className="label">Sort</span>
-            <span className="icon" data-uk-icon="icon: triangle-down" />
+            <span className="label" style={spanWidth}>
+              Sort
+            </span>
+            <span
+              className="icon"
+              data-uk-icon="icon: triangle-down"
+              style={spanWidth}
+            />
           </button>
           <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
             <ul className="uk-nav uk-dropdown-nav">
