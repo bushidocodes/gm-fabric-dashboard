@@ -26,17 +26,11 @@ class FabricGrid extends Component {
     };
     this.onChange = this.onChange.bind(this);
     // Debounce
-    this.updateUrl = _.debounce(this.updateUrl, 500);
+    this.debouncedPushHistory = _.debounce(this.pushHistory, 500);
   }
 
   componentWillMount() {
-    // Parse the current query parameter
-    const { searchQuery = "" } = qs.parse(this.props.location.search);
-
-    // when the page is hard refreshed with a query parameter, set the query as the url parameter
-    if (searchQuery && this.state.query === "") {
-      this.setState({ query: searchQuery });
-    }
+    this.popAndDecodeHistory(this.props.location.search);
   }
 
   componentDidMount() {
@@ -45,12 +39,13 @@ class FabricGrid extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // Parse the nextProps query parameter
-    const { searchQuery = "" } = qs.parse(nextProps.location.search);
-
-    // when the user hits backspace button, the url updates to the previous query.  if the previous query is not the current query, update this.state.query.  this updates the search
-    if (searchQuery !== this.state.query) {
-      this.setState({ query: searchQuery });
+    console.log(nextProps.history.action, nextProps.history.length);
+    // If the app router action was POP, the user hit the back button or otherwise
+    // navigated using the client-side router history, so the state of the view
+    // should be set to the state of the searchQuery
+    if (nextProps.history.action === "POP") {
+      // Parse the nextProps query parameter for state
+      this.popAndDecodeHistory(nextProps.location.search);
     }
   }
 
@@ -65,24 +60,65 @@ class FabricGrid extends Component {
   onChange = query => {
     // placing a callback to verify that the state is updated before calling this.updateUrl
     this.setState({ query }, () => {
-      this.updateUrl();
+      this.encodeAndPushHistory();
     });
   };
 
   /**
-   * updateUrl debounces input and executes search after waiting 500 ms
+   * 
+   * 
    * @memberof FabricGrid
    */
-  updateUrl = () => {
-    // takes an obj and flattens into a string text: {searchQuery: "latency"} => "searchQuery=latency"
-    const query = qs.stringify({
-      searchQuery: this.state.query.trim().toLowerCase()
-    });
-    // push a parsed query parameter to router
-    this.props.history.push({
-      pathname: this.props.match.url,
-      search: query
-    });
+  encodeAndPushHistory = query => {
+    // Clean local state
+    const searchQuery = this.state.query.trim().toLowerCase();
+    // Only encode the truthy pieces of local state into a form ready to be pushed to the
+    // browser's query string. If no local state is truthy, call debouncedPushHistory without
+    // an argument to remove the search query from the URL.
+    if (searchQuery) {
+      this.debouncedPushHistory(
+        qs.stringify({
+          searchQuery
+        })
+      );
+    } else {
+      this.debouncedPushHistory();
+    }
+  };
+
+  /**
+   * pushHistory is used to push local state to the browser's query string. This function is not
+   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual 
+   * key strokes from polluting the browser history API.
+   * @memberof FabricGrid
+   */
+  pushHistory = queryString => {
+    // If passed an encoded query string, push that to browser history
+    if (queryString) {
+      this.props.history.push({
+        pathname: this.props.match.url,
+        search: queryString
+      });
+      // Otherwise, clear the query string from the URL bar
+    } else {
+      this.props.history.push({
+        pathname: this.props.match.url,
+        search: ""
+      });
+    }
+  };
+
+  /**
+   * pushHistory is used to decode and pull local state from the browser's query string
+   * @memberof FabricGrid
+   */
+  popAndDecodeHistory = queryString => {
+    // Parse the query string for the searchQuery parameter
+    const { searchQuery = "" } = qs.parse(queryString);
+    // Update local state if needed
+    if (searchQuery && searchQuery !== this.state.query) {
+      this.setState({ query: searchQuery });
+    }
   };
 
   render() {
