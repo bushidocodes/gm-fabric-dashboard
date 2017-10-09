@@ -110,7 +110,7 @@ class FabricGrid extends Component {
   };
 
   /**
-   * pushHistory is used to decode and pull local state from the browser's query string
+   * popAndDecodeHistory is used to decode and pull local state from the browser's query string
    * @memberof FabricGrid
    */
   popAndDecodeHistory = queryString => {
