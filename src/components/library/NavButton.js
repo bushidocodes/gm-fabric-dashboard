@@ -2,6 +2,8 @@ import { PropTypes } from "prop-types";
 import { NavLink } from "react-router-dom";
 import React from "react";
 
+const spanWidth = { width: "30px" };
+
 NavButton.propTypes = {
   hideLabel: PropTypes.bool, // boolean that toggles if the label should be shown as text after the icon
   icon: PropTypes.string, // string of UIKit Icon to use for button
@@ -22,7 +24,7 @@ NavButton.propTypes = {
   to: PropTypes.string.isRequired, // route the button should navigate to
   type: PropTypes.oneOf(["danger", "info", "primary", "secondary", "warning"])
 };
-/** 
+/**
  * General purpose button used for client-side navigation anywhere outside of sidebar
  * @param {Object} props - refer to propTypes
  * */
@@ -55,7 +57,13 @@ function NavButton({
       title={label}
       to={to}
     >
-      {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
+      {icon && (
+        <span
+          className="icon"
+          data-uk-icon={`icon: ${icon};`}
+          style={spanWidth}
+        />
+      )}
       {!hideLabel && (
         <span className="label">
           {prefix ? <span className="label-prefix">{prefix}</span> : ""}
