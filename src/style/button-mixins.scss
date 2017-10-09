@@ -1,5 +1,5 @@
 // button-mixins.scss
-@import 'variables.scss';
+@import "variables.scss";
 
 // Local Variables
 
@@ -14,7 +14,7 @@ $button-label-color-base-default: contrast-color(
 );
 
 $button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
-$button-content-spacing-base-default: spacing-scale(.75);
+$button-content-spacing-base-default: spacing-scale(0.75);
 
 $button-border-width-base-default: 1px;
 $button-border-radius-base-default: $border-radius-base;
@@ -25,7 +25,7 @@ $button-reaction-degree-default: 6%; // 0-100% // default: 6%
 $button-outline-style-default: raised-outline; // raised-outline, shadow, raised, outline, none // default: raised-outline
 $button-outline-style-depth-default: 6%; // 0–100% // default: 6%
 
-$button-hover-reaction-degree-default: $button-reaction-degree-default * .25;
+$button-hover-reaction-degree-default: $button-reaction-degree-default * 0.25;
 $button-active-reaction-degree-default: $button-reaction-degree-default * 2;
 $button-down-reaction-degree-default: $button-reaction-degree-default * 1;
 
@@ -53,7 +53,7 @@ $button-font-weight: $button-font-weight-default) {
 
   .label-suffix,
   .label-prefix {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   .label-suffix {
@@ -74,25 +74,28 @@ $button-font-weight: $button-font-weight-default) {
   @if $button-size == normal {
     font-size: $button-font-size-base;
     border-radius: $button-border-radius-base;
-    padding: $button-content-spacing-base * .35 $button-content-spacing-base * 1;
+    padding: $button-content-spacing-base * 0.35 $button-content-spacing-base *
+      1;
   } @else if $button-size == xs {
-    font-size: ceil($button-font-size-base * .5);
+    font-size: ceil($button-font-size-base * 0.5);
     border-radius: $button-border-radius-base;
-    padding: $button-content-spacing-base * .25 $button-content-spacing-base * 1;
+    padding: $button-content-spacing-base * 0.25 $button-content-spacing-base *
+      1;
     text-transform: uppercase;
   } @else if $button-size == sm {
-    font-size: ceil($button-font-size-base * .75);
+    font-size: ceil($button-font-size-base * 0.75);
     border-radius: $button-border-radius-base;
-    padding: $button-content-spacing-base * .25 $button-content-spacing-base * 1;
+    padding: $button-content-spacing-base * 0.25 $button-content-spacing-base *
+      1;
     text-transform: uppercase;
   } @else if $button-size == lg {
     font-size: ceil($button-font-size-base * 1.25);
     border-radius: $button-border-radius-base;
-    padding: $button-content-spacing-base * .5 $button-content-spacing-base * 1;
+    padding: $button-content-spacing-base * 0.5 $button-content-spacing-base * 1;
   } @else if $button-size == xl {
     font-size: ceil($button-font-size-base * 1.75);
     border-radius: $button-border-radius-base * 1.25;
-    padding: $button-content-spacing-base * .5 $button-content-spacing-base * 1;
+    padding: $button-content-spacing-base * 0.5 $button-content-spacing-base * 1;
   }
 }
 
@@ -104,6 +107,7 @@ $button-font-weight: $button-font-weight-default) {
       width: auto;
       height: $button-icon-size;
     }
+    width: 30px;
   }
 }
 
@@ -294,7 +298,7 @@ $button-font-weight: $button-font-weight-default) {
     );
     $static-border-top-styles: (
       border-top-color: lighten-color(map-get($static-border-styles, border-color), $button-outline-style-depth *
-            .5)
+            0.5)
     );
     $static-border-bottom-styles: (
       border-bottom-color: darker-color(map-get($static-border-styles, border-color), $button-outline-style-depth)
@@ -305,7 +309,7 @@ $button-font-weight: $button-font-weight-default) {
     );
     $hover-border-top-styles: (
       border-top-color: lighten-color(map-get($hover-border-styles, border-color), $button-outline-style-depth *
-            .5)
+            0.5)
     );
     $hover-border-bottom-styles: (
       border-bottom-color: darker-color(map-get($hover-border-styles, border-color), $button-outline-style-depth)
@@ -316,7 +320,7 @@ $button-font-weight: $button-font-weight-default) {
     );
     $down-border-top-styles: (
       border-top-color: lighten-color(map-get($down-border-styles, border-color), $button-outline-style-depth *
-            .5)
+            0.5)
     );
     $down-border-bottom-styles: (
       border-bottom-color: darker-color(map-get($down-border-styles, border-color), $button-outline-style-depth)
@@ -327,7 +331,7 @@ $button-font-weight: $button-font-weight-default) {
     );
     $active-border-top-styles: (
       border-top-color: lighten-color(map-get($active-border-styles, border-color), $button-outline-style-depth *
-            .5)
+            0.5)
     );
     $active-border-bottom-styles: (
       border-bottom-color: darker-color(map-get($active-border-styles, border-color), $button-outline-style-depth)
@@ -338,7 +342,7 @@ $button-font-weight: $button-font-weight-default) {
     );
     $active-down-border-top-styles: (
       border-top-color: lighten-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth *
-            .5)
+            0.5)
     );
     $active-down-border-bottom-styles: (
       border-bottom-color: darker-color(map-get($active-down-border-styles, border-color), $button-outline-style-depth)
@@ -525,8 +529,7 @@ $button-font-weight: $button-font-weight-default) {
   }
 
   &.active,
-  &.open
-  &[class*="-active"],
+  &.open &[class*="-active"],
   &[class*="-open"] {
     // Active styles
     @if map-has-key($active-styles, background-color) {
@@ -570,7 +573,7 @@ $button-font-weight: $button-font-weight-default) {
   &[disabled]:focus,
   &[disabled]:active {
     cursor: default;
-    opacity: .8;
+    opacity: 0.8;
     background-color: darker-color(
       desaturate($button-background-color-base, 100%),
       $button-reaction-degree
