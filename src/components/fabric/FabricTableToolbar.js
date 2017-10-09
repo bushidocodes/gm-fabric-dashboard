@@ -21,8 +21,8 @@ export default class FabricTableToolbar extends Component {
   static propTypes = {
     displayType: PropTypes.string.isRequired,
     groupByAttribute: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    query: PropTypes.string,
+    onSearchInputChange: PropTypes.func.isRequired,
+    searchQuery: PropTypes.string,
     setDisplayType: PropTypes.func.isRequired,
     setGroupByAttribute: PropTypes.func.isRequired,
     setSortByAttribute: PropTypes.func.isRequired,
@@ -32,10 +32,10 @@ export default class FabricTableToolbar extends Component {
   render = () => {
     const {
       displayType,
-      query = "",
+      searchQuery = "",
       setDisplayType,
       groupByAttribute,
-      onChange,
+      onSearchInputChange,
       setGroupByAttribute,
       setSortByAttribute,
       sortByAttribute
@@ -46,9 +46,9 @@ export default class FabricTableToolbar extends Component {
           <form>
             <SearchInput
               className="form-control"
-              onChange={evt => onChange(evt.target.value)}
+              onChange={evt => onSearchInputChange(evt.target.value)}
               placeholder="Search Services"
-              value={query}
+              value={searchQuery}
             />
           </form>
         </ToolbarLeft>

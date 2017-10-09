@@ -19,14 +19,13 @@ class FabricGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: "",
+      searchQuery: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
       displayType: "Card"
     };
-    this.onChange = this.onChange.bind(this);
     // Debounce
-    this.debouncedPushHistory = _.debounce(this.pushHistory, 500);
+    this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
   }
 
   componentWillMount() {
@@ -39,10 +38,9 @@ class FabricGrid extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.history.action, nextProps.history.length);
     // If the app router action was POP, the user hit the back button or otherwise
-    // navigated using the client-side router history, so the state of the view
-    // should be set to the state of the searchQuery
+    // navigated using the client-side router history, so the searchQuery local state
+    // should be set to the value of searchQuery in the query string
     if (nextProps.history.action === "POP") {
       // Parse the nextProps query parameter for state
       this.popAndDecodeHistory(nextProps.location.search);
@@ -54,24 +52,27 @@ class FabricGrid extends Component {
   setDisplayType = displayType => this.setState({ displayType });
 
   /**
-   * onChange function invoked in FabricTableToolbar
-   * @param {string} query
+   * onChange event handler for the SearchInput field in FabricTableToolbar
+   * Acts as a traditional controlled component, but periodically encodes and pushes searchQueries to
+   * browser history
+   * @param {string} searchQuery
    */
-  onChange = query => {
+  onSearchInputChange = searchQuery => {
     // placing a callback to verify that the state is updated before calling this.updateUrl
-    this.setState({ query }, () => {
+    this.setState({ searchQuery }, () => {
       this.encodeAndPushHistory();
     });
   };
 
   /**
-   * 
+   * encodeAndPushHistory encodes local state as a query string and invokes the debounced
+   * version of _pushHistory to periodically write to browser history.
    * 
    * @memberof FabricGrid
    */
-  encodeAndPushHistory = query => {
+  encodeAndPushHistory = searchQuery => {
     // Clean local state
-    const searchQuery = this.state.query.trim().toLowerCase();
+    searchQuery = this.state.searchQuery.trim().toLowerCase();
     // Only encode the truthy pieces of local state into a form ready to be pushed to the
     // browser's query string. If no local state is truthy, call debouncedPushHistory without
     // an argument to remove the search query from the URL.
@@ -87,12 +88,12 @@ class FabricGrid extends Component {
   };
 
   /**
-   * pushHistory is used to push local state to the browser's query string. This function is not
+   * _pushHistory is used to push local state to the browser's query string. This function is not
    * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual 
    * key strokes from polluting the browser history API.
    * @memberof FabricGrid
    */
-  pushHistory = queryString => {
+  _pushHistory = queryString => {
     // If passed an encoded query string, push that to browser history
     if (queryString) {
       this.props.history.push({
@@ -116,17 +117,19 @@ class FabricGrid extends Component {
     // Parse the query string for the searchQuery parameter
     const { searchQuery = "" } = qs.parse(queryString);
     // Update local state if needed
-    if (searchQuery && searchQuery !== this.state.query) {
-      this.setState({ query: searchQuery });
+    if (searchQuery !== this.state.searchQuery) {
+      this.setState({ searchQuery });
     }
   };
 
   render() {
     const { services = [] } = this.props;
-    const { query = "" } = this.state;
+    const { searchQuery = "" } = this.state;
 
     const filteredServices = services.filter(service => {
-      return service.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+      return (
+        service.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
+      );
     });
 
     if (services && services.length > 0) {
@@ -135,8 +138,8 @@ class FabricGrid extends Component {
           <FabricTableToolbar
             displayType={this.state.displayType}
             setDisplayType={this.setDisplayType}
-            query={this.state.query}
-            onChange={this.onChange}
+            searchQuery={this.state.searchQuery}
+            onSearchInputChange={this.onSearchInputChange}
             groupByAttribute={this.state.groupByAttribute}
             setGroupByAttribute={this.setGroupByAttribute}
             sortByAttribute={this.state.sortByAttribute}
