@@ -1,7 +1,7 @@
 // components/data-displays.scss
-@import '../variables.scss';
-@import '../mixins.scss';
-@import '../functions.scss';
+@import "../variables.scss";
+@import "../mixins.scss";
+@import "../functions.scss";
 
 // Local Variables
 $readout-feature-background-contrast: 4%;
@@ -28,10 +28,10 @@ $readout-dashboard-colors: custom-color-range(
   justify-content: center;
   flex-wrap: wrap;
   flex: 1 1 100%;
-  margin: spacing-scale(-.5);
+  margin: spacing-scale(-0.5);
 
   > .readout {
-    margin: spacing-scale(.5);
+    margin: spacing-scale(0.5);
     flex-grow: 1;
   }
 
@@ -80,17 +80,17 @@ $readout-dashboard-colors: custom-color-range(
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: spacing-scale(1) spacing-scale(.5);
+    padding: spacing-scale(1) spacing-scale(0.5);
 
     + .readout-feature {
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         border-top: 1px solid currentColor;
-        opacity: .125;
+        opacity: 0.125;
       }
     }
   }
@@ -109,7 +109,7 @@ $readout-dashboard-colors: custom-color-range(
     flex: 0 0 80px;
     text-align: center;
     span {
-      fillColor: currentcolor;
+      fillcolor: currentcolor;
     }
   }
   .readout-feature-title,
@@ -122,13 +122,16 @@ $readout-dashboard-colors: custom-color-range(
   .readout-feature-title {
     font-size: $font-size-sm;
     font-family: $font-stack-data;
+    min-height: 1em;
   }
   .readout-feature-value {
     font-size: $font-size-hero;
     word-break: break-all;
+    min-height: 1em;
   }
   .readout-feature-detail {
     font-size: $font-size-sm;
+    min-height: 1em;
   }
 
   &.readout-primary {
@@ -175,16 +178,16 @@ $readout-dashboard-colors: custom-color-range(
     padding-top: spacing-scale(6);
     font-size: $font-size-lg;
     .kv-pair {
-      padding-top: spacing-scale(.25);
-      padding-bottom: spacing-scale(.25);
+      padding-top: spacing-scale(0.25);
+      padding-bottom: spacing-scale(0.25);
     }
   }
 
   &.kv-lg {
     font-size: $font-size-base;
     .kv-pair {
-      padding-top: spacing-scale(.25);
-      padding-bottom: spacing-scale(.25);
+      padding-top: spacing-scale(0.25);
+      padding-bottom: spacing-scale(0.25);
     }
   }
 
@@ -214,7 +217,7 @@ $readout-dashboard-colors: custom-color-range(
     &.kv-pair-primary {
       overflow: hidden;
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 4em;
@@ -230,7 +233,7 @@ $readout-dashboard-colors: custom-color-range(
 
       ~ .kv-pair-normal,
       ~ .kv-pair-secondary {
-        font-size: .8em;
+        font-size: 0.8em;
       }
     }
 
@@ -243,7 +246,7 @@ $readout-dashboard-colors: custom-color-range(
   }
 
   .kv-key {
-    opacity: .65;
+    opacity: 0.65;
     flex: 1 0 50%;
     text-align: right;
   }
@@ -255,7 +258,7 @@ $readout-dashboard-colors: custom-color-range(
   }
 
   .kv-sparkline {
-    opacity: .7;
+    opacity: 0.7;
     text-align: left;
     display: inline-block;
     width: 6em;
