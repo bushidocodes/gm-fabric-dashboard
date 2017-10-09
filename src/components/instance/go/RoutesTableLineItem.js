@@ -36,10 +36,12 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    const errorPercent =
-      (1 -
-        (this.props.requests - this.props.errorsCount) / this.props.requests) *
-      100;
+    const errorPercent = this.props.requests
+      ? (1 -
+          (this.props.requests - this.props.errorsCount) /
+            this.props.requests) *
+        100
+      : 0;
     return (
       <li
         className={this.state.isOpen ? "selectable open" : "selectable"}

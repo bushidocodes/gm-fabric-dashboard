@@ -18,30 +18,12 @@ export const getRoutesTable = createSelector(
     routesPaths.forEach(routePath => {
       let baseObj = { route: routePath };
       routesTree[routePath].forEach(routeVerb => {
-        const errorsCountKey =
-          routePath === "/"
-            ? `route/${routeVerb}/errors.count`
-            : `route${routePath}/${routeVerb}/errors.count`;
-        const inThroughputKey =
-          routePath === "/"
-            ? `route/${routeVerb}/in_throughput`
-            : `route${routePath}/${routeVerb}/in_throughput`;
-        const outThroughputKey =
-          routePath === "/"
-            ? `route/${routeVerb}/out_throughput`
-            : `route${routePath}/${routeVerb}/out_throughput`;
-        const latency50Key =
-          routePath === "/"
-            ? `route/${routeVerb}/latency_ms.p50`
-            : `route${routePath}/${routeVerb}/latency_ms.p50`;
-        const latency99Key =
-          routePath === "/"
-            ? `route/${routeVerb}/latency_ms.p99`
-            : `route${routePath}/${routeVerb}/latency_ms.p99`;
-        const requestsKey =
-          routePath === "/"
-            ? `route/${routeVerb}/requests`
-            : `route${routePath}/${routeVerb}/requests`;
+        const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
+        const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
+        const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
+        const latency50Key = `route${routePath}/${routeVerb}/latency_ms.p50`;
+        const latency99Key = `route${routePath}/${routeVerb}/latency_ms.p99`;
+        const requestsKey = `route${routePath}/${routeVerb}/requests`;
 
         const errorsCount = getLatestAttribute(routesMetrics, errorsCountKey);
         const requests = getLatestAttribute(routesMetrics, requestsKey);
