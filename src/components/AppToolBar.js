@@ -78,7 +78,14 @@ function AppToolBar({ pathname }) {
     <AppHeader>
       <Breadcrumbs>
         <Breadcrumb>
-          <Link to="/">fabric</Link>
+          <Link
+            to={{
+              pathname: "/",
+              search: ""
+            }}
+          >
+            fabric
+          </Link>
         </Breadcrumb>
         {//strip out leading slashes to get route as array
         pathname

@@ -10,9 +10,9 @@ import FabricMainView from "./FabricMainView";
 
 class FabricGrid extends Component {
   static propTypes = {
-    history: PropTypes.object,
-    location: PropTypes.object,
-    match: PropTypes.object,
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
     services: PropTypes.array.isRequired
   };
 
@@ -38,11 +38,15 @@ class FabricGrid extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // If the app router action was POP, the user hit the back button or otherwise
-    // navigated using the client-side router history, so the searchQuery local state
-    // should be set to the value of searchQuery in the query string
-    if (nextProps.history.action === "POP") {
-      // Parse the nextProps query parameter for state
+    // We need to check to see if the query string props are the result of user interaction
+    // with the search box. We do that by keeping track of the last thing the search box
+    // pushed to the query string and filtering out those props. The only expection to this
+    // is which the app router action was POP, which means the user hit the back button or
+    // otherwise navigated using the client-side router history
+    if (
+      nextProps.location.search !== `?${this.state.lastPushedQueryString}` ||
+      nextProps.history.action === "POP"
+    ) {
       this.popAndDecodeHistory(nextProps.location.search);
     }
   }
@@ -53,8 +57,8 @@ class FabricGrid extends Component {
 
   /**
    * onChange event handler for the SearchInput field in FabricTableToolbar
-   * Acts as a traditional controlled component, but periodically encodes and pushes searchQueries to
-   * browser history
+   * Acts as a traditional controlled component, but periodically encodes and pushes 
+   * searchQueries to browser history
    * @param {string} searchQuery
    */
   onSearchInputChange = searchQuery => {
@@ -76,15 +80,11 @@ class FabricGrid extends Component {
     // Only encode the truthy pieces of local state into a form ready to be pushed to the
     // browser's query string. If no local state is truthy, call debouncedPushHistory without
     // an argument to remove the search query from the URL.
+    let objToEncode = {};
     if (searchQuery) {
-      this.debouncedPushHistory(
-        qs.stringify({
-          searchQuery
-        })
-      );
-    } else {
-      this.debouncedPushHistory();
+      objToEncode = { searchQuery, ...objToEncode };
     }
+    this.debouncedPushHistory(qs.stringify(objToEncode));
   };
 
   /**
@@ -94,19 +94,15 @@ class FabricGrid extends Component {
    * @memberof FabricGrid
    */
   _pushHistory = queryString => {
-    // If passed an encoded query string, push that to browser history
-    if (queryString) {
+    // Save a query string to local state as lastPushedQueryString to prevent
+    // accidental overwriting of user entry and then push the query string
+    // to the browser history
+    this.setState({ lastPushedQueryString: queryString }, () => {
       this.props.history.push({
         pathname: this.props.match.url,
         search: queryString
       });
-      // Otherwise, clear the query string from the URL bar
-    } else {
-      this.props.history.push({
-        pathname: this.props.match.url,
-        search: ""
-      });
-    }
+    });
   };
 
   /**
