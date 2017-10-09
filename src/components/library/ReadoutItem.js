@@ -1,6 +1,11 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
+// add minimum height to flex items. `flex-direction:column` based flex container will use `min-height` to calculate `flex-grow` lengths in IE11.
+const minHeight = {
+  minHeight: "1em"
+};
+
 ReadoutItem.propTypes = {
   // Small line of text below value with secondary information related to value
   detail: PropTypes.string,
@@ -27,9 +32,17 @@ function ReadoutItem({ title, value, icon, detail }) {
         />
       )}
       <div className="readout-feature-data">
-        <h2 className="readout-feature-title">{title}</h2>
-        <span className="readout-feature-value">{value}</span>
-        {detail && <span className="readout-feature-detail">{detail}</span>}
+        <h2 className="readout-feature-title" style={minHeight}>
+          {title}
+        </h2>
+        <span className="readout-feature-value" style={minHeight}>
+          {value}
+        </span>
+        {detail && (
+          <span className="readout-feature-detail" style={minHeight}>
+            {detail}
+          </span>
+        )}
       </div>
     </li>
   );
