@@ -65,7 +65,7 @@ const SectionHeader = styled.div`
 
 const IconWrapper = styled.div`
   display: inline-block;
-  width: ${spacingScale(2.625)};
+  width: ${spacingScale(3)};
   height: ${spacingScale(2.625)};
   margin-left: ${spacingScale(0.5)};
   margin-right: ${spacingScale(0.5)};
