@@ -88,6 +88,7 @@ const InstanceListItem = styled.li`
 export default class GMServiceListItem extends Component {
   static propTypes = {
     docsLink: PropTypes.string,
+    groupByAttribute: PropTypes.string,
     instances: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
     status: PropTypes.string,
@@ -102,7 +103,14 @@ export default class GMServiceListItem extends Component {
   };
 
   render() {
-    const { instances = [], name, status, version, docsLink } = this.props;
+    const {
+      instances = [],
+      name,
+      status,
+      version,
+      docsLink,
+      groupByAttribute = ""
+    } = this.props;
 
     return (
       <div>
@@ -124,7 +132,9 @@ export default class GMServiceListItem extends Component {
               tabIndex="0"
             >
               <IconWrapper>
-                <StatusIcon status={status} />
+                {groupByAttribute.toLowerCase() !== "status" && (
+                  <StatusIcon status={status} />
+                )}
               </IconWrapper>
               <ItemName>{name}</ItemName>
               <ItemVersion>{version}</ItemVersion>

@@ -61,7 +61,10 @@ export default function GMServiceListView({
         {headers.map((header, i) => (
           <SectionContainer key={header}>
             <SectionHeader>
-              <GMServiceHeader headerTitle={header} />
+              <GMServiceHeader
+                headerTitle={header}
+                showStatusIcon={groupByAttribute === "Status"}
+              />
             </SectionHeader>
             <SectionContent>
               <GMServiceList
@@ -70,6 +73,7 @@ export default function GMServiceListView({
                   [sortByAttribute.toLowerCase()],
                   ["asc"]
                 )}
+                groupByAttribute={groupByAttribute}
               />
             </SectionContent>
           </SectionContainer>

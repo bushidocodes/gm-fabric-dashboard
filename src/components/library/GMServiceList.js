@@ -11,6 +11,7 @@ import styled from "styled-components";
  */
 
 GMServiceList.propTypes = {
+  groupByAttribute: PropTypes.string,
   items: PropTypes.array.isRequired
 };
 
@@ -25,7 +26,7 @@ const SectionItems = styled.div`
   }
 `;
 
-export default function GMServiceList({ items }) {
+export default function GMServiceList({ items, groupByAttribute }) {
   return (
     <SectionItems>
       {items.map(item => (
@@ -36,6 +37,7 @@ export default function GMServiceList({ items }) {
           status={item.status}
           version={item.version}
           docsLink={item.docsLink}
+          groupByAttribute={groupByAttribute}
         />
       ))}
     </SectionItems>
