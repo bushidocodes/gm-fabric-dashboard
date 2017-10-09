@@ -1,8 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-// add minimum height to flex items. `flex-direction:column` based flex container will use `min-height` to calculate `flex-grow` lengths in IE11.
-
 ReadoutItem.propTypes = {
   // Small line of text below value with secondary information related to value
   detail: PropTypes.string,
