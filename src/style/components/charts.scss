@@ -1,6 +1,6 @@
 // components/charts.scss
-@import '../variables.scss';
-@import '../mixins.scss';
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Local Variables
 $chart-background-color: transparent;
@@ -8,13 +8,6 @@ $chart-spacing: spacing-scale(1);
 $chart-height-base: 250px;
 
 // Helpers
-@mixin styles-for-chart-title() {
-  font-size: $font-size-lg;
-}
-
-@mixin styles-for-axis-labels() {
-}
-
 @mixin chart-height($height) {
   height: $height;
 }
@@ -32,7 +25,7 @@ $chart-height-base: 250px;
   border: 1px solid transparent;
 
   .chart-title {
-    @include styles-for-chart-title();
+    font-size: $font-size-lg;
     margin: 0;
     padding: spacing-scale(1) spacing-scale(2);
     flex: 1 0 spacing-scale(5);
@@ -93,11 +86,11 @@ $chart-height-base: 250px;
   }
 
   &.chart-height-xs {
-    @include chart-height($chart-height-base * .5);
+    @include chart-height($chart-height-base * 0.5);
   }
 
   &.chart-height-sm {
-    @include chart-height($chart-height-base * .75);
+    @include chart-height($chart-height-base * 0.75);
   }
 
   &.chart-height-normal {

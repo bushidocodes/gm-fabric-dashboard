@@ -1,15 +1,6 @@
 // components/dygraph.scss
-@import '../variables.scss';
-@import '../mixins.scss';
-
-// Local Variables
-
-// Helpers
-@mixin styles-for-title() {
-}
-
-@mixin styles-for-axis-labels() {
-}
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Styles
 
@@ -30,14 +21,14 @@
 .dygraph-legend {
   text-align: right;
   position: absolute;
-  color: transparentize($color-content, .2);
-  background-color: rgba(255, 255, 255, .9);
+  color: transparentize($color-content, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: $border-radius-base;
   display: inline-block;
   z-index: 10000;
   right: 0 !important;
   left: auto !important;
-  transition: all .2s ease, color .2s ease;
+  transition: all 0.2s ease, color 0.2s ease;
   color: transparent;
   padding: spacing-scale(1) spacing-scale(2) spacing-scale(1);
   opacity: 0;
@@ -50,8 +41,8 @@
 
   :hover > & {
     opacity: 1;
-    color: transparentize($color-content, .2);
-    transition: all .2s ease, color 1s ease;
+    color: transparentize($color-content, 0.2);
+    transition: all 0.2s ease, color 1s ease;
   }
 
   > span {
@@ -61,16 +52,13 @@
 }
 
 .dygraph-label {
-  opacity: .8;
+  opacity: 0.8;
   color: $color-content;
 }
 
-.dygraph-title {
-  @include styles-for-title();
-}
-
-.dygraph-axis-label.dygraph-ylabel,
-.dygraph-axis-label.dygraph-xlabel,
-.dygraph-axis-label.dygraph-y2label {
-  @include styles-for-axis-labels();
-}
+// Kept to document how to style dygraph components
+// .dygraph-title {}
+// .dygraph-axis-label.dygraph-ylabel,
+// .dygraph-axis-label.dygraph-xlabel,
+// .dygraph-axis-label.dygraph-y2label {
+// }

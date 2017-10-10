@@ -1,6 +1,6 @@
 // components/instances.scss
-@import '../variables.scss';
-@import '../mixins.scss';
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Local Variables
 $instance-base-color: #4478c6;
@@ -8,8 +8,6 @@ $instance-spacing: 1px;
 $instance-min-right-spacing: $padding-base / 4;
 $instance-min-down-color: $color-danger;
 $instance-width-min: $padding-base;
-
-// Helpers
 
 // Styles
 .instances-list {
@@ -30,7 +28,7 @@ $instance-width-min: $padding-base;
     border-radius: 1px;
     border: 1px solid $instance-base-color;
     position: relative;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
     box-shadow: 0 0 5px transparent;
     white-space: nowrap;
     color: contrast-color(
@@ -57,7 +55,7 @@ $instance-width-min: $padding-base;
 
     &:before {
       position: absolute;
-      letter-spacing: .03em;
+      letter-spacing: 0.03em;
       bottom: 100%;
       color: contrast-color($color-content-background);
       font-size: $font-size-xs;
@@ -82,12 +80,11 @@ $instance-width-min: $padding-base;
       );
       color: contrast-color(darken($instance-base-color, 20%), 100%);
       border: none;
-      // @include interaction-type-scale(.075);
 
       &:hover {
         cursor: pointer;
         box-shadow: 0 0 2px
-          transparentize(contrast-color($color-content-background), .5);
+          transparentize(contrast-color($color-content-background), 0.5);
       }
 
       &:active {
@@ -103,7 +100,7 @@ $instance-width-min: $padding-base;
 
     &.instance-min {
       &:before {
-        content: 'MIN';
+        content: "MIN";
       }
 
       ~ .instance-min {
@@ -114,7 +111,7 @@ $instance-width-min: $padding-base;
 
       ~ :not(.instance-min).instance-active {
         &:before {
-          content: 'ADDED';
+          content: "ADDED";
         }
 
         ~ [class*="instance-"] {

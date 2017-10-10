@@ -1,10 +1,6 @@
 // components/routesTable.scss
-@import '../variables.scss';
-@import '../mixins.scss';
-
-// Local Variables
-
-// Helpers
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Styles
 .routes-table {
@@ -74,7 +70,7 @@
       left: 0;
       right: spacing-scale(2);
       height: 4px;
-      content: '';
+      content: "";
       border-bottom: 1px solid;
 
       .route-viz-fill {
@@ -95,8 +91,8 @@
   .div-table-body {
     .routes-table-sparkline {
       height: spacing-scale(3);
-      padding-top: spacing-scale(.5);
-      padding-bottom: spacing-scale(.5);
+      padding-top: spacing-scale(0.5);
+      padding-bottom: spacing-scale(0.5);
 
       svg {
         height: inherit;

@@ -1,10 +1,6 @@
 // components/threadsTable.scss
-@import '../variables.scss';
-@import '../mixins.scss';
-
-// Local Variables
-
-// Helpers
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Styles
 
@@ -46,8 +42,8 @@
   }
 
   .stack-trace-indicator {
-    opacity: .3;
-    transition: all .2s ease;
+    opacity: 0.3;
+    transition: all 0.2s ease;
   }
 
   > .thread-table-body > li:hover,
@@ -80,7 +76,7 @@
         width: 5em;
         right: calc(100% + #{spacing-scale(1)});
         top: 0;
-        opacity: .25;
+        opacity: 0.25;
       }
     }
   }

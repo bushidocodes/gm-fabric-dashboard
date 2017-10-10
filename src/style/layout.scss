@@ -2,11 +2,6 @@
 @import "variables.scss";
 @import "mixins.scss";
 
-// Local Variables
-// $sidebar-width-base: 230px;
-
-// Helpers
-
 // Styles
 
 #root {
@@ -19,70 +14,3 @@
 .left-border {
   border-left: 1px solid #ddd;
 }
-
-// .app-sidebar {
-//   height: 100vh;
-//   flex: 1 0 $sidebar-width-base;
-//   display: flex;
-//   flex-direction: column;
-//   background-color: $color-sidebar-background;
-//   position: relative;
-//   z-index: 2;
-
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     pointer-events: none;
-//     border-right: 1px solid edge-color($color-sidebar-background);
-//   }
-// }
-
-// .app-content {
-//   flex: 1 1 100%;
-//   display: flex;
-//   align-items: stretch;
-//   flex-direction: column;
-//   background-color: $color-content-background;
-
-// .app-content-view {
-//   flex: 1 1 100%;
-//   overflow-y: scroll;
-//   -webkit-overflow-scrolling: touch;
-//   position: relative;
-//   z-index: 1;
-//   padding-top: 1px;
-
-//   &:before,
-//   &:after {
-//     content: "";
-//     background-color: $color-content-background;
-//     pointer-events: none;
-//     height: 1px;
-//     position: absolute;
-//     top: -134px;
-//     height: 135px;
-//     bottom: auto;
-//     left: 0;
-//     right: 0;
-//     z-index: 1001;
-//   }
-
-//   &:after {
-//     position: fixed;
-//     background-color: transparentize(
-//       edge-color($color-content-background, 30%),
-//       0.7
-//     );
-//     z-index: 1000;
-//     height: 1px;
-//     top: 34px;
-//   }
-// }
-
-//   .app-footer {
-//     flex: 0 0 spacing-scale(4);
-//   }
-// }
