@@ -12,6 +12,7 @@ const Sidebar = styled.nav`
   background-position: bottom -50px center;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   height: 100vh;
   flex: 1 0 ${SIDEBAR_WIDTH_BASE};
   display: flex;
