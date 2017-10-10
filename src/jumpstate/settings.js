@@ -14,21 +14,45 @@ import {
 // to be statically configured in the index.html head and populated immediately.
 const settings = State({
   initial: {
+    /**
+     * Used ONLY when running with a "Fabric Server" discovery service
+     */
+
     fabricServer: getFabricServer(),
-    isPollingFabric: false,
-    isPollingInstance: false,
-    instancePollingInterval: 5000,
-    fabricPollingInterval: 5000,
-    metricsEndpoint: !getFabricServer() ? getMetricsEndpoint() : null,
-    metricsPollingFailures: 0,
-    runtime: !getFabricServer() ? getRuntime() : null,
     selectedInstance: null,
     selectedServiceVersion: null,
     selectedService: null,
+    isPollingFabric: false,
+    fabricPollingInterval: 5000,
     servicesPollingFailures: 0,
+
+    /**
+     * Used ONLY when running without a "Fabric Server discovery service"
+     */
+
+    /**
+     * These attributes contain static settings that the dashboard uses to directly
+     * poll an inidividual microservice when running without a "Fabric Server"
+     * discovery service. They are populated when the app initializes from
+     * meta tags in the index.html. When the dashboard is used with a "fabric server"
+     * (discovery service), this value is always null, as the disovery service
+     * provides service metadata and proxies thread/metrics data from individual
+     * microservices via its API.
+    */
     threadsEndpoint: !getFabricServer() ? getThreadsEndpoint() : null,
+    metricsEndpoint: !getFabricServer() ? getMetricsEndpoint() : null,
+    runtime: !getFabricServer() ? getRuntime() : null,
+
+    /**
+     * Used when running either with or without a fabric server
+     */
+    isPollingInstance: false,
+    instancePollingInterval: 5000,
+    metricsPollingFailures: 0,
     threadsFilter: "all"
   },
+  // Note: Some of these actions are never actually invoked, as the initial state
+  // evaluates at app initialization and then never changes
   setFabricServer(state, payload) {
     return { ...state, fabricServer: payload };
   },
