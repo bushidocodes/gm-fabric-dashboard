@@ -17,9 +17,10 @@ import InstanceRouter from "./instance/InstanceRouter";
 import { getFabricServer } from "../utils/head";
 import { getRuntime } from "../utils/selectors";
 
+// toolbar wrapper - do not display scrollbar
 const AppContainer = styled.div`
+  -ms-overflow-style: none;
   overflow-scrolling: auto;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -29,9 +30,10 @@ const AppContainer = styled.div`
   overflow-x: hidden;
 `;
 
+// content wrapper - display scrollbar
 const AppContent = styled.div`
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-scrolling: touch;
-  overflow-y: scroll;
   flex: 1 1 100%;
   display: flex;
   align-items: stretch;
