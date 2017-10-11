@@ -16,12 +16,7 @@ $table-row-height-basis: spacing-scale(4.5);
   overflow: hidden;
 
   &.selectable {
-    position: relative;
     cursor: pointer;
-
-    &:focus {
-      outline: none;
-    }
 
     &.open {
       height: auto;
@@ -40,7 +35,6 @@ $table-row-height-basis: spacing-scale(4.5);
   flex: 1 1 15%;
   text-align: left;
   min-height: $table-row-height-basis;
-  position: relative;
   padding-right: spacing-scale(2);
   padding-top: spacing-scale(0.888);
   overflow: hidden;
@@ -82,7 +76,6 @@ $table-row-height-basis: spacing-scale(4.5);
   .div-table-body > * {
     @include styles-for-rows;
     flex-wrap: wrap;
-    position: relative;
   }
 
   .div-table-header > *,

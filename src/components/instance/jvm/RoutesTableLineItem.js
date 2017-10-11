@@ -45,6 +45,7 @@ export default class RoutesTableLineItem extends Component {
           }
         }}
         role="link"
+        tabIndex="0"
       >
         <div className="routes-table-route">
           {this.props.route}

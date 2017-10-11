@@ -53,6 +53,7 @@ export default class RoutesTableLineItem extends Component {
           }
         }}
         role="link"
+        tabIndex="0"
       >
         <div className="routes-table-route">
           <span className="uk-badge uk-margin-right">{this.props.verb}</span>
