@@ -7,6 +7,7 @@ const SearchInput = styled.input.attrs({
   position: relative;
   background-image: url(${Magnifier});
   background-repeat: no-repeat;
+  background-size: contain;
   text-indent: 20px;
 `;
 
