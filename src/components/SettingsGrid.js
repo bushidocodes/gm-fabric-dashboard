@@ -71,7 +71,7 @@ function SettingsGrid({
             clickAction={clearCacheClickAction}
             icon="close"
             label="Clear Metrics Cache"
-            tabIndex={30}
+            tabIndex={0}
           />
         </Readout>
       </LayoutSection>

@@ -54,7 +54,7 @@ class PollingSettings extends Component {
               label={buttonLabel}
               orientation={"vertical"}
               outline={"none"}
-              tabIndex={20}
+              tabIndex={0}
               type={"primary"}
             />
           </div>
@@ -68,7 +68,6 @@ class PollingSettings extends Component {
                 this.setState({ localInterval: value });
                 this.state.debouncedSetInterval(value * 1000);
               }}
-              tabIndex={21}
               value={this.state.localInterval}
             />
             <span className="label" id="interval-name">
