@@ -130,14 +130,13 @@ export default class GMServiceListItem extends Component {
                 }
               }}
               role="Link"
-              tabIndex="0"
             >
               <IconWrapper>
                 {groupByAttribute.toLowerCase() !== "status" && (
                   <StatusIcon status={status} />
                 )}
               </IconWrapper>
-              <ItemName>{name}</ItemName>
+              <ItemName tabIndex="0">{name}</ItemName>
               <ItemVersion>{version}</ItemVersion>
             </ServiceLink>
           </LineLeft>
