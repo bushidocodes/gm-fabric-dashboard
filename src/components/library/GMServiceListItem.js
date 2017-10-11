@@ -8,6 +8,8 @@ import styled from "styled-components";
 import { COLOR_HIGHLIGHT, FONT_SIZE_XS } from "../../style/styleVariables";
 import { spacingScale } from "../../style/styleFunctions";
 
+import Docs from "../../images/icons/docs.svg";
+
 const Line = styled.div`
   display: flex;
   height: ${spacingScale(3)};
@@ -36,18 +38,16 @@ const IconWrapper = styled.div`
   height: ${spacingScale(3)};
 `;
 
-const ItemName = styled.span`
-  display: inline-flex;
+const ItemName = styled.div`
   margin-right: ${spacingScale(1)};
   align-items: center;
 `;
 
-const ItemVersion = styled.span`
+const ItemVersion = styled.div`
   font-size: ${FONT_SIZE_XS};
   margin: 0 0 0 ${spacingScale(0.25)};
   color: gray;
-  display: inline-flex;
-  align-items: center;
+  align-self: center;
 `;
 
 const ServiceLink = styled.div`
@@ -56,6 +56,7 @@ const ServiceLink = styled.div`
   text-decoration: none;
   color: black;
   outline: none;
+  display: flex;
 `;
 
 const DocLink = styled.a`
@@ -141,7 +142,11 @@ export default class GMServiceListItem extends Component {
             </ServiceLink>
           </LineLeft>
           <LineRight>
-            {docsLink && <DocLink href={docsLink}>Docs</DocLink>}
+            {docsLink && (
+              <DocLink href={docsLink}>
+                <img alt="Docs" src={Docs} />
+              </DocLink>
+            )}
           </LineRight>
         </Line>
         <Collapse
