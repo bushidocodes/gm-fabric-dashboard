@@ -28,7 +28,7 @@ const Services = styled.div`
   margin: 2px;
   padding: ${spacingScale(0.75)} 0 ${spacingScale(0.5)};
   min-height: ${spacingScale(4.25)};
-  background-color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.71).string()};
+  background-color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.29).string()};
   border-radius: ${BORDER_RADIUS_BASE};
 `;
 

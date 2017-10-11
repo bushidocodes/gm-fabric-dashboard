@@ -10,7 +10,7 @@ import {
 
 /**
  * Utility to generate a readable content color from the background color of an element
- * 
+ *
  * @param {Object|string} backgroundColor - a Color libary object or a string containing a color hex
  * @param {number} contrast - a number between 0 and 1
  * @param {Object|string} intentColor  - an optional Color libary object or a string containing a color hex
@@ -24,24 +24,27 @@ export function contrastColor(backgroundColor, contrast, intentColor) {
   if (typeof intentColor === "string") {
     intentColor = Color(intentColor);
   }
+  // luminosity() => 0 is black, 1 is white.
+  // if luminosity of color is closer to light, and intentColor is null, set the intentColor to black.  if luminosity is closer to dark, and intentColor is null, set the intentColor to white.
   if (backgroundColor.luminosity() > 0.65) {
-    intentColor = intentColor || Color("#000");
+    intentColor = intentColor || Color("#000"); //black
     return backgroundColor.mix(intentColor, contrast);
   } else {
-    let enhancedContrast = contrast * DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO;
-    intentColor = intentColor || Color("#FFF");
+    let enhancedContrast = contrast * DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO; // DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO = 2
+    intentColor = intentColor || Color("#FFF"); //white
     if (enhancedContrast > 1) {
+      // enhancedContrast = 1
       enhancedContrast = 1;
     }
-    return intentColor.mix(backgroundColor, contrast);
+    return backgroundColor.mix(intentColor, contrast);
   }
 }
 
 /**
  * Scales a string of a certain number of pixels according to a given factor
- * 
+ *
  * @export
- * @param {number} factor 
+ * @param {number} factor
  * @returns {string} A string in the format "10px"
  */
 export function spacingScale(factor) {
@@ -50,7 +53,7 @@ export function spacingScale(factor) {
 
 /**
  * Utility to generate a rsubtle keyline color for element separators
- * 
+ *
  * @param {Object|string} backgroundColor - a Color libary object or a string containing a color hex
  * @param {number} contrast - a number between 0 and 1
  * @returns {Object} - A color library object

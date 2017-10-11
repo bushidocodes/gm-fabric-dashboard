@@ -9,7 +9,7 @@ import { spacingScale, contrastColor } from "../../style/styleFunctions";
 
 // styled components
 const SectionItem = styled.div`
-  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0)
+  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 1)
     .hsl()
     .string()};
   display: flex;
