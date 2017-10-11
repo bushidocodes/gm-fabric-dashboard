@@ -115,7 +115,7 @@ export const generateSidebarCards = createSelector(
             icon={value.summaryCard.icon}
             key={`/${key}`}
             lines={lines}
-            tabIndex={9}
+            tabIndex={0}
             title={value.name}
           />
         );

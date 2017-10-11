@@ -20,7 +20,7 @@ export default function SidebarContent({ sidebarCards }) {
       <SidebarCard
         href={`/explorer`}
         icon="search"
-        tabIndex={8}
+        tabIndex={1}
         title="Explorer"
       />
     </div>

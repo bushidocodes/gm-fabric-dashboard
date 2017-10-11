@@ -65,6 +65,7 @@ export default class SidebarCard extends Component {
                 evt.preventDefault();
                 this.setState({ isOpen: !this.state.isOpen });
               }}
+              tabIndex={tabIndex}
               icon={"chevron-left"}
               label={"Details"}
               outline={"none"}

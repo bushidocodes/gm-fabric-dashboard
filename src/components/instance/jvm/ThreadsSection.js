@@ -32,7 +32,7 @@ class ThreadsSection extends Component {
               disabled={!threadCounts.all}
               label={"All Threads"}
               suffix={threadCounts.all}
-              tabIndex={15}
+              tabIndex={0}
             />
             <span className="uk-button-group uk-margin-left">
               <Button
@@ -40,21 +40,21 @@ class ThreadsSection extends Component {
                 disabled={!threadCounts.active}
                 label={"Active"}
                 suffix={threadCounts.active}
-                tabIndex={16}
+                tabIndex={0}
               />
               <Button
                 clickAction={() => Actions.setThreadsFilter("idle")}
                 disabled={!threadCounts.idle}
                 label={"Idle"}
                 suffix={threadCounts.idle}
-                tabIndex={17}
+                tabIndex={0}
               />
               <Button
                 clickAction={() => Actions.setThreadsFilter("stopped")}
                 disabled={!threadCounts.stopped}
                 label={"Stopped"}
                 suffix={threadCounts.stopped}
-                tabIndex={18}
+                tabIndex={0}
               />
             </span>
           </div>

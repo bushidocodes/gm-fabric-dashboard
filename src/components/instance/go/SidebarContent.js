@@ -31,7 +31,7 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
             value: ms(uptime)
           }
         ]}
-        tabIndex={1}
+        tabIndex={0}
         title="Summary"
       />
       <SidebarCard
@@ -45,7 +45,7 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
               getLatestAttribute(metrics, "HTTPS/requests")
           }
         ]}
-        tabIndex={1}
+        tabIndex={0}
         title="Routes"
       />
       <SidebarCard
@@ -57,14 +57,14 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
             value: getLatestAttribute(metrics, "RPC/requests")
           }
         ]}
-        tabIndex={1}
+        tabIndex={0}
         title="Functions"
       />
       {sidebarCards}
       <SidebarCard
         href={`${basePath}/explorer`}
         icon="search"
-        tabIndex={8}
+        tabIndex={0}
         title="Explorer"
       />
     </div>

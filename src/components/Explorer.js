@@ -44,23 +44,19 @@ const MetricsGraphDisplay = styled.div`
   .chart {
     display: flex;
     align-items: stretch;
-
     .chart-title {
       flex: 0 0 auto;
     }
-
     .chart-content {
       flex: 1 1 100%;
       position: relative;
     }
   }
-
   > * {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: spacingScale(2);
-
     h3 {
       flex: 0 0 auto;
       word-break: break-all;
@@ -70,7 +66,6 @@ const MetricsGraphDisplay = styled.div`
       margin: spacingScale(1);
     }
   }
-
   p {
     text-align: center;
     opacity: 0.8;
@@ -173,7 +168,7 @@ class Explorer extends Component {
             onSearch={this.onSearch.bind(this)}
             searchQuery={query.searchQuery || ""}
             selectedMetric={selectedMetric}
-            tabIndex={20}
+            tabIndex={0}
           />
         </MetricsList>
         <MetricsGraphDisplay>

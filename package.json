@@ -107,13 +107,10 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker":
-      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "publish": "bash scripts/publish.sh",
-    "docs":
-      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check":
-      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "precommit": "lint-staged",

@@ -1,6 +1,6 @@
 // components/table.scss
-@import '../variables.scss';
-@import '../mixins.scss';
+@import "../variables.scss";
+@import "../mixins.scss";
 
 // Local Variables
 $table-row-divider-color: edge-color($color-content-background);
@@ -42,7 +42,7 @@ $table-row-height-basis: spacing-scale(4.5);
   min-height: $table-row-height-basis;
   position: relative;
   padding-right: spacing-scale(2);
-  padding-top: spacing-scale(.888);
+  padding-top: spacing-scale(0.888);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

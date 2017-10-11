@@ -31,13 +31,13 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
             value: ms(getLatestAttribute(metrics, "jvm/uptime"))
           }
         ]}
-        tabIndex={1}
+        tabIndex={0}
         title="Summary"
       />
       <SidebarCard
         href={`${basePath}/route`}
         icon="link"
-        tabIndex={3}
+        tabIndex={0}
         title="Routes"
       />
       <SidebarCard
@@ -50,14 +50,14 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
             value: getLatestAttribute(metrics, "jvm/thread/count")
           }
         ]}
-        tabIndex={4}
+        tabIndex={0}
         title="Threads"
       />
       {sidebarCards}
       <SidebarCard
         href={`${basePath}/explorer`}
         icon="search"
-        tabIndex={8}
+        tabIndex={0}
         title="Explorer"
       />
     </div>

@@ -42,13 +42,13 @@ class SidebarInstance extends Component {
                   value: ms(getLatestAttribute(metrics, "jvm/uptime"))
                 }
               ]}
-              tabIndex={1}
+              tabIndex={0}
               title="Summary"
             />
             <SidebarCard
               href={`/${serviceName}/${instanceID}/route`}
               icon="link"
-              tabIndex={3}
+              tabIndex={0}
               title="Routes"
             />
             <SidebarCard
@@ -61,7 +61,7 @@ class SidebarInstance extends Component {
                   value: getLatestAttribute(metrics, "jvm/thread/count")
                 }
               ]}
-              tabIndex={4}
+              tabIndex={0}
               title="Threads"
             />
             {this.generateDynamicDashboards(
@@ -73,7 +73,7 @@ class SidebarInstance extends Component {
             <SidebarCard
               href={`/${serviceName}/${instanceID}/explorer`}
               icon="search"
-              tabIndex={8}
+              tabIndex={0}
               title="Explorer"
             />
           </div>
@@ -90,7 +90,7 @@ class SidebarInstance extends Component {
             <SidebarCard
               href={`/${serviceName}/${instanceID}/explorer`}
               icon="search"
-              tabIndex={8}
+              tabIndex={0}
               title="Explorer"
             />
           </div>
@@ -139,7 +139,7 @@ class SidebarInstance extends Component {
           icon={value.summaryCard.icon}
           key={`/${serviceName}/${instanceID}/${key}`}
           lines={lines}
-          tabIndex={9}
+          tabIndex={0}
           title={value.name}
         />
       );

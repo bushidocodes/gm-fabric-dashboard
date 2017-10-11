@@ -28,7 +28,6 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
   background-color: $summary-bar-background-color;
   text-shadow: 1px 1px $summary-bar-background-color;
   padding: 0;
-  position: relative;
   transition: all 0.15s ease;
 
   .summary-bar-card-title {
@@ -167,11 +166,6 @@ $summary-bar-card-text-color: contrast-color($summary-bar-background-color);
         $summary-bar-card-active-background-color,
         60%
       );
-  }
-
-  &:active,
-  &:focus {
-    outline: none;
   }
 
   &.open {

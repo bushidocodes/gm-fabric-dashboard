@@ -56,7 +56,7 @@ export default class ThreadsTableLineItem extends Component {
   };
 
   render() {
-    const { arrIndex, daemon, id, name, priority, stack, state } = this.props;
+    const { daemon, id, name, priority, stack, state } = this.props;
     const indicatorIcon = this.indicatorColor(state);
 
     return (
@@ -76,7 +76,7 @@ export default class ThreadsTableLineItem extends Component {
         }}
         role="link"
         style={stack.length ? { cursor: "pointer" } : {}}
-        tabIndex={arrIndex + 20}
+        tabIndex={0}
       >
         <div className="thread-table-id">{`${Number(id)}`}</div>
         <div className="thread-table-state">
