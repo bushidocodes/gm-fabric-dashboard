@@ -34,15 +34,15 @@ export default class FunctionsTableLineItem extends Component {
   };
 
   render() {
-    // initialize errorPercent as zero and calculate errorPercent if number of requests is not zero
-    let errorPercent = 0;
-    if (this.props.requests !== 0) {
-      errorPercent =
-        (1 -
-          (this.props.requests - this.props.errorsCount) /
-            this.props.requests) *
-        100;
-    }
+    let errorPercent = this.props.requests
+      ? Math.round(
+          (1 -
+            (this.props.requests - this.props.errorsCount) /
+              this.props.requests) *
+            100 *
+            1000
+        ) / 1000
+      : 0;
 
     return (
       <li
@@ -85,7 +85,7 @@ export default class FunctionsTableLineItem extends Component {
         <div
           className={
             "routes-table-error-percent routes-table-monospace err-pc-" +
-            errorPercent
+            parseInt(errorPercent / 10, 10)
           }
         >
           {`${errorPercent}%`}

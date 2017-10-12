@@ -10,7 +10,7 @@ import {
 import GMLineChart from "../../library/GMLineChart";
 
 /**
- * A row of data in the Go RoutesTable 
+ * A row of data in the Go RoutesTable
  * @export
  * @class RoutesTableLineItem
  * @extends {Component}
@@ -36,12 +36,25 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    const errorPercent = this.props.requests
-      ? (1 -
-          (this.props.requests - this.props.errorsCount) /
-            this.props.requests) *
-        100
+    // round off any float points after three decimal places.  integers will not have trailing zeros
+    let errorPercent = this.props.requests
+      ? Math.round(
+          (1 -
+            (this.props.requests - this.props.errorsCount) /
+              this.props.requests) *
+            100 *
+            1000
+        ) / 1000
       : 0;
+
+    // roundsTable.scss calculates the error percentage color based on the percentage value.  the mix function in scss takes value of percentage so it will be on the green scale up to 30%, brown between 30%~60%, then get closer to red above 70%.
+    // errorPercent = 10;
+    // errorPercent = 34.77;
+    // errorPercent = 43.77;
+    // errorPercent = 50;
+    // errorPercent = 76.888;
+    // errorPercent = 100;
+
     return (
       <li
         className={this.state.isOpen ? "selectable open" : "selectable"}
@@ -87,7 +100,7 @@ export default class RoutesTableLineItem extends Component {
         <div
           className={
             "routes-table-error-percent routes-table-monospace err-pc-" +
-            errorPercent
+            parseInt(errorPercent / 10, 10)
           }
         >
           {`${errorPercent}%`}
