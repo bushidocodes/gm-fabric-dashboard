@@ -39,6 +39,12 @@ export default class Inspector extends Component {
                   : ""}`}
                 key={key}
                 onClick={evt => onClick(evt.target.innerText)}
+                onKeyDown={evt => {
+                  if (evt.keyCode === 13) {
+                    onClick(evt.target.innerText);
+                  }
+                }}
+                tabIndex="0"
               >
                 {key}
               </li>
