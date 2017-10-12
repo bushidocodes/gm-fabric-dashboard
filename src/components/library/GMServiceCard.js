@@ -12,6 +12,8 @@ import Color from "color";
 
 import styled from "styled-components";
 
+import DocsIcon from "./DocsIcon";
+
 const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
   background-image: linear-gradient(
@@ -43,22 +45,11 @@ const Title = styled.div`
   font-weight: ${props => props.cardFontWeight};
 `;
 
-const Version = styled.div`
+const CardFooter = styled.div`
   display: flex;
   align-items: flex-end;
   font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
-`;
-const Circle = styled.circle`
-  cx: 10;
-  cy: 10;
-  r: 1;
-  stroke: ${props => props.color};
-  fill: ${props => props.color};
-`;
-
-const SvgContainer = styled.span`
-  width: 20px;
-  height: 20px;
+  justify-content: space-between;
 `;
 
 const ServiceLink = styled.a`
@@ -133,22 +124,15 @@ export default function GMServiceCard({
       <ServiceLink href={docsLink} cardFontColor={cardFontColor}>
         <Title cardFontWeight={cardFontWeight}>{name}</Title>
       </ServiceLink>
-      <Version cardFontWeight={cardFontWeight}>
+      <CardFooter cardFontWeight={cardFontWeight}>
         {version}
         {version &&
           docsLink && (
-            <SvgContainer>
-              <svg>
-                <Circle color={cardFontColor} />
-              </svg>
-            </SvgContainer>
+            <DocsLink cardFontColor={cardFontColor} href={docsLink}>
+              <DocsIcon fillColor={cardFontColor} />
+            </DocsLink>
           )}
-        {docsLink && (
-          <DocsLink cardFontColor={cardFontColor} href={docsLink}>
-            Docs
-          </DocsLink>
-        )}
-      </Version>
+      </CardFooter>
     </CardContainer>
   );
 }
