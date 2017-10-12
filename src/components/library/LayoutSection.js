@@ -1,5 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import styled from "styled-components";
+import { spacingScale } from "../../style/styleFunctions";
+import { FONT_SIZE_LG } from "../../style/styleVariables";
 
 LayoutSection.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -8,28 +11,51 @@ LayoutSection.propTypes = {
   title: PropTypes.string.isRequired
 };
 
+const LayoutSectionWrap = styled.section`
+  margin-bottom: ${spacingScale(4)};
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`;
+const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: ${(spacingScale(1), spacingScale(2))};
+  border-top: 1px solid $section-border-color;
+  color: contrast-color($color-content-background);
+`;
+const SectionIcon = styled.span`
+  flex: 0 0 auto;
+  padding-right: ${spacingScale(1)} !important;
+`;
+const SectionTitle = styled.h3`
+  color: inherit;
+  font-size: ${FONT_SIZE_LG};
+  margin: 0;
+`;
+const SectionContent = styled.div`padding: ${spacingScale(1)};`;
+
 /**
  * Section of a static dashboard, complete with header and icon
  * @param {Object} props - refer to propTypes 
  */
-function LayoutSection({ children, className, title, icon }) {
+
+function LayoutSection({ children, className = "", title, icon }) {
   return (
-    <section className={"layout-section " + className}>
-      <header>
+    <LayoutSectionWrap className={"layout-section " + className}>
+      <Header>
         {icon ? (
-          <span className="section-icon">
+          <SectionIcon>
             <img src={icon} alt="" />
-          </span>
+          </SectionIcon>
         ) : (
-          <span
-            className="section-icon"
-            data-uk-icon={`icon: grid; ratio: 1`}
-          />
+          <SectionIcon data-uk-icon={`icon: grid; ratio: 1`} />
         )}
-        <h3 className="section-title">{title}</h3>
-      </header>
-      <div className="section-content">{children}</div>
-    </section>
+        <SectionTitle>{title}</SectionTitle>
+      </Header>
+      <SectionContent>{children}</SectionContent>
+    </LayoutSectionWrap>
   );
 }
 
