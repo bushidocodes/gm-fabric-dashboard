@@ -1,8 +1,11 @@
 import { PropTypes } from "prop-types";
 import React from "react";
+import GMSelect from "../../library/GMSelect";
+import { ButtonSecondaryText } from "../../library/GMButtons";
 
 RoutesTableToolbar.propTypes = {
   filterString: PropTypes.string.isRequired,
+  keyToSortBy: PropTypes.string.isRequired,
   setFilterString: PropTypes.func.isRequired,
   setKeyToSortBy: PropTypes.func.isRequired
 };
@@ -18,6 +21,7 @@ RoutesTableToolbar.propTypes = {
  */
 export default function RoutesTableToolbar({
   filterString,
+  keyToSortBy,
   setFilterString,
   setKeyToSortBy
 }) {
@@ -35,21 +39,33 @@ export default function RoutesTableToolbar({
         </form>
       </div>
       <div className="toolbar-right">
-        <div className="uk-button-group">
-          <button className="btn">
-            <span className="label">Sort</span>
-            <span className="icon" data-uk-icon="icon: triangle-down" />
-          </button>
-          <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
-            <ul className="uk-nav uk-dropdown-nav">
-              <li onClick={evt => setKeyToSortBy("route")}>Route</li>
-              <li onClick={evt => setKeyToSortBy("totalRequests")}>
-                Total Requests
-              </li>
-              <li onClick={evt => setKeyToSortBy("errorRate")}>Error %</li>
-            </ul>
-          </div>
-        </div>
+        <GMSelect
+          name="form-field-group-by"
+          options={[
+            {
+              value: "route",
+              label: "Route"
+            },
+            {
+              value: "totalRequests",
+              label: "Total Requests"
+            },
+            {
+              value: "errorRate",
+              label: "Error %"
+            }
+          ]}
+          value={keyToSortBy}
+          onChange={val => setKeyToSortBy(val.value)}
+          clearable={false}
+          searchable={false}
+          valueRenderer={val => (
+            <span>
+              <span>Sort </span>
+              <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+            </span>
+          )}
+        />
       </div>
     </div>
   );

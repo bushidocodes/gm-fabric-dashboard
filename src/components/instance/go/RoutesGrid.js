@@ -72,6 +72,7 @@ class RoutesGrid extends Component {
           <RoutesTableToolbar
             filterString={this.state.filterString}
             setFilterString={this.setFilterString}
+            keyToSortBy={this.state.keyToSortBy}
             setKeyToSortBy={this.setKeyToSortBy}
           />
           <RoutesTable

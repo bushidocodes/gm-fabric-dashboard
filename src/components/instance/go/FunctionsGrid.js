@@ -71,6 +71,7 @@ class FunctionsGrid extends Component {
         <div className="routes-table-container">
           <FunctionsTableToolbar
             filterString={this.state.filterString}
+            keyToSortBy={this.state.keyToSortBy}
             setFilterString={this.setFilterString}
             setKeyToSortBy={this.setKeyToSortBy}
           />

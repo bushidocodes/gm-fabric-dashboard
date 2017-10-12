@@ -7,15 +7,14 @@ import {
   ToolbarRight
 } from "../library/GMTableToolbar";
 import {
-  StyledButton,
   ButtonRoundedLeft,
   ButtonRoundedRight,
   ButtonSecondaryText
 } from "../library/GMButtons";
 import SearchInput from "../library/GMSearchInput";
-import TriangleDown from "../library/TriangleDown";
 import List from "../../images/icons/list.svg";
 import Card from "../../images/icons/card.svg";
+import GMSelect from "../library/GMSelect";
 
 export default class FabricTableToolbar extends Component {
   static propTypes = {
@@ -69,34 +68,56 @@ export default class FabricTableToolbar extends Component {
           </ButtonRoundedRight>
         </ToolbarCenter>
         <ToolbarRight>
-          <div className="uk-button-group">
-            <StyledButton>
-              <span>Group</span>
-              <ButtonSecondaryText>{groupByAttribute}</ButtonSecondaryText>
-              <TriangleDown />
-            </StyledButton>
-            <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
-              <ul className="uk-nav uk-dropdown-nav">
-                <li onClick={() => setGroupByAttribute("Owner")}>Owner</li>
-                <li onClick={() => setGroupByAttribute("Status")}>Status</li>
-                <li onClick={() => setGroupByAttribute("None")}>None</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="uk-button-group">
-            <StyledButton>
-              <span>Sort</span>
-              <ButtonSecondaryText>{sortByAttribute}</ButtonSecondaryText>
-              <TriangleDown />
-            </StyledButton>
-            <div data-uk-dropdown="mode: click; pos: bottom-right; boundary: ! .uk-button-group; boundary-align: true;">
-              <ul className="uk-nav uk-dropdown-nav">
-                <li onClick={() => setSortByAttribute("Name")}>Name</li>
-                <li onClick={() => setSortByAttribute("Status")}>Status</li>
-              </ul>
-            </div>
-          </div>
+          <GMSelect
+            name="form-field-group-by"
+            options={[
+              {
+                value: "Owner",
+                label: "Owner"
+              },
+              {
+                value: "Status",
+                label: "Status"
+              },
+              {
+                value: "None",
+                label: "None"
+              }
+            ]}
+            value={groupByAttribute}
+            onChange={val => setGroupByAttribute(val.value)}
+            clearable={false}
+            searchable={false}
+            valueRenderer={val => (
+              <span>
+                <span>Group </span>
+                <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+              </span>
+            )}
+          />
+          <GMSelect
+            name="form-field-sort-by"
+            options={[
+              {
+                value: "Name",
+                label: "Name"
+              },
+              {
+                value: "Status",
+                label: "Status"
+              }
+            ]}
+            value={sortByAttribute}
+            onChange={val => setSortByAttribute(val.value)}
+            clearable={false}
+            searchable={false}
+            valueRenderer={val => (
+              <span>
+                <span>Sort </span>
+                <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+              </span>
+            )}
+          />
         </ToolbarRight>
       </Toolbar>
     );
