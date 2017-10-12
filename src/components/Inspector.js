@@ -1,6 +1,5 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import _ from "lodash";
 
 /** Filterable list of selectable string */
 export default class Inspector extends Component {
@@ -11,27 +10,24 @@ export default class Inspector extends Component {
     searchQuery: PropTypes.string,
     selectedMetric: PropTypes.string
   };
-  onSearchDebounced = _.debounce(this.props.onSearch, 1000);
-  onKeyPressHandler = evt => {
-    if (evt.key === "Enter") {
-      this.onSearchDebounced.flush();
-    }
-  };
+
   render() {
     const { data, onClick, searchQuery, selectedMetric } = this.props;
-    const lowerSearchQuery = searchQuery.toLowerCase();
+    // Filter out keys that don't match the searchQuery
     const filteredData = searchQuery
-      ? data.filter(i => i.toLowerCase().indexOf(lowerSearchQuery) !== -1)
+      ? data.filter(
+          i => i.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
+        )
       : data;
     return (
       <div className="inspector">
         <div className="inspector-toolbar">
           <input
             className="inspector-search"
-            onChange={evt => this.onSearchDebounced(evt.target.value)}
-            onKeyPress={evt => this.onKeyPressHandler(evt)}
+            onChange={evt => this.props.onSearch(evt.target.value)}
             placeholder="Search"
             type="search"
+            value={searchQuery}
           />
         </div>
         {data.length > 0 && (
@@ -42,7 +38,7 @@ export default class Inspector extends Component {
                   ? "active"
                   : ""}`}
                 key={key}
-                onClick={evt => onClick(evt.target)}
+                onClick={evt => onClick(evt.target.innerText)}
               >
                 {key}
               </li>

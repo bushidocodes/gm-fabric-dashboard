@@ -20,6 +20,7 @@ class FabricGrid extends Component {
     super(props);
     this.state = {
       searchQuery: "",
+      lastPushedQueryString: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
       displayType: "Card"
@@ -76,9 +77,9 @@ class FabricGrid extends Component {
    * 
    * @memberof FabricGrid
    */
-  encodeAndPushHistory = searchQuery => {
+  encodeAndPushHistory = () => {
     // Clean local state
-    searchQuery = this.state.searchQuery.trim().toLowerCase();
+    const searchQuery = this.state.searchQuery.trim().toLowerCase();
     // Only encode the truthy pieces of local state into a form ready to be pushed to the
     // browser's query string. If no local state is truthy, call debouncedPushHistory without
     // an argument to remove the search query from the URL.
