@@ -10,7 +10,7 @@ import {
 import GMLineChart from "../../library/GMLineChart";
 
 /**
- * A row of data in RoutesTable 
+ * A row of data in RoutesTable
  * @export
  * @class RoutesTableLineItem
  * @extends {Component}
@@ -34,6 +34,10 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
+    let errorPercent = Number(this.props.errorRate).toLocaleString(undefined, {
+      maximumFractionDigits: 3,
+      minimumFractionDigits: 3
+    });
     return (
       <li
         className={this.state.isOpen ? "selectable open" : "selectable"}
@@ -84,7 +88,7 @@ export default class RoutesTableLineItem extends Component {
             this.props.errorRate
           }
         >
-          {this.props.errorRate}
+          {errorPercent}
         </div>
 
         <Collapse

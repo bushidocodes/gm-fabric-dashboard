@@ -36,25 +36,31 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    // round off any float points after three decimal places.  integers will not have trailing zeros
+    // force three decimal points at all times and return language sensitive representation of number (commas and periods)
     let errorPercent = this.props.requests
-      ? Math.round(
-          (1 -
-            (this.props.requests - this.props.errorsCount) /
-              this.props.requests) *
-            100 *
-            1000
-        ) / 1000
+      ? ((1 -
+          (this.props.requests - this.props.errorsCount) /
+            this.props.requests) *
+          100
+        ).toLocaleString(undefined, {
+          maximumFractionDigits: 3,
+          minimumFractionDigits: 3
+        })
       : 0;
 
-    // roundsTable.scss calculates the error percentage color based on the percentage value.  the mix function in scss takes value of percentage so it will be on the green scale up to 30%, brown between 30%~60%, then get closer to red above 70%.
-    // errorPercent = 10;
-    // errorPercent = 34.77;
-    // errorPercent = 43.77;
-    // errorPercent = 50;
-    // errorPercent = 76.888;
-    // errorPercent = 100;
+    /**
+    *
+    * roundsTable.scss calculates the error percentage color based on the percentage value.
+    the mix function in scss takes value of percentage so it will be on the green scale up to 30%,
+    brown between 30%~60%, then get closer to red above 70%.
 
+    * className={
+            "routes-table-error-percent routes-table-monospace err-pc-" .....
+      currently using the scale of 0 to 10 to render color.
+
+    * TO DO:  refactor the coloring contrast for error percent display as styled-components.  related to issue #368
+    ...< 0.1% error rate is green, > 0.1% and < 1% is yellow, and >1% is red
+    */
     return (
       <li
         className={this.state.isOpen ? "selectable open" : "selectable"}
@@ -100,7 +106,7 @@ export default class RoutesTableLineItem extends Component {
         <div
           className={
             "routes-table-error-percent routes-table-monospace err-pc-" +
-            parseInt(errorPercent / 10, 10)
+            Math.round(errorPercent / 10)
           }
         >
           {`${errorPercent}%`}

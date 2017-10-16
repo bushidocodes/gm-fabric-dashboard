@@ -34,14 +34,16 @@ export default class FunctionsTableLineItem extends Component {
   };
 
   render() {
+    // force three decimal points at all times and return language sensitive representation of number (commas and periods)
     let errorPercent = this.props.requests
-      ? Math.round(
-          (1 -
-            (this.props.requests - this.props.errorsCount) /
-              this.props.requests) *
-            100 *
-            1000
-        ) / 1000
+      ? ((1 -
+          (this.props.requests - this.props.errorsCount) /
+            this.props.requests) *
+          100
+        ).toLocaleString(undefined, {
+          maximumFractionDigits: 3,
+          minimumFractionDigits: 3
+        })
       : 0;
 
     return (
