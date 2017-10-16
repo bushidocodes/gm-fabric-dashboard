@@ -2,11 +2,16 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import { spacingScale } from "../../style/styleFunctions";
-import { FONT_SIZE_LG } from "../../style/styleVariables";
+import {
+  COLOR_BLACK,
+  COLOR_WHITE,
+  FONT_SIZE_LG
+} from "../../style/styleVariables";
 
 LayoutSection.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   className: PropTypes.string,
+  flex: PropTypes.bool,
   icon: PropTypes.string,
   title: PropTypes.string.isRequired
 };
@@ -22,8 +27,8 @@ const Header = styled.header`
   flex-direction: row;
   align-items: center;
   padding: ${(spacingScale(1), spacingScale(2))};
-  border-top: 1px solid $section-border-color;
-  color: contrast-color($color-content-background);
+  border-top: 1px solid ${COLOR_BLACK.mix(COLOR_WHITE, 0.9).string()};
+  color: ${COLOR_BLACK};
 `;
 const SectionIcon = styled.span`
   flex: 0 0 auto;
@@ -34,16 +39,30 @@ const SectionTitle = styled.h3`
   font-size: ${FONT_SIZE_LG};
   margin: 0;
 `;
-const SectionContent = styled.div`padding: ${spacingScale(1)};`;
+
+//the id selectors here are a fix until view-app-settings.scss is refactored
+const SectionContent = styled.div`
+  padding: ${spacingScale(1)};
+  ${props =>
+    props.flex
+      ? "display: flex; flex-direction: row; justify-content: center;"
+      : ""};
+  > #ctrl-slider {
+    flex: 0 1 50%;
+  }
+  > #ctrl-btn {
+    flex: 0 0 160px;
+  }
+`;
 
 /**
  * Section of a static dashboard, complete with header and icon
  * @param {Object} props - refer to propTypes 
  */
 
-function LayoutSection({ children, className = "", title, icon }) {
+function LayoutSection({ children, title, icon, flex = false }) {
   return (
-    <LayoutSectionWrap className={"layout-section " + className}>
+    <LayoutSectionWrap>
       <Header>
         {icon ? (
           <SectionIcon>
@@ -54,7 +73,7 @@ function LayoutSection({ children, className = "", title, icon }) {
         )}
         <SectionTitle>{title}</SectionTitle>
       </Header>
-      <SectionContent>{children}</SectionContent>
+      <SectionContent flex={flex}>{children}</SectionContent>
     </LayoutSectionWrap>
   );
 }

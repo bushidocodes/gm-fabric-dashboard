@@ -60,11 +60,7 @@ function SettingsGrid({
         title={fabricServer ? "Instance Polling" : "Polling"}
       />
 
-      <LayoutSection
-        className={"settings-group-metrics-cache"}
-        icon={TapeIcon}
-        title={"Metrics Cache"}
-      >
+      <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
         <Readout align={"center"}>
           <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
           <Button
@@ -77,6 +73,7 @@ function SettingsGrid({
       </LayoutSection>
 
       {/** Disabled for initial release
+       /** className props has been deprecated and needs to be refactored
       <LayoutSection
         className={"settings-group-user-dashboards"}
         title={"Custom Dashboards"}

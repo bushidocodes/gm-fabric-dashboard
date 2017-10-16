@@ -5,7 +5,7 @@ import InputRange from "react-input-range";
 
 import PollIcon from "../images/icons/poll.svg";
 import Button from "./library/Button.js";
-
+import LayoutSection from "./library/LayoutSection";
 /** 
  * Control to start/stop polling and change the polling rate
  * Styled to resemble a Readout and intended to be a child of SettingsGrid
@@ -32,50 +32,48 @@ class PollingSettings extends Component {
     const buttonIcon = isPollingInstance ? "ban" : "play-circle";
     const buttonLabel = isPollingInstance ? "Stop Polling" : "Resume Polling";
     return (
-      <section className="layout-section settings-group-polling">
-        <header>
-          <span className="section-icon">
-            <img src={PollIcon} alt="" />
-          </span>
-          <h3 className="section-title">{title}</h3>
-        </header>
-        <div className="section-content">
-          <div className="control-group control-group-polling-start-stop">
-            <Button
-              clickAction={() => {
-                if (isPollingInstance) {
-                  stopPolling();
-                } else {
-                  startPolling();
-                }
-              }}
-              icon={buttonIcon}
-              iconSize={"xl"}
-              label={buttonLabel}
-              orientation={"vertical"}
-              outline={"none"}
-              tabIndex={0}
-              type={"primary"}
-            />
-          </div>
-
-          <div className="control-group control-group-polling-interval">
-            <InputRange
-              aria-labelledby="polling interval-name"
-              maxValue={120}
-              minValue={5}
-              onChange={value => {
-                this.setState({ localInterval: value });
-                this.state.debouncedSetInterval(value * 1000);
-              }}
-              value={this.state.localInterval}
-            />
-            <span className="label" id="interval-name">
-              {"Polling Interval (seconds)"}
-            </span>
-          </div>
+      <LayoutSection title={title} icon={PollIcon} flex>
+        <div
+          className="control-group control-group-polling-start-stop"
+          id="ctrl-btn"
+        >
+          <Button
+            clickAction={() => {
+              if (isPollingInstance) {
+                stopPolling();
+              } else {
+                startPolling();
+              }
+            }}
+            icon={buttonIcon}
+            iconSize={"xl"}
+            label={buttonLabel}
+            orientation={"vertical"}
+            outline={"none"}
+            tabIndex={0}
+            type={"primary"}
+          />
         </div>
-      </section>
+
+        <div
+          className="control-group control-group-polling-interval"
+          id="ctrl-slider"
+        >
+          <InputRange
+            aria-labelledby="polling interval-name"
+            maxValue={120}
+            minValue={5}
+            onChange={value => {
+              this.setState({ localInterval: value });
+              this.state.debouncedSetInterval(value * 1000);
+            }}
+            value={this.state.localInterval}
+          />
+          <span className="label" id="interval-name">
+            {"Polling Interval (seconds)"}
+          </span>
+        </div>
+      </LayoutSection>
     );
   }
 }
