@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import SidebarCard from "./SidebarCard";
-
+import SummaryBar from "./SummaryBar";
 class SidebarServices extends Component {
   static propTypes = {
     services: PropTypes.array.isRequired
@@ -12,7 +12,7 @@ class SidebarServices extends Component {
 
   render() {
     return (
-      <div className="summary-bar">
+      <SummaryBar>
         {this.props.services.map(service => {
           // Automatically redirect to the first instance if one exists, otherwise just point
           // at the services page
@@ -29,7 +29,7 @@ class SidebarServices extends Component {
             />
           );
         })}
-      </div>
+      </SummaryBar>
     );
   }
 }

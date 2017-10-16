@@ -1,9 +1,19 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
-
-import Button from "./library/Button.js";
+import {
+  ButtonDetails,
+  SummaryBarCard,
+  SummaryBarCardBody,
+  SummaryBarCardTitle,
+  SummaryBarCardIcon,
+  SummaryBarCardHeading,
+  SummaryBarCardKVWrap,
+  SummaryBarCardKVKey,
+  SummaryBarCardKVValue,
+  SparkLineContainer,
+  ValueText
+} from "./SummaryBar";
 
 /**
  * Navigational card rendered within the sidebar. Links to dashboards and contains
@@ -43,25 +53,16 @@ export default class SidebarCard extends Component {
       title
     } = this.props;
     return (
-      <NavLink
-        activeClassName="active"
-        className={
-          this.state.isOpen ? "summary-bar-card open" : "summary-bar-card"
-        }
-        tabIndex={tabIndex}
-        to={href}
-      >
-        <div className="summary-bar-card-title">
-          <span
-            className="summary-bar-card-icon"
-            data-uk-icon={`icon: ${icon || "grid"}; ratio: 1`}
-          />
-          <h1 className="summary-bar-card-heading">{title}</h1>
+      <SummaryBarCard tabIndex={tabIndex} to={href}>
+        <SummaryBarCardTitle>
+          <SummaryBarCardIcon icon={icon} />
+          <SummaryBarCardHeading>{title}</SummaryBarCardHeading>
           {(this.props.lines.length > 0 ||
             this.props.chartTitle ||
             this.props.chartData) && (
-            <Button
-              clickAction={evt => {
+            <ButtonDetails
+              open={this.state.isOpen}
+              onClick={evt => {
                 evt.preventDefault();
                 this.setState({ isOpen: !this.state.isOpen });
               }}
@@ -69,19 +70,20 @@ export default class SidebarCard extends Component {
               icon={"chevron-left"}
               label={"Details"}
               outline={"none"}
-            />
+            >
+              <span data-uk-icon={"chevron-left"} />
+            </ButtonDetails>
           )}
-        </div>
-        <div className="uk-card-body summary-bar-card-body">
+        </SummaryBarCardTitle>
+        <SummaryBarCardBody open={this.state.isOpen}>
           {lines.map(line => (
-            <div className="summary-bar-card-kv" key={line.name}>
-              <dt className="summary-bar-card-kv-key">{line.name}</dt>
-              <dd className="summary-bar-card-kv-value">
-                <span className="value-text">{line.value}</span>
+            <SummaryBarCardKVWrap key={line.name}>
+              <SummaryBarCardKVKey>{line.name}</SummaryBarCardKVKey>
+              <SummaryBarCardKVValue>
+                <ValueText>{line.value}</ValueText>
                 {chartData && (
-                  <div className="sparkline-container">
+                  <SparkLineContainer>
                     <Sparklines
-                      className="summary-datapoint-line"
                       data={chartData}
                       margin={3}
                       svgHeight={20}
@@ -98,13 +100,13 @@ export default class SidebarCard extends Component {
                         }}
                       />
                     </Sparklines>
-                  </div>
+                  </SparkLineContainer>
                 )}
-              </dd>
-            </div>
+              </SummaryBarCardKVValue>
+            </SummaryBarCardKVWrap>
           ))}
-        </div>
-      </NavLink>
+        </SummaryBarCardBody>
+      </SummaryBarCard>
     );
   }
 }

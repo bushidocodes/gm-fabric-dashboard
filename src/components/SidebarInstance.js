@@ -11,6 +11,7 @@ import {
 } from "../utils/sparklines";
 import SidebarCard from "./SidebarCard";
 import SidebarNavWidget from "./SidebarNavWidget";
+import { SummaryBar } from "./SummaryBar";
 
 class SidebarInstance extends Component {
   static propTypes = {
@@ -153,8 +154,9 @@ class SidebarInstance extends Component {
       metrics,
       service
     } = this.props;
+
     return (
-      <div className="summary-bar">
+      <SummaryBar>
         {service && (
           <SidebarNavWidget
             currentID={instanceID}
@@ -171,7 +173,7 @@ class SidebarInstance extends Component {
             dashboards,
             metrics
           )}
-      </div>
+      </SummaryBar>
     );
   }
 }

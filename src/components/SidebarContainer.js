@@ -10,6 +10,7 @@ import SidebarFooter from "./SidebarFooter";
 import SidebarHeader from "./SidebarHeader";
 import FabricSidebarNavWidget from "./fabric/SidebarNavWidget";
 import InstanceSidebarNavWidget from "./instance/SidebarNavWidget";
+import { SummaryBar } from "./SummaryBar";
 
 import { getFabricServer } from "../utils/head";
 
@@ -30,15 +31,15 @@ function SidebarContainer({ runtime }) {
       {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
       {/* index.html via the head utils */}
       {getFabricServer() ? (
-        <div className="summary-bar">
+        <SummaryBar>
           <FabricSidebarNavWidget />
           <SidebarContent />
-        </div>
+        </SummaryBar>
       ) : (
-        <div className="summary-bar">
+        <SummaryBar>
           <InstanceSidebarNavWidget />
           <InstanceSidebarContent runtime={runtime} />
-        </div>
+        </SummaryBar>
       )}
       <SidebarFooter />
     </Sidebar>
