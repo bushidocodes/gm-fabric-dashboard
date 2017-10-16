@@ -9,6 +9,9 @@ import {
   FONT_STACK_DATA
 } from "../../style/styleVariables";
 import Color from "color";
+import StatusStableIcon from "../../images/icons/status-stable.svg";
+import StatusWarningIcon from "../../images/icons/status-warning.svg";
+import StatusDownIcon from "../../images/icons/status-down.svg";
 
 import styled from "styled-components";
 
@@ -16,7 +19,7 @@ import DocsIcon from "./DocsIcon";
 
 const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
-  background-image: linear-gradient(
+  background: linear-gradient(
     ${props => Color(props.cardBackgroundColor).string()},
     ${props =>
       Color(props.cardBackgroundColor)
@@ -36,6 +39,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 `;
 
 const Title = styled.div`
@@ -67,6 +71,17 @@ const DocsLink = styled.a`
   color: ${props => props.cardFontColor};
 `;
 
+const BackgroundIcon = styled.img.attrs({
+  src: props => props.iconUrl
+})`
+  filter: ${props =>
+    props.status === "Stable" ? "opacity(0.1)" : "opacity(0.5)"};
+  width: 80px;
+  position: absolute;
+  top: -5px;
+  right: 5px;
+`;
+
 GMServiceCard.propTypes = {
   docsLink: PropTypes.string,
   height: PropTypes.string,
@@ -89,18 +104,21 @@ export default function GMServiceCard({
     cardBorderColor,
     cardFontColor,
     cardFontWeight,
-    cardBorderBottomColor;
+    cardBorderBottomColor,
+    iconUrl;
   const baseColor = mapStatusToColor(status).string();
   switch (status) {
     case "Down":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "white";
       cardFontWeight = "500";
+      iconUrl = StatusDownIcon;
       break;
     case "Warning":
       cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
       cardFontColor = "black";
       cardFontWeight = "400";
+      iconUrl = StatusWarningIcon;
       break;
     case "Stable":
     default:
@@ -108,6 +126,7 @@ export default function GMServiceCard({
       cardBorderColor = "rgba(0,0,0,.05)";
       cardBorderBottomColor = baseColor;
       cardFontWeight = "400";
+      iconUrl = StatusStableIcon;
       cardFontColor = Color(baseColor)
         .darken(0.2)
         .string();
@@ -121,6 +140,7 @@ export default function GMServiceCard({
       width={width}
       height={height}
     >
+      <BackgroundIcon iconUrl={iconUrl} status={status} />
       <ServiceLink href={docsLink} cardFontColor={cardFontColor}>
         <Title cardFontWeight={cardFontWeight}>{name}</Title>
       </ServiceLink>
