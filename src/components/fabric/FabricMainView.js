@@ -62,7 +62,9 @@ function computeHeaderTitle(groupByAttribute, service) {
         service.maximum
       );
     case "Owner":
-      return service.group;
+      return service.owner || "No Owner Defined";
+    case "Capability":
+      return service.capability || "No Capability Defined";
     case "None":
     default:
       return "none";

@@ -2,7 +2,8 @@ const services = [
   {
     name: "Batcomputer",
     version: "1.0",
-    group: "Batcave",
+    owner: "Batcave",
+    capability: "Crime Fighting",
     minimum: 1,
     maximum: 6,
     documentation: "https://en.wikipedia.org/wiki/Batcomputer",
@@ -19,7 +20,8 @@ const services = [
   {
     name: "Nora Fries Cryostasis",
     version: "1.0",
-    group: "Batcave",
+    owner: "Batcave",
+    capability: "Crime Fighting",
     minimum: 1,
     maximum: 6,
     documentation: "https://en.wikipedia.org/wiki/Nora_Fries",
@@ -32,7 +34,8 @@ const services = [
   {
     name: "Batcave Defense Systems",
     version: "3.1",
-    group: "Batcave",
+    owner: "Batcave",
+    capability: "Crime Fighting",
     minimum: 1,
     maximum: 6,
     documentation: null,
@@ -49,7 +52,8 @@ const services = [
   {
     name: "Whacky Hidden Missile Silo",
     version: "1.7",
-    group: "Batcave",
+    owner: "Batcave",
+    capability: "Crime Fighting",
     minimum: 4,
     maximum: 6,
     documentation: "https://en.wikipedia.org/",
@@ -66,7 +70,8 @@ const services = [
   {
     name: "Funky System",
     version: "1.7",
-    group: "Some Group",
+    owner: "Some owner",
+    capability: "Funkadelics",
     minimum: 5,
     maximum: 6,
     documentation: "https://en.wikipedia.org/",
@@ -83,7 +88,8 @@ const services = [
   {
     name: "Some System",
     version: "1.7",
-    group: "Some Group",
+    owner: "Some owner",
+    capability: "Funkadelics",
     minimum: 1,
     maximum: 2,
     documentation: "https://en.wikipedia.org/",
@@ -100,7 +106,8 @@ const services = [
   {
     name: "AAA System",
     version: "1.7",
-    group: "AAA Group",
+    owner: "AAA owner",
+    capability: "Three Letter Acronym",
     minimum: 1,
     maximum: 2,
     documentation: "https://en.wikipedia.org/",
@@ -117,7 +124,8 @@ const services = [
   {
     name: "ZZZ System",
     version: "1.7",
-    group: "AAA Group",
+    owner: "AAA owner",
+    capability: "Three Letter Acronym",
     minimum: 1,
     maximum: 2,
     documentation: null,

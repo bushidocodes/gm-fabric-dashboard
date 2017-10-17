@@ -76,6 +76,10 @@ export default class FabricTableToolbar extends Component {
                 label: "Owner"
               },
               {
+                value: "Capability",
+                label: "Capability"
+              },
+              {
                 value: "Status",
                 label: "Status"
               },

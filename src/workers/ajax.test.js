@@ -97,7 +97,8 @@ describe("AJAX Web Worker", () => {
           "Batcomputer|1.0": {
             name: "Batcomputer",
             version: "1.0",
-            group: "Batcave",
+            owner: "Batcave",
+            capability: "Crime Fighting",
             instances: [
               "ee0fa3669fea7e9a0adea649c46bca56",
               "8bedb4551e801f38bf149001a72a1127",
@@ -114,7 +115,8 @@ describe("AJAX Web Worker", () => {
           "Batcave Defense Systems|3.1": {
             name: "Batcave Defense Systems",
             version: "3.1",
-            group: "Batcave",
+            owner: "Batcave",
+            capability: "Crime Fighting",
             instances: [
               "ee0f0000000a7e9a0adea649c46bca56",
               "8bedb4551e801f38bf149000002a1127",
