@@ -70,6 +70,7 @@ const SectionHeader = styled.div`
 
 export default class FabricSidebarContentSection extends Component {
   static propTypes = {
+    historyPush: PropTypes.func.isRequired,
     services: PropTypes.array.isRequired,
     status: PropTypes.string.isRequired
   };
@@ -83,7 +84,7 @@ export default class FabricSidebarContentSection extends Component {
   };
 
   render() {
-    const { status, services } = this.props;
+    const { historyPush, status, services } = this.props;
 
     return (
       <div>
@@ -125,8 +126,10 @@ export default class FabricSidebarContentSection extends Component {
             >
               <FabricSidebarContentSectionItem
                 href={docsLink}
+                historyPush={historyPush}
                 key={state}
-                title={name}
+                name={name}
+                status={status}
                 version={version}
               />
             </Collapse>

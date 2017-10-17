@@ -87,7 +87,7 @@ class FabricSidebarContent extends Component {
   };
 
   render() {
-    const { services } = this.props;
+    const { services, history: { push } } = this.props;
     return (
       <ServicesActive>
         <Header
@@ -123,6 +123,7 @@ class FabricSidebarContent extends Component {
             <Section key={status}>
               <FabricSidebarContentSection
                 status={status}
+                historyPush={push}
                 services={services.filter(service => {
                   return service.status.toLowerCase() === status.toLowerCase();
                 })}
@@ -144,5 +145,6 @@ function mapStateToProps(state) {
 export default withRouter(connect(mapStateToProps)(FabricSidebarContent));
 
 FabricSidebarContent.propTypes = {
+  history: PropTypes.object,
   services: PropTypes.array
 };

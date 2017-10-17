@@ -15,6 +15,8 @@ const SectionItem = styled.div`
   display: flex;
   align-items: center;
   padding: ${spacingScale(0.5)} 0;
+  width: 100%;
+  cursor: ${props => (props.status !== "Down" ? "pointer" : "not-allowed")};
 `;
 
 const TitleSpan = styled.span`
@@ -31,18 +33,33 @@ const VersionSpan = styled.span`
 
 FabricSidebarContentSectionItem.propTypes = {
   docsLink: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  historyPush: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
   version: PropTypes.string.isRequired
 };
 
 export default function FabricSidebarContentSectionItem({
   docsLink,
-  title,
+  historyPush,
+  name,
+  status,
   version
 }) {
   return (
-    <SectionItem tabIndex="0">
-      <TitleSpan>{title}</TitleSpan>
+    <SectionItem
+      status={status}
+      tabIndex={0}
+      onClick={() =>
+        status !== "Down" ? historyPush(`/${name}/${version}`) : {}}
+      onKeyDown={e => {
+        if (status !== "Down" && (e.keyCode === 13 || e.keyCode === 32)) {
+          e.preventDefault();
+          historyPush(`/${name}/${version}`);
+        }
+      }}
+    >
+      <TitleSpan>{name}</TitleSpan>
       <VersionSpan>{version}</VersionSpan>
     </SectionItem>
   );
