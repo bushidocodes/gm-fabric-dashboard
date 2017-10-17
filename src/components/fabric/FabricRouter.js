@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
 
 import FabricGrid from "./FabricGrid";
-
+import GMServiceView from "../library/GMServiceView";
 import InstanceRouter from "../instance/InstanceRouter";
 import SettingsGrid from "../SettingsGrid";
+import { computeStatus } from "../../utils/selectors";
 
 FabricRouter.propTypes = {
   services: PropTypes.object
@@ -73,12 +74,26 @@ function FabricRouter({ services }) {
       <Route
         exact
         path="/:serviceName/:version/"
-        render={({ location: { pathname } }) => {
-          // Blacklist known top level routes in render just in case.
-          // Since we're in a switch and this route is last, this shouldn't be needed
-          if (pathname !== "/settings") {
-            return <Redirect to={`/`} />;
-          }
+        render={({ match: { params: { serviceName, version } } }) => {
+          const service =
+            services && serviceName && services[`${serviceName}|${version}`]
+              ? services[`${serviceName}|${version}`]
+              : "";
+          const instances = (service && service.instances) || [];
+          const status = computeStatus(
+            instances.length,
+            service.minimum,
+            service.maximum
+          );
+
+          return (
+            <GMServiceView
+              serviceName={serviceName}
+              serviceVersion={version}
+              instances={instances}
+              status={status}
+            />
+          );
         }}
       />
       {/* For the route route, mount the Fabric Grid, the element used to depict an entire Fabric of microservices*/}

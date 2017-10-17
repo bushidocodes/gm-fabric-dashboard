@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Collapse from "react-collapse";
 import { Link } from "react-router-dom";
 import StatusIcon from "./StatusIcon";
 
 import styled from "styled-components";
-import { COLOR_HIGHLIGHT, FONT_SIZE_XS } from "../../style/styleVariables";
+import {
+  FONT_SIZE_XS,
+  COLOR_BRAND_PRIMARY,
+  COLOR_DANGER
+} from "../../style/styleVariables";
 import { spacingScale } from "../../style/styleFunctions";
 
 import Docs from "../../images/icons/docs.svg";
@@ -50,40 +53,23 @@ const ItemVersion = styled.div`
   align-self: center;
 `;
 
-const ServiceLink = styled.div`
+export const GMLink = styled(Link)`
   width: 100%;
   cursor: ${props => props.cursor};
   text-decoration: none;
   color: black;
   outline: none;
   display: flex;
+  &:hover {
+    color: ${props =>
+      props.disabled ? COLOR_DANGER.string() : COLOR_BRAND_PRIMARY.string()};
+  }
 `;
 
 const DocLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   color: black;
-`;
-
-const InstanceList = styled.ul`margin: 0 0 0 ${spacingScale(2)};`;
-
-const InstanceListItem = styled.li`
-  list-style-type: none;
-  a {
-    opacity: 0.8;
-    &,
-    &:hover,
-    &:active,
-    &:focus {
-      color: ${COLOR_HIGHLIGHT.hsl()
-        .darken(0.2)
-        .string()};
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-  }
 `;
 
 export default class GMServiceListItem extends Component {
@@ -94,13 +80,6 @@ export default class GMServiceListItem extends Component {
     name: PropTypes.string.isRequired,
     status: PropTypes.string,
     version: PropTypes.string
-  };
-  state = {
-    isOpen: false
-  };
-
-  toggleDrawer = () => {
-    this.setState({ isOpen: !this.state.isOpen });
   };
 
   render() {
@@ -117,19 +96,10 @@ export default class GMServiceListItem extends Component {
       <div>
         <Line>
           <LineLeft>
-            <ServiceLink
+            <GMLink
+              to={instances.length > 0 ? `/${name}/${version}` : "/"}
               cursor={instances.length > 0 ? "pointer" : "not-allowed"}
-              onClick={instances.length > 0 ? this.toggleDrawer : () => {}}
-              onKeyDown={evt => {
-                if (
-                  instances.length &&
-                  (evt.keyCode === 13 || evt.keyCode === 32)
-                ) {
-                  evt.preventDefault();
-                  this.toggleDrawer();
-                }
-              }}
-              role="Link"
+              disabled={status === "Down"}
             >
               <IconWrapper>
                 {groupByAttribute.toLowerCase() !== "status" && (
@@ -138,7 +108,7 @@ export default class GMServiceListItem extends Component {
               </IconWrapper>
               <ItemName tabIndex="0">{name}</ItemName>
               <ItemVersion>{version}</ItemVersion>
-            </ServiceLink>
+            </GMLink>
           </LineLeft>
           <LineRight>
             {docsLink && (
@@ -148,21 +118,6 @@ export default class GMServiceListItem extends Component {
             )}
           </LineRight>
         </Line>
-        <Collapse
-          className="table-drawer"
-          isOpened={this.state.isOpen}
-          onClick={evt => {
-            evt.stopPropagation();
-          }}
-        >
-          <InstanceList>
-            {instances.map(instance => (
-              <InstanceListItem key={instance}>
-                <Link to={`/${name}/${version}/${instance}`}> {instance} </Link>
-              </InstanceListItem>
-            ))}
-          </InstanceList>
-        </Collapse>
       </div>
     );
   }

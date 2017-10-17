@@ -9,6 +9,7 @@ import {
   FONT_STACK_DATA
 } from "../../style/styleVariables";
 import Color from "color";
+import { Link } from "react-router-dom";
 import StatusStableIcon from "../../images/icons/status-stable.svg";
 import StatusWarningIcon from "../../images/icons/status-warning.svg";
 import StatusDownIcon from "../../images/icons/status-down.svg";
@@ -56,7 +57,7 @@ const CardFooter = styled.div`
   justify-content: space-between;
 `;
 
-const ServiceLink = styled.a`
+const ServiceLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: ${props => props.cardFontColor};
@@ -141,7 +142,10 @@ export default function GMServiceCard({
       height={height}
     >
       <BackgroundIcon iconUrl={iconUrl} status={status} />
-      <ServiceLink href={docsLink} cardFontColor={cardFontColor}>
+      <ServiceLink
+        to={status !== "Down" ? `/${name}/${version}` : "/"}
+        cardFontColor={cardFontColor}
+      >
         <Title cardFontWeight={cardFontWeight}>{name}</Title>
       </ServiceLink>
       <CardFooter cardFontWeight={cardFontWeight}>
