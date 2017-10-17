@@ -40,23 +40,42 @@ export const Header = styled.div`
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   font-size: ${FONT_SIZE_BASE};
 `;
 
-export const HeaderLeft = styled.span`min-width: 75%;`;
+export const HeaderLeft = styled.div`
+  min-width: 75%;
+  flex-grow: 4;
+`;
 
-export const HeaderRight = styled.span`
-  text-align: right;
-  margin: 0 ${spacingScale(1)} 0 0;
+export const HeaderRight = styled.div`
+  display: flex;
+  margin: 0 ${spacingScale(1)};
   justify-content: flex-end;
   font-size: ${FONT_SIZE_SM};
   opacity: 0.8;
+  align-items: center;
+`;
+
+export const HeaderRightContent = HeaderRight.extend`
+  margin: 0;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0 0 ${spacingScale(0.5)};
 `;
 
 const Section = styled.div`margin: ${spacingScale(1)} 0 0;`;
 
-const HeaderIcon = styled.span`margin: 0 ${spacingScale(1)};`;
+export const HeaderIcon = styled.div`
+  display: inline-block;
+  width: ${spacingScale(3)};
+  height: ${spacingScale(2.625)};
+  margin-left: ${spacingScale(0.5)};
+  margin-right: ${spacingScale(0.5)};
+  position: relative;
+  top: -2px;
+`;
 
 class FabricSidebarContent extends Component {
   state = {
@@ -79,7 +98,9 @@ class FabricSidebarContent extends Component {
             Services
           </HeaderLeft>
           <HeaderRight>
-            <TriangleDown fill="white" stroke="white" />
+            <HeaderRightContent>
+              <TriangleDown fill="white" stroke="white" />
+            </HeaderRightContent>
           </HeaderRight>
         </Header>
         <Collapse

@@ -9,7 +9,12 @@ import styled from "styled-components";
 import FabricSidebarContentSectionItem from "./FabricSidebarContentSectionItem";
 import TriangleDown from "../library/TriangleDown";
 import StatusIcon from "../library/StatusIcon";
-import { HeaderLeft, HeaderRight } from "./FabricSidebarContent";
+import {
+  HeaderLeft,
+  HeaderIcon,
+  HeaderRight,
+  HeaderRightContent
+} from "./FabricSidebarContent";
 import {
   FONT_SIZE_SM,
   COLOR_SIDEBAR_BACKGROUND
@@ -30,7 +35,7 @@ const SectionHeader = styled.div`
   letter-spacing: 0.06em;
   align-items: center;
   font-weight: 800;
-  justify-content: space-between;
+  justify-content: start;
   padding: ${spacingScale(0.25)} 0;
   position: relative;
 
@@ -63,22 +68,6 @@ const SectionHeader = styled.div`
   }
 `;
 
-const IconWrapper = styled.div`
-  display: inline-block;
-  width: ${spacingScale(3)};
-  height: ${spacingScale(2.625)};
-  margin-left: ${spacingScale(0.5)};
-  margin-right: ${spacingScale(0.5)};
-  position: relative;
-  top: -2px;
-`;
-const ItemCount = styled.span`
-  margin: 0 ${spacingScale(0.5)} 0 ${spacingScale(1)};
-  text-align: bottom;
-`;
-
-const Down = styled.span`align: center;`;
-
 export default class FabricSidebarContentSection extends Component {
   static propTypes = {
     services: PropTypes.array.isRequired,
@@ -104,16 +93,16 @@ export default class FabricSidebarContentSection extends Component {
           borderBottomColor={mapStatusToColor(status).string()}
         >
           <HeaderLeft>
-            <IconWrapper>
+            <HeaderIcon>
               <StatusIcon status={status} />
-            </IconWrapper>
+            </HeaderIcon>
             {status}
           </HeaderLeft>
           <HeaderRight>
-            {services.length > 0 && <ItemCount>{services.length}</ItemCount>}
-            <Down>
+            <div>{services.length > 0 && services.length}</div>
+            <HeaderRightContent>
               <TriangleDown fill="white" stroke="white" />
-            </Down>
+            </HeaderRightContent>
           </HeaderRight>
         </SectionHeader>
 
