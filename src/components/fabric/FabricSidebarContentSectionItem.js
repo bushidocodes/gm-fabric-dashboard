@@ -41,7 +41,7 @@ export default function FabricSidebarContentSectionItem({
   version
 }) {
   return (
-    <SectionItem>
+    <SectionItem tabIndex="0">
       <TitleSpan>{title}</TitleSpan>
       <VersionSpan>{version}</VersionSpan>
     </SectionItem>

@@ -90,6 +90,13 @@ export default class FabricSidebarContentSection extends Component {
         <SectionHeader
           key={status}
           onClick={this.toggleStack}
+          onKeyDown={e => {
+            if (e.keyCode === 13 || e.keyCode === 32) {
+              e.preventDefault();
+              this.toggleStack();
+            }
+          }}
+          tabIndex="0"
           borderBottomColor={mapStatusToColor(status).string()}
         >
           <HeaderLeft>

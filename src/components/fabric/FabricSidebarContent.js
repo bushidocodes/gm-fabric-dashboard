@@ -90,7 +90,16 @@ class FabricSidebarContent extends Component {
     const { services } = this.props;
     return (
       <ServicesActive>
-        <Header onClick={this.toggleStack}>
+        <Header
+          tabIndex="0"
+          onClick={this.toggleStack}
+          onKeyDown={e => {
+            if (e.keyCode === 13 || e.keyCode === 32) {
+              e.preventDefault();
+              this.toggleStack();
+            }
+          }}
+        >
           <HeaderLeft>
             <HeaderIcon>
               <img src={ServicesIcon} alt="" />
