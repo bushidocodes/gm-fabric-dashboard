@@ -1,9 +1,10 @@
 import React from "react";
-import ms from "ms";
 import { PropTypes } from "prop-types";
 
 import SidebarCard from "../../SidebarCard";
 import { getLatestAttribute } from "../../../utils/latestAttribute";
+import _ from "lodash";
+import prettyMS from "pretty-ms";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
@@ -28,7 +29,7 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
         lines={[
           {
             name: "Uptime",
-            value: ms(uptime)
+            value: prettyMS(_.round(uptime, -3))
           }
         ]}
         tabIndex={0}

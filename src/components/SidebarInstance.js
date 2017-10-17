@@ -1,5 +1,5 @@
 import _ from "lodash";
-import ms from "ms";
+import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -23,11 +23,11 @@ class SidebarInstance extends Component {
   /**
    * Utility function for generating the appropriate nav elements for the static dashboards associated with the current
    * runtime environment
-   * @param {string} serviceName 
-   * @param {string} instanceID 
-   * @param {string} runtime 
-   * @param {Object} dashboards 
-   * @param {Object} metrics 
+   * @param {string} serviceName
+   * @param {string} instanceID
+   * @param {string} runtime
+   * @param {Object} dashboards
+   * @param {Object} metrics
    */
   generateDashboards(serviceName, instanceID, runtime, dashboards, metrics) {
     switch (runtime) {
@@ -40,7 +40,9 @@ class SidebarInstance extends Component {
               lines={[
                 {
                   name: "Uptime",
-                  value: ms(getLatestAttribute(metrics, "jvm/uptime"))
+                  value: prettyMS(
+                    _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
+                  )
                 }
               ]}
               tabIndex={0}
@@ -100,10 +102,10 @@ class SidebarInstance extends Component {
   }
   /**
    * Utility function for generating dynamic dashboards derived from JSON
-   * @param {*} serviceName 
-   * @param {*} instanceID 
-   * @param {*} dashboards 
-   * @param {*} metrics 
+   * @param {*} serviceName
+   * @param {*} instanceID
+   * @param {*} dashboards
+   * @param {*} metrics
    */
   generateDynamicDashboards(serviceName, instanceID, dashboards, metrics) {
     return _.toPairs(dashboards).map(([key, value]) => {

@@ -1,6 +1,6 @@
 import dateFormat from "dateformat";
 import _ from "lodash";
-import ms from "ms";
+import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -58,7 +58,9 @@ class SummaryGrid extends Component {
                   )}
                   icon={"future"}
                   title={"Uptime"}
-                  value={ms(getLatestAttribute(metrics, "jvm/uptime"))}
+                  value={prettyMS(
+                    _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
+                  )}
                 />
               </Readout>
 
@@ -66,8 +68,8 @@ class SummaryGrid extends Component {
                 <ReadoutItem
                   icon={"bolt"}
                   title={"Avg. Response Time"}
-                  value={ms(
-                    _.round(getLatestAttribute(metrics, "time/2XX.avg"), 3)
+                  value={prettyMS(
+                    _.round(getLatestAttribute(metrics, "time/2XX.avg"), -3)
                   )}
                 />
                 <ReadoutItem

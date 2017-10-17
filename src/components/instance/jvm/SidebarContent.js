@@ -1,5 +1,7 @@
 import React from "react";
-import ms from "ms";
+import _ from "lodash";
+// pretty-ms: Convert milliseconds to a human readable string: 1337000000 → 15d 11h 23m 20s
+import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 
 import SidebarCard from "../../SidebarCard";
@@ -28,7 +30,9 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
         lines={[
           {
             name: "Uptime",
-            value: ms(getLatestAttribute(metrics, "jvm/uptime"))
+            value: prettyMS(
+              _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
+            )
           }
         ]}
         tabIndex={0}
