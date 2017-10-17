@@ -1,7 +1,7 @@
 // components/nav-widget.scss
-@import '../variables.scss';
-@import '../mixins.scss';
-@import 'buttons.scss';
+@import "../variables.scss";
+@import "../mixins.scss";
+@import "buttons.scss";
 
 // Local Variables
 $nav-widget-background-color: contrast-color($color-sidebar-background, 12%);
@@ -15,7 +15,7 @@ $nav-widget-text-color: contrast-color($nav-widget-background-color);
   color: $nav-widget-text-color;
   font-size: $font-size-base;
   border-radius: $border-radius-base;
-  box-shadow: 0 0 0 1px transparentize($nav-widget-background-color, .2);
+  box-shadow: 0 0 0 1px transparentize($nav-widget-background-color, 0.2);
 
   a {
     color: inherit;
@@ -42,7 +42,7 @@ $nav-widget-text-color: contrast-color($nav-widget-background-color);
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: $border-radius-base;
-  margin: spacing-scale(.25);
+  margin: spacing-scale(0.25);
   overflow: hidden;
 
   > * {
@@ -66,6 +66,9 @@ $nav-widget-text-color: contrast-color($nav-widget-background-color);
     .icon {
       color: $color-highlight;
       flex: 0 0 $go-up-icon-size;
+      margin-right: spacing-scale(0.5) !important;
+      position: relative;
+      left: 2px;
     }
 
     .label {
@@ -105,7 +108,7 @@ $nav-widget-text-color: contrast-color($nav-widget-background-color);
     a {
       min-height: spacing-scale(4);
       display: block;
-      padding: spacing-scale(.5) spacing-scale(1);
+      padding: spacing-scale(0.5) spacing-scale(1);
     }
 
     ol {
