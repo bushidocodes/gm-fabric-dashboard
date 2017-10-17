@@ -3,6 +3,9 @@ import ms from "ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import _ from "lodash";
+// pretty-ms: Convert milliseconds to a human readable string: 1337000000 → 15d 11h 23m 20s
+import prettyMS from "pretty-ms";
 
 import GMLineChart from "../../library/GMLineChart";
 import LayoutSection from "../../library/LayoutSection.js";
@@ -75,7 +78,7 @@ class SummaryGrid extends Component {
                   detail={dateFormat(startTime)}
                   icon={"future"}
                   title={"Uptime"}
-                  value={ms(uptime)}
+                  value={prettyMS(_.round(uptime, -3))}
                 />
               </Readout>
               <Readout type={"readout-primary"}>

@@ -50,6 +50,7 @@ module.exports = {
   yarnLockFile: resolveApp("yarn.lock"),
   testsSetup: resolveApp("src/setupTests.js"),
   appNodeModules: resolveApp("node_modules"),
+  prettyMS: resolveApp("node_modules/pretty-ms"), // Weird module using ES6 for some reason
   publicUrl: getPublicUrl(resolveApp("package.json")),
   servedPath: getServedPath(resolveApp("package.json"))
 };
