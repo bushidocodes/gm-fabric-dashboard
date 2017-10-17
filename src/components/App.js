@@ -135,7 +135,7 @@ class App extends Component {
         <SidebarContainer />
         <AppContent className="uk-width-5-6@s">
           <AppToolBar pathname={this.props.pathname} />
-          <AppContentView>
+          <AppContentView id="main-content" tabIndex="0">
             {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
             {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
             {/* index.html via the head utils */}

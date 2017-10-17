@@ -5,7 +5,9 @@ import decipherLogo from "../images/decipherLogo.svg";
 
 import {
   FONT_SIZE_BASE,
-  COLOR_SIDEBAR_BACKGROUND
+  COLOR_SIDEBAR_BACKGROUND,
+  COLOR_GREEN,
+  COLOR_WHITE
 } from "../style/styleVariables";
 import { contrastColor, spacingScale } from "../style/styleFunctions";
 
@@ -65,6 +67,21 @@ const AppVersionLink = styled.a`
     opacity: 1;
   }
 `;
+const SkipNav = styled.button`
+  background-color: ${COLOR_GREEN.string()};
+  color: ${COLOR_WHITE.string()};
+  position: absolute;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.6em;
+  transition: top 0.5s ease;
+  top: -10em;
+  left: 0;
+  &:focus {
+    top: 0;
+  }
+`;
 
 /** Sidebar Branding and Versioning */
 const SidebarHeader = () => {
@@ -74,7 +91,16 @@ const SidebarHeader = () => {
         <BrandLogo alt={`${BrandName} Logo`} src={decipherLogo} />
         <BrandText>{BrandName}</BrandText>
       </BrandContainer>
-
+      <SkipNav
+        type="button"
+        onKeyDown={evt => {
+          if (evt.keyCode === 13 || evt.keyCode === 32) {
+            document.getElementById("main-content").focus();
+          }
+        }}
+      >
+        Skip Navigation
+      </SkipNav>
       <AppVersionLink
         href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
         rel="noopener noreferrer"
