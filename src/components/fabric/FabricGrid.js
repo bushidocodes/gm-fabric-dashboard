@@ -52,9 +52,18 @@ class FabricGrid extends Component {
     }
   }
 
-  setGroupByAttribute = groupByAttribute => this.setState({ groupByAttribute });
-  setSortByAttribute = sortByAttribute => this.setState({ sortByAttribute });
-  setDisplayType = displayType => this.setState({ displayType });
+  setGroupByAttribute = groupByAttribute =>
+    this.setState({ groupByAttribute }, () => {
+      this.encodeAndPushHistory();
+    });
+  setSortByAttribute = sortByAttribute =>
+    this.setState({ sortByAttribute }, () => {
+      this.encodeAndPushHistory();
+    });
+  setDisplayType = displayType =>
+    this.setState({ displayType }, () => {
+      this.encodeAndPushHistory();
+    });
 
   /**
    * onChange event handler for the SearchInput field in FabricTableToolbar
@@ -80,13 +89,30 @@ class FabricGrid extends Component {
   encodeAndPushHistory = () => {
     // Clean local state
     const searchQuery = this.state.searchQuery.trim().toLowerCase();
+    const viewType = this.state.displayType;
+    const groupBy = this.state.groupByAttribute;
+    const sortBy = this.state.sortByAttribute;
+
     // Only encode the truthy pieces of local state into a form ready to be pushed to the
     // browser's query string. If no local state is truthy, call debouncedPushHistory without
     // an argument to remove the search query from the URL.
     let objToEncode = {};
+
     if (searchQuery) {
-      objToEncode = { searchQuery, ...objToEncode };
+      objToEncode.searchQuery = searchQuery;
     }
+
+    // If viewType, sortBy, or groupBy are set to anything but the defaults, then push to the query string
+    if (viewType !== "Card") {
+      objToEncode.viewType = viewType;
+    }
+    if (sortBy !== "Name") {
+      objToEncode.sortBy = sortBy;
+    }
+    if (groupBy !== "Status") {
+      objToEncode.groupBy = groupBy;
+    }
+
     this.debouncedPushHistory(qs.stringify(objToEncode));
   };
 
@@ -114,11 +140,19 @@ class FabricGrid extends Component {
    */
   popAndDecodeHistory = queryString => {
     // Parse the query string for the searchQuery parameter
-    const { searchQuery = "" } = qs.parse(queryString);
-    // Update local state if needed
-    if (searchQuery !== this.state.searchQuery) {
-      this.setState({ searchQuery });
-    }
+    const {
+      searchQuery = "",
+      groupBy = "Status",
+      viewType = "Card",
+      sortBy = "Name"
+    } = qs.parse(queryString);
+
+    this.setState({
+      searchQuery,
+      groupByAttribute: groupBy,
+      displayType: viewType,
+      sortByAttribute: sortBy
+    });
   };
 
   render() {
