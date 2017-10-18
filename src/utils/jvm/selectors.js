@@ -10,8 +10,17 @@ import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 const getCurrentThreads = state => state.threadsTable;
 const getThreadsFilter = state => state.settings.threadsFilter;
 
+/**
+   * A selector that takes metrics and returns error rate
+   * toLocaleString() forces three decimal points and
+   * returns language sensitive representation of number (commas and periods)
+   */
 export const getErrorRate = createSelector(getMetrics, metrics => {
-  if (Object.keys(metrics).length === 0) return Number(0).toFixed(4);
+  if (Object.keys(metrics).length === 0)
+    return Number(0).toLocaleString(undefined, {
+      maximumFractionDigits: 3,
+      minimumFractionDigits: 3
+    });
   const totalRequests =
     Number(getLatestAttribute(metrics, "http/requests") || 0) +
     Number(getLatestAttribute(metrics, "https/requests") || 0);
@@ -19,12 +28,18 @@ export const getErrorRate = createSelector(getMetrics, metrics => {
     Number(getLatestAttribute(metrics, "http/success") || 0) +
     Number(getLatestAttribute(metrics, "https/success") || 0);
   if (totalRequests > 0) {
-    return _.round(
-      (totalRequests - totalSuccesses) / totalRequests * 100,
-      4
-    ).toFixed(4);
+    return ((totalRequests - totalSuccesses) /
+      totalRequests *
+      100
+    ).toLocaleString(undefined, {
+      maximumFractionDigits: 3,
+      minimumFractionDigits: 3
+    });
   } else {
-    return Number(0).toFixed(4);
+    return Number(0).toLocaleString(undefined, {
+      maximumFractionDigits: 3,
+      minimumFractionDigits: 3
+    });
   }
 });
 
