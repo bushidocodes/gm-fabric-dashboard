@@ -61,6 +61,7 @@ const ServiceLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: ${props => props.cardfontcolor};
+  z-index: 1;
   &:hover {
     color: ${props => props.cardfontcolor};
   }
