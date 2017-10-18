@@ -75,8 +75,7 @@ const DocsLink = styled.a`
 const BackgroundIcon = styled.img.attrs({
   src: props => props.iconUrl
 })`
-  filter: ${props =>
-    props.status === "Stable" ? "opacity(0.1)" : "opacity(0.5)"};
+  opacity: ${props => (props.status === "Stable" ? "0.1" : "0.5")};
   width: 80px;
   position: absolute;
   top: -5px;
