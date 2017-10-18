@@ -152,7 +152,11 @@ export default function GMServiceCard({
         {version}
         {version &&
           docsLink && (
-            <DocsLink cardFontColor={cardFontColor} href={docsLink}>
+            <DocsLink
+              cardFontColor={cardFontColor}
+              href={docsLink}
+              target="_blank"
+            >
               <DocsIcon fillColor={cardFontColor} />
             </DocsLink>
           )}

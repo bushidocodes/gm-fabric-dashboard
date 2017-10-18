@@ -112,7 +112,7 @@ export default class GMServiceListItem extends Component {
           </LineLeft>
           <LineRight>
             {docsLink && (
-              <DocLink href={docsLink}>
+              <DocLink href={docsLink} target="_blank">
                 <img alt="Docs" src={Docs} />
               </DocLink>
             )}
