@@ -6,13 +6,28 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.7.1] - 2017-10-18
+### Added
+- Implemented a service dashboard, which currently only is used to navigate to microservice instance dashboards.
+- Linked the fabric dashboard nav elements to the new service dashboards
+### Changed
+- Increased uptime precision
+- General keyboard and a11y improvements, including a link to skip to main content
+- Fixed group by capability and group by owner bugs
+### Removed
+- Removed scss stylesheets that have been decomposed into styled-components
+
+### Test Coverage: 3.51% ([0.7.1 Coverage Report])
+### Bundle Size: ~1.62 MB ([0.7.1 Bundle Size Report])
+### Production Build: ([0.7.1 Build])
+
 ## [0.7.0] - 2017-10-12
 ### Added
 - App renders cleanly on IE11. Hooray for the Enterprise!
 - App is navigable by keyboard
 - Services landing page now has a route driven search
 - New Publish script simplifies Docker deployment process
-### Changes
+### Changed
 - Massive bug bash. Greater stability throughout the app
 - Further internal refactoring from SCSS towards Styled-Components
 - Updated dependencies
@@ -29,7 +44,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Added unit tests for trimID
 - Improved in-line comments throughout the app
 - Created production-ready Docker image to facilitate new Docker-based deployment process.
-### Changes
+### Changed
 - Implemented React Storybook for development of UI components in isolation from the larger app
 - Began process of refactoring sass into Styled-Components based React components
 - Updated dependencies, including React 16.0 and Enzyme 3.
@@ -43,7 +58,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Improved dashboard support for the gm-fabric-go microservice metrics API
 - Added support for backed "Fabrics Server" discovery service support behind a flag. This includes UI components and routing to allow a single dashboard to monitor a fabric of microservices.
 - Added interim Docker container tooling for the dev pipeline. This will be improved in the future.
-### Changes
+### Changed
 - Disabled local storage persistence of dashboards pending further work on dashboard customization tools
 - External Web fonts are new embedded into the app to render in environments with no Internet connectivity
 - Fixed URL import support in sass files, inlcuding mesh image in sidebar footer
@@ -56,7 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.4.0] - 2017-09-08
 ### Added
 - Experimental support for gm-fabric-go microservices
-### Changes
+### Changed
 - Updated dependencies
 - Simplified use of Webpack Dev Server proxy
 - Substantial internal refactoring to separate out runtime-specific components into modules
@@ -199,7 +214,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.0...v0.7.1
+[0.7.1 Coverage Report]: https://1014-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.7.1 Bundle Size Report]: https://1014-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.7.1 Build]: https://1014-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.7.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.6.0...v0.7.0
 [0.7.0 Coverage Report]: https://948-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.7.0 Bundle Size Report]: https://948-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
