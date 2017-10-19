@@ -77,6 +77,9 @@ export default class RoutesTableLineItem extends Component {
         <div className="routes-table-route">
           <span className="uk-badge uk-margin-right">{this.props.verb}</span>
           {this.props.route}
+          <div className={"route-viz-bar err-pc-" + errorPercent}>
+            <div className="route-viz-fill" style={{ width: "50%" }} />
+          </div>
         </div>
         <div className="routes-table-sparkline">
           <Sparklines
