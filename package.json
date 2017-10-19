@@ -7,6 +7,8 @@
     "npm": "^5.0.0"
   },
   "dependencies": {
+    "@storybook/addon-info": "^3.2.12",
+    "@storybook/addon-options": "^3.2.12",
     "autoprefixer": "^7.1.4",
     "axios": "~0.16.1",
     "babel-core": "^6.26.0",
@@ -78,9 +80,9 @@
     "worker-loader": "^1.0.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.11",
-    "@storybook/addon-links": "^3.2.10",
-    "@storybook/react": "^3.2.11",
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12",
+    "@storybook/react": "^3.2.12",
     "babel-plugin-lodash": "^3.2.11",
     "babel-plugin-styled-components": "^1.2.0",
     "cross-env": "^5.0.5",
@@ -108,13 +110,10 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker":
-      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "publish": "bash scripts/publish.sh",
-    "docs":
-      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check":
-      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "precommit": "lint-staged",
@@ -128,8 +127,14 @@
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"],
-    "*.scss": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -140,8 +145,12 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -153,14 +162,24 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx"
+    ]
   },
   "babel": {
-    "presets": ["react-app"]
+    "presets": [
+      "react-app"
+    ]
   },
   "prettier": {
     "bracketSpacing": true,

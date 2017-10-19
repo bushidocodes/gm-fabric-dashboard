@@ -1,4 +1,5 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -13,6 +14,7 @@ import GMServiceCardCollection from "../src/components/library/GMServiceCardColl
 import GMServiceList from "../src/components/library/GMServiceList";
 import ShapeIcon from "../src/components/library/ShapeIcon";
 import StatusIcon from "../src/components/library/StatusIcon";
+import SidebarCard from "../src/components/SidebarCard";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -27,6 +29,7 @@ storiesOf("Button", module)
   ));
 
 storiesOf("Service Card", module)
+  .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
   .add("with title", () => <GMServiceCard name="Awesome Service" />)
   .add("with title and version", () => (
     <GMServiceCard name="Awesome Service" version="1.1" />
@@ -92,6 +95,7 @@ storiesOf("Service Card", module)
   ));
 
 storiesOf("Service List Item", module)
+  .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
   .add("with title", () => <GMServiceListItem name="Awesome Service" />)
   .add("with title and version", () => (
     <GMServiceListItem name="Awesome Service" version="1.1" />
@@ -178,6 +182,7 @@ storiesOf("Grouping Header", module)
 
 // mock data is at the end of file
 storiesOf("Section Cards View", module)
+  .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
   .add("with a single grouping header and group of cards", () => (
     <GMServiceCardCollection items={singleGroupingByStatusCardsViewMockData} />
   ))
@@ -186,6 +191,7 @@ storiesOf("Section Cards View", module)
   ));
 
 storiesOf("Section List View", module)
+  .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
   .add("with a grouping header and group of lists", () => (
     <GMServiceList items={singleGroupingByHeadingListViewMockData} />
   ))
@@ -377,3 +383,9 @@ storiesOf("Status Icons", module)
   .add("Down", () => <StatusIcon status="down" />)
   .add("Stable", () => <StatusIcon status="stable" />)
   .add("Warning", () => <StatusIcon status="warning" />);
+
+storiesOf("Summary Card", module)
+  .addDecorator(story => <MemoryRouter>{story()}</MemoryRouter>)
+  .add("Down", () => <SidebarCard status="down" />)
+  .add("Stable", () => <SidebarCard status="stable" />)
+  .add("Warning", () => <SidebarCard status="warning" />);
