@@ -58,8 +58,8 @@ const CardFooter = styled.div`
 `;
 
 const ServiceLink = styled(Link)`
-  cursor: pointer;
   text-decoration: none;
+  cursor: ${props => props.cursor};
   color: ${props => props.cardfontcolor};
   z-index: 1;
   &:hover {
@@ -144,6 +144,7 @@ export default function GMServiceCard({
       <BackgroundIcon iconUrl={iconUrl} status={status} />
       <ServiceLink
         to={status !== "Down" ? `/${name}/${version}` : "/"}
+        cursor={status !== "Down" ? "pointer" : "not-allowed"}
         cardfontcolor={cardFontColor}
       >
         <Title cardFontWeight={cardFontWeight}>{name}</Title>
