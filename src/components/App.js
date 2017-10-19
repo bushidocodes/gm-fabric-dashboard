@@ -48,7 +48,7 @@ const AppContentView = styled.div`
   position: relative;
   z-index: 1;
   padding-top: 1px;
-
+  outline: none;
   &:before,
   &:after {
     content: "";
@@ -69,7 +69,7 @@ const AppContentView = styled.div`
     background-color: ${edgeColor(COLOR_CONTENT_BACKGROUND, 0.3).fade(0.7)});
     z-index: 1000;
     height: 1px;
-    top: 34px;
+    top: 34px; 
   }
 `;
 
