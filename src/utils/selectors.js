@@ -9,7 +9,7 @@ import {
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector
-import SidebarCard from "../components/SidebarCard";
+import SidebarCard from "../components/Sidebar/components/SidebarCard";
 
 // Reselect Input Selectors
 
