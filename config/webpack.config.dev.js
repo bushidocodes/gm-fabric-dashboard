@@ -168,8 +168,7 @@ module.exports = {
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
-        // prettyMS is an npm module distributed in ES6
-        include: [paths.appSrc, paths.prettyMS],
+        include: [paths.appSrc],
         loader: require.resolve("babel-loader"),
         options: {
           // This is a feature of `babel-loader` for webpack (not Babel itself).

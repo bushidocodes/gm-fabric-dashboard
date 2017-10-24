@@ -3,8 +3,6 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-// pretty-ms: Convert milliseconds to a human readable string: 1337000000 → 15d 11h 23m 20s
-import prettyMS from "pretty-ms";
 
 import GMLineChart from "../../../../../components/GMLineChart";
 import LayoutSection from "../../../../../../LayoutSection";
@@ -19,7 +17,7 @@ import {
 } from "../../../../../../../utils/dygraphs";
 import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
 import { getServiceName } from "../../../../../../../utils/head";
-import { trimID } from "../../../../../../../utils";
+import { trimID, convertMS } from "../../../../../../../utils";
 
 /**
  * Static Summary page for Go runtime
@@ -33,6 +31,44 @@ class SummaryGrid extends Component {
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string
   };
+
+  state = {
+    _timer: null,
+    startTime: getLatestAttribute(this.props.metrics, "system/start_time"),
+    uptime: 0
+  };
+
+  // start timer in componentDidMount
+  // in setInterval, call setState which triggers re-render
+  componentDidMount() {
+    this._timer = setInterval(() => this.onChangeUptime(), 1000);
+  }
+
+  // handles edge case when start_time changes
+  componentWillReceiveProps(nextProps) {
+    const changedStartTime = getLatestAttribute(
+      nextProps.metrics,
+      "system/start_time"
+    );
+    if (changedStartTime !== this.state.startTime) {
+      this.setState({ startTime: changedStartTime });
+    }
+  }
+
+  // call clearInterval() to cancel the timer
+  componentWillUnmount() {
+    clearInterval(this._timer);
+  }
+
+  onChangeUptime() {
+    const uptime =
+      this.state.startTime > 0 ? Date.now() - this.state.startTime : 0;
+
+    this.setState({
+      uptime: convertMS(uptime)
+    });
+  }
+
   render() {
     const {
       metrics,
@@ -40,7 +76,6 @@ class SummaryGrid extends Component {
       selectedService,
       selectedServiceVersion
     } = this.props;
-    const startTime = getLatestAttribute(metrics, "system/start_time");
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
     const errorRate =
@@ -61,7 +96,6 @@ class SummaryGrid extends Component {
     const port =
       window.location.port ||
       (window.location.protocol === "https:" ? 443 : 80);
-    const uptime = startTime > 0 ? Date.now() - startTime : 0;
     return (
       <div>
         <PageTitle
@@ -74,23 +108,19 @@ class SummaryGrid extends Component {
           <ReadoutGroup>
             <Readout>
               <ReadoutItem
-                detail={dateFormat(startTime)}
+                detail={dateFormat(this.state.startTime)}
                 icon={"future"}
                 title={"Uptime"}
-                value={prettyMS(_.round(uptime, -3))}
+                value={this.state.uptime}
               />
             </Readout>
             <Readout primary="true">
               <ReadoutItem
                 icon={"bolt"}
                 title={"Avg. Response Time"}
-                value={`${getLatestAttribute(
-                  metrics,
-                  "all/latency_ms.avg",
-                  5,
-                  "ms",
-                  "s"
-                )}s`}
+                value={`${_.round(
+                  getLatestAttribute(metrics, "all/latency_ms.avg")
+                )}ms`}
               />
               <ReadoutItem
                 icon={"warning"}

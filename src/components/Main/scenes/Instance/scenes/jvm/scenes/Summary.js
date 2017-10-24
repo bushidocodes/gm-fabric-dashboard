@@ -1,9 +1,8 @@
 import dateFormat from "dateformat";
-import _ from "lodash";
-import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import _ from "lodash";
 
 import LayoutSection from "../../../../../../LayoutSection";
 import GMLineChart from "../../../../../components/GMLineChart";
@@ -19,7 +18,7 @@ import {
 import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
 import { getErrorRate } from "../../../../../../../utils/jvm/selectors";
 import { getServiceName } from "../../../../../../../utils/head";
-import { trimID } from "../../../../../../../utils";
+import { trimID, convertMS } from "../../../../../../../utils";
 
 class SummaryGrid extends Component {
   static propTypes = {
@@ -29,6 +28,44 @@ class SummaryGrid extends Component {
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string
   };
+
+  state = {
+    _timer: null,
+    startTime: getLatestAttribute(this.props.metrics, "jvm/start_time"),
+    uptime: 0
+  };
+
+  // start timer in componentDidMount
+  // in setInterval, call setState which triggers re-render
+  componentDidMount() {
+    this._timer = setInterval(() => this.onChangeUptime(), 1000);
+  }
+
+  // handles edge case when start_time changes
+  componentWillReceiveProps(nextProps) {
+    const changedStartTime = getLatestAttribute(
+      nextProps.metrics,
+      "jvm/start_time"
+    );
+    if (changedStartTime !== this.state.startTime) {
+      this.setState({ startTime: changedStartTime });
+    }
+  }
+
+  // call clearInterval() to cancel the timer
+  componentWillUnmount() {
+    clearInterval(this._timer);
+  }
+
+  onChangeUptime() {
+    const uptime =
+      this.state.startTime > 0 ? Date.now() - this.state.startTime : 0;
+
+    this.setState({
+      uptime: convertMS(uptime)
+    });
+  }
+
   render() {
     const {
       errorRate,
@@ -41,6 +78,7 @@ class SummaryGrid extends Component {
     const port =
       window.location.port ||
       (window.location.protocol === "https:" ? 443 : 80);
+
     return (
       <div>
         <PageTitle
@@ -58,9 +96,7 @@ class SummaryGrid extends Component {
                 )}
                 icon={"future"}
                 title={"Uptime"}
-                value={prettyMS(
-                  _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
-                )}
+                value={this.state.uptime}
               />
             </Readout>
 
@@ -68,9 +104,9 @@ class SummaryGrid extends Component {
               <ReadoutItem
                 icon={"bolt"}
                 title={"Avg. Response Time"}
-                value={prettyMS(
-                  _.round(getLatestAttribute(metrics, "time/2XX.avg"), -3)
-                )}
+                value={`${_.round(
+                  getLatestAttribute(metrics, "time/2XX.avg")
+                )}ms`}
               />
               <ReadoutItem
                 icon={"warning"}
