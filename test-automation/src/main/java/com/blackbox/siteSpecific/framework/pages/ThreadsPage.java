@@ -13,16 +13,16 @@ public class ThreadsPage extends GMFDashboardWebPage {
 
     // <editor-fold desc="Elements">
 
-    public static final String BUTTON_ALL_THREADS = "//button[@title='All Threads']";
-    public static final String TEXT_ALL_THREADS_COUNT = "//button[@title='All Threads']/span/span";
-    public static final String BUTTON_ACTIVE = "//button[@title='Active']";
-    public static final String TEXT_ACTIVE_COUNT = "//button[@title='Active']/span/span";
-    public static final String BUTTON_IDLE = "//button[@title='Idle']";
-    public static final String TEXT_IDLE_COUNT = "//button[@title='Idle']/span/span";
-    public static final String BUTTON_STOPPED = "//button[@title='Stopped']";
-    public static final String TEXT_STOPPED_COUNT = "//button[@title='Stopped']/span/span";
+    private static final String BUTTON_ALL_THREADS = "//button[@title='All Threads']";
+    private static final String TEXT_ALL_THREADS_COUNT = "//button[@title='All Threads']/span/span";
+    private static final String BUTTON_ACTIVE = "//button[@title='Active']";
+    private static final String TEXT_ACTIVE_COUNT = "//button[@title='Active']/span/span";
+    private static final String BUTTON_IDLE = "//button[@title='Idle']";
+    private static final String TEXT_IDLE_COUNT = "//button[@title='Idle']/span/span";
+    private static final String BUTTON_STOPPED = "//button[@title='Stopped']";
+    private static final String TEXT_STOPPED_COUNT = "//button[@title='Stopped']/span/span";
 
-    public static final String BUTTON_DISABLED_ATTRIBUTE = "disabled";
+    private static final String BUTTON_DISABLED_ATTRIBUTE = "disabled";
 
     //
     // //*[@id="main-content"]/div/div/div[2]/ol/li[2]
