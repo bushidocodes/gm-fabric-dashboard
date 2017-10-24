@@ -233,8 +233,8 @@ public abstract class GMFDashboardWebPage extends WebPage {
 	    return driverutil.isElementVisible(TEXT_THREADS);
     }
 
-    public String getSidebarThreadsValue() {
-	    return driverutil.getText(TEXT_THREADS);
+    public int getSidebarThreadsValue() {
+	    return Integer.parseInt(driverutil.getText(TEXT_THREADS));
     }
 
     public boolean isSidebarHttpShown() {
@@ -265,16 +265,16 @@ public abstract class GMFDashboardWebPage extends WebPage {
 	    return driverutil.isElementVisible(TEXT_ACTIVE_TASKS);
     }
 
-    public String getSidebarActiveTasksValue() {
-	    return driverutil.getText(TEXT_ACTIVE_TASKS);
+    public int getSidebarActiveTasksValue() {
+	    return Integer.parseInt(driverutil.getText(TEXT_ACTIVE_TASKS));
     }
 
     public boolean isSidebarPendTasksShown() {
 	    return driverutil.isElementVisible(TEXT_PEND_TASKS);
     }
 
-    public String getSidebarPendTasksValue() {
-	    return driverutil.getText(TEXT_PEND_TASKS);
+    public int getSidebarPendTasksValue() {
+	    return Integer.parseInt(driverutil.getText(TEXT_PEND_TASKS));
     }
 
     // </editor-fold>
