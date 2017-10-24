@@ -10,6 +10,7 @@ import GMLineChart from "../../../../../components/GMLineChart";
 import LayoutSection from "../../../../../../LayoutSection";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
+import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ReadoutItem from "../../../../../components/ReadoutItem";
 
 import {
@@ -70,57 +71,55 @@ class SummaryGrid extends Component {
           )}`}
         />
         <LayoutSection title={"Vitals"}>
-          <div className="subsection">
-            <div className="readout-dashboard-row">
-              <Readout>
-                <ReadoutItem
-                  detail={dateFormat(startTime)}
-                  icon={"future"}
-                  title={"Uptime"}
-                  value={prettyMS(_.round(uptime, -3))}
-                />
-              </Readout>
-              <Readout type={"readout-primary"}>
-                <ReadoutItem
-                  icon={"bolt"}
-                  title={"Avg. Response Time"}
-                  value={`${getLatestAttribute(
-                    metrics,
-                    "all/latency_ms.avg",
-                    5,
-                    "ms",
-                    "s"
-                  )}s`}
-                />
-                <ReadoutItem
-                  icon={"warning"}
-                  title={"Error Rate"}
-                  value={`${errorRate}%`}
-                />
-              </Readout>
-              <Readout>
-                <ReadoutItem
-                  detail={`${getLatestAttribute(
-                    metrics,
-                    "system/cpu_cores"
-                  )} Cores`}
-                  icon={"server"}
-                  title={"CPU Utilization"}
-                  value={`${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`}
-                />
-                <ReadoutItem
-                  detail={`${memoryAvail} GB Free`}
-                  icon={"server"}
-                  title={"Memory Utilized"}
-                  value={`${memoryUsedPercent}%`}
-                />
-              </Readout>
-              <Readout>
-                <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
-                <ReadoutItem icon={"link"} title={"Port"} value={port} />
-              </Readout>
-            </div>
-          </div>
+          <ReadoutGroup>
+            <Readout>
+              <ReadoutItem
+                detail={dateFormat(startTime)}
+                icon={"future"}
+                title={"Uptime"}
+                value={prettyMS(_.round(uptime, -3))}
+              />
+            </Readout>
+            <Readout primary="true">
+              <ReadoutItem
+                icon={"bolt"}
+                title={"Avg. Response Time"}
+                value={`${getLatestAttribute(
+                  metrics,
+                  "all/latency_ms.avg",
+                  5,
+                  "ms",
+                  "s"
+                )}s`}
+              />
+              <ReadoutItem
+                icon={"warning"}
+                title={"Error Rate"}
+                value={`${errorRate}%`}
+              />
+            </Readout>
+            <Readout>
+              <ReadoutItem
+                detail={`${getLatestAttribute(
+                  metrics,
+                  "system/cpu_cores"
+                )} Cores`}
+                icon={"server"}
+                title={"CPU Utilization"}
+                value={`${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`}
+              />
+              <ReadoutItem
+                detail={`${memoryAvail} GB Free`}
+                icon={"server"}
+                title={"Memory Utilized"}
+                value={`${memoryUsedPercent}%`}
+              />
+            </Readout>
+            <Readout>
+              <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
+              <ReadoutItem icon={"link"} title={"Port"} value={port} />
+            </Readout>
+          </ReadoutGroup>
         </LayoutSection>
         <LayoutSection title={"Statistics"}>
           <div style={{ height: "250px" }}>

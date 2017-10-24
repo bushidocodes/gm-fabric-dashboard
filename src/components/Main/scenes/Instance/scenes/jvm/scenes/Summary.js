@@ -9,6 +9,7 @@ import LayoutSection from "../../../../../../LayoutSection";
 import GMLineChart from "../../../../../components/GMLineChart";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
+import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ReadoutItem from "../../../../../components/ReadoutItem";
 
 import {
@@ -49,50 +50,48 @@ class SummaryGrid extends Component {
           )}`}
         />
         <LayoutSection title={"Vitals"}>
-          <div className="subsection">
-            <div className="readout-dashboard-row">
-              <Readout>
-                <ReadoutItem
-                  detail={dateFormat(
-                    getLatestAttribute(metrics, "jvm/start_time")
-                  )}
-                  icon={"future"}
-                  title={"Uptime"}
-                  value={prettyMS(
-                    _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
-                  )}
-                />
-              </Readout>
+          <ReadoutGroup>
+            <Readout>
+              <ReadoutItem
+                detail={dateFormat(
+                  getLatestAttribute(metrics, "jvm/start_time")
+                )}
+                icon={"future"}
+                title={"Uptime"}
+                value={prettyMS(
+                  _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
+                )}
+              />
+            </Readout>
 
-              <Readout type={"readout-primary"}>
-                <ReadoutItem
-                  icon={"bolt"}
-                  title={"Avg. Response Time"}
-                  value={prettyMS(
-                    _.round(getLatestAttribute(metrics, "time/2XX.avg"), -3)
-                  )}
-                />
-                <ReadoutItem
-                  icon={"warning"}
-                  title={"Error Rate"}
-                  value={`${errorRate}%`}
-                />
-              </Readout>
+            <Readout primary="true">
+              <ReadoutItem
+                icon={"bolt"}
+                title={"Avg. Response Time"}
+                value={prettyMS(
+                  _.round(getLatestAttribute(metrics, "time/2XX.avg"), -3)
+                )}
+              />
+              <ReadoutItem
+                icon={"warning"}
+                title={"Error Rate"}
+                value={`${errorRate}%`}
+              />
+            </Readout>
 
-              <Readout>
-                <ReadoutItem
-                  icon={"server"}
-                  title={"Cores"}
-                  value={getLatestAttribute(metrics, "jvm/num_cpus")}
-                />
-              </Readout>
+            <Readout>
+              <ReadoutItem
+                icon={"server"}
+                title={"Cores"}
+                value={getLatestAttribute(metrics, "jvm/num_cpus")}
+              />
+            </Readout>
 
-              <Readout>
-                <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
-                <ReadoutItem icon={"link"} title={"Port"} value={port} />
-              </Readout>
-            </div>
-          </div>
+            <Readout>
+              <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
+              <ReadoutItem icon={"link"} title={"Port"} value={port} />
+            </Readout>
+          </ReadoutGroup>
         </LayoutSection>
 
         <LayoutSection title={"Statistics"}>

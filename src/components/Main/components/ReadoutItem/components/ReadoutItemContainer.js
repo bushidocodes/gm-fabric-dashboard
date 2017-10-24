@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { spacingScale } from "../../../style/styleFunctions";
+import { spacingScale } from "../../../../../style/styleFunctions";
 
-const ReadoutItem = styled.div`
+const ReadoutItemContainer = styled.div`
   flex: 0 1 100%;
   min-height: 75px;
   display: flex;
@@ -23,4 +23,4 @@ const ReadoutItem = styled.div`
   }
 `;
 
-export default ReadoutItem;
+export default ReadoutItemContainer;

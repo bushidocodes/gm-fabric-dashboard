@@ -10,7 +10,7 @@ import PollingSettings from "./components/PollingSettings";
 
 import Readout from "../Readout.js";
 import Button from "../../../Button.js";
-import ReadoutItem from "../ReadoutItem.js";
+import ReadoutItem from "../ReadoutItem";
 import LayoutSection from "../../../LayoutSection";
 import TapeIcon from "../../../../images/icons/tape.svg";
 
@@ -61,7 +61,7 @@ function SettingsGrid({
       />
 
       <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
-        <Readout align={"center"}>
+        <Readout>
           <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
           <Button
             clickAction={clearCacheClickAction}
