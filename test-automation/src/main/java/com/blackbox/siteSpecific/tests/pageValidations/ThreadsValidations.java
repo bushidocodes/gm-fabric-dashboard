@@ -36,6 +36,9 @@ public class ThreadsValidations extends GMFDashboardTest {
         // Verify the counts make sense
         Assert.assertTrue(allThreadsCount == (activeCount + idleCount + stoppedCount));
 
+        // Verify the All Threads value matches the Threads value in the sidebar
+        Assert.assertTrue(allThreadsCount == gmfDashboardSite.threads().getSidebarThreadsValue());
+
         // Make sure the number of rows matches the All Threads button count
         // Assert.assertTrue(gmfDashboardSite.threads().getRowCount() == gmfDashboardSite.threads().getAllThreadsCount());
         int rowCount = gmfDashboardSite.threads().getRowCount();
