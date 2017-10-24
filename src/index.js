@@ -7,7 +7,10 @@ import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
 
-import App from "./components/App";
+import Sidebar from "./components/Sidebar";
+
+import AppContainer from "./components/AppContainer";
+import Main from "./components/Main";
 import store from "./store";
 
 // All scripts in the workers directory are loaded by WebPack via worker-loader
@@ -31,7 +34,10 @@ export const history = createHashHistory();
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <App />
+      <AppContainer>
+        <Sidebar />
+        <Main className="uk-width-5-6@s" />
+      </AppContainer>
     </Router>
   </Provider>,
   document.getElementById("root")
