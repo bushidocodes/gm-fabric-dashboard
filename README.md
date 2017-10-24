@@ -26,6 +26,10 @@ Run `docker run -it -p 1337:10001 drfogout/metricssimple`
 
 After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/metrics). If you see JSON data, you are ready to proceed.#
 
+### For a Mock Service Discovery Service (SDS) microservices:
+
+After you install the project (steps in the section Installation), open a new terminal window and in the root of the project run `npm run mock-sds`
+
 ### 3. Install Node.js and the npm package manager via a version management tool
 
 Because new major versions of the Node.js runtime are released every six months, half of which are not tied to the [Node.js Long Term Support (LTS) cycle](https://github.com/nodejs/LTS), it is advisable to use a version manager to be able to move between Node.js versions via a version management tool.
@@ -43,9 +47,14 @@ cd gm-fabric-dashboard
 npm install
 ```
 
-## Configuration 
+## Configuration
 
-Edit `./public/index.html` and replace `__BASE_RUNTIME__` with `JVM` if running a gm-fabric-jvm microservice or `GO` if running a gm-fabric-go microservice
+If JVM microservice (gm-fabric-jvm) :
+  Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
+If GO microservice (gm-fabric-go):
+  Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
+If Service Discovery Service (SDS) microservice (mock-sds):
+  Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
 
 ## Use
 
@@ -60,7 +69,7 @@ Edit `./public/index.html` and replace `__BASE_RUNTIME__` with `JVM` if running 
 
 #### `npm start` to develop features and crush bugs
 
-This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits. 
+This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits.
 
 We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), and [ESList](http://eslint.org/docs/user-guide/integrations) plugins in your editor to use the projects style rules.
 
@@ -78,11 +87,11 @@ Note: If you are running on Mac OS, tests might fail with the error `Error: Erro
 This builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Once built, the production bundle is minified and ready for deployment. The dashboard assumes that it is monitoring a microservice at the root path with Twitter Server metrics accessible at `/admin/metrics.json` and `/admin/threads`. The dashboard itself is served from `/gmadmin/`. 
+Once built, the production bundle is minified and ready for deployment. The dashboard assumes that it is monitoring a microservice at the root path with Twitter Server metrics accessible at `/admin/metrics.json` and `/admin/threads`. The dashboard itself is served from `/gmadmin/`.
 
 In order to support deployment of the dashboard to monitor a microservice that doesn't own the root path, this projects injects the string template `__BASE_URL__` in the minified index.html file and JS bundle that can be replaced to set the desired path. For your convenience, a BASH script is provided to simplify this deployment process and provide an undo option.
 
-For example, if you are going to deploy the dashboard to a microservice located  at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed. 
+For example, if you are going to deploy the dashboard to a microservice located  at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
 
 If you intend to retrofit this dashboard on an existing GM Fabric JVM microservice, you likely will need to proxy `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads` to the expected path as outlined above.
 
@@ -92,7 +101,7 @@ In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute
 
 #### Note on experimental Envoy support:
 
-GM Fabric Dashboard is currently undergoing work to support the GM Fabric ecosystem. While the dashboard currently does not support Envoy, we have started work on a docker-compose infrastructure to support future efforts in this area. 
+GM Fabric Dashboard is currently undergoing work to support the GM Fabric ecosystem. While the dashboard currently does not support Envoy, we have started work on a docker-compose infrastructure to support future efforts in this area.
 
 ```bash
 cd docker
