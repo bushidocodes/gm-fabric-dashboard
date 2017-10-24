@@ -8,9 +8,9 @@ import {
   BORDER_RADIUS_BASE,
   FONT_SIZE_HERO,
   FONT_STACK_BASE
-} from "../../style/styleVariables";
+} from "../style/styleVariables";
 
-import { contrastColor, spacingScale } from "../../style/styleFunctions";
+import { contrastColor, spacingScale } from "../style/styleFunctions";
 
 export const ReadoutDashboard = styled.div`
   display: flex;

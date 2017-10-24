@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { spacingScale } from "../../../../../style/styleFunctions";
 import {
-  COLOR_SIDEBAR_BACKGROUND,
-  COLOR_SIDEBAR_CONTENT,
+  COLOR_ALT_BACKGROUND,
+  COLOR_ALT_CONTENT,
   COLOR_WHITE
 } from "../../../../../style/styleVariables";
 
-const SIDEBAR_TEXT = COLOR_SIDEBAR_CONTENT.string();
-const SIDEBAR_BORDER = COLOR_SIDEBAR_BACKGROUND.mix(COLOR_WHITE, 0.1).string();
+const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
+const SIDEBAR_BORDER = COLOR_ALT_BACKGROUND.mix(COLOR_WHITE, 0.1).string();
 
 const SummaryBarCardTitle = styled.div`
   color: ${SIDEBAR_TEXT};

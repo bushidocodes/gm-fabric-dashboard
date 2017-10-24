@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { spacingScale } from "../../../../../style/styleFunctions";
 import {
-  COLOR_SIDEBAR_CONTENT,
+  COLOR_ALT_CONTENT,
   PADDING_BASE
 } from "../../../../../style/styleVariables";
 
-const SIDEBAR_TEXT = COLOR_SIDEBAR_CONTENT.string();
+const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
 
 const SummaryBarCardBody = styled.div`
   padding: 0 0;

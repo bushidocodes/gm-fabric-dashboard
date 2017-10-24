@@ -5,7 +5,6 @@ const Breadcrumb = styled.li`
   display: flex;
   align-items: center;
   color: black;
-
   &:before {
     content: ">";
     transform: scaleX(0.5);
@@ -13,7 +12,6 @@ const Breadcrumb = styled.li`
     opacity: 0.5;
     padding: 0 4px;
   }
-
   a {
     display: flex;
     max-width: 100%;
@@ -25,12 +23,10 @@ const Breadcrumb = styled.li`
       color: black;
     }
   }
-
   &:first-child {
     &:before {
       content: none;
     }
-
     a {
       padding-left: 16px;
     }

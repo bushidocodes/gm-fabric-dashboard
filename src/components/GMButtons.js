@@ -12,6 +12,14 @@ const BUTTON_COLOR_ACTIVE = "#ececec";
 const BUTTON_COLOR_HOVER_ACTIVE = "#dddddd";
 const BUTTON_COLOR_ACTIVE_ACTIVE = "#D1D1D1";
 
+export const ButtonGroup = styled.div`
+  * + * {
+    margin-left: ${spacingScale(0.5)};
+  }
+  ${props =>
+    props.toolbar ? `padding: ${spacingScale(0)} ${spacingScale(1)};` : ""};
+`;
+
 export const StyledButton = styled.button`
   background-color: ${props =>
     props.selected ? BUTTON_COLOR_ACTIVE : BUTTON_COLOR_BASE};

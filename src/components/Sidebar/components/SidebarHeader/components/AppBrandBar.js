@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import {
   FONT_SIZE_BASE,
-  COLOR_SIDEBAR_BACKGROUND
+  COLOR_ALT_BACKGROUND
 } from "../../../../../style/styleVariables";
 import {
   contrastColor,
@@ -12,8 +12,8 @@ import {
 const APP_HEADER_HEIGHT = spacingScale(4.25);
 const APP_HEADER_FONT_SIZE = FONT_SIZE_BASE;
 
-const BRANDBAR_BACKGROUND_COLOR = COLOR_SIDEBAR_BACKGROUND.string();
-const BRANDBAR_TEXT_COLOR = contrastColor(COLOR_SIDEBAR_BACKGROUND).string();
+const BRANDBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
+const BRANDBAR_TEXT_COLOR = contrastColor(COLOR_ALT_BACKGROUND).string();
 
 const AppBrandBar = styled.nav`
   background-color: ${BRANDBAR_BACKGROUND_COLOR};

@@ -3,11 +3,11 @@ import {
   contrastColor,
   spacingScale
 } from "../../../../../style/styleFunctions";
-import { COLOR_SIDEBAR_BACKGROUND } from "../../../../../style/styleVariables";
+import { COLOR_ALT_BACKGROUND } from "../../../../../style/styleVariables";
 
 const Footer = styled.footer`
   text-align: center;
-  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND).string()};
+  color: ${contrastColor(COLOR_ALT_BACKGROUND).string()};
   position: relative;
   flex: 0 0 auto;
   margin-top: ${spacingScale(1)};
