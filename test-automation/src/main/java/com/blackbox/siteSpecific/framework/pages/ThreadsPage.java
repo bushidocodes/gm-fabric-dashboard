@@ -4,8 +4,6 @@ import com.blackbox.common.selenium.DriverUtil;
 import com.blackbox.common.selenium.WebSite;
 import com.blackbox.dataModels.ThreadState;
 import com.blackbox.siteSpecific.framework.base.GMFDashboardWebPage;
-import org.omg.SendingContext.RunTime;
-import sun.jvm.hotspot.utilities.Assert;
 
 
 public class ThreadsPage extends GMFDashboardWebPage {
