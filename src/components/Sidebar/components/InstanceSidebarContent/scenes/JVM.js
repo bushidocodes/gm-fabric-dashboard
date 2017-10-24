@@ -39,7 +39,7 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
         title="Summary"
       />
       <SidebarCard
-        href={`${basePath}/route`}
+        href={`${basePath}/routes`}
         icon="link"
         tabIndex={0}
         title="Routes"
