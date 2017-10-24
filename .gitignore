@@ -31,3 +31,5 @@ docs.md
 # Test automation
 test-automation/.idea/
 test-automation/out/
+test-automation/.gradle/
+test-automation/build/
