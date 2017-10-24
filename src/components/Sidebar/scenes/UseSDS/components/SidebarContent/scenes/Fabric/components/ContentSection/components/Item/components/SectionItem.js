@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { COLOR_SIDEBAR_BACKGROUND } from "../../../../../../../../../../../../../style/styleVariables";
+import { COLOR_ALT_BACKGROUND } from "../../../../../../../../../../../../../style/styleVariables";
 import {
   spacingScale,
   contrastColor
 } from "../../../../../../../../../../../../../style/styleFunctions";
 
 const SectionItem = styled.div`
-  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 1)
+  color: ${contrastColor(COLOR_ALT_BACKGROUND, 1)
     .hsl()
     .string()};
   display: flex;

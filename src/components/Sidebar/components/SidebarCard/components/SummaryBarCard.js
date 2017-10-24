@@ -2,19 +2,19 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { spacingScale } from "../../../../../style/styleFunctions";
 import {
-  COLOR_SIDEBAR_BACKGROUND,
+  COLOR_ALT_BACKGROUND,
   COLOR_WHITE,
   COLOR_GREEN
 } from "../../../../../style/styleVariables";
 
-const SIDEBAR_BACKGROUND = COLOR_SIDEBAR_BACKGROUND.string();
-const SIDEBAR_ACTIVE_BACKGROUND = COLOR_SIDEBAR_BACKGROUND.mix(
+const SIDEBAR_BACKGROUND = COLOR_ALT_BACKGROUND.string();
+const SIDEBAR_ACTIVE_BACKGROUND = COLOR_ALT_BACKGROUND.mix(
   COLOR_WHITE,
   0.2
 ).string();
 const SIDEBAR_ACTIVE_BOXSHADOW = COLOR_GREEN.string();
 const SIDEBAR_ACTIVE_TEXTSHADOW = SIDEBAR_ACTIVE_BACKGROUND;
-const SIDEBAR_HOVER_BACKGROUND = COLOR_SIDEBAR_BACKGROUND.mix(
+const SIDEBAR_HOVER_BACKGROUND = COLOR_ALT_BACKGROUND.mix(
   COLOR_WHITE,
   0.08
 ).string();

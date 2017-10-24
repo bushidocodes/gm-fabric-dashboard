@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import {
   FONT_SIZE_SM,
-  COLOR_SIDEBAR_BACKGROUND
+  COLOR_ALT_BACKGROUND
 } from "../../../../../../../../../../../style/styleVariables";
 import {
   spacingScale,
@@ -10,7 +10,7 @@ import {
 } from "../../../../../../../../../../../style/styleFunctions";
 
 const SectionHeader = styled.div`
-  color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.8)
+  color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.8)
     .hsl()
     .string()};
   display: flex;
@@ -32,7 +32,7 @@ const SectionHeader = styled.div`
     right: 0;
     background-image: linear-gradient(
       to right,
-      ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.35)
+      ${contrastColor(COLOR_ALT_BACKGROUND, 0.35)
         .hsl()
         .string()},
       ${props => props.borderBottomColor}
@@ -40,13 +40,13 @@ const SectionHeader = styled.div`
   }
 
   &:hover {
-    color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 0.9)
+    color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.9)
       .hsl()
       .string()};
     cursor: pointer;
   }
   &:active {
-    color: ${contrastColor(COLOR_SIDEBAR_BACKGROUND, 1)
+    color: ${contrastColor(COLOR_ALT_BACKGROUND, 1)
       .hsl()
       .string()};
   }

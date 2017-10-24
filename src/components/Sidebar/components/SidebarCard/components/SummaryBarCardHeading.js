@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import {
-  COLOR_SIDEBAR_CONTENT,
+  COLOR_ALT_CONTENT,
   FONT_WEIGHT_BASE,
   FONT_SIZE_BASE
 } from "../../../../../style/styleVariables";
 
-const SIDEBAR_TEXT = COLOR_SIDEBAR_CONTENT.string();
+const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
 
 export const SummaryBarCardHeading = styled.h1`
   font-size: ${FONT_SIZE_BASE};
