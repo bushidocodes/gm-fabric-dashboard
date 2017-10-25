@@ -9,6 +9,7 @@
     "scss.validate": false,
     "cSpell.words": [
       "component",
+      "moxios",
       "unmount",
       "will"
     ]
