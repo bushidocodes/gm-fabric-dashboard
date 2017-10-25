@@ -1,13 +1,13 @@
 package com.blackbox.siteSpecific.framework.pages;
 
 import com.blackbox.common.selenium.DriverUtil;
-import com.blackbox.common.selenium.WebPage;
 import com.blackbox.common.selenium.WebSite;
 import com.blackbox.siteSpecific.framework.base.GMFDashboardPage;
 
 
 public class DashboardPage extends GMFDashboardPage {
     private static final String PAGE_TITLE = "Grey Matter Fabric";
+
 
     // <editor-fold desc="Sidebar Elements">
 
@@ -36,6 +36,22 @@ public class DashboardPage extends GMFDashboardPage {
     // </editor-fold>
 
 
+    // <editor-fold desc="Main Page Elements">
+
+    private static final String[] LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]/a"};
+    private static final String[] TEXT_MAIN_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]/div"};
+
+    private static final String[] LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]/a"};
+    private static final String[] TEXT_MAIN_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]/div"};
+
+    private static final String[] LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/a"};
+    private static final String[] TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/div"};
+
+    private static final int MAIN_SERVICES_ENTRY_STARTING_INDEX = 1;
+
+    // </editor-fold>
+
+
     public DashboardPage(DriverUtil driverutil, WebSite webSite) {
         super(driverutil, webSite);
     }
@@ -54,6 +70,10 @@ public class DashboardPage extends GMFDashboardPage {
 
 
     // <editor-fold desc="Sidebar Actions">
+
+    private int parseSidebarIndex(int index) {
+        return SIDEBAR_SERVICES_ENTRY_STARTING_INDEX + (index - 1);
+    }
 
     public void toggleSidebarServices() {
         driverutil.click(LINK_SIDEBAR_SERVICES);
@@ -75,12 +95,16 @@ public class DashboardPage extends GMFDashboardPage {
         return Integer.parseInt(driverutil.getText(TEXT_SIDEBAR_SERVICES_DOWN_COUNT).replaceAll(",", ""));
     }
 
+    public boolean doesSidebarServicesDownEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_SIDEBAR_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseSidebarIndex(index)));
+    }
+
     public String getSidebarServicesDownEntryName(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, parseSidebarIndex(index)));
     }
 
     public String getSidebarServicesDownEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS, parseSidebarIndex(index)));
     }
 
     public void toggleSidebarServicesWarning() {
@@ -95,17 +119,36 @@ public class DashboardPage extends GMFDashboardPage {
         return Integer.parseInt(driverutil.getText(TEXT_SIDEBAR_SERVICES_WARNING_COUNT).replaceAll(",", ""));
     }
 
+    public boolean doesSidebarServicesWarningEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_SIDEBAR_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseSidebarIndex(index)));
+    }
+
     public String getSidebarServicesWarningEntryName(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS, parseSidebarIndex(index)));
     }
 
     public String getSidebarServicesWarningEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS,  parseSidebarIndex(index)));
     }
 
-    public void navigateToSidebarServicesWarningEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_SIDEBAR_SERVICES_WARNING_ENTRY_SUBSTRINGS, index));
-        // TODO: Will need to return the correct page model once it is created
+    public InstancesPage navigateToSidebarServicesWarningEntry(int index) {
+        driverutil.click(buildElementLocator(LINK_SIDEBAR_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseSidebarIndex(index)));
+        return webSite.setCurrentPage(InstancesPage.class);
+    }
+
+    public InstancesPage navigateToSidebarServicesWarningEntry(String name) {
+        int index = 1;
+
+        while(doesSidebarServicesWarningEntryExist(index)) {
+            if(getSidebarServicesWarningEntryName(index).equals(name)) {
+                return navigateToSidebarServicesWarningEntry(index);
+            }
+
+            index++;
+        }
+
+        // If reached here, the name was not found
+        throw new RuntimeException(String.format("Warning service entry could not be found with name \"%s\"", name));
     }
 
     public void toggleSidebarServicesStable() {
@@ -120,17 +163,117 @@ public class DashboardPage extends GMFDashboardPage {
         return Integer.parseInt(driverutil.getText(TEXT_SIDEBAR_SERVICES_STABLE_COUNT).replaceAll(",", ""));
     }
 
+    public boolean doesSidebarServicesStableEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_SIDEBAR_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseSidebarIndex(index)));
+    }
+
     public String getSidebarServicesStableEntryName(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, parseSidebarIndex(index)));
     }
 
     public String getSidebarServicesStableEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, parseSidebarIndex(index)));
     }
 
-    public void navigateToSidebarServicesStableEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_SIDEBAR_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
-        // TODO: Will need to return the correct page model once it is created
+    public InstancesPage navigateToSidebarServicesStableEntry(int index) {
+        driverutil.click(buildElementLocator(LINK_SIDEBAR_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseSidebarIndex(index)));
+        return webSite.setCurrentPage(InstancesPage.class);
+    }
+
+    public InstancesPage navigateToSidebarServicesStableEntry(String name) {
+        int index = 1;
+
+        while(doesSidebarServicesStableEntryExist(index)) {
+            if(getSidebarServicesStableEntryName(index).equals(name)) {
+                return navigateToSidebarServicesStableEntry(index);
+            }
+
+            index++;
+        }
+
+        // If reached here, the name was not found
+        throw new RuntimeException(String.format("Stable service entry could not be found with name \"%s\"", name));
+    }
+
+    // </editor-fold>
+
+
+    // <editor-fold desc="Main Section">
+
+    public boolean doesMainDownServiceEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainDownServiceEntryName(int index) {
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainDownServiceEntryVersion(int index) {
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS, index));
+    }
+
+    public boolean doesMainWarningServiceEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainWarningServiceEntryName(int index) {
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainWarningServiceEntryVersion(int index) {
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS, index));
+    }
+
+    public InstancesPage navigateToMainWarningServiceEntry(int index) {
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, index));
+        return webSite.setCurrentPage(InstancesPage.class);
+    }
+
+    public InstancesPage navigateToMainWarningServiceEntry(String name) {
+        int index = MAIN_SERVICES_ENTRY_STARTING_INDEX;
+
+        while(doesMainWarningServiceEntryExist(index)) {
+            if(getMainWarningServiceEntryName(index).equals(name)) {
+                return navigateToMainWarningServiceEntry(index);
+            }
+
+            index++;
+        }
+
+        // If reached here, the name was not found
+        throw new RuntimeException(String.format("Warning service entry could not be found with name \"%s\"", name));
+    }
+
+    public boolean doesMainStableServiceEntryExist(int index) {
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainStableServiceEntryName(int index) {
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+    }
+
+    public String getMainStableServiceEntryVersion(int index) {
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, index));
+    }
+
+    public InstancesPage navigateToMainStableServiceEntry(int index) {
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+        return webSite.setCurrentPage(InstancesPage.class);
+    }
+
+    public InstancesPage navigateToMainStableServiceEntry(String name) {
+        int index = MAIN_SERVICES_ENTRY_STARTING_INDEX;
+
+        while(doesMainStableServiceEntryExist(index)) {
+            if(getMainStableServiceEntryName(index).equals(name)) {
+                return navigateToMainStableServiceEntry(index);
+            }
+
+            index++;
+        }
+
+        // If reached here, the name was not found
+        throw new RuntimeException(String.format("Stable service entry could not be found with the name \"%s\"", name));
     }
 
     // </editor-fold>
