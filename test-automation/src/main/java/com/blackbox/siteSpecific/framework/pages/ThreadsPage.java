@@ -3,10 +3,10 @@ package com.blackbox.siteSpecific.framework.pages;
 import com.blackbox.common.selenium.DriverUtil;
 import com.blackbox.common.selenium.WebSite;
 import com.blackbox.dataModels.ThreadState;
-import com.blackbox.siteSpecific.framework.base.GMFDashboardWebPage;
+import com.blackbox.siteSpecific.framework.base.GMFDashboardServicePage;
 
 
-public class ThreadsPage extends GMFDashboardWebPage {
+public class ThreadsPage extends GMFDashboardServicePage {
     private static final String PAGE_TITLE = "Gray Matter Fabric";
 
     // <editor-fold desc="Elements">

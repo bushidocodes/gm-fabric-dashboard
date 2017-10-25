@@ -2,10 +2,10 @@ package com.blackbox.siteSpecific.framework.pages;
 
 import com.blackbox.common.selenium.DriverUtil;
 import com.blackbox.common.selenium.WebSite;
-import com.blackbox.siteSpecific.framework.base.GMFDashboardWebPage;
+import com.blackbox.siteSpecific.framework.base.GMFDashboardServicePage;
 
 
-public class RoutesPage extends GMFDashboardWebPage {
+public class RoutesPage extends GMFDashboardServicePage {
     private static final String PAGE_TITLE = "Gray Matter Fabric";
 
     // <editor-fold desc="Page Elements">
