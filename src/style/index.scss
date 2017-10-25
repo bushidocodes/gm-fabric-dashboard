@@ -14,9 +14,7 @@
 @import "../../node_modules/uikit/src/scss/uikit-theme.scss";
 
 // Base
-@import "base.scss";
 @import "functions.scss";
-@import "layout.scss";
 @import "typography.scss";
 
 // Components
@@ -31,7 +29,6 @@
 @import "components/reactInputRange.scss";
 @import "components/recharts.scss";
 @import "components/routesTable.scss";
-@import "components/summaryGrid.scss";
 @import "components/table.scss";
 @import "components/threadsTable.scss";
 @import "components/toolbar.scss";
