@@ -7,7 +7,7 @@ import com.blackbox.siteSpecific.framework.base.GMFDashboardPage;
 
 
 public class DashboardPage extends GMFDashboardPage {
-    private static final String PAGE_TITLE = "Gray Matter Fabric";
+    private static final String PAGE_TITLE = "Grey Matter Fabric";
 
     // <editor-fold desc="Sidebar Elements">
 

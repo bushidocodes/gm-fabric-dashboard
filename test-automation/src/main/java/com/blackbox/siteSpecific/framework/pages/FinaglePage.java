@@ -6,7 +6,7 @@ import com.blackbox.siteSpecific.framework.base.GMFDashboardServicePage;
 
 
 public class FinaglePage extends GMFDashboardServicePage {
-    private static final String PAGE_TITLE = "Gray Matter Fabric";
+    private static final String PAGE_TITLE = "Grey Matter Fabric";
 
     // <editor-fold desc="Page Elements">
 
