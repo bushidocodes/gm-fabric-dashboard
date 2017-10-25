@@ -10,7 +10,7 @@ import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ReadoutItem from "../../../../../components/ReadoutItem";
-
+import ErrorBoundary from "../../../../../../library/ErrorBoundary";
 import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
@@ -80,7 +80,7 @@ class SummaryGrid extends Component {
       (window.location.protocol === "https:" ? 443 : 80);
 
     return (
-      <div>
+      <ErrorBoundary>
         <PageTitle
           title={`${selectedService ||
             getServiceName()} ${selectedServiceVersion} : ${trimID(
@@ -145,7 +145,7 @@ class SummaryGrid extends Component {
             />
           </div>
         </LayoutSection>
-      </div>
+      </ErrorBoundary>
     );
   }
 }

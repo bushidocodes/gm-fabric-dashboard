@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import RoutesTableToolbar from "./components/RoutesTableToolbar";
 import RoutesTable from "./components/RoutesTable";
-
+import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 import { getRoutesTable } from "../../../../../../../../utils/jvm/selectors";
 
 /**
@@ -74,17 +74,19 @@ class RoutesGrid extends Component {
             keyToSortBy={this.state.keyToSortBy}
             setKeyToSortBy={this.setKeyToSortBy}
           />
-          <RoutesTable
-            routes={this.sort(
-              this.props.routes.filter(
-                routeObj =>
-                  routeObj.route
-                    .toLowerCase()
-                    .indexOf(this.state.filterString.trim().toLowerCase()) !==
-                  -1
-              )
-            )}
-          />
+          <ErrorBoundary>
+            <RoutesTable
+              routes={this.sort(
+                this.props.routes.filter(
+                  routeObj =>
+                    routeObj.route
+                      .toLowerCase()
+                      .indexOf(this.state.filterString.trim().toLowerCase()) !==
+                    -1
+                )
+              )}
+            />
+          </ErrorBoundary>
         </div>
       );
     } else {

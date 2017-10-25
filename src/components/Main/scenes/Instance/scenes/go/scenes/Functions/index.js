@@ -6,6 +6,7 @@ import FunctionsTable from "./components/FunctionsTable";
 import FunctionsTableToolbar from "./components/FunctionsTableToolbar";
 
 import { getFunctionsTable } from "../../../../../../../../utils/go/selectors";
+import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 
 /**
  * Go Functions Container
@@ -75,17 +76,19 @@ class FunctionsGrid extends Component {
             setFilterString={this.setFilterString}
             setKeyToSortBy={this.setKeyToSortBy}
           />
-          <FunctionsTable
-            funcs={this.sort(
-              this.props.funcs.filter(
-                funcObj =>
-                  funcObj.func
-                    .toLowerCase()
-                    .indexOf(this.state.filterString.trim().toLowerCase()) !==
-                  -1
-              )
-            )}
-          />
+          <ErrorBoundary>
+            <FunctionsTable
+              funcs={this.sort(
+                this.props.funcs.filter(
+                  funcObj =>
+                    funcObj.func
+                      .toLowerCase()
+                      .indexOf(this.state.filterString.trim().toLowerCase()) !==
+                    -1
+                )
+              )}
+            />
+          </ErrorBoundary>
         </div>
       );
     } else {

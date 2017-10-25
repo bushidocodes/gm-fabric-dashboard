@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import GMServiceCardView from "./scene/Card";
 import GMServiceListView from "./scene/Table";
 import { computeStatus } from "../../../../../../utils/selectors";
+import ErrorBoundary from "../../../../../library/ErrorBoundary";
 
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,
@@ -36,19 +37,23 @@ export default function FabricMainView({
 
   if (displayType === "Card") {
     return (
-      <GMServiceCardView
-        groupByAttribute={groupByAttribute}
-        sortByAttribute={sortByAttribute}
-        services={mappedServices}
-      />
+      <ErrorBoundary>
+        <GMServiceCardView
+          groupByAttribute={groupByAttribute}
+          sortByAttribute={sortByAttribute}
+          services={mappedServices}
+        />
+      </ErrorBoundary>
     );
   } else if (displayType === "Table") {
     return (
-      <GMServiceListView
-        groupByAttribute={groupByAttribute}
-        sortByAttribute={sortByAttribute}
-        services={mappedServices}
-      />
+      <ErrorBoundary>
+        <GMServiceListView
+          groupByAttribute={groupByAttribute}
+          sortByAttribute={sortByAttribute}
+          services={mappedServices}
+        />
+      </ErrorBoundary>
     );
   }
 }

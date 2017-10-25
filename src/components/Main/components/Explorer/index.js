@@ -11,12 +11,15 @@ import ViewExplorer from "./components/ViewExplorer";
 import MetricsList from "./components/MetricsList";
 import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 
+import ErrorBoundary from "./../../../library/ErrorBoundary";
+
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux
  * Uses Inspector to search and select keys.
  * @class Explorer
  * @extends {Component}
  */
+
 class Explorer extends Component {
   static propTypes = {
     history: PropTypes.object,
@@ -158,29 +161,32 @@ class Explorer extends Component {
       : undefined;
     const { searchQuery } = this.state;
     return (
-      <ViewExplorer>
-        <MetricsList>
-          <Inspector
-            data={keys}
-            onClick={this.onClick}
-            onSearch={this.onSearch}
-            searchQuery={searchQuery}
-            selectedMetric={selectedMetric}
-            tabIndex={0}
-          />
-        </MetricsList>
-        <MetricsGraphDisplay>
-          {selectedMetric && this.props.keys.indexOf(selectedMetric) !== -1 ? (
-            <GMLineChart
-              height={"max"}
-              timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
-              title={selectedMetric}
+      <ErrorBoundary>
+        <ViewExplorer>
+          <MetricsList>
+            <Inspector
+              data={keys}
+              onClick={this.onClick}
+              onSearch={this.onSearch}
+              searchQuery={searchQuery}
+              selectedMetric={selectedMetric}
+              tabIndex={0}
             />
-          ) : (
-            <p>Select a metric to display</p>
-          )}
-        </MetricsGraphDisplay>
-      </ViewExplorer>
+          </MetricsList>
+          <MetricsGraphDisplay>
+            {selectedMetric &&
+            this.props.keys.indexOf(selectedMetric) !== -1 ? (
+              <GMLineChart
+                height={"max"}
+                timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
+                title={selectedMetric}
+              />
+            ) : (
+              <p>Select a metric to display</p>
+            )}
+          </MetricsGraphDisplay>
+        </ViewExplorer>
+      </ErrorBoundary>
     );
   }
 }
