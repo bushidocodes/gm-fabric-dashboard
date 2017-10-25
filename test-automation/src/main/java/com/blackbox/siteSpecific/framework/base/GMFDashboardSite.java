@@ -28,6 +28,8 @@ public class GMFDashboardSite extends WebSite {
 
     // <editor-fold desc="Convenience Methods for Accessing Pages Classes">
 
+    public DashboardPage dashboard() { return this.getCurrentPage(); }
+    public InstancesPage instances() { return this.getCurrentPage(); }
     public SummaryPage summary() { return this.getCurrentPage(); }
     public RoutesPage routes() { return this.getCurrentPage(); }
     public ThreadsPage threads() { return this.getCurrentPage(); }
