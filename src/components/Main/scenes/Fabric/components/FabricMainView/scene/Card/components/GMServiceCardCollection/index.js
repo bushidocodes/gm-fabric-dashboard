@@ -23,6 +23,7 @@ export default function GMServiceCardCollection({ items }) {
     <ContentItems>
       {items.map(item => (
         <GMServiceCard
+          authorized={item.authorized}
           key={`${item.name}${item.version}`}
           name={item.name}
           version={item.version}
