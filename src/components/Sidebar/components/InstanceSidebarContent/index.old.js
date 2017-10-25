@@ -1,5 +1,4 @@
 import _ from "lodash";
-import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -12,6 +11,7 @@ import {
   getSparkLineOfValue,
   getSparkLineOfNetChange
 } from "../../../../utils/sparklines";
+import { convertMS } from "../utils";
 import SidebarCard from "../../components/SidebarCard";
 import SummaryBar from "../../components/SummaryBar";
 import SidebarNavWidget from "./components/SidebarNavWidget";
@@ -43,9 +43,7 @@ class SidebarInstance extends Component {
               lines={[
                 {
                   name: "Uptime",
-                  value: prettyMS(
-                    _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
-                  )
+                  value: convertMS(getLatestAttribute(metrics))
                 }
               ]}
               tabIndex={0}

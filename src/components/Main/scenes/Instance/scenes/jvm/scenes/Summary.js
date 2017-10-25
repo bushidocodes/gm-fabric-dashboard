@@ -1,16 +1,16 @@
 import dateFormat from "dateformat";
-import _ from "lodash";
-import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import _ from "lodash";
 
 import LayoutSection from "../../../../../../LayoutSection";
 import GMLineChart from "../../../../../components/GMLineChart";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
+import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ReadoutItem from "../../../../../components/ReadoutItem";
-
+import ErrorBoundary from "../../../../../../library/ErrorBoundary";
 import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
@@ -18,7 +18,7 @@ import {
 import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
 import { getErrorRate } from "../../../../../../../utils/jvm/selectors";
 import { getServiceName } from "../../../../../../../utils/head";
-import { trimID } from "../../../../../../../utils";
+import { trimID, convertMS } from "../../../../../../../utils";
 
 class SummaryGrid extends Component {
   static propTypes = {
@@ -28,6 +28,44 @@ class SummaryGrid extends Component {
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string
   };
+
+  state = {
+    _timer: null,
+    startTime: getLatestAttribute(this.props.metrics, "jvm/start_time"),
+    uptime: 0
+  };
+
+  // start timer in componentDidMount
+  // in setInterval, call setState which triggers re-render
+  componentDidMount() {
+    this._timer = setInterval(() => this.onChangeUptime(), 1000);
+  }
+
+  // handles edge case when start_time changes
+  componentWillReceiveProps(nextProps) {
+    const changedStartTime = getLatestAttribute(
+      nextProps.metrics,
+      "jvm/start_time"
+    );
+    if (changedStartTime !== this.state.startTime) {
+      this.setState({ startTime: changedStartTime });
+    }
+  }
+
+  // call clearInterval() to cancel the timer
+  componentWillUnmount() {
+    clearInterval(this._timer);
+  }
+
+  onChangeUptime() {
+    const uptime =
+      this.state.startTime > 0 ? Date.now() - this.state.startTime : 0;
+
+    this.setState({
+      uptime: convertMS(uptime)
+    });
+  }
+
   render() {
     const {
       errorRate,
@@ -40,8 +78,9 @@ class SummaryGrid extends Component {
     const port =
       window.location.port ||
       (window.location.protocol === "https:" ? 443 : 80);
+
     return (
-      <div>
+      <ErrorBoundary>
         <PageTitle
           title={`${selectedService ||
             getServiceName()} ${selectedServiceVersion} : ${trimID(
@@ -49,50 +88,46 @@ class SummaryGrid extends Component {
           )}`}
         />
         <LayoutSection title={"Vitals"}>
-          <div className="subsection">
-            <div className="readout-dashboard-row">
-              <Readout>
-                <ReadoutItem
-                  detail={dateFormat(
-                    getLatestAttribute(metrics, "jvm/start_time")
-                  )}
-                  icon={"future"}
-                  title={"Uptime"}
-                  value={prettyMS(
-                    _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
-                  )}
-                />
-              </Readout>
+          <ReadoutGroup>
+            <Readout>
+              <ReadoutItem
+                detail={dateFormat(
+                  getLatestAttribute(metrics, "jvm/start_time")
+                )}
+                icon={"future"}
+                title={"Uptime"}
+                value={this.state.uptime}
+              />
+            </Readout>
 
-              <Readout type={"readout-primary"}>
-                <ReadoutItem
-                  icon={"bolt"}
-                  title={"Avg. Response Time"}
-                  value={prettyMS(
-                    _.round(getLatestAttribute(metrics, "time/2XX.avg"), -3)
-                  )}
-                />
-                <ReadoutItem
-                  icon={"warning"}
-                  title={"Error Rate"}
-                  value={`${errorRate}%`}
-                />
-              </Readout>
+            <Readout primary="true">
+              <ReadoutItem
+                icon={"bolt"}
+                title={"Avg. Response Time"}
+                value={`${_.round(
+                  getLatestAttribute(metrics, "time/2XX.avg")
+                )}ms`}
+              />
+              <ReadoutItem
+                icon={"warning"}
+                title={"Error Rate"}
+                value={`${errorRate}%`}
+              />
+            </Readout>
 
-              <Readout>
-                <ReadoutItem
-                  icon={"server"}
-                  title={"Cores"}
-                  value={getLatestAttribute(metrics, "jvm/num_cpus")}
-                />
-              </Readout>
+            <Readout>
+              <ReadoutItem
+                icon={"server"}
+                title={"Cores"}
+                value={getLatestAttribute(metrics, "jvm/num_cpus")}
+              />
+            </Readout>
 
-              <Readout>
-                <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
-                <ReadoutItem icon={"link"} title={"Port"} value={port} />
-              </Readout>
-            </div>
-          </div>
+            <Readout>
+              <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
+              <ReadoutItem icon={"link"} title={"Port"} value={port} />
+            </Readout>
+          </ReadoutGroup>
         </LayoutSection>
 
         <LayoutSection title={"Statistics"}>
@@ -110,7 +145,7 @@ class SummaryGrid extends Component {
             />
           </div>
         </LayoutSection>
-      </div>
+      </ErrorBoundary>
     );
   }
 }

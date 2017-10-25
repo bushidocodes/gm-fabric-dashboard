@@ -17,6 +17,7 @@ const ContentItems = styled.div`
  * Render section(s) with grouping header and group of cards
  *
  */
+
 export default function GMServiceCardCollection({ items }) {
   return (
     <ContentItems>

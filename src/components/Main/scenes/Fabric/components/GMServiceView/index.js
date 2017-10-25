@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
+import ErrorBoundary from "../../../../../library/ErrorBoundary";
 
 class GMServiceView extends Component {
   static propTypes = {
@@ -24,6 +25,7 @@ class GMServiceView extends Component {
   render() {
     const { instances, serviceName, serviceVersion, status } = this.props;
     const { filterString } = this.state;
+
     return instances && instances.length ? (
       <div>
         <GMServiceTableToolbar
@@ -31,14 +33,16 @@ class GMServiceView extends Component {
           filterString={filterString}
           serviceName={serviceName}
         />
-        <GMServiceTable
-          serviceName={serviceName}
-          serviceVersion={serviceVersion}
-          instances={instances.filter(instance => {
-            return instance.indexOf(filterString) !== -1;
-          })}
-          status={status}
-        />
+        <ErrorBoundary>
+          <GMServiceTable
+            serviceName={serviceName}
+            serviceVersion={serviceVersion}
+            instances={instances.filter(instance => {
+              return instance.indexOf(filterString) !== -1;
+            })}
+            status={status}
+          />
+        </ErrorBoundary>
       </div>
     ) : (
       <div className="no-routes-found-error">

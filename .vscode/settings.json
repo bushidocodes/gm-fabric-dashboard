@@ -6,6 +6,11 @@
     "editor.insertSpaces": true,
     "css.validate": false,
     "less.validate": false,
-    "scss.validate": false
+    "scss.validate": false,
+    "cSpell.words": [
+      "component",
+      "unmount",
+      "will"
+    ]
   }
   

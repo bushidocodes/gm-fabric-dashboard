@@ -2,138 +2,146 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import {
-  ReadoutDashboard,
-  ReadoutContainer,
-  ReadoutItem,
-  ReadoutItemData,
-  ReadoutItemTitle,
-  ReadoutItemValue,
-  ReadoutItemDetail,
-  ReadoutItemIcon
-} from "../src/components/ReadoutBeta";
-import ShapeIcon from "../src/components/ShapeIcon";
+import ReadoutItem from "../src/components/Main/components/ReadoutItem";
+
+import Readout from "../src/components/Main/components/Readout";
+
+import ReadoutGroup from "../src/components/Main/components/ReadoutGroup";
 
 storiesOf("Readout", module)
   .add("A Readout with One Item", () => (
-    <ReadoutContainer>
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-    </ReadoutContainer>
+    <Readout>
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />
+    </Readout>
   ))
   .add("A Primary Readout with One Item", () => (
-    <ReadoutContainer primary="true">
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(255,255,255,.95)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-    </ReadoutContainer>
+    <Readout primary="true">
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />
+    </Readout>
   ))
   .add("A Readout with Many Items ", () => (
-    <ReadoutContainer>
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-      <ReadoutItem>
-        <ReadoutItemIcon>
-          <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-        </ReadoutItemIcon>
-        <ReadoutItemData>
-          <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-          <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-          <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-        </ReadoutItemData>
-      </ReadoutItem>
-    </ReadoutContainer>
+    <Readout>
+      {" "}
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />{" "}
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />{" "}
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />
+    </Readout>
   ))
-  .add("A Readout Dashboard with Typical Content", () => (
-    <ReadoutDashboard>
-      <ReadoutContainer>
-        <ReadoutItem>
-          <ReadoutItemIcon>
-            <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />
-          </ReadoutItemIcon>
-          <ReadoutItemData>
-            <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-            <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-            <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-          </ReadoutItemData>
-        </ReadoutItem>
-      </ReadoutContainer>
-      <ReadoutContainer primary="true">
-        <ReadoutItem>
-          <ReadoutItemIcon>
-            <ShapeIcon shape="triangle" color="rgba(255,255,255,.95)" />
-          </ReadoutItemIcon>
-          <ReadoutItemData>
-            <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-            <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-            <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-          </ReadoutItemData>
-        </ReadoutItem>
-        <ReadoutItem>
-          <ReadoutItemIcon>
-            <ShapeIcon shape="triangle" color="rgba(255,255,255,.95)" />
-          </ReadoutItemIcon>
-          <ReadoutItemData>
-            <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-            <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-            <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-          </ReadoutItemData>
-        </ReadoutItem>
-      </ReadoutContainer>
-      <ReadoutContainer>
-        <ReadoutItem>
-          <ReadoutItemIcon>
-            <ShapeIcon shape="triangle" color="rgba(0,0,0,.8)" />{" "}
-          </ReadoutItemIcon>
-          <ReadoutItemData>
-            <ReadoutItemTitle>Uptime</ReadoutItemTitle>
-            <ReadoutItemValue>6h 7m 31 s</ReadoutItemValue>
-            <ReadoutItemDetail>Thu Oct 19 2017 09:56:42</ReadoutItemDetail>
-          </ReadoutItemData>
-        </ReadoutItem>
-      </ReadoutContainer>
-    </ReadoutDashboard>
+  .add("A Readout Group with Typical Content", () => (
+    <ReadoutGroup>
+      <Readout>
+        {" "}
+        <ReadoutItem
+          iconName={"ShapeIcon"}
+          iconShape={"triangle"}
+          iconColor={"rgba(0, 0, 0, 0.8)"}
+          title={"Avg. Response Time"}
+          value={"30000%"}
+          detail={"detail text"}
+        />
+      </Readout>
+      <Readout primary="true">
+        {" "}
+        <ReadoutItem
+          iconName={"ShapeIcon"}
+          iconShape={"triangle"}
+          iconColor={"rgba(0, 0, 0, 0.8)"}
+          title={"Avg. Response Time"}
+          value={"30000%"}
+          detail={"detail text"}
+        />{" "}
+        <ReadoutItem
+          iconName={"ShapeIcon"}
+          iconShape={"triangle"}
+          iconColor={"rgba(0, 0, 0, 0.8)"}
+          title={"Avg. Response Time"}
+          value={"30000%"}
+          detail={"detail text"}
+        />
+      </Readout>
+      <Readout>
+        {" "}
+        <ReadoutItem
+          iconName={"ShapeIcon"}
+          iconShape={"triangle"}
+          iconColor={"rgba(0, 0, 0, 0.8)"}
+          title={"Avg. Response Time"}
+          value={"30000%"}
+          detail={"detail text"}
+        />
+      </Readout>
+    </ReadoutGroup>
+  ))
+  .add("A Readout with sparkline and without detail", () => (
+    <Readout>
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        graphData={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+      />
+    </Readout>
+  ))
+  .add("A Readout with detail and without sparkline", () => (
+    <Readout>
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+      />
+    </Readout>
+  ))
+  .add("A Readout with both detail and sparkline", () => (
+    <Readout>
+      {" "}
+      <ReadoutItem
+        iconName={"ShapeIcon"}
+        iconShape={"triangle"}
+        iconColor={"rgba(0, 0, 0, 0.8)"}
+        title={"Avg. Response Time"}
+        value={"30000%"}
+        detail={"detail text"}
+        graphData={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+      />
+    </Readout>
   ));

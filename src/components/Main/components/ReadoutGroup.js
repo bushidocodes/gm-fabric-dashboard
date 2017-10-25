@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ReadoutDashboard = styled.div`
+const ReadoutGroup = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -9,4 +9,4 @@ const ReadoutDashboard = styled.div`
   orphans: 2;
 `;
 
-export default ReadoutDashboard;
+export default ReadoutGroup;

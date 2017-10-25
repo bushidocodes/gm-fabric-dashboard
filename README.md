@@ -1,10 +1,10 @@
 <div align="center">
-  <h1>Gray Matter Fabric Dashboard</h1>
+  <h1>Grey Matter Fabric Dashboard</h1>
 </div>
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Gray Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Gray Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
+Grey Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Grey Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
 
 ## Prerequisites
 

@@ -1,13 +1,11 @@
 import React from "react";
-import _ from "lodash";
-// pretty-ms: Convert milliseconds to a human readable string: 1337000000 → 15d 11h 23m 20s
-import prettyMS from "pretty-ms";
 import { PropTypes } from "prop-types";
 
 import SidebarCard from "../../../../../components/Sidebar/components/SidebarCard";
 
 import { getLatestAttribute } from "../../../../../utils/latestAttribute";
 import { getSparkLineOfValue } from "../../../../../utils/sparklines";
+import { convertMS } from "../../../../../utils";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
@@ -30,16 +28,14 @@ export default function SidebarContent({ basePath, metrics, sidebarCards }) {
         lines={[
           {
             name: "Uptime",
-            value: prettyMS(
-              _.round(getLatestAttribute(metrics, "jvm/uptime"), -3)
-            )
+            value: convertMS(getLatestAttribute(metrics, "jvm/uptime"))
           }
         ]}
         tabIndex={0}
         title="Summary"
       />
       <SidebarCard
-        href={`${basePath}/route`}
+        href={`${basePath}/routes`}
         icon="link"
         tabIndex={0}
         title="Routes"

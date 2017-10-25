@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
 import GMTable from "./components/GMTable";
-
+import ErrorBoundary from "./../../../library/ErrorBoundary";
 import {
   getDygraphOfValue,
   mapDygraphKeysToNetChange
@@ -147,7 +147,7 @@ class GMGrid extends Component {
   renderDashboard(dashboard) {
     // While this parent div looks superfluous, it is needed to ensure the proper vertical heigh of the dashboard
     return (
-      <div>
+      <ErrorBoundary>
         <ResponsiveReactGridLayout
           breakpoints={dashboard.grid.breakpoints}
           cols={dashboard.grid.cols}
@@ -170,7 +170,7 @@ class GMGrid extends Component {
             </div>
           ))}
         </ResponsiveReactGridLayout>
-      </div>
+      </ErrorBoundary>
     );
   }
 

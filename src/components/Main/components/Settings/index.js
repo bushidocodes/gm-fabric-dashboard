@@ -10,10 +10,11 @@ import PollingSettings from "./components/PollingSettings";
 
 import Readout from "../Readout.js";
 import Button from "../../../Button.js";
-import ReadoutItem from "../ReadoutItem.js";
+import ReadoutItem from "../ReadoutItem";
 import LayoutSection from "../../../LayoutSection";
 import TapeIcon from "../../../../images/icons/tape.svg";
 
+import ErrorBoundary from "./../../../library/ErrorBoundary";
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {
@@ -41,38 +42,39 @@ function SettingsGrid({
 }) {
   return (
     <div className="view-app-settings settings-grid">
-      {fabricServer && (
-        <PollingSettings
-          changePollingInterval={Actions.changeFabricPollingInterval}
-          stopPolling={Actions.stopPollingFabric}
-          startPolling={Actions.startPollingFabric}
-          interval={fabricPollingInterval}
-          isPollingInstance={isPollingFabric}
-          title="Fabric Polling"
-        />
-      )}
-      <PollingSettings
-        changePollingInterval={Actions.changeInstancePollingInterval}
-        stopPolling={Actions.stopPollingInstance}
-        startPolling={Actions.startPollingInstance}
-        interval={instancePollingInterval}
-        isPollingInstance={isPollingInstance}
-        title={fabricServer ? "Instance Polling" : "Polling"}
-      />
-
-      <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
-        <Readout align={"center"}>
-          <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
-          <Button
-            clickAction={clearCacheClickAction}
-            icon="close"
-            label="Clear Metrics Cache"
-            tabIndex={0}
+      <ErrorBoundary>
+        {fabricServer && (
+          <PollingSettings
+            changePollingInterval={Actions.changeFabricPollingInterval}
+            stopPolling={Actions.stopPollingFabric}
+            startPolling={Actions.startPollingFabric}
+            interval={fabricPollingInterval}
+            isPollingInstance={isPollingFabric}
+            title="Fabric Polling"
           />
-        </Readout>
-      </LayoutSection>
+        )}
+        <PollingSettings
+          changePollingInterval={Actions.changeInstancePollingInterval}
+          stopPolling={Actions.stopPollingInstance}
+          startPolling={Actions.startPollingInstance}
+          interval={instancePollingInterval}
+          isPollingInstance={isPollingInstance}
+          title={fabricServer ? "Instance Polling" : "Polling"}
+        />
 
-      {/** Disabled for initial release
+        <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
+          <Readout align={"center"}>
+            <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
+            <Button
+              clickAction={clearCacheClickAction}
+              icon="close"
+              label="Clear Metrics Cache"
+              tabIndex={0}
+            />
+          </Readout>
+        </LayoutSection>
+
+        {/** Disabled for initial release
        /** className props has been deprecated and needs to be refactored
       <LayoutSection
         className={"settings-group-user-dashboards"}
@@ -90,6 +92,7 @@ function SettingsGrid({
         </Readout>
       </LayoutSection>
       **/}
+      </ErrorBoundary>
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function Router({ baseURL }) {
       {/* Custom Runtime Specific Stuff */}
       <Route component={SummaryGrid} path={`${prefix}/summary`} />
       <Route component={ThreadsGrid} path={`${prefix}/threads`} />
-      <Route component={RoutesGrid} path={`${prefix}/route`} />
+      <Route component={RoutesGrid} path={`${prefix}/routes`} />
       {/* General Routes shared by all runtimes */}
       {/* Only route to settings if this we aren't using FabricRouter */}
       {!baseURL && <Route component={SettingsGrid} exact path="/settings" />}

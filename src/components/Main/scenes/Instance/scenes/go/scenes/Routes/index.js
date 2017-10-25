@@ -6,6 +6,7 @@ import RoutesTable from "./components/RoutesTable";
 import RoutesTableToolbar from "./components/RoutesTableToolbar";
 
 import { getRoutesTable } from "../../../../../../../../utils/go/selectors";
+import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 
 /**
  * Go Routes Container
@@ -75,17 +76,19 @@ class RoutesGrid extends Component {
             keyToSortBy={this.state.keyToSortBy}
             setKeyToSortBy={this.setKeyToSortBy}
           />
-          <RoutesTable
-            routes={this.sort(
-              this.props.routes.filter(
-                routeObj =>
-                  routeObj.route
-                    .toLowerCase()
-                    .indexOf(this.state.filterString.trim().toLowerCase()) !==
-                  -1
-              )
-            )}
-          />
+          <ErrorBoundary>
+            <RoutesTable
+              routes={this.sort(
+                this.props.routes.filter(
+                  routeObj =>
+                    routeObj.route
+                      .toLowerCase()
+                      .indexOf(this.state.filterString.trim().toLowerCase()) !==
+                    -1
+                )
+              )}
+            />
+          </ErrorBoundary>
         </div>
       );
     } else {

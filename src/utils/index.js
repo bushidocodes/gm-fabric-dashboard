@@ -3,8 +3,8 @@ export const INSTANCE_ID_LENGTH = 8;
 /**
  * Takes a lengthy UID and returns a substring of desired length containing the
  * least significant (rightmost) possible characters
- * @param {string} id 
- * @param {number} desiredLength 
+ * @param {string} id
+ * @param {number} desiredLength
  */
 export const trimID = (id, desiredLength = INSTANCE_ID_LENGTH) => {
   if (!id) return "";
@@ -14,7 +14,7 @@ export const trimID = (id, desiredLength = INSTANCE_ID_LENGTH) => {
 };
 
 /**
- * Clears the interval with the ID stored at window.refreshMetricsIntervalID and then 
+ * Clears the interval with the ID stored at window.refreshMetricsIntervalID and then
  * wipes window.refreshMetricsIntervalID
  */
 export function clearInstanceIntervalIfNeeded() {
@@ -25,7 +25,7 @@ export function clearInstanceIntervalIfNeeded() {
 }
 
 /**
- * Clears the interval with the ID stored at window.refreshFabricIntervalID and then 
+ * Clears the interval with the ID stored at window.refreshFabricIntervalID and then
  * wipes window.refreshFabricIntervalID
  */
 export function clearFabricIntervalIfNeeded() {
@@ -34,3 +34,29 @@ export function clearFabricIntervalIfNeeded() {
     window.refreshFabricIntervalID = null;
   }
 }
+/**
+ * Takes milliseconds and returns a human readable string of time
+ * 7620940771 => '88d 04h 55m 41s'
+ * @param {number} ms
+ * @returns {string}
+ */
+export const convertMS = (ms = 0) => {
+  if (typeof ms !== "number") {
+    console.log("Wrong paramater is passed to function");
+    return;
+  }
+  let s = Math.floor(ms / 1000);
+  let m = Math.floor(s / 60);
+  s = s % 60;
+  let h = Math.floor(m / 60);
+  m = m % 60;
+  let d = Math.floor(h / 24);
+  h = h % 24;
+
+  [d, h, m, s] = [d, h, m, s].map(el => {
+    if (el === 0) return "00";
+    else if (el < 10) return `0${el}`;
+    else return el;
+  });
+  return `${d}d ${h}h ${m}m ${s}s`;
+};

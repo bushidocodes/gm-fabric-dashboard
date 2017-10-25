@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import ThreadsSection from "./components/ThreadsSection";
+import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 
 /**
  * Very redundant feeling wrapper container that contains a ThreadsSection
@@ -48,7 +49,9 @@ class ThreadsGrid extends Component {
     const { threadsTable } = this.props;
     return (
       <div className="thread-table-container">
-        <ThreadsSection threadsTable={threadsTable} />
+        <ErrorBoundary>
+          <ThreadsSection threadsTable={threadsTable} />
+        </ErrorBoundary>
       </div>
     );
   }
