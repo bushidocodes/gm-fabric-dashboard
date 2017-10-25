@@ -106,7 +106,8 @@
     "sass-loader": "^6.0.6",
     "storybook-router": "^0.3.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack-bundle-analyzer": "^2.9.0"
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dashboard": "^1.0.0"
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -117,7 +118,7 @@
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "precommit": "lint-staged",
-    "start": "node scripts/start.js",
+    "start": "webpack-dashboard -- node scripts/start.js",
     "test": "node scripts/test.js --env=jsdom",
     "mock-jvm": "node json-mock/jvm/gm-fabric-jvm.js",
     "mock-go": "node json-mock/go/gm-fabric-go.js",
