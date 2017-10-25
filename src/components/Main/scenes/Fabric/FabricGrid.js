@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
 import qs from "query-string";
+import { notification } from "uikit";
 
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
@@ -35,7 +36,14 @@ class FabricGrid extends Component {
 
   componentDidMount() {
     // Refresh services from the Fabric Server every time this loads
+    const { location: { state } } = this.props;
     Actions.fetchServices();
+    // State added by fabric router to determine authorization for a given service
+    if (state && !state.authorized)
+      notification(`You are not authorized to view ${state.serviceName}`, {
+        status: "danger",
+        timeout: 0
+      });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -164,7 +172,6 @@ class FabricGrid extends Component {
         service.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
       );
     });
-
     if (services && services.length > 0) {
       return (
         <div className="routes-table-container">

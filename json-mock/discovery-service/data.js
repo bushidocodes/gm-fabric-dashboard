@@ -79,6 +79,22 @@ const generateRandomInstanceArray = () => {
 
 const getRandomService = (quantity = 150) => {
   let arr = [];
+  // Explicitly add a service that is NOT authorized
+  // This is a chips and cheese microservice, nachos!
+  arr.push({
+    name: "Nachos",
+    version: "1.0",
+    owner: _.sample(serviceNamePrefix),
+    capability: "Foods",
+    minimum: _.random(1, 5),
+    maximum: _.random(() => this.minimum, 7),
+    documentation: "https://www.google.com",
+    authorized: false,
+    metered: true,
+    threaded: true,
+    runtime: _.sample(["JVM", "GO"]),
+    instances: ["abcdefghicjlmnopqrstuvwxyz"]
+  });
   for (let i = 0; i < quantity; i++) {
     arr.push({
       name: generateRandomServiceName(),

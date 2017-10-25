@@ -2,15 +2,6 @@
 @import "variables.scss";
 @import "button-mixins.scss";
 
-// Mixins
-@mixin hidden {
-  visibility: hidden;
-  z-index: -100;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
 @mixin fontFace($family,$src,$style: normal,$weight: normal) {
   @font-face {
     font-family: $family;

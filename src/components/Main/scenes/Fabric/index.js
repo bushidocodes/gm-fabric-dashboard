@@ -42,7 +42,11 @@ function FabricRouter({ services }) {
           match: { url, params: { serviceName, version, instanceID } }
         }) => {
           const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
-
+          const service =
+            services && serviceName && services[`${serviceName}|${version}`]
+              ? services[`${serviceName}|${version}`]
+              : "";
+          const authorized = service && service.authorized;
           // Lookup the runtime of the microservice named serviceName
           const runtime =
             services && serviceName && services[`${serviceName}|${version}`]
@@ -50,13 +54,21 @@ function FabricRouter({ services }) {
               : "";
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
-          return (
+          // conditionally render the InstanceRouter or a Redirect
+          return authorized ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
               serviceName={serviceName}
               serviceVersion={version}
               instanceID={instanceID}
+            />
+          ) : (
+            <Redirect
+              to={{
+                pathname: "/",
+                state: { authorized, serviceName }
+              }}
             />
           );
         }}
@@ -81,19 +93,27 @@ function FabricRouter({ services }) {
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
+          const authorized = service && service.authorized;
           const instances = (service && service.instances) || [];
           const status = computeStatus(
             instances.length,
             service.minimum,
             service.maximum
           );
-
-          return (
+          // conditionally render the GMServiceView or a Redirect
+          return authorized ? (
             <GMServiceView
               serviceName={serviceName}
               serviceVersion={version}
               instances={instances}
               status={status}
+            />
+          ) : (
+            <Redirect
+              to={{
+                pathname: "/",
+                state: { authorized, serviceName }
+              }}
             />
           );
         }}

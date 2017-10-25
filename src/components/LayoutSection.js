@@ -1,10 +1,10 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import { spacingScale } from "../style/styleFunctions";
+import { spacingScale, contrastColor } from "../style/styleFunctions";
 import {
-  COLOR_BLACK,
-  COLOR_WHITE,
+  COLOR_CONTENT,
+  COLOR_CONTENT_BACKGROUND,
   FONT_SIZE_LG
 } from "../style/styleVariables";
 
@@ -21,14 +21,15 @@ const LayoutSectionWrap = styled.section`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  color: ${COLOR_CONTENT.string()};
 `;
 const Header = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: ${(spacingScale(1), spacingScale(2))};
-  border-top: 1px solid ${COLOR_BLACK.mix(COLOR_WHITE, 0.9).string()};
-  color: ${COLOR_BLACK};
+  border-top: 1px solid
+    ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.15).string()};
 `;
 const SectionIcon = styled.span`
   flex: 0 0 auto;
@@ -57,7 +58,7 @@ const SectionContent = styled.div`
 
 /**
  * Section of a static dashboard, complete with header and icon
- * @param {Object} props - refer to propTypes 
+ * @param {Object} props - refer to propTypes
  */
 
 function LayoutSection({ children, title, icon, flex = false }) {

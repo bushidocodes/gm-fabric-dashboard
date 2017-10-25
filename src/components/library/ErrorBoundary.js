@@ -3,7 +3,10 @@ import PropTypes from "prop-types";
 
 class ErrorBoundary extends React.Component {
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]),
     fallBackUI: PropTypes.element
   };
 

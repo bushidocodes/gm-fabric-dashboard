@@ -43,10 +43,8 @@ export const PADDING_BASE = "8px";
 // Contrasts
 export const DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO = 2;
 export const CONTRAST_INTERVAL = "4%";
-export const COLOR_CONTENT = contrastColor(COLOR_CONTENT_BACKGROUND, 0.2).fade(
-  0.1
-);
-export const COLOR_CONTENT_MUTED = COLOR_CONTENT.fade(0.2);
+export const COLOR_CONTENT = contrastColor(COLOR_CONTENT_BACKGROUND, 0.875);
+export const COLOR_CONTENT_MUTED = contrastColor(COLOR_CONTENT_BACKGROUND, 0.7);
 
 // Typography
 
@@ -112,13 +110,31 @@ injectGlobal`
     font-weight: 400;
     src: url(${SourceCodePro400});
   }
+
+  *, *:before, *:after{
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+
   html {
     font-family: ${FONT_STACK_BASE};
+    font-size: ${FONT_SIZE_BASE};
   }
+
+  :root,
+  html,
+  body,
+  #root {
+    -webkit-overflow-scrolling: auto;
+    overflow: hidden;
+    position: absolute;
+    height: 100% !important;
+    width: 100% !important;
+    -ms-overflow-style: none;
+  }
+
   a {
     text-decoration: none;
   }
-  *, *:before, *:after{
-    box-sizing: border-box;
-  }
+
 `;
