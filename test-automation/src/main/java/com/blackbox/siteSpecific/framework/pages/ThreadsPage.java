@@ -22,9 +22,6 @@ public class ThreadsPage extends GMFDashboardServicePage {
 
     private static final String BUTTON_DISABLED_ATTRIBUTE = "disabled";
 
-    //
-    // //*[@id="main-content"]/div/div/div[2]/ol/li[2]
-
     public static final String[] TABLE_ROW_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div/div[2]/ol/li[", "]"};
 
     public static final String[] TABLE_CELL_ID_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div/div[2]/ol/li[", "]/div[1]"};

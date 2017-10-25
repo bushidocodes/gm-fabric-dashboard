@@ -27,7 +27,7 @@ public class DashboardPage extends GMFDashboardPage {
 
     private static final String LINK_SIDEBAR_SERVICES_STABLE = "//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]";
     private static final String TEXT_SIDEBAR_SERVICES_STABLE_COUNT = "//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]/div/div/div[2]/div[1]";
-    private static final String[] LINK_SIDEBAR_SERVICES_STABLE_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]/div/div[", "]"};  // First entry starts at index 2
+    private static final String[] LINK_SIDEBAR_SERVICES_STABLE_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]/div/div[", "]"};
     private static final String[] TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS = new String[]{"//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]/div/div[", "]/div/div/span[1]"};
     private static final String[] TEXT_SIDEBAR_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"root\"]/div/nav/div/div/div[2]/div/div[3]/div/div[", "]/div/div/span[2]"};
 
