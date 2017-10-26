@@ -10,28 +10,28 @@ public class FinaglePage extends GMFDashboardServicePage {
 
     // <editor-fold desc="Page Elements">
 
-    private static final String HEADER_TIMER_DEVIATION = "//*[@id=\"main-content\"]/div/div/div[1]/div/h3";
-    private static final String TEXT_TIMER_DEVIATION_COUNT = "//*[@id=\"main-content\"]/div/div/div[1]/div/div[1]/div[2]";
-    private static final String TEXT_TIMER_DEVIATION_AVERAGE = "//*[@id=\"main-content\"]/div/div/div[1]/div/div[2]/div[2]";
-    private static final String TEXT_TIMER_DEVIATION_MAX = "//*[@id=\"main-content\"]/div/div/div[1]/div/div[3]/div[2]";
-    private static final String TEXT_TIMER_DEVIATION_MIN = "//*[@id=\"main-content\"]/div/div/div[1]/div/div[4]/div[2]";
-    private static final String TEXT_TIMER_DEVIATION_SUM = "//*[@id=\"main-content\"]/div/div/div[1]/div/div[5]/div[2]";
+    private static final String HEADER_TIMER_DEVIATION = "//*[@id=\"main-content\"]/div/div[1]/div/h3";
+    private static final String TEXT_TIMER_DEVIATION_COUNT = "//*[@id=\"main-content\"]/div/div[1]/div/div[1]/div[2]";
+    private static final String TEXT_TIMER_DEVIATION_AVERAGE = "//*[@id=\"main-content\"]/div/div[1]/div/div[2]/div[2]";
+    private static final String TEXT_TIMER_DEVIATION_MAX = "//*[@id=\"main-content\"]/div/div[1]/div/div[3]/div[2]";
+    private static final String TEXT_TIMER_DEVIATION_MIN = "//*[@id=\"main-content\"]/div/div[1]/div/div[4]/div[2]";
+    private static final String TEXT_TIMER_DEVIATION_SUM = "//*[@id=\"main-content\"]/div/div[1]/div/div[5]/div[2]";
 
-    private static final String HEADER_PENDING_TIMER_TASKS = "//*[@id=\"main-content\"]/div/div/div[2]/div/h3";
-    private static final String TEXT_PENDING_TIMER_TASKS_COUNT = "//*[@id=\"main-content\"]/div/div/div[2]/div/div[1]/div[2]";
-    private static final String TEXT_PENDING_TIMER_TASKS_AVERAGE = "//*[@id=\"main-content\"]/div/div/div[2]/div/div[2]/div[2]";
-    private static final String TEXT_PENDING_TIMER_TASKS_MAX = "//*[@id=\"main-content\"]/div/div/div[2]/div/div[3]/div[2]";
-    private static final String TEXT_PENDING_TIMER_TASKS_MIN = "//*[@id=\"main-content\"]/div/div/div[2]/div/div[4]/div[2]";
-    private static final String TEXT_PENDING_TIMER_TASKS_SUM = "//*[@id=\"main-content\"]/div/div/div[2]/div/div[5]/div[2]";
+    private static final String HEADER_PENDING_TIMER_TASKS = "//*[@id=\"main-content\"]/div/div[2]/div/h3";
+    private static final String TEXT_PENDING_TIMER_TASKS_COUNT = "//*[@id=\"main-content\"]/div/div[2]/div/div[1]/div[2]";
+    private static final String TEXT_PENDING_TIMER_TASKS_AVERAGE = "//*[@id=\"main-content\"]/div/div[2]/div/div[2]/div[2]";
+    private static final String TEXT_PENDING_TIMER_TASKS_MAX = "//*[@id=\"main-content\"]/div/div[2]/div/div[3]/div[2]";
+    private static final String TEXT_PENDING_TIMER_TASKS_MIN = "//*[@id=\"main-content\"]/div/div[2]/div/div[4]/div[2]";
+    private static final String TEXT_PENDING_TIMER_TASKS_SUM = "//*[@id=\"main-content\"]/div/div[2]/div/div[5]/div[2]";
 
-    private static final String HEADER_FUTURE_POOL = "//*[@id=\"main-content\"]/div/div/div[3]/div/h3";
-    private static final String TEXT_FUTURE_POOL_ACTIVE_TASKS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[1]/div[2]";
-    private static final String TEXT_FUTURE_POOL_COMPLETED_TASKS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[2]/div[2]";
-    private static final String TEXT_FUTURE_POOL_POOL_SIZE = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[3]/div[2]";
+    private static final String HEADER_FUTURE_POOL = "//*[@id=\"main-content\"]/div/div[3]/div/h3";
+    private static final String TEXT_FUTURE_POOL_ACTIVE_TASKS = "//*[@id=\"main-content\"]/div/div[3]/div/div[1]/div[2]";
+    private static final String TEXT_FUTURE_POOL_COMPLETED_TASKS = "//*[@id=\"main-content\"]/div/div[3]/div/div[2]/div[2]";
+    private static final String TEXT_FUTURE_POOL_POOL_SIZE = "//*[@id=\"main-content\"]/div/div[3]/div/div[3]/div[2]";
 
-    private static final String HEADER_CLIENT_REGISTRY = "//*[@id=\"main-content\"]/div/div/div[4]/div/h3";
-    private static final String TEXT_CLIENT_REGISTRY_SIZE = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[1]/div[2]";
-    private static final String TEXT_CLIENT_REGISTRY_INITIAL_RESOLUTION = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[2]/div[2]";
+    private static final String HEADER_CLIENT_REGISTRY = "//*[@id=\"main-content\"]/div/div[4]/div/h3";
+    private static final String TEXT_CLIENT_REGISTRY_SIZE = "//*[@id=\"main-content\"]/div/div[4]/div/div[1]/div[2]";
+    private static final String TEXT_CLIENT_REGISTRY_INITIAL_RESOLUTION = "//*[@id=\"main-content\"]/div/div[4]/div/div[2]/div[2]";
 
     // </editor-fold>
 
