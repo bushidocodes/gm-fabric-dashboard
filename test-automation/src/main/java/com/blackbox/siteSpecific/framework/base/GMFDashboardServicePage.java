@@ -15,26 +15,26 @@ public abstract class GMFDashboardServicePage extends GMFDashboardPage {
 
     private static final String LINK_FABRIC = "domclass=nav-go-up";
 
-    private static final String LINK_SUMMARY = "//a[@href='#/summary']";
+    private static final String LINK_SUMMARY = "//a[contains(@href, '/summary')]";
     private static final String TEXT_UPTIME = "//*[@id=\"root\"]/div/nav/div/div[2]/a[1]/div[2]/div/dd/span";
 
-    private static final String LINK_ROUTES = "//a[@href='#/route']";
+    private static final String LINK_ROUTES = "//a[contains(@href, '/route')]";
 
-    private static final String LINK_THREADS = "//a[@href='#/threads']";
+    private static final String LINK_THREADS = "//a[contains(@href, '/threads')]";
     private static final String TEXT_THREADS = "//*[@id=\"root\"]/div/nav/div/div[2]/a[3]/div[2]/div/dd/span";
 
-    private static final String LINK_HTTP = "//a[@href='#/http']";
+    private static final String LINK_HTTP = "//a[contains(@href, '/http')]";
     private static final String TEXT_HTTP = "//*[@id=\"root\"]/div/nav/div/div[2]/a[4]/div[2]/div[1]/dd/span";
     private static final String TEXT_HTTPS = "//*[@id=\"root\"]/div/nav/div/div[2]/a[4]/div[2]/div[2]/dd/span";
 
-    private static final String LINK_JVM = "//a[@href='#/jvm']";
+    private static final String LINK_JVM = "//a[contains(@href, '/jvm')]";
     private static final String TEXT_MEM_USED = "//*[@id=\"root\"]/div/nav/div/div[2]/a[5]/div[2]/div/dd/span";
 
-    private static final String LINK_FINAGLE = "//a[@href='#/finagle']";
+    private static final String LINK_FINAGLE = "//a[contains(@href, '/finagle')]";
     private static final String TEXT_ACTIVE_TASKS = "//*[@id=\"root\"]/div/nav/div/div[2]/a[6]/div[2]/div[1]/dd/span";
     private static final String TEXT_PEND_TASKS = "//*[@id=\"root\"]/div/nav/div/div[2]/a[6]/div[2]/div[2]/dd/span";
 
-    private static final String LINK_EXPLORER = "//a[@href='#/explorer']";
+    private static final String LINK_EXPLORER = "//a[contains(@href, '/explorer')]";
 
     private static final String ACTIVE_LINK_ATTRIBUTE = "class";
     private static final String ACTIVE_LINK_VALUE = "active";
