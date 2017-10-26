@@ -200,37 +200,41 @@ public class DashboardPage extends GMFDashboardPage {
 
     // <editor-fold desc="Main Section">
 
+    public int parseMainIndex(int index) {
+        return MAIN_SERVICES_ENTRY_STARTING_INDEX + (index - 1);
+    }
+
     public boolean doesMainDownServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainDownServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainDownServiceEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public boolean doesMainWarningServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, index));
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainWarningServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainWarningServiceEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public InstancesPage navigateToMainWarningServiceEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, index));
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseMainIndex(index)));
         return webSite.setCurrentPage(InstancesPage.class);
     }
 
     public InstancesPage navigateToMainWarningServiceEntry(String name) {
-        int index = MAIN_SERVICES_ENTRY_STARTING_INDEX;
+        int index = 1;
 
         while(doesMainWarningServiceEntryExist(index)) {
             if(getMainWarningServiceEntryName(index).equals(name)) {
@@ -245,24 +249,24 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainStableServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainStableServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainStableServiceEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, index));
+        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public InstancesPage navigateToMainStableServiceEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, index));
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
         return webSite.setCurrentPage(InstancesPage.class);
     }
 
     public InstancesPage navigateToMainStableServiceEntry(String name) {
-        int index = MAIN_SERVICES_ENTRY_STARTING_INDEX;
+        int index = 1;
 
         while(doesMainStableServiceEntryExist(index)) {
             if(getMainStableServiceEntryName(index).equals(name)) {
