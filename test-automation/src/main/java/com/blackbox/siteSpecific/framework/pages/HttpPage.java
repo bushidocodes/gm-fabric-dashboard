@@ -10,24 +10,24 @@ public class HttpPage extends GMFDashboardServicePage {
 
     // <editor-fold desc="Page Elements">
 
-    private static final String HEADER_CONNECTIONS = "//*[@id=\"main-content\"]/div/div/div[1]/div/h3";
+    private static final String HEADER_CONNECTIONS = "//*[@id=\"main-content\"]/div/div[1]/div/h3";
 
-    private static final String HEADER_DATA_TRANSFER_RATES = "//*[@id=\"main-content\"]/div/div/div[2]/div/h3";
+    private static final String HEADER_DATA_TRANSFER_RATES = "//*[@id=\"main-content\"]/div/div[2]/div/h3";
 
-    private static final String HEADER_REQUESTS = "//*[@id=\"main-content\"]/div/div/div[3]/div/h3";
-    private static final String TEXT_REQUESTS_HTTP_REQUESTS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[2]/div[2]";
-    private static final String TEXT_REQUESTS_HTTP_SUCCESS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[2]/div[3]";
-    private static final String TEXT_REQUESTS_HTTPS_REQUESTS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[3]/div[2]";
-    private static final String TEXT_REQUESTS_HTTPS_SUCCESS = "//*[@id=\"main-content\"]/div/div/div[3]/div/div[3]/div[3]";
+    private static final String HEADER_REQUESTS = "//*[@id=\"main-content\"]/div/div[3]/div/h3";
+    private static final String TEXT_REQUESTS_HTTP_REQUESTS = "//*[@id=\"main-content\"]/div/div[3]/div/div[2]/div[2]";
+    private static final String TEXT_REQUESTS_HTTP_SUCCESS = "//*[@id=\"main-content\"]/div/div[3]/div/div[2]/div[3]";
+    private static final String TEXT_REQUESTS_HTTPS_REQUESTS = "//*[@id=\"main-content\"]/div/div[3]/div/div[3]/div[2]";
+    private static final String TEXT_REQUESTS_HTTPS_SUCCESS = "//*[@id=\"main-content\"]/div/div[3]/div/div[3]/div[3]";
 
-    private static final String HEADER_RESPONSE_STATUS_CODES = "//*[@id=\"main-content\"]/div/div/div[4]/div/h3";
-    private static final String TEXT_RESPONSE_STATUS_CODES_2XX = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[1]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_200 = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[2]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_4XX = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[3]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_400 = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[4]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_499 = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[5]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_5XX = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[6]/div[2]";
-    private static final String TEXT_RESPONSE_STATUS_CODES_500 = "//*[@id=\"main-content\"]/div/div/div[4]/div/div[7]/div[2]";
+    private static final String HEADER_RESPONSE_STATUS_CODES = "//*[@id=\"main-content\"]/div/div[4]/div/h3";
+    private static final String TEXT_RESPONSE_STATUS_CODES_2XX = "//*[@id=\"main-content\"]/div/div[4]/div/div[1]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_200 = "//*[@id=\"main-content\"]/div/div[4]/div/div[2]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_4XX = "//*[@id=\"main-content\"]/div/div[4]/div/div[3]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_400 = "//*[@id=\"main-content\"]/div/div[4]/div/div[4]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_499 = "//*[@id=\"main-content\"]/div/div[4]/div/div[5]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_5XX = "//*[@id=\"main-content\"]/div/div[4]/div/div[6]/div[2]";
+    private static final String TEXT_RESPONSE_STATUS_CODES_500 = "//*[@id=\"main-content\"]/div/div[4]/div/div[7]/div[2]";
 
     // </editor-fold>
 

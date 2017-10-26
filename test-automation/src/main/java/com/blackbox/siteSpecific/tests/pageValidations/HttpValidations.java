@@ -9,6 +9,9 @@ public class HttpValidations extends GMFDashboardTest {
     @Test
     public void validateHttpPageValues() {
         // Set up data
+        String serviceName = "Network Internet Information";
+        int instanceIndex = 1;
+
         int requestsHttpRequests;
         int requestsHttpSuccess;
         int requestsHttpsRequests;
@@ -24,6 +27,14 @@ public class HttpValidations extends GMFDashboardTest {
 
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
+
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.instances().waitForPageToLoad();
+
+        // Navigate to the desired instance and verify the Summary page is loaded
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Navigate to the HTTP page
