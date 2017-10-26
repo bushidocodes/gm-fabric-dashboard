@@ -12,14 +12,26 @@ public class ThreadsValidations extends GMFDashboardTest {
     @Test
     public void validateThreadsPageFiltering() {
         // Set up data
+        String serviceName = "Network Internet Information";
+        int instanceIndex = 1;
+
         int allThreadsCount;
         int activeCount;
         int idleCount;
         int stoppedCount;
         int index;
+        int sidebarThreadsCount;
 
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
+
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.instances().waitForPageToLoad();
+
+        // Navigate to the desired instance and verify the Summary page is loaded
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Navigate to the Threads page
@@ -37,11 +49,12 @@ public class ThreadsValidations extends GMFDashboardTest {
         Assert.assertTrue(allThreadsCount == (activeCount + idleCount + stoppedCount));
 
         // Verify the All Threads value matches the Threads value in the sidebar
-        Assert.assertTrue(allThreadsCount == gmfDashboardSite.threads().getSidebarThreadsValue());
+        sidebarThreadsCount = gmfDashboardSite.threads().getSidebarThreadsValue();
+        Assert.assertTrue(allThreadsCount == sidebarThreadsCount);  // FIXME: Issue #715
 
         // Make sure the number of rows matches the All Threads button count
-        // Assert.assertTrue(gmfDashboardSite.threads().getRowCount() == gmfDashboardSite.threads().getAllThreadsCount());
         int rowCount = gmfDashboardSite.threads().getRowCount();
+        Assert.assertTrue(rowCount == allThreadsCount);
         System.out.println("All Threads: Row count matches the expected value.");
 
         // Validate Active filtering as long as the Active button is enabled
@@ -58,7 +71,7 @@ public class ThreadsValidations extends GMFDashboardTest {
             System.out.println("Active: All entries have the expected state.");
 
             // Verify the number of rows matches the Active button count
-            Assert.assertTrue((index - 1) == gmfDashboardSite.threads().getActiveCount());
+            Assert.assertTrue((index - 1) == activeCount);
             System.out.println("Active: Row count matches the expected value.");
         } else {
             System.out.println("Active: Button is disabled, validation skipped.");
@@ -78,7 +91,7 @@ public class ThreadsValidations extends GMFDashboardTest {
             System.out.println("Idle: All entries have the expected state.");
 
             // Verify the number of rows matches the Idle button count
-            Assert.assertTrue((index -1) == gmfDashboardSite.threads().getIdleCount());
+            Assert.assertTrue((index -1) == idleCount);
             System.out.println("Idle: Row count matches the expected value.");
         } else {
             System.out.println("Idle: Button is disabled, validation skipped.");
@@ -90,7 +103,7 @@ public class ThreadsValidations extends GMFDashboardTest {
             gmfDashboardSite.threads().filterByStopped();
 
             // Verify the number of rows matches the Stopped button count
-            Assert.assertTrue(gmfDashboardSite.threads().getRowCount() == gmfDashboardSite.threads().getStoppedCount());
+            Assert.assertTrue(gmfDashboardSite.threads().getRowCount() == stoppedCount);
             System.out.println("Stopped: Row count matches the expected value.");
         } else {
             System.out.println("Stopped: Button is disabled, validation skipped.");
