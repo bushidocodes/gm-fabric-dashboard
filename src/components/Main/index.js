@@ -24,6 +24,7 @@ import { getRuntime } from "../../utils/selectors";
 class App extends Component {
   static propTypes = {
     dashboards: PropTypes.object,
+    fabricServer: PropTypes.string.isRequired,
     instancePollingInterval: PropTypes.number.isRequired,
     metricsEndpoint: PropTypes.string,
     pathname: PropTypes.string,
