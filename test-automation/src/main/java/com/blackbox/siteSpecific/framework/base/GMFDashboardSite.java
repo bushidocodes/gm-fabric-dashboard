@@ -18,9 +18,9 @@ public class GMFDashboardSite extends WebSite {
 
     // <editor-fold desc="Convenience Method for logging out and going to the root">
 
-    public SummaryPage openSite(GMFDashboardDeployment deployment) {
+    public DashboardPage openSite(GMFDashboardDeployment deployment) {
         driverutil.open(deployment.siteUrl);
-        return this.setCurrentPage(SummaryPage.class);
+        return this.setCurrentPage(DashboardPage.class);
     }
 
     // </editor-fold>
