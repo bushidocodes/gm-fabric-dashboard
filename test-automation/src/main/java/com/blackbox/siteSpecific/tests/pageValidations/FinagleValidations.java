@@ -9,6 +9,9 @@ public class FinagleValidations extends GMFDashboardTest {
     @Test
     public void validateFinaglePageValues() {
         // Set up data
+        String serviceName = "Network Internet Information";
+        int instanceIndex = 1;
+
         int timerDeviationCount;
         double timerDeviationAverage;
         int timerDeviationMax;
@@ -30,6 +33,14 @@ public class FinagleValidations extends GMFDashboardTest {
 
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
+
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.instances().waitForPageToLoad();
+
+        // Navigate to the desired instance and verify the Summary page is loaded
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Navigate to the Finagle page
