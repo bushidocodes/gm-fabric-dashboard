@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
+import { getFabricServer } from "./utils/head";
 
 import Sidebar from "./components/Sidebar";
 
@@ -31,12 +32,15 @@ UIkit.use(Icons);
 // Just use hash history because our dahsboard will be hosted deeply
 export const history = createHashHistory();
 
+// Check if we are running with a Fabric Server or not
+const fabricServer = getFabricServer();
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <AppContainer>
-        <Sidebar />
-        <Main className="uk-width-5-6@s" />
+        <Sidebar fabricServer={fabricServer} />
+        <Main className="uk-width-5-6@s" fabricServer={fabricServer} />
       </AppContainer>
     </Router>
   </Provider>,
