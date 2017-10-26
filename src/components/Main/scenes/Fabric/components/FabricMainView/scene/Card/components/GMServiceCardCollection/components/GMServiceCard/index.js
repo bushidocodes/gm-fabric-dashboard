@@ -47,6 +47,10 @@ export default function GMServiceCard({
     cardBorderAltColor,
     iconUrl;
   const baseColor = mapStatusToColor(status).string();
+  const maxNameLen = 52;
+  const titleName =
+    name.length > maxNameLen ? `${name.trim().substr(0, maxNameLen)}...` : name;
+  const titleNameAttribute = name === titleName ? null : name;
   switch (status) {
     case "Down":
       cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
@@ -92,11 +96,15 @@ export default function GMServiceCard({
           cursor={status !== "Down" && authorized ? "pointer" : "not-allowed"}
           cardfontcolor={cardFontColor}
         >
-          <Title cardFontWeight={cardFontWeight}>{name}</Title>
+          <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
+            {titleName}
+          </Title>
         </ServiceLink>
       ) : (
         <ServiceInfo>
-          <Title cardFontWeight={cardFontWeight}>{name}</Title>{" "}
+          <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
+            {titleName}
+          </Title>{" "}
         </ServiceInfo>
       )}
       <CardFooter cardFontWeight={cardFontWeight}>
