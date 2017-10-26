@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.8.0] - 2017-10-18
+### Added
+- Fabric Dashboard controls now route driven
+- Added routes visualization to Go dashboards
+- MIT license
+### Changed
+- Various IE11 fixes
+- Modified mock-sds to be dynamic
+- Refactored SCSS into Styled Components
+- Updated Docs
+- Fixed spelling errors
+- Replaced Mathjs with smaller tool
+### Removed
+- Removed scss stylesheets
+
+### Test Coverage: 5.15% ([0.8.0 Coverage Report])
+### Bundle Size: ~1.19 +  MB ([0.8.0 Bundle Size Report])
+### Production Build: ([0.8.0 Build])
+
 ## [0.7.1] - 2017-10-18
 ### Added
 - Implemented a service dashboard, which currently only is used to navigate to microservice instance dashboards.
@@ -214,7 +233,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.1...v0.8.0
+[0.8.0 Coverage Report]: https://1252-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.8.0 Bundle Size Report]: https://1252-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.8.0 Build]: https://1252-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.7.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.0...v0.7.1
 [0.7.1 Coverage Report]: https://1014-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.7.1 Bundle Size Report]: https://1014-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html

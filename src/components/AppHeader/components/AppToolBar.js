@@ -22,7 +22,7 @@ AppToolBar.propTypes = {
   pathname: PropTypes.string.isRequired
 };
 
-const AppVersion = "0.7.1";
+const AppVersion = "0.8.0";
 const BrandName = "Fabric";
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);
