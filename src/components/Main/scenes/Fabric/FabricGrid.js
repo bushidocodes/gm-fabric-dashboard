@@ -36,14 +36,20 @@ class FabricGrid extends Component {
 
   componentDidMount() {
     // Refresh services from the Fabric Server every time this loads
-    const { location: { state } } = this.props;
+    const { location: { state }, history } = this.props;
     Actions.fetchServices();
     // State added by fabric router to determine authorization for a given service
-    if (state && !state.authorized)
+    if (state && !state.authorized) {
       notification(`You are not authorized to view ${state.serviceName}`, {
         status: "danger",
         timeout: 0
       });
+      // Reset location state
+      const location = {
+        state: ""
+      };
+      history.replace(location);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
