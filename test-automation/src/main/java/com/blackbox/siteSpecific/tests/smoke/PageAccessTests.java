@@ -1,101 +1,76 @@
 package com.blackbox.siteSpecific.tests.smoke;
 
 import com.blackbox.siteSpecific.framework.base.GMFDashboardTest;
-import org.junit.Assert;
 import org.junit.Test;
 
 
 public class PageAccessTests extends GMFDashboardTest {
     @Test
-    public void accessSummaryPage() {
+    public void accessInstancePages() {
+        // Set up data
+        int serviceIndex;
+        String serviceName = "Network Internet Information";
+        String serviceVersion;
+        String serviceInstanceId;
+        int instanceIndex = 1;
+
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
+        System.out.println("Successfully accessed the Dashboard page.");
 
-        // Verify the Summary page is loaded
+        // Find the desired service and get the version
+        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(serviceName);
+        serviceVersion = gmfDashboardSite.dashboard().getMainStableServiceEntryVersion(serviceIndex);
+        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", serviceName, serviceVersion, serviceIndex));
+
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceIndex);
+        gmfDashboardSite.instances().waitForPageToLoad();
+        System.out.println("Successfully accessed the Instances page.");
+
+        // Find the desired instance and get the ID
+        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(instanceIndex);
+
+        // Navigate to the desired instance and verify the Summary page is loaded
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessRoutesPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the Summary page.");
 
         // Navigate to the Routes page and verify the page is loaded
         gmfDashboardSite.summary().navigateToRoutes();
         gmfDashboardSite.routes().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessThreadsPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the Routes page.");
 
         // Navigate to the Threads page and verify the page is loaded
-        gmfDashboardSite.summary().navigateToThreads();
+        gmfDashboardSite.routes().navigateToThreads();
         gmfDashboardSite.threads().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessHttpPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the Threads page.");
 
         // Navigate to the HTTP page and verify the page is loaded
-        gmfDashboardSite.summary().navigateToHttp();
+        gmfDashboardSite.threads().navigateToHttp();
         gmfDashboardSite.http().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessJvmPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the HTTP page.");
 
         // Navigate to the JVM page and verify the page is loaded
-        gmfDashboardSite.summary().navigateToJvm();
+        gmfDashboardSite.http().navigateToJvm();
         gmfDashboardSite.jvm().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessFinaglePage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the JVM page.");
 
         // Navigate to the Finagle page and verify the page is loaded
-        gmfDashboardSite.summary().navigateToFinagle();
+        gmfDashboardSite.jvm().navigateToFinagle();
         gmfDashboardSite.finagle().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessExplorerPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the Finagle page.");
 
         // Navigate to the Explorer page and verify the page is loaded
-        gmfDashboardSite.summary().navigateToExplorer();
+        gmfDashboardSite.finagle().navigateToExplorer();
         gmfDashboardSite.explorer().waitForPageToLoad();
-    }
-
-
-    @Test
-    public void accessSettingsPage() {
-        // Open the site
-        gmfDashboardSite.openSite(deployment);
-        gmfDashboardSite.summary().waitForPageToLoad();
+        System.out.println("Successfully accessed the Explorer page.");
 
         // Navigate to the Settings page and verify it the page is loaded
-        gmfDashboardSite.summary().navigateToSettings();
+        gmfDashboardSite.explorer().navigateToSettings();
         gmfDashboardSite.settings().waitForPageToLoad();
+        System.out.println("Successfully accessed the Settings page.");
     }
 }
