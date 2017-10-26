@@ -10,6 +10,9 @@ public class JvmPage extends GMFDashboardServicePage {
 
     // <editor-fold desc="Page Elements">
 
+    private static final String HEADER_HEAP = "//*[@id=\"main-content\"]/div/div[1]/div/h3";
+    private static final String HEADER_CLASSES = "//*[@id=\"main-content\"]/div/div[2]/div/h3";
+
     // </editor-fold>
 
 
@@ -26,7 +29,8 @@ public class JvmPage extends GMFDashboardServicePage {
     // <editor-fold desc="Wait for Page to Load">
 
     public void waitForPageToLoad() {
-        
+        driverutil.waitForVisibleElement(HEADER_HEAP, 60);
+        driverutil.waitForVisibleElement(HEADER_CLASSES, 60);
     }
 
     // </editor-fold>
