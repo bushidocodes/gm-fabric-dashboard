@@ -214,7 +214,17 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainDownServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.doesElementExist(buildElementLocator(ELEMENT_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+    }
+
+    public int getMainDownServiceCount() {
+        int index = 0;
+
+        while(doesMainDownServiceEntryExist(parseMainIndex(index + 1))) {
+            index++;
+        }
+
+        return index;
     }
 
     public String getMainDownServiceEntryName(int index) {
@@ -226,7 +236,17 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainWarningServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.doesElementExist(buildElementLocator(ELEMENT_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+    }
+
+    public int getMainWarningServiceCount() {
+        int index = 0;
+
+        while(doesMainWarningServiceEntryExist(parseMainIndex(index + 1))) {
+            index++;
+        }
+
+        return index;
     }
 
     public String getMainWarningServiceEntryName(int index) {
@@ -259,6 +279,16 @@ public class DashboardPage extends GMFDashboardPage {
 
     public boolean doesMainStableServiceEntryExist(int index) {
         return driverutil.doesElementExist(buildElementLocator(ELEMENT_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+    }
+
+    public int getMainStableServiceCount() {
+        int index = 0;
+
+        while(doesMainStableServiceEntryExist(parseMainIndex(index + 1))) {
+            index++;
+        }
+
+        return index;
     }
 
     public boolean isMainStableServiceEntryAuthorized(int index) {
