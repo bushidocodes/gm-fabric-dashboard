@@ -8,10 +8,21 @@ import org.junit.Test;
 public class SidebarValidations extends GMFDashboardTest {
     @Test
     public void validateSidebarHighlighting() {
+        // Set up data
+        String serviceName = "Network Internet Information";
+        int instanceIndex = 1;
+
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
 
-        // Verify the Summary page is displayed and the link is active
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.instances().waitForPageToLoad();
+
+        // Navigate to the desired instance and verify the Summary page is loaded and the link is active
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         Assert.assertTrue(gmfDashboardSite.summary().isSummaryLinkActive());
 
@@ -100,19 +111,6 @@ public class SidebarValidations extends GMFDashboardTest {
         Assert.assertFalse(gmfDashboardSite.explorer().isHttpLinkActive());
         Assert.assertFalse(gmfDashboardSite.explorer().isJvmLinkActive());
         Assert.assertFalse(gmfDashboardSite.explorer().isFinagleLinkActive());
-
-        // Navigate to the Settings page and verify it is loaded.
-        gmfDashboardSite.explorer().navigateToSettings();
-        gmfDashboardSite.settings().waitForPageToLoad();
-
-        // Verify the other links are inactive
-        Assert.assertFalse(gmfDashboardSite.settings().isSummaryLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isRoutesLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isThreadsLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isHttpLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isJvmLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isFinagleLinkActive());
-        Assert.assertFalse(gmfDashboardSite.settings().isExplorerLinkActive());
     }
 
 
