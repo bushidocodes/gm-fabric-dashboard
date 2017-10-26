@@ -289,24 +289,28 @@ public class DashboardPage extends GMFDashboardPage {
         }
     }
 
+    public int getMainStableServicesEntryIndex(String name) {
+        int index = 1;
+
+        while(doesMainStableServiceEntryExist(parseMainIndex(index))) {
+            if(getMainStableServiceEntryName(parseMainIndex(index)).equals(name)) {
+                return index;
+            } else {
+                index++;
+            }
+        }
+
+        // If reached here, the name was not found
+        throw new RuntimeException(String.format("Stable service entry could not be found with the name \"%s\"", name));
+    }
+
     public InstancesPage navigateToMainStableServiceEntry(int index) {
         driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
         return webSite.setCurrentPage(InstancesPage.class);
     }
 
     public InstancesPage navigateToMainStableServiceEntry(String name) {
-        int index = 1;
-
-        while(doesMainStableServiceEntryExist(index)) {
-            if(getMainStableServiceEntryName(index).equals(name)) {
-                return navigateToMainStableServiceEntry(index);
-            }
-
-            index++;
-        }
-
-        // If reached here, the name was not found
-        throw new RuntimeException(String.format("Stable service entry could not be found with the name \"%s\"", name));
+        return navigateToMainStableServiceEntry(getMainStableServicesEntryIndex(name));
     }
 
     // </editor-fold>
