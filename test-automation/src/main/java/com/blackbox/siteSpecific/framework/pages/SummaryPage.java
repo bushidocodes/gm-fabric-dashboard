@@ -12,13 +12,13 @@ public class SummaryPage extends GMFDashboardServicePage {
 
     private static final String HEADER_TITLE = "//h1[contains(@class, 'PageTitle')]";
 
-    private static final String TEXT_UPTIME_VALUE = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[1]/li/div[2]/span[1]";
-    private static final String TEXT_UPTIME_DATE_TIME = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[1]/li/div[2]/span[2]";
-    private static final String TEXT_AVG_RESPONSE_TIME = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[2]/li[1]/div[2]/span";
-    private static final String TEXT_ERROR_RATE = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[2]/li[2]/div[2]/span";
-    private static final String TEXT_CORES = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[3]/li/div[2]/span";
-    private static final String TEXT_HOST = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[4]/li[1]/div[2]/span";
-    private static final String TEXT_PORT = "//*[@id=\"main-content\"]/div/section[1]/div/div/div/div[4]/li[2]/div[2]/span";
+    private static final String TEXT_UPTIME_VALUE = "//*[@id=\"main-content\"]/section[1]/div/div/div[1]/div/div[2]/span";
+    private static final String TEXT_UPTIME_DATE_TIME = "//*[@id=\"main-content\"]/section[1]/div/div/div[1]/div/div[2]/p";
+    private static final String TEXT_AVG_RESPONSE_TIME = "//*[@id=\"main-content\"]/section[1]/div/div/div[2]/div[1]/div[2]/span";
+    private static final String TEXT_ERROR_RATE = "//*[@id=\"main-content\"]/section[1]/div/div/div[2]/div[2]/div[2]/span";
+    private static final String TEXT_CORES = "//*[@id=\"main-content\"]/section[1]/div/div/div[3]/div/div[2]/span";
+    private static final String TEXT_HOST = "//*[@id=\"main-content\"]/section[1]/div/div/div[4]/div[1]/div[2]/span";
+    private static final String TEXT_PORT = "//*[@id=\"main-content\"]/section[1]/div/div/div[4]/div[2]/div[2]/span";
 
     // </editor-fold>
 
@@ -49,7 +49,22 @@ public class SummaryPage extends GMFDashboardServicePage {
     }
 
     public String getUptimeValue() {
-        return driverutil.getText(TEXT_UPTIME_VALUE);
+        int timeoutSeconds = 5;
+        int attempts = 0;
+        String uptime = EMPTY_STRING;
+        String notLoadedValue = "0";
+
+        while(attempts < timeoutSeconds) {
+            uptime = driverutil.getText(TEXT_UPTIME_VALUE);
+            if(uptime.equals(notLoadedValue)) {
+                attempts++;
+                waitSeconds(1);
+            } else {
+                break;
+            }
+        }
+
+        return uptime;
     }
 
     public boolean isUptimeDateTimeShown() {
