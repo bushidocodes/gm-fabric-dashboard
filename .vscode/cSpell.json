@@ -34,6 +34,7 @@
         "Middlewares",
         "middlewares",
         "monospace",
+        "moxios",
         "multilines",
         "nowrap",
         "onstatechange",

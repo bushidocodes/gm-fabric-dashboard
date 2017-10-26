@@ -1,16 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { mapStatusToColor } from "../../../../../../../../../../../../style/styleFunctions";
+import Color from "color";
+
+// Internal Sub-components
+import BackgroundIcon from "./components/BackgroundIcon";
+import { CardContainer, CardFooter } from "./components/Card";
+import DocsIcon from "./components/DocsIcon";
+import DocsLink from "./components/DocsLink";
+import { ServiceInfo, ServiceLink } from "./components/Service";
+import Title from "./components/Title";
+
+// External dependencies
+import {
+  mapStatusToColor,
+  spacingScale
+} from "../../../../../../../../../../../../style/styleFunctions";
+import StatusDownIcon from "../../../../../../../../../../../../images/icons/status-down.svg";
 import StatusStableIcon from "../../../../../../../../../../../../images/icons/status-stable.svg";
 import StatusWarningIcon from "../../../../../../../../../../../../images/icons/status-warning.svg";
-import StatusDownIcon from "../../../../../../../../../../../../images/icons/status-down.svg";
-import Color from "color";
-import DocsIcon from "./components/DocsIcon";
-import { CardContainer, CardFooter } from "./components/Card";
-import DocsLink from "./components/DocsLink";
-import BackgroundIcon from "./components/BackgroundIcon";
-import Title from "./components/Title";
-import { ServiceInfo, ServiceLink } from "./components/Service";
 
 GMServiceCard.propTypes = {
   authorized: PropTypes.bool,
@@ -25,29 +32,32 @@ GMServiceCard.propTypes = {
 export default function GMServiceCard({
   authorized,
   docsLink,
-  height = "110px",
+  height = spacingScale(14),
   name,
   status,
   version,
-  width = "160px"
+  width = spacingScale(20)
 }) {
   // Style based on the status of the service
   let cardBackgroundColor,
     cardBorderColor,
     cardFontColor,
     cardFontWeight,
-    cardBorderBottomColor,
+    cardHighlightColor,
+    cardBorderAltColor,
     iconUrl;
   const baseColor = mapStatusToColor(status).string();
   switch (status) {
     case "Down":
-      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
+      cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
+      cardHighlightColor = "#000000";
       cardFontColor = "white";
       cardFontWeight = "500";
       iconUrl = StatusDownIcon;
       break;
     case "Warning":
-      cardBackgroundColor = cardBorderColor = cardBorderBottomColor = baseColor;
+      cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
+      cardHighlightColor = "#000000";
       cardFontColor = "black";
       cardFontWeight = "400";
       iconUrl = StatusWarningIcon;
@@ -55,8 +65,9 @@ export default function GMServiceCard({
     case "Stable":
     default:
       cardBackgroundColor = "white";
+      cardBorderAltColor = baseColor;
       cardBorderColor = "rgba(0,0,0,.05)";
-      cardBorderBottomColor = baseColor;
+      cardHighlightColor = baseColor;
       cardFontWeight = "400";
       iconUrl = StatusStableIcon;
       cardFontColor = Color(baseColor)
@@ -69,7 +80,8 @@ export default function GMServiceCard({
       cardBackgroundColor={cardBackgroundColor}
       cardBorderColor={cardBorderColor}
       cardFontColor={cardFontColor}
-      cardBorderBottomColor={cardBorderBottomColor}
+      cardHighlightColor={cardHighlightColor}
+      cardBorderAltColor={cardBorderAltColor}
       width={width}
       height={height}
     >
@@ -93,6 +105,7 @@ export default function GMServiceCard({
           docsLink && (
             <DocsLink
               cardFontColor={cardFontColor}
+              cardHighlightColor={cardHighlightColor}
               href={docsLink}
               target="_blank"
             >

@@ -2,7 +2,7 @@ import moxios from "moxios";
 import { main as ajaxWorker } from "./ajax";
 import metrics from "../../json-mock/jvm/metrics";
 import threads from "../../json-mock/jvm/threads";
-import { services } from "../../json-mock/discovery-service/data";
+import { staticServices } from "../../json-mock/discovery-service/staticData";
 
 describe("AJAX Web Worker", () => {
   beforeEach(() => {
@@ -83,11 +83,11 @@ describe("AJAX Web Worker", () => {
       })
     ).rejects.toMatch("Invalid Message");
   });
-  // Note we had to disable this test when we began randomly generating services
-  xit("fetches services from the discovery service and maps them with a key of name", done => {
+  // test with static array of mock services
+  it("fetches services from the discovery service and maps them with a key of name", done => {
     moxios.stubRequest("server/services", {
       status: 200,
-      response: services
+      response: staticServices
     });
     ajaxWorker({
       type: "fetchServices",
@@ -95,41 +95,48 @@ describe("AJAX Web Worker", () => {
     })
       .then(result =>
         expect(result).toMatchObject({
-          "Batcomputer|1.0": {
-            name: "Batcomputer",
-            version: "1.0",
-            owner: "Batcave",
-            capability: "Crime Fighting",
-            instances: [
-              "ee0fa3669fea7e9a0adea649c46bca56",
-              "8bedb4551e801f38bf149001a72a1127",
-              "d9de3a9c26c6c84daaf1ceb40559d659"
-            ],
-            minimum: 1,
-            maximum: 6,
-            metered: true,
-            threaded: true,
-            documentation: "https://en.wikipedia.org/wiki/Batcomputer",
+          "Export Team Gateway Up2 Management Message Resource Measurement|1": {
             authorized: true,
-            runtime: "JVM"
-          },
-          "Batcave Defense Systems|3.1": {
-            name: "Batcave Defense Systems",
-            version: "3.1",
-            owner: "Batcave",
             capability: "Crime Fighting",
-            instances: [
-              "ee0f0000000a7e9a0adea649c46bca56",
-              "8bedb4551e801f38bf149000002a1127",
-              "d000009c26c6c84daaf1ceb40559d659"
-            ],
-            minimum: 1,
-            maximum: 6,
+            documentation: "https://www.google.com",
+            instances: ["2l39cmzi8xw0000000000", "36lbqne4i7s0000000000"],
+            maximum: 0,
             metered: true,
+            minimum: 2,
+            name:
+              "Export Team Gateway Up2 Management Message Resource Measurement",
+            owner: "Virtual",
+            runtime: "GO",
             threaded: true,
-            documentation: null,
-            authorized: false,
-            runtime: "GO"
+            version: "1"
+          },
+          "Internet Option|3.6": {
+            authorized: true,
+            capability: "Crime Fighting",
+            documentation: "https://www.google.com",
+            instances: ["2oajqscqqwu0000000000", "3s50frjd0wg0000000000"],
+            maximum: 4,
+            metered: true,
+            minimum: 5,
+            name: "Internet Option",
+            owner: "Sequential",
+            runtime: "GO",
+            threaded: true,
+            version: "3.6"
+          },
+          "Up2 Message Network Team Entry Job Transmission End|4.7": {
+            authorized: true,
+            capability: "Crime Fighting",
+            documentation: "https://www.google.com",
+            instances: ["7clfu88ur9g0000000000"],
+            maximum: 0,
+            metered: true,
+            minimum: 3,
+            name: "Up2 Message Network Team Entry Job Transmission End",
+            owner: "Internet",
+            runtime: "GO",
+            threaded: true,
+            version: "4.7"
           }
         })
       )
