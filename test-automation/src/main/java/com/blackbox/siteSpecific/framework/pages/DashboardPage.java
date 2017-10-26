@@ -38,14 +38,21 @@ public class DashboardPage extends GMFDashboardPage {
 
     // <editor-fold desc="Main Page Elements">
 
-    private static final String[] LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]/a"};
+    private static final String FIELD_SEARCH_SERVICES = "//input[contains(@class, 'form-control')]";
+
+    private static final String[] ELEMENT_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]"};
+    private static final String[] LINK_MAIN_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]/a"};
     private static final String[] TEXT_MAIN_SERVICES_DOWN_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[1]/div[2]/div/div[", "]/div"};
 
-    private static final String[] LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]/a"};
+    private static final String[] ELEMENT_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]"};
+    private static final String[] LINK_MAIN_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]/a"};
     private static final String[] TEXT_MAIN_SERVICES_WARNING_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[2]/div[2]/div/div[", "]/div"};
 
-    private static final String[] LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/a"};
+    private static final String[] ELEMENT_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]"};
+    private static final String[] LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/a"};
+    private static final String[] LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_NOT_AUTHORIZED_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/div"};
     private static final String[] TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/div"};
+    private static final String[] TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_NOT_AUTHORIZED_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/div[3]/div[2]/div/div[", "]/div[2]"};
 
     private static final int MAIN_SERVICES_ENTRY_STARTING_INDEX = 1;
 
@@ -64,7 +71,9 @@ public class DashboardPage extends GMFDashboardPage {
 
     // <editor-fold desc="Wait for Page to Load">
 
-    public void waitForPageToLoad() {}  // TODO
+    public void waitForPageToLoad() {
+        driverutil.waitForVisibleElement(FIELD_SEARCH_SERVICES, 60);
+    }
 
     // </editor-fold>
 
@@ -205,11 +214,11 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainDownServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainDownServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainDownServiceEntryVersion(int index) {
@@ -217,11 +226,11 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainWarningServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainWarningServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_DOWN_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
     }
 
     public String getMainWarningServiceEntryVersion(int index) {
@@ -229,7 +238,7 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public InstancesPage navigateToMainWarningServiceEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_WARNING_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
         return webSite.setCurrentPage(InstancesPage.class);
     }
 
@@ -249,19 +258,39 @@ public class DashboardPage extends GMFDashboardPage {
     }
 
     public boolean doesMainStableServiceEntryExist(int index) {
-        return driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        return driverutil.doesElementExist(buildElementLocator(ELEMENT_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+    }
+
+    public boolean isMainStableServiceEntryAuthorized(int index) {
+        if(doesMainStableServiceEntryExist(index)) {
+            if (driverutil.doesElementExist(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)))) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            throw new RuntimeException(String.format("No stable service found with index %d", index));
+        }
     }
 
     public String getMainStableServiceEntryName(int index) {
-        return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        if(isMainStableServiceEntryAuthorized(index)) {
+            return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
+        } else {
+            return driverutil.getText(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_NOT_AUTHORIZED_SUBSTRINGS, parseMainIndex(index)));
+        }
     }
 
     public String getMainStableServiceEntryVersion(int index) {
-        return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, parseMainIndex(index)));
+        if(isMainStableServiceEntryAuthorized(index)) {
+            return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_SUBSTRINGS, parseMainIndex(index)));
+        } else {
+            return driverutil.getText(buildElementLocator(TEXT_MAIN_SERVICES_STABLE_ENTRY_VERSION_NOT_AUTHORIZED_SUBSTRINGS, parseMainIndex(index)));
+        }
     }
 
     public InstancesPage navigateToMainStableServiceEntry(int index) {
-        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_SUBSTRINGS, parseMainIndex(index)));
+        driverutil.click(buildElementLocator(LINK_MAIN_SERVICES_STABLE_ENTRY_NAME_SUBSTRINGS, parseMainIndex(index)));
         return webSite.setCurrentPage(InstancesPage.class);
     }
 
