@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { round, unit } from "mathjs";
+import Qty from "js-quantities";
 
 // Dashboard Utility Functions
 
@@ -29,6 +29,13 @@ export function getLatestAttribute(
   resultUnit
 ) {
   if (!metrics || !key) return 0;
+  const roundingFormatter = function(maxDecimals) {
+    return function(scalar) {
+      var pow = Math.pow(10, maxDecimals);
+      var rounded = Math.round(scalar * pow) / pow;
+      return rounded;
+    };
+  };
   // _.has is not suitable because some object become arrays and auto insert
   // keys from 0...n with values of undefined.
   const fullPath = _.get(metrics, key);
@@ -36,12 +43,11 @@ export function getLatestAttribute(
     const latestAttribute =
       fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))];
     if (baseUnit && resultUnit && precision) {
-      return round(
-        unit(latestAttribute, baseUnit).toNumber(resultUnit),
-        precision
-      );
+      const qty = Qty(latestAttribute, baseUnit);
+      return qty.to(resultUnit).format(roundingFormatter(precision));
     } else if (precision) {
-      return round(latestAttribute, precision);
+      const qty = Qty(latestAttribute);
+      return qty.format(roundingFormatter(precision));
     } else {
       return latestAttribute;
     }
@@ -53,8 +59,8 @@ export function getLatestAttribute(
 /**
  * Helper function that inspects the JSON string format for type of 'latest',
  * retrieves the value if required, and formats as a string
- * @param {String[]|String} line 
- * @param {Object} metrics 
+ * @param {String[]|String} line
+ * @param {Object} metrics
  */
 export function parseJSONString(line, metrics) {
   if (Array.isArray(line)) {
