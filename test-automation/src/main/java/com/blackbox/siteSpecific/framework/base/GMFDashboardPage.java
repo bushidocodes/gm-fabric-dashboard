@@ -95,6 +95,20 @@ public abstract class GMFDashboardPage extends WebPage {
         return elementLocator;
     }
 
+    public String buildElementLocator(String[] elementSubstrings, String[] insertionSubstrings) {
+	    String elementLocator = "";
+
+	    // Put all the parts of the locator together except for the last string portion
+        for(int index = 0; index < elementSubstrings.length - 1; index++) {
+            elementLocator = String.format("%s%s%s", elementLocator, elementSubstrings[index], insertionSubstrings[index]);
+        }
+
+        // Add the last string portion
+        elementLocator = String.format("%s%s", elementLocator, elementSubstrings[elementSubstrings.length - 1]);
+
+        return elementLocator;
+    }
+
     // </editor-fold>
 
 
