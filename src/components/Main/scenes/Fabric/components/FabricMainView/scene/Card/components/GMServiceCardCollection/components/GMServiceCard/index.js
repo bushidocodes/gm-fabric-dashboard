@@ -108,7 +108,7 @@ export default function GMServiceCard({
         </ServiceInfo>
       )}
       <CardFooter cardFontWeight={cardFontWeight}>
-        {version}
+        {version || null}
         {version &&
           docsLink && (
             <DocsLink

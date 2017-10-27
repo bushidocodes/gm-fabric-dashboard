@@ -6,7 +6,7 @@ import { storiesOf } from "@storybook/react";
 import GMServiceCardCollection from "../src/components/Main/scenes/Fabric/components/FabricMainView/scene/Card/components/GMServiceCardCollection";
 
 // mock data is at the end of file
-storiesOf("Section Cards View", module)
+storiesOf("Service Cards Collection", module)
   .addDecorator(StoryRouter())
   .add("with a single grouping header and group of cards", () => (
     <GMServiceCardCollection items={singleGroupingByStatusCardsViewMockData} />
@@ -22,77 +22,88 @@ const groupingByStatusCardsViewMockData = [
     name: "Awesome Service 1",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Stable"
+    authorized: true,
+    status: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 2",
     version: "1.5",
     docsLink: "http://www.deciphernow.com",
-    state: "Error"
+    authorized: true,
+    status: "Down"
   },
   {
     headerTitle: "Warning",
     name: "Awesome Service 3",
     version: "1.7",
     docsLink: "http://www.deciphernow.com",
-    state: "Warning"
+    authorized: true,
+    status: "Warning"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 4",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "Stable"
+    authorized: true,
+    status: "Stable"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 5",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "Stable"
+    authorized: true,
+    status: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 6",
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
-    state: "Error"
+    authorized: true,
+    status: "Down"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 7",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Error"
+    authorized: true,
+    status: "Down"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 8",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Stable"
+    authorized: true,
+    status: "Stable"
   },
   {
     headerTitle: "Stable",
     name: "Awesome Service 9",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Stable"
+    authorized: true,
+    status: "Stable"
   },
   {
     headerTitle: "Down",
     name: "Awesome Service 10",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Error"
+    authorized: true,
+    status: "Down"
   },
   {
     headerTitle: "Warning",
     name: "Awesome Service 11",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
-    state: "Warning"
+    authorized: true,
+    status: "Warning"
   }
 ];
 const singleGroupingByStatusCardsViewMockData = groupingByStatusCardsViewMockData.filter(

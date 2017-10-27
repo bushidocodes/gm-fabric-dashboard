@@ -9,7 +9,6 @@ import GMLineChart from "../../../../../components/GMLineChart";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
-import ReadoutItem from "../../../../../components/ReadoutItem";
 import ErrorBoundary from "../../../../../../library/ErrorBoundary";
 import {
   getDygraphOfValue,
@@ -89,44 +88,61 @@ class SummaryGrid extends Component {
         />
         <LayoutSection title={"Vitals"}>
           <ReadoutGroup>
-            <Readout>
-              <ReadoutItem
-                detail={dateFormat(
-                  getLatestAttribute(metrics, "jvm/start_time")
-                )}
-                icon={"future"}
-                title={"Uptime"}
-                value={this.state.uptime}
-              />
-            </Readout>
+            <Readout
+              readoutItems={[
+                {
+                  detail: dateFormat(
+                    getLatestAttribute(metrics, "jvm/start_time")
+                  ),
+                  icon: "future",
+                  title: "Uptime",
+                  value: this.state.uptime
+                }
+              ]}
+            />
 
-            <Readout primary="true">
-              <ReadoutItem
-                icon={"bolt"}
-                title={"Avg. Response Time"}
-                value={`${_.round(
-                  getLatestAttribute(metrics, "time/2XX.avg")
-                )}ms`}
-              />
-              <ReadoutItem
-                icon={"warning"}
-                title={"Error Rate"}
-                value={`${errorRate}%`}
-              />
-            </Readout>
+            <Readout
+              primary={true}
+              readoutItems={[
+                {
+                  icon: "bolt",
+                  title: "Avg. Response Time",
+                  value: `${_.round(
+                    getLatestAttribute(metrics, "time/2XX.avg")
+                  )}ms`
+                },
+                {
+                  icon: "warning",
+                  title: "Error Rate",
+                  value: `${errorRate}%`
+                }
+              ]}
+            />
 
-            <Readout>
-              <ReadoutItem
-                icon={"server"}
-                title={"Cores"}
-                value={getLatestAttribute(metrics, "jvm/num_cpus")}
-              />
-            </Readout>
+            <Readout
+              readoutItems={[
+                {
+                  icon: "server",
+                  title: "Cores",
+                  value: `${getLatestAttribute(metrics, "jvm/num_cpus")}`
+                }
+              ]}
+            />
 
-            <Readout>
-              <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
-              <ReadoutItem icon={"link"} title={"Port"} value={port} />
-            </Readout>
+            <Readout
+              readoutItems={[
+                {
+                  icon: "link",
+                  title: "Host",
+                  value: hostname
+                },
+                {
+                  icon: "link",
+                  title: "Port",
+                  value: port
+                }
+              ]}
+            />
           </ReadoutGroup>
         </LayoutSection>
 

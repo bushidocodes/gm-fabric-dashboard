@@ -32,7 +32,7 @@ GMServiceHeader.propTypes = {
 };
 
 /**
- * Grouping header with icon and headerTitle
+ * Grouping header with icon and title
  */
 export default function GMServiceHeader({
   headerTitle,

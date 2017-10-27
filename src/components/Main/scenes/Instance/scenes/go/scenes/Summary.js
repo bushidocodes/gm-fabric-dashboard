@@ -9,7 +9,6 @@ import LayoutSection from "../../../../../../LayoutSection";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
-import ReadoutItem from "../../../../../components/ReadoutItem";
 import ErrorBoundary from "../../../../../../library/ErrorBoundary";
 
 import {
@@ -107,49 +106,66 @@ class SummaryGrid extends Component {
         />
         <LayoutSection title={"Vitals"}>
           <ReadoutGroup>
-            <Readout>
-              <ReadoutItem
-                detail={dateFormat(this.state.startTime)}
-                icon={"future"}
-                title={"Uptime"}
-                value={this.state.uptime}
-              />
-            </Readout>
-            <Readout primary="true">
-              <ReadoutItem
-                icon={"bolt"}
-                title={"Avg. Response Time"}
-                value={`${_.round(
-                  getLatestAttribute(metrics, "all/latency_ms.avg")
-                )}ms`}
-              />
-              <ReadoutItem
-                icon={"warning"}
-                title={"Error Rate"}
-                value={`${errorRate}%`}
-              />
-            </Readout>
-            <Readout>
-              <ReadoutItem
-                detail={`${getLatestAttribute(
-                  metrics,
-                  "system/cpu_cores"
-                )} Cores`}
-                icon={"server"}
-                title={"CPU Utilization"}
-                value={`${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`}
-              />
-              <ReadoutItem
-                detail={`${memoryAvail} GB Free`}
-                icon={"server"}
-                title={"Memory Utilized"}
-                value={`${memoryUsedPercent}%`}
-              />
-            </Readout>
-            <Readout>
-              <ReadoutItem icon={"link"} title={"Host"} value={hostname} />
-              <ReadoutItem icon={"link"} title={"Port"} value={port} />
-            </Readout>
+            <Readout
+              readoutItems={[
+                {
+                  detail: dateFormat(this.state.startTime),
+                  icon: "future",
+                  title: "Uptime",
+                  value: this.state.uptime
+                }
+              ]}
+            />
+            <Readout
+              primary={true}
+              readoutItems={[
+                {
+                  icon: "bolt",
+                  title: "Avg. Response Time",
+                  value: `${_.round(
+                    getLatestAttribute(metrics, "all/latency_ms.avg")
+                  )}ms`
+                },
+                {
+                  icon: "warning",
+                  title: "Error Rate",
+                  value: `${errorRate}%`
+                }
+              ]}
+            />
+            <Readout
+              readoutItems={[
+                {
+                  detail: `${getLatestAttribute(
+                    metrics,
+                    "system/cpu_cores"
+                  )} Cores`,
+                  icon: "server",
+                  title: "CPU Utilization",
+                  value: `${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`
+                },
+                {
+                  detail: `${memoryAvail} GB Free`,
+                  icon: "server",
+                  title: "Memory Utilized",
+                  value: `${memoryUsedPercent}%`
+                }
+              ]}
+            />
+            <Readout
+              readoutItems={[
+                {
+                  icon: "link",
+                  title: "Host",
+                  value: hostname
+                },
+                {
+                  icon: "link",
+                  title: "Port",
+                  value: port
+                }
+              ]}
+            />
           </ReadoutGroup>
         </LayoutSection>
         <LayoutSection title={"Statistics"}>
