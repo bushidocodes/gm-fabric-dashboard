@@ -32,8 +32,8 @@ export default function ReadoutItem({
     <ReadoutItemContainer>
       {icon && <ReadoutItemIcon icon={icon} />}
       <ReadoutItemData>
-        <ReadoutItemTitle>{title}</ReadoutItemTitle>
-        <ReadoutItemValue>{value}</ReadoutItemValue>
+        <ReadoutItemTitle>{title || "—"}</ReadoutItemTitle>
+        <ReadoutItemValue>{value || "—"}</ReadoutItemValue>
         {detail && <ReadoutItemDetail>{detail}</ReadoutItemDetail>}
         {graphData && (
           <ReadoutItemGraph>

@@ -24,7 +24,7 @@ export default function GMServiceCardCollection({ items }) {
       {items.map(item => (
         <GMServiceCard
           authorized={item.authorized}
-          key={`${item.name}${item.version}`}
+          key={`${item.name}|${item.version}`}
           name={item.name}
           version={item.version}
           docsLink={item.docsLink}

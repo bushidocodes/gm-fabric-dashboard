@@ -1,4 +1,8 @@
+import React from "react";
+import { PropTypes } from "prop-types";
+
 import styled from "styled-components";
+import ReadoutItem from "./ReadoutItem";
 
 import {
   COLOR_CONTENT_BACKGROUND,
@@ -8,7 +12,7 @@ import {
 
 import { contrastColor, spacingScale } from "../../../style/styleFunctions";
 
-const Readout = styled.div`
+const ReadoutContainer = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};
   flex: 1 1 300px;
   align-items: stretch;
@@ -30,4 +34,26 @@ const Readout = styled.div`
     order: ${props => (props.primary ? 0 : 1)};
 `;
 
-export default Readout;
+export default function Readout({ primary, readoutItems = [] }) {
+  return (
+    <ReadoutContainer primary={primary}>
+      {readoutItems.map(item => (
+        <ReadoutItem
+          key={`${item.title}|${item.value}|${item.detail}`}
+          iconName={item.iconName}
+          iconShape={item.iconShape}
+          iconColor={item.iconColor}
+          title={item.title}
+          value={item.value}
+          detail={item.detail}
+          graphData={item.graphData}
+        />
+      ))}
+    </ReadoutContainer>
+  );
+}
+
+Readout.propTypes = {
+  primary: PropTypes.bool,
+  readoutItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+};

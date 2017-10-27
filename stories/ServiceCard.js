@@ -2,71 +2,73 @@ import React from "react";
 
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
+import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 import GMServiceCard from "../src/components/Main/scenes/Fabric/components/FabricMainView/scene/Card/components/GMServiceCardCollection/components/GMServiceCard/index.js";
 
+const serviceStatus = ["Stable", "Warning", "Down"];
+
 storiesOf("Service Card", module)
   .addDecorator(StoryRouter())
-  .add("with title", () => <GMServiceCard name="Awesome Service" />)
-  .add("with title and version", () => (
-    <GMServiceCard name="Awesome Service" version="1.1" />
-  ))
-  .add("with title, version, and documentation link", () => (
+  .addDecorator(withKnobs)
+  .add("Service Card", () => (
     <GMServiceCard
-      name="Awesome Service"
-      version="1.1"
-      docsLink="http://www.deciphernow.com"
+      name={text("Name", "Service Name")}
+      version={text("Version", "1.0")}
+      status={select("Service State", serviceStatus, "Stable")}
+      authorized={boolean("User is Authorized", true)}
+      docsLink={text("Docs Link", "#")}
     />
   ))
-  .add("with title, version, documentation link, and Stable state", () => (
-    <GMServiceCard
-      name="Awesome Service"
-      version="1.1"
-      docsLink="http://www.deciphernow.com"
-      state="Stable"
-    />
-  ))
-  .add("with title, version, documentation link, and Warning state", () => (
-    <GMServiceCard
-      name="Awesome Service"
-      version="1.1"
-      docsLink="http://www.deciphernow.com"
-      state="Warning"
-    />
-  ))
-  .add("with title, version, documentation link, and Error state", () => (
-    <GMServiceCard
-      name="Awesome Service"
-      version="1.1"
-      docsLink="http://www.deciphernow.com"
-      state="Error"
-    />
-  ))
-  .add("in a row", () => (
+  .add("Services Grid", () => (
     <div style={{ display: "flex", flexDirection: "row", height: "150px" }}>
       <GMServiceCard
-        name="Awesome Service"
-        version="1.1"
-        docsLink="http://www.deciphernow.com"
-        state="Stable"
-      />
-      <GMServiceCard
-        name="Awesome Service 2"
-        version="1.0"
-        docsLink="http://www.deciphernow.com"
-        state="Error"
-      />
-      <GMServiceCard
-        name="Awesome Service 3"
-        version="1.1"
-        docsLink="http://www.deciphernow.com"
-        state="Warning"
-      />
-      <GMServiceCard
-        name="Awesome Service 4"
+        name="Service 1"
         version="3.1"
         docsLink="http://www.deciphernow.com"
-        state="Stable"
+        status="Stable"
+      />
+      <GMServiceCard
+        name="Service 2"
+        version="1.1"
+        docsLink="http://www.deciphernow.com"
+        status="Stable"
+      />
+      <GMServiceCard
+        name="Service 3"
+        version="1.0"
+        docsLink="http://www.deciphernow.com"
+        status="Down"
+      />
+      <GMServiceCard
+        name="Service 4"
+        version="1.1"
+        docsLink="http://www.deciphernow.com"
+        status="Warning"
+      />
+      <GMServiceCard
+        name="Service 1"
+        version="3.1"
+        docsLink="http://www.deciphernow.com"
+        status="Stable"
+      />
+      <GMServiceCard
+        name="Service 2"
+        version="1.1"
+        docsLink="http://www.deciphernow.com"
+        status="Stable"
+      />
+      <GMServiceCard
+        name="Service 3"
+        version="1.0"
+        docsLink="http://www.deciphernow.com"
+        status="Down"
+      />
+      <GMServiceCard
+        name="Service 4"
+        version="1.1"
+        docsLink="http://www.deciphernow.com"
+        status="Warning"
       />
     </div>
   ));

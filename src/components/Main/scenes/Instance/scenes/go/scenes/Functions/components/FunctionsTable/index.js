@@ -2,30 +2,34 @@ import { PropTypes } from "prop-types";
 import React from "react";
 
 import FunctionsTableLineItem from "./components/LineItem";
+import Table from "../../../../../../../../components/Table";
+import TableHeader from "../../../../../../../../components/TableHeader";
+import TableCol from "../../../../../../../../components/TableCol";
+import TableBody from "../../../../../../../../components/TableBody";
 
 FunctionsTable.propTypes = {
   funcs: PropTypes.array
 };
 
 /**
- * Go Functions Table 
+ * Go Functions Table
  * Includes a Header and maps 0..n rows of functions data to FunctionsTableLineItems
  * @export
- * @param {any} { funcs = [] } 
- * @returns 
+ * @param {any} { funcs = [] }
+ * @returns
  */
 export default function FunctionsTable({ funcs = [] }) {
   return (
-    <div className="div-table routes-table">
-      <div className="div-table-header">
-        <div className="routes-table-route">Function</div>
-        <div className="routes-table-sparkline">Requests/sec</div>
-        <div className="routes-table-total-requests">Requests</div>
-        <div className="routes-table-error-percent">Error %</div>
-        <div className="routes-table-error-percent">Latency 50%</div>
-        <div className="routes-table-error-percent">Latency 99%</div>
-      </div>
-      <ol className="div-table-body">
+    <Table>
+      <TableHeader>
+        <TableCol header>Function</TableCol>
+        <TableCol header>Requests/sec</TableCol>
+        <TableCol header>Requests</TableCol>
+        <TableCol header>Error %</TableCol>
+        <TableCol header>Latency 50%</TableCol>
+        <TableCol header>Latency 99%</TableCol>
+      </TableHeader>
+      <TableBody>
         {funcs.map(
           ({
             func,
@@ -50,7 +54,7 @@ export default function FunctionsTable({ funcs = [] }) {
             />
           )
         )}
-      </ol>
-    </div>
+      </TableBody>
+    </Table>
   );
 }

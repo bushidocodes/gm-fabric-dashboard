@@ -6,6 +6,7 @@ import RoutesTableToolbar from "./components/RoutesTableToolbar";
 import RoutesTable from "./components/RoutesTable";
 import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 import { getRoutesTable } from "../../../../../../../../utils/jvm/selectors";
+import NotFoundError from "../../../../../../components/NotFoundError";
 
 /**
  * Parent container of RoutesTable and RoutesTableToolbar
@@ -32,7 +33,7 @@ class RoutesGrid extends Component {
   /**
    * Helper function that takes the routes passed as props and sorts according to how keyToSortBy and ascending is set
    * in the local state object.
-   * @param {Array} routes 
+   * @param {Array} routes
    */
   sort(routes) {
     const { keyToSortBy, ascending } = this.state;
@@ -50,7 +51,7 @@ class RoutesGrid extends Component {
   /**
    * Helper function used internally to either sort by the key if not yet used to sort or toggle ascending / descending
    * if the key is already active.
-   * @param {String} keyToSortBy 
+   * @param {String} keyToSortBy
    */
   setKeyToSortBy(keyToSortBy) {
     if (this.state.keyToSortBy === keyToSortBy) {
@@ -67,7 +68,7 @@ class RoutesGrid extends Component {
   render() {
     if (this.props.routes && this.props.routes.length > 0) {
       return (
-        <div className="routes-table-container">
+        <div>
           <RoutesTableToolbar
             filterString={this.state.filterString}
             setFilterString={this.setFilterString}
@@ -90,14 +91,7 @@ class RoutesGrid extends Component {
         </div>
       );
     } else {
-      return (
-        <div className="no-routes-found-error">
-          <div className="content">
-            <span data-uk-icon="icon: warning; ratio: 1.8" />
-            <span>No Routes Found </span>
-          </div>
-        </div>
-      );
+      return <NotFoundError errorMsg={"No Routes Found"} />;
     }
   }
 }

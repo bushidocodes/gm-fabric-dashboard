@@ -8,6 +8,7 @@ import { notification } from "uikit";
 
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
+import NotFoundError from "../../components/NotFoundError";
 
 class FabricGrid extends Component {
   static propTypes = {
@@ -36,14 +37,20 @@ class FabricGrid extends Component {
 
   componentDidMount() {
     // Refresh services from the Fabric Server every time this loads
-    const { location: { state } } = this.props;
+    const { location: { state }, history } = this.props;
     Actions.fetchServices();
     // State added by fabric router to determine authorization for a given service
-    if (state && !state.authorized)
+    if (state && !state.authorized) {
       notification(`You are not authorized to view ${state.serviceName}`, {
         status: "danger",
         timeout: 0
       });
+      // Reset location state
+      const location = {
+        state: ""
+      };
+      history.replace(location);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -75,7 +82,7 @@ class FabricGrid extends Component {
 
   /**
    * onChange event handler for the SearchInput field in FabricTableToolbar
-   * Acts as a traditional controlled component, but periodically encodes and pushes 
+   * Acts as a traditional controlled component, but periodically encodes and pushes
    * searchQueries to browser history
    * @param {string} searchQuery
    */
@@ -91,7 +98,7 @@ class FabricGrid extends Component {
   /**
    * encodeAndPushHistory encodes local state as a query string and invokes the debounced
    * version of _pushHistory to periodically write to browser history.
-   * 
+   *
    * @memberof FabricGrid
    */
   encodeAndPushHistory = () => {
@@ -126,7 +133,7 @@ class FabricGrid extends Component {
 
   /**
    * _pushHistory is used to push local state to the browser's query string. This function is not
-   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual 
+   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual
    * key strokes from polluting the browser history API.
    * @memberof FabricGrid
    */
@@ -174,7 +181,7 @@ class FabricGrid extends Component {
     });
     if (services && services.length > 0) {
       return (
-        <div className="routes-table-container">
+        <div>
           <FabricTableToolbar
             displayType={this.state.displayType}
             setDisplayType={this.setDisplayType}
@@ -195,14 +202,7 @@ class FabricGrid extends Component {
         </div>
       );
     } else {
-      return (
-        <div className="no-routes-found-error">
-          <div className="content">
-            <span data-uk-icon="icon: warning; ratio: 1.8" />
-            <span>No Services Found </span>
-          </div>
-        </div>
-      );
+      return <NotFoundError errorMsg={"No Services Found"} />;
     }
   }
 }

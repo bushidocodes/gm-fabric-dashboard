@@ -5,6 +5,8 @@ import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
 import ErrorBoundary from "../../../../../library/ErrorBoundary";
 
+import NotFoundError from "../../../../components/NotFoundError";
+
 class GMServiceView extends Component {
   static propTypes = {
     instances: PropTypes.array.isRequired,
@@ -45,12 +47,7 @@ class GMServiceView extends Component {
         </ErrorBoundary>
       </div>
     ) : (
-      <div className="no-routes-found-error">
-        <div className="content">
-          <span data-uk-icon="icon: warning; ratio: 1.8" />
-          <span>No Instances Found </span>
-        </div>
-      </div>
+      <NotFoundError errorMsg={"No Instances Found"} />
     );
   }
 }

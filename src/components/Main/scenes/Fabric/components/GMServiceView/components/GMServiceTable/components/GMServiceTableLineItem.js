@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-
-import { TableCol, TableRow } from "../";
+import TableCol from "../../../../../../../components/TableCol";
+import TableRow from "../../../../../../../components/TableRow";
 import StatusIcon from "../../../../../../../../StatusIcon";
 import GMLink from "../../../../GMLink";
 

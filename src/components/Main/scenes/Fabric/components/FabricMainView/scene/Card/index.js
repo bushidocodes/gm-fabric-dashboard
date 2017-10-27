@@ -27,6 +27,10 @@ const GMServiceCardView = styled.div`
 const SectionHeader = styled.div`
   display: flex;
   padding: ${PADDING_BASE} ${parseInt(PADDING_BASE, 10) * 2}px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
 `;
 const SectionContent = styled.div`
   display: flex;

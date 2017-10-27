@@ -19,10 +19,13 @@ import { ButtonGroup } from "./../../GMButtons";
 import NavButton from "./../../NavButton";
 
 AppToolBar.propTypes = {
-  pathname: PropTypes.string.isRequired
+  AppVersion: PropTypes.string,
+  hideRoot: PropTypes.bool,
+  pathname: PropTypes.string.isRequired,
+  toolbarButtons: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-const AppVersion = "0.7.1";
+const AppVersion = "0.8.0";
 const BrandName = "Fabric";
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);
@@ -152,7 +155,7 @@ const Breadcrumb = styled.li`
  * @param {Object} props - See propTypes
  * @returns JSX.Element
  */
-function AppToolBar({ pathname }) {
+function AppToolBar({ pathname, hideRoot, AppVersion, toolbarButtons = [] }) {
   return (
     <AppHeader>
       <BrandContainer>
@@ -170,7 +173,7 @@ function AppToolBar({ pathname }) {
         Skip Navigation
       </SkipNav>
 
-      <Breadcrumbs hideRoot>
+      <Breadcrumbs hideRoot={hideRoot}>
         <Breadcrumb>
           <Link
             to={{
@@ -202,15 +205,20 @@ function AppToolBar({ pathname }) {
       >
         {AppVersion}
       </AppVersionLink>
-      <ButtonGroup toolbar>
-        <NavButton
-          hideLabel
-          icon={"cog"}
-          label={"Settings"}
-          outline={"none"}
-          to={"/settings"}
-        />
-      </ButtonGroup>
+      {toolbarButtons && (
+        <ButtonGroup toolbar>
+          {toolbarButtons.map(button => (
+            <NavButton
+              key={button.path}
+              hideLabel
+              icon={button.icon}
+              label={button.label}
+              outline={"none"}
+              to={button.path}
+            />
+          ))}
+        </ButtonGroup>
+      )}
     </AppHeader>
   );
 }

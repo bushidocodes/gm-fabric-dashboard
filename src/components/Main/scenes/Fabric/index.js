@@ -47,6 +47,7 @@ function FabricRouter({ services }) {
               ? services[`${serviceName}|${version}`]
               : "";
           const authorized = service && service.authorized;
+
           // Lookup the runtime of the microservice named serviceName
           const runtime =
             services && serviceName && services[`${serviceName}|${version}`]
@@ -54,8 +55,10 @@ function FabricRouter({ services }) {
               : "";
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
-          // conditionally render the InstanceRouter or a Redirect
-          return authorized ? (
+
+          // If the service has not been passed to the router yet and defaults to an empty string,
+          // or it has and is truthy, then render the instance router
+          return authorized === "" || authorized ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
@@ -94,14 +97,18 @@ function FabricRouter({ services }) {
               ? services[`${serviceName}|${version}`]
               : "";
           const authorized = service && service.authorized;
+
           const instances = (service && service.instances) || [];
+
           const status = computeStatus(
             instances.length,
             service.minimum,
             service.maximum
           );
-          // conditionally render the GMServiceView or a Redirect
-          return authorized ? (
+
+          // If the service has not been passed to the router yet and defaults to an empty string,
+          // or it has and is truthy, then render the instance router
+          return authorized === "" || authorized ? (
             <GMServiceView
               serviceName={serviceName}
               serviceVersion={version}
