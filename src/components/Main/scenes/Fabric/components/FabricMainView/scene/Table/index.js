@@ -31,6 +31,10 @@ const SectionHeader = styled.div`
   display: flex;
   margin: 0;
   padding: 0 ${spacingScale(2)};
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
 `;
 
 const SectionContent = styled.div`
