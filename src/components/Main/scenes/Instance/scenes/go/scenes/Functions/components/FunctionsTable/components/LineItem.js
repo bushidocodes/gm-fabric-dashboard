@@ -87,7 +87,7 @@ export default class FunctionsTableLineItem extends Component {
           </Sparklines>
         </SparklineCol>
         <TableCol>{this.props.requests}</TableCol>
-        <TableCol>{`${errorPercent}%`}</TableCol>
+        <TableCol errorPercent={errorPercent}>{`${errorPercent}%`}</TableCol>
         <TableCol>{this.props.latency50}</TableCol>
         <TableCol>{this.props.latency99}</TableCol>
 

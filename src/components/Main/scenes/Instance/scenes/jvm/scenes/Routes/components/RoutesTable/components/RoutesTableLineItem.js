@@ -21,7 +21,7 @@ import TableDrawerCollapse from "../../../../../../../../../components/TableDraw
  */
 export default class RoutesTableLineItem extends Component {
   static propTypes = {
-    errorRate: PropTypes.string.isRequired,
+    errorPercent: PropTypes.string.isRequired,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
     route: PropTypes.string.isRequired,
@@ -38,10 +38,13 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    let errorPercent = Number(this.props.errorRate).toLocaleString(undefined, {
-      maximumFractionDigits: 3,
-      minimumFractionDigits: 3
-    });
+    let errorPercent = Number(this.props.errorPercent).toLocaleString(
+      undefined,
+      {
+        maximumFractionDigits: 3,
+        minimumFractionDigits: 3
+      }
+    );
     return (
       <TableRow
         selectable={this.state.isOpen}
@@ -57,7 +60,7 @@ export default class RoutesTableLineItem extends Component {
       >
         <TableCol>
           {this.props.route}
-          <div className={"route-viz-bar err-pc-" + this.props.errorRate}>
+          <div className={"route-viz-bar err-pc-" + this.props.errorPercent}>
             <div className="route-viz-fill" style={{ width: "50%" }} />
           </div>
         </TableCol>
@@ -84,7 +87,7 @@ export default class RoutesTableLineItem extends Component {
           </Sparklines>
         </SparklineCol>
         <TableCol>{this.props.totalRequests.toLocaleString()}</TableCol>
-        <TableCol>{errorPercent}</TableCol>
+        <TableCol errorPercent={errorPercent}>{errorPercent}</TableCol>
 
         <TableDrawerCollapse
           isOpened={this.state.isOpen}

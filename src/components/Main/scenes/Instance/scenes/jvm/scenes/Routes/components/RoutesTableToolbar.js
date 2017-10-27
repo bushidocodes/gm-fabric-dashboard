@@ -51,7 +51,7 @@ export default function RoutesTableToolbar({
               label: "Total Requests"
             },
             {
-              value: "errorRate",
+              value: "errorPercent",
               label: "Error %"
             }
           ]}

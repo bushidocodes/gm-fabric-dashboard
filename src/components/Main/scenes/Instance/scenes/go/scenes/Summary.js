@@ -78,7 +78,7 @@ class SummaryGrid extends Component {
     } = this.props;
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
-    const errorRate =
+    const errorPercent =
       allRequests > 0 ? (1 - (allRequests - allErrors) / allRequests) * 100 : 0;
     const memoryUsedPercent = getLatestAttribute(
       metrics,
@@ -129,7 +129,7 @@ class SummaryGrid extends Component {
                 {
                   icon: "warning",
                   title: "Error Rate",
-                  value: `${errorRate}%`
+                  value: `${errorPercent}%`
                 }
               ]}
             />

@@ -32,13 +32,13 @@ export default function RoutesTable({ routes = [] }) {
           ({
             route,
             verb,
-            errorRate,
+            errorPercent,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline,
             totalRequests
           }) => (
             <RoutesTableLineItem
-              errorRate={errorRate}
+              errorPercent={errorPercent}
               key={`${route}/${verb}`}
               requestsPerSecond_dygraph={requestsPerSecond_dygraph}
               requestsPerSecond_sparkline={requestsPerSecond_sparkline}
