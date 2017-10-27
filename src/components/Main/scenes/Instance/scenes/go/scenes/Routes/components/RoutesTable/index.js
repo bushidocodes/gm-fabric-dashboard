@@ -3,29 +3,34 @@ import React from "react";
 
 import RoutesTableLineItem from "./components/LineItem";
 
+import Table from "../../../../../../../../components/Table";
+import TableHeader from "../../../../../../../../components/TableHeader";
+import TableCol from "../../../../../../../../components/TableCol";
+import TableBody from "../../../../../../../../components/TableBody";
+
 RoutesTable.propTypes = {
   routes: PropTypes.array
 };
 
 /**
- * Go Routes Table 
+ * Go Routes Table
  * Includes a Header and maps 0..n rows of routes data to RoutesTableLineItems
  * @export
- * @param {any} { routes = [] } 
- * @returns 
+ * @param {any} { routes = [] }
+ * @returns
  */
 export default function RoutesTable({ routes = [] }) {
   return (
-    <div className="div-table routes-table">
-      <div className="div-table-header">
-        <div className="routes-table-route">Route</div>
-        <div className="routes-table-sparkline">Requests/sec</div>
-        <div className="routes-table-total-requests">Requests</div>
-        <div className="routes-table-error-percent">Error %</div>
-        <div className="routes-table-error-percent">Latency 50%</div>
-        <div className="routes-table-error-percent">Latency 99%</div>
-      </div>
-      <ol className="div-table-body">
+    <Table>
+      <TableHeader>
+        <TableCol header>Routes</TableCol>
+        <TableCol header>Requests/sec</TableCol>
+        <TableCol header>Requests</TableCol>
+        <TableCol header>Error %</TableCol>
+        <TableCol header>Latency 50%</TableCol>
+        <TableCol header>Latency 99%</TableCol>
+      </TableHeader>
+      <TableBody>
         {routes.map(
           ({
             route,
@@ -50,7 +55,7 @@ export default function RoutesTable({ routes = [] }) {
             />
           )
         )}
-      </ol>
-    </div>
+      </TableBody>
+    </Table>
   );
 }

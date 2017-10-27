@@ -76,8 +76,8 @@ export function edgeColor(backgroundColor, contrast = 0.08) {
 }
 
 /**
- *
- * Takes string representation of the status of a microservice and returns corresponding color * @param {string} state
+ * Takes string representation of the status of a microservice and returns corresponding color
+ * @param {string} state
  * @returns {Object} // a Color object
  */
 export function mapStatusToColor(status = "") {
@@ -90,4 +90,22 @@ export function mapStatusToColor(status = "") {
     default:
       return COLOR_DANGER;
   }
+}
+
+/**
+ * Takes no params and returns styling for table rows
+ * @param {none}
+ * @returns {string}
+ */
+export function rowChildSpacing() {
+  return `
+    text-align: left;
+    padding-right: ${spacingScale(2)};
+    padding-top: ${spacingScale(0.888)};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:first-child {
+      padding-left: ${spacingScale(2)};
+  }`;
 }

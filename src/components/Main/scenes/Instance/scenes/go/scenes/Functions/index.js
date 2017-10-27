@@ -8,6 +8,8 @@ import FunctionsTableToolbar from "./components/FunctionsTableToolbar";
 import { getFunctionsTable } from "../../../../../../../../utils/go/selectors";
 import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
 
+import NotFoundError from "../../../../../../components/NotFoundError";
+
 /**
  * Go Functions Container
  * Parent of FunctionsTable and FunctionsTableToolbar
@@ -34,7 +36,7 @@ class FunctionsGrid extends Component {
   /**
    * Helper function that takes the funcs passed as props and sorts according to how keyToSortBy and ascending is set
    * in the local state object.
-   * @param {Array} funcs 
+   * @param {Array} funcs
    */
   sort(funcs) {
     const { keyToSortBy, ascending } = this.state;
@@ -52,7 +54,7 @@ class FunctionsGrid extends Component {
   /**
    * Helper function used internally to either sort by the key if not yet used to sort or toggle ascending / descending
    * if the key is already active.
-   * @param {String} keyToSortBy 
+   * @param {String} keyToSortBy
    */
   setKeyToSortBy(keyToSortBy) {
     if (this.state.keyToSortBy === keyToSortBy) {
@@ -69,7 +71,7 @@ class FunctionsGrid extends Component {
   render() {
     if (this.props.funcs && this.props.funcs.length > 0) {
       return (
-        <div className="routes-table-container">
+        <div>
           <FunctionsTableToolbar
             filterString={this.state.filterString}
             keyToSortBy={this.state.keyToSortBy}
@@ -92,14 +94,7 @@ class FunctionsGrid extends Component {
         </div>
       );
     } else {
-      return (
-        <div className="no-routes-found-error">
-          <div className="content">
-            <span data-uk-icon="icon: warning; ratio: 1.8" />
-            <span>No Functions Found </span>
-          </div>
-        </div>
-      );
+      return <NotFoundError errorMsg={"No Functions Found"} />;
     }
   }
 }

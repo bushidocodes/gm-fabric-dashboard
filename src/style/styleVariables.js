@@ -73,6 +73,10 @@ export const FONT_SIZE_BASE = "14px";
 export const FONT_SIZE_SM = "11px";
 export const FONT_SIZE_XS = "9px";
 
+export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
+
+export const TABLE_HOVER = COLOR_CONTENT_BACKGROUND.darken(0.02).string();
+
 injectGlobal`
   @font-face {
     font-family: "Nunito";

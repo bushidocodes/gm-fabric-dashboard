@@ -1,12 +1,17 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Collapse from "react-collapse";
+
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
 import GMLineChart from "../../../../../../../../../components/GMLineChart";
+
+import TableRow from "../../../../../../../../../components/TableRow";
+import TableCol from "../../../../../../../../../components/TableCol";
+import SparklineCol from "../../../../../../../../../components/SparklineCol";
+import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
 
 /**
  * A row of data in the Go FunctionsTable
@@ -47,8 +52,8 @@ export default class FunctionsTableLineItem extends Component {
       : 0;
 
     return (
-      <li
-        className={this.state.isOpen ? "selectable open" : "selectable"}
+      <TableRow
+        selectable={this.state.isOpen}
         onClick={this.toggleDrawer}
         onKeyDown={evt => {
           if (evt.keyCode === 13) {
@@ -58,8 +63,8 @@ export default class FunctionsTableLineItem extends Component {
         }}
         role="link"
       >
-        <div className="routes-table-route">{this.props.func}</div>
-        <div className="routes-table-sparkline">
+        <TableCol>{this.props.func}</TableCol>
+        <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}
             height={32}
@@ -80,27 +85,13 @@ export default class FunctionsTableLineItem extends Component {
               type="mean"
             />
           </Sparklines>
-        </div>
-        <div className={"routes-table-error-percent routes-table-monospace"}>
-          {this.props.requests}
-        </div>
-        <div
-          className={
-            "routes-table-error-percent routes-table-monospace err-pc-" +
-            parseInt(errorPercent / 10, 10)
-          }
-        >
-          {`${errorPercent}%`}
-        </div>
-        <div className={"routes-table-total-requests routes-table-monospace"}>
-          {this.props.latency50}
-        </div>
-        <div className={"routes-table-total-requests routes-table-monospace"}>
-          {this.props.latency99}
-        </div>
+        </SparklineCol>
+        <TableCol>{this.props.requests}</TableCol>
+        <TableCol>{`${errorPercent}%`}</TableCol>
+        <TableCol>{this.props.latency50}</TableCol>
+        <TableCol>{this.props.latency99}</TableCol>
 
-        <Collapse
-          className="table-drawer"
+        <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
@@ -110,8 +101,8 @@ export default class FunctionsTableLineItem extends Component {
             timeSeries={this.props.requestsPerSecond_dygraph}
             title={"Requests Per Second for " + this.props.func}
           />
-        </Collapse>
-      </li>
+        </TableDrawerCollapse>
+      </TableRow>
     );
   }
 }

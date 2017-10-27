@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Collapse from "react-collapse";
+
 import {
   Sparklines,
   SparklinesLine,
@@ -8,6 +8,11 @@ import {
 } from "react-sparklines";
 
 import GMLineChart from "../../../../../../../../../components/GMLineChart";
+
+import TableRow from "../../../../../../../../../components/TableRow";
+import TableCol from "../../../../../../../../../components/TableCol";
+import SparklineCol from "../../../../../../../../../components/SparklineCol";
+import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
 
 /**
  * A row of data in the Go RoutesTable
@@ -62,8 +67,8 @@ export default class RoutesTableLineItem extends Component {
     ...< 0.1% error rate is green, > 0.1% and < 1% is yellow, and >1% is red
     */
     return (
-      <li
-        className={this.state.isOpen ? "selectable open" : "selectable"}
+      <TableRow
+        selectable={this.state.isOpen}
         onClick={this.toggleDrawer}
         onKeyDown={evt => {
           if (evt.keyCode === 13) {
@@ -74,14 +79,14 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <div className="routes-table-route">
+        <TableCol>
           <span className="uk-badge uk-margin-right">{this.props.verb}</span>
           {this.props.route}
           <div className={"route-viz-bar err-pc-" + errorPercent}>
             <div className="route-viz-fill" style={{ width: "50%" }} />
           </div>
-        </div>
-        <div className="routes-table-sparkline">
+        </TableCol>
+        <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}
             height={32}
@@ -102,26 +107,13 @@ export default class RoutesTableLineItem extends Component {
               type="mean"
             />
           </Sparklines>
-        </div>
-        <div className={"routes-table-error-percent routes-table-monospace"}>
-          {this.props.requests}
-        </div>
-        <div
-          className={
-            "routes-table-error-percent routes-table-monospace err-pc-" +
-            Math.round(errorPercent / 10)
-          }
-        >
-          {`${errorPercent}%`}
-        </div>
-        <div className={"routes-table-total-requests routes-table-monospace"}>
-          {this.props.latency50}
-        </div>
-        <div className={"routes-table-total-requests routes-table-monospace"}>
-          {this.props.latency99}
-        </div>
+        </SparklineCol>
+        <TableCol>{this.props.requests}</TableCol>
+        <TableCol>{`${errorPercent}%`}</TableCol>
+        <TableCol>{this.props.latency50}</TableCol>
+        <TableCol>{this.props.latency99}</TableCol>
 
-        <Collapse
+        <TableDrawerCollapse
           className="table-drawer"
           isOpened={this.state.isOpen}
           onClick={evt => {
@@ -132,8 +124,8 @@ export default class RoutesTableLineItem extends Component {
             timeSeries={this.props.requestsPerSecond_dygraph}
             title={"Requests per Second for " + this.props.route}
           />
-        </Collapse>
-      </li>
+        </TableDrawerCollapse>
+      </TableRow>
     );
   }
 }
