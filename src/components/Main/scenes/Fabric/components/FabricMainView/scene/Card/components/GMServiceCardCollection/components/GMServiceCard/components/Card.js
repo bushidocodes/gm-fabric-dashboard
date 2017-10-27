@@ -8,14 +8,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
-  background: linear-gradient(
-    ${props => Color(props.cardBackgroundColor).string()},
-    ${props =>
-      Color(props.cardBackgroundColor)
-        .hsl()
-        .rotate(-7)
-        .string()}
-  );
+  background-color: ${props => Color(props.cardBackgroundColor).string()};
   border: 1px solid ${props => props.cardBorderColor};
   border-top: 2px solid ${props => props.cardBorderAltColor};
   width: ${props => props.width};
