@@ -4,7 +4,8 @@ import _ from "lodash";
 
 import {
   COLOR_CONTENT_BACKGROUND,
-  PADDING_BASE
+  PADDING_BASE,
+  ZINDEX_STICKY
 } from "../../../../../../../../style/styleVariables";
 import { edgeColor } from "../../../../../../../../style/styleFunctions";
 import { microserviceStatuses } from "../../../../../../../../utils/constants";
@@ -15,6 +16,11 @@ import GMServiceCardCollection from "./components/GMServiceCardCollection";
 import styled from "styled-components";
 
 // styled components
+const GMServiceViewContainer = styled.div`
+  position: relative;
+  z-index: 1;
+`;
+
 const GMServiceCardView = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +35,7 @@ const SectionHeader = styled.div`
   padding: ${PADDING_BASE} ${parseInt(PADDING_BASE, 10) * 2}px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: ${ZINDEX_STICKY};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
 `;
 const SectionContent = styled.div`
@@ -65,7 +71,7 @@ export default function SectionCardsView({
         : Object.keys(dataGroupedByHeader);
 
     return (
-      <div>
+      <GMServiceViewContainer>
         {headers.map((header, i) => (
           <GMServiceCardView key={header}>
             <SectionHeader>
@@ -85,11 +91,11 @@ export default function SectionCardsView({
             </SectionContent>
           </GMServiceCardView>
         ))}
-      </div>
+      </GMServiceViewContainer>
     );
   } else {
     return (
-      <div>
+      <GMServiceViewContainer>
         <GMServiceCardView>
           <SectionContent>
             <GMServiceCardCollection
@@ -101,7 +107,7 @@ export default function SectionCardsView({
             />
           </SectionContent>
         </GMServiceCardView>
-      </div>
+      </GMServiceViewContainer>
     );
   }
 }
