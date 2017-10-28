@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import Badge from "../../../../../../../components/Badge";
 
 import {
   Sparklines,
@@ -80,7 +81,7 @@ export default class RoutesTableLineItem extends Component {
         tabIndex="0"
       >
         <TableCol>
-          <span className="uk-badge uk-margin-right">{this.props.verb}</span>
+          <Badge>{this.props.verb}</Badge>
           {this.props.route}
           <div className={"route-viz-bar err-pc-" + errorPercent}>
             <div className="route-viz-fill" style={{ width: "50%" }} />

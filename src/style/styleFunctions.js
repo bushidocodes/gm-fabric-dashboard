@@ -102,6 +102,7 @@ export function rowChildSpacing() {
     text-align: left;
     padding-right: ${spacingScale(2)};
     padding-top: ${spacingScale(0.888)};
+    padding-bottom: ${spacingScale(0.888)};
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
