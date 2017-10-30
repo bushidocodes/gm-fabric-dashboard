@@ -15,9 +15,9 @@ GMServiceTableLineItem.propTypes = {
 };
 
 GMServiceTableLineItem.defaultProps = {
-  error: "--",
-  requests: "--",
-  uptime: "--"
+  error: "—",
+  requests: "—",
+  uptime: "—"
 };
 
 function GMServiceTableLineItem({

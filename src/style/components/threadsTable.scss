@@ -55,9 +55,9 @@
   }
 
   .table-drawer {
-    // .ReactCollapse--content {
-    //   padding: spacing-scale(2) spacing-scale(4);
-    // }
+    .ReactCollapse--content {
+      padding: spacing-scale(2) spacing-scale(4);
+    }
   }
 
   .stack-trace {
