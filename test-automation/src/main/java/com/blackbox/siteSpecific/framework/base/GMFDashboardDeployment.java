@@ -24,7 +24,8 @@ public class GMFDashboardDeployment {
             siteUrl = "http://localhost:3000";
 
             testService = new ServiceModel.ServiceModelBuilder()
-                    .setName("Entry Mail Debugger")
+                    .setName("Mail Entry")
+                    .setVersion("2.4")
                     .setState(ServiceState.STABLE)
                     .build();
             testServiceInstanceIndex = 1;
