@@ -4,6 +4,7 @@ public class ServiceModel {
     private String name;
     private String version;
     private ServiceState state;
+    private ServiceType type;
 
     // <editor-fold desc="Constructors">
 
@@ -13,6 +14,7 @@ public class ServiceModel {
         setName(builder.nestedName);
         setVersion(builder.nestedVersion);
         setState(builder.nestedState);
+        setType(builder.nestedType);
     }
 
     // </editor-fold>
@@ -44,6 +46,14 @@ public class ServiceModel {
         this.state = state;
     }
 
+    public ServiceType getType() {
+        return this.type;
+    }
+
+    public void setType(ServiceType type) {
+        this.type = type;
+    }
+
     // </editor-fold>
 
 
@@ -53,6 +63,7 @@ public class ServiceModel {
         String nestedName;
         String nestedVersion;
         ServiceState nestedState;
+        ServiceType nestedType;
 
         public ServiceModelBuilder() {}
 
@@ -68,6 +79,11 @@ public class ServiceModel {
 
         public ServiceModelBuilder setState(ServiceState state) {
             this.nestedState = state;
+            return this;
+        }
+
+        public ServiceModelBuilder setType(ServiceType nestedType) {
+            this.nestedType = nestedType;
             return this;
         }
 
