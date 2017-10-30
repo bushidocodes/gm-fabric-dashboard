@@ -113,6 +113,14 @@ public class SidebarValidations extends GMFDashboardTest {
     public void validateSidebarValues() {
         // Open the site
         gmfDashboardSite.openSite(deployment);
+        gmfDashboardSite.dashboard().waitForPageToLoad();
+
+        // Navigate to the desired service
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.stableServiceName);
+        gmfDashboardSite.instances().waitForPageToLoad();
+
+        // Navigate to the desired instance and verify the Summary page is loaded and the link is active
+        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Validate and display the Summary Uptime value
