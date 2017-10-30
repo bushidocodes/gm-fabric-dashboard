@@ -25,7 +25,7 @@ AppToolBar.propTypes = {
   toolbarButtons: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
-const AppVersion = "0.8.0";
+const AppVersion = "0.8.1";
 const BrandName = "Fabric";
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);

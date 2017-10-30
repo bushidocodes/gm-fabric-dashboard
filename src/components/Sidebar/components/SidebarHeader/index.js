@@ -7,7 +7,7 @@ import BrandText from "./components/BrandText";
 import SkipNav from "./components/SkipNav";
 import AppVersionLink from "./components/AppVersionLink";
 
-const AppVersion = "0.8.0";
+const AppVersion = "0.8.1";
 const BrandName = "Fabric";
 
 /** Sidebar Branding and Versioning */

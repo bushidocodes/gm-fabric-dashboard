@@ -6,7 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.8.0] - 2017-10-18
+## [0.8.1] - 2017-10-30
+### Added
+- Color coded error rates
+- Added HTTP verb to JVM routes dashboard
+### Changed
+- Implemented support for new `discovery-service` API
+- Updated npm dependencies
+- New HTTP verb label component
+- Refactored SCSS into Styled Components
+### Removed
+- Removed gradients to improved Fabric dashboard performance with 150+ cards
+- Removed scss stylesheets
+
+### Test Coverage: 4.89% ([0.8.1 Coverage Report])
+### Bundle Size: 1.25 MB ([0.8.1 Bundle Size Report])
+### Production Build: ([0.8.1 Build])
+
+## [0.8.0] - 2017-10-26
 ### Added
 - Fabric Dashboard controls now route driven
 - Added routes visualization to Go dashboards
@@ -233,7 +250,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.1...HEAD
+[0.8.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.0...v0.8.1
+[0.8.1 Coverage Report]: https://1310-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.8.1 Bundle Size Report]: https://1310-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.8.1 Build]: https://1310-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.8.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.7.1...v0.8.0
 [0.8.0 Coverage Report]: https://1254-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.8.0 Bundle Size Report]: https://1254-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
