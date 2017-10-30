@@ -14,7 +14,11 @@ storiesOf("Service List Item", module)
   .add("Service List Item", () => (
     <GMServiceListItem
       name={text("Service Name", "Service")}
-      instances={["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"]}
+      instances={[
+        { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+        { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+        { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+      ]}
       version={text("Version", "1.1")}
       status={select("Service State", serviceStatus, "Stable")}
       authorized={boolean("User is Authorized", true)}
@@ -25,28 +29,80 @@ storiesOf("Service List Item", module)
     <ul>
       <GMServiceListItem
         name="Awesome Service"
-        instances={["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"]}
+        instances={[
+          {
+            name: "ee0fa3669fea7e9a0adea649c46bca56",
+            start_time: 1508854912461
+          },
+          {
+            name: "8bedb4551e801f38bf149001a72a1127",
+            start_time: 1508370483156
+          },
+          {
+            name: "d9de3a9c26c6c84daaf1ceb40559d659",
+            start_time: 1508170483156
+          }
+        ]}
         version="1.1"
         docsLink="http://www.deciphernow.com"
         status="Stable"
       />
       <GMServiceListItem
         name="Awesome Service 2"
-        instances={["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"]}
+        instances={[
+          {
+            name: "ee0fa3669fea7e9a0adea649c46bca56",
+            start_time: 1508854912461
+          },
+          {
+            name: "8bedb4551e801f38bf149001a72a1127",
+            start_time: 1508370483156
+          },
+          {
+            name: "d9de3a9c26c6c84daaf1ceb40559d659",
+            start_time: 1508170483156
+          }
+        ]}
         version="1.0"
         docsLink="http://www.deciphernow.com"
         status="Down"
       />
       <GMServiceListItem
         name="Awesome Service 3"
-        instances={["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"]}
+        instances={[
+          {
+            name: "ee0fa3669fea7e9a0adea649c46bca56",
+            start_time: 1508854912461
+          },
+          {
+            name: "8bedb4551e801f38bf149001a72a1127",
+            start_time: 1508370483156
+          },
+          {
+            name: "d9de3a9c26c6c84daaf1ceb40559d659",
+            start_time: 1508170483156
+          }
+        ]}
         version="1.1"
         docsLink="http://www.deciphernow.com"
         status="Warning"
       />
       <GMServiceListItem
         name="Awesome Service 4"
-        instances={["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"]}
+        instances={[
+          {
+            name: "ee0fa3669fea7e9a0adea649c46bca56",
+            start_time: 1508854912461
+          },
+          {
+            name: "8bedb4551e801f38bf149001a72a1127",
+            start_time: 1508370483156
+          },
+          {
+            name: "d9de3a9c26c6c84daaf1ceb40559d659",
+            start_time: 1508170483156
+          }
+        ]}
         version="3.1"
         docsLink="http://www.deciphernow.com"
         status="Stable"

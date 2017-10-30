@@ -7,7 +7,7 @@ import GMLink from "../../../../GMLink";
 
 GMServiceTableLineItem.propTypes = {
   error: PropTypes.string,
-  instance: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   requests: PropTypes.string,
   status: PropTypes.string.isRequired,
@@ -22,7 +22,7 @@ GMServiceTableLineItem.defaultProps = {
 
 function GMServiceTableLineItem({
   status,
-  instance,
+  name,
   requests,
   error,
   uptime,
@@ -34,7 +34,7 @@ function GMServiceTableLineItem({
         <StatusIcon status={status} />
       </TableCol>
       <TableCol lg>
-        <GMLink to={path}>{instance}</GMLink>
+        <GMLink to={path}>{name}</GMLink>
       </TableCol>
       <TableCol>{requests}</TableCol>
       <TableCol>{error}</TableCol>

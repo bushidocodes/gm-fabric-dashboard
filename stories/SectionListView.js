@@ -19,7 +19,20 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 1",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
+    ],
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -28,7 +41,20 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 2",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
+    ],
     version: "1.5",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -37,7 +63,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 3",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.7",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -46,7 +76,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 4",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -55,7 +89,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 5",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -64,7 +102,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 6",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -73,7 +115,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 7",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -82,7 +128,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 8",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -91,7 +141,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "MEME Services",
     name: "Awesome Service 9",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -100,7 +154,11 @@ const groupingByHeadingListViewMockData = [
   {
     headerTitle: "Grey Matter Services",
     name: "Awesome Service 10",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
@@ -108,7 +166,11 @@ const groupingByHeadingListViewMockData = [
   },
   {
     headerTitle: "MEME Services",
-    instances: ["a8a76dfaasdf", "234igkefaskjf", "asdfhaksjhf8"],
+    instances: [
+      { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
+      { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
+      { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
+    ],
     name: "Awesome Service 11",
     version: "1.1",
     docsLink: "http://www.deciphernow.com",

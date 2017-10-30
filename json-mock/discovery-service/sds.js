@@ -41,7 +41,7 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
   if (
     selectedService &&
     selectedService.runtime &&
-    selectedService.instances.includes(instance)
+    selectedService.instances.map(instance => instance.name).includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
       return res.json(jvmMetrics);
@@ -61,7 +61,7 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
   if (
     selectedService &&
     selectedService.runtime &&
-    selectedService.instances.includes(instance)
+    selectedService.instances.map(instance => instance.name).includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
       return res.json(jvmThreads);
