@@ -32,8 +32,7 @@ public class SummaryValidations extends GMFDashboardTest {
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Verify and display the Uptime values
-        Assert.assertTrue(gmfDashboardSite.summary().isUptimeValueShown());
-        Assert.assertTrue(gmfDashboardSite.summary().isUptimeDateTimeShown());
+        Assert.assertTrue(gmfDashboardSite.summary().isUptimeShown());
         uptimeValue = gmfDashboardSite.summary().getUptimeValue();
         uptimeDateAndTime = gmfDashboardSite.summary().getUptimeDateTime();
         System.out.println(String.format("Uptime: %s (%s)", uptimeValue, uptimeDateAndTime));
