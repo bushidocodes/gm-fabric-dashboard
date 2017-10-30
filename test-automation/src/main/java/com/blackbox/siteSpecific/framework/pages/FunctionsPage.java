@@ -10,6 +10,8 @@ public class FunctionsPage extends GMFDashboardServicePage {
 
     // <editor-fold desc="Page Elements">
 
+    private static final String FIELD_SEARCH_FUNCTIONS = "domclass=form-control";
+
     // </editor-fold>
 
 
@@ -26,7 +28,7 @@ public class FunctionsPage extends GMFDashboardServicePage {
     // <editor-fold desc="Wait for Page to Load">
 
     public void waitForPageToLoad() {
-
+        driverutil.waitForVisibleElement(FIELD_SEARCH_FUNCTIONS, 60);
     }
 
     // </editor-fold>
