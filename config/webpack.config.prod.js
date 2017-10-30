@@ -15,7 +15,6 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 const paths = require("./paths");
 const getClientEnvironment = require("./env");
 var LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
-var lodash = require("babel-plugin-lodash");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -272,15 +271,6 @@ module.exports = {
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false,
-        // Turned on because emoji and regex is not minified properly using default
-        // https://github.com/facebookincubator/create-react-app/issues/2488
-        ascii_only: true
-      },
       sourceMap: true
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
