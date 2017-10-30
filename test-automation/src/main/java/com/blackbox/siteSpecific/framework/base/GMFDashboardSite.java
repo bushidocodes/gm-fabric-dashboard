@@ -32,6 +32,8 @@ public class GMFDashboardSite extends WebSite {
     public InstancesPage instances() { return this.getCurrentPage(); }
     public SummaryPage summary() { return this.getCurrentPage(); }
     public RoutesPage routes() { return this.getCurrentPage(); }
+    public FunctionsPage functions() { return this.getCurrentPage(); }
+    public GoPage go() { return this.getCurrentPage(); }
     public ThreadsPage threads() { return this.getCurrentPage(); }
     public HttpPage http() { return this.getCurrentPage(); }
     public JvmPage jvm() { return this.getCurrentPage(); }

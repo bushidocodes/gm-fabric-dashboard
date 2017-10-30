@@ -20,6 +20,10 @@ public abstract class GMFDashboardServicePage extends GMFDashboardPage {
 
     private static final String LINK_ROUTES = "//a[contains(@href, '/route')]";
 
+    private static final String LINK_FUNCTIONS = "//a[contains(@href, '/functions')";
+
+    private static final String LINK_GO = "//a[contains(@href, '/go')";
+
     private static final String LINK_THREADS = "//a[contains(@href, '/threads')]";
     private static final String TEXT_THREADS = "//*[@id=\"root\"]/div/nav/div/div[2]/a[3]/div[2]/div/dd/span";
 
@@ -56,6 +60,16 @@ public abstract class GMFDashboardServicePage extends GMFDashboardPage {
     public RoutesPage navigateToRoutes() {
 	    driverutil.click(LINK_ROUTES);
 	    return webSite.setCurrentPage(RoutesPage.class);
+    }
+
+    public FunctionsPage navigateToFunctions() {
+	    driverutil.click(LINK_FUNCTIONS);
+	    return webSite.setCurrentPage(FunctionsPage.class);
+    }
+
+    public GoPage navigateToGo() {
+	    driverutil.click(LINK_GO);
+	    return webSite.setCurrentPage(GoPage.class);
     }
 
     public ThreadsPage navigateToThreads() {
@@ -98,6 +112,14 @@ public abstract class GMFDashboardServicePage extends GMFDashboardPage {
 
     public boolean isRoutesLinkActive() {
 	    return isLinkActive(LINK_ROUTES);
+    }
+
+    public boolean isFunctionsLinkActive() {
+	    return isLinkActive(LINK_FUNCTIONS);
+    }
+
+    public boolean isGoLinkActive() {
+	    return isLinkActive(LINK_GO);
     }
 
     public boolean isThreadsLinkActive() {
