@@ -100,9 +100,9 @@ $table-row-height-basis: spacing-scale(4.5);
     cursor: default;
     white-space: normal;
 
-    // .ReactCollapse--content {
-    //   margin: 0 spacing-scale(2);
-    //   box-shadow: inset 0 1px contrast-color($color-content-background, 8%);
-    // }
+    .ReactCollapse--content {
+      margin: 0 spacing-scale(2);
+      box-shadow: inset 0 1px contrast-color($color-content-background, 8%);
+    }
   }
 }
