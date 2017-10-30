@@ -39,9 +39,9 @@ class GMServiceView extends Component {
           <GMServiceTable
             serviceName={serviceName}
             serviceVersion={serviceVersion}
-            instances={instances.filter(instance => {
-              return instance.indexOf(filterString) !== -1;
-            })}
+            instances={instances.filter(
+              ({ name }) => name.indexOf(filterString) !== -1
+            )}
             status={status}
           />
         </ErrorBoundary>

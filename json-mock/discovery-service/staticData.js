@@ -11,7 +11,20 @@ const staticServices = [
     metered: true,
     threaded: true,
     runtime: "GO",
-    instances: ["2oajqscqqwu0000000000", "3s50frjd0wg0000000000"]
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
+    ]
   },
   {
     name: "Export Team Gateway Up2 Management Message Resource Measurement",
@@ -25,7 +38,20 @@ const staticServices = [
     metered: true,
     threaded: true,
     runtime: "GO",
-    instances: ["2l39cmzi8xw0000000000", "36lbqne4i7s0000000000"]
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
+    ]
   },
   {
     name: "Up2 Message Network Team Entry Job Transmission End",
@@ -39,7 +65,20 @@ const staticServices = [
     metered: true,
     threaded: true,
     runtime: "GO",
-    instances: ["7clfu88ur9g0000000000"]
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
+    ]
   }
 ];
 

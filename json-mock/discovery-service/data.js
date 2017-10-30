@@ -72,7 +72,10 @@ const generateRandomInstanceArray = () => {
   let n = _.random(0, 5);
   let arr = [];
   for (let i = 0; i < n; i++) {
-    arr.push((Math.random() * 1e32).toString(36));
+    arr.push({
+      name: (Math.random() * 1e32).toString(36),
+      start_time: Math.floor(Math.random() * Date.now())
+    });
   }
   return arr;
 };
@@ -93,7 +96,12 @@ const getRandomService = (quantity = 150) => {
     metered: true,
     threaded: true,
     runtime: _.sample(["JVM", "GO"]),
-    instances: ["abcdefghicjlmnopqrstuvwxyz"]
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      }
+    ]
   });
   for (let i = 0; i < quantity; i++) {
     arr.push({

@@ -11,6 +11,8 @@ import TableCol from "../../../../../../components/TableCol";
 
 import TableBody from "../../../../../../components/TableBody";
 
+import { convertMS } from "../../../../../../../../utils";
+
 GMServiceTable.propTypes = {
   instances: PropTypes.array,
   serviceName: PropTypes.string,
@@ -40,10 +42,11 @@ export default function GMServiceTable({
       <TableBody>
         {instances.map(instance => (
           <GMServiceTableLineItem
-            instance={instance}
-            path={`/${serviceName}/${serviceVersion}/${instance}`}
+            name={instance.name}
+            uptime={convertMS(Date.now() - instance.start_time)}
+            path={`/${serviceName}/${serviceVersion}/${instance.name}`}
             status={status}
-            key={`${serviceName}/${serviceVersion}/${instance}`}
+            key={`${serviceName}/${serviceVersion}/${instance.name}`}
           />
         ))}
       </TableBody>

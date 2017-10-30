@@ -12,9 +12,18 @@ const services = [
     threaded: true,
     runtime: "JVM",
     instances: [
-      "ee0fa3669fea7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149001a72a1127",
-      "d9de3a9c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
@@ -44,13 +53,22 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
-    name: "Whacky Hidden Missile Silo",
+    name: "Whacky Hnameden Missile Silo",
     version: "1.7",
     owner: "Batcave",
     capability: "Crime Fighting",
@@ -62,9 +80,18 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
@@ -80,9 +107,18 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
@@ -98,9 +134,18 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
@@ -116,9 +161,18 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   },
   {
@@ -134,9 +188,18 @@ const services = [
     threaded: true,
     runtime: "GO",
     instances: [
-      "ee0f0000000a7e9a0adea649c46bca56",
-      "8bedb4551e801f38bf149000002a1127",
-      "d000009c26c6c84daaf1ceb40559d659"
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      },
+      {
+        name: "8bedb4551e801f38bf149001a72a1127",
+        start_time: 1508370483156
+      },
+      {
+        name: "d9de3a9c26c6c84daaf1ceb40559d659",
+        start_time: 1508170483156
+      }
     ]
   }
 ];
