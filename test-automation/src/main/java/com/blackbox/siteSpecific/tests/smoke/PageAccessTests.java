@@ -19,6 +19,7 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Dashboard page.");
 
         // Find the desired service and get the version
+        System.out.println(String.format("Looking for service \"%s\" with version \"%s\" and status \"%s\"", deployment.testService.getName(), deployment.testService.getVersion(), deployment.testService.getState().name()));
         serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(deployment.testService.getName());
         serviceVersion = gmfDashboardSite.dashboard().getMainStableServiceEntryVersion(serviceIndex);
         System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", deployment.testService.getName(), serviceVersion, serviceIndex));
