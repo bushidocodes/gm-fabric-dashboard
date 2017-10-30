@@ -32,6 +32,7 @@ public class FinagleValidations extends GMFDashboardTest {
         int clientRegistrySize;
         int clientRegistryInitialResolution;
 
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();

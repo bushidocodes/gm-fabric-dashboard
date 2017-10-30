@@ -17,6 +17,7 @@ public class DashboardValidations extends GMFDashboardTest {
         int warningServicesCount;
         int stableServicesCount;
 
+        
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();

@@ -13,6 +13,7 @@ public class SidebarValidations extends GMFDashboardTest {
         ServiceModel testService = deployment.jvmTestService;
         int instanceIndex = deployment.testServiceInstanceIndex;
 
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();
@@ -119,6 +120,7 @@ public class SidebarValidations extends GMFDashboardTest {
         // Set up data
         ServiceModel testService = deployment.jvmTestService;
         int instanceIndex = deployment.testServiceInstanceIndex;
+
 
         // Open the site
         gmfDashboardSite.openSite(deployment);

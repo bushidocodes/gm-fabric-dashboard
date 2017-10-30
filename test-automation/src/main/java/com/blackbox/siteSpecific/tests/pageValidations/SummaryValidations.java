@@ -22,6 +22,7 @@ public class SummaryValidations extends GMFDashboardTest {
         String host;
         String port;
 
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();

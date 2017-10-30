@@ -21,6 +21,7 @@ public class ThreadsValidations extends GMFDashboardTest {
         int index;
         int sidebarThreadsCount;
 
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();

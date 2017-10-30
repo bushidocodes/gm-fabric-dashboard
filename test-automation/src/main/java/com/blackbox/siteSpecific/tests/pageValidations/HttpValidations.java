@@ -26,6 +26,7 @@ public class HttpValidations extends GMFDashboardTest {
         int responseStatusCodes5xx;
         int responseStatusCodes500;
 
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();
