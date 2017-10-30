@@ -19,9 +19,9 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Dashboard page.");
 
         // Find the desired service and get the version
-        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(deployment.stableServiceName);
+        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(deployment.testService.getName());
         serviceVersion = gmfDashboardSite.dashboard().getMainStableServiceEntryVersion(serviceIndex);
-        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", deployment.stableServiceName, serviceVersion, serviceIndex));
+        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", deployment.testService.getName(), serviceVersion, serviceIndex));
 
         // Navigate to the desired service
         gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceIndex);
@@ -29,10 +29,10 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Instances page.");
 
         // Find the desired instance and get the ID
-        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(deployment.stableServiceInstanceIndex);
+        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(deployment.testServiceInstanceIndex);
 
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         System.out.println("Successfully accessed the Summary page.");
 

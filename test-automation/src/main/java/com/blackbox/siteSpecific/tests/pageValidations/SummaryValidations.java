@@ -4,8 +4,6 @@ import com.blackbox.siteSpecific.framework.base.GMFDashboardTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.sound.midi.SysexMessage;
-
 
 public class SummaryValidations extends GMFDashboardTest {
     @Test
@@ -26,11 +24,11 @@ public class SummaryValidations extends GMFDashboardTest {
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.stableServiceName);
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.testService.getName());
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Verify and display the Uptime values

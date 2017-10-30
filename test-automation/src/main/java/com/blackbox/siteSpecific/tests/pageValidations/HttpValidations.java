@@ -27,11 +27,11 @@ public class HttpValidations extends GMFDashboardTest {
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.stableServiceName);
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.testService.getName());
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Navigate to the HTTP page
