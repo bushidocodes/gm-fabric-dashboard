@@ -24,8 +24,12 @@ export default function RoutesTable({ routes = [] }) {
       <TableHeader>
         <TableCol header>Route</TableCol>
         <TableCol header>Requests/s</TableCol>
-        <TableCol header>Requests</TableCol>
-        <TableCol header>Error %</TableCol>
+        <TableCol header numeric>
+          Requests
+        </TableCol>
+        <TableCol header numeric>
+          Error %
+        </TableCol>
       </TableHeader>
       <TableBody>
         {routes.map(

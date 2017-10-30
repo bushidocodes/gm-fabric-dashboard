@@ -109,10 +109,13 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol>{this.props.requests}</TableCol>
-        <TableCol errorPercent={errorPercent}>{`${errorPercent}%`}</TableCol>
-        <TableCol>{this.props.latency50}</TableCol>
-        <TableCol>{this.props.latency99}</TableCol>
+        <TableCol numeric>{this.props.requests}</TableCol>
+        <TableCol
+          numeric
+          errorPercent={errorPercent}
+        >{`${errorPercent}%`}</TableCol>
+        <TableCol numeric>{this.props.latency50}</TableCol>
+        <TableCol numeric>{this.props.latency99}</TableCol>
 
         <TableDrawerCollapse
           className="table-drawer"

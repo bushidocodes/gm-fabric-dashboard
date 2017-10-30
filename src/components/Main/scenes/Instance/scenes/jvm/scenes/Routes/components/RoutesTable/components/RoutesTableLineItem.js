@@ -88,8 +88,12 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol>{this.props.totalRequests.toLocaleString()}</TableCol>
-        <TableCol errorPercent={errorPercent}>{errorPercent}</TableCol>
+        <TableCol numeric={true}>
+          {this.props.totalRequests.toLocaleString()}
+        </TableCol>
+        <TableCol numeric errorPercent={errorPercent}>
+          {errorPercent}
+        </TableCol>
 
         <TableDrawerCollapse
           isOpened={this.state.isOpen}

@@ -99,7 +99,6 @@ export function mapStatusToColor(status = "") {
  */
 export function rowChildSpacing() {
   return `
-    text-align: left;
     padding-right: ${spacingScale(2)};
     padding-top: ${spacingScale(0.888)};
     padding-bottom: ${spacingScale(0.888)};

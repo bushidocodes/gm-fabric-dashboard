@@ -12,6 +12,7 @@ const TableCol = styled.div`
     props.header ? `min-height:${spacingScale(4.5)};${rowChildSpacing()}` : ""};
   ${props =>
     props.errorPercent ? `color: ${errorColor(props.errorPercent)}` : ""};
+  text-align: ${props => (props.numeric ? `right` : `left`)};
 `;
 
 export default TableCol;

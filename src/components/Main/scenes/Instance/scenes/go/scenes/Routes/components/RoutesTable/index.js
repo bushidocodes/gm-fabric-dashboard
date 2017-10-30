@@ -23,12 +23,22 @@ export default function RoutesTable({ routes = [] }) {
   return (
     <Table>
       <TableHeader>
-        <TableCol header>Routes</TableCol>
-        <TableCol header>Requests/sec</TableCol>
-        <TableCol header>Requests</TableCol>
-        <TableCol header>Error %</TableCol>
-        <TableCol header>Latency 50%</TableCol>
-        <TableCol header>Latency 99%</TableCol>
+        <TableCol header>Route</TableCol>
+        <TableCol header numeric>
+          Requests/s
+        </TableCol>
+        <TableCol header numeric>
+          Requests
+        </TableCol>
+        <TableCol header numeric>
+          Error %
+        </TableCol>
+        <TableCol header numeric>
+          Latency 50%
+        </TableCol>
+        <TableCol header numeric>
+          Latency 99%
+        </TableCol>
       </TableHeader>
       <TableBody>
         {routes.map(
