@@ -1,5 +1,6 @@
 package com.blackbox.siteSpecific.tests.pageValidations;
 
+import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.GMFDashboardTest;
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,17 +8,21 @@ import org.junit.Test;
 
 public class SidebarValidations extends GMFDashboardTest {
     @Test
-    public void validateSidebarHighlighting() {
+    public void validateJvmSidebarHighlighting() {
+        // Set up data
+        ServiceModel testService = deployment.jvmTestService;
+        int instanceIndex = deployment.testServiceInstanceIndex;
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.testService.getName());
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(testService.getName());
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded and the link is active
-        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         Assert.assertTrue(gmfDashboardSite.summary().isSummaryLinkActive());
 
@@ -110,17 +115,21 @@ public class SidebarValidations extends GMFDashboardTest {
 
 
     @Test
-    public void validateSidebarValues() {
+    public void validateJvmSidebarValues() {
+        // Set up data
+        ServiceModel testService = deployment.jvmTestService;
+        int instanceIndex = deployment.testServiceInstanceIndex;
+
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.testService.getName());
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(testService.getName());
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded and the link is active
-        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Validate and display the Summary Uptime value

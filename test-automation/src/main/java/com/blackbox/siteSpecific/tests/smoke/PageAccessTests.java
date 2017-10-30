@@ -1,16 +1,18 @@
 package com.blackbox.siteSpecific.tests.smoke;
 
+import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.GMFDashboardTest;
 import org.junit.Test;
 
 
 public class PageAccessTests extends GMFDashboardTest {
     @Test
-    public void accessInstancePages() {
+    public void accessJvmInstancePages() {
         // Set up data
         int serviceIndex;
         String serviceVersion;
-        String serviceInstanceId;
+        ServiceModel testService = deployment.jvmTestService;
+        int instanceIndex = deployment.testServiceInstanceIndex;
 
 
         // Open the site
@@ -19,21 +21,18 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Dashboard page.");
 
         // Find the desired service and get the version
-        System.out.println(String.format("Looking for service \"%s\" with version \"%s\" and status \"%s\"", deployment.testService.getName(), deployment.testService.getVersion(), deployment.testService.getState().name()));
-        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(deployment.testService.getName());
+        System.out.println(String.format("Looking for service \"%s\" with version \"%s\" and status \"%s\"", testService.getName(), testService.getVersion(), testService.getState().name()));
+        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(testService.getName());
         serviceVersion = gmfDashboardSite.dashboard().getMainStableServiceEntryVersion(serviceIndex);
-        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", deployment.testService.getName(), serviceVersion, serviceIndex));
+        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", testService.getName(), serviceVersion, serviceIndex));
 
         // Navigate to the desired service
         gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceIndex);
         gmfDashboardSite.instances().waitForPageToLoad();
         System.out.println("Successfully accessed the Instances page.");
 
-        // Find the desired instance and get the ID
-        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(deployment.testServiceInstanceIndex);
-
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(deployment.testServiceInstanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         System.out.println("Successfully accessed the Summary page.");
 
