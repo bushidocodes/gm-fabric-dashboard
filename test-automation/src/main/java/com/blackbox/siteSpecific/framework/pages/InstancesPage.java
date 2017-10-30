@@ -3,6 +3,7 @@ package com.blackbox.siteSpecific.framework.pages;
 import com.blackbox.common.selenium.DriverUtil;
 import com.blackbox.common.selenium.WebSite;
 import com.blackbox.siteSpecific.framework.base.GMFDashboardPage;
+import org.junit.Assert;
 
 
 public class InstancesPage extends GMFDashboardPage {
@@ -18,6 +19,8 @@ public class InstancesPage extends GMFDashboardPage {
     // <editor-fold desc="Main Page Elements">
 
     private static final String FIELD_SEARCH_INSTANCES = "domclass=form-control";
+    private static final String SEARCH_INSTANCES_PLACEHOLDER_ATTRIBUTE = "placeholder";
+    private static final String SEARCH_INSTANCES_PLACEHOLDER_EXPECTED_VALUE = "Search Instances";
 
     private static final String[] TABLE_ROW_INSTANCE_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/ol/li[", "]"};
     private static final String[] IMAGE_INSTANCE_STATE_SUBSTRINGS = new String[]{"//*[@id=\"main-content\"]/div/div[2]/ol/li[", "]/div[1]/img"};
@@ -43,6 +46,7 @@ public class InstancesPage extends GMFDashboardPage {
 
     public void waitForPageToLoad() {
         driverutil.waitForVisibleElement(FIELD_SEARCH_INSTANCES, 60);
+        Assert.assertTrue(driverutil.getAttribute(FIELD_SEARCH_INSTANCES, SEARCH_INSTANCES_PLACEHOLDER_ATTRIBUTE).equals(SEARCH_INSTANCES_PLACEHOLDER_EXPECTED_VALUE));
     }
 
     // </editor-fold>
