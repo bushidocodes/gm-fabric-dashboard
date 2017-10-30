@@ -13,6 +13,9 @@ import TableCol from "../../../../../../../../../components/TableCol";
 import SparklineCol from "../../../../../../../../../components/SparklineCol";
 import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
 
+import VizBar from "../../../../../../../../../components/VizBar";
+import VizFill from "../../../../../../../../../components/VizFill";
+
 /**
  * A row of data in the Go FunctionsTable
  * @export
@@ -25,6 +28,7 @@ export default class FunctionsTableLineItem extends Component {
     func: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
+    relativeReqPercent: PropTypes.number,
     requests: PropTypes.number.isRequired,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired
@@ -63,7 +67,13 @@ export default class FunctionsTableLineItem extends Component {
         }}
         role="link"
       >
-        <TableCol>{this.props.func}</TableCol>
+        <TableCol vizBar>
+          {this.props.func}
+          <VizBar>
+            <VizFill width={this.props.relativeReqPercent} />
+          </VizBar>
+        </TableCol>
+
         <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}

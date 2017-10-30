@@ -8,6 +8,8 @@ import TableHeader from "../../../../../../../../../Main/components/TableHeader"
 import TableCol from "../../../../../../../../../Main/components/TableCol";
 import TableBody from "../../../../../../../../../Main/components/TableBody";
 
+import { relativeReqPercent } from "../../../../../../../../../../utils";
+
 RoutesTable.propTypes = {
   routes: PropTypes.array
 };
@@ -19,6 +21,9 @@ RoutesTable.propTypes = {
  * @returns
  */
 export default function RoutesTable({ routes = [] }) {
+  // adds relativeReqPercent field to routes for viz-fill-bar rendering
+  routes = relativeReqPercent(routes, "totalRequests");
+
   return (
     <Table>
       <TableHeader>
@@ -36,6 +41,7 @@ export default function RoutesTable({ routes = [] }) {
           ({
             route,
             verb,
+            relativeReqPercent,
             errorPercent,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline,
@@ -44,6 +50,7 @@ export default function RoutesTable({ routes = [] }) {
             <RoutesTableLineItem
               errorPercent={errorPercent}
               key={`${route}/${verb}`}
+              relativeReqPercent={relativeReqPercent}
               requestsPerSecond_dygraph={requestsPerSecond_dygraph}
               requestsPerSecond_sparkline={requestsPerSecond_sparkline}
               route={route}

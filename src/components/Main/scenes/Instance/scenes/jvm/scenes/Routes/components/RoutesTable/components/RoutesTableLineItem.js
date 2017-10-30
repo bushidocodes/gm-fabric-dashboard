@@ -14,6 +14,9 @@ import TableCol from "../../../../../../../../../components/TableCol";
 import SparklineCol from "../../../../../../../../../components/SparklineCol";
 import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
 
+import VizBar from "../../../../../../../../../components/VizBar";
+import VizFill from "../../../../../../../../../components/VizFill";
+
 /**
  * A row of data in RoutesTable
  * @export
@@ -23,6 +26,7 @@ import TableDrawerCollapse from "../../../../../../../../../components/TableDraw
 export default class RoutesTableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
+    relativeReqPercent: PropTypes.number,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
     route: PropTypes.string.isRequired,
@@ -59,12 +63,12 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol>
+        <TableCol vizBar>
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
-          <div className={"route-viz-bar err-pc-" + this.props.errorPercent}>
-            <div className="route-viz-fill" style={{ width: "50%" }} />
-          </div>
+          <VizBar>
+            <VizFill width={this.props.relativeReqPercent} />
+          </VizBar>
         </TableCol>
         <SparklineCol>
           <Sparklines

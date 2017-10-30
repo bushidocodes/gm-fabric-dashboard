@@ -14,6 +14,8 @@ import TableRow from "../../../../../../../../../components/TableRow";
 import TableCol from "../../../../../../../../../components/TableCol";
 import SparklineCol from "../../../../../../../../../components/SparklineCol";
 import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
+import VizBar from "../../../../../../../../../components/VizBar";
+import VizFill from "../../../../../../../../../components/VizFill";
 
 /**
  * A row of data in the Go RoutesTable
@@ -26,6 +28,7 @@ export default class RoutesTableLineItem extends Component {
     errorsCount: PropTypes.number.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
+    relativeReqPercent: PropTypes.number,
     requests: PropTypes.number.isRequired,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
@@ -80,12 +83,12 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol>
+        <TableCol vizBar>
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
-          <div className={"route-viz-bar err-pc-" + errorPercent}>
-            <div className="route-viz-fill" style={{ width: "50%" }} />
-          </div>
+          <VizBar>
+            <VizFill width={this.props.relativeReqPercent} />
+          </VizBar>
         </TableCol>
         <SparklineCol>
           <Sparklines

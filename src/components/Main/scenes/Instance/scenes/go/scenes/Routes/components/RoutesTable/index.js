@@ -8,6 +8,8 @@ import TableHeader from "../../../../../../../../components/TableHeader";
 import TableCol from "../../../../../../../../components/TableCol";
 import TableBody from "../../../../../../../../components/TableBody";
 
+import { relativeReqPercent } from "../../../../../../../../../../utils";
+
 RoutesTable.propTypes = {
   routes: PropTypes.array
 };
@@ -20,6 +22,9 @@ RoutesTable.propTypes = {
  * @returns
  */
 export default function RoutesTable({ routes = [] }) {
+  // adds relativeReqPercent field to routes for viz-fill-bar rendering
+  routes = relativeReqPercent(routes, "requests");
+
   return (
     <Table>
       <TableHeader>
@@ -48,22 +53,26 @@ export default function RoutesTable({ routes = [] }) {
             errorsCount,
             latency50,
             latency99,
+            relativeReqPercent,
             requests,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline
-          }) => (
-            <RoutesTableLineItem
-              errorsCount={errorsCount}
-              key={`${route}/${verb}`}
-              latency50={latency50}
-              latency99={latency99}
-              requests={requests}
-              requestsPerSecond_dygraph={requestsPerSecond_dygraph}
-              requestsPerSecond_sparkline={requestsPerSecond_sparkline}
-              route={`${route} `}
-              verb={verb}
-            />
-          )
+          }) => {
+            return (
+              <RoutesTableLineItem
+                errorsCount={errorsCount}
+                key={`${route}/${verb}`}
+                latency50={latency50}
+                latency99={latency99}
+                relativeReqPercent={relativeReqPercent}
+                requests={requests}
+                requestsPerSecond_dygraph={requestsPerSecond_dygraph}
+                requestsPerSecond_sparkline={requestsPerSecond_sparkline}
+                route={`${route} `}
+                verb={verb}
+              />
+            );
+          }
         )}
       </TableBody>
     </Table>
