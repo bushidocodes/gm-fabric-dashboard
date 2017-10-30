@@ -1,6 +1,7 @@
 package com.blackbox.siteSpecific.framework.base;
 
 import com.blackbox.dataModels.ServiceModel;
+import com.blackbox.dataModels.ServiceState;
 
 import java.util.Map;
 
@@ -22,7 +23,10 @@ public class GMFDashboardDeployment {
         if(deploymentFlag.toUpperCase().equals("LOCAL")) {
             siteUrl = "http://localhost:3000";
 
-            testService = new ServiceModel.ServiceModelBuilder().setName("Entry Mail Debugger").build();
+            testService = new ServiceModel.ServiceModelBuilder()
+                    .setName("Entry Mail Debugger")
+                    .setState(ServiceState.STABLE)
+                    .build();
             testServiceInstanceIndex = 1;
         }
 
