@@ -12,9 +12,6 @@ public class ThreadsValidations extends GMFDashboardTest {
     @Test
     public void validateThreadsPageFiltering() {
         // Set up data
-        String serviceName = "Network Internet Information";
-        int instanceIndex = 1;
-
         int allThreadsCount;
         int activeCount;
         int idleCount;
@@ -27,11 +24,11 @@ public class ThreadsValidations extends GMFDashboardTest {
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.stableServiceName);
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
 
         // Navigate to the Threads page

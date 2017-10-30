@@ -9,10 +9,8 @@ public class PageAccessTests extends GMFDashboardTest {
     public void accessInstancePages() {
         // Set up data
         int serviceIndex;
-        String serviceName = "Network Internet Information";
         String serviceVersion;
         String serviceInstanceId;
-        int instanceIndex = 1;
 
 
         // Open the site
@@ -21,9 +19,9 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Dashboard page.");
 
         // Find the desired service and get the version
-        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(serviceName);
+        serviceIndex = gmfDashboardSite.dashboard().getMainStableServicesEntryIndex(deployment.stableServiceName);
         serviceVersion = gmfDashboardSite.dashboard().getMainStableServiceEntryVersion(serviceIndex);
-        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", serviceName, serviceVersion, serviceIndex));
+        System.out.println(String.format("Found service \"%s\" with version \"%s\" at index %d.", deployment.stableServiceName, serviceVersion, serviceIndex));
 
         // Navigate to the desired service
         gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceIndex);
@@ -31,10 +29,10 @@ public class PageAccessTests extends GMFDashboardTest {
         System.out.println("Successfully accessed the Instances page.");
 
         // Find the desired instance and get the ID
-        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(instanceIndex);
+        serviceInstanceId = gmfDashboardSite.instances().getInstanceId(deployment.stableServiceInstanceIndex);
 
         // Navigate to the desired instance and verify the Summary page is loaded
-        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         System.out.println("Successfully accessed the Summary page.");
 

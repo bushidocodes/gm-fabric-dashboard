@@ -8,6 +8,9 @@ public class GMFDashboardDeployment {
     public String deploymentFlag, browserFlag;
     public BrowserType browserType;
 
+    public String stableServiceName;
+    public int stableServiceInstanceIndex;
+
     public GMFDashboardDeployment() {
         // Load the system deployment variables
         Map<String, String> systemEnvironment = System.getenv();
@@ -16,6 +19,9 @@ public class GMFDashboardDeployment {
 
         if(deploymentFlag.toUpperCase().equals("LOCAL")) {
             siteUrl = "http://localhost:3000";
+
+            stableServiceName = "Entry Mail Debugger";
+            stableServiceInstanceIndex = 1;
         }
 
         // Set the browser type

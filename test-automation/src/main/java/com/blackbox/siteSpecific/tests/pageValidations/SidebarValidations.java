@@ -8,21 +8,16 @@ import org.junit.Test;
 public class SidebarValidations extends GMFDashboardTest {
     @Test
     public void validateSidebarHighlighting() {
-        // Set up data
-        String serviceName = "Network Internet Information";
-        int instanceIndex = 1;
-
-
         // Open the site
         gmfDashboardSite.openSite(deployment);
         gmfDashboardSite.dashboard().waitForPageToLoad();
 
         // Navigate to the desired service
-        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(serviceName);
+        gmfDashboardSite.dashboard().navigateToMainStableServiceEntry(deployment.stableServiceName);
         gmfDashboardSite.instances().waitForPageToLoad();
 
         // Navigate to the desired instance and verify the Summary page is loaded and the link is active
-        gmfDashboardSite.instances().navigateToInstance(instanceIndex);
+        gmfDashboardSite.instances().navigateToInstance(deployment.stableServiceInstanceIndex);
         gmfDashboardSite.summary().waitForPageToLoad();
         Assert.assertTrue(gmfDashboardSite.summary().isSummaryLinkActive());
 
