@@ -7,6 +7,8 @@ import TableHeader from "../../../../../../../../components/TableHeader";
 import TableCol from "../../../../../../../../components/TableCol";
 import TableBody from "../../../../../../../../components/TableBody";
 
+import { relativeReqPercent } from "../../../../../../../../../../utils";
+
 FunctionsTable.propTypes = {
   funcs: PropTypes.array
 };
@@ -19,6 +21,9 @@ FunctionsTable.propTypes = {
  * @returns
  */
 export default function FunctionsTable({ funcs = [] }) {
+  // adds relativeReqPercent field to funcs for viz-fill-bar rendering
+  funcs = relativeReqPercent(funcs, "requests");
+
   return (
     <Table>
       <TableHeader>
@@ -38,6 +43,7 @@ export default function FunctionsTable({ funcs = [] }) {
             outThroughput,
             latency50,
             latency99,
+            relativeReqPercent,
             requests,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline
@@ -48,6 +54,7 @@ export default function FunctionsTable({ funcs = [] }) {
               key={func}
               latency50={latency50}
               latency99={latency99}
+              relativeReqPercent={relativeReqPercent}
               requests={requests}
               requestsPerSecond_dygraph={requestsPerSecond_dygraph}
               requestsPerSecond_sparkline={requestsPerSecond_sparkline}

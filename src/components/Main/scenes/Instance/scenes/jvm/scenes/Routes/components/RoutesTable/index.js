@@ -8,6 +8,8 @@ import TableHeader from "../../../../../../../../../Main/components/TableHeader"
 import TableCol from "../../../../../../../../../Main/components/TableCol";
 import TableBody from "../../../../../../../../../Main/components/TableBody";
 
+import { relativeReqPercent } from "../../../../../../../../../../utils";
+
 RoutesTable.propTypes = {
   routes: PropTypes.array
 };
@@ -19,27 +21,36 @@ RoutesTable.propTypes = {
  * @returns
  */
 export default function RoutesTable({ routes = [] }) {
+  // adds relativeReqPercent field to routes for viz-fill-bar rendering
+  routes = relativeReqPercent(routes, "totalRequests");
+
   return (
     <Table>
       <TableHeader>
         <TableCol header>Route</TableCol>
         <TableCol header>Requests/s</TableCol>
-        <TableCol header>Requests</TableCol>
-        <TableCol header>Error %</TableCol>
+        <TableCol header numeric>
+          Requests
+        </TableCol>
+        <TableCol header numeric>
+          Error %
+        </TableCol>
       </TableHeader>
       <TableBody>
         {routes.map(
           ({
             route,
             verb,
-            errorRate,
+            relativeReqPercent,
+            errorPercent,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline,
             totalRequests
           }) => (
             <RoutesTableLineItem
-              errorRate={errorRate}
+              errorPercent={errorPercent}
               key={`${route}/${verb}`}
+              relativeReqPercent={relativeReqPercent}
               requestsPerSecond_dygraph={requestsPerSecond_dygraph}
               requestsPerSecond_sparkline={requestsPerSecond_sparkline}
               route={route}

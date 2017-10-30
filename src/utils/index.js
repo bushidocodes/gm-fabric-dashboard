@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 export const INSTANCE_ID_LENGTH = 8;
 
 /**
@@ -59,4 +61,21 @@ export const convertMS = (ms = 0) => {
     else return el;
   });
   return `${d}d ${h}h ${m}m ${s}s`;
+};
+
+/**
+ * Takes array of objects (example: array of routes objects) and key (number of requests) and returns a new object with the new field 'relativeReqPercent' added.
+ * If Route A has 1000 requests per second, Route B has 500 requests per second, and Route C has 10 requests per second, Route A's bar is at 100%, Route B's bar is at 50%, and Route C's bar is at 1%.
+ * The maximum value is value of the route with the highest number of requests.
+ * 'relativeReqPercent' is percent representation of the percent difference without % symbol (50%)
+ * @param {array, string}
+ * @returns {array}
+ */
+export const relativeReqPercent = (arrObj = [], key = "") => {
+  if (_.isEmpty(arrObj) || key === "") return arrObj;
+  let max = _.max(_.map(arrObj, key));
+
+  return _.map(arrObj, el =>
+    _.extend({}, el, { relativeReqPercent: el[key] / max * 100 })
+  );
 };

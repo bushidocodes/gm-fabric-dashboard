@@ -7,7 +7,10 @@ import styled from "styled-components";
 
 import GMServiceList from "./components/GMServiceList";
 import GMServiceHeader from "../../components/GMServiceHeader";
-import { COLOR_CONTENT_BACKGROUND } from "../../../../../../../../style/styleVariables";
+import {
+  COLOR_CONTENT_BACKGROUND,
+  ZINDEX_STICKY
+} from "../../../../../../../../style/styleVariables";
 import {
   edgeColor,
   spacingScale
@@ -33,7 +36,7 @@ const SectionHeader = styled.div`
   padding: 0 ${spacingScale(2)};
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: ${ZINDEX_STICKY};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
 `;
 

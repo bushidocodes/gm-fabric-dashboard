@@ -8,6 +8,8 @@ import TableHeader from "../../../../../../../../components/TableHeader";
 import TableCol from "../../../../../../../../components/TableCol";
 import TableBody from "../../../../../../../../components/TableBody";
 
+import { relativeReqPercent } from "../../../../../../../../../../utils";
+
 RoutesTable.propTypes = {
   routes: PropTypes.array
 };
@@ -20,15 +22,28 @@ RoutesTable.propTypes = {
  * @returns
  */
 export default function RoutesTable({ routes = [] }) {
+  // adds relativeReqPercent field to routes for viz-fill-bar rendering
+  routes = relativeReqPercent(routes, "requests");
+
   return (
     <Table>
       <TableHeader>
-        <TableCol header>Routes</TableCol>
-        <TableCol header>Requests/sec</TableCol>
-        <TableCol header>Requests</TableCol>
-        <TableCol header>Error %</TableCol>
-        <TableCol header>Latency 50%</TableCol>
-        <TableCol header>Latency 99%</TableCol>
+        <TableCol header>Route</TableCol>
+        <TableCol header numeric>
+          Requests/s
+        </TableCol>
+        <TableCol header numeric>
+          Requests
+        </TableCol>
+        <TableCol header numeric>
+          Error %
+        </TableCol>
+        <TableCol header numeric>
+          Latency 50%
+        </TableCol>
+        <TableCol header numeric>
+          Latency 99%
+        </TableCol>
       </TableHeader>
       <TableBody>
         {routes.map(
@@ -38,22 +53,26 @@ export default function RoutesTable({ routes = [] }) {
             errorsCount,
             latency50,
             latency99,
+            relativeReqPercent,
             requests,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline
-          }) => (
-            <RoutesTableLineItem
-              errorsCount={errorsCount}
-              key={`${route}/${verb}`}
-              latency50={latency50}
-              latency99={latency99}
-              requests={requests}
-              requestsPerSecond_dygraph={requestsPerSecond_dygraph}
-              requestsPerSecond_sparkline={requestsPerSecond_sparkline}
-              route={`${route} `}
-              verb={verb}
-            />
-          )
+          }) => {
+            return (
+              <RoutesTableLineItem
+                errorsCount={errorsCount}
+                key={`${route}/${verb}`}
+                latency50={latency50}
+                latency99={latency99}
+                relativeReqPercent={relativeReqPercent}
+                requests={requests}
+                requestsPerSecond_dygraph={requestsPerSecond_dygraph}
+                requestsPerSecond_sparkline={requestsPerSecond_sparkline}
+                route={`${route} `}
+                verb={verb}
+              />
+            );
+          }
         )}
       </TableBody>
     </Table>

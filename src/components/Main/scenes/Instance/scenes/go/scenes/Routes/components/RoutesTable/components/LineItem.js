@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import Badge from "../../../../../../../components/Badge";
 
 import {
   Sparklines,
@@ -13,6 +14,8 @@ import TableRow from "../../../../../../../../../components/TableRow";
 import TableCol from "../../../../../../../../../components/TableCol";
 import SparklineCol from "../../../../../../../../../components/SparklineCol";
 import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
+import VizBar from "../../../../../../../../../components/VizBar";
+import VizFill from "../../../../../../../../../components/VizFill";
 
 /**
  * A row of data in the Go RoutesTable
@@ -25,6 +28,7 @@ export default class RoutesTableLineItem extends Component {
     errorsCount: PropTypes.number.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
+    relativeReqPercent: PropTypes.number,
     requests: PropTypes.number.isRequired,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
@@ -79,12 +83,12 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol>
-          <span className="uk-badge uk-margin-right">{this.props.verb}</span>
+        <TableCol vizBar>
+          <Badge>{this.props.verb}</Badge>
           {this.props.route}
-          <div className={"route-viz-bar err-pc-" + errorPercent}>
-            <div className="route-viz-fill" style={{ width: "50%" }} />
-          </div>
+          <VizBar>
+            <VizFill width={this.props.relativeReqPercent} />
+          </VizBar>
         </TableCol>
         <SparklineCol>
           <Sparklines
@@ -108,10 +112,13 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol>{this.props.requests}</TableCol>
-        <TableCol>{`${errorPercent}%`}</TableCol>
-        <TableCol>{this.props.latency50}</TableCol>
-        <TableCol>{this.props.latency99}</TableCol>
+        <TableCol numeric>{this.props.requests}</TableCol>
+        <TableCol
+          numeric
+          errorPercent={errorPercent}
+        >{`${errorPercent}%`}</TableCol>
+        <TableCol numeric>{this.props.latency50}</TableCol>
+        <TableCol numeric>{this.props.latency99}</TableCol>
 
         <TableDrawerCollapse
           className="table-drawer"

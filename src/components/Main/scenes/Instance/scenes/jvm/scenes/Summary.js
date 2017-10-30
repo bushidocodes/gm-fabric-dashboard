@@ -15,13 +15,13 @@ import {
   mapDygraphKeysToNetChange
 } from "../../../../../../../utils/dygraphs";
 import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
-import { getErrorRate } from "../../../../../../../utils/jvm/selectors";
+import { getErrorPercent } from "../../../../../../../utils/jvm/selectors";
 import { getServiceName } from "../../../../../../../utils/head";
 import { trimID, convertMS } from "../../../../../../../utils";
 
 class SummaryGrid extends Component {
   static propTypes = {
-    errorRate: PropTypes.string,
+    errorPercent: PropTypes.string,
     metrics: PropTypes.object,
     selectedInstance: PropTypes.string,
     selectedService: PropTypes.string,
@@ -67,7 +67,7 @@ class SummaryGrid extends Component {
 
   render() {
     const {
-      errorRate,
+      errorPercent,
       metrics,
       selectedInstance,
       selectedService,
@@ -114,7 +114,7 @@ class SummaryGrid extends Component {
                 {
                   icon: "warning",
                   title: "Error Rate",
-                  value: `${errorRate}%`
+                  value: `${errorPercent}%`
                 }
               ]}
             />
@@ -172,7 +172,7 @@ function mapStateToProps(state) {
     selectedService: state.settings.selectedService,
     selectedServiceVersion: state.settings.selectedServiceVersion,
     selectedInstance: state.settings.selectedInstance,
-    errorRate: getErrorRate(state)
+    errorPercent: getErrorPercent(state)
   };
 }
 

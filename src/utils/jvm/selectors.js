@@ -11,11 +11,11 @@ const getCurrentThreads = state => state.threadsTable;
 const getThreadsFilter = state => state.settings.threadsFilter;
 
 /**
-   * A selector that takes metrics and returns error rate
+   * A selector that takes metrics and returns percent error without % symbol
    * toLocaleString() forces three decimal points and
    * returns language sensitive representation of number (commas and periods)
    */
-export const getErrorRate = createSelector(getMetrics, metrics => {
+export const getErrorPercent = createSelector(getMetrics, metrics => {
   if (Object.keys(metrics).length === 0)
     return Number(0).toLocaleString(undefined, {
       maximumFractionDigits: 3,
@@ -65,13 +65,13 @@ export const getRoutesTable = createSelector(
             : `route${routePath}/${routeVerb}/status/2XX`;
         const totalRequests = getLatestAttribute(routesMetrics, requestsKey);
         const totalSuccesses = getLatestAttribute(routesMetrics, successesKey);
-        const errorRate = _.round(
+        const errorPercent = _.round(
           (totalRequests - totalSuccesses) / totalRequests * 100,
           4
         ).toFixed(4);
         routesTable.push({
           ...baseObj,
-          errorRate,
+          errorPercent,
           totalRequests,
           verb: routeVerb,
           requestsPerSecond_sparkline: getSparkLineOfNetChange(
