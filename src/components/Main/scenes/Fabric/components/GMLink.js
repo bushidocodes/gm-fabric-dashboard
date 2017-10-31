@@ -10,7 +10,6 @@ const GMLink = styled(Link)`
   cursor: ${props => props.cursor};
   text-decoration: none;
   color: black;
-  outline: none;
   display: flex;
   &:hover {
     color: ${props =>

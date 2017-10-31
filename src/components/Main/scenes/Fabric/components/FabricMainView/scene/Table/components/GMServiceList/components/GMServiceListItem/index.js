@@ -39,6 +39,7 @@ export default class GMServiceListItem extends Component {
               <GMLink
                 to={instances.length > 0 ? `/${name}/${version}` : "/"}
                 cursor={instances.length > 0 ? "pointer" : "not-allowed"}
+                tabIndex="0"
                 disabled={status === "Down"}
               >
                 <IconWrapper>
@@ -46,17 +47,17 @@ export default class GMServiceListItem extends Component {
                     <StatusIcon status={status} />
                   )}
                 </IconWrapper>
-                <ItemName tabIndex="0">{name}</ItemName>
+                <ItemName>{name}</ItemName>
                 <ItemVersion>{version}</ItemVersion>
               </GMLink>
             ) : (
-              <ItemInfo>
+              <ItemInfo tabIndex="0">
                 <IconWrapper>
                   {groupByAttribute.toLowerCase() !== "status" && (
                     <StatusIcon status={status} />
                   )}
                 </IconWrapper>
-                <ItemName tabIndex="0">{name}</ItemName>
+                <ItemName>{name}</ItemName>
                 <ItemVersion>{version}</ItemVersion>
               </ItemInfo>
             )}
