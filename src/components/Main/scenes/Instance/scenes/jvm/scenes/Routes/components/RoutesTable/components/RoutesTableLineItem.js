@@ -92,10 +92,10 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol numeric={true}>
+        <TableCol textAlign={"right"}>
           {this.props.totalRequests.toLocaleString()}
         </TableCol>
-        <TableCol numeric errorPercent={errorPercent}>
+        <TableCol textAlign={"right"} errorPercent={errorPercent}>
           {errorPercent}
         </TableCol>
 

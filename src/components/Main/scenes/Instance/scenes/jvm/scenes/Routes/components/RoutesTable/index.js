@@ -29,10 +29,10 @@ export default function RoutesTable({ routes = [] }) {
       <TableHeader>
         <TableCol header>Route</TableCol>
         <TableCol header>Requests/s</TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Requests
         </TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Error %
         </TableCol>
       </TableHeader>

@@ -29,19 +29,17 @@ export default function RoutesTable({ routes = [] }) {
     <Table>
       <TableHeader>
         <TableCol header>Route</TableCol>
-        <TableCol header numeric>
-          Requests/s
-        </TableCol>
-        <TableCol header numeric>
+        <TableCol header>Requests/s</TableCol>
+        <TableCol header textAlign={"right"}>
           Requests
         </TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Error %
         </TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Latency 50%
         </TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Latency 99%
         </TableCol>
       </TableHeader>
