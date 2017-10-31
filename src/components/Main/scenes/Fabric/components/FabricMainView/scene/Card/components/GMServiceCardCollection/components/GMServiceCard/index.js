@@ -92,7 +92,8 @@ export default function GMServiceCard({
       <BackgroundIcon iconUrl={iconUrl} status={status} />
       {authorized ? (
         <ServiceLink
-          to={status !== "Down" ? `/${name}/${version}` : "/"}
+          to={`/${name}/${version}`}
+          onClick={status === "Down" ? e => e.preventDefault() : null}
           cursor={status !== "Down" && authorized ? "pointer" : "not-allowed"}
           cardfontcolor={cardFontColor}
         >

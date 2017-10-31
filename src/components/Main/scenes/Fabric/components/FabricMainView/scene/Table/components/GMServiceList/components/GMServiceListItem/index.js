@@ -37,7 +37,8 @@ export default class GMServiceListItem extends Component {
           <LineLeft>
             {authorized ? (
               <GMLink
-                to={instances.length > 0 ? `/${name}/${version}` : "/"}
+                to={`/${name}/${version}`}
+                onClick={status === "Down" ? e => e.preventDefault() : null}
                 cursor={instances.length > 0 ? "pointer" : "not-allowed"}
                 tabIndex="0"
                 disabled={status === "Down"}
