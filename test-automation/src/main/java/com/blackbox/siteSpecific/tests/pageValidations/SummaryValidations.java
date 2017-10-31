@@ -43,7 +43,7 @@ public class SummaryValidations extends GMFDashboardTest {
 
         // Verify the uptime value on the page matches the uptime value in the sidebar
         sidebarUptimeValue = gmfDashboardSite.summary().getSidebarUptimeValue();
-//        Assert.assertTrue(uptimeValue.equals(sidebarUptimeValue));  // FIXME: Issue #714
+        Assert.assertTrue(uptimeValue.equals(sidebarUptimeValue));  // FIXME: Issue #714
 
         // Verify and display the Avg. Response Time and Error Rate
         Assert.assertTrue(gmfDashboardSite.summary().isAvgResponseTimeShown());

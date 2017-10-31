@@ -50,7 +50,7 @@ public class ThreadsValidations extends GMFDashboardTest {
 
         // Verify the All Threads value matches the Threads value in the sidebar
         sidebarThreadsCount = gmfDashboardSite.threads().getSidebarThreadsValue();
-//        Assert.assertTrue(allThreadsCount == sidebarThreadsCount);  // FIXME: Issue #715
+        Assert.assertTrue(allThreadsCount == sidebarThreadsCount);  // FIXME: Issue #715
 
         // Make sure the number of rows matches the All Threads button count
         int rowCount = gmfDashboardSite.threads().getRowCount();
