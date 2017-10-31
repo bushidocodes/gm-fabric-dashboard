@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
+const compression = require("compression");
 const { promisify } = require("util");
 const fs = require("fs");
 const readFile = promisify(fs.readFile);
@@ -9,6 +10,11 @@ const fabricServer =
   "https://edge.deciphernow.com/services/discovery-service/1.0/";
 
 const app = express();
+
+// Setup Gzip compression of response bodies
+// Note: This might be better done at the NGINX level
+// via ngx_http_gzip_module
+app.use(compression());
 
 // Setup logger
 app.use(
