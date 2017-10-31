@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import ThreadsSection from "./components/ThreadsSection";
-import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
+import ErrorBoundary from "components/library/ErrorBoundary";
 
 /**
  * Very redundant feeling wrapper container that contains a ThreadsSection

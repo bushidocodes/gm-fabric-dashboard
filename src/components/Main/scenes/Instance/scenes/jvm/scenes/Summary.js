@@ -9,15 +9,12 @@ import GMLineChart from "../../../../../components/GMLineChart";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
-import ErrorBoundary from "../../../../../../library/ErrorBoundary";
-import {
-  getDygraphOfValue,
-  mapDygraphKeysToNetChange
-} from "../../../../../../../utils/dygraphs";
-import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
-import { getErrorPercent } from "../../../../../../../utils/jvm/selectors";
-import { getServiceName } from "../../../../../../../utils/head";
-import { trimID, convertMS } from "../../../../../../../utils";
+import ErrorBoundary from "components/library/ErrorBoundary";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
+import { getLatestAttribute } from "utils/latestAttribute";
+import { getErrorPercent } from "utils/jvm/selectors";
+import { getServiceName } from "utils/head";
+import { trimID, convertMS } from "utils";
 
 class SummaryGrid extends Component {
   static propTypes = {

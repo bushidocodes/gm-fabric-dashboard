@@ -9,15 +9,12 @@ import LayoutSection from "../../../../../../LayoutSection";
 import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
-import ErrorBoundary from "../../../../../../library/ErrorBoundary";
+import ErrorBoundary from "components/library/ErrorBoundary";
 
-import {
-  getDygraphOfValue,
-  mapDygraphKeysToNetChange
-} from "../../../../../../../utils/dygraphs";
-import { getLatestAttribute } from "../../../../../../../utils/latestAttribute";
-import { getServiceName } from "../../../../../../../utils/head";
-import { trimID, convertMS } from "../../../../../../../utils";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
+import { getLatestAttribute } from "utils/latestAttribute";
+import { getServiceName } from "utils/head";
+import { trimID, convertMS } from "utils";
 
 /**
  * Static Summary page for Go runtime

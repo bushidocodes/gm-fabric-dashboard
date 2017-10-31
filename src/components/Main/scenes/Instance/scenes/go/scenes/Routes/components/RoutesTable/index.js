@@ -8,7 +8,7 @@ import TableHeader from "../../../../../../../../components/TableHeader";
 import TableCol from "../../../../../../../../components/TableCol";
 import TableBody from "../../../../../../../../components/TableBody";
 
-import { relativeReqPercent } from "../../../../../../../../../../utils";
+import { relativeReqPercent } from "utils";
 
 RoutesTable.propTypes = {
   routes: PropTypes.array

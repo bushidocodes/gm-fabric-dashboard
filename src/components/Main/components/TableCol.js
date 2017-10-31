@@ -4,7 +4,7 @@ import {
   rowChildSpacing,
   spacingScale,
   errorColor
-} from "../../../style/styleFunctions";
+} from "style/styleFunctions";
 
 // text-align aligns to left unless specified otherwise.  pass 'right' or 'center'
 const TableCol = styled.div`

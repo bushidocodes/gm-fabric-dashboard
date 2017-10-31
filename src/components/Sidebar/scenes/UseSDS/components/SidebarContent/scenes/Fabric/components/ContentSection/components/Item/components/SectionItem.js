@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { COLOR_ALT_BACKGROUND } from "../../../../../../../../../../../../../style/styleVariables";
-import {
-  spacingScale,
-  contrastColor
-} from "../../../../../../../../../../../../../style/styleFunctions";
+import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
+import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const SectionItem = styled.div`
   color: ${contrastColor(COLOR_ALT_BACKGROUND, 1)

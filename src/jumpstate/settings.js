@@ -5,7 +5,7 @@ import {
   getRuntime,
   getMetricsEndpoint,
   getThreadsEndpoint
-} from "../utils/head";
+} from "utils/head";
 
 // Initial state is determined by whether a fabric server has been configured or
 // not. If the server has been configured, then metricsEndpoint, threadsEndpoint,

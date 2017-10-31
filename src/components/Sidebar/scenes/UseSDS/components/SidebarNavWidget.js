@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Switch, Route, withRouter } from "react-router-dom";
 import SidebarNavWidgetTemplate from "../../../components/SidebarNavWidget";
 
-import { trimID } from "../../../../../utils";
+import { trimID } from "utils";
 
 SidebarNavWidget.propTypes = {
   history: PropTypes.object,

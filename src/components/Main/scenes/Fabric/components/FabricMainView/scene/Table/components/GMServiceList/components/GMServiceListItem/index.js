@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import StatusIcon from "../../../../../../../../../../../StatusIcon";
-import Docs from "../../../../../../../../../../../../images/icons/docs.svg";
+import Docs from "images/icons/docs.svg";
 import { Line, LineLeft, LineRight } from "./components/Line";
 import { ItemName, ItemVersion, ItemInfo } from "./components/Item";
 import IconWrapper from "./components/IconWrapper";

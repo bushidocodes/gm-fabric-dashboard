@@ -12,7 +12,7 @@ import HeaderLeft from "../../../../../../../../components/HeaderLeft";
 import HeaderRight from "../../../../../../../../components/HeaderRight";
 import HeaderRightContent from "../../../../../../../../components/HeaderRightContent";
 import HeaderIcon from "../../../../../../../../components/HeaderIcon";
-import { mapStatusToColor } from "../../../../../../../../../../style/styleFunctions";
+import { mapStatusToColor } from "style/styleFunctions";
 
 export default class FabricSidebarContentSection extends Component {
   static propTypes = {

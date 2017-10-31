@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { COLOR_GREEN, COLOR_WHITE } from "../../../../../style/styleVariables";
+import { COLOR_GREEN, COLOR_WHITE } from "style/styleVariables";
 
 const SkipNav = styled.button`
   background-color: ${COLOR_GREEN.string()};

@@ -11,13 +11,10 @@ import { ServiceInfo, ServiceLink } from "./components/Service";
 import Title from "./components/Title";
 
 // External dependencies
-import {
-  mapStatusToColor,
-  spacingScale
-} from "../../../../../../../../../../../../style/styleFunctions";
-import StatusDownIcon from "../../../../../../../../../../../../images/icons/status-down.svg";
-import StatusStableIcon from "../../../../../../../../../../../../images/icons/status-stable.svg";
-import StatusWarningIcon from "../../../../../../../../../../../../images/icons/status-warning.svg";
+import { mapStatusToColor, spacingScale } from "style/styleFunctions";
+import StatusDownIcon from "images/icons/status-down.svg";
+import StatusStableIcon from "images/icons/status-stable.svg";
+import StatusWarningIcon from "images/icons/status-warning.svg";
 
 GMServiceCard.propTypes = {
   authorized: PropTypes.bool,

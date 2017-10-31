@@ -3,7 +3,7 @@ import {
   COLOR_ALT_CONTENT,
   FONT_WEIGHT_BASE,
   FONT_SIZE_BASE
-} from "../../../../../style/styleVariables";
+} from "style/styleVariables";
 
 const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
 
