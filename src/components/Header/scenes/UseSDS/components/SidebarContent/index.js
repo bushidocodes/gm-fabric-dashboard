@@ -6,7 +6,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import FabricSidebarContent from "./scenes/Fabric";
 import InstanceSidebarContent from "../../../../components/InstanceSidebarContent";
 
-import { getSideBarContent } from "../../../../../../utils/selectors";
+import { getSideBarContent } from "utils/selectors";
 
 // 'new' sidebarContent that routes to FabricSidebarContent || InstanceSidebarContent
 

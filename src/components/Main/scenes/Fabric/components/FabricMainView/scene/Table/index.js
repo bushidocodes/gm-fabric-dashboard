@@ -1,20 +1,14 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import _ from "lodash";
-import { microserviceStatuses } from "../../../../../../../../utils/constants";
+import { microserviceStatuses } from "utils/constants";
 
 import styled from "styled-components";
 
 import GMServiceList from "./components/GMServiceList";
 import GMServiceHeader from "../../components/GMServiceHeader";
-import {
-  COLOR_CONTENT_BACKGROUND,
-  ZINDEX_STICKY
-} from "../../../../../../../../style/styleVariables";
-import {
-  edgeColor,
-  spacingScale
-} from "../../../../../../../../style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND, ZINDEX_STICKY } from "style/styleVariables";
+import { edgeColor, spacingScale } from "style/styleFunctions";
 
 // styled components
 const SectionContainer = styled.div`

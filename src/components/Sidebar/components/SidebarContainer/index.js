@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { edgeColor } from "./../../../../style/styleFunctions";
-import { COLOR_ALT_BACKGROUND } from "./../../../../style/styleVariables";
+import { edgeColor } from "style/styleFunctions";
+import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
 import mesh from "./assets/gm-fabric-bg.jpg";
 
 const SIDEBAR_WIDTH_BASE = "230px";

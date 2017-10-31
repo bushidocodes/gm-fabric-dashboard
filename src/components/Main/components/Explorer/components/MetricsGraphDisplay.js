@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { contrastColor } from "../../../../../style/styleFunctions";
-import { COLOR_CONTENT_BACKGROUND } from "../../../../../style/styleVariables";
+import { contrastColor } from "style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 
 const MetricsGraphDisplay = styled.div`
   background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};

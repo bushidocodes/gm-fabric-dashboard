@@ -7,19 +7,10 @@ import { connect } from "react-redux";
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
 import GMTable from "./components/GMTable";
-import ErrorBoundary from "./../../../library/ErrorBoundary";
-import {
-  getDygraphOfValue,
-  mapDygraphKeysToNetChange
-} from "../../../../utils/dygraphs";
-import {
-  getLatestAttribute,
-  parseJSONString
-} from "../../../../utils/latestAttribute";
-import {
-  getSparkLineOfValue,
-  getSparkLineOfNetChange
-} from "../../../../utils/sparklines";
+import ErrorBoundary from "components/library/ErrorBoundary";
+import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
+import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
+import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 

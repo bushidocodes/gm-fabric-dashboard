@@ -8,7 +8,7 @@ import TableHeader from "../../../../../../../../../Main/components/TableHeader"
 import TableCol from "../../../../../../../../../Main/components/TableCol";
 import TableBody from "../../../../../../../../../Main/components/TableBody";
 
-import { relativeReqPercent } from "../../../../../../../../../../utils";
+import { relativeReqPercent } from "utils";
 
 RoutesTable.propTypes = {
   routes: PropTypes.array
@@ -29,10 +29,10 @@ export default function RoutesTable({ routes = [] }) {
       <TableHeader>
         <TableCol header>Route</TableCol>
         <TableCol header>Requests/s</TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Requests
         </TableCol>
-        <TableCol header numeric>
+        <TableCol header textAlign={"right"}>
           Error %
         </TableCol>
       </TableHeader>

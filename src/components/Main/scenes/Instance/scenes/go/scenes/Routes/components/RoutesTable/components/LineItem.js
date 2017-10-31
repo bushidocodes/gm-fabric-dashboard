@@ -112,13 +112,13 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol numeric>{this.props.requests}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.requests}</TableCol>
         <TableCol
-          numeric
+          textAlign={"right"}
           errorPercent={errorPercent}
         >{`${errorPercent}%`}</TableCol>
-        <TableCol numeric>{this.props.latency50}</TableCol>
-        <TableCol numeric>{this.props.latency99}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
 
         <TableDrawerCollapse
           className="table-drawer"

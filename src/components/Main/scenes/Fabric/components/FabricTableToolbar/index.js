@@ -10,8 +10,8 @@ import {
   ButtonSecondaryText
 } from "../../../../../GMButtons";
 import SearchInput from "./components/GMSearchInput";
-import List from "../../../../../../images/icons/list.svg";
-import Card from "../../../../../../images/icons/card.svg";
+import List from "images/icons/list.svg";
+import Card from "images/icons/card.svg";
 import GMSelect from "../../../../components/GMSelect";
 
 export default class FabricTableToolbar extends Component {

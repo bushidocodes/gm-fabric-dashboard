@@ -5,10 +5,10 @@ import { connect } from "react-redux";
 import FunctionsTable from "./components/FunctionsTable";
 import FunctionsTableToolbar from "./components/FunctionsTableToolbar";
 
-import { getFunctionsTable } from "../../../../../../../../utils/go/selectors";
-import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
+import { getFunctionsTable } from "utils/go/selectors";
+import ErrorBoundary from "components/library/ErrorBoundary";
 
-import NotFoundError from "../../../../../../components/NotFoundError";
+import NotFoundError from "components/Main/components/NotFoundError";
 
 /**
  * Go Functions Container

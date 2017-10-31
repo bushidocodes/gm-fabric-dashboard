@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { spacingScale } from "../../../../../style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 const ReadoutItemData = styled.div`
   flex: 1 1 100%;

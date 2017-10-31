@@ -3,8 +3,8 @@ import {
   BORDER_RADIUS_BASE,
   FONT_SIZE_BASE,
   FONT_SIZE_SM
-} from "../style/styleVariables";
-import { spacingScale } from "../style/styleFunctions";
+} from "style/styleVariables";
+import { spacingScale } from "style/styleFunctions";
 
 const BUTTON_COLOR_BASE = "#ffffff";
 const BUTTON_COLOR_HOVER = "#fbfbfb";

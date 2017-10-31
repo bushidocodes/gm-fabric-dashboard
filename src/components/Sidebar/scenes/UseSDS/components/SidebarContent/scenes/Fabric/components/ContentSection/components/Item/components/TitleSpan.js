@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacingScale } from "../../../../../../../../../../../../../style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 const TitleSpan = styled.span`
   min-width: 75%;

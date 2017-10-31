@@ -3,7 +3,7 @@ import React from "react";
 
 import SidebarNavWidgetTemplate from "../../../components/SidebarNavWidget";
 
-import { getBackButtonUrl } from "../../../../../utils/head";
+import { getBackButtonUrl } from "utils/head";
 
 SidebarNavWidget.propTypes = {
   history: PropTypes.object,

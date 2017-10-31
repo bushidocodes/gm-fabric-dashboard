@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 
 import RoutesTableToolbar from "./components/RoutesTableToolbar";
 import RoutesTable from "./components/RoutesTable";
-import ErrorBoundary from "../../../../../../../library/ErrorBoundary";
-import { getRoutesTable } from "../../../../../../../../utils/jvm/selectors";
-import NotFoundError from "../../../../../../components/NotFoundError";
+import ErrorBoundary from "components/library/ErrorBoundary";
+import { getRoutesTable } from "utils/jvm/selectors";
+import NotFoundError from "components/Main/components/NotFoundError";
 
 /**
  * Parent container of RoutesTable and RoutesTableToolbar

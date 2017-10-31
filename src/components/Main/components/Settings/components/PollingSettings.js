@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
-import PollIcon from "../../../../../images/icons/poll.svg";
+import PollIcon from "images/icons/poll.svg";
 import Button from "../../../../Button.js";
 import LayoutSection from "../../../../LayoutSection";
 /** 

@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import {
-  contrastColor,
-  spacingScale
-} from "../../../../../style/styleFunctions";
-import {
-  COLOR_CONTENT_BACKGROUND,
-  FONT_SIZE_SM
-} from "../../../../../style/styleVariables";
+import { contrastColor, spacingScale } from "style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND, FONT_SIZE_SM } from "style/styleVariables";
 
 const Footer = styled.footer`
   user-select: none;

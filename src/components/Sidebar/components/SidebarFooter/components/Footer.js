@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import {
-  contrastColor,
-  spacingScale
-} from "../../../../../style/styleFunctions";
-import { COLOR_ALT_BACKGROUND } from "../../../../../style/styleVariables";
+import { contrastColor, spacingScale } from "style/styleFunctions";
+import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
 
 const Footer = styled.footer`
   text-align: center;

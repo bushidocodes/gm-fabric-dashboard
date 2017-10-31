@@ -6,9 +6,9 @@ import {
   COLOR_CONTENT_BACKGROUND,
   PADDING_BASE,
   ZINDEX_STICKY
-} from "../../../../../../../../style/styleVariables";
-import { edgeColor } from "../../../../../../../../style/styleFunctions";
-import { microserviceStatuses } from "../../../../../../../../utils/constants";
+} from "style/styleVariables";
+import { edgeColor } from "style/styleFunctions";
+import { microserviceStatuses } from "utils/constants";
 
 import GMServiceHeader from "../../components/GMServiceHeader";
 import GMServiceCardCollection from "./components/GMServiceCardCollection";

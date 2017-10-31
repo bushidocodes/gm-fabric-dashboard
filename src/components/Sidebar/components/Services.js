@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import {
-  COLOR_ALT_BACKGROUND,
-  BORDER_RADIUS_BASE
-} from "../../../style/styleVariables";
-import { contrastColor, spacingScale } from "../../../style/styleFunctions";
+import { COLOR_ALT_BACKGROUND, BORDER_RADIUS_BASE } from "style/styleVariables";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 
 const Services = styled.div`
   margin: 2px;

@@ -2,13 +2,13 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
-import { contrastColor, spacingScale } from "../../../style/styleFunctions";
+import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
   FONT_SIZE_SM,
   FONT_SIZE_LG,
   COLOR_ALT_BACKGROUND,
   COLOR_HIGHLIGHT
-} from "../../../style/styleVariables";
+} from "style/styleVariables";
 import {
   Sparklines,
   SparklinesLine,

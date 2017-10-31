@@ -1,12 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import { spacingScale, contrastColor } from "../style/styleFunctions";
+import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_CONTENT,
   COLOR_CONTENT_BACKGROUND,
   FONT_SIZE_LG
-} from "../style/styleVariables";
+} from "style/styleVariables";
 
 LayoutSection.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

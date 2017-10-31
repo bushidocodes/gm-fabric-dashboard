@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Magnifier from "../../../../../../../images/icons/magnifier.svg";
+import Magnifier from "images/icons/magnifier.svg";
 
 const SearchInput = styled.input.attrs({
   type: "search"
