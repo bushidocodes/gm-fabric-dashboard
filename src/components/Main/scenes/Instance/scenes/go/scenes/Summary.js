@@ -79,7 +79,14 @@ class SummaryGrid extends Component {
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
     const errorPercent =
-      allRequests > 0 ? (1 - (allRequests - allErrors) / allRequests) * 100 : 0;
+      allRequests > 0
+        ? ((1 - (allRequests - allErrors) / allRequests) *
+            100
+          ).toLocaleString(undefined, {
+            maximumFractionDigits: 3,
+            minimumFractionDigits: 3
+          })
+        : 0;
     const memoryUsedPercent = getLatestAttribute(
       metrics,
       "memory/used_percent",
