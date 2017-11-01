@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import {
+  contrastColor,
+  spacingScale
+} from "../../../../../style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
   COLOR_HIGHLIGHT
-} from "style/styleVariables";
+} from "../../../../../style/styleVariables";
 
 const Link = styled.a`
   color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.4).string()};

@@ -1,8 +1,11 @@
 import React from "react";
 import { createSelector } from "reselect";
 import _ from "lodash";
-import { parseJSONString } from "./latestAttribute";
-import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
+import { parseJSONString } from "../utils/latestAttribute";
+import {
+  getSparkLineOfValue,
+  getSparkLineOfNetChange
+} from "../utils/sparklines";
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector

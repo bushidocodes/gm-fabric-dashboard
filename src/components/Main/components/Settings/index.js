@@ -12,9 +12,9 @@ import Readout from "../Readout.js";
 import Button from "../../../Button.js";
 import ReadoutItem from "../ReadoutItem";
 import LayoutSection from "../../../LayoutSection";
-import TapeIcon from "images/icons/tape.svg";
+import TapeIcon from "../../../../images/icons/tape.svg";
 
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "./../../../library/ErrorBoundary";
 import "react-input-range/lib/css/index.css";
 
 SettingsGrid.propTypes = {

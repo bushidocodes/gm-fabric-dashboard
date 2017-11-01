@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 
 import SidebarCard from "../../../../../components/Sidebar/components/SidebarCard";
 
-import { getLatestAttribute } from "utils/latestAttribute";
-import { getSparkLineOfValue } from "utils/sparklines";
-import { convertMS } from "utils";
+import { getLatestAttribute } from "../../../../../utils/latestAttribute";
+import { getSparkLineOfValue } from "../../../../../utils/sparklines";
+import { convertMS } from "../../../../../utils";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,

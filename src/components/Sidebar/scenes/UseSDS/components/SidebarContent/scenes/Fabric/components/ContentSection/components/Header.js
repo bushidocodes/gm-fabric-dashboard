@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-import { FONT_SIZE_SM, COLOR_ALT_BACKGROUND } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import {
+  FONT_SIZE_SM,
+  COLOR_ALT_BACKGROUND
+} from "../../../../../../../../../../../style/styleVariables";
+import {
+  spacingScale,
+  contrastColor
+} from "../../../../../../../../../../../style/styleFunctions";
 
 const SectionHeader = styled.div`
   color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.8)

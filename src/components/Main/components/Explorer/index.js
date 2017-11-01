@@ -4,14 +4,14 @@ import qs from "query-string";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import GMLineChart from "../GMLineChart";
-import { getDygraphOfValue } from "utils/dygraphs";
+import { getDygraphOfValue } from "../../../../utils/dygraphs";
 
 import Inspector from "./components/Inspector";
 import ViewExplorer from "./components/ViewExplorer";
 import MetricsList from "./components/MetricsList";
 import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "./../../../library/ErrorBoundary";
 
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux

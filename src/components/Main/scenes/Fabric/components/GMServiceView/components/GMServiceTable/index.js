@@ -11,7 +11,7 @@ import TableCol from "../../../../../../components/TableCol";
 
 import TableBody from "../../../../../../components/TableBody";
 
-import { convertMS } from "utils";
+import { convertMS } from "../../../../../../../../utils";
 
 GMServiceTable.propTypes = {
   instances: PropTypes.array,

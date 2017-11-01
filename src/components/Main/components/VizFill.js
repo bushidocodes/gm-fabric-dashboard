@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { contrastColor } from "style/styleFunctions";
+import { contrastColor } from "../../../style/styleFunctions";
 
 const VizFill = styled.div`
   width: ${props => (props.width ? `${props.width}%` : "0%")};

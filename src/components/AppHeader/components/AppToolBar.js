@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import decipherLogo from "src/components/Sidebar/components/SidebarHeader/assets/decipherLogo.svg";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import decipherLogo from "../../Sidebar/components/SidebarHeader/assets/decipherLogo.svg";
+import { contrastColor, spacingScale } from "../../../style/styleFunctions";
 import {
   FONT_SIZE_XS,
   FONT_SIZE_SM,
@@ -13,7 +13,7 @@ import {
   COLOR_ALT_BACKGROUND,
   COLOR_GREEN,
   COLOR_WHITE
-} from "style/styleVariables";
+} from "../../../style/styleVariables";
 import { hide } from "./../../library/globalPatterns";
 import { ButtonGroup } from "./../../GMButtons";
 import NavButton from "./../../NavButton";

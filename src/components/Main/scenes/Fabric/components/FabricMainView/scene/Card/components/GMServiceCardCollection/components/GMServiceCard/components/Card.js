@@ -1,4 +1,7 @@
-import { PADDING_BASE, FONT_SIZE_SM } from "style/styleVariables";
+import {
+  PADDING_BASE,
+  FONT_SIZE_SM
+} from "../../../../../../../../../../../../../style/styleVariables";
 
 import Color from "color";
 import styled from "styled-components";

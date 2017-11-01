@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { FONT_STACK_DATA } from "style/styleVariables";
+import { FONT_STACK_DATA } from "../../../style/styleVariables";
 
 const Table = styled.div`
   width: 100%;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "../../../style/styleVariables";
+import { contrastColor, spacingScale } from "../../../style/styleFunctions";
 
 const TOOLBAR_BACKGROUND_COLOR = contrastColor(COLOR_CONTENT_BACKGROUND, 0.04)
   .hsl()

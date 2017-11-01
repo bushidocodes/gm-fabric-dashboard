@@ -8,7 +8,7 @@ import { notification } from "uikit";
 
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
-import NotFoundError from "components/Main/components/NotFoundError";
+import NotFoundError from "../../components/NotFoundError";
 
 class FabricGrid extends Component {
   static propTypes = {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import GMLink from "../../../../../../../../GMLink";
-import { spacingScale } from "style/styleFunctions";
-import { FONT_SIZE_XS } from "style/styleVariables";
+import { spacingScale } from "../../../../../../../../../../../../../style/styleFunctions";
+import { FONT_SIZE_XS } from "../../../../../../../../../../../../../style/styleVariables";
 
 const ItemName = styled.div`
   margin-right: ${spacingScale(1)};

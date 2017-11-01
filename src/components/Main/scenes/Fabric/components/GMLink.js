@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { COLOR_BRAND_PRIMARY, COLOR_DANGER } from "style/styleVariables";
+import {
+  COLOR_BRAND_PRIMARY,
+  COLOR_DANGER
+} from "../../../../../style/styleVariables";
 
 const GMLink = styled(Link)`
   width: 100%;

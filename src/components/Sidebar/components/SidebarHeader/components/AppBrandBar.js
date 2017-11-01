@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-import { FONT_SIZE_BASE, COLOR_ALT_BACKGROUND } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import {
+  FONT_SIZE_BASE,
+  COLOR_ALT_BACKGROUND
+} from "../../../../../style/styleVariables";
+import {
+  contrastColor,
+  spacingScale
+} from "../../../../../style/styleFunctions";
 
 const APP_HEADER_HEIGHT = spacingScale(4.25);
 const APP_HEADER_FONT_SIZE = FONT_SIZE_BASE;

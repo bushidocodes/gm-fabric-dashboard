@@ -13,8 +13,8 @@ import AppContentView from "./components/AppContentView";
 import FabricRouter from "./scenes/Fabric";
 import InstanceRouter from "./scenes/Instance";
 
-import { getFabricServer } from "utils/head";
-import { getRuntime } from "utils/selectors";
+import { getFabricServer } from "../../utils/head";
+import { getRuntime } from "../../utils/selectors";
 
 /**
  * Base React Component of GM Fabric Dashboard

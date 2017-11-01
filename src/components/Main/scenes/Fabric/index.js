@@ -9,7 +9,7 @@ import InstanceRouter from "../Instance";
 
 import SettingsGrid from "../../components/Settings";
 
-import { computeStatus } from "utils/selectors";
+import { computeStatus } from "../../../../utils/selectors";
 
 FabricRouter.propTypes = {
   services: PropTypes.object

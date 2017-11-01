@@ -68,6 +68,9 @@ export default class SidebarCard extends Component {
               icon={"chevron-left"}
               label={"Details"}
               outline={"none"}
+              aria-label={
+                this.state.isOpen ? `Expand ${title}` : `Contract ${title}`
+              }
             >
               <span data-uk-icon={"chevron-left"} />
             </ButtonDetails>
@@ -76,31 +79,40 @@ export default class SidebarCard extends Component {
         <SummaryBarCardBody open={this.state.isOpen}>
           {lines.map(line => (
             <SummaryBarCardKVWrap key={line.name}>
-              <SummaryBarCardKVKey>{line.name}</SummaryBarCardKVKey>
-              <SummaryBarCardKVValue>
-                <ValueText>{line.value}</ValueText>
-                {chartData && (
-                  <SparklineContainer>
-                    <Sparklines
-                      data={chartData}
-                      margin={3}
-                      svgHeight={20}
-                      svgWidth={120}
-                      title={chartTitle}
-                    >
-                      <SparklinesSpots />
-                      <SparklinesLine
-                        style={{
-                          stroke: "currentColor",
-                          strokeWidth: "2",
-                          fill: "currentColor",
-                          fillOpacity: "0"
-                        }}
-                      />
-                    </Sparklines>
-                  </SparklineContainer>
-                )}
-              </SummaryBarCardKVValue>
+              {/* DL tag is necessary for accessibility of dd and dt elements it wraps that are part of SummaryBarCardKey and Value  */}
+              <dl
+                style={{
+                  width: "100%",
+                  display: "inherit",
+                  margin: "0"
+                }}
+              >
+                <SummaryBarCardKVKey>{line.name}</SummaryBarCardKVKey>
+                <SummaryBarCardKVValue>
+                  <ValueText>{line.value}</ValueText>
+                  {chartData && (
+                    <SparklineContainer>
+                      <Sparklines
+                        data={chartData}
+                        margin={3}
+                        svgHeight={20}
+                        svgWidth={120}
+                        title={chartTitle}
+                      >
+                        <SparklinesSpots />
+                        <SparklinesLine
+                          style={{
+                            stroke: "currentColor",
+                            strokeWidth: "2",
+                            fill: "currentColor",
+                            fillOpacity: "0"
+                          }}
+                        />
+                      </Sparklines>
+                    </SparklineContainer>
+                  )}
+                </SummaryBarCardKVValue>
+              </dl>
             </SummaryBarCardKVWrap>
           ))}
         </SummaryBarCardBody>

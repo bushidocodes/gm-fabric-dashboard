@@ -1,6 +1,9 @@
 import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
-import { COLOR_ALT_CONTENT, PADDING_BASE } from "style/styleVariables";
+import { spacingScale } from "../../../../../style/styleFunctions";
+import {
+  COLOR_ALT_CONTENT,
+  PADDING_BASE
+} from "../../../../../style/styleVariables";
 
 const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
 

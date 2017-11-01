@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FONT_SIZE_SM } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import { FONT_SIZE_SM } from "../../../style/styleVariables";
+import { spacingScale } from "../../../style/styleFunctions";
 
 const HeaderRight = styled.div`
   display: flex;

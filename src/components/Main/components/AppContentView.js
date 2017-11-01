@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { edgeColor } from "style/styleFunctions";
-import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import { edgeColor } from "../../../style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "../../../style/styleVariables";
 
 const AppContentView = styled.div`
   flex: 1 1 100%;

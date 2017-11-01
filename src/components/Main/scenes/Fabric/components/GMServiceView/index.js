@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "../../../../../library/ErrorBoundary";
 
-import NotFoundError from "components/Main/components/NotFoundError";
+import NotFoundError from "../../../../components/NotFoundError";
 
 class GMServiceView extends Component {
   static propTypes = {

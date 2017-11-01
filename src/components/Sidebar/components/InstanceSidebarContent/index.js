@@ -10,7 +10,7 @@ import JVMSidebarContent from "./scenes/JVM";
 import GoSidebarContent from "./scenes/Go";
 import DefaultSidebarContent from "./scenes/Default";
 
-import { generateSidebarCards } from "utils/selectors";
+import { generateSidebarCards } from "../../../../utils/selectors";
 
 /**
  * Main area of Sidebar containing one or more SidebarCards

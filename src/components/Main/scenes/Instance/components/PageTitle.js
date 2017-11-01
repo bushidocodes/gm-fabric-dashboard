@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
-import { COLOR_CONTENT } from "style/styleVariables";
+import { spacingScale } from "../../../../../style/styleFunctions";
+import { COLOR_CONTENT } from "../../../../../style/styleVariables";
 
 const PageTitleDiv = styled.h1`
   padding: ${spacingScale(1)} ${spacingScale(2)};

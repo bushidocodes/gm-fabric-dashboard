@@ -9,6 +9,4 @@ if (typeof Promise === "undefined") {
 }
 
 // fetch() polyfill for making API calls.
-if (typeof window.fetch !== "function") {
-  require("whatwg-fetch");
-}
+require("whatwg-fetch");

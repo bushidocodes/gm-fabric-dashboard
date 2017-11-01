@@ -15,9 +15,9 @@ import HeaderRight from "../../../../../../components/HeaderRight";
 import HeaderRightContent from "../../../../../../components/HeaderRightContent";
 
 import TriangleDown from "../../../../../../../TriangleDown";
-import { getSideBarContent } from "utils/selectors";
-import { microserviceStatuses } from "utils/constants";
-import ServicesIcon from "images/icons/servicesWhite.svg";
+import { getSideBarContent } from "../../../../../../../../utils/selectors";
+import { microserviceStatuses } from "../../../../../../../../utils/constants";
+import ServicesIcon from "../../../../../../../../images/icons/servicesWhite.svg";
 
 class FabricSidebarContent extends Component {
   state = {

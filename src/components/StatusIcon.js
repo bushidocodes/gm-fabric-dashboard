@@ -5,11 +5,11 @@ import PropTypes from "prop-types";
 //   COLOR_SUCCESS,
 //   COLOR_DANGER,
 //   COLOR_WARNING
-// } from "style/styleVariables";
-import StatusStableIcon from "images/icons/status-stable.svg";
-import StatusWarningIcon from "images/icons/status-warning.svg";
-import StatusDownIcon from "images/icons/status-down.svg";
-import ServicesIcon from "images/icons/services.svg";
+// } from "../../style/styleVariables";
+import StatusStableIcon from "../images/icons/status-stable.svg";
+import StatusWarningIcon from "../images/icons/status-warning.svg";
+import StatusDownIcon from "../images/icons/status-down.svg";
+import ServicesIcon from "../images/icons/services.svg";
 
 StatusIcon.propTypes = {
   status: PropTypes.string.isRequired

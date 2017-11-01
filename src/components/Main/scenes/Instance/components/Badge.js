@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FONT_SIZE_XS } from "style/styleVariables";
+import { FONT_SIZE_XS } from "../../../../../style/styleVariables";
 
 const Badge = styled.span`
   font-size: ${FONT_SIZE_XS};

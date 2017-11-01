@@ -1,4 +1,4 @@
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../style/styleFunctions";
 import TableCol from "./TableCol";
 
 const SparklineCol = TableCol.extend`

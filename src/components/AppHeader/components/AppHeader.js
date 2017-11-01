@@ -1,13 +1,13 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
-import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import { COLOR_ALT_BACKGROUND } from "../../../style/styleVariables";
+import { spacingScale } from "../../../style/styleFunctions";
 
 import AppToolBar from "./AppToolBar";
 import Banner from "./Banner";
 import SectionNav from "./SectionNav";
-import BannerBackgroundImage from "images/app-banner.png";
+import BannerBackgroundImage from "../../../images/app-banner.png";
 
 export const AppHeaderContainer = styled.div`
   display: flex;

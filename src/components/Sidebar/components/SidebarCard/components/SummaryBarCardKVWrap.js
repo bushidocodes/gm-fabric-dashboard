@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
-import { FONT_STACK_DATA } from "style/styleVariables";
+import { spacingScale } from "../../../../../style/styleFunctions";
+import { FONT_STACK_DATA } from "../../../../../style/styleVariables";
 
 const SummaryBarCardKVWrap = styled.div`
   display: flex;

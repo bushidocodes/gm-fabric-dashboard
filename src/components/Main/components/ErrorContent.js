@@ -5,9 +5,9 @@ import {
   COLOR_WARNING,
   COLOR_CONTENT,
   BORDER_RADIUS_BASE
-} from "style/styleVariables";
+} from "../../../style/styleVariables";
 
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../style/styleFunctions";
 
 const ErrorContent = styled.div`
   font-size: ${FONT_SIZE_HERO};

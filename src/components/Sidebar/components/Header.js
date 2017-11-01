@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FONT_SIZE_BASE } from "style/styleVariables";
+import { FONT_SIZE_BASE } from "../../../style/styleVariables";
 
 export const Header = styled.div`
   color: white;

@@ -12,15 +12,15 @@ SidebarNavWidget.propTypes = {
 
 /**
  * Stateless functional component used by fabric/SidebarNavWidget and instance/SidebarNavWidget
- * 
+ *
  * @param {Object} {
  *   elementName,
  *   history,
  *   parent,
  *   parentPathIsExternal,
  *   siblings = [] //{name, path}
- * } 
- * @returns 
+ * }
+ * @returns
  */
 function SidebarNavWidget({
   elementName,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../../../style/styleFunctions";
 
 const APP_HEADER_HEIGHT = spacingScale(4.25);
 const BRANDBAR_BRAND_SPACING = spacingScale(0.25);

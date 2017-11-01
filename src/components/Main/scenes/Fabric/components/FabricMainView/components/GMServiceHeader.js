@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 import StatusIcon from "../../../../../../StatusIcon";
-import ServicesIcon from "images/icons/services.svg";
-import { FONT_SIZE_LG } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import ServicesIcon from "../../../../../../../images/icons/services.svg";
+import { FONT_SIZE_LG } from "../../../../../../../style/styleVariables";
+import { spacingScale } from "../../../../../../../style/styleFunctions";
 
 const Heading = styled.div`
   font-size: ${FONT_SIZE_LG};

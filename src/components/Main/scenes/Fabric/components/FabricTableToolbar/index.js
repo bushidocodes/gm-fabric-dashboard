@@ -10,8 +10,8 @@ import {
   ButtonSecondaryText
 } from "../../../../../GMButtons";
 import SearchInput from "./components/GMSearchInput";
-import List from "images/icons/list.svg";
-import Card from "images/icons/card.svg";
+import List from "../../../../../../images/icons/list.svg";
+import Card from "../../../../../../images/icons/card.svg";
 import GMSelect from "../../../../components/GMSelect";
 
 export default class FabricTableToolbar extends Component {
@@ -46,6 +46,7 @@ export default class FabricTableToolbar extends Component {
               onChange={evt => onSearchInputChange(evt.target.value)}
               placeholder="Search Services"
               value={searchQuery}
+              aria-label="Search All Services"
             />
           </form>
         </ToolbarLeft>

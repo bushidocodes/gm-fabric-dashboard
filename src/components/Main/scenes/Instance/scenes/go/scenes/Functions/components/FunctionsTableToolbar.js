@@ -33,6 +33,7 @@ export default function FunctionsTableToolbar({
             className="form-control"
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Functions"
+            aria-label="Search All Functions"
             type="search"
             value={filterString}
           />

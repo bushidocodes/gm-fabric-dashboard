@@ -11,10 +11,13 @@ import { ServiceInfo, ServiceLink } from "./components/Service";
 import Title from "./components/Title";
 
 // External dependencies
-import { mapStatusToColor, spacingScale } from "style/styleFunctions";
-import StatusDownIcon from "images/icons/status-down.svg";
-import StatusStableIcon from "images/icons/status-stable.svg";
-import StatusWarningIcon from "images/icons/status-warning.svg";
+import {
+  mapStatusToColor,
+  spacingScale
+} from "../../../../../../../../../../../../style/styleFunctions";
+import StatusDownIcon from "../../../../../../../../../../../../images/icons/status-down.svg";
+import StatusStableIcon from "../../../../../../../../../../../../images/icons/status-stable.svg";
+import StatusWarningIcon from "../../../../../../../../../../../../images/icons/status-warning.svg";
 
 GMServiceCard.propTypes = {
   authorized: PropTypes.bool,
@@ -86,7 +89,7 @@ export default function GMServiceCard({
       width={width}
       height={height}
     >
-      <BackgroundIcon iconUrl={iconUrl} status={status} />
+      <BackgroundIcon iconUrl={iconUrl} status={status} alt="" />
       {authorized ? (
         <ServiceLink
           to={`/${name}/${version}`}
@@ -114,6 +117,7 @@ export default function GMServiceCard({
               cardHighlightColor={cardHighlightColor}
               href={docsLink}
               target="_blank"
+              title={`Documentation of ${titleName}`}
             >
               <DocsIcon fillColor={cardFontColor} />
             </DocsLink>

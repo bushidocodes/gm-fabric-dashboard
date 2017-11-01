@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-import { contrastColor, spacingScale } from "style/styleFunctions";
-import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import {
+  contrastColor,
+  spacingScale
+} from "../../../../../style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "../../../../../style/styleVariables";
 
 const MetricsList = styled.div`
   background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};

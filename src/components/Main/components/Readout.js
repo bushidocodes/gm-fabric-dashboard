@@ -8,9 +8,9 @@ import {
   COLOR_CONTENT_BACKGROUND,
   BORDER_RADIUS_BASE,
   FONT_STACK_BASE
-} from "style/styleVariables";
+} from "../../../style/styleVariables";
 
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import { contrastColor, spacingScale } from "../../../style/styleFunctions";
 
 const ReadoutContainer = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};

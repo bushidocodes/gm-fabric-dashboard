@@ -3,10 +3,10 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
-import PollIcon from "images/icons/poll.svg";
+import PollIcon from "../../../../../images/icons/poll.svg";
 import Button from "../../../../Button.js";
 import LayoutSection from "../../../../LayoutSection";
-/** 
+/**
  * Control to start/stop polling and change the polling rate
  * Styled to resemble a Readout and intended to be a child of SettingsGrid
  */
@@ -35,7 +35,8 @@ class PollingSettings extends Component {
       <LayoutSection title={title} icon={PollIcon} flex>
         <div
           className="control-group control-group-polling-start-stop"
-          id="ctrl-btn"
+          // id={`crtl-btn-${title}`}
+          id={`ctrl-btn-${title}`}
         >
           <Button
             clickAction={() => {
@@ -57,7 +58,7 @@ class PollingSettings extends Component {
 
         <div
           className="control-group control-group-polling-interval"
-          id="ctrl-slider"
+          id={`ctrl-slider-${title}`}
         >
           <InputRange
             aria-labelledby="polling interval-name"
@@ -69,7 +70,7 @@ class PollingSettings extends Component {
             }}
             value={this.state.localInterval}
           />
-          <span className="label" id="interval-name">
+          <span className="label" id={`interval-name-${title}`}>
             {"Polling Interval (seconds)"}
           </span>
         </div>

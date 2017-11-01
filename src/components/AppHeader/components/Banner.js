@@ -2,13 +2,13 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import styled from "styled-components";
 
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import { contrastColor, spacingScale } from "../../../style/styleFunctions";
 import {
   FONT_SIZE_HERO,
   FONT_SIZE_BASE,
   BORDER_RADIUS_BASE,
   COLOR_ALT_BACKGROUND
-} from "style/styleVariables";
+} from "../../../style/styleVariables";
 
 Banner.propTypes = {
   extras: PropTypes.array,

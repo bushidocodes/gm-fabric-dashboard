@@ -4,13 +4,13 @@ import {
   spacingScale,
   contrastColor,
   rowChildSpacing
-} from "style/styleFunctions";
+} from "../../../style/styleFunctions";
 
 import {
   COLOR_CONTENT_BACKGROUND,
   TABLE_BORDER,
   TABLE_HOVER
-} from "style/styleVariables";
+} from "../../../style/styleVariables";
 
 const TableRow = styled.li`
   display: flex;

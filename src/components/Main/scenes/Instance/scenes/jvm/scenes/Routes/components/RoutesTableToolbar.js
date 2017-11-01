@@ -33,6 +33,7 @@ export default function RoutesTableToolbar({
             className="form-control"
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Routes"
+            aria-label="Search All Routes"
             type="search"
             value={filterString}
           />

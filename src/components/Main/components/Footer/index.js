@@ -18,6 +18,7 @@ export default function AppFooter() {
         href="http://deciphernow.com"
         rel="noopener noreferrer"
         target="_blank"
+        title="Decipher Technology Studios website"
       >
         <img alt="Decipher Technology Studios" src={longLogo} />
       </LongLogo>
@@ -27,6 +28,7 @@ export default function AppFooter() {
           href="http://github.com/DecipherNow"
           rel="noopener noreferrer"
           target="_blank"
+          title="Decipher Technology Studios Github"
         >
           <i data-uk-icon={`icon: github; ratio: .8;`} />
         </Link>
@@ -34,6 +36,7 @@ export default function AppFooter() {
           href="http://twitter.com/deciphernow"
           rel="noopener noreferrer"
           target="_blank"
+          title="Decipher Technology Studios Twitter"
         >
           <i data-uk-icon={`icon: twitter; ratio: .8;`} />
         </Link>
@@ -41,6 +44,7 @@ export default function AppFooter() {
           href="http://www.linkedin.com/company/decipher-technology-studios"
           rel="noopener noreferrer"
           target="_blank"
+          title="Decipher Technology Studios LinkedIn"
         >
           <i data-uk-icon={`icon: linkedin; ratio: .8;`} />
         </Link>

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../../../style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
   COLOR_WHITE,
   COLOR_GREEN
-} from "style/styleVariables";
+} from "../../../../../style/styleVariables";
 
 const SIDEBAR_BACKGROUND = COLOR_ALT_BACKGROUND.string();
 const SIDEBAR_ACTIVE_BACKGROUND = COLOR_ALT_BACKGROUND.mix(

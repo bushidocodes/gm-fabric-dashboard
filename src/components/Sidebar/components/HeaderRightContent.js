@@ -1,5 +1,5 @@
 import HeaderRight from "./HeaderRight";
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../style/styleFunctions";
 
 const HeaderRightContent = HeaderRight.extend`
   margin: 0;

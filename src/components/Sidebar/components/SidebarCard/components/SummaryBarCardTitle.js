@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
+import { spacingScale } from "../../../../../style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
   COLOR_ALT_CONTENT,
   COLOR_WHITE
-} from "style/styleVariables";
+} from "../../../../../style/styleVariables";
 
 const SIDEBAR_TEXT = COLOR_ALT_CONTENT.string();
 const SIDEBAR_BORDER = COLOR_ALT_BACKGROUND.mix(COLOR_WHITE, 0.1).string();

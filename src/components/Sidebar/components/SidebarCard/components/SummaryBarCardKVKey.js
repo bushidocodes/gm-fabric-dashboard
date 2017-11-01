@@ -1,5 +1,5 @@
 import SummaryBarCardKV from "./SummaryBarCardKV";
-import { COLOR_ALT_CONTENT } from "style/styleVariables";
+import { COLOR_ALT_CONTENT } from "../../../../../style/styleVariables";
 
 const SIDEBAR_FADED_TEXT = COLOR_ALT_CONTENT.fade(0.4).string();
 
