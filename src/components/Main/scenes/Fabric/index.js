@@ -2,11 +2,11 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
-
+import _ from "lodash";
 import FabricGrid from "./FabricGrid";
 import GMServiceView from "./components/GMServiceView";
 import InstanceRouter from "../Instance";
-
+import generateStatusRoutes from "./utils/generateStatusRoutes";
 import SettingsGrid from "../../components/Settings";
 
 import { computeStatus } from "utils/selectors";
@@ -19,16 +19,16 @@ FabricRouter.propTypes = {
  * Fabric Router is an optional top-level router that only runs when the dashboard is running
  * with a backend server. It is inserted between the root container and the Instance Router
  * and injects the following additional route parameters
- * 
+ *
  * serviceName - The name of the selected microservice
  * instanceID - The ID of the selected microservice instance of type serviceName
- * 
+ *
  * When routes match with a serviceName and an instanceID, Fabric Router triggers the async
  * JumpState Effect selectInstance, which clears the metrics store and initiates polling of
  * the metrics endpoint associated with this instance.
- * 
+ *
  * It also looks up the runtime of the selected microservice and passes it as props to the InstanceRouter
- * 
+ *
  * @export
  * @returns JSX.Element
  */
@@ -76,6 +76,10 @@ function FabricRouter({ services }) {
           );
         }}
       />
+
+      {/* Utility function that generates Routes for /down, /warning, and /stable */}
+      {generateStatusRoutes(services)}
+
       {/* Just Redirect back to the services page if an instance ID isn't found*/}
       <Route
         exact
@@ -126,7 +130,11 @@ function FabricRouter({ services }) {
         }}
       />
       {/* For the route route, mount the Fabric Grid, the element used to depict an entire Fabric of microservices*/}
-      <Route exact path="/" component={FabricGrid} />
+      <Route
+        exact
+        path="/"
+        render={() => <FabricGrid services={_.values(services)} />}
+      />
     </Switch>
   );
 }

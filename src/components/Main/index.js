@@ -6,8 +6,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import AppContent from "./components/AppContent";
-import AppToolbar from "./components/AppToolbar";
-import AppFooter from "./components/Footer";
 import AppContentView from "./components/AppContentView";
 
 import FabricRouter from "./scenes/Fabric";
@@ -75,8 +73,8 @@ class App extends Component {
 
   render() {
     return (
-      <AppContent className="uk-width-5-6@s">
-        <AppToolbar pathname={this.props.pathname} />
+      <AppContent>
+        {/* main-content id is here so that SkipNav can focus on it */}
         <AppContentView id="main-content" tabIndex="0">
           {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
           {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
@@ -87,7 +85,6 @@ class App extends Component {
             <InstanceRouter runtime={this.props.runtime} />
           )}
         </AppContentView>
-        <AppFooter />
       </AppContent>
     );
   }

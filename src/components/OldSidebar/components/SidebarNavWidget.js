@@ -31,6 +31,7 @@ function SidebarNavWidget({
 }) {
   return (
     <div className="nav-widget">
+      Sidebar nav widget!!!
       {_.has(parent, "name") &&
         _.has(parent, "path") &&
         (parentPathIsExternal ? (

@@ -15,6 +15,7 @@ const Heading = styled.div`
   height: ${spacingScale(5)};
   display: flex;
   align-items: center;
+  text-transform: capitalize;
 `;
 
 const IconWrapper = styled.div`

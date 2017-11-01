@@ -23,7 +23,8 @@ export default class FabricTableToolbar extends Component {
     setDisplayType: PropTypes.func.isRequired,
     setGroupByAttribute: PropTypes.func.isRequired,
     setSortByAttribute: PropTypes.func.isRequired,
-    sortByAttribute: PropTypes.string.isRequired
+    sortByAttribute: PropTypes.string.isRequired,
+    statusView: PropTypes.bool
   };
 
   render = () => {
@@ -35,7 +36,8 @@ export default class FabricTableToolbar extends Component {
       onSearchInputChange,
       setGroupByAttribute,
       setSortByAttribute,
-      sortByAttribute
+      sortByAttribute,
+      statusView = false
     } = this.props;
     return (
       <Toolbar>
@@ -68,24 +70,41 @@ export default class FabricTableToolbar extends Component {
         <ToolbarRight>
           <GMSelect
             name="form-field-group-by"
-            options={[
-              {
-                value: "Owner",
-                label: "Owner"
-              },
-              {
-                value: "Capability",
-                label: "Capability"
-              },
-              {
-                value: "Status",
-                label: "Status"
-              },
-              {
-                value: "None",
-                label: "None"
-              }
-            ]}
+            options={
+              statusView
+                ? [
+                    {
+                      value: "Owner",
+                      label: "Owner"
+                    },
+                    {
+                      value: "Status",
+                      label: "Status"
+                    },
+                    {
+                      value: "Capability",
+                      label: "Capability"
+                    }
+                  ]
+                : [
+                    {
+                      value: "Owner",
+                      label: "Owner"
+                    },
+                    {
+                      value: "Capability",
+                      label: "Capability"
+                    },
+                    {
+                      value: "Status",
+                      label: "Status"
+                    },
+                    {
+                      value: "None",
+                      label: "None"
+                    }
+                  ]
+            }
             value={groupByAttribute}
             onChange={val => setGroupByAttribute(val.value)}
             clearable={false}
@@ -97,29 +116,31 @@ export default class FabricTableToolbar extends Component {
               </span>
             )}
           />
-          <GMSelect
-            name="form-field-sort-by"
-            options={[
-              {
-                value: "Name",
-                label: "Name"
-              },
-              {
-                value: "Status",
-                label: "Status"
-              }
-            ]}
-            value={sortByAttribute}
-            onChange={val => setSortByAttribute(val.value)}
-            clearable={false}
-            searchable={false}
-            valueRenderer={val => (
-              <span>
-                <span>Sort </span>
-                <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
-              </span>
-            )}
-          />
+          {!statusView ? (
+            <GMSelect
+              name="form-field-sort-by"
+              options={[
+                {
+                  value: "Name",
+                  label: "Name"
+                },
+                {
+                  value: "Status",
+                  label: "Status"
+                }
+              ]}
+              value={sortByAttribute}
+              onChange={val => setSortByAttribute(val.value)}
+              clearable={false}
+              searchable={false}
+              valueRenderer={val => (
+                <span>
+                  <span>Sort </span>
+                  <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+                </span>
+              )}
+            />
+          ) : null}
         </ToolbarRight>
       </Toolbar>
     );

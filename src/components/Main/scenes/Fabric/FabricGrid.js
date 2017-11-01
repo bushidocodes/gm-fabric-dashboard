@@ -1,7 +1,6 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import _ from "lodash";
 import qs from "query-string";
 import { notification } from "uikit";
@@ -10,6 +9,7 @@ import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
 import NotFoundError from "components/Main/components/NotFoundError";
 
+import { withRouter } from "react-router-dom";
 class FabricGrid extends Component {
   static propTypes = {
     history: PropTypes.object.isRequired,
@@ -25,7 +25,8 @@ class FabricGrid extends Component {
       lastPushedQueryString: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
-      displayType: "Card"
+      displayType: "Card",
+      statusView: false
     };
     // Debounce
     this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
@@ -54,6 +55,11 @@ class FabricGrid extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // Check if we are on the root route, else change statusView to pass to FabricTableToolbar
+    if (nextProps.location.pathname !== "/") {
+      this.setState({ statusView: true });
+    }
+
     // We need to check to see if the query string props are the result of user interaction
     // with the search box. We do that by keeping track of the last thing the search box
     // pushed to the query string and filtering out those props. The only expection to this
@@ -107,7 +113,6 @@ class FabricGrid extends Component {
     const viewType = this.state.displayType;
     const groupBy = this.state.groupByAttribute;
     const sortBy = this.state.sortByAttribute;
-
     // Only encode the truthy pieces of local state into a form ready to be pushed to the
     // browser's query string. If no local state is truthy, call debouncedPushHistory without
     // an argument to remove the search query from the URL.
@@ -173,12 +178,12 @@ class FabricGrid extends Component {
   render() {
     const { services = [] } = this.props;
     const { searchQuery = "" } = this.state;
-
     const filteredServices = services.filter(service => {
       return (
         service.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
       );
     });
+
     if (services && services.length > 0) {
       return (
         <div>
@@ -191,6 +196,7 @@ class FabricGrid extends Component {
             setGroupByAttribute={this.setGroupByAttribute}
             sortByAttribute={this.state.sortByAttribute}
             setSortByAttribute={this.setSortByAttribute}
+            statusView={this.state.statusView}
           />
           {/* pass filtered services to FabricMainView */}
           <FabricMainView
@@ -207,8 +213,4 @@ class FabricGrid extends Component {
   }
 }
 
-function mapStateToProps({ fabric: { services } }) {
-  return { services: _.values(services) };
-}
-
-export default connect(mapStateToProps)(FabricGrid);
+export default withRouter(FabricGrid);

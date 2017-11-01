@@ -14,6 +14,7 @@ import GMServiceHeader from "../../components/GMServiceHeader";
 import GMServiceCardCollection from "./components/GMServiceCardCollection";
 
 import styled from "styled-components";
+import { withRouter } from "react-router-dom";
 
 // styled components
 const GMServiceViewContainer = styled.div`
@@ -52,23 +53,35 @@ const SectionContent = styled.div`
 // status: string equal to "Stable", "Warning", or "Down"
 SectionCardsView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,
+  location: PropTypes.object,
   services: PropTypes.array.isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
-// What if we have card that don't have a header value?
-export default function SectionCardsView({
+function SectionCardsView({
   groupByAttribute,
   sortByAttribute,
-  services
+  services,
+  location: { pathname }
 }) {
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
-    // If we are grouping by state, we always want to group our services in the order "Down, Warning, Stable"
-    const headers =
-      groupByAttribute === "Status"
-        ? microserviceStatuses
-        : Object.keys(dataGroupedByHeader);
+    const dataGroupedByHeader = _.groupBy(services, item =>
+      item.headerTitle.toLowerCase()
+    );
+    const headerTitles = Object.keys(dataGroupedByHeader);
+    const statusSort = pathname.slice(1);
+
+    let headers;
+
+    // If we pulled a status from the path, use that as the header
+    // Else if we are on the main fabric grid, use microServiceStatuses as the headers
+    if (statusSort && groupByAttribute === "Status") {
+      headers = [statusSort];
+    } else if (!statusSort && groupByAttribute === "Status") {
+      headers = microserviceStatuses.map(item => item.toLowerCase());
+    } else {
+      headers = headerTitles;
+    }
 
     return (
       <GMServiceViewContainer>
@@ -111,3 +124,5 @@ export default function SectionCardsView({
     );
   }
 }
+
+export default withRouter(SectionCardsView);
