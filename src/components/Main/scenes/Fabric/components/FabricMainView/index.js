@@ -32,6 +32,8 @@ export default function FabricMainView({
         service.minimum,
         service.maximum
       ),
+      runtime: service.runtime,
+      metered: service.metered,
       instances: service.instances
     };
   });

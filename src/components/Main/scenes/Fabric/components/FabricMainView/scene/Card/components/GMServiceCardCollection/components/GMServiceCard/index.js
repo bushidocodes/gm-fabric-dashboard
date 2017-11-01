@@ -9,18 +9,22 @@ import DocsIcon from "./components/DocsIcon";
 import DocsLink from "./components/DocsLink";
 import { ServiceInfo, ServiceLink } from "./components/Service";
 import Title from "./components/Title";
+import Runtime from "./components/Runtime";
 
 // External dependencies
 import { mapStatusToColor, spacingScale } from "style/styleFunctions";
 import StatusDownIcon from "images/icons/status-down.svg";
 import StatusStableIcon from "images/icons/status-stable.svg";
 import StatusWarningIcon from "images/icons/status-warning.svg";
+// import NoAuthIcon from "images/icons/no-key.svg";
 
 GMServiceCard.propTypes = {
   authorized: PropTypes.bool,
   docsLink: PropTypes.string,
   height: PropTypes.string,
+  metered: PropTypes.bool,
   name: PropTypes.string.isRequired,
+  runtime: PropTypes.string,
   status: PropTypes.string,
   version: PropTypes.string,
   width: PropTypes.string
@@ -30,7 +34,9 @@ export default function GMServiceCard({
   authorized,
   docsLink,
   height = spacingScale(14),
+  metered,
   name,
+  runtime,
   status,
   version,
   width = spacingScale(20)
@@ -44,7 +50,7 @@ export default function GMServiceCard({
     cardBorderAltColor,
     iconUrl;
   const baseColor = mapStatusToColor(status).string();
-  const maxNameLen = 52;
+  const maxNameLen = 50;
   const titleName =
     name.length > maxNameLen ? `${name.trim().substr(0, maxNameLen)}...` : name;
   const titleNameAttribute = name === titleName ? null : name;
@@ -106,6 +112,9 @@ export default function GMServiceCard({
         </ServiceInfo>
       )}
       <CardFooter cardFontWeight={cardFontWeight}>
+        {runtime && <Runtime>{runtime}</Runtime>}
+        {metered === false && <span>nometrics</span>}
+        {authorized === false && <span>noauth</span>}
         {version || null}
         {version &&
           docsLink && (

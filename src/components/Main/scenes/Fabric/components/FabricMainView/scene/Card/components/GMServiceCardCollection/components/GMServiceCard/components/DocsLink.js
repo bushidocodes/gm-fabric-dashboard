@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { spacingScale } from "style/styleFunctions";
 
 const DocsLink = styled.a`
+  justify-self: flex-end;
+  flex-grow: 0;
+  margin-left: ${spacingScale(1)};
   cursor: pointer;
   pointer-events: auto;
   text-decoration: none;

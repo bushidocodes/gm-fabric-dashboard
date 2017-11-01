@@ -29,6 +29,8 @@ export default function GMServiceCardCollection({ items }) {
           version={item.version}
           docsLink={item.docsLink}
           status={item.status}
+          metered={item.metered}
+          runtime={item.runtime}
         />
       ))}
     </ContentItems>
