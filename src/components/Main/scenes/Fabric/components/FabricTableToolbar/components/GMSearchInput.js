@@ -9,6 +9,9 @@ const SearchInput = styled.input.attrs({
   background-repeat: no-repeat;
   background-size: contain;
   text-indent: 20px;
+  &::-webkit-search-cancel-button {
+    cursor: pointer;
+  }
 `;
 
 export default SearchInput;
