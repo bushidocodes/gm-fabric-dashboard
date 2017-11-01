@@ -87,8 +87,8 @@ function GMServiceListView({
               <GMServiceList
                 items={_.orderBy(
                   dataGroupedByHeader[header],
-                  [sortByAttribute.toLowerCase()],
-                  ["asc"]
+                  [sortByAttribute.toLowerCase(), "name"],
+                  ["asc", "asc"]
                 )}
                 groupByAttribute={groupByAttribute}
               />
@@ -105,8 +105,8 @@ function GMServiceListView({
             <GMServiceList
               items={_.orderBy(
                 services,
-                [sortByAttribute.toLowerCase()],
-                ["asc"]
+                [sortByAttribute.toLowerCase(), "name"],
+                ["asc", "asc"]
               )}
             />
           </SectionContent>

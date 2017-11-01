@@ -52,7 +52,7 @@ export default function FunctionsTableToolbar({
             },
             {
               value: "errorCount",
-              label: "Error Count"
+              label: "Error %"
             },
             {
               value: "latency50",

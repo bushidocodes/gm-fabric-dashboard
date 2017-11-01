@@ -37,6 +37,7 @@ class RoutesGrid extends Component {
    */
   sort(routes) {
     const { keyToSortBy, ascending } = this.state;
+
     return routes.sort((a, b) => {
       if (a[keyToSortBy] > b[keyToSortBy]) {
         return ascending ? 1 : -1;
@@ -51,11 +52,20 @@ class RoutesGrid extends Component {
   /**
    * Helper function used internally to either sort by the key if not yet used to sort or toggle ascending / descending
    * if the key is already active.
+   * When sorting by latency and error percent and the sortKey is new, set the initial sort order to descending
    * @param {String} keyToSortBy
    */
   setKeyToSortBy(keyToSortBy) {
     if (this.state.keyToSortBy === keyToSortBy) {
       this.setState({ ascending: !this.state.ascending });
+    } else if (
+      keyToSortBy === "errorPercent" ||
+      keyToSortBy.includes("latency")
+    ) {
+      this.setState({
+        ascending: false,
+        keyToSortBy
+      });
     } else {
       this.setState({
         keyToSortBy

@@ -3,10 +3,10 @@ import React from "react";
 
 import RoutesTableLineItem from "./components/LineItem";
 
-import Table from "../../../../../../../../components/Table";
-import TableHeader from "../../../../../../../../components/TableHeader";
-import TableCol from "../../../../../../../../components/TableCol";
-import TableBody from "../../../../../../../../components/TableBody";
+import Table from "components/Main/components/Table";
+import TableHeader from "components/Main/components/TableHeader";
+import TableCol from "components/Main/components/TableCol";
+import TableBody from "components/Main/components/TableBody";
 
 import { relativeReqPercent } from "utils";
 
@@ -49,6 +49,7 @@ export default function RoutesTable({ routes = [] }) {
             route,
             verb,
             errorsCount,
+            errorPercent,
             latency50,
             latency99,
             relativeReqPercent,
@@ -59,6 +60,7 @@ export default function RoutesTable({ routes = [] }) {
             return (
               <RoutesTableLineItem
                 errorsCount={errorsCount}
+                errorPercent={errorPercent}
                 key={`${route}/${verb}`}
                 latency50={latency50}
                 latency99={latency99}

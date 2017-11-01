@@ -115,12 +115,14 @@ export function rowChildSpacing() {
  * takes errorPercent as number(0.1% passed in as .1 not .001) and returns string color (green | yellow | red = default).]
  * < 0.1% error rate is green, > 0.1% and < 1% is yellow, and >1% is red
  *
- * @param {number} errorPercent
+ * @param {number|string} errorPercent
  * @returns {string} - color for the errorPercent text
  */
 
 export function errorColor(errorPercent = 1) {
-  if (errorPercent < 0.1) return "green";
-  else if (errorPercent > 0.1 && errorPercent < 1) return "yellow";
+  const percent =
+    typeof errorPercent === "number" ? errorPercent : parseFloat(errorPercent);
+  if (percent < 0.1) return "green";
+  else if (percent > 0.1 && percent < 1) return "yellow";
   else return "red";
 }

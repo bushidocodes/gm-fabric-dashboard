@@ -97,8 +97,8 @@ function SectionCardsView({
               <GMServiceCardCollection
                 items={_.orderBy(
                   dataGroupedByHeader[header],
-                  [sortByAttribute.toLowerCase()],
-                  ["asc"]
+                  [sortByAttribute.toLowerCase(), "name"],
+                  ["asc", "asc"]
                 )}
               />
             </SectionContent>
@@ -114,8 +114,8 @@ function SectionCardsView({
             <GMServiceCardCollection
               items={_.orderBy(
                 services,
-                [sortByAttribute.toLowerCase()],
-                ["asc"]
+                [sortByAttribute.toLowerCase(), "name"],
+                ["asc", "asc"]
               )}
             />
           </SectionContent>

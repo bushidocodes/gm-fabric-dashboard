@@ -52,7 +52,7 @@ export default function RoutesTableToolbar({
             },
             {
               value: "errorCount",
-              label: "Error Count"
+              label: "Error %"
             },
             {
               value: "latency50",

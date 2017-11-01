@@ -1,21 +1,19 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Badge from "../../../../../../../components/Badge";
-
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
 
-import GMLineChart from "../../../../../../../../../components/GMLineChart";
-
-import TableRow from "../../../../../../../../../components/TableRow";
-import TableCol from "../../../../../../../../../components/TableCol";
-import SparklineCol from "../../../../../../../../../components/SparklineCol";
-import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
-import VizBar from "../../../../../../../../../components/VizBar";
-import VizFill from "../../../../../../../../../components/VizFill";
+import GMLineChart from "components/Main/components/GMLineChart";
+import TableRow from "components/Main/components/TableRow";
+import TableCol from "components/Main/components/TableCol";
+import SparklineCol from "components/Main/components/SparklineCol";
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
+import VizBar from "components/Main/components/VizBar";
+import VizFill from "components/Main/components/VizFill";
+import Badge from "components/Main/scenes/Instance/components/Badge";
 
 /**
  * A row of data in the Go RoutesTable
@@ -25,6 +23,7 @@ import VizFill from "../../../../../../../../../components/VizFill";
  */
 export default class RoutesTableLineItem extends Component {
   static propTypes = {
+    errorPercent: PropTypes.string.isRequired,
     errorsCount: PropTypes.number.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
@@ -45,18 +44,6 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    // force three decimal points at all times and return language sensitive representation of number (commas and periods)
-    let errorPercent = this.props.requests
-      ? ((1 -
-          (this.props.requests - this.props.errorsCount) /
-            this.props.requests) *
-          100
-        ).toLocaleString(undefined, {
-          maximumFractionDigits: 3,
-          minimumFractionDigits: 3
-        })
-      : 0;
-
     /**
     *
     * roundsTable.scss calculates the error percentage color based on the percentage value.
@@ -115,8 +102,8 @@ export default class RoutesTableLineItem extends Component {
         <TableCol textAlign={"right"}>{this.props.requests}</TableCol>
         <TableCol
           textAlign={"right"}
-          errorPercent={errorPercent}
-        >{`${errorPercent}%`}</TableCol>
+          errorPercent={this.props.errorPercent}
+        >{`${this.props.errorPercent}%`}</TableCol>
         <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
         <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
 

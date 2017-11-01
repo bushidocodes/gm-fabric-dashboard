@@ -1,10 +1,10 @@
 import { createSelector } from "reselect";
-import _ from "lodash";
 import { getLatestAttribute } from "../latestAttribute";
 import { getSparkLineOfNetChange } from "../sparklines";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 
 import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
+import { calculateErrorPercent, formatAsDecimalString } from "utils";
 
 // JVM - Specific Redux state
 const getCurrentThreads = state => state.threadsTable;
@@ -16,11 +16,7 @@ const getThreadsFilter = state => state.settings.threadsFilter;
    * returns language sensitive representation of number (commas and periods)
    */
 export const getErrorPercent = createSelector(getMetrics, metrics => {
-  if (Object.keys(metrics).length === 0)
-    return Number(0).toLocaleString(undefined, {
-      maximumFractionDigits: 3,
-      minimumFractionDigits: 3
-    });
+  if (Object.keys(metrics).length === 0) return formatAsDecimalString(0);
   const totalRequests =
     Number(getLatestAttribute(metrics, "http/requests") || 0) +
     Number(getLatestAttribute(metrics, "https/requests") || 0);
@@ -28,18 +24,9 @@ export const getErrorPercent = createSelector(getMetrics, metrics => {
     Number(getLatestAttribute(metrics, "http/success") || 0) +
     Number(getLatestAttribute(metrics, "https/success") || 0);
   if (totalRequests > 0) {
-    return ((totalRequests - totalSuccesses) /
-      totalRequests *
-      100
-    ).toLocaleString(undefined, {
-      maximumFractionDigits: 3,
-      minimumFractionDigits: 3
-    });
+    return calculateErrorPercent(totalRequests, totalRequests - totalSuccesses);
   } else {
-    return Number(0).toLocaleString(undefined, {
-      maximumFractionDigits: 3,
-      minimumFractionDigits: 3
-    });
+    return formatAsDecimalString(0);
   }
 });
 
@@ -65,10 +52,10 @@ export const getRoutesTable = createSelector(
             : `route${routePath}/${routeVerb}/status/2XX`;
         const totalRequests = getLatestAttribute(routesMetrics, requestsKey);
         const totalSuccesses = getLatestAttribute(routesMetrics, successesKey);
-        const errorPercent = _.round(
-          (totalRequests - totalSuccesses) / totalRequests * 100,
-          4
-        ).toFixed(4);
+        const errorPercent = calculateErrorPercent(
+          totalRequests,
+          totalRequests - totalSuccesses
+        );
         routesTable.push({
           ...baseObj,
           errorPercent,

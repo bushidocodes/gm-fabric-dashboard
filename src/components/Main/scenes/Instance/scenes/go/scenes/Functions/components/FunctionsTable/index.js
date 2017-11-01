@@ -2,10 +2,11 @@ import { PropTypes } from "prop-types";
 import React from "react";
 
 import FunctionsTableLineItem from "./components/LineItem";
-import Table from "../../../../../../../../components/Table";
-import TableHeader from "../../../../../../../../components/TableHeader";
-import TableCol from "../../../../../../../../components/TableCol";
-import TableBody from "../../../../../../../../components/TableBody";
+
+import Table from "components/Main/components/Table";
+import TableHeader from "components/Main/components/TableHeader";
+import TableCol from "components/Main/components/TableCol";
+import TableBody from "components/Main/components/TableBody";
 
 import { relativeReqPercent } from "utils";
 
@@ -39,6 +40,7 @@ export default function FunctionsTable({ funcs = [] }) {
           ({
             func,
             errorsCount,
+            errorPercent,
             inThroughput,
             outThroughput,
             latency50,
@@ -50,6 +52,7 @@ export default function FunctionsTable({ funcs = [] }) {
           }) => (
             <FunctionsTableLineItem
               errorsCount={errorsCount}
+              errorPercent={errorPercent}
               func={func}
               key={func}
               latency50={latency50}

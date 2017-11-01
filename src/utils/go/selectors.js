@@ -5,6 +5,7 @@ import { getLatestAttribute } from "../latestAttribute";
 import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 import { getSparkLineOfNetChange } from "../sparklines";
+import { calculateErrorPercent } from "utils";
 
 /**
  * A reselect selector that builds the data required to render the RoutesTable component
@@ -27,6 +28,8 @@ export const getRoutesTable = createSelector(
 
         const errorsCount = getLatestAttribute(routesMetrics, errorsCountKey);
         const requests = getLatestAttribute(routesMetrics, requestsKey);
+        // force three decimal points at all times and return language sensitive representation of number (commas and periods)
+        const errorPercent = calculateErrorPercent(requests, errorsCount);
         const inThroughput = getLatestAttribute(routesMetrics, inThroughputKey);
         const outThroughput = getLatestAttribute(
           routesMetrics,
@@ -46,6 +49,7 @@ export const getRoutesTable = createSelector(
           ...baseObj,
           verb: routeVerb,
           errorsCount,
+          errorPercent,
           inThroughput,
           outThroughput,
           latency50,
@@ -142,6 +146,7 @@ function _getFunctionsTable(funcs, funcMetrics) {
       funcMetrics,
       `function/${func}/requests`
     );
+    res.errorPercent = calculateErrorPercent(res.requests, res.errorsCount);
     return res;
   });
 }

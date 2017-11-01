@@ -1,20 +1,18 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
-import GMLineChart from "../../../../../../../../../components/GMLineChart";
 
-import TableRow from "../../../../../../../../../components/TableRow";
-import TableCol from "../../../../../../../../../components/TableCol";
-import SparklineCol from "../../../../../../../../../components/SparklineCol";
-import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
-
-import VizBar from "../../../../../../../../../components/VizBar";
-import VizFill from "../../../../../../../../../components/VizFill";
+import GMLineChart from "components/Main/components/GMLineChart";
+import TableRow from "components/Main/components/TableRow";
+import TableCol from "components/Main/components/TableCol";
+import SparklineCol from "components/Main/components/SparklineCol";
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
+import VizBar from "components/Main/components/VizBar";
+import VizFill from "components/Main/components/VizFill";
 
 /**
  * A row of data in the Go FunctionsTable
@@ -24,6 +22,7 @@ import VizFill from "../../../../../../../../../components/VizFill";
  */
 export default class FunctionsTableLineItem extends Component {
   static propTypes = {
+    errorPercent: PropTypes.string.isRequired,
     errorsCount: PropTypes.number.isRequired,
     func: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
@@ -43,18 +42,6 @@ export default class FunctionsTableLineItem extends Component {
   };
 
   render() {
-    // force three decimal points at all times and return language sensitive representation of number (commas and periods)
-    let errorPercent = this.props.requests
-      ? ((1 -
-          (this.props.requests - this.props.errorsCount) /
-            this.props.requests) *
-          100
-        ).toLocaleString(undefined, {
-          maximumFractionDigits: 3,
-          minimumFractionDigits: 3
-        })
-      : 0;
-
     return (
       <TableRow
         selectable={this.state.isOpen}
@@ -97,7 +84,8 @@ export default class FunctionsTableLineItem extends Component {
           </Sparklines>
         </SparklineCol>
         <TableCol>{this.props.requests}</TableCol>
-        <TableCol errorPercent={errorPercent}>{`${errorPercent}%`}</TableCol>
+        <TableCol errorPercent={this.props.errorPercent}>{`${this.props
+          .errorPercent}%`}</TableCol>
         <TableCol>{this.props.latency50}</TableCol>
         <TableCol>{this.props.latency99}</TableCol>
 

@@ -79,3 +79,23 @@ export const relativeReqPercent = (arrObj = [], key = "") => {
     _.extend({}, el, { relativeReqPercent: el[key] / max * 100 })
   );
 };
+
+/**
+ * Utility function to calculate and format a string containing the error percent
+ * of a metric
+ * @export
+ * @param {number} requests 
+ * @param {number} errors 
+ * @returns string
+ */
+export function calculateErrorPercent(requests, errors) {
+  const errorPercent = requests ? errors / requests * 100 : 0;
+  return formatAsDecimalString(errorPercent);
+}
+
+export function formatAsDecimalString(number, numberOfDecimals = 3) {
+  return number.toLocaleString(undefined, {
+    maximumFractionDigits: numberOfDecimals,
+    minimumFractionDigits: numberOfDecimals
+  });
+}
