@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import decipherLogo from "../../assets/decipherLogo.svg";
 import NavButton from "./../../../NavButton";
-import { ButtonGroup } from "./../../../GMButtons";
+import ButtonGroup from "components/ButtonGroup";
 
 import AppToolBarHeader from "./components/AppToolBarHeader";
 import BrandContainer from "./components/BrandContainer";

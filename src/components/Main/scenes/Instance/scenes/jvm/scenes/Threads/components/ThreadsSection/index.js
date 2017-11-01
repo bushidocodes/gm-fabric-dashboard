@@ -1,11 +1,12 @@
-import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+// Importing internal subcomponents
 import ThreadsTable from "./components/ThreadsTable";
+import ThreadsTableToolbar from "./components/ThreadsTableToolbar";
 
-import Button from "../../../../../../../../../Button.js";
+// Importing external deps from src as WebPack Modules directory
 import { getVisibleThreads, getThreadCounts } from "utils/jvm/selectors";
 
 /**
@@ -16,47 +17,17 @@ import { getVisibleThreads, getThreadCounts } from "utils/jvm/selectors";
 class ThreadsSection extends Component {
   static propTypes = {
     threadCounts: PropTypes.object,
-    threads: PropTypes.array
+    threads: PropTypes.array,
+    threadsFilter: PropTypes.string
   };
   render() {
-    const { threadCounts, threads } = this.props;
-    //TODO: figure out why there's an empty className on the parent DIV
+    const { threadCounts, threads, threadsFilter } = this.props;
     return (
-      <div className="">
-        <div className="toolbar">
-          <div className="toolbar-center">
-            <Button
-              clickAction={() => Actions.setThreadsFilter("all")}
-              disabled={!threadCounts.all}
-              label={"All Threads"}
-              suffix={threadCounts.all}
-              tabIndex={0}
-            />
-            <span className="uk-button-group uk-margin-left">
-              <Button
-                clickAction={() => Actions.setThreadsFilter("active")}
-                disabled={!threadCounts.active}
-                label={"Active"}
-                suffix={threadCounts.active}
-                tabIndex={0}
-              />
-              <Button
-                clickAction={() => Actions.setThreadsFilter("idle")}
-                disabled={!threadCounts.idle}
-                label={"Idle"}
-                suffix={threadCounts.idle}
-                tabIndex={0}
-              />
-              <Button
-                clickAction={() => Actions.setThreadsFilter("stopped")}
-                disabled={!threadCounts.stopped}
-                label={"Stopped"}
-                suffix={threadCounts.stopped}
-                tabIndex={0}
-              />
-            </span>
-          </div>
-        </div>
+      <div>
+        <ThreadsTableToolbar
+          threadCounts={threadCounts}
+          threadsFilter={threadsFilter}
+        />
         <ThreadsTable filteredThreadData={threads} />
       </div>
     );
@@ -65,7 +36,8 @@ class ThreadsSection extends Component {
 
 const mapStateToProps = state => ({
   threads: getVisibleThreads(state),
-  threadCounts: getThreadCounts(state)
+  threadCounts: getThreadCounts(state),
+  threadsFilter: state.settings.threadsFilter
 });
 
 export default connect(mapStateToProps)(ThreadsSection);

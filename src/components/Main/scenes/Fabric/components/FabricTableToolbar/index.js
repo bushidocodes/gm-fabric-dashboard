@@ -1,18 +1,16 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Toolbar from "../../../../components/Toolbar";
-import ToolbarLeft from "../../../../components/ToolbarLeft";
-import ToolbarRight from "../../../../components/ToolbarRight";
-import ToolbarCenter from "../../../../components/ToolbarCenter";
-import {
-  ButtonRoundedLeft,
-  ButtonRoundedRight,
-  ButtonSecondaryText
-} from "../../../../../GMButtons";
 import SearchInput from "./components/GMSearchInput";
 import List from "images/icons/list.svg";
 import Card from "images/icons/card.svg";
-import GMSelect from "../../../../components/GMSelect";
+import StyledButtonRoundedLeft from "components/StyledButtonRoundedLeft";
+import StyledButtonRoundedRight from "components/StyledButtonRoundedRight";
+import SecondaryText from "components/SecondaryText";
+import GMSelect from "components/Main/components/GMSelect";
+import Toolbar from "components/Main/components/Toolbar";
+import ToolbarLeft from "components/Main/components/ToolbarLeft";
+import ToolbarRight from "components/Main/components/ToolbarRight";
+import ToolbarCenter from "components/Main/components/ToolbarCenter";
 
 export default class FabricTableToolbar extends Component {
   static propTypes = {
@@ -52,20 +50,20 @@ export default class FabricTableToolbar extends Component {
           </form>
         </ToolbarLeft>
         <ToolbarCenter>
-          <ButtonRoundedLeft
+          <StyledButtonRoundedLeft
             selected={displayType === "Card"}
             onClick={() => setDisplayType("Card")}
           >
             <img alt="Select Card View" style={{ height: "22px" }} src={Card} />
             <span>Cards</span>
-          </ButtonRoundedLeft>
-          <ButtonRoundedRight
+          </StyledButtonRoundedLeft>
+          <StyledButtonRoundedRight
             selected={displayType === "Table"}
             onClick={() => setDisplayType("Table")}
           >
             <img alt="Select List View" style={{ height: "22px" }} src={List} />
             <span>Table</span>
-          </ButtonRoundedRight>
+          </StyledButtonRoundedRight>
         </ToolbarCenter>
         <ToolbarRight>
           <GMSelect
@@ -112,7 +110,7 @@ export default class FabricTableToolbar extends Component {
             valueRenderer={val => (
               <span>
                 <span>Group </span>
-                <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+                <SecondaryText>{val.label}</SecondaryText>
               </span>
             )}
           />
@@ -136,7 +134,7 @@ export default class FabricTableToolbar extends Component {
               valueRenderer={val => (
                 <span>
                   <span>Sort </span>
-                  <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+                  <SecondaryText>{val.label}</SecondaryText>
                 </span>
               )}
             />

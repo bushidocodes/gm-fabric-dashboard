@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  BORDER_RADIUS_BASE,
-  FONT_SIZE_BASE,
-  FONT_SIZE_SM
-} from "style/styleVariables";
+import { BORDER_RADIUS_BASE, FONT_SIZE_BASE } from "style/styleVariables";
 import { spacingScale } from "style/styleFunctions";
 
 const BUTTON_COLOR_BASE = "#ffffff";
@@ -12,15 +8,7 @@ const BUTTON_COLOR_ACTIVE = "#ececec";
 const BUTTON_COLOR_HOVER_ACTIVE = "#dddddd";
 const BUTTON_COLOR_ACTIVE_ACTIVE = "#D1D1D1";
 
-export const ButtonGroup = styled.div`
-  * + * {
-    margin-left: ${spacingScale(0.5)};
-  }
-  ${props =>
-    props.toolbar ? `padding: ${spacingScale(0)} ${spacingScale(1)};` : ""};
-`;
-
-export const StyledButton = styled.button`
+const StyledButton = styled.button`
   background-color: ${props =>
     props.selected ? BUTTON_COLOR_ACTIVE : BUTTON_COLOR_BASE};
   box-sizing: border-box;
@@ -34,7 +22,7 @@ export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
   overflow: hidden;
   height: ${spacingScale(3.5)};
   border: 0px;
@@ -60,22 +48,4 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const ButtonRoundedLeft = StyledButton.extend`
-  border-top-left-radius: ${BORDER_RADIUS_BASE};
-  border-bottom-left-radius: ${BORDER_RADIUS_BASE};
-  padding-left: ${spacingScale(1)};
-  padding-right: ${spacingScale(1)};
-`;
-
-export const ButtonRoundedRight = StyledButton.extend`
-  border-top-right-radius: ${BORDER_RADIUS_BASE};
-  border-bottom-right-radius: ${BORDER_RADIUS_BASE};
-  padding-left: ${spacingScale(1)};
-  padding-right: ${spacingScale(1)};
-`;
-
-export const ButtonSecondaryText = styled.span`
-  margin-left: ${spacingScale(0.5)};
-  opacity: 0.6;
-  font-size: ${FONT_SIZE_SM};
-`;
+export default StyledButton;

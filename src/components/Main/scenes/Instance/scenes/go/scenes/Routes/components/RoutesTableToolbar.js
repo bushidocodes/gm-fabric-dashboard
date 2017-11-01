@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import GMSelect from "../../../../../../../components/GMSelect";
-import { ButtonSecondaryText } from "../../../../../../../../GMButtons";
+import GMSelect from "components/Main/components/GMSelect";
+import SecondaryText from "components/SecondaryText";
 
 RoutesTableToolbar.propTypes = {
   filterString: PropTypes.string.isRequired,
@@ -70,7 +70,7 @@ export default function RoutesTableToolbar({
           valueRenderer={val => [
             <span>
               <span>Sort </span>
-              <ButtonSecondaryText>{val.label}</ButtonSecondaryText>
+              <SecondaryText>{val.label}</SecondaryText>
             </span>
           ]}
         />

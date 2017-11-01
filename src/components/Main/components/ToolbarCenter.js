@@ -4,6 +4,7 @@ const ToolbarCenter = styled.div`
   flex: 1 1 33%;
   display: flex;
   justify-content: center;
+  flex-direction: row;
 `;
 
 export default ToolbarCenter;
