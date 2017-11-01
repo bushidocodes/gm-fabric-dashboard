@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import AppContent from "./components/AppContent";
-import AppContentView from "./components/AppContentView";
 
 import FabricRouter from "./scenes/Fabric";
 import InstanceRouter from "./scenes/Instance";
@@ -73,18 +72,16 @@ class App extends Component {
 
   render() {
     return (
-      <AppContent>
+      <AppContent id="main-content" tabIndex="0">
         {/* main-content id is here so that SkipNav can focus on it */}
-        <AppContentView id="main-content" tabIndex="0">
-          {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
-          {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
-          {/* index.html via the head utils */}
-          {getFabricServer() ? (
-            <FabricRouter />
-          ) : (
-            <InstanceRouter runtime={this.props.runtime} />
-          )}
-        </AppContentView>
+        {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
+        {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
+        {/* index.html via the head utils */}
+        {getFabricServer() ? (
+          <FabricRouter />
+        ) : (
+          <InstanceRouter runtime={this.props.runtime} />
+        )}
       </AppContent>
     );
   }

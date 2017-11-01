@@ -3,6 +3,8 @@ import { APP_FOOTER_HEIGHT } from "./../style/styleVariables";
 
 // toolbar wrapper - do not display scrollbar
 const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   padding-left: 0;
   padding-right: 0;
