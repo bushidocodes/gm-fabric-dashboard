@@ -13,24 +13,21 @@ $toolbar-height: spacing-scale(7);
   bottom: 0;
   left: 0;
   font-family: $font-stack-data;
-  padding-top: spacing-scale(5);
   line-height: 1.2;
   height: 100%;
   border-radius: $border-radius-base;
+  display: flex;
+  flex-direction: column;
 }
 
 .inspector-data {
+  flex: 1 1 100%;
+  width: 100%;
   overflow-scroll: touch;
   margin: 0 auto;
   overflow-y: scroll;
   word-break: break-all;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 0 spacing-scale(1);
-  z-index: 1;
 }
 
 .inspector-search {
@@ -75,15 +72,11 @@ $toolbar-height: spacing-scale(7);
 }
 
 .inspector-toolbar {
-  z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $toolbar-height;
+  flex: 0 0 $toolbar-height;
   padding: spacing-scale(1);
   display: flex;
   align-items: stretch;
+  box-shadow: 0 1px 0 0 edge-color($color-content-background);
 }
 
 .inspector-item {
@@ -94,9 +87,10 @@ $toolbar-height: spacing-scale(7);
   word-wrap: break-word;
   transition: all 0.2s ease;
   border-radius: $border-radius-base;
+  will-change: transform;
 
   &:first-child {
-    margin-top: $toolbar-height;
+    margin-top: spacing-scale(1);
   }
 
   &:hover {
