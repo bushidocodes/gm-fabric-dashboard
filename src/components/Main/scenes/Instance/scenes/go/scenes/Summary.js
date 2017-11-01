@@ -14,7 +14,12 @@ import ErrorBoundary from "components/library/ErrorBoundary";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getServiceName } from "utils/head";
-import { trimID, convertMS } from "utils";
+import {
+  trimID,
+  convertMS,
+  calculateErrorPercent,
+  formatAsDecimalString
+} from "utils";
 
 /**
  * Static Summary page for Go runtime
@@ -75,15 +80,10 @@ class SummaryGrid extends Component {
     } = this.props;
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
-    const errorPercent =
-      allRequests > 0
-        ? ((1 - (allRequests - allErrors) / allRequests) *
-            100
-          ).toLocaleString(undefined, {
-            maximumFractionDigits: 3,
-            minimumFractionDigits: 3
-          })
-        : 0;
+    const errorPercent = allRequests
+      ? calculateErrorPercent(allRequests, allErrors)
+      : formatAsDecimalString(0);
+
     const memoryUsedPercent = getLatestAttribute(
       metrics,
       "memory/used_percent",

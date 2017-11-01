@@ -119,10 +119,12 @@ export function rowChildSpacing() {
  * @returns {string} - color for the errorPercent text
  */
 
+// TO DO: enhance color function that returns a range of color based on error percent and background color
+
 export function errorColor(errorPercent = 1) {
   const percent =
     typeof errorPercent === "number" ? errorPercent : parseFloat(errorPercent);
-  if (percent < 0.1) return "green";
-  else if (percent > 0.1 && percent < 1) return "yellow";
-  else return "red";
+  if (percent < 0.1) return "darkgreen";
+  else if (percent > 0.1 && percent < 1) return "#666600";
+  else return "darkred";
 }

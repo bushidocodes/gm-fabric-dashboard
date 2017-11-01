@@ -45,13 +45,6 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    let errorPercent = Number(this.props.errorPercent).toLocaleString(
-      undefined,
-      {
-        maximumFractionDigits: 3,
-        minimumFractionDigits: 3
-      }
-    );
     return (
       <TableRow
         selectable={this.state.isOpen}
@@ -97,8 +90,8 @@ export default class RoutesTableLineItem extends Component {
         <TableCol textAlign={"right"}>
           {this.props.totalRequests.toLocaleString()}
         </TableCol>
-        <TableCol textAlign={"right"} errorPercent={errorPercent}>
-          {errorPercent}
+        <TableCol textAlign={"right"} errorPercent={this.props.errorPercent}>
+          {this.props.errorPercent}%
         </TableCol>
         <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
         <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>

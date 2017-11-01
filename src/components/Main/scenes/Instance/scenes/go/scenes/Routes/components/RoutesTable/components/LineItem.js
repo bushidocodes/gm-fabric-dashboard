@@ -44,19 +44,6 @@ export default class RoutesTableLineItem extends Component {
   };
 
   render() {
-    /**
-    *
-    * roundsTable.scss calculates the error percentage color based on the percentage value.
-    the mix function in scss takes value of percentage so it will be on the green scale up to 30%,
-    brown between 30%~60%, then get closer to red above 70%.
-
-    * className={
-            "routes-table-error-percent routes-table-monospace err-pc-" .....
-      currently using the scale of 0 to 10 to render color.
-
-    * TO DO:  refactor the coloring contrast for error percent display as styled-components.  related to issue #368
-    ...< 0.1% error rate is green, > 0.1% and < 1% is yellow, and >1% is red
-    */
     return (
       <TableRow
         selectable={this.state.isOpen}
