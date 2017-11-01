@@ -7,4 +7,3 @@ import "./ServiceCard.js";
 import "./ServiceListItem.js";
 import "./ShapeIcons.js";
 import "./StatusIcons.js";
-import "./SummaryCard.js";

@@ -7,15 +7,9 @@ import styled from "styled-components";
 
 import GMServiceList from "./components/GMServiceList";
 import GMServiceHeader from "../../components/GMServiceHeader";
-import {
-  COLOR_CONTENT_BACKGROUND,
-  ZINDEX_STICKY
-} from "../../../../../../../../style/styleVariables";
-import {
-  edgeColor,
-  spacingScale
-} from "../../../../../../../../style/styleFunctions";
-
+import { COLOR_CONTENT_BACKGROUND, ZINDEX_STICKY } from "style/styleVariables";
+import { edgeColor, spacingScale } from "style/styleFunctions";
+import { withRouter } from "react-router-dom";
 // styled components
 const SectionContainer = styled.div`
   display: flex;
@@ -48,23 +42,36 @@ const SectionContent = styled.div`
 
 GMServiceListView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,
+  location: PropTypes.object,
   services: PropTypes.array.isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
-export default function GMServiceListView({
+function GMServiceListView({
   groupByAttribute,
   sortByAttribute,
-  services
+  services,
+  location: { pathname }
 }) {
   // get unique headers
   if (groupByAttribute !== "None") {
-    const dataGroupedByHeader = _.groupBy(services, item => item.headerTitle);
-    // If we are grouping by status, we always want to group our services in the order "Down, Warning, Stable"
-    const headers =
-      groupByAttribute === "Status"
-        ? microserviceStatuses
-        : Object.keys(dataGroupedByHeader);
+    const dataGroupedByHeader = _.groupBy(services, item =>
+      item.headerTitle.toLowerCase()
+    );
+    const headerTitles = Object.keys(dataGroupedByHeader);
+    const statusSort = pathname.slice(1);
+
+    let headers;
+
+    // If we pulled a status from the path, use that as the header
+    // Else if we are on the main fabric grid, use microServiceStatuses as the headers
+    if (statusSort && groupByAttribute === "Status") {
+      headers = [statusSort];
+    } else if (!statusSort && groupByAttribute === "Status") {
+      headers = microserviceStatuses.map(item => item.toLowerCase());
+    } else {
+      headers = headerTitles;
+    }
 
     return (
       <div>
@@ -108,3 +115,5 @@ export default function GMServiceListView({
     );
   }
 }
+
+export default withRouter(GMServiceListView);

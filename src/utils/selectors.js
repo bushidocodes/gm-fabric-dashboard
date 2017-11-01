@@ -9,7 +9,7 @@ import {
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector
-import SidebarCard from "../components/Sidebar/components/SidebarCard";
+import Tab from "../../src/components/AppHeader/components/Tab";
 
 // Reselect Input Selectors
 
@@ -69,7 +69,7 @@ export const getRuntime = createSelector(
 /**
  * Reselect selector that generates SidebarCard components from JSON
  */
-export const generateSidebarCards = createSelector(
+export const generateHeaderTabs = createSelector(
   [
     getDashboards,
     getMetrics,
@@ -108,14 +108,13 @@ export const generateSidebarCards = createSelector(
           }
         }
         return (
-          <SidebarCard
+          <Tab
             chartData={chartData}
             chartTitle={chartTitle}
             href={`${prefix}/${key}`}
             icon={value.summaryCard.icon}
             key={`/${key}`}
             lines={lines}
-            tabIndex={0}
             title={value.name}
           />
         );
@@ -176,7 +175,7 @@ function _buildRoutesTree(routeMetrics) {
  */
 
 // get service values and return the mapped data
-export const getSideBarContent = createSelector(getServices, services =>
+export const getAppHeaderContent = createSelector(getServices, services => {
   _.values(services).map(service => {
     return {
       name: service.name,
@@ -188,8 +187,41 @@ export const getSideBarContent = createSelector(getServices, services =>
         service.maximum
       )
     };
-  })
-);
+  });
+});
+
+/**
+ * getStatusCount is a utility function that takes an array of service objects and
+ * returns an object with a count for each status
+ * @param {Object[]}
+ * @returns {Object}
+ */
+export const getStatusCount = createSelector(getServices, services => {
+  let stableServicesCount = 0,
+    warningServicesCount = 0,
+    downServicesCount = 0,
+    status;
+  _.values(services).forEach(service => {
+    status = computeStatus(
+      service.instances.length,
+      service.minimum,
+      service.maximum
+    );
+    if (status === "Stable") {
+      ++stableServicesCount;
+    } else if (status === "Warning") {
+      ++warningServicesCount;
+    } else {
+      ++downServicesCount;
+    }
+  });
+  return {
+    down: downServicesCount,
+    warning: warningServicesCount,
+    stable: stableServicesCount,
+    total: _.values(services).length
+  };
+});
 
 /**
  * Computes and returns string representation of status for a service

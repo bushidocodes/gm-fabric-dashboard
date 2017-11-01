@@ -31,4 +31,5 @@ export const CardFooter = styled.div`
   justify-content: space-between;
   z-index: 10;
   pointer-events: none;
+  letter-spacing: 0.03em;
 `;

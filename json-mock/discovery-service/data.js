@@ -103,6 +103,25 @@ const getRandomService = (quantity = 150) => {
       }
     ]
   });
+  arr.push({
+    name: "Grace Hopper Battleship Control Program",
+    version: "1.0",
+    owner: _.sample(serviceNamePrefix),
+    capability: "System of Record",
+    minimum: 1,
+    maximum: _.random(() => this.minimum, 7),
+    documentation: "https://en.wikipedia.org/wiki/Grace_Hopper",
+    authorized: true,
+    metered: false,
+    threaded: false,
+    runtime: "COBOL",
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      }
+    ]
+  });
   for (let i = 0; i < quantity; i++) {
     arr.push({
       name: generateRandomServiceName(),
