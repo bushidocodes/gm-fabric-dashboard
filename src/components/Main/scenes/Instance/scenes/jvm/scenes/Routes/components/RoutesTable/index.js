@@ -35,6 +35,12 @@ export default function RoutesTable({ routes = [] }) {
         <TableCol header textAlign={"right"}>
           Error %
         </TableCol>
+        <TableCol header textAlign={"right"}>
+          Latency 50%
+        </TableCol>
+        <TableCol header textAlign={"right"}>
+          Latency 99%
+        </TableCol>
       </TableHeader>
       <TableBody>
         {routes.map(
@@ -43,6 +49,8 @@ export default function RoutesTable({ routes = [] }) {
             verb,
             relativeReqPercent,
             errorPercent,
+            latency50,
+            latency99,
             requestsPerSecond_dygraph,
             requestsPerSecond_sparkline,
             totalRequests
@@ -50,6 +58,8 @@ export default function RoutesTable({ routes = [] }) {
             <RoutesTableLineItem
               errorPercent={errorPercent}
               key={`${route}/${verb}`}
+              latency50={latency50}
+              latency99={latency99}
               relativeReqPercent={relativeReqPercent}
               requestsPerSecond_dygraph={requestsPerSecond_dygraph}
               requestsPerSecond_sparkline={requestsPerSecond_sparkline}

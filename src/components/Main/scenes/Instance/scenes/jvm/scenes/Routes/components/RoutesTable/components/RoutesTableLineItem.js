@@ -26,6 +26,8 @@ import VizFill from "../../../../../../../../../components/VizFill";
 export default class RoutesTableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
+    latency50: PropTypes.number.isRequired,
+    latency99: PropTypes.number.isRequired,
     relativeReqPercent: PropTypes.number,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
@@ -98,6 +100,8 @@ export default class RoutesTableLineItem extends Component {
         <TableCol textAlign={"right"} errorPercent={errorPercent}>
           {errorPercent}
         </TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
 
         <TableDrawerCollapse
           isOpened={this.state.isOpen}

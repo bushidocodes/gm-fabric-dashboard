@@ -83,12 +83,13 @@ export default class FunctionsTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol>{this.props.requests}</TableCol>
-        <TableCol errorPercent={this.props.errorPercent}>{`${this.props
-          .errorPercent}%`}</TableCol>
-        <TableCol>{this.props.latency50}</TableCol>
-        <TableCol>{this.props.latency99}</TableCol>
-
+        <TableCol textAlign={"right"}>{this.props.requests}</TableCol>
+        <TableCol
+          textAlign={"right"}
+          errorPercent={this.props.errorPercent}
+        >{`${this.props.errorPercent}%`}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
+        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {

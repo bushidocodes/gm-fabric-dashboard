@@ -50,8 +50,13 @@ export const getRoutesTable = createSelector(
           routePath === "/"
             ? `route/${routeVerb}/status/2XX`
             : `route${routePath}/${routeVerb}/status/2XX`;
+
+        const latency50Key = `route${routePath}/${routeVerb}/time.p50`;
+        const latency99Key = `route${routePath}/${routeVerb}/time.p99`;
         const totalRequests = getLatestAttribute(routesMetrics, requestsKey);
         const totalSuccesses = getLatestAttribute(routesMetrics, successesKey);
+        const latency50 = getLatestAttribute(routesMetrics, latency50Key);
+        const latency99 = getLatestAttribute(routesMetrics, latency99Key);
         const errorPercent = calculateErrorPercent(
           totalRequests,
           totalRequests - totalSuccesses
@@ -61,6 +66,8 @@ export const getRoutesTable = createSelector(
           errorPercent,
           totalRequests,
           verb: routeVerb,
+          latency50,
+          latency99,
           requestsPerSecond_sparkline: getSparkLineOfNetChange(
             routesMetrics,
             requestsKey

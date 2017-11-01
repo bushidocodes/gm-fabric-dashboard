@@ -30,10 +30,18 @@ export default function FunctionsTable({ funcs = [] }) {
       <TableHeader>
         <TableCol header>Function</TableCol>
         <TableCol header>Requests/sec</TableCol>
-        <TableCol header>Requests</TableCol>
-        <TableCol header>Error %</TableCol>
-        <TableCol header>Latency 50%</TableCol>
-        <TableCol header>Latency 99%</TableCol>
+        <TableCol header textAlign={"right"}>
+          Requests
+        </TableCol>
+        <TableCol header textAlign={"right"}>
+          Error %
+        </TableCol>
+        <TableCol header textAlign={"right"}>
+          Latency 50%
+        </TableCol>
+        <TableCol header textAlign={"right"}>
+          Latency 99%
+        </TableCol>
       </TableHeader>
       <TableBody>
         {funcs.map(
