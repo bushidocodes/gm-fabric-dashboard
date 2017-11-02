@@ -61,7 +61,7 @@ const SectionContent = styled.div`
     props.flex
       ? "display: flex; flex-direction: row; justify-content: center;"
       : ""};
-  > #ctrl-slider {
+  > .control-group-polling-interval {
     flex: 0 1 50%;
   }
   > #ctrl-btn {
