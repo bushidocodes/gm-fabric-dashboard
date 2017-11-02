@@ -11,6 +11,7 @@ const ContentItems = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex-basis: 100%;
 `;
 
 /**
