@@ -31,23 +31,6 @@ export function getServiceName() {
 }
 
 /**
- * getBackButtonUrl is a utility function that extracts the back button's target
- * URL from the HEAD of the index.html file.
- * @returns {String}
- */
-export function getBackButtonUrl() {
-  // Explicitly return null if running with Fabric Server
-  if (getFabricServer()) return null;
-  const backButtonUrl = document.head.querySelector("[property=backButtonUrl]")
-    .content;
-  if (backButtonUrl === "__BACK_BUTTON_URL__") {
-    return "http://www.deciphernow.com/";
-  } else {
-    return backButtonUrl;
-  }
-}
-
-/**
  * getRuntime is a utility function that extracts the runtime from the HEAD of the index.html file. It's used to determine
  * how the app should scrape metrics and render React components
  * @returns {String}
