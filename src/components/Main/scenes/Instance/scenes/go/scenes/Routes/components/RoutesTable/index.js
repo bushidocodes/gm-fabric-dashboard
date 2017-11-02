@@ -28,7 +28,9 @@ export default function RoutesTable({ routes = [] }) {
   return (
     <Table>
       <TableHeader>
-        <TableCol header>Route</TableCol>
+        <TableCol header customFlex="1 1 20%">
+          Route
+        </TableCol>
         <TableCol header>Requests/s</TableCol>
         <TableCol header textAlign={"right"}>
           Requests

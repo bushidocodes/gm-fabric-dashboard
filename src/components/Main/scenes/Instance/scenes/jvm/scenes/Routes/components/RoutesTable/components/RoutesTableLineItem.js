@@ -58,7 +58,7 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol vizBar>
+        <TableCol vizBar customFlex="1 1 20%">
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
           <VizBar>

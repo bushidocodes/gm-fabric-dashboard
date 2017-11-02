@@ -8,7 +8,10 @@ import {
 
 // text-align aligns to left unless specified otherwise.  pass 'right' or 'center'
 const TableCol = styled.div`
-  flex: ${props => (props.sm ? "1 1 5%" : props.lg ? "1 1 30%" : "1 1 15%")};
+  flex: ${props =>
+    props.sm
+      ? "1 1 5%"
+      : props.lg ? "1 1 30%" : props.customFlex ? props.customFlex : "1 1 15%"};
   min-height: ${spacingScale(4.5)};
   ${props => (props.header ? `${rowChildSpacing()}` : "")};
   ${props => (props.vizBar ? `position:relative` : "")};
