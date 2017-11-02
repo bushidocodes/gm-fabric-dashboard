@@ -4,12 +4,12 @@ import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, boolean, object } from "@storybook/addon-knobs";
 
-import AppToolBar from "../src/components/AppHeader/components/AppToolBar";
-import Tab from "../src/components/AppHeader/components/Tab";
-import TabNav from "../src/components/AppHeader/components/TabNav";
-import TabGroup from "../src/components/AppHeader/components/TabGroup";
-import AppHeaderContainer from "../src/components/AppHeader/components/AppHeaderContainer";
-import Banner from "../src/components/AppHeader/components/Banner";
+import AppToolBar from "./components/AppToolBar";
+import Tab from "./components/Tab";
+import TabNav from "./components/TabNav";
+import TabGroup from "./components/TabGroup";
+import AppHeaderContainer from "./components/AppHeaderContainer";
+import Banner from "./components/Banner";
 
 const mockTabs = [
   {

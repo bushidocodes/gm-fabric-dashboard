@@ -2,7 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import GMServiceHeader from "../src/components/Main/scenes/Fabric/components/FabricMainView/components/GMServiceHeader.js";
+import GMServiceHeader from "./GMServiceHeader.js";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 const options = { down: "Down", warning: "Warning", stable: "Stable" };

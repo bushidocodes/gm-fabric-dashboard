@@ -3,7 +3,7 @@ import React from "react";
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
 
-import GMServiceList from "../src/components/Main/scenes/Fabric/components/FabricMainView/scene/Table/components/GMServiceList";
+import GMServiceList from "./index.js";
 
 storiesOf("Service List Collection", module)
   .addDecorator(StoryRouter())

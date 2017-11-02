@@ -3,7 +3,7 @@ import React from "react";
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
 
-import GMServiceCardCollection from "../src/components/Main/scenes/Fabric/components/FabricMainView/scene/Card/components/GMServiceCardCollection";
+import GMServiceCardCollection from "./index.js";
 
 // mock data is at the end of file
 storiesOf("Service Cards Collection", module)

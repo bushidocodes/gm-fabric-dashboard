@@ -3,8 +3,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, boolean, object } from "@storybook/addon-knobs";
 
-import ReadoutGroup from "../src/components/Main/components/ReadoutGroup";
-import Readout from "../src/components/Main/components/Readout";
+import ReadoutGroup from "./ReadoutGroup";
+import Readout from "./Readout";
 
 const mockReadoutItem = [
   {

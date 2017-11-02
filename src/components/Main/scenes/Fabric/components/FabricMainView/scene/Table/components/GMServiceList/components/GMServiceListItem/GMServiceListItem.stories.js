@@ -4,7 +4,7 @@ import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 
-import GMServiceListItem from "../src/components/Main/scenes/Fabric/components/FabricMainView/scene/Table/components/GMServiceList/components/GMServiceListItem";
+import GMServiceListItem from "./index.js";
 
 const serviceStatus = ["Stable", "Warning", "Down"];
 
