@@ -47,6 +47,7 @@ export const COLOR_CONTENT = contrastColor(COLOR_CONTENT_BACKGROUND, 0.875);
 export const COLOR_CONTENT_MUTED = contrastColor(COLOR_CONTENT_BACKGROUND, 0.7);
 
 export const APP_FOOTER_HEIGHT = "32px";
+export const CONTENT_MAX_WIDTH = "1300px";
 
 // Typography
 

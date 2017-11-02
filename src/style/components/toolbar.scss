@@ -11,9 +11,27 @@ $toolbar-background-color: contrast-color($color-content-background, 4%);
   align-items: center;
   flex-direction: row;
   background-color: $toolbar-background-color;
-  box-shadow: inset 0 1px edge-color($toolbar-background-color),
-    inset 0 -1px edge-color($toolbar-background-color);
   padding: spacing-scale(0.25) spacing-scale(2);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  height: spacing-scale(5);
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: inherit;
+    background-color: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  > * {
+    z-index: 3;
+  }
 
   .toolbar-left {
     flex: 1 1 50%;

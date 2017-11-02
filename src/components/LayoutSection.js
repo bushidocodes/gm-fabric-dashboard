@@ -5,6 +5,7 @@ import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_CONTENT,
   COLOR_CONTENT_BACKGROUND,
+  CONTENT_MAX_WIDTH,
   FONT_SIZE_LG
 } from "style/styleVariables";
 
@@ -22,11 +23,20 @@ const LayoutSectionWrap = styled.section`
   flex-direction: column;
   align-items: stretch;
   color: ${COLOR_CONTENT.string()};
+
+  &:first-of-type {
+    > * {
+      border-top: 0;
+    }
+  }
 `;
 const Header = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 0 auto;
+  max-width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
   padding: ${(spacingScale(1), spacingScale(2))};
   border-top: 1px solid
     ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.15).string()};
@@ -44,6 +54,9 @@ const SectionTitle = styled.h3`
 //the id selectors here are a fix until view-app-settings.scss is refactored
 const SectionContent = styled.div`
   padding: ${spacingScale(1)};
+  margin: 0 auto;
+  max-width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
   ${props =>
     props.flex
       ? "display: flex; flex-direction: row; justify-content: center;"

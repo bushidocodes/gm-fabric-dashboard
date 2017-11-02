@@ -7,7 +7,11 @@ import styled from "styled-components";
 
 import GMServiceList from "./components/GMServiceList";
 import GMServiceHeader from "../../components/GMServiceHeader";
-import { COLOR_CONTENT_BACKGROUND, ZINDEX_STICKY } from "style/styleVariables";
+import {
+  COLOR_CONTENT_BACKGROUND,
+  ZINDEX_STICKY,
+  CONTENT_MAX_WIDTH
+} from "style/styleVariables";
 import { edgeColor, spacingScale } from "style/styleFunctions";
 import { withRouter } from "react-router-dom";
 // styled components
@@ -26,18 +30,23 @@ const SectionContainer = styled.div`
 const SectionHeader = styled.div`
   width: 100%;
   display: flex;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 ${spacingScale(2)};
   position: sticky;
   top: 0;
   z-index: ${ZINDEX_STICKY};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
+  max-width: ${CONTENT_MAX_WIDTH};
 `;
 
 const SectionContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 0 ${spacingScale(1)};
+  max-width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 GMServiceListView.propTypes = {

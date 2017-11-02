@@ -5,6 +5,11 @@
 // Styles
 
 .thread-table {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
   > .thread-table-body > li,
   > .thread-table-header {
     > .thread-table-id {

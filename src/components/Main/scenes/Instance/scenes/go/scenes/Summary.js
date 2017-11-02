@@ -6,20 +6,13 @@ import _ from "lodash";
 
 import GMLineChart from "../../../../../components/GMLineChart";
 import LayoutSection from "../../../../../../LayoutSection";
-import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ErrorBoundary from "components/library/ErrorBoundary";
 
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
-import { getServiceName } from "utils/head";
-import {
-  trimID,
-  convertMS,
-  calculateErrorPercent,
-  formatAsDecimalString
-} from "utils";
+import { convertMS, calculateErrorPercent, formatAsDecimalString } from "utils";
 
 /**
  * Static Summary page for Go runtime
@@ -72,12 +65,7 @@ class SummaryGrid extends Component {
   }
 
   render() {
-    const {
-      metrics,
-      selectedInstance,
-      selectedService,
-      selectedServiceVersion
-    } = this.props;
+    const { metrics } = this.props;
     const allRequests = getLatestAttribute(metrics, "all/requests");
     const allErrors = getLatestAttribute(metrics, "all/errors.count");
     const errorPercent = allRequests
@@ -102,12 +90,6 @@ class SummaryGrid extends Component {
       (window.location.protocol === "https:" ? 443 : 80);
     return (
       <ErrorBoundary>
-        <PageTitle
-          title={`${selectedService ||
-            getServiceName()} ${selectedServiceVersion} : ${trimID(
-            selectedInstance
-          )}`}
-        />
         <LayoutSection title={"Vitals"}>
           <ReadoutGroup>
             <Readout

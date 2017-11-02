@@ -6,15 +6,13 @@ import _ from "lodash";
 
 import LayoutSection from "../../../../../../LayoutSection";
 import GMLineChart from "../../../../../components/GMLineChart";
-import PageTitle from "../../../components/PageTitle";
 import Readout from "../../../../../components/Readout";
 import ReadoutGroup from "../../../../../components/ReadoutGroup";
 import ErrorBoundary from "components/library/ErrorBoundary";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getErrorPercent } from "utils/jvm/selectors";
-import { getServiceName } from "utils/head";
-import { trimID, convertMS } from "utils";
+import { convertMS } from "utils";
 
 class SummaryGrid extends Component {
   static propTypes = {
@@ -63,13 +61,7 @@ class SummaryGrid extends Component {
   }
 
   render() {
-    const {
-      errorPercent,
-      metrics,
-      selectedInstance,
-      selectedService,
-      selectedServiceVersion
-    } = this.props;
+    const { errorPercent, metrics } = this.props;
     const hostname = window.location.hostname;
     const port =
       window.location.port ||
@@ -77,12 +69,6 @@ class SummaryGrid extends Component {
 
     return (
       <ErrorBoundary>
-        <PageTitle
-          title={`${selectedService ||
-            getServiceName()} ${selectedServiceVersion} : ${trimID(
-            selectedInstance
-          )}`}
-        />
         <LayoutSection title={"Vitals"}>
           <ReadoutGroup>
             <Readout

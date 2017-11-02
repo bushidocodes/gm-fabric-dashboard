@@ -5,6 +5,7 @@ import _ from "lodash";
 import {
   COLOR_CONTENT_BACKGROUND,
   PADDING_BASE,
+  CONTENT_MAX_WIDTH,
   ZINDEX_STICKY
 } from "style/styleVariables";
 import { edgeColor } from "style/styleFunctions";
@@ -38,11 +39,19 @@ const SectionHeader = styled.div`
   top: 0;
   z-index: ${ZINDEX_STICKY};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
+  max-width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const SectionContent = styled.div`
   display: flex;
   padding: 0 ${parseInt(PADDING_BASE, 10) * 2}px
     ${parseInt(PADDING_BASE, 10) * 3}px;
+  max-width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 // Array of { headerTitle, name, version, docsLink, status }
