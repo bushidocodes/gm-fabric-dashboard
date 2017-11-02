@@ -1,20 +1,32 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import Toolbar from "../../../../../components/Toolbar";
-import ToolbarLeft from "../../../../../components/ToolbarLeft";
-import ToolbarRight from "../../../../../components/ToolbarRight";
+
+import SecondaryText from "components/SecondaryText";
+import GMSelect from "components/Main/components/GMSelect";
+import Toolbar from "components/Main/components/Toolbar";
+import ToolbarLeft from "components/Main/components/ToolbarLeft";
+import ToolbarRight from "components/Main/components/ToolbarRight";
 
 GMServiceTableToolbar.propTypes = {
   filterString: PropTypes.string,
   serviceName: PropTypes.string.isRequired,
-  setFilterString: PropTypes.func.isRequired
+  setFilterString: PropTypes.func.isRequired,
+  setSortByAttribute: PropTypes.func.isRequired,
+  sortByAttribute: PropTypes.string
 };
 
 GMServiceTableToolbar.defaultProps = {
-  filterString: ""
+  filterString: "",
+  sortByAttribute: ""
 };
 
-function GMServiceTableToolbar({ serviceName, filterString, setFilterString }) {
+function GMServiceTableToolbar({
+  serviceName,
+  filterString,
+  setFilterString,
+  setSortByAttribute,
+  sortByAttribute
+}) {
   return (
     <Toolbar>
       <ToolbarLeft>
@@ -31,15 +43,29 @@ function GMServiceTableToolbar({ serviceName, filterString, setFilterString }) {
       </ToolbarLeft>
 
       <ToolbarRight>
-        <button className="btn" disabled>
-          <span className="label">Group</span>
-          <span className="icon" data-uk-icon="icon: triangle-down" />
-        </button>
-
-        <button className="btn" disabled>
-          <span className="label">Sort</span>
-          <span className="icon" data-uk-icon="icon: triangle-down" />
-        </button>
+        <GMSelect
+          name="form-field-sort-by"
+          options={[
+            {
+              value: "name",
+              label: "Name"
+            },
+            {
+              value: "start_timem",
+              label: "Uptime"
+            }
+          ]}
+          value={sortByAttribute}
+          onChange={val => setSortByAttribute(val.value)}
+          clearable={false}
+          searchable={false}
+          valueRenderer={val => (
+            <span>
+              <span>Sort </span>
+              <SecondaryText>{val.label}</SecondaryText>
+            </span>
+          )}
+        />
       </ToolbarRight>
     </Toolbar>
   );

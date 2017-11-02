@@ -1,9 +1,9 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import TableCol from "../../../../../../../components/TableCol";
-import TableRow from "../../../../../../../components/TableRow";
-import StatusIcon from "../../../../../../../../StatusIcon";
-import GMLink from "../../../../GMLink";
+
+import TableCol from "components/Main/components/TableCol";
+import TableRow from "components/Main/components/TableRow";
+import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 
 GMServiceTableLineItem.propTypes = {
   error: PropTypes.string,
@@ -30,15 +30,10 @@ function GMServiceTableLineItem({
 }) {
   return (
     <TableRow>
-      <TableCol sm>
-        <StatusIcon status={status} />
-      </TableCol>
       <TableCol lg>
         <GMLink to={path}>{name}</GMLink>
       </TableCol>
-      <TableCol>{requests}</TableCol>
-      <TableCol>{error}</TableCol>
-      <TableCol>{uptime}</TableCol>
+      <TableCol textAlign="right">{uptime}</TableCol>
     </TableRow>
   );
 }

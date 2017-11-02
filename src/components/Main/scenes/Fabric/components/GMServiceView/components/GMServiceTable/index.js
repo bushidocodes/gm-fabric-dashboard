@@ -3,14 +3,10 @@ import React from "react";
 
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 
-import Table from "../../../../../../components/Table";
-
-import TableHeader from "../../../../../../components/TableHeader";
-
-import TableCol from "../../../../../../components/TableCol";
-
-import TableBody from "../../../../../../components/TableBody";
-
+import Table from "components/Main/components/Table";
+import TableHeader from "components/Main/components/TableHeader";
+import TableCol from "components/Main/components/TableCol";
+import TableBody from "components/Main/components/TableBody";
 import { convertMS } from "utils";
 
 GMServiceTable.propTypes = {
@@ -29,15 +25,12 @@ export default function GMServiceTable({
   return (
     <Table>
       <TableHeader>
-        <TableCol sm header>
-          State
-        </TableCol>
         <TableCol lg header>
           ID
         </TableCol>
-        <TableCol header>Requests/s</TableCol>
-        <TableCol header>Error %</TableCol>
-        <TableCol header>Uptime</TableCol>
+        <TableCol header textAlign="right">
+          Uptime
+        </TableCol>
       </TableHeader>
       <TableBody>
         {instances.map(instance => (

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
+import _ from "lodash";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
@@ -18,29 +19,34 @@ class GMServiceView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterString: ""
+      filterString: "",
+      sortByAttribute: "name" // name or start_time
     };
   }
 
   setFilterString = filterString => this.setState({ filterString });
+  setSortByAttribute = sortByAttribute => this.setState({ sortByAttribute });
 
   render() {
     const { instances, serviceName, serviceVersion, status } = this.props;
-    const { filterString } = this.state;
-
+    const { filterString, sortByAttribute } = this.state;
     return instances && instances.length ? (
       <div>
         <GMServiceTableToolbar
           setFilterString={this.setFilterString}
+          setSortByAttribute={this.setSortByAttribute}
           filterString={filterString}
           serviceName={serviceName}
+          sortByAttribute={sortByAttribute}
         />
         <ErrorBoundary>
           <GMServiceTable
             serviceName={serviceName}
             serviceVersion={serviceVersion}
-            instances={instances.filter(
-              ({ name }) => name.indexOf(filterString) !== -1
+            instances={_.orderBy(
+              instances.filter(({ name }) => name.indexOf(filterString) !== -1),
+              [sortByAttribute.toLowerCase()],
+              ["asc"]
             )}
             status={status}
           />
