@@ -23,6 +23,7 @@ function GMServiceTableToolbar({ serviceName, filterString, setFilterString }) {
             className="form-control"
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Instances"
+            aria-label="Search All Instances"
             type="search"
             value={filterString}
           />

@@ -92,7 +92,7 @@ export default function GMServiceCard({
       width={width}
       height={height}
     >
-      <BackgroundIcon iconUrl={iconUrl} status={status} />
+      <BackgroundIcon iconUrl={iconUrl} status={status} alt="" />
       {authorized ? (
         <ServiceLink
           to={`/${name}/${version}`}
@@ -123,6 +123,7 @@ export default function GMServiceCard({
               cardHighlightColor={cardHighlightColor}
               href={docsLink}
               target="_blank"
+              title={`Documentation of ${titleName}`}
             >
               <DocsIcon fillColor={cardFontColor} />
             </DocsLink>

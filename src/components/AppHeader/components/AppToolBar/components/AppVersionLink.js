@@ -7,7 +7,7 @@ const AppVersionLink = styled.a`
   font-weight: 600;
   font-size: ${FONT_SIZE_XS};
   flex: 0 0 auto;
-  opacity: 0.5;
+  opacity: 1;
   padding: 0 ${spacingScale(1)};
   color: white;
 

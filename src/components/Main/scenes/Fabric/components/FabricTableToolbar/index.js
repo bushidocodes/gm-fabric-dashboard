@@ -45,6 +45,7 @@ export default class FabricTableToolbar extends Component {
               className="form-control"
               onChange={evt => onSearchInputChange(evt.target.value)}
               placeholder="Search Services"
+              aria-label="Search All Services"
               value={searchQuery}
             />
           </form>

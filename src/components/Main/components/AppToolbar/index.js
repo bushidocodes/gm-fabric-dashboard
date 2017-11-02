@@ -27,6 +27,8 @@ function AppToolbar({ pathname }) {
               pathname: "/",
               search: ""
             }}
+            title="Home Page"
+            aria-label="Home Page"
           >
             fabric
           </Link>
@@ -38,7 +40,10 @@ function AppToolbar({ pathname }) {
           .split("/")
           .map((val, idx) => (
             <Breadcrumb key={val}>
-              <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
+              <Link
+                to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}
+                aria-label={val ? val : "No Breadcrumbs"}
+              >
                 {val}
               </Link>
             </Breadcrumb>

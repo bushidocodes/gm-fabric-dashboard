@@ -26,6 +26,7 @@ export default class Inspector extends Component {
             className="inspector-search"
             onChange={evt => this.props.onSearch(evt.target.value)}
             placeholder="Search"
+            aria-label="Search All Metrics"
             type="search"
             value={searchQuery}
           />

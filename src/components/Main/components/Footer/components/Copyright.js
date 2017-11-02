@@ -9,7 +9,8 @@ const Copyright = styled.p`
   transition: opacity 0.2s ease;
   cursor: default;
   z-index: -1;
-  opacity: 0;
+  opacity: 1;
+  color: black;
 
   @media all and (min-width: 800px) {
     opacity: 0.8;
