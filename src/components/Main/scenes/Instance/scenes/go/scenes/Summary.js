@@ -84,10 +84,6 @@ class SummaryGrid extends Component {
       "B",
       "GB"
     );
-    const hostname = window.location.hostname;
-    const port =
-      window.location.port ||
-      (window.location.protocol === "https:" ? 443 : 80);
     return (
       <ErrorBoundary>
         <LayoutSection title={"Vitals"}>
@@ -127,28 +123,14 @@ class SummaryGrid extends Component {
                     "system/cpu_cores"
                   )} Cores`,
                   icon: "server",
-                  title: "CPU Utilization",
+                  title: "Host CPU Utilized",
                   value: `${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`
                 },
                 {
                   detail: `${memoryAvail} GB Free`,
                   icon: "server",
-                  title: "Memory Utilized",
+                  title: "Host Memory Utilized",
                   value: `${memoryUsedPercent}%`
-                }
-              ]}
-            />
-            <Readout
-              readoutItems={[
-                {
-                  icon: "link",
-                  title: "Host",
-                  value: hostname
-                },
-                {
-                  icon: "link",
-                  title: "Port",
-                  value: port
                 }
               ]}
             />

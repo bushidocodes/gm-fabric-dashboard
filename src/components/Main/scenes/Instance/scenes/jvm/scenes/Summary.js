@@ -4,10 +4,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
 
-import LayoutSection from "../../../../../../LayoutSection";
-import GMLineChart from "../../../../../components/GMLineChart";
-import Readout from "../../../../../components/Readout";
-import ReadoutGroup from "../../../../../components/ReadoutGroup";
+import LayoutSection from "components/LayoutSection";
+import GMLineChart from "components/Main/components/GMLineChart";
+import Readout from "components/Main/components/Readout";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
 import ErrorBoundary from "components/library/ErrorBoundary";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
@@ -62,11 +62,6 @@ class SummaryGrid extends Component {
 
   render() {
     const { errorPercent, metrics } = this.props;
-    const hostname = window.location.hostname;
-    const port =
-      window.location.port ||
-      (window.location.protocol === "https:" ? 443 : 80);
-
     return (
       <ErrorBoundary>
         <LayoutSection title={"Vitals"}>
@@ -106,23 +101,8 @@ class SummaryGrid extends Component {
               readoutItems={[
                 {
                   icon: "server",
-                  title: "Cores",
+                  title: "Host CPU Cores",
                   value: `${getLatestAttribute(metrics, "jvm/num_cpus")}`
-                }
-              ]}
-            />
-
-            <Readout
-              readoutItems={[
-                {
-                  icon: "link",
-                  title: "Host",
-                  value: hostname
-                },
-                {
-                  icon: "link",
-                  title: "Port",
-                  value: port
                 }
               ]}
             />
