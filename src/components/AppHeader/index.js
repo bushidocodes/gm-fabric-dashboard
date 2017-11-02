@@ -1,8 +1,7 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import { getFabricServer } from "../../utils/head";
+import { getFabricServer } from "utils/head";
 import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
 
 import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
@@ -10,48 +9,41 @@ import Banner from "./components/Banner";
 import UseSDS from "./scenes/UseSDS";
 import NoSDS from "./scenes/NoSDS";
 
+import { trimID } from "utils";
+
 Header.propTypes = {
-  location: PropTypes.object,
-  selectedInstance: PropTypes.string,
-  selectedService: PropTypes.string
+  location: PropTypes.object
 };
 /**
  * Stateless functional React component that renders the App Header
  * @returns JSX.Element
  */
-function Header({ location: { pathname }, selectedService, selectedInstance }) {
+function Header({ location: { pathname } }) {
   return (
     <AppHeaderContainer>
       <AppToolBar pathname={pathname} />
-      <Banner
-        title={getTitle(pathname, selectedService, selectedInstance)}
-        hideBackground={false}
-      />
+      <Banner title={getTitle(pathname)} hideBackground={false} />
       {getFabricServer() ? <UseSDS /> : <NoSDS />}
     </AppHeaderContainer>
   );
 }
 
-function getTitle(pathname, selectedService, selectedInstance) {
-  // This will display the first item in the path
-  // Else if we are on an instance, it will display serviceName : last 8 digits of instanceID
-  // If the path is on the root, display Fabric
-  const path = pathname
+function getTitle(pathname) {
+  const [root, version = "", instance = ""] = pathname
     .replace(/^\/|\/$/g, "")
     .replace("%2F", "/") // String out escaped slashes if found
     .split("/");
 
-  // If the selected Instance matches what's in our path, then display it, else return an empty string
-  let instance = selectedInstance === path[2] ? ` : ${path[2].substr(-8)}` : "";
-
-  return path[0] ? `${path[0]} ${instance}` : "Fabric";
+  // If there is an instance in the path, display root : version: instance
+  // If not, then check if the root is truthy and display that
+  // Else just display Fabric
+  if (instance) {
+    return `${root} : ${version} : ${trimID(instance)}`;
+  } else if (root) {
+    return root;
+  } else {
+    return "Fabric";
+  }
 }
 
-function mapStateToProps(state) {
-  return {
-    selectedService: state.settings.selectedService,
-    selectedInstance: state.settings.selectedInstance
-  };
-}
-
-export default withRouter(connect(mapStateToProps)(Header));
+export default withRouter(Header);
