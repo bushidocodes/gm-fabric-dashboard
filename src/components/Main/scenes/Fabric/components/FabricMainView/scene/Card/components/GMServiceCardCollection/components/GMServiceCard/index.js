@@ -13,9 +13,6 @@ import Runtime from "./components/Runtime";
 
 // External dependencies
 import { mapStatusToColor, spacingScale } from "style/styleFunctions";
-import StatusDownIcon from "images/icons/status-down.svg";
-import StatusStableIcon from "images/icons/status-stable.svg";
-import StatusWarningIcon from "images/icons/status-warning.svg";
 // import NoAuthIcon from "images/icons/no-key.svg";
 
 GMServiceCard.propTypes = {
@@ -47,8 +44,7 @@ export default function GMServiceCard({
     cardFontColor,
     cardFontWeight,
     cardHighlightColor,
-    cardBorderAltColor,
-    iconUrl;
+    cardBorderAltColor;
   const baseColor = mapStatusToColor(status).string();
   const maxNameLen = 50;
   const titleName =
@@ -60,14 +56,12 @@ export default function GMServiceCard({
       cardHighlightColor = "#000000";
       cardFontColor = "white";
       cardFontWeight = "500";
-      iconUrl = StatusDownIcon;
       break;
     case "Warning":
       cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
       cardHighlightColor = "#000000";
       cardFontColor = "black";
       cardFontWeight = "400";
-      iconUrl = StatusWarningIcon;
       break;
     case "Stable":
     default:
@@ -76,7 +70,6 @@ export default function GMServiceCard({
       cardBorderColor = "rgba(0,0,0,.05)";
       cardHighlightColor = baseColor;
       cardFontWeight = "400";
-      iconUrl = StatusStableIcon;
       cardFontColor = Color(baseColor)
         .darken(0.2)
         .string();
@@ -92,7 +85,7 @@ export default function GMServiceCard({
       width={width}
       height={height}
     >
-      <BackgroundIcon iconUrl={iconUrl} status={status} alt="" />
+      <BackgroundIcon status={status} alt={status} />
       <ServiceLink
         to={`/${name}/${version}`}
         onClick={
@@ -109,7 +102,6 @@ export default function GMServiceCard({
           {titleName}
         </Title>
       </ServiceLink>
-
       <CardFooter cardFontWeight={cardFontWeight}>
         {runtime && <Runtime>{runtime}</Runtime>}
         {!metered && <span>nometrics</span>}

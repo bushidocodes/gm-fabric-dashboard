@@ -62,7 +62,7 @@ export default function Icon({
           ratio={iconRatio}
         />
       )}
-      <StyledG title={glyphName} transform={transform} ratio={glyphRatio}>
+      <StyledG title={glyphName} ratio={glyphRatio}>
         {children}
       </StyledG>
     </StyledSVG>
