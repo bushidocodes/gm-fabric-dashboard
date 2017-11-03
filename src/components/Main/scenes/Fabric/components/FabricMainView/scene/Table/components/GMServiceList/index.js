@@ -20,6 +20,7 @@ export default function GMServiceList({ items, groupByAttribute }) {
       {items.map(item => (
         <GMServiceListItem
           authorized={item.authorized}
+          metered={item.metered}
           key={`${item.name}${item.version}`}
           instances={item.instances}
           name={item.name}

@@ -47,10 +47,18 @@ class FabricGrid extends Component {
         timeout: 0
       });
       // Reset location state
-      const location = {
+      history.replace({
         state: ""
-      };
-      history.replace(location);
+      });
+    } else if (state && !state.metered) {
+      notification(`${state.serviceName} does not have metrics to display`, {
+        status: "danger",
+        timeout: 0
+      });
+      // Reset location state
+      history.replace({
+        state: ""
+      });
     }
   }
 

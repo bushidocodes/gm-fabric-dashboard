@@ -47,7 +47,7 @@ function FabricRouter({ services }) {
               ? services[`${serviceName}|${version}`]
               : "";
           const authorized = service && service.authorized;
-
+          const metered = service && service.metered;
           // Lookup the runtime of the microservice named serviceName
           const runtime =
             services && serviceName && services[`${serviceName}|${version}`]
@@ -56,9 +56,7 @@ function FabricRouter({ services }) {
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
 
-          // If the service has not been passed to the router yet and defaults to an empty string,
-          // or it has and is truthy, then render the instance router
-          return authorized === "" || authorized ? (
+          return authorized && metered ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
@@ -70,7 +68,7 @@ function FabricRouter({ services }) {
             <Redirect
               to={{
                 pathname: "/",
-                state: { authorized, serviceName }
+                state: { authorized, metered, serviceName }
               }}
             />
           );
@@ -110,9 +108,9 @@ function FabricRouter({ services }) {
             service.maximum
           );
 
-          // If the service has not been passed to the router yet and defaults to an empty string,
-          // or it has and is truthy, then render the instance router
-          return authorized === "" || authorized ? (
+          const metered = service && service.metered;
+
+          return authorized && metered ? (
             <GMServiceView
               serviceName={serviceName}
               serviceVersion={version}
@@ -123,7 +121,7 @@ function FabricRouter({ services }) {
             <Redirect
               to={{
                 pathname: "/",
-                state: { authorized, serviceName }
+                state: { authorized, metered, serviceName }
               }}
             />
           );

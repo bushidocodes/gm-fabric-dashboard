@@ -7,7 +7,7 @@ import BackgroundIcon from "./components/BackgroundIcon";
 import { CardContainer, CardFooter } from "./components/Card";
 import DocsIcon from "./components/DocsIcon";
 import DocsLink from "./components/DocsLink";
-import { ServiceInfo, ServiceLink } from "./components/Service";
+import { ServiceLink } from "./components/Service";
 import Title from "./components/Title";
 import Runtime from "./components/Runtime";
 
@@ -93,28 +93,27 @@ export default function GMServiceCard({
       height={height}
     >
       <BackgroundIcon iconUrl={iconUrl} status={status} alt="" />
-      {authorized ? (
-        <ServiceLink
-          to={`/${name}/${version}`}
-          onClick={status === "Down" ? e => e.preventDefault() : null}
-          cursor={status !== "Down" && authorized ? "pointer" : "not-allowed"}
-          cardfontcolor={cardFontColor}
-        >
-          <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
-            {titleName}
-          </Title>
-        </ServiceLink>
-      ) : (
-        <ServiceInfo>
-          <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
-            {titleName}
-          </Title>{" "}
-        </ServiceInfo>
-      )}
+      <ServiceLink
+        to={`/${name}/${version}`}
+        onClick={
+          status !== "Down" && authorized && metered
+            ? null
+            : e => e.preventDefault()
+        }
+        cursor={
+          status !== "Down" && authorized && metered ? "pointer" : "not-allowed"
+        }
+        cardfontcolor={cardFontColor}
+      >
+        <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
+          {titleName}
+        </Title>
+      </ServiceLink>
+
       <CardFooter cardFontWeight={cardFontWeight}>
         {runtime && <Runtime>{runtime}</Runtime>}
-        {metered === false && <span>nometrics</span>}
-        {authorized === false && <span>noauth</span>}
+        {!metered && <span>nometrics</span>}
+        {!authorized && <span>noauth</span>}
         {version || null}
         {version &&
           docsLink && (
