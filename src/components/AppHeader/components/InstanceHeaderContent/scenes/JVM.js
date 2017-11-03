@@ -34,7 +34,19 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
         ]}
         title="Summary"
       />
-      <Tab href={`${basePath}/routes`} icon="link" title="Routes" />
+      <Tab
+        href={`${basePath}/routes`}
+        icon="link"
+        lines={[
+          {
+            name: "Requests",
+            value:
+              getLatestAttribute(metrics, "http/requests") +
+              getLatestAttribute(metrics, "https/requests")
+          }
+        ]}
+        title="Routes"
+      />
       <Tab
         chartData={getSparkLineOfValue(metrics, "jvm/thread/count")}
         href={`${basePath}/threads`}

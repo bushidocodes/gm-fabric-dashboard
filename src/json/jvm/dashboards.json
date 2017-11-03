@@ -6,36 +6,35 @@
       "icon": "world",
       "lines": [
         {
-          "name": "HTTP",
+          "name": "Received",
           "value": [
             {
               "type": "latest",
-              "value": "http/success"
+              "type": "latest",
+              "value": "https/received_bytes",
+              "baseUnit": "B",
+              "resultUnit": "GB",
+              "precision": 3
             },
             {
               "type": "string",
-              "value": "/"
-            },
-            {
-              "type": "latest",
-              "value": "http/requests"
+              "value": "GB"
             }
           ]
         },
         {
-          "name": "HTTPS",
+          "name": "Sent",
           "value": [
             {
               "type": "latest",
-              "value": "https/success"
+              "value": "https/sent_bytes",
+              "baseUnit": "B",
+              "resultUnit": "GB",
+              "precision": 3
             },
             {
               "type": "string",
-              "value": "/"
-            },
-            {
-              "type": "latest",
-              "value": "https/requests"
+              "value": "GB"
             }
           ]
         }
