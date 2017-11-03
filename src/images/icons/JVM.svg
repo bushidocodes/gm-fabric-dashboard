@@ -1,0 +1,15 @@
+<svg width="19px" height="12px" viewBox="0 0 19 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 47.1 (45415) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch Beta.</desc>
+    <defs>
+        <path d="M8,15 L16,15 L16,16.5 L8,16.5 L8,20 L4,16 L8,12 L8,15 Z M19,11 L19,8 L23,12 L19,16 L19,12.5 L11,12.5 L11,11 L19,11 Z" id="path-1"></path>
+    </defs>
+    <g id="Glyphs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Glyphs-/-Ingress-Egress" transform="translate(-4.000000, -8.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Combined-Shape"></g>
+        </g>
+    </g>
+</svg>

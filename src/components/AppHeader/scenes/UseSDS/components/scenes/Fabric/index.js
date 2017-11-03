@@ -20,7 +20,7 @@ function FabricAppHeaderContent({ statusCount, services }) {
       <Tab
         title="All Services"
         href="/"
-        icon="grid"
+        icon="Summary"
         lines={[
           {
             name: "Services",

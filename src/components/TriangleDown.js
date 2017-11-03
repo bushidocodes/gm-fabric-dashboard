@@ -1,24 +1,21 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
+const title = "Triangle Down";
+
 TriangleDown.propTypes = {
-  fill: PropTypes.string,
-  height: PropTypes.number,
-  stroke: PropTypes.string,
-  width: PropTypes.number
+  TriangleHeight: PropTypes.number,
+  TriangleWidth: PropTypes.number
 };
 
-function TriangleDown({
-  width = 10,
-  height = 6,
-  fill = "black",
-  stroke = "black"
-}) {
+function TriangleDown({ TriangleWidth = 10, TriangleHeight = 6 }) {
+  TriangleWidth = Number(TriangleWidth) || 10;
+  TriangleHeight = Number(TriangleHeight) || 6;
   return (
-    <svg width={width} height={height} style={{ marginLeft: "5px" }}>
+    <svg aria-labelledby={title} width="1em" height="1em" viewport="0 0 10 10">
       <polygon
-        points={`0,0 ${width},0 ${width / 2},${height}`}
-        style={{ fill: fill, stroke: stroke }}
+        points={`0,0 10,0 ${TriangleWidth / 2},${TriangleHeight}`}
+        style={{ fill: "currentColor" }}
       />
     </svg>
   );

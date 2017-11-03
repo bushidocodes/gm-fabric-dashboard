@@ -32,7 +32,8 @@ function Tab({ href, icon, lines = [], title, chartData }) {
   return (
     <TabLink to={href}>
       <TabTitle>
-        {icon ? <TabIcon /> : ""} {title}
+        {icon ? <TabIcon name="Summary" /> : ""}
+        <h1>{title}</h1>
       </TabTitle>
       {lines.map(item => {
         return (
