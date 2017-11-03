@@ -54,7 +54,7 @@ export default class FunctionsTableLineItem extends Component {
         }}
         role="link"
       >
-        <TableCol vizBar>
+        <TableCol style={{ position: "relative" }}>
           {this.props.func}
           <VizBar>
             <VizFill width={this.props.relativeReqPercent} />
@@ -83,13 +83,19 @@ export default class FunctionsTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol textAlign={"right"}>{this.props.requests}</TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.requests}
+        </TableCol>
         <TableCol
-          textAlign={"right"}
+          style={{ textAlign: "right" }}
           errorPercent={this.props.errorPercent}
         >{`${this.props.errorPercent}%`}</TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency50}
+        </TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency99}
+        </TableCol>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {

@@ -11,6 +11,8 @@ import {
 import GMLineChart from "../../../../../../../../../components/GMLineChart";
 import TableRow from "../../../../../../../../../components/TableRow";
 import TableCol from "../../../../../../../../../components/TableCol";
+
+import TableColVizBar from "../../../../../../../../../components/TableColVizBar";
 import SparklineCol from "../../../../../../../../../components/SparklineCol";
 import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
 
@@ -58,13 +60,13 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol vizBar customFlex="1 1 20%">
+        <TableColVizBar>
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
           <VizBar>
             <VizFill width={this.props.relativeReqPercent} />
           </VizBar>
-        </TableCol>
+        </TableColVizBar>
         <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}
@@ -87,14 +89,21 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol textAlign={"right"}>
+        <TableCol style={{ textAlign: "right" }}>
           {this.props.totalRequests.toLocaleString()}
         </TableCol>
-        <TableCol textAlign={"right"} errorPercent={this.props.errorPercent}>
+        <TableCol
+          style={{ textAlign: "right" }}
+          errorPercent={this.props.errorPercent}
+        >
           {this.props.errorPercent}%
         </TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency50}
+        </TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency99}
+        </TableCol>
 
         <TableDrawerCollapse
           isOpened={this.state.isOpen}

@@ -48,7 +48,7 @@ class ThreadsGrid extends Component {
   render() {
     const { threadsTable } = this.props;
     return (
-      <div className="thread-table-container">
+      <div>
         <ErrorBoundary>
           <ThreadsSection threadsTable={threadsTable} />
         </ErrorBoundary>

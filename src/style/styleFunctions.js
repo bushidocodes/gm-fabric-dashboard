@@ -5,7 +5,10 @@ import {
   PADDING_BASE,
   COLOR_SUCCESS,
   COLOR_DANGER,
-  COLOR_WARNING
+  COLOR_WARNING,
+  FONT_STACK_CODE,
+  FONT_SIZE_BASE,
+  LINE_HEIGHT_BASE
 } from "./styleVariables";
 
 /**
@@ -108,6 +111,16 @@ export function rowChildSpacing() {
     &:first-child {
       padding-left: ${spacingScale(2)};
   }`;
+}
+
+export function contentTypeCode() {
+  return `
+    font-family: ${FONT_STACK_CODE};
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-size: ${parseInt(FONT_SIZE_BASE, 10) * 0.85}px;
+    line-height: ${LINE_HEIGHT_BASE * 1.1};
+  `;
 }
 
 /**

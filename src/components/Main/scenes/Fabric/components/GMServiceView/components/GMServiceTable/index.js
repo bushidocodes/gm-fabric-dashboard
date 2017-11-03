@@ -5,7 +5,7 @@ import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 
 import Table from "components/Main/components/Table";
 import TableHeader from "components/Main/components/TableHeader";
-import TableCol from "components/Main/components/TableCol";
+import TableColHeader from "components/Main/components/TableColHeader";
 import TableBody from "components/Main/components/TableBody";
 import { convertMS } from "utils";
 
@@ -25,12 +25,12 @@ export default function GMServiceTable({
   return (
     <Table>
       <TableHeader>
-        <TableCol lg header>
+        <TableColHeader paddingLeft style={{ flex: "1 1 30%" }}>
           ID
-        </TableCol>
-        <TableCol header textAlign="right">
+        </TableColHeader>
+        <TableColHeader paddingRight style={{ textAlign: "right" }}>
           Uptime
-        </TableCol>
+        </TableColHeader>
       </TableHeader>
       <TableBody>
         {instances.map(instance => (

@@ -30,10 +30,10 @@ function GMServiceTableLineItem({
 }) {
   return (
     <TableRow>
-      <TableCol lg>
+      <TableCol style={{ flex: "1 1 30%" }}>
         <GMLink to={path}>{name}</GMLink>
       </TableCol>
-      <TableCol textAlign="right">{uptime}</TableCol>
+      <TableCol style={{ textAlign: "right" }}>{uptime}</TableCol>
     </TableRow>
   );
 }

@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-
-import { FONT_WEIGHT_BASE, TABLE_BORDER } from "style/styleVariables";
+import {
+  COLOR_CONTENT_BACKGROUND,
+  FONT_WEIGHT_BASE,
+  TABLE_BORDER
+} from "style/styleVariables";
 
 const TableHeader = styled.div`
   display: flex;

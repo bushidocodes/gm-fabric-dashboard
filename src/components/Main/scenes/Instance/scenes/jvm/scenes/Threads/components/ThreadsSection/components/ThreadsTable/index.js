@@ -3,6 +3,15 @@ import React from "react";
 
 import ThreadsTableLineItem from "./components/ThreadsTableLineItem";
 
+import Table from "components/Main/components/Table";
+import TableHeader from "components/Main/components/TableHeader";
+import TableBody from "components/Main/components/TableBody";
+
+import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
+import TableColHeader from "components/Main/components/TableColHeader";
+
+import TableColDaemon from "components/Main/components/TableColDaemon";
+
 ThreadsTable.propTypes = {
   filteredThreadData: PropTypes.array
 };
@@ -10,21 +19,23 @@ ThreadsTable.propTypes = {
 /**
  * Table of threads containing a header and 0..n lineitems
  * @export
- * @param {any} { filteredThreadData = [] } 
+ * @param {any} { filteredThreadData = [] }
  * @returns JSX.Element
  */
 export default function ThreadsTable({ filteredThreadData = [] }) {
   return (
-    <div className="div-table thread-table">
-      <div className="div-table-header thread-table-header">
-        <div className="thread-table-id">ID</div>
-        <div className="thread-table-state">State</div>
-        <div className="thread-table-stacktrace">Trace</div>
-        <div className="thread-table-name">Name</div>
-        <div className="thread-table-daemon">Daemon</div>
-        <div className="thread-table-priority">Priority</div>
-      </div>
-      <ol className="div-table-body thread-table-body">
+    <Table>
+      <TableHeader>
+        <TableColHeaderThread paddingLeft>ID</TableColHeaderThread>
+        <TableColHeaderThread style={{ textAlign: "center" }}>
+          State
+        </TableColHeaderThread>
+        <TableColHeaderThread>Trace</TableColHeaderThread>
+        <TableColHeader style={{ flex: "1 1 auto" }}>Name</TableColHeader>
+        <TableColDaemon header>Daemon</TableColDaemon>
+        <TableColDaemon header>Priority</TableColDaemon>
+      </TableHeader>
+      <TableBody>
         {filteredThreadData.map(
           ({ daemon, id, name, priority, stack, state }, arrIndex) => {
             return (
@@ -37,7 +48,7 @@ export default function ThreadsTable({ filteredThreadData = [] }) {
             );
           }
         )}
-      </ol>
-    </div>
+      </TableBody>
+    </Table>
   );
 }

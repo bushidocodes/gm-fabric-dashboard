@@ -5,7 +5,7 @@ import FunctionsTableLineItem from "./components/LineItem";
 
 import Table from "components/Main/components/Table";
 import TableHeader from "components/Main/components/TableHeader";
-import TableCol from "components/Main/components/TableCol";
+import TableColHeader from "components/Main/components/TableColHeader";
 import TableBody from "components/Main/components/TableBody";
 
 import { relativeReqPercent } from "utils";
@@ -28,20 +28,16 @@ export default function FunctionsTable({ funcs = [] }) {
   return (
     <Table>
       <TableHeader>
-        <TableCol header>Function</TableCol>
-        <TableCol header>Requests/sec</TableCol>
-        <TableCol header textAlign={"right"}>
-          Requests
-        </TableCol>
-        <TableCol header textAlign={"right"}>
-          Error %
-        </TableCol>
-        <TableCol header textAlign={"right"}>
+        <TableColHeader>Function</TableColHeader>
+        <TableColHeader>Requests/sec</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>Requests</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>Error %</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>
           Latency 50%
-        </TableCol>
-        <TableCol header textAlign={"right"}>
+        </TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>
           Latency 99%
-        </TableCol>
+        </TableColHeader>
       </TableHeader>
       <TableBody>
         {funcs.map(

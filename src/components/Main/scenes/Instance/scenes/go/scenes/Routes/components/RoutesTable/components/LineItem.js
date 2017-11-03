@@ -9,6 +9,8 @@ import {
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
 import TableCol from "components/Main/components/TableCol";
+import TableColVizBar from "components/Main/components/TableColVizBar";
+
 import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import VizBar from "components/Main/components/VizBar";
@@ -57,13 +59,13 @@ export default class RoutesTableLineItem extends Component {
         role="link"
         tabIndex="0"
       >
-        <TableCol vizBar customFlex="1 1 20%">
+        <TableColVizBar>
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
           <VizBar>
             <VizFill width={this.props.relativeReqPercent} />
           </VizBar>
-        </TableCol>
+        </TableColVizBar>
         <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}
@@ -86,13 +88,19 @@ export default class RoutesTableLineItem extends Component {
             />
           </Sparklines>
         </SparklineCol>
-        <TableCol textAlign={"right"}>{this.props.requests}</TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.requests}
+        </TableCol>
         <TableCol
-          textAlign={"right"}
+          style={{ textAlign: "right" }}
           errorPercent={this.props.errorPercent}
         >{`${this.props.errorPercent}%`}</TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency50}</TableCol>
-        <TableCol textAlign={"right"}>{this.props.latency99}</TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency50}
+        </TableCol>
+        <TableCol style={{ textAlign: "right" }}>
+          {this.props.latency99}
+        </TableCol>
 
         <TableDrawerCollapse
           className="table-drawer"

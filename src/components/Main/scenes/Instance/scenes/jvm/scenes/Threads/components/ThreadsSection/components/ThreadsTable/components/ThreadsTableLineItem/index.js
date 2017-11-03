@@ -1,11 +1,21 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Collapse from "react-collapse";
 
 import IndicatorIcon from "./components/IndicatorIcon";
 
+import StackTrace from "components/Main/components/StackTrace";
+
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
+
+import TableCol from "components/Main/components/TableCol";
+import TableColThread from "components/Main/components/TableColThread";
+
+import TableColDaemon from "components/Main/components/TableColDaemon";
+
+import TableRow from "components/Main/components/TableRow";
+
 /**
- * Line Item containing threads data. Intended to be child of TreadsTable 
+ * Line Item containing threads data. Intended to be child of TreadsTable
  * @export
  * @class ThreadsTableLineItem
  * @extends {Component}
@@ -27,7 +37,7 @@ export default class ThreadsTableLineItem extends Component {
 
   /**
    * Takes a state and returns a corresponding color associated with that state
-   * @param {string} state 
+   * @param {string} state
    * @returns string
    * @memberof ThreadsTableLineItem
    */
@@ -60,12 +70,8 @@ export default class ThreadsTableLineItem extends Component {
     const indicatorIcon = this.indicatorColor(state);
 
     return (
-      <li
-        className={
-          stack.length
-            ? this.state.isOpen ? "selectable open" : "selectable"
-            : ""
-        }
+      <TableRow
+        selectable={this.state.isOpen}
         key={id}
         onClick={stack.length > 0 ? this.toggleStack : () => {}}
         onKeyDown={evt => {
@@ -78,11 +84,11 @@ export default class ThreadsTableLineItem extends Component {
         style={stack.length ? { cursor: "pointer" } : {}}
         tabIndex={0}
       >
-        <div className="thread-table-id">{`${Number(id)}`}</div>
-        <div className="thread-table-state">
+        <TableColThread paddingLeft>{`${Number(id)}`}</TableColThread>
+        <TableColThread style={{ textAlign: "right" }}>
           <IndicatorIcon alt={state} color={indicatorIcon} diameter={15} />
-        </div>
-        <div className="thread-table-stacktrace">
+        </TableColThread>
+        <TableColThread>
           {stack.length ? (
             <span
               className="stack-trace-indicator icon"
@@ -91,25 +97,24 @@ export default class ThreadsTableLineItem extends Component {
           ) : (
             ""
           )}
-        </div>
-        <div className="thread-table-name">{name}</div>
-        <div className="thread-table-daemon">{daemon ? "Yes" : "No"}</div>
-        <div className="thread-table-priority">{priority}</div>
-        <Collapse
-          className="table-drawer"
+        </TableColThread>
+        <TableCol style={{ flex: "1 1 auto" }}>{name}</TableCol>
+        <TableColDaemon>{daemon ? "Yes" : "No"}</TableColDaemon>
+        <TableColDaemon>{priority}</TableColDaemon>
+        <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
           }}
         >
-          <div className="stack-trace content-type-code">
+          <StackTrace>
             <div>{`java.lang.Thread.State: ${state}`}</div>
             {stack.map((value, index) => (
               <div key={index}>{`at ${value}`}</div>
             ))}
-          </div>
-        </Collapse>
-      </li>
+          </StackTrace>
+        </TableDrawerCollapse>
+      </TableRow>
     );
   }
 }

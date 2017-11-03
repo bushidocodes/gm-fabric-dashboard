@@ -5,7 +5,7 @@ import RoutesTableLineItem from "./components/LineItem";
 
 import Table from "components/Main/components/Table";
 import TableHeader from "components/Main/components/TableHeader";
-import TableCol from "components/Main/components/TableCol";
+import TableColHeader from "components/Main/components/TableColHeader";
 import TableBody from "components/Main/components/TableBody";
 
 import { relativeReqPercent } from "utils";
@@ -28,22 +28,16 @@ export default function RoutesTable({ routes = [] }) {
   return (
     <Table>
       <TableHeader>
-        <TableCol header customFlex="1 1 20%">
-          Route
-        </TableCol>
-        <TableCol header>Requests/s</TableCol>
-        <TableCol header textAlign={"right"}>
-          Requests
-        </TableCol>
-        <TableCol header textAlign={"right"}>
-          Error %
-        </TableCol>
-        <TableCol header textAlign={"right"}>
+        <TableColHeader style={{ flex: "1 1 20%" }}>Route</TableColHeader>
+        <TableColHeader>Requests/s</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>Requests</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>Error %</TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>
           Latency 50%
-        </TableCol>
-        <TableCol header textAlign={"right"}>
+        </TableColHeader>
+        <TableColHeader style={{ textAlign: "right" }}>
           Latency 99%
-        </TableCol>
+        </TableColHeader>
       </TableHeader>
       <TableBody>
         {routes.map(
