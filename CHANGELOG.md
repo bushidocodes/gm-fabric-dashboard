@@ -6,6 +6,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.9.0] - 2017-11-03
+### Added
+- New App Header Nav ✨
+- Improved keyboard nav support
+- Improved use of ARIA tags
+- Added HTTP verb to JVM routes dashboard
+- Serving JS bundle with gzip compression
+- Added detail icons to Fabric Card View
+- Added Enzympe tests using Jest Snapshots
+### Changed
+- Implemented support for new `gm-fabric-go` process memory utilization metrics
+- Updated npm dependencies
+- Fixed various IE11 issues
+- Refactored SCSS into Styled Components
+- Storybook stories now live alongside the components they cover
+- Began refactoring UIKit icons to a new custom Icon system
+### Removed
+- Removed old sidebar components
+- Removed scss stylesheets
+
+### Test Coverage: 4.57% ([0.9.0 Coverage Report])
+### Bundle Size: ~1.25 MB ([0.9.0 Bundle Size Report])
+### Production Build: ([0.9.0 Build])
 ## [0.8.1] - 2017-10-30
 ### Added
 - Color coded error rates
@@ -250,7 +273,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.1...v0.9.0
+[0.9.0 Coverage Report]: https://1649-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.9.0 Bundle Size Report]: https://1649-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.9.0 Build]: https://1649-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.8.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.0...v0.8.1
 [0.8.1 Coverage Report]: https://1310-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.8.1 Bundle Size Report]: https://1310-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
