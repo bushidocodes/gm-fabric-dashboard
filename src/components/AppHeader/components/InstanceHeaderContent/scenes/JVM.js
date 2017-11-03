@@ -8,6 +8,8 @@ import Tab from "../../Tab";
 import TabNav from "../../TabNav";
 // import TabGroup from "../../TabGroup";
 
+import ThreadCounts from "components/library/ThreadCounts";
+
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.array,
@@ -54,7 +56,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
         lines={[
           {
             name: "Threads",
-            value: getLatestAttribute(metrics, "jvm/thread/count")
+            value: <ThreadCounts render={threadCounts => threadCounts.all} />
           }
         ]}
         title="Threads"
