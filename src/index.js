@@ -6,11 +6,12 @@ import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "react-router-redux";
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
-import Header from "./components/AppHeader";
 
 import AppContainer from "./components/AppContainer";
-import AppFooter from "./components/Main/components/Footer";
+import Header from "./components/AppHeader";
+import AppFooter from "./components/Footer";
 import Main from "./components/Main";
+
 import store from "./store";
 
 // All scripts in the workers directory are loaded by WebPack via worker-loader

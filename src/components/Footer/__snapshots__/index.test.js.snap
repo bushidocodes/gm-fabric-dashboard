@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A Footer container should render 1`] = `
+<styled.footer>
+  <styled.a
+    href="http://deciphernow.com"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Decipher Technology Studios website"
+  >
+    <img
+      alt="Decipher Technology Studios"
+      src="decipher-logo-long.png"
+    />
+  </styled.a>
+  <styled.p>
+    ©2017 Decipher Technology Studios
+  </styled.p>
+  <styled.div>
+    <styled.a
+      href="http://github.com/DecipherNow"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Decipher Technology Studios Github"
+    >
+      <i
+        data-uk-icon="icon: github; ratio: .8;"
+      />
+    </styled.a>
+    <styled.a
+      href="http://twitter.com/deciphernow"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Decipher Technology Studios Twitter"
+    >
+      <i
+        data-uk-icon="icon: twitter; ratio: .8;"
+      />
+    </styled.a>
+    <styled.a
+      href="http://www.linkedin.com/company/decipher-technology-studios"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Decipher Technology Studios LinkedIn"
+    >
+      <i
+        data-uk-icon="icon: linkedin; ratio: .8;"
+      />
+    </styled.a>
+  </styled.div>
+</styled.footer>
+`;
