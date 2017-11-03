@@ -2,25 +2,27 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 StatusDownIcon.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  viewBox: PropTypes.string,
-  stroke: PropTypes.string,
-  strokeWidth: PropTypes.number,
+  ariaLabelledby: PropTypes.string,
   fill: PropTypes.string,
   fillRule: PropTypes.string,
-  ariaLabelledby: PropTypes.string,
-  title: PropTypes.string
+  height: PropTypes.number,
+  stroke: PropTypes.string,
+  strokeWidth: PropTypes.number,
+  title: PropTypes.string,
+  viewBox: PropTypes.string,
+  width: PropTypes.number
 };
 
 export default function StatusDownIcon({
-  viewBox = "0 0 24 24",
-  stroke = "none",
-  strokeWidth = 1,
+  ariaLabelledby = "stable status glyph",
   fill = "none",
   fillRule = "evenodd",
-  ariaLabelledby = "stable status glyph",
-  title = "stable status glyph"
+  height,
+  stroke = "none",
+  strokeWidth = 1,
+  title = "stable status glyph",
+  viewBox = "0 0 24 24",
+  width
 }) {
   return (
     <svg

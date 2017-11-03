@@ -2,15 +2,15 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 StatusStableIcon.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  viewBox: PropTypes.string,
-  stroke: PropTypes.string,
-  strokeWidth: PropTypes.number,
+  ariaLabelledby: PropTypes.string,
   fill: PropTypes.string,
   fillRule: PropTypes.string,
-  ariaLabelledby: PropTypes.string,
-  title: PropTypes.string
+  height: PropTypes.number,
+  stroke: PropTypes.string,
+  strokeWidth: PropTypes.number,
+  title: PropTypes.string,
+  viewBox: PropTypes.string,
+  width: PropTypes.number
 };
 
 export default function StatusStableIcon({
@@ -56,9 +56,9 @@ export default function StatusStableIcon({
       <g
         id="Glyphs"
         stroke={stroke}
-        stroke-width={strokeWidth}
+        strokeWidth={strokeWidth}
         fill={fill}
-        fill-rule={fillRule}
+        fillRule={fillRule}
       >
         <g id="Glyphs-/-State-/-Running">
           <mask id="mask-2" fill="white">
@@ -69,12 +69,12 @@ export default function StatusStableIcon({
             <mask id="mask-4" fill="white">
               <use xlinkHref="#path-3" />
             </mask>
-            <g id="Oval-8" fill-rule="nonzero" />
+            <g id="Oval-8" fillRule="nonzero" />
             <g
               id="Colors-/-Brand-/-Green-/-Primary"
               opacity="0.20459692"
               mask="url(#mask-4)"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               fill="#0AAB2A"
             >
               <rect id="Color" x="0" y="0" width="26" height="27" />
@@ -82,11 +82,11 @@ export default function StatusStableIcon({
             <mask id="mask-6" fill="white">
               <use xlinkHref="#path-5" />
             </mask>
-            <g id="Oval-8" fill-rule="nonzero" />
+            <g id="Oval-8" fillRule="nonzero" />
             <g
               id="Colors-/-Brand-/-Green-/-Primary"
               mask="url(#mask-6)"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               fill="#0AAB2A"
             >
               <rect id="Color" x="0" y="0" width="26" height="27" />
@@ -95,7 +95,7 @@ export default function StatusStableIcon({
           <mask id="mask-8" fill="white">
             <use xlinkHref="#path-7" />
           </mask>
-          <g id="Triangle-4" fill-rule="nonzero" />
+          <g id="Triangle-4" fillRule="nonzero" />
           <g
             id="Colors-/-Brand-/-Green-/-Primary"
             mask="url(#mask-8)"

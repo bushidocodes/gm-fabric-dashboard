@@ -1,12 +1,21 @@
+// NPM Modules
 import styled from "styled-components";
-import { BORDER_RADIUS_BASE, FONT_SIZE_BASE } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import Color from "color";
+
+// External Dependencies
+import {
+  BORDER_RADIUS_BASE,
+  FONT_SIZE_BASE,
+  COLOR_HIGHLIGHT
+} from "style/styleVariables";
+import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const BUTTON_COLOR_BASE = "#ffffff";
 const BUTTON_COLOR_HOVER = "#fbfbfb";
 const BUTTON_COLOR_ACTIVE = "#ececec";
 const BUTTON_COLOR_HOVER_ACTIVE = "#dddddd";
 const BUTTON_COLOR_ACTIVE_ACTIVE = "#D1D1D1";
+const BUTTON_COLOR_SELECTED = COLOR_HIGHLIGHT;
 
 const StyledButton = styled.button`
   background-color: ${props =>
@@ -45,6 +54,31 @@ const StyledButton = styled.button`
       props.selected ? BUTTON_COLOR_ACTIVE_ACTIVE : BUTTON_COLOR_ACTIVE};
     color: inherit;
     outline: 0;
+  }
+  ${props =>
+    props.selected &&
+    `
+      &,
+      &:hover,
+      &:active {
+
+        cursor: default;
+        background-color: ${BUTTON_COLOR_SELECTED};
+        color: ${contrastColor(BUTTON_COLOR_SELECTED, 1)};
+      }
+      &:focus {
+        cursor: default;
+        background-color: ${Color(BUTTON_COLOR_SELECTED)
+          .darken(0.2)
+          .hsl()
+          .string()};
+        color: ${contrastColor(BUTTON_COLOR_SELECTED, 1)};
+      }
+    `};
+
+  > svg {
+    margin-top: -2px;
+    margin-bottom: -2px;
   }
 `;
 

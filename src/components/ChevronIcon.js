@@ -2,15 +2,15 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 ChevronIcon.propTypes = {
+  ariaLabelledby: PropTypes.string,
   direction: PropTypes.string,
-  width: PropTypes.number,
+  fill: PropTypes.string,
   height: PropTypes.number,
-  viewBox: PropTypes.string,
   stroke: PropTypes.string,
   strokeWidth: PropTypes.number,
-  fill: PropTypes.string,
-  ariaLabelledby: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  viewBox: PropTypes.string,
+  width: PropTypes.number
 };
 
 /**

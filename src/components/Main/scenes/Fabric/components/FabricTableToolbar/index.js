@@ -1,8 +1,14 @@
+// NPM Modules
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+
+// Internal Components
 import SearchInput from "./components/GMSearchInput";
-import List from "images/icons/list.svg";
-import Card from "images/icons/card.svg";
+
+// External Dependencies
+import List from "components/Glyphs/List";
+import Card from "components/Glyphs/Card";
+import Icon from "components/Icon";
 import StyledButtonRoundedLeft from "components/StyledButtonRoundedLeft";
 import StyledButtonRoundedRight from "components/StyledButtonRoundedRight";
 import SecondaryText from "components/SecondaryText";
@@ -55,14 +61,18 @@ export default class FabricTableToolbar extends Component {
             selected={displayType === "Card"}
             onClick={() => setDisplayType("Card")}
           >
-            <img alt="Select Card View" style={{ height: "22px" }} src={Card} />
+            <Icon glyphName="Card View" glyphColor="currentColor">
+              <Card />
+            </Icon>
             <span>Cards</span>
           </StyledButtonRoundedLeft>
           <StyledButtonRoundedRight
             selected={displayType === "Table"}
             onClick={() => setDisplayType("Table")}
           >
-            <img alt="Select List View" style={{ height: "22px" }} src={List} />
+            <Icon glyphName="Card View" glyphColor="currentColor">
+              <List />
+            </Icon>
             <span>Table</span>
           </StyledButtonRoundedRight>
         </ToolbarCenter>
