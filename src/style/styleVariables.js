@@ -1,5 +1,5 @@
 import Color from "color";
-
+import { css } from "styled-components";
 import { contrastColor } from "./styleFunctions";
 import { injectGlobal } from "styled-components";
 import Nunito400 from "./fonts/Nunito/Nunito-Regular.ttf";
@@ -79,6 +79,19 @@ export const FONT_SIZE_XS = "9px";
 export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
 
 export const TABLE_HOVER = COLOR_CONTENT_BACKGROUND.darken(0.02).string();
+
+export const media = {
+  breadcrumbsBreakpoint200: (...args) => css`
+    @media (max-width: 800px) {
+      ${css(...args)};
+    }
+  `,
+  breadcrumbsBreakpointHandheld: (...args) => css`
+    @media (max-width: 567px) {
+      ${css(...args)};
+    }
+  `
+};
 
 injectGlobal`
   @font-face {

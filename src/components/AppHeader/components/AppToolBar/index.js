@@ -76,7 +76,7 @@ function AppToolBar({
             return val ? (
               <Breadcrumb key={val}>
                 <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
-                  {val}
+                  {val.length < 30 ? val : `${val.substr(0, 30)}...`}
                 </Link>
               </Breadcrumb>
             ) : null;
