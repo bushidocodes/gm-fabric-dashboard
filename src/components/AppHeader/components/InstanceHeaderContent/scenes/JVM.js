@@ -3,10 +3,10 @@ import { PropTypes } from "prop-types";
 
 import { getLatestAttribute } from "../../../../../utils/latestAttribute";
 import { getSparkLineOfValue } from "../../../../../utils/sparklines";
-import { convertMS } from "../../../../../utils";
 import Tab from "../../Tab";
 import TabNav from "../../TabNav";
-// import TabGroup from "../../TabGroup";
+
+import UpTime from "components/library/UpTime";
 
 import ThreadCounts from "components/library/ThreadCounts";
 
@@ -31,7 +31,12 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
         lines={[
           {
             name: "Uptime",
-            value: convertMS(getLatestAttribute(metrics, "jvm/uptime"))
+            value: (
+              <UpTime
+                startTime={getLatestAttribute(metrics, "jvm/start_time")}
+                render={uptime => <div>{uptime}</div>}
+              />
+            )
           }
         ]}
         title="Summary"

@@ -32,10 +32,10 @@ const settings = State({
 
     /**
      * These attributes contain static settings that the dashboard uses to directly
-     * poll an inidividual microservice when running without a "Fabric Server"
+     * poll an individual microservice when running without a "Fabric Server"
      * discovery service. They are populated when the app initializes from
      * meta tags in the index.html. When the dashboard is used with a "fabric server"
-     * (discovery service), this value is always null, as the disovery service
+     * (discovery service), this value is always null, as the discovery service
      * provides service metadata and proxies thread/metrics data from individual
      * microservices via its API.
     */

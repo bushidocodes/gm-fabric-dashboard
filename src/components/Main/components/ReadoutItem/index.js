@@ -68,5 +68,9 @@ ReadoutItem.propTypes = {
   readoutItemsContainerStyle: PropTypes.string,
   readoutItemsStyle: PropTypes.string,
   title: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ])
 };
