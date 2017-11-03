@@ -75,7 +75,7 @@ export default class DygraphContainer extends React.Component {
     options.legend = options.legend || "always";
     options.axisLineColor = options.axisLineColor || "rgb(200, 200, 200)";
     options.gridLineColor = options.gridLineColor || "rgb(200, 200, 200)";
-    options.colors = options.colors || ["#0aab2a", "#002e6e"];
+    options.colors = options.colors || ["#0aab2a", "#002e6e", "#FF5733"];
     options.gridLinePattern = options.gridLinePattern || [1, 3];
     options.animatedZooms = _.has(options, "animatedZooms")
       ? options.animatedZooms

@@ -72,14 +72,16 @@ class SummaryGrid extends Component {
       ? calculateErrorPercent(allRequests, allErrors)
       : formatAsDecimalString(0);
 
-    const memoryUsedPercent = getLatestAttribute(
+    const processMemoryUsed = getLatestAttribute(
       metrics,
-      "memory/used_percent",
-      3
+      "process/memory/used",
+      3,
+      "B",
+      "MB"
     );
-    const memoryAvail = getLatestAttribute(
+    const hostMemoryAvail = getLatestAttribute(
       metrics,
-      "memory/available",
+      "system/memory/available",
       3,
       "B",
       "GB"
@@ -121,16 +123,16 @@ class SummaryGrid extends Component {
                   detail: `${getLatestAttribute(
                     metrics,
                     "system/cpu_cores"
-                  )} Cores`,
+                  )} Cores on Host`,
                   icon: "server",
                   title: "Host CPU Utilized",
                   value: `${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`
                 },
                 {
-                  detail: `${memoryAvail} GB Free`,
+                  detail: `${hostMemoryAvail} GB Free on Host`,
                   icon: "server",
-                  title: "Host Memory Utilized",
-                  value: `${memoryUsedPercent}%`
+                  title: "Memory Utilized",
+                  value: `${processMemoryUsed} MB`
                 }
               ]}
             />

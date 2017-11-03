@@ -129,6 +129,14 @@
               "precision": 0,
               "baseUnit": "B",
               "resultUnit": "MB"
+            },
+            {
+              "type": "value",
+              "attribute": "process/memory/used",
+              "label": "Process Memory Used (MB)",
+              "precision": 0,
+              "baseUnit": "B",
+              "resultUnit": "MB"
             }
           ]
         }
