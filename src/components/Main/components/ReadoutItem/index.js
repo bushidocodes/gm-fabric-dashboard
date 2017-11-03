@@ -19,19 +19,22 @@ import ReadoutItemDetail from "./components/ReadoutItemDetail";
 // when we have "future", "bolt", "warning", "server", "link" svg elements...
 
 export default function ReadoutItem({
+  children,
+  detail,
+  graphData,
   icon,
   iconName,
   iconShape,
   iconColor,
+  readoutItemsStyle,
+  readoutItemsContainerStyle,
   title,
-  value,
-  detail,
-  graphData
+  value
 }) {
   return (
-    <ReadoutItemContainer>
+    <ReadoutItemContainer style={readoutItemsContainerStyle}>
       {icon && <ReadoutItemIcon icon={icon} />}
-      <ReadoutItemData>
+      <ReadoutItemData style={readoutItemsStyle}>
         <ReadoutItemTitle>{title || "—"}</ReadoutItemTitle>
         <ReadoutItemValue>{value || "—"}</ReadoutItemValue>
         {detail && <ReadoutItemDetail>{detail}</ReadoutItemDetail>}
@@ -48,18 +51,22 @@ export default function ReadoutItem({
             </Sparklines>
           </ReadoutItemGraph>
         )}
+        {children}
       </ReadoutItemData>
     </ReadoutItemContainer>
   );
 }
 
 ReadoutItem.propTypes = {
+  children: PropTypes.element,
   detail: PropTypes.string,
   graphData: PropTypes.array,
   icon: PropTypes.string,
   iconColor: PropTypes.string,
   iconName: PropTypes.string,
   iconShape: PropTypes.string,
+  readoutItemsContainerStyle: PropTypes.string,
+  readoutItemsStyle: PropTypes.string,
   title: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };

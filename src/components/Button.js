@@ -17,6 +17,7 @@ Button.propTypes = {
   ]),
   prefix: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Add prefix text to button label
   size: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the button
+  style: PropTypes.string, // style prop
   suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Add suffix text to button label
   tabIndex: PropTypes.number,
   type: PropTypes.oneOf(["danger", "info", "primary", "secondary", "warning"])
@@ -24,7 +25,7 @@ Button.propTypes = {
 
 /**
  * General purpose button
- * @param {Object} props - see propTypes 
+ * @param {Object} props - see propTypes
  * @returns JSX.Element
  */
 function Button({
@@ -37,6 +38,7 @@ function Button({
   orientation,
   prefix,
   size,
+  style,
   suffix,
   outline,
   tabIndex,
@@ -57,6 +59,7 @@ function Button({
       onClick={clickAction}
       tabIndex={tabIndex}
       title={label}
+      style={style}
     >
       {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
       <span className="label">

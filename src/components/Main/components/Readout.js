@@ -34,9 +34,16 @@ const ReadoutContainer = styled.div`
     order: ${props => (props.primary ? 0 : 1)};
 `;
 
-export default function Readout({ primary, readoutItems = [] }) {
+export default function Readout({
+  primary,
+  readoutItems = [],
+  children,
+  readoutContainerStyle,
+  readoutItemsStyle,
+  readoutItemsContainerStyle
+}) {
   return (
-    <ReadoutContainer primary={primary}>
+    <ReadoutContainer primary={primary} style={readoutContainerStyle}>
       {readoutItems.map(item => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
@@ -47,6 +54,9 @@ export default function Readout({ primary, readoutItems = [] }) {
           value={item.value}
           detail={item.detail}
           graphData={item.graphData}
+          children={item.children}
+          readoutItemsStyle={readoutItemsStyle}
+          readoutItemsContainerStyle={readoutItemsContainerStyle}
         />
       ))}
     </ReadoutContainer>
@@ -54,6 +64,10 @@ export default function Readout({ primary, readoutItems = [] }) {
 }
 
 Readout.propTypes = {
+  children: PropTypes.element,
   primary: PropTypes.bool,
-  readoutItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+  readoutContainerStyle: PropTypes.string,
+  readoutItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  readoutItemsContainerStyle: PropTypes.string,
+  readoutItemsStyle: PropTypes.string
 };

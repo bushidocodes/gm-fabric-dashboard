@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { spacingScale } from "style/styleFunctions";
 
 const ReadoutItemContainer = styled.div`
-  flex: 0 1 100%;
+  flex: ${props => (props.flex ? props.flex : "0 1 100%")};
   min-height: 75px;
   display: flex;
   flex-direction: row;

@@ -10,7 +10,6 @@ import PollingSettings from "./components/PollingSettings";
 
 import Readout from "../Readout.js";
 import Button from "../../../Button.js";
-import ReadoutItem from "../ReadoutItem";
 import LayoutSection from "../../../LayoutSection";
 import TapeIcon from "images/icons/tape.svg";
 
@@ -40,6 +39,18 @@ function SettingsGrid({
   numberOfDashboards,
   instancePollingInterval
 }) {
+  const button = (
+    <Button
+      clickAction={clearCacheClickAction}
+      icon="close"
+      label="Clear Cache"
+      tabIndex={0}
+      style={{
+        display: "block",
+        margin: "20px auto 10px auto"
+      }}
+    />
+  );
   return (
     <div className="view-app-settings settings-grid">
       <ErrorBoundary>
@@ -63,35 +74,28 @@ function SettingsGrid({
         />
 
         <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
-          <Readout align={"center"}>
-            <ReadoutItem title={"Cache Size"} value={metricsCacheSize} />
-            <Button
-              clickAction={clearCacheClickAction}
-              icon="close"
-              label="Clear Metrics Cache"
-              tabIndex={0}
+          <div style={{ width: "20em", textAlign: "center" }}>
+            <Readout
+              readoutContainerStyle={{
+                height: "150px"
+              }}
+              readoutItemsStyle={{
+                paddingLeft: "0px"
+              }}
+              readoutItemsContainerStyle={{
+                flex: " "
+              }}
+              readoutItems={[
+                {
+                  detail: "Cache Size",
+                  title: " ",
+                  value: `${metricsCacheSize}`,
+                  children: button
+                }
+              ]}
             />
-          </Readout>
+          </div>
         </LayoutSection>
-
-        {/** Disabled for initial release
-       /** className props has been deprecated and needs to be refactored
-      <LayoutSection
-        className={"settings-group-user-dashboards"}
-        title={"Custom Dashboards"}
-      >
-        <Readout align={"center"}>
-          <ReadoutItem title={"Custom Dashboards"} value={numberOfDashboards} />
-          <Button
-            clickAction={resetDashboardsClickAction}
-            icon="close"
-            label="Reset Dashboards"
-            tabIndex={31}
-            type="danger"
-          />
-        </Readout>
-      </LayoutSection>
-      **/}
       </ErrorBoundary>
     </div>
   );
