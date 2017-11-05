@@ -1,14 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import { getLatestAttribute } from "../../../../../utils/latestAttribute";
-import { getSparkLineOfValue } from "../../../../../utils/sparklines";
-import Tab from "../../Tab";
-import TabNav from "../../TabNav";
-
-import UpTime from "components/library/UpTime";
-
-import ThreadCounts from "components/library/ThreadCounts";
+import ThreadCounts from "components/ThreadCounts";
+import UpTime from "components/UpTime";
+import Tab from "components/AppHeader/components/Tab";
+import TabNav from "components/AppHeader/components/TabNav";
+import { getLatestAttribute } from "utils/latestAttribute";
+import { getSparkLineOfValue } from "utils/sparklines";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,

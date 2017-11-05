@@ -5,7 +5,6 @@ import {
   contrastColor,
   rowChildSpacing
 } from "style/styleFunctions";
-
 import {
   COLOR_CONTENT_BACKGROUND,
   TABLE_BORDER,

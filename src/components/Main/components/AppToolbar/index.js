@@ -6,7 +6,7 @@ import Breadcrumb from "./components/Breadcrumb";
 import Breadcrumbs from "./components/Breadcrumbs";
 import AppHeader from "./components/AppHeader";
 
-import NavButton from "../../../NavButton";
+import NavButton from "components/NavButton";
 
 AppToolbar.propTypes = {
   pathname: PropTypes.string.isRequired

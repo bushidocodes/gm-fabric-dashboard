@@ -1,8 +1,0 @@
-// components/uikit-fixes.scss
-@import "../variables.scss";
-@import "../mixins.scss";
-
-// Fix for pointer cursor on UIKit icons
-.uk-icon {
-  cursor: inherit;
-}

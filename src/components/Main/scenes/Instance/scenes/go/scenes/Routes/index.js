@@ -6,7 +6,7 @@ import RoutesTable from "./components/RoutesTable";
 import RoutesTableToolbar from "./components/RoutesTableToolbar";
 
 import { getRoutesTable } from "utils/go/selectors";
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 
 import NotFoundError from "components/Main/components/NotFoundError";
 

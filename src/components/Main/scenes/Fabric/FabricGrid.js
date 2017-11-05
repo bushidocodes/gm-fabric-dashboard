@@ -1,15 +1,16 @@
 import { Actions } from "jumpstate";
-import { PropTypes } from "prop-types";
-import React, { Component } from "react";
 import _ from "lodash";
+import { PropTypes } from "prop-types";
 import qs from "query-string";
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import { notification } from "uikit";
 
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
+
 import NotFoundError from "components/Main/components/NotFoundError";
 
-import { withRouter } from "react-router-dom";
 class FabricGrid extends Component {
   static propTypes = {
     history: PropTypes.object.isRequired,

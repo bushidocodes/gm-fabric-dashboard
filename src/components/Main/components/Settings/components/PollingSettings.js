@@ -3,9 +3,11 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
+import Button from "components/Button";
+import LayoutSection from "components/LayoutSection";
+
 import PollIcon from "images/icons/poll.svg";
-import Button from "../../../../Button.js";
-import LayoutSection from "../../../../LayoutSection";
+
 /**
  * Control to start/stop polling and change the polling rate
  * Styled to resemble a Readout and intended to be a child of SettingsGrid

@@ -1,6 +1,6 @@
 // NPM Modules
-import styled from "styled-components";
 import Color from "color";
+import styled from "styled-components";
 
 // External Dependencies
 import {

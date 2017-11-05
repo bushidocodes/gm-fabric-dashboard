@@ -3,6 +3,7 @@ import { createSelector } from "reselect";
 import _ from "lodash";
 import { parseJSONString } from "utils/latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
+
 import SidebarCard from "../components/SidebarCard";
 
 const getDashboards = state => state.dashboards;

@@ -1,11 +1,10 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import { getLatestAttribute } from "../../../../../utils/latestAttribute";
-import Tab from "../../Tab";
-import TabNav from "../../TabNav";
-
-import UpTime from "components/library/UpTime";
+import { getLatestAttribute } from "utils/latestAttribute";
+import Tab from "components/AppHeader/components/Tab";
+import TabNav from "components/AppHeader/components/TabNav";
+import UpTime from "components/UpTime";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,

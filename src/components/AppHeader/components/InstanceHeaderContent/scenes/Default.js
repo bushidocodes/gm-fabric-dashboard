@@ -1,8 +1,9 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import Tab from "../../Tab";
-import TabNav from "../../TabNav";
+import Tab from "components/AppHeader/components/Tab";
+import TabNav from "components/AppHeader/components/TabNav";
+
 SidebarContent.propTypes = {
   headerTabs: PropTypes.array
 };

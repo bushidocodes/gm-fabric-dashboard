@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
-import { NavLink } from "react-router-dom";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 NavButton.propTypes = {
   hideLabel: PropTypes.bool, // boolean that toggles if the label should be shown as text after the icon

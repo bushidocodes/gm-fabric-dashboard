@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Collapse from "react-collapse";
 
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-
 import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const TableDrawerCollapse = styled(Collapse)`

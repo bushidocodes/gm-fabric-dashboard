@@ -1,9 +1,8 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
+import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 import GMServiceHeader from "./GMServiceHeader.js";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 
 const options = { down: "Down", warning: "Warning", stable: "Stable" };
 

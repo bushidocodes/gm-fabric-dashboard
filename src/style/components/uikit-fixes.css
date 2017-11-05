@@ -1,0 +1,4 @@
+/* Fix for pointer cursor on UIKit icons */
+.uk-icon {
+  cursor: inherit;
+}

@@ -6,7 +6,7 @@ import FunctionsTable from "./components/FunctionsTable";
 import FunctionsTableToolbar from "./components/FunctionsTableToolbar";
 
 import { getFunctionsTable } from "utils/go/selectors";
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 
 import NotFoundError from "components/Main/components/NotFoundError";
 

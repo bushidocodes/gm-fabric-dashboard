@@ -4,17 +4,15 @@ import React from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
 
-import GMLineChart from "../../../../../components/GMLineChart";
-import LayoutSection from "../../../../../../LayoutSection";
-import Readout from "../../../../../components/Readout";
-
-import ReadoutGroup from "../../../../../components/ReadoutGroup";
-import ErrorBoundary from "components/library/ErrorBoundary";
-import UpTime from "components/library/UpTime";
-
+import LayoutSection from "components/LayoutSection";
+import ErrorBoundary from "components/ErrorBoundary";
+import UpTime from "components/UpTime";
+import GMLineChart from "components/Main/components/GMLineChart";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
+import Readout from "components/Main/components/Readout";
+import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
-import { calculateErrorPercent, formatAsDecimalString } from "utils";
 
 /**
  * Static Summary page for GO runtime

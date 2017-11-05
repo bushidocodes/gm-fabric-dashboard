@@ -1,0 +1,67 @@
+// views/view-instance-config.scss
+@import "../../../../style/variables.scss";
+@import "../../../../style/mixins.scss";
+
+// Styles
+.view-app-settings {
+  .layout-section {
+    .section-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    [class^="control-group"] {
+      text-align: center;
+    }
+  }
+
+  .control-group {
+    background-color: contrast-color($color-content-background, 4%);
+    border-radius: $border-radius-base * 2;
+    padding: spacing-scale(4);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    + .control-group {
+      margin-left: spacing-scale(2);
+    }
+
+    .readout + .uk-button {
+      margin-top: spacing-scale(1);
+    }
+  }
+
+  .settings-group-polling {
+    display: flex;
+    flex-wrap: wrap;
+
+    .control-group-polling-start-stop {
+      flex: 0 0 spacing-scale(20);
+      align-self: stretch;
+    }
+
+    .control-group-polling-interval {
+      flex: 0 1 50%;
+      padding-left: spacing-scale(3);
+      padding-right: spacing-scale(3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .input-range__label.input-range__label--value {
+        text-align: center;
+        font-weight: 600;
+        font-size: $font-size-base;
+        color: $color-highlight;
+        top: -2em;
+      }
+
+      .label {
+        font-size: $font-size-base;
+      }
+    }
+  }
+}

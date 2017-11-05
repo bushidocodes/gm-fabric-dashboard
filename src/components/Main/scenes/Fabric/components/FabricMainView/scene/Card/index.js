@@ -1,58 +1,16 @@
-import React from "react";
-import { PropTypes } from "prop-types";
 import _ from "lodash";
-
-import {
-  COLOR_CONTENT_BACKGROUND,
-  PADDING_BASE,
-  CONTENT_MAX_WIDTH,
-  ZINDEX_STICKY
-} from "style/styleVariables";
-import { edgeColor } from "style/styleFunctions";
-import { microserviceStatuses } from "utils/constants";
-
-import GMServiceHeader from "../../components/GMServiceHeader";
-import GMServiceCardCollection from "./components/GMServiceCardCollection";
-
-import styled from "styled-components";
+import { PropTypes } from "prop-types";
+import React from "react";
 import { withRouter } from "react-router-dom";
 
-// styled components
-const GMServiceViewContainer = styled.div`
-  position: relative;
-  z-index: 1;
-`;
+import GMServiceHeader from "components/Main/scenes/Fabric/components/FabricMainView/components/GMServiceHeader";
+import { microserviceStatuses } from "utils/constants";
 
-const GMServiceCardView = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
-  &:first-of-type {
-    border-top: 0;
-  }
-`;
-
-const SectionHeader = styled.div`
-  display: flex;
-  padding: ${PADDING_BASE} ${parseInt(PADDING_BASE, 10) * 2}px 0;
-  position: sticky;
-  top: 0;
-  z-index: ${ZINDEX_STICKY};
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
-  max-width: ${CONTENT_MAX_WIDTH};
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-`;
-const SectionContent = styled.div`
-  display: flex;
-  padding: 0 ${parseInt(PADDING_BASE, 10) * 2}px
-    ${parseInt(PADDING_BASE, 10) * 3}px;
-  max-width: ${CONTENT_MAX_WIDTH};
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-`;
+import GMServiceCardCollection from "./components/GMServiceCardCollection";
+import GMServiceCardView from "./components/GMServiceCardView";
+import GMServiceViewContainer from "./components/GMServiceViewContainer";
+import SectionContent from "./components/SectionContent";
+import SectionHeader from "./components/SectionHeader";
 
 // Array of { headerTitle, name, version, docsLink, status }
 // headerTitle: Thing that we group by

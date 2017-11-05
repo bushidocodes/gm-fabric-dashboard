@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import StatusStableIcon from "images/icons/status-stable.svg";
 import StatusWarningIcon from "images/icons/status-warning.svg";
 import StatusDownIcon from "images/icons/status-down.svg";

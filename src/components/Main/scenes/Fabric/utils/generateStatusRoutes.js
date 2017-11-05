@@ -2,9 +2,10 @@ import React from "react";
 import { Route } from "react-router";
 import _ from "lodash";
 
-import { microserviceStatuses } from "../../../../../utils/constants";
 import FabricGrid from "../FabricGrid";
-import { computeStatus } from "../../../../../utils/selectors";
+
+import { microserviceStatuses } from "utils/constants";
+import { computeStatus } from "utils/selectors";
 
 /** HOC that loops through microserviceStatuses and generates routes,
 * passing the filtered services to FabricGrid

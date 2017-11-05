@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { spacingScale } from "../../../../../style/styleFunctions";
-import { FONT_SIZE_XS } from "../../../../../style/styleVariables";
+import { spacingScale } from "style/styleFunctions";
+import { FONT_SIZE_XS } from "style/styleVariables";
 
 const AppVersionLink = styled.a`
   font-weight: 600;

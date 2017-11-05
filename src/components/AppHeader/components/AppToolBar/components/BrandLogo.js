@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { spacingScale } from "../../../../../style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);
 const APP_TOOLBAR_BRAND_SPACING = spacingScale(0.25);

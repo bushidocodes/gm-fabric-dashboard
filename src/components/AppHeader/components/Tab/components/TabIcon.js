@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
+// TODO: Refactor as either styled-component or functional component, not both
 // Added explicit width to align title properly pending icon rework.
 const TabIconContainer = styled.span`
   display: flex;

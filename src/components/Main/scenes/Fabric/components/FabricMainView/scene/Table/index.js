@@ -1,53 +1,17 @@
-import React from "react";
-import { PropTypes } from "prop-types";
 import _ from "lodash";
-import { microserviceStatuses } from "utils/constants";
-
-import styled from "styled-components";
+import { PropTypes } from "prop-types";
+import React from "react";
+import { withRouter } from "react-router-dom";
 
 import GMServiceList from "./components/GMServiceList";
-import GMServiceHeader from "../../components/GMServiceHeader";
-import {
-  COLOR_CONTENT_BACKGROUND,
-  ZINDEX_STICKY,
-  CONTENT_MAX_WIDTH
-} from "style/styleVariables";
-import { edgeColor, spacingScale } from "style/styleFunctions";
-import { withRouter } from "react-router-dom";
+import SectionContainer from "./components/SectionContainer";
+import SectionContent from "./components/SectionContent";
+import SectionHeader from "./components/SectionHeader";
+
+import GMServiceHeader from "components/Main/scenes/Fabric/components/FabricMainView/components/GMServiceHeader";
+import { microserviceStatuses } from "utils/constants";
+
 // styled components
-const SectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: ${spacingScale(1)} 0 0;
-  border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
-  flex-wrap: nowrap;
-
-  &:first-of-type {
-    border-top: 0;
-  }
-`;
-
-const SectionHeader = styled.div`
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 0 ${spacingScale(2)};
-  position: sticky;
-  top: 0;
-  z-index: ${ZINDEX_STICKY};
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
-  max-width: ${CONTENT_MAX_WIDTH};
-`;
-
-const SectionContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 ${spacingScale(1)};
-  max-width: ${CONTENT_MAX_WIDTH};
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-`;
 
 GMServiceListView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,

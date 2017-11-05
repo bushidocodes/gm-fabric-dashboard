@@ -29,35 +29,6 @@ $contrast-interval: 4%;
 $color-content: transparentize(contrast-color($color-content-background), 0.1);
 $color-content-muted: transparentize($color-content, 0.2);
 
-// Color Ranges
-$colors-datarange-blue-to-red: #3a76b1, #6993c2, #95b2d2, #c4d2e1, #f1f1f1,
-  #e8cdd2, #dfa9b0, #d48491, #ca6070;
-$colors-datarange-blueberry-kiwi: #1d334c, #486488, #d4e3ef, #76a834, #d2e3b4;
-$colors-datarange-seaweed: #1eb0d4, #127389, #1aa34e, #128a42, #bed857;
-$colors-datarange-rainbow-4: custom-color-range(
-  $base-color-1: complement($color-brand-primary),
-  $type: qualitative,
-  $size: 4
-);
-$colors-datarange-subtle-18: custom-color-range(
-  $base-color-1: $color-brand-primary,
-  $type: quantitative,
-  $direction: to-dark,
-  $size: 18
-);
-$colors-datarange-desert-8: custom-color-range(
-  $base-color-1: #e0c39c,
-  $type: quantitative,
-  $direction: to-dark,
-  $size: 8
-);
-$colors-datarange-autumn-4: custom-color-range(
-  $base-color-1: orange,
-  $type: quantitative,
-  $direction: to-light,
-  $size: 4
-);
-
 // Typography
 
 // Backup font list
@@ -81,7 +52,6 @@ $line-height-base: 1.4;
 
 $font-weight-base: 500;
 
-$font-size-hero: 32px;
 $font-size-lg: 18px;
 $font-size-base: 14px;
 $font-size-sm: 11px;

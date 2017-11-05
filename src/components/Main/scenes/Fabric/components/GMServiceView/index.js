@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { PropTypes } from "prop-types";
 import _ from "lodash";
+import { PropTypes } from "prop-types";
+import React, { Component } from "react";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
-import ErrorBoundary from "components/library/ErrorBoundary";
 
+import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
 
 class GMServiceView extends Component {

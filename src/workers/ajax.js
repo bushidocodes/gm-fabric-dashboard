@@ -2,6 +2,7 @@ import "babel-polyfill";
 import registerPromiseWorker from "promise-worker/register";
 import axios from "axios";
 import _ from "lodash";
+
 import { formatStatsd } from "./ajaxUtils";
 
 // Register with Promise-Worker

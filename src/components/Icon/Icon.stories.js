@@ -1,7 +1,5 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
-
 import { withKnobs, select, number, color } from "@storybook/addon-knobs";
 
 import Icon from "./Icon";

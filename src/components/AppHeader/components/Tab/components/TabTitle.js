@@ -1,12 +1,7 @@
-import {
-  spacingScale,
-  contrastColor
-} from "../../../../../style/styleFunctions";
-import {
-  COLOR_ALT_BACKGROUND,
-  FONT_SIZE_LG
-} from "../../../../../style/styleVariables";
 import styled from "styled-components";
+
+import { spacingScale, contrastColor } from "style/styleFunctions";
+import { COLOR_ALT_BACKGROUND, FONT_SIZE_LG } from "style/styleVariables";
 
 const COLOR_TAB_BACKGROUND_BASE = contrastColor(COLOR_ALT_BACKGROUND, 0.175);
 

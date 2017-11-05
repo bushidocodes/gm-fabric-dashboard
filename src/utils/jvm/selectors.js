@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
+
 import { getLatestAttribute } from "../latestAttribute";
 import { getSparkLineOfNetChange } from "../sparklines";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
-
 import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 

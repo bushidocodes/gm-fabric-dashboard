@@ -2,7 +2,8 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
 import FabricAppHeaderContent from "./components/scenes/Fabric";
-import InstanceHeaderContent from "../../components/InstanceHeaderContent";
+
+import InstanceHeaderContent from "components/AppHeader/components/InstanceHeaderContent";
 
 // Add a route for /:serviceName/:serviceVersion
 

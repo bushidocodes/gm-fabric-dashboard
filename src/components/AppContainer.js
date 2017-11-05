@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { APP_FOOTER_HEIGHT } from "./../style/styleVariables";
+
+import { APP_FOOTER_HEIGHT } from "style/styleVariables";
 
 // toolbar wrapper - do not display scrollbar
 const AppContainer = styled.div`

@@ -8,13 +8,14 @@ import UIkit from "uikit";
 
 import PollingSettings from "./components/PollingSettings";
 
-import Readout from "../Readout.js";
-import Button from "../../../Button.js";
-import LayoutSection from "../../../LayoutSection";
-import TapeIcon from "images/icons/tape.svg";
+import Button from "components/Button";
+import LayoutSection from "components/LayoutSection";
+import ErrorBoundary from "components/ErrorBoundary";
+import Readout from "components/Main/components/Readout";
 
-import ErrorBoundary from "components/library/ErrorBoundary";
+import TapeIcon from "images/icons/tape.svg";
 import "react-input-range/lib/css/index.css";
+import "./Settings.scss";
 
 SettingsGrid.propTypes = {
   fabricPollingInterval: PropTypes.number,

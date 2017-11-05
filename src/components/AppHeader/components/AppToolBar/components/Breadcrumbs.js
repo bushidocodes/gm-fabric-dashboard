@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { hide } from "./../../../../library/globalPatterns";
+
+import { hide } from "components/globalPatterns";
+
 const Breadcrumbs = styled.ol`
   flex: 1 1 auto;
   display: flex;

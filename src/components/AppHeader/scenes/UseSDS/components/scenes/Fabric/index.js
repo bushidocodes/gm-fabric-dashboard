@@ -5,8 +5,8 @@ import { withRouter } from "react-router-dom";
 import { microserviceStatuses } from "utils/constants";
 import { getAppHeaderContent, getStatusCount } from "utils/selectors";
 
-import Tab from "../../../../../components/Tab";
-import TabNav from "../../../../../components/TabNav";
+import Tab from "components/AppHeader/components/Tab";
+import TabNav from "components/AppHeader/components/TabNav";
 
 FabricAppHeaderContent.propTypes = {
   services: PropTypes.array,

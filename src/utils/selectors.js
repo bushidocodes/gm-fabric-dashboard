@@ -1,12 +1,13 @@
 import React from "react";
 import { createSelector } from "reselect";
 import _ from "lodash";
+
 import { parseJSONString } from "./latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector
-import Tab from "../../src/components/AppHeader/components/Tab";
+import Tab from "components/AppHeader/components/Tab";
 
 // Reselect Input Selectors
 

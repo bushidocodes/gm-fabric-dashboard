@@ -7,10 +7,6 @@ import {
   LINE_HEIGHT_BASE
 } from "./styleVariables.js";
 
-// @include function-button-base();
-// @include function-button-size();
-// @include function-button-style();
-
 const borderWidth = "1px";
 const fontWeight = 500;
 const lineHeight = LINE_HEIGHT_BASE;

@@ -1,7 +1,8 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 
-import DygraphContainer from "./components/DygraphContainer";
+import DygraphContainer from "./components/DygraphWrapper";
+import "./GMLineChart.scss";
 
 /**
  * Reuseable Dygraph-based Line Chart component for rendering a time series

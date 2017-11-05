@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import GMLink from "../../../../../../../../GMLink";
+
+import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 import { spacingScale } from "style/styleFunctions";
 import { FONT_SIZE_XS } from "style/styleVariables";
 

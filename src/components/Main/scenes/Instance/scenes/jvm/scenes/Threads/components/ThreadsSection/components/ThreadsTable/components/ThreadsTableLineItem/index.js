@@ -4,14 +4,10 @@ import React, { Component } from "react";
 import IndicatorIcon from "./components/IndicatorIcon";
 
 import StackTrace from "components/Main/components/StackTrace";
-
-import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
-
 import TableCol from "components/Main/components/TableCol";
 import TableColThread from "components/Main/components/TableColThread";
-
 import TableColDaemon from "components/Main/components/TableColDaemon";
-
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import TableRow from "components/Main/components/TableRow";
 
 /**

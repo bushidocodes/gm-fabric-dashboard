@@ -1,23 +1,20 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import Badge from "../../../../../../../components/Badge";
-
 import {
   Sparklines,
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
 
-import GMLineChart from "../../../../../../../../../components/GMLineChart";
-import TableRow from "../../../../../../../../../components/TableRow";
-import TableCol from "../../../../../../../../../components/TableCol";
-
-import TableColVizBar from "../../../../../../../../../components/TableColVizBar";
-import SparklineCol from "../../../../../../../../../components/SparklineCol";
-import TableDrawerCollapse from "../../../../../../../../../components/TableDrawerCollapse";
-
-import VizBar from "../../../../../../../../../components/VizBar";
-import VizFill from "../../../../../../../../../components/VizFill";
+import GMLineChart from "components/Main/components/GMLineChart";
+import SparklineCol from "components/Main/components/SparklineCol";
+import TableCol from "components/Main/components/TableCol";
+import TableColVizBar from "components/Main/components/TableColVizBar";
+import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
+import TableRow from "components/Main/components/TableRow";
+import VizBar from "components/Main/components/VizBar";
+import VizFill from "components/Main/components/VizFill";
+import Badge from "components/Main/scenes/Instance/components/Badge";
 
 /**
  * A row of data in RoutesTable

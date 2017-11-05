@@ -11,12 +11,6 @@ $readout-feature-background-color-base: contrast-color(
 );
 $readout-feature-primary-background-color-base: $color-highlight;
 $readout-feature-primary-text-color-base: $color-white;
-$readout-dashboard-colors: custom-color-range(
-  $base-color-1: $color-brand-primary,
-  $base-color-2: $color-brand-secondary,
-  $type: divergent,
-  $size: 4
-);
 
 .react-grid-item > [class*="kv"] {
   height: 100%;

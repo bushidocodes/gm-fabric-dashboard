@@ -2,10 +2,10 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import SettingsGrid from "../../../../components/Settings";
-import Explorer from "../../../../components/Explorer";
-import GMGrid from "../../../../components/GMGrid";
-import NotFound from "../../components/NotFound";
+import SettingsGrid from "components/Main/components/Settings";
+import Explorer from "components/Main/components/Explorer";
+import GMGrid from "components/Main/components/GMGrid";
+import NotFound from "components/Main/scenes/Instance/components/NotFound";
 
 Router.propTypes = {
   baseURL: PropTypes.string

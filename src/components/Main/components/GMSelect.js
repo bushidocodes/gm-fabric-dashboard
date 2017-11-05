@@ -1,8 +1,10 @@
 import Select from "react-select";
 import styled from "styled-components";
+
+import { ZINDEX_DROPDOWN } from "style/styleVariables";
+
 // Import the Styles needed by React-Select
 import "react-select/dist/react-select.css";
-import { ZINDEX_DROPDOWN } from "style/styleVariables";
 
 const GMSelect = styled(Select)`
   flex-grow: 1;

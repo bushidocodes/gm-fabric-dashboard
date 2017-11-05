@@ -6,7 +6,6 @@ import {
   COLOR_CONTENT,
   BORDER_RADIUS_BASE
 } from "style/styleVariables";
-
 import { spacingScale } from "style/styleFunctions";
 
 const ErrorContent = styled.div`

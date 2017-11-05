@@ -1,14 +1,12 @@
-import {
-  spacingScale,
-  contrastColor
-} from "../../../../../style/styleFunctions";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+
+import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
   COLOR_WHITE,
   COLOR_HIGHLIGHT
-} from "../../../../../style/styleVariables";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+} from "style/styleVariables";
 
 const TAB_WIDTH_BASE = "1%";
 const COLOR_TAB_BACKGROUND_BASE = contrastColor(COLOR_ALT_BACKGROUND, 0.175);

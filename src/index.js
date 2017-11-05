@@ -11,9 +11,7 @@ import AppContainer from "./components/AppContainer";
 import Header from "./components/AppHeader";
 import AppFooter from "./components/Footer";
 import Main from "./components/Main";
-
 import store from "./store";
-
 // All scripts in the workers directory are loaded by WebPack via worker-loader
 import AjaxWorker from "./workers/ajax.js";
 // Disabled LocalStorage Worker for initial release

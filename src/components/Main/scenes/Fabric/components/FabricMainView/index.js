@@ -1,9 +1,11 @@
-import React from "react";
 import { PropTypes } from "prop-types";
+import React from "react";
+
 import GMServiceCardView from "./scene/Card";
 import GMServiceListView from "./scene/Table";
+
+import ErrorBoundary from "components/ErrorBoundary";
 import { computeStatus } from "utils/selectors";
-import ErrorBoundary from "components/library/ErrorBoundary";
 
 FabricMainView.propTypes = {
   displayType: PropTypes.string.isRequired,

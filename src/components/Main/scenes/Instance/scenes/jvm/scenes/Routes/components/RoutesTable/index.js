@@ -3,10 +3,10 @@ import React from "react";
 
 import RoutesTableLineItem from "./components/RoutesTableLineItem";
 
-import Table from "../../../../../../../../../Main/components/Table";
-import TableHeader from "../../../../../../../../../Main/components/TableHeader";
-import TableColHeader from "../../../../../../../../../Main/components/TableColHeader";
-import TableBody from "../../../../../../../../../Main/components/TableBody";
+import Table from "components/Main/components/Table";
+import TableHeader from "components/Main/components/TableHeader";
+import TableColHeader from "components/Main/components/TableColHeader";
+import TableBody from "components/Main/components/TableBody";
 
 import { relativeReqPercent } from "utils";
 

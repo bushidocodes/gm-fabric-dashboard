@@ -1,6 +1,7 @@
 import registerPromiseWorker from "promise-worker/register";
 import localforage from "localforage";
 import _ from "lodash";
+
 import defaultJVMDashboards from "../json/jvm/dashboards.json";
 // import defaultGoDashboards from "../json/go/dashboards.json";
 

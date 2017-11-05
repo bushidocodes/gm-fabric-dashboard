@@ -1,6 +1,7 @@
-import { BORDER_RADIUS_BASE } from "style/styleVariables";
-import StyledButton from "./StyledButton";
 import { spacingScale } from "style/styleFunctions";
+import { BORDER_RADIUS_BASE } from "style/styleVariables";
+
+import StyledButton from "./StyledButton";
 
 export const StyledButtonRoundedRight = StyledButton.extend`
   border-top-right-radius: ${BORDER_RADIUS_BASE};

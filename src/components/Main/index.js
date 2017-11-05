@@ -1,12 +1,10 @@
 import { Actions } from "jumpstate";
-
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import AppContent from "./components/AppContent";
-
 import FabricRouter from "./scenes/Fabric";
 import InstanceRouter from "./scenes/Instance";
 

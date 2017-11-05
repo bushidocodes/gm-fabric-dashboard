@@ -6,10 +6,8 @@ import ThreadsTableLineItem from "./components/ThreadsTableLineItem";
 import Table from "components/Main/components/Table";
 import TableHeader from "components/Main/components/TableHeader";
 import TableBody from "components/Main/components/TableBody";
-
 import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
 import TableColHeader from "components/Main/components/TableColHeader";
-
 import TableColDaemon from "components/Main/components/TableColDaemon";
 
 ThreadsTable.propTypes = {

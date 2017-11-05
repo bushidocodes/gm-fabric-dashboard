@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import {
-  FONT_SIZE_SM,
-  COLOR_WHITE,
-  COLOR_GREEN
-} from "../../../../../style/styleVariables";
+
+import { FONT_SIZE_SM, COLOR_WHITE, COLOR_GREEN } from "style/styleVariables";
 
 const SkipNav = styled.button.attrs({
   onKeyDown: props => evt => {

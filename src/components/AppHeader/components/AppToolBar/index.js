@@ -2,8 +2,8 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import decipherLogo from "../../assets/decipherLogo.svg";
-import NavButton from "./../../../NavButton";
+import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
+import NavButton from "components/NavButton";
 import ButtonGroup from "components/ButtonGroup";
 
 import AppToolBarHeader from "./components/AppToolBarHeader";

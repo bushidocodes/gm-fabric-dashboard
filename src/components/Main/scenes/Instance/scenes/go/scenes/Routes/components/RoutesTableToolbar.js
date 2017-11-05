@@ -1,6 +1,9 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import GMSelect from "components/Main/components/GMSelect";
+import Toolbar from "components/Main/components/Toolbar";
+import ToolbarLeft from "components/Main/components/ToolbarLeft";
+import ToolbarRight from "components/Main/components/ToolbarRight";
 import SecondaryText from "components/SecondaryText";
 
 RoutesTableToolbar.propTypes = {
@@ -26,8 +29,8 @@ export default function RoutesTableToolbar({
   setKeyToSortBy
 }) {
   return (
-    <div className="toolbar">
-      <div className="toolbar-left">
+    <Toolbar>
+      <ToolbarLeft>
         <form>
           <input
             className="form-control"
@@ -38,8 +41,8 @@ export default function RoutesTableToolbar({
             value={filterString}
           />
         </form>
-      </div>
-      <div className="toolbar-right">
+      </ToolbarLeft>
+      <ToolbarRight>
         <GMSelect
           name="form-field-group-by"
           options={[
@@ -75,7 +78,7 @@ export default function RoutesTableToolbar({
             </span>
           ]}
         />
-      </div>
-    </div>
+      </ToolbarRight>
+    </Toolbar>
   );
 }

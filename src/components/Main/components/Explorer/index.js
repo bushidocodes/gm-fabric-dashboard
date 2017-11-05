@@ -11,7 +11,7 @@ import ViewExplorer from "./components/ViewExplorer";
 import MetricsList from "./components/MetricsList";
 import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 
-import ErrorBoundary from "components/library/ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux

@@ -7,7 +7,7 @@ import JVMHeaderContent from "./scenes/JVM";
 import GoHeaderContent from "./scenes/Go";
 import DefaultHeaderContent from "./scenes/Default";
 
-import { generateHeaderTabs } from "../../../../utils/selectors";
+import { generateHeaderTabs } from "utils/selectors";
 
 /**
  * Main area of Sidebar containing one or more SidebarCards

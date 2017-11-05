@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import StatusIcon from "../../../../../../../../../../../StatusIcon";
-import Docs from "images/icons/docs.svg";
 import { Line, LineLeft, LineRight } from "./components/Line";
 import { ItemName, ItemVersion } from "./components/Item";
 import IconWrapper from "./components/IconWrapper";
 import DocLink from "./components/DocLink";
-import GMLink from "../../../../../../../GMLink";
+
+import StatusIcon from "components/StatusIcon";
+import Docs from "images/icons/docs.svg";
+import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 
 export default class GMServiceListItem extends Component {
   static propTypes = {

@@ -1,14 +1,15 @@
+import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
-import _ from "lodash";
+
 import FabricGrid from "./FabricGrid";
 import GMServiceView from "./components/GMServiceView";
-import InstanceRouter from "../Instance";
 import generateStatusRoutes from "./utils/generateStatusRoutes";
-import SettingsGrid from "../../components/Settings";
 
+import InstanceRouter from "components/Main/scenes/Instance";
+import SettingsGrid from "components/Main/components/Settings";
 import { computeStatus } from "utils/selectors";
 
 FabricRouter.propTypes = {
