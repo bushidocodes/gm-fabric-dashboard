@@ -1,11 +1,9 @@
 import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
-import FabricAppHeaderContent from "./components/scenes/Fabric";
-
-import InstanceHeaderContent from "components/AppHeader/components/InstanceHeaderContent";
-
-// Add a route for /:serviceName/:serviceVersion
+import FabricAppHeaderContent from "./scenes/Fabric";
+import InstanceHeaderContent from "../../components/InstanceHeaderContent";
+import ServiceHeaderContent from "./scenes/Service";
 
 function AppHeaderContent() {
   return (
@@ -14,6 +12,11 @@ function AppHeaderContent() {
       <Route
         path="/:path(|stable|down|warning)"
         component={FabricAppHeaderContent}
+      />
+      <Route
+        exact
+        path="/:serviceName/:serviceVersion"
+        component={ServiceHeaderContent}
       />
       <Route
         path="/:serviceName/:serviceVersion/:instanceID"
