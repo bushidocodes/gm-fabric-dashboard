@@ -8,22 +8,24 @@ import DygraphContainer from "./components/DygraphContainer";
 
 /**
  * Reuseable Dygraph-based Line Chart component for rendering time series data
- * 
+ *
  * Required Props include title (the string to show at that top of the card) and time series (the data to render).
- * 
+ *
  * Optional props include detailLines, an array of strings listed below the line chart.
- * 
+ *
  * @export
  * @class DygraphWrapper
  * @extends {React.Component}
  */
 export default class DygraphWrapper extends React.Component {
   static propTypes = {
+    height: PropTypes.number,
     timeSeries: PropTypes.array.isRequired
   };
 
   componentDidMount() {
     const [data, options] = this.props.timeSeries;
+    options.height = this.props.height;
     this.drawChart(this.div, data, options);
   }
 
@@ -31,7 +33,7 @@ export default class DygraphWrapper extends React.Component {
    * Instruct the existing Dygraph to update when new data is passed in as props or when labels change
    * All other changes in the options object are ignored
    * Also, resize the dygraph every time the component receives props
-   * @param {Object} nextProps 
+   * @param {Object} nextProps
    * @memberof DygraphWrapper
    */
   componentWillReceiveProps(nextProps) {
@@ -64,7 +66,7 @@ export default class DygraphWrapper extends React.Component {
 
   /**
    * Renders a dygraph to a physical DOM node
-   * 
+   *
    * @param {any} elem - Physical DOM node where the Dygraph should render
    * @param {any} data - Timeseries data powering the Dygraph
    * @param {any} options - Various options for how a Dygraph should look at feel.
@@ -72,6 +74,7 @@ export default class DygraphWrapper extends React.Component {
    */
   drawChart(elem, data, options) {
     // Default Dygraph Options
+    options.height = options.height || 200;
     options.labelsKMB = _.has(options, "labelsKMB") ? options.labelsKMB : true; // Abbreviate with KMB
     options.strokeWidth = options.strokeWidth || 2.0;
     options.legend = options.legend || "always";

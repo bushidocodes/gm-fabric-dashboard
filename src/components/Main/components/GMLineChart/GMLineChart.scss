@@ -38,6 +38,7 @@ $chart-height-base: 250px;
 
     > * {
       margin: $chart-spacing;
+      margin-bottom: 5em;
     }
   }
 
@@ -108,5 +109,8 @@ $chart-height-base: 250px;
   &:not([class*="chart-height-"]),
   &.chart-height-max {
     height: 100%;
+  }
+  &.chart-width-max {
+    width: 100%;
   }
 }

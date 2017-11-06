@@ -33,7 +33,8 @@ class Explorer extends Component {
     super(props);
     this.state = {
       searchQuery: "",
-      lastPushedQueryString: ""
+      lastPushedQueryString: "",
+      chartHeight: 0
     };
     // Debounce
     this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
@@ -41,6 +42,11 @@ class Explorer extends Component {
 
   componentWillMount() {
     this.popAndDecodeHistory(this.props.location.search);
+  }
+
+  componentDidMount() {
+    this.updateChartDimensions();
+    window.addEventListener("resize", this.updateChartDimensions);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -96,7 +102,7 @@ class Explorer extends Component {
 
   /**
    * _pushHistory is used to push local state to the browser's query string. This function is not
-   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual 
+   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual
    * key strokes from polluting the browser history API.
    * @param {string} queryString
    * @memberof Explorer
@@ -153,13 +159,18 @@ class Explorer extends Component {
     });
   };
 
+  updateChartDimensions = () => {
+    const chartHeight = window.innerWidth < 500 ? 200 : 320;
+    this.setState({ chartHeight: chartHeight });
+  };
+
   render() {
     const { keys, location, metrics } = this.props;
     const query = qs.parse(location.search);
     const selectedMetric = query.selectedMetric
       ? query.selectedMetric.replace(/%2F/g, "/")
       : undefined;
-    const { searchQuery } = this.state;
+    const { searchQuery, chartHeight } = this.state;
     return (
       <ErrorBoundary>
         <ViewExplorer>
@@ -178,6 +189,7 @@ class Explorer extends Component {
             this.props.keys.indexOf(selectedMetric) !== -1 ? (
               <GMLineChart
                 height={"max"}
+                dygraphContainerHeight={chartHeight}
                 timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
                 title={selectedMetric}
               />

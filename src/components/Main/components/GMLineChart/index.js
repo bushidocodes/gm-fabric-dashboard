@@ -13,6 +13,7 @@ import "./GMLineChart.scss";
 
 GMLineChart.propTypes = {
   detailLines: PropTypes.array,
+  dygraphContainerHeight: PropTypes.number,
   expectedAttributes: PropTypes.array,
   height: PropTypes.oneOf(["xs", "sm", "normal", "lg", "xl", "max"]),
   timeSeries: PropTypes.array,
@@ -26,10 +27,11 @@ GMLineChart.defaultProps = {
 /**
  * Title, Dygraph-based chart, and optional lines of text
  * Validates timeseries data and displays error messages if a chart cannot be displayed.
- * @param {Object} props 
+ * @param {Object} props
  */
 export default function GMLineChart({
   detailLines,
+  dygraphContainerHeight,
   expectedAttributes,
   height,
   timeSeries,
@@ -59,7 +61,10 @@ export default function GMLineChart({
               )}
           </div>
         ) : (
-          <DygraphContainer timeSeries={timeSeries} />
+          <DygraphContainer
+            timeSeries={timeSeries}
+            height={dygraphContainerHeight}
+          />
         )}
       </div>
       <div className="chart-details">
