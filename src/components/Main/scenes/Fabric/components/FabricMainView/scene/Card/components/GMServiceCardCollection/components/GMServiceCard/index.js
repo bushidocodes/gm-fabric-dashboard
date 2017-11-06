@@ -4,6 +4,7 @@ import Color from "color";
 
 // Internal Sub-components
 import BackgroundIcon from "./components/BackgroundIcon";
+import DocsLink from "./components/DocsLink";
 import { CardContainer, CardFooter } from "./components/Card";
 import Icon from "../../../../../../../../../../../../components/Icon";
 import NoKey from "../../../../../../../../../../../../components/Glyphs/NoKey";
@@ -106,12 +107,12 @@ export default function GMServiceCard({
       </ServiceLink>
       <CardFooter cardFontWeight={cardFontWeight}>
         {!metered && (
-          <Icon alt="Metrics are not available for this service.">
+          <Icon title="Metrics are not available for this service.">
             <NoMetrics />
           </Icon>
         )}
         {!authorized && (
-          <Icon alt="You do not have permission to manage this service.">
+          <Icon title="You do not have permission to manage this service.">
             <NoKey />
           </Icon>
         )}
@@ -119,9 +120,11 @@ export default function GMServiceCard({
         {version && <span>{version}</span>}
         {version &&
           docsLink && (
-            <Icon>
-              <Docs />
-            </Icon>
+            <DocsLink href={docsLink}>
+              <Icon>
+                <Docs />
+              </Icon>
+            </DocsLink>
           )}
       </CardFooter>
     </CardContainer>
