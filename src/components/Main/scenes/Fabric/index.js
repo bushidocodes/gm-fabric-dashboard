@@ -57,7 +57,9 @@ function FabricRouter({ services }) {
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
 
-          return authorized && metered ? (
+          // If the services object has not been passed to the router yet and defaults to an empty string,
+          // or it has and is truthy, then render the instance router
+          return authorized === "" || (authorized && metered) ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
@@ -111,7 +113,9 @@ function FabricRouter({ services }) {
 
           const metered = service && service.metered;
 
-          return authorized && metered ? (
+          // If the services object has not been passed to the router yet and defaults to an empty string,
+          // or it has and is truthy, then render the instance router
+          return authorized === "" || (authorized && metered) ? (
             <GMServiceView
               serviceName={serviceName}
               serviceVersion={version}
