@@ -48,10 +48,10 @@ export function fetchAndStoreFabricMicroservicesEffect(
  */
 export function fetchFabricMicroservicesSuccessEffect(
   services,
-  fabricMicroservicesPollingFailures = getState().fabric.servicesPollingFailures
+  servicesPollingFailures = getState().fabric.servicesPollingFailures
 ) {
-  if (fabricMicroservicesPollingFailures > 0) {
-    Actions.setFabricMicroservicesPollingFailures(0);
+  if (servicesPollingFailures > 0) {
+    Actions.setServicesPollingFailures(0);
   }
   Actions.setFabricMicroservices(services);
 }
@@ -62,12 +62,11 @@ export function fetchFabricMicroservicesSuccessEffect(
  * @param {Object} err - Error object
  */
 export function fetchFabricMicroservicesFailureEffect(err) {
-  const fabricMicroservicesPollingFailures = getState().fabric
-    .servicesPollingFailures;
-  console.log("Failed: ", fabricMicroservicesPollingFailures);
+  const servicesPollingFailures = getState().fabric.servicesPollingFailures;
+  console.log("Failed: ", servicesPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
   // so notify the user and stop polling
-  if (fabricMicroservicesPollingFailures > 3) {
+  if (servicesPollingFailures > 3) {
     notification(
       "Automatically disabling the fetching of Fabric microservices after three attempts.", //TODO: Add settings config for services polling
       {
@@ -75,15 +74,13 @@ export function fetchFabricMicroservicesFailureEffect(err) {
         timeout: 86400000
       }
     );
-    Actions.setFabricMicroservicesPollingFailures(0);
-    Actions.stopFabricMicroservicesPollingFabric();
+    Actions.setServicesPollingFailures(0);
+    Actions.stopPollingFabricMicroservices();
     // Otherwise just increment the counter and warn the user;
   } else {
     notification("Fetching Fabric Microservices failed", { status: "danger" });
     console.log("Fetching Microservices failed", err);
-    Actions.setFabricMicroservicesPollingFailures(
-      fabricMicroservicesPollingFailures + 1
-    );
+    Actions.setServicesPollingFailures(servicesPollingFailures + 1);
   }
 }
 
