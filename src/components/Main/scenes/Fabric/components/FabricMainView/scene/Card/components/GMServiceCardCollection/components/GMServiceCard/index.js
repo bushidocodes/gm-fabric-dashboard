@@ -5,8 +5,10 @@ import Color from "color";
 // Internal Sub-components
 import BackgroundIcon from "./components/BackgroundIcon";
 import { CardContainer, CardFooter } from "./components/Card";
-import DocsIcon from "./components/DocsIcon";
-import DocsLink from "./components/DocsLink";
+import Icon from "../../../../../../../../../../../../components/Icon";
+import NoKey from "../../../../../../../../../../../../components/Glyphs/NoKey";
+import Docs from "../../../../../../../../../../../../components/Glyphs/Docs";
+import NoMetrics from "../../../../../../../../../../../../components/Glyphs/NoMetrics";
 import { ServiceLink } from "./components/Service";
 import Title from "./components/Title";
 import Runtime from "./components/Runtime";
@@ -103,21 +105,23 @@ export default function GMServiceCard({
         </Title>
       </ServiceLink>
       <CardFooter cardFontWeight={cardFontWeight}>
+        {!metered && (
+          <Icon alt="Metrics are not available for this service.">
+            <NoMetrics />
+          </Icon>
+        )}
+        {!authorized && (
+          <Icon alt="You do not have permission to manage this service.">
+            <NoKey />
+          </Icon>
+        )}
         {runtime && <Runtime>{runtime}</Runtime>}
-        {!metered && <span>nometrics</span>}
-        {!authorized && <span>noauth</span>}
-        {version || null}
+        {version && <span>{version}</span>}
         {version &&
           docsLink && (
-            <DocsLink
-              cardFontColor={cardFontColor}
-              cardHighlightColor={cardHighlightColor}
-              href={docsLink}
-              target="_blank"
-              title={`Documentation of ${titleName}`}
-            >
-              <DocsIcon fillColor={cardFontColor} />
-            </DocsLink>
+            <Icon>
+              <Docs />
+            </Icon>
           )}
       </CardFooter>
     </CardContainer>

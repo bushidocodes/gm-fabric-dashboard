@@ -44,10 +44,18 @@ export const CardContainer = styled.div`
 
 export const CardFooter = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
   justify-content: space-between;
   z-index: 10;
   pointer-events: none;
   letter-spacing: 0.03em;
+
+  svg:first-child {
+    margin-left: -0.5em;
+  }
+
+  svg:last-child {
+    margin-right: -0.5em;
+  }
 `;
