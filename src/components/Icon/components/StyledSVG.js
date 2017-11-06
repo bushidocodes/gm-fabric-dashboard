@@ -9,11 +9,14 @@ const StyledSVG = styled.svg.attrs({
   viewBox: "0 0 24 24"
 })`
   z-index: 1;
-  overflow: visible;
   height: ${props => props.iconRatio * VIEWBOXSIZE}px;
   width: ${props => props.iconRatio * VIEWBOXSIZE}px;
   color: ${props => props.glyphColor};
   word-spacing: 0;
+
+  &:not(:root) {
+    overflow: visible;
+  }
 `;
 
 export default StyledSVG;
