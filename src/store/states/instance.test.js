@@ -1,4 +1,4 @@
-import { _sliceMetrics } from "./metrics";
+import { _sliceMetrics } from "./instance";
 
 const staticTimeseriesData = {
   money: {

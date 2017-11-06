@@ -7,7 +7,7 @@ import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
 import SidebarCard from "../components/SidebarCard";
 
 const getDashboards = state => state.dashboards;
-const getMetrics = state => state.metrics;
+const getMetrics = state => state.instance.metrics;
 
 /**
  * Reselect selector that generates SidebarCard components from JSON

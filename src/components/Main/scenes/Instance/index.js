@@ -81,9 +81,9 @@ class InstanceRouter extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedService: state.settings.selectedService,
-    selectedServiceVersion: state.settings.selectedServiceVersion,
-    selectedInstance: state.settings.selectedInstance
+    selectedService: state.fabric.selectedService,
+    selectedServiceVersion: state.fabric.selectedServiceVersion,
+    selectedInstance: state.fabric.selectedInstance
   };
 }
 

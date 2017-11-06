@@ -36,8 +36,8 @@ export default function Readout({
 Readout.propTypes = {
   children: PropTypes.element,
   primary: PropTypes.bool,
-  readoutContainerStyle: PropTypes.string,
+  readoutContainerStyle: PropTypes.object,
   readoutItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  readoutItemsContainerStyle: PropTypes.string,
-  readoutItemsStyle: PropTypes.string
+  readoutItemsContainerStyle: PropTypes.object,
+  readoutItemsStyle: PropTypes.object
 };

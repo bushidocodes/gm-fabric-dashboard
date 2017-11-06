@@ -2,7 +2,7 @@ import { State } from "jumpstate";
 
 const dashboards = State({
   initial: {},
-  updateDashboardsRedux(state, dashboards) {
+  setDashboards(state, dashboards) {
     return dashboards;
   }
 });

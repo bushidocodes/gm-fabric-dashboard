@@ -20,7 +20,7 @@ class App extends Component {
   static propTypes = {
     dashboards: PropTypes.object,
     fabricServer: PropTypes.string,
-    instancePollingInterval: PropTypes.number.isRequired,
+    instanceMetricsPollingInterval: PropTypes.number.isRequired,
     metricsEndpoint: PropTypes.string,
     pathname: PropTypes.string,
     runtime: PropTypes.string
@@ -32,30 +32,17 @@ class App extends Component {
     if (fabricServer) {
       console.log("Fabric Server Detected");
       // Begin polling Fabric-wide metrics from the Fabric Server
-      Actions.startPollingFabric();
+      Actions.startPollingFabricMicroservices({ endpoint: fabricServer });
     } else {
       console.log("Fabric Server Not Detected");
       // Load the dashboard for the runtime
       Actions.loadDashboardsFromJSON();
       // And begin polling instance metrics directly from the microservice
-      Actions.startPollingInstanceWithoutServer({
-        endpoint: this.props.metricsEndpoint,
-        interval: this.props.instancePollingInterval
+      Actions.startPollingInstanceMetrics({
+        endpoint: this.props.metricsEndpoint
       });
       // Perform initial fetch of threads data if runtime is JVM
-      if (this.props.runtime === "jvm") Actions.fetchThreads();
-
-      // Note: Disabled use of local forage for initial release
-      // Initialize Local storage and then fetch dashboards
-      // Actions.initLocalStorage()
-      //   .then(isInitialized => {
-      //     if (isInitialized) {
-      //       return Actions.getDashboards();
-      //     } else {
-      //       throw new Error("Local Storage failed to initialize");
-      //     }
-      //   })
-      //   .catch(err => console.error(err));
+      if (this.props.runtime === "jvm") Actions.fetchAndStoreInstanceThreads();
     }
   }
 
@@ -90,12 +77,13 @@ class App extends Component {
 function mapStateToProps(state) {
   const {
     dashboards,
+    instance: { instanceMetricsPollingInterval },
     routing: { location: { pathname } },
-    settings: { instancePollingInterval, metricsEndpoint }
+    settings: { metricsEndpoint }
   } = state;
   return {
     dashboards,
-    instancePollingInterval,
+    instanceMetricsPollingInterval,
     metricsEndpoint,
     pathname,
     runtime: getRuntime(state)

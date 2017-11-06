@@ -16,17 +16,6 @@ export const trimID = (id, desiredLength = INSTANCE_ID_LENGTH) => {
 };
 
 /**
- * Clears the interval with the ID stored at window.refreshMetricsIntervalID and then
- * wipes window.refreshMetricsIntervalID
- */
-export function clearInstanceIntervalIfNeeded() {
-  if (window.refreshMetricsIntervalID) {
-    clearInterval(window.refreshMetricsIntervalID);
-    window.refreshMetricsIntervalID = null;
-  }
-}
-
-/**
  * Clears the interval with the ID stored at window.refreshFabricIntervalID and then
  * wipes window.refreshFabricIntervalID
  */

@@ -5,16 +5,30 @@ import _ from "lodash";
 const METRICS_CACHE_MAX_BYTES = 100000000; // ~100MB is 100000000
 
 // State Objects
-const metrics = State({
-  initial: {},
-  setMetrics(state, payload) {
+const instance = State({
+  initial: {
+    instanceMetricsPollingInterval: 5000,
+    isPollingInstanceMetrics: false,
+    metricsPollingFailures: 0,
+    metrics: {}
+  },
+  setInstanceMetricsPollingInterval(state, payload) {
+    return { ...state, instanceMetricsPollingInterval: payload };
+  },
+  setIsPollingInstanceMetrics(state, payload) {
+    return { ...state, isPollingInstanceMetrics: payload };
+  },
+  setMetricsPollingFailures(state, payload) {
+    return { ...state, metricsPollingFailures: payload };
+  },
+  appendToMetrics(state, payload) {
     // Check the size of the state
     // If the size of the state exceeds the max capacity,
     // find the earliest timestamp wipe all associated metrics from all known keys
     const result =
-      objectSizeOf(state) > METRICS_CACHE_MAX_BYTES
-        ? _sliceMetrics(state)
-        : { ...state };
+      objectSizeOf(state.metrics) > METRICS_CACHE_MAX_BYTES
+        ? _sliceMetrics(state.metrics)
+        : { ...state.metrics };
     // Generate a timestamp for the new metrics poll
     const existingTimestamps = result.timestamps ? result.timestamps : [];
     const latestTimestamp = Date.now() + "";
@@ -27,14 +41,14 @@ const metrics = State({
         [latestTimestamp]: payload[metric]
       };
     });
-    return result;
+    return { ...state, metrics: result };
   },
   clearMetrics(state, payload) {
-    return {};
+    return { ...state, metrics: {} };
   }
 });
 
-export default metrics;
+export default instance;
 
 /**
  * Slices off the oldest timeseries data for all the metrics in a metrics object.

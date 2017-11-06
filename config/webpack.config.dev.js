@@ -158,12 +158,6 @@ module.exports = {
           name: "static/media/[name].[hash:8].[ext]"
         }
       },
-      // Load Web Workers. This must happen before Babel
-      {
-        test: /(workers)\/\w+\.js$/,
-        include: paths.appSrc,
-        loader: require.resolve("worker-loader")
-      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,

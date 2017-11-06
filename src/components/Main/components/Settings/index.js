@@ -20,9 +20,9 @@ import "./Settings.scss";
 SettingsGrid.propTypes = {
   fabricPollingInterval: PropTypes.number,
   fabricServer: PropTypes.string,
-  instancePollingInterval: PropTypes.number,
+  instanceMetricsPollingInterval: PropTypes.number,
   isPollingFabric: PropTypes.bool,
-  isPollingInstance: PropTypes.bool,
+  isPollingInstanceMetrics: PropTypes.bool,
   metricsCacheSize: PropTypes.string,
   numberOfDashboards: PropTypes.number
 };
@@ -35,10 +35,10 @@ function SettingsGrid({
   fabricPollingInterval,
   fabricServer,
   isPollingFabric,
-  isPollingInstance,
+  isPollingInstanceMetrics,
   metricsCacheSize,
   numberOfDashboards,
-  instancePollingInterval
+  instanceMetricsPollingInterval
 }) {
   const button = (
     <Button
@@ -57,20 +57,22 @@ function SettingsGrid({
       <ErrorBoundary>
         {fabricServer && (
           <PollingSettings
-            changePollingInterval={Actions.changeFabricPollingInterval}
-            stopPolling={Actions.stopPollingFabric}
-            startPolling={Actions.startPollingFabric}
+            changePollingInterval={
+              Actions.changeFabricMicroservicesPollingInterval
+            }
+            stopPolling={Actions.stopPollingFabricMicroservices}
+            startPolling={Actions.startPollingFabricMicroservices}
             interval={fabricPollingInterval}
-            isPollingInstance={isPollingFabric}
+            isPolling={isPollingFabric}
             title="Fabric Polling"
           />
         )}
         <PollingSettings
-          changePollingInterval={Actions.changeInstancePollingInterval}
-          stopPolling={Actions.stopPollingInstance}
-          startPolling={Actions.startPollingInstance}
-          interval={instancePollingInterval}
-          isPollingInstance={isPollingInstance}
+          changePollingInterval={Actions.changeInstanceMetricsPollingInterval}
+          stopPolling={Actions.stopPollingInstanceMetrics}
+          startPolling={Actions.startPollingInstanceMetrics}
+          interval={instanceMetricsPollingInterval}
+          isPolling={isPollingInstanceMetrics}
           title={fabricServer ? "Instance Polling" : "Polling"}
         />
 
@@ -102,13 +104,22 @@ function SettingsGrid({
   );
 }
 
-function mapStateToProps({ settings, dashboards, metrics }) {
+function mapStateToProps({
+  settings: { fabricServer },
+  dashboards,
+  fabric: { fabricPollingInterval, isPollingFabric },
+  instance: {
+    metrics,
+    instanceMetricsPollingInterval,
+    isPollingInstanceMetrics
+  }
+}) {
   return {
-    fabricPollingInterval: settings.fabricPollingInterval,
-    fabricServer: settings.fabricServer,
-    instancePollingInterval: settings.instancePollingInterval,
-    isPollingFabric: settings.isPollingFabric,
-    isPollingInstance: settings.isPollingInstance,
+    fabricPollingInterval,
+    fabricServer,
+    instanceMetricsPollingInterval,
+    isPollingFabric,
+    isPollingInstanceMetrics,
     numberOfDashboards: Object.keys(dashboards).length,
     metricsCacheSize: filesize(objectSizeOf(metrics))
   };

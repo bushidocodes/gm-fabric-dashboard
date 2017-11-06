@@ -106,10 +106,10 @@ SummaryGrid.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    metrics: state.metrics,
-    selectedService: state.settings.selectedService,
-    selectedServiceVersion: state.settings.selectedServiceVersion,
-    selectedInstance: state.settings.selectedInstance,
+    metrics: state.instance.metrics,
+    selectedService: state.fabric.selectedService,
+    selectedServiceVersion: state.fabric.selectedServiceVersion,
+    selectedInstance: state.fabric.selectedInstance,
     errorPercent: getErrorPercent(state)
   };
 }

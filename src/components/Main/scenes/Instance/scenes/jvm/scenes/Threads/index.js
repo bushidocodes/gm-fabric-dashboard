@@ -38,11 +38,11 @@ class ThreadsGrid extends Component {
     // redundant, but we are showing it here just to be more explicit about the logic.
 
     if (this.props.fabricServer) {
-      Actions.fetchThreads(
+      Actions.fetchAndStoreInstanceThreads(
         `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
       );
     } else {
-      Actions.fetchThreads(threadsEndpoint);
+      Actions.fetchAndStoreInstanceThreads(threadsEndpoint);
     }
   }
 
@@ -59,14 +59,9 @@ class ThreadsGrid extends Component {
 }
 
 function mapStateToProps({
-  metrics: { threadsTable },
-  settings: {
-    fabricServer,
-    selectedService,
-    selectedServiceVersion,
-    selectedInstance,
-    threadsEndpoint
-  }
+  fabric: { selectedService, selectedServiceVersion, selectedInstance },
+  settings: { fabricServer, threadsEndpoint },
+  threadsTable
 }) {
   return {
     fabricServer,

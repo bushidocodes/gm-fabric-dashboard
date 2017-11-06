@@ -64,8 +64,8 @@ ReadoutItem.propTypes = {
   iconColor: PropTypes.string,
   iconName: PropTypes.string,
   iconShape: PropTypes.string,
-  readoutItemsContainerStyle: PropTypes.string,
-  readoutItemsStyle: PropTypes.string,
+  readoutItemsContainerStyle: PropTypes.object,
+  readoutItemsStyle: PropTypes.object,
   title: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,

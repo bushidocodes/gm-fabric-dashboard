@@ -1,6 +1,6 @@
+import _ from "lodash";
 import React from "react";
 import { createSelector } from "reselect";
-import _ from "lodash";
 
 import { parseJSONString } from "./latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
@@ -11,17 +11,17 @@ import Tab from "components/AppHeader/components/Tab";
 
 // Reselect Input Selectors
 
-export const getMetrics = state => state.metrics;
+export const getMetrics = state => state.instance.metrics;
 export const getStaticRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
 
 export const getServices = state => state.fabric.services;
 
 export const getFabricServer = state => state.settings.fabricServer;
-export const getSelectedInstance = state => state.settings.selectedInstance;
-export const getSelectedServiceName = state => state.settings.selectedService;
+export const getSelectedInstance = state => state.fabric.selectedInstance;
+export const getSelectedServiceName = state => state.fabric.selectedService;
 export const getSelectedServiceVersion = state =>
-  state.settings.selectedServiceVersion;
+  state.fabric.selectedServiceVersion;
 
 /**
  * Reselect selector that generates the key used in the Redux store for services
@@ -125,7 +125,7 @@ export const generateHeaderTabs = createSelector(
  * A Reselect selector that filters the metrics and only returns the timeseries
  * that contain the string 'route' somewhere in the key.
  */
-export const getRoutesMetrics = createSelector(getMetrics, metrics => {
+export const getRoutesMetrics = createSelector([getMetrics], metrics => {
   return _.pick(
     metrics,
     Object.keys(metrics).filter(key => key.indexOf("route") !== -1)

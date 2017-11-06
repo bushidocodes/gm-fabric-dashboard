@@ -191,7 +191,7 @@ class Explorer extends Component {
   }
 }
 
-function mapStateToProps({ metrics }) {
+function mapStateToProps({ instance: { metrics } }) {
   return {
     metrics,
     keys: Object.keys(metrics).sort()

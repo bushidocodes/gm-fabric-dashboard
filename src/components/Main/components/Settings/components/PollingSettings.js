@@ -16,7 +16,7 @@ class PollingSettings extends Component {
   static propTypes = {
     changePollingInterval: PropTypes.func.isRequired,
     interval: PropTypes.number.isRequired,
-    isPollingInstance: PropTypes.bool.isRequired,
+    isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,
     stopPolling: PropTypes.func.isRequired,
     title: PropTypes.string.isRequired
@@ -30,9 +30,9 @@ class PollingSettings extends Component {
   };
 
   render() {
-    const { isPollingInstance, stopPolling, startPolling, title } = this.props;
-    const buttonIcon = isPollingInstance ? "ban" : "play-circle";
-    const buttonLabel = isPollingInstance ? "Stop Polling" : "Resume Polling";
+    const { isPolling, stopPolling, startPolling, title } = this.props;
+    const buttonIcon = isPolling ? "ban" : "play-circle";
+    const buttonLabel = isPolling ? "Stop Polling" : "Resume Polling";
     return (
       <LayoutSection title={title} icon={PollIcon} flex>
         <div
@@ -41,7 +41,7 @@ class PollingSettings extends Component {
         >
           <Button
             clickAction={() => {
-              if (isPollingInstance) {
+              if (isPolling) {
                 stopPolling();
               } else {
                 startPolling();

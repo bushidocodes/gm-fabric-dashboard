@@ -92,12 +92,10 @@ class GMGrid extends Component {
                 ];
                 if (sparklineKey && sparklineType) {
                   if (sparklineType === "value") {
-                    results.push(
-                      getSparkLineOfValue(this.props.metrics, sparklineKey)
-                    );
+                    results.push(getSparkLineOfValue(metrics, sparklineKey));
                   } else if (sparklineType === "netChange") {
                     results.push(
-                      getSparkLineOfNetChange(this.props.metrics, sparklineKey)
+                      getSparkLineOfNetChange(metrics, sparklineKey)
                     );
                   }
                 }
@@ -176,7 +174,7 @@ class GMGrid extends Component {
   }
 }
 
-function mapStateToProps({ dashboards, metrics }, ownProps) {
+function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
   return {
     metrics,
     dashboard: dashboards[ownProps.match.params.dashboardName]

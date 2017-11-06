@@ -55,7 +55,7 @@ class AppHeaderContent extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  const { metrics, settings: { runtime } } = state;
+  const { instance: { metrics }, settings: { runtime } } = state;
   const {
     match: { params: { serviceName, serviceVersion, instanceID } }
   } = ownProps;
