@@ -1,11 +1,13 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import "./Button.scss";
+import Glyph from "../Glyphs/index.js";
 
 Button.propTypes = {
   active: PropTypes.bool, // If the button should be style as active or not
   clickAction: PropTypes.any.isRequired, // click handler
   disabled: PropTypes.bool, // disables the button
+  glyph: PropTypes.string,
   icon: PropTypes.string, // string of UIKit Icon to use for button
   iconSize: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the icon
   label: PropTypes.string.isRequired, // label for the button
@@ -22,7 +24,14 @@ Button.propTypes = {
   style: PropTypes.object, // style prop
   suffix: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Add suffix text to button label
   tabIndex: PropTypes.number,
-  type: PropTypes.oneOf(["danger", "info", "primary", "secondary", "warning"])
+  type: PropTypes.oneOf([
+    "danger",
+    "info",
+    "primary",
+    "secondary",
+    "warning",
+    "polling"
+  ])
 };
 
 /**
@@ -34,6 +43,7 @@ function Button({
   active,
   clickAction,
   disabled,
+  glyph,
   icon,
   iconSize,
   label,
@@ -64,6 +74,13 @@ function Button({
       style={style}
     >
       {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
+      {glyph && (
+        <div width="100%" className="btn-glyph">
+          <svg width="100px" height="80px" viewBox="0 0 50 60">
+            <Glyph name={glyph} ratio={2} />
+          </svg>
+        </div>
+      )}
       <span className="label">
         {prefix ? <span className="label-prefix">{prefix}</span> : ""}
         {label}

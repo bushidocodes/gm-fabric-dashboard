@@ -31,8 +31,8 @@ class PollingSettings extends Component {
 
   render() {
     const { isPolling, stopPolling, startPolling, title } = this.props;
-    const buttonIcon = isPolling ? "ban" : "play-circle";
-    const buttonLabel = isPolling ? "Stop Polling" : "Resume Polling";
+    const buttonGlyph = isPolling ? "Pause" : "Play";
+    const buttonLabel = isPolling ? "Pause Updates" : "Resume Updates";
     return (
       <LayoutSection title={title} icon={PollIcon} flex>
         <div
@@ -47,13 +47,17 @@ class PollingSettings extends Component {
                 startPolling();
               }
             }}
-            icon={buttonIcon}
-            iconSize={"xl"}
+            glyph={buttonGlyph}
             label={buttonLabel}
             orientation={"vertical"}
-            outline={"none"}
+            outline={"raised"}
             tabIndex={0}
-            type={"primary"}
+            type={"polling"}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "relative"
+            }}
           />
         </div>
 
@@ -72,7 +76,7 @@ class PollingSettings extends Component {
             value={this.state.localInterval}
           />
           <span className="label" id={`interval-name-${title}`}>
-            {"Polling Interval (seconds)"}
+            {"Updates Per Minute"}
           </span>
         </div>
       </LayoutSection>

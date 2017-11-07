@@ -122,6 +122,9 @@
   &.btn-type-primary {
     @include button-style-set($color-brand-primary);
   }
+  &.btn-type-polling {
+    @include button-style-set(contrast-color($color-content-background, 4%));
+  }
 
   // Sizes
   &:not([class*="btn-size"]),
