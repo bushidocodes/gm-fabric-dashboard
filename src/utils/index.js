@@ -73,8 +73,8 @@ export const relativeReqPercent = (arrObj = [], key = "") => {
  * Utility function to calculate and format a string containing the error percent
  * of a metric
  * @export
- * @param {number} requests 
- * @param {number} errors 
+ * @param {number} requests
+ * @param {number} errors
  * @returns string
  */
 export function calculateErrorPercent(requests, errors) {
@@ -87,4 +87,27 @@ export function formatAsDecimalString(number, numberOfDecimals = 3) {
     maximumFractionDigits: numberOfDecimals,
     minimumFractionDigits: numberOfDecimals
   });
+}
+
+/**
+ * Utility function to generate a URL safe string by replacing spaces with underscores.
+ * Since we are using underscores we must first replace any existing ones with a `~` character.
+ * @export
+ * @param {string} param
+ * @returns string
+ */
+export function encodeParameter(param) {
+  return param.replace(/\s/gi, "·");
+}
+
+/**
+ * Utility function to generate a human readable string by replacing underscores with spaces.
+ * This is the anti-function of `encodeParameter` so we first replace underscores with a space
+ * and if there is a `~` then we replace it with it's original undescore.
+ * @export
+ * @param {string} param
+ * @returns string
+ */
+export function decodeParameter(param) {
+  return param.replace(/·/gi, " ");
 }

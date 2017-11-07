@@ -13,6 +13,7 @@ import NoMetrics from "components/Glyphs/NoMetrics";
 import { ServiceLink } from "./components/Service";
 import Title from "./components/Title";
 import Runtime from "./components/Runtime";
+import { encodeParameter } from "utils";
 
 // External dependencies
 import { mapStatusToColor, spacingScale } from "style/styleFunctions";
@@ -90,7 +91,7 @@ export default function GMServiceCard({
     >
       <BackgroundIcon status={status} alt={status} />
       <ServiceLink
-        to={`/${name}/${version}`}
+        to={`/${encodeParameter(name)}/${version}`}
         onClick={
           status !== "Down" && authorized && metered
             ? null

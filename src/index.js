@@ -17,7 +17,7 @@ import "./style/index.scss";
 // load the UIKit Icon plugin
 UIkit.use(Icons);
 
-// Just use hash history because our dahsboard will be hosted deeply
+// Just use hash history because our dashboard will be hosted deeply
 export const history = createHashHistory();
 
 ReactDOM.render(

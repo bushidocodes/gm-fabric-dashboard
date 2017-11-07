@@ -4,6 +4,7 @@ import { createSelector } from "reselect";
 
 import { parseJSONString } from "./latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
+import { encodeParameter } from "utils";
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector
@@ -79,7 +80,7 @@ export const generateHeaderTabs = createSelector(
     if (Object.keys(dashboards).length > 0) {
       const prefix =
         service && version && instance
-          ? `/${service}/${version}/${instance}`
+          ? `/${encodeParameter(service)}/${version}/${instance}`
           : "";
       return _.toPairs(dashboards).map(([key, value]) => {
         let chartData, chartTitle, lines;

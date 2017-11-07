@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
+import { decodeParameter } from "utils";
 
 ServiceHeaderContent.propTypes = {
   instanceCount: PropTypes.number,
@@ -37,7 +38,9 @@ function mapStateToProps(state, ownProps) {
   } = ownProps;
   return {
     instanceCount:
-      services && services[`${serviceName}|${serviceVersion}`].instances.length,
+      services &&
+      services[`${decodeParameter(serviceName)}|${serviceVersion}`].instances
+        .length,
     pathname
   };
 }

@@ -8,6 +8,7 @@ import GoHeaderContent from "./scenes/Go";
 import DefaultHeaderContent from "./scenes/Default";
 
 import { generateHeaderTabs } from "utils/selectors";
+import { decodeParameter } from "utils";
 
 /**
  * Main area of Sidebar containing one or more SidebarCards
@@ -69,8 +70,10 @@ function mapStateToProps(state, ownProps) {
       state.fabric.services &&
       serviceName &&
       serviceVersion &&
-      state.fabric.services[`${serviceName}|${serviceVersion}`]
-        ? state.fabric.services[`${serviceName}|${serviceVersion}`].runtime
+      state.fabric.services[`${decodeParameter(serviceName)}|${serviceVersion}`]
+        ? state.fabric.services[
+            `${decodeParameter(serviceName)}|${serviceVersion}`
+          ].runtime
         : runtime,
     headerTabs: generateHeaderTabs(state)
   };

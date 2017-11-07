@@ -7,6 +7,7 @@ import { Switch, Redirect, Route, withRouter } from "react-router";
 import FabricGrid from "./FabricGrid";
 import GMServiceView from "components/Main/scenes/Service";
 import generateStatusRoutes from "./utils/generateStatusRoutes";
+import { decodeParameter } from "utils";
 
 import InstanceRouter from "components/Main/scenes/Instance";
 import SettingsGrid from "components/Main/components/Settings";
@@ -43,6 +44,7 @@ function FabricRouter({ services }) {
           match: { url, params: { serviceName, version, instanceID } }
         }) => {
           const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
+          serviceName = decodeParameter(serviceName);
           const service =
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
@@ -97,6 +99,7 @@ function FabricRouter({ services }) {
         exact
         path="/:serviceName/:version/"
         render={({ match: { params: { serviceName, version } } }) => {
+          serviceName = decodeParameter(serviceName);
           const service =
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]

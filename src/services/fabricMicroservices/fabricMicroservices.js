@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Actions, getState } from "jumpstate";
-import { clearFabricIntervalIfNeeded } from "../../utils";
+import { clearFabricIntervalIfNeeded } from "utils";
 import { notification } from "uikit";
 import { getFabricServer } from "utils/head";
 

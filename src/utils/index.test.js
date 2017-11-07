@@ -1,4 +1,9 @@
-import { INSTANCE_ID_LENGTH, trimID } from "./index";
+import {
+  decodeParameter,
+  encodeParameter,
+  INSTANCE_ID_LENGTH,
+  trimID
+} from "./index";
 
 describe("trimID", () => {
   test("returns an empty string if not provided an ID", () => {
@@ -26,3 +31,19 @@ describe("convertMS", () => {});
 describe("relativeReqPercent", () => {});
 describe("calculateErrorPercent", () => {});
 describe("formatAsDecimalString", () => {});
+
+describe("encodeParameter", () => {
+  test("returns a string with spaces replaced with middle dots", () => {
+    expect(encodeParameter("Decipher Tech Studios")).toEqual(
+      "Decipher·Tech·Studios"
+    );
+  });
+});
+
+describe("decodeParameter", () => {
+  test("returns a string with middle dots replaced with spaces", () => {
+    expect(decodeParameter("Decipher·Tech·Studios")).toEqual(
+      "Decipher Tech Studios"
+    );
+  });
+});

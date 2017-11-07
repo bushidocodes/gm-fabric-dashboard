@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { getFabricServer } from "utils/head";
 import { withRouter } from "react-router-dom";
+import { decodeParameter } from "utils";
 
 import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
@@ -29,7 +30,7 @@ function Header({ location: { pathname } }) {
 }
 
 function getTitle(pathname) {
-  const [root, version = "", instance = ""] = pathname
+  const [root, version = "", instance = ""] = decodeParameter(pathname)
     .replace(/^\/|\/$/g, "")
     .replace("%2F", "/") // String out escaped slashes if found
     .split("/");
