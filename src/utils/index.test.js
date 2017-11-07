@@ -16,3 +16,13 @@ describe("trimID", () => {
     expect(trimID("Decipher", 20)).toEqual("Decipher");
   });
 });
+
+describe("clearFabricIntervalIfNeeded", () => {
+  xtest("clears an interval with ID equal to window.refreshFabricIntervalID");
+  xtest("sets window.refreshFabricIntervalID to null");
+});
+
+describe("convertMS", () => {});
+describe("relativeReqPercent", () => {});
+describe("calculateErrorPercent", () => {});
+describe("formatAsDecimalString", () => {});
