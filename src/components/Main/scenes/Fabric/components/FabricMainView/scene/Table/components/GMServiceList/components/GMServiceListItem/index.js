@@ -2,12 +2,21 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { Line, LineLeft, LineRight } from "./components/Line";
-import { ItemName, ItemVersion } from "./components/Item";
+import {
+  ItemName,
+  ItemVersion,
+  ItemIcon,
+  ItemRuntime
+} from "./components/Item";
 import IconWrapper from "./components/IconWrapper";
-import DocLink from "./components/DocLink";
+import DocsLink from "./components/DocsLink";
+
+import Icon from "components/Icon";
+import NoKey from "components/Glyphs/NoKey";
+import Docs from "components/Glyphs/Docs";
+import NoMetrics from "components/Glyphs/NoMetrics";
 
 import StatusIcon from "components/StatusIcon";
-import Docs from "images/icons/docs.svg";
 import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 
 export default class GMServiceListItem extends Component {
@@ -17,6 +26,7 @@ export default class GMServiceListItem extends Component {
     groupByAttribute: PropTypes.string,
     metered: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    runtime: PropTypes.string,
     status: PropTypes.string,
     version: PropTypes.string
   };
@@ -26,49 +36,65 @@ export default class GMServiceListItem extends Component {
       authorized,
       metered,
       name,
+      runtime,
       status,
       version,
       docsLink,
       groupByAttribute = ""
     } = this.props;
 
+    let SERVICE_IS_ACCESSIBLE = true;
+    if (!authorized || !metered || status === "Down") {
+      SERVICE_IS_ACCESSIBLE = false;
+    }
+
     return (
-      <div>
-        <Line>
-          <LineLeft>
-            <GMLink
-              to={`/${name}/${version}`}
-              onClick={
-                status !== "Down" && authorized && metered
-                  ? null
-                  : e => e.preventDefault()
-              }
-              cursor={
-                status !== "Down" && authorized && metered
-                  ? "pointer"
-                  : "not-allowed"
-              }
-              tabIndex="0"
-              disabled={status === "Down"}
-            >
-              <IconWrapper>
-                {groupByAttribute.toLowerCase() !== "status" && (
-                  <StatusIcon status={status} />
-                )}
-              </IconWrapper>
-              <ItemName>{name}</ItemName>
-              <ItemVersion>{version}</ItemVersion>
-            </GMLink>
-          </LineLeft>
-          <LineRight>
-            {docsLink && (
-              <DocLink href={docsLink} target="_blank">
-                <img alt="Docs" src={Docs} />
-              </DocLink>
+      <Line>
+        <LineLeft>
+          <GMLink
+            to={`/${name}/${version}`}
+            onClick={SERVICE_IS_ACCESSIBLE ? null : e => e.preventDefault()}
+            tabIndex="0"
+            disabled={!SERVICE_IS_ACCESSIBLE}
+          >
+            <IconWrapper>
+              {groupByAttribute.toLowerCase() !== "status" && (
+                <StatusIcon status={status} />
+              )}
+            </IconWrapper>
+            {!metered && (
+              <ItemIcon>
+                <Icon title="Metrics are not available for this service.">
+                  <NoMetrics />
+                </Icon>
+              </ItemIcon>
             )}
-          </LineRight>
-        </Line>
-      </div>
+            {!authorized && (
+              <ItemIcon>
+                <Icon title="You do not have permission to manage this service.">
+                  <NoKey />
+                </Icon>
+              </ItemIcon>
+            )}
+            <ItemName clickable={SERVICE_IS_ACCESSIBLE}>{name}</ItemName>
+            <ItemRuntime>
+              <span>{runtime}</span>
+            </ItemRuntime>
+          </GMLink>
+        </LineLeft>
+        <LineRight>
+          <ItemVersion>
+            <span>{version}</span>
+          </ItemVersion>
+          {docsLink && (
+            <DocsLink href={docsLink} target="_blank">
+              <Icon>
+                <Docs />
+              </Icon>{" "}
+            </DocsLink>
+          )}
+        </LineRight>
+      </Line>
     );
   }
 }
