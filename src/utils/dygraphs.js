@@ -80,10 +80,23 @@ function _netChangeMapper(val, idx, arr, positionOfLabelToMap) {
     const currentVal = val[positionOfLabelToMap];
     const currentTime = val[0];
     const result = [...val];
-    const netChange = Math.round(
-      (currentVal - lastVal) / ((currentTime - lastTime) / 1000)
+    const netChange = floatRound(
+      (currentVal - lastVal) / ((currentTime - lastTime) / 1000),
+      3
     );
     result[positionOfLabelToMap] = netChange;
     return result;
   }
+}
+
+/**
+ * Rounds a number to a certain number of decimal places;
+ * 
+ * @param {number} val 
+ * @param {number} numberOfDecimalsPlaces 
+ * @returns 
+ */
+export function floatRound(val, numberOfDecimalsPlaces) {
+  const multiplier = Math.pow(10, numberOfDecimalsPlaces);
+  return Math.round(val * multiplier) / multiplier;
 }

@@ -44,7 +44,7 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
     selectedService.instances.map(instance => instance.name).includes(instance)
   ) {
     if (selectedService.runtime === "JVM") {
-      return res.json(jvmMetrics);
+      return res.json(incrementJVMMetrics(jvmMetrics));
     } else if (selectedService.runtime === "GO") {
       return res.json(goMetrics);
     }
