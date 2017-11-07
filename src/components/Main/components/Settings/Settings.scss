@@ -34,34 +34,65 @@
     }
   }
 
-  .settings-group-polling {
-    display: flex;
-    flex-wrap: wrap;
+  .control-group-polling-start-stop {
+    flex: 0 0 spacing-scale(20);
+    align-self: stretch;
+    padding: 0px;
+    height: 140px;
+    width: 160px;
+    .label {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+    .uk-button {
+      height: 100%;
+      width: 100%;
+    }
+    &:hover .label,
+    :hover .btn-glyph {
+      color: $color-highlight;
+    }
+  }
 
-    .control-group-polling-start-stop {
-      flex: 0 0 spacing-scale(20);
-      align-self: stretch;
+  .control-group-polling-interval {
+    flex: 0 1 50%;
+    padding-left: spacing-scale(4);
+    padding-right: spacing-scale(4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    &:hover .label {
+      color: $color-highlight;
     }
 
-    .control-group-polling-interval {
-      flex: 0 1 50%;
-      padding-left: spacing-scale(3);
-      padding-right: spacing-scale(3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .input-range__label.input-range__label--value {
+      text-align: center;
+      font-weight: 600;
+      font-size: $font-size-base;
+      color: $color-highlight;
+      top: -2em;
+    }
 
-      .input-range__label.input-range__label--value {
-        text-align: center;
-        font-weight: 600;
-        font-size: $font-size-base;
-        color: $color-highlight;
-        top: -2em;
-      }
+    .label {
+      font-size: $font-size-base;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-weight: $button-font-weight-default;
+    }
 
-      .label {
-        font-size: $font-size-base;
+    .input-range__label--value {
+      .input-range__label-container {
+        font-size: 32px;
+        top: -30px;
       }
+    }
+
+    .input-range__track {
+      background-color: $color-brand-secondary;
     }
   }
 }

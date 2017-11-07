@@ -18,6 +18,8 @@ const glyphNames = [
   "TriangleDown",
   "Cog",
   "Card",
+  "Play",
+  "Pause",
   "Poll",
   "Tape"
 ];

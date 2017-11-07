@@ -13,6 +13,8 @@ import Cog from "./Cog";
 import Card from "./Card";
 import Tape from "./Tape";
 import Poll from "./Poll";
+import Pause from "./Pause";
+import Play from "./Play";
 import Exclamation from "./Exclamation";
 import Negation from "./Negation";
 
@@ -30,6 +32,8 @@ const glyphs = {
   Cog,
   Card,
   Poll,
+  Play,
+  Pause,
   RunningSmall,
   Exclamation,
   Negation,
