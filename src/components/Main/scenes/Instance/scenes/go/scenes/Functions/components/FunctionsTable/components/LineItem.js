@@ -9,6 +9,7 @@ import {
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
 import TableCol from "components/Main/components/TableCol";
+import TableColVizBar from "components/Main/components/TableColVizBar";
 import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import VizBar from "components/Main/components/VizBar";
@@ -54,12 +55,12 @@ export default class FunctionsTableLineItem extends Component {
         }}
         role="link"
       >
-        <TableCol style={{ position: "relative" }}>
+        <TableColVizBar>
           {this.props.func}
           <VizBar>
             <VizFill width={this.props.relativeReqPercent} />
           </VizBar>
-        </TableCol>
+        </TableColVizBar>
 
         <SparklineCol>
           <Sparklines
