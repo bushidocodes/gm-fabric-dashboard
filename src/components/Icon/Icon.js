@@ -42,10 +42,10 @@ export default function Icon({
   return (
     <StyledSVG
       aria-labelledby={ariaLabelledby}
-      title={title}
       iconRatio={iconRatio}
       glyphColor={glyphColor}
     >
+      {title && <title>{title}</title>}
       {backgroundStyle && (
         <IconBackground
           name={backgroundStyle}
