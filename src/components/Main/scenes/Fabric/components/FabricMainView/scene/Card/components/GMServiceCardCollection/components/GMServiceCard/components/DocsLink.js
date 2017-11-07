@@ -1,42 +1,19 @@
 import styled from "styled-components";
-import { spacingScale } from "style/styleFunctions";
 
 const DocsLink = styled.a`
   justify-self: flex-end;
-  flex-grow: 0;
-  margin-left: ${spacingScale(1)};
+  margin-left: 0;
   cursor: pointer;
   pointer-events: auto;
-  text-decoration: none;
   color: ${props => props.cardFontColor};
-  position: relative;
-  z-index: 20;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: -${spacingScale(1)};
-    right: -${spacingScale(1)};
-    bottom: -${spacingScale(1)};
-    left: -${spacingScale(1)};
-  }
-
-  &:before {
-    content: "";
-    transition: all 0.15s ease;
-    position: absolute;
-    top: -${spacingScale(0.5)};
-    right: -${spacingScale(0.5)};
-    bottom: -${spacingScale(0.5)};
-    left: -${spacingScale(0.5)};
-    border-radius: 1px;
-    border: 1px solid transparent;
-  }
+  transition: all 0.3s ease;
+  transform: scale(1);
+  will-change: transform;
 
   &:hover {
-    &:before {
-      border: 1px solid ${props => props.cardHighlightColor};
-    }
+    transform: scale(1.25);
+    transition: all 0.1s ease;
+    color: inherit;
   }
 `;
 

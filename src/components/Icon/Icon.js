@@ -36,13 +36,12 @@ export default function Icon({
   borderStyle,
   backgroundStyle,
   iconRatio = "1",
-  title = "Icon",
+  title = "",
   transform
 }) {
   return (
     <StyledSVG
       aria-labelledby={ariaLabelledby}
-      title={title}
       iconRatio={iconRatio}
       glyphColor={glyphColor}
     >
@@ -63,6 +62,7 @@ export default function Icon({
         />
       )}
       <StyledG title={glyphName} ratio={glyphRatio}>
+        <title>{title ? title : glyphName}</title>}
         {children}
       </StyledG>
     </StyledSVG>

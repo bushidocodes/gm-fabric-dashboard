@@ -40,14 +40,31 @@ export const CardContainer = styled.div`
   @media all and (min-width: 1208px) {
     width: calc((100% / 7) - ${CARD_SPACING});
   }
+
+  a {
+    color: inherit;
+  }
 `;
 
 export const CardFooter = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
   justify-content: space-between;
   z-index: 10;
+  position: relative;
   pointer-events: none;
   letter-spacing: 0.03em;
+
+  > svg:first-child {
+    margin-left: -0.5em;
+  }
+
+  > a:last-child {
+    margin-right: -0.5em;
+  }
+
+  > * {
+    pointer-events: auto;
+  }
 `;
