@@ -9,6 +9,8 @@ const SectionContainer = styled.div`
   margin: ${spacingScale(1)} 0 0;
   border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
   flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
 
   &:first-of-type {
     border-top: 0;

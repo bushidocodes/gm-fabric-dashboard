@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
 
 import FabricGrid from "./FabricGrid";
-import GMServiceView from "./components/GMServiceView";
+import GMServiceView from "components/Main/scenes/Service";
 import generateStatusRoutes from "./utils/generateStatusRoutes";
 
 import InstanceRouter from "components/Main/scenes/Instance";
