@@ -41,7 +41,7 @@ export default class FabricTableToolbar extends Component {
       setGroupByAttribute,
       setSortByAttribute,
       sortByAttribute,
-      statusView = false
+      statusView
     } = this.props;
     return (
       <Toolbar>

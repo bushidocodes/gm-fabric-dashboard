@@ -32,6 +32,7 @@ function generateStatusRoutes(services) {
                 );
                 return status.toLowerCase() === route;
               })}
+              statusView={true}
             />
           );
         }}

@@ -16,7 +16,12 @@ class FabricGrid extends Component {
     history: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
-    services: PropTypes.array.isRequired
+    services: PropTypes.array.isRequired,
+    statusView: PropTypes.bool
+  };
+  static defaultProps = {
+    services: [],
+    statusView: false
   };
 
   constructor(props) {
@@ -26,8 +31,7 @@ class FabricGrid extends Component {
       lastPushedQueryString: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
-      displayType: "Card",
-      statusView: false
+      displayType: "Card"
     };
     // Debounce
     this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
@@ -61,11 +65,6 @@ class FabricGrid extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // Check if we are on the root route, else change statusView to pass to FabricTableToolbar
-    if (nextProps.location.pathname !== "/") {
-      this.setState({ statusView: true });
-    }
-
     // We need to check to see if the query string props are the result of user interaction
     // with the search box. We do that by keeping track of the last thing the search box
     // pushed to the query string and filtering out those props. The only expection to this
@@ -182,7 +181,7 @@ class FabricGrid extends Component {
   };
 
   render() {
-    const { services = [] } = this.props;
+    const { services, statusView } = this.props;
     const { searchQuery = "" } = this.state;
     const filteredServices = services.filter(service => {
       return (
@@ -202,7 +201,7 @@ class FabricGrid extends Component {
             setGroupByAttribute={this.setGroupByAttribute}
             sortByAttribute={this.state.sortByAttribute}
             setSortByAttribute={this.setSortByAttribute}
-            statusView={this.state.statusView}
+            statusView={statusView}
           />
           {/* pass filtered services to FabricMainView */}
           <FabricMainView
