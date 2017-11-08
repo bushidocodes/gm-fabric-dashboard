@@ -1,8 +1,9 @@
 import axios from "axios";
 import { Actions, getState } from "jumpstate";
+
 import { clearFabricIntervalIfNeeded } from "utils";
-import { notification } from "uikit";
 import { getFabricServer } from "utils/head";
+import { reportError } from "services/notification";
 
 export function fetchFabricMicroservices(fabricServer) {
   if (fabricServer) {
@@ -67,19 +68,16 @@ export function fetchFabricMicroservicesFailureEffect(err) {
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
   // so notify the user and stop polling
   if (servicesPollingFailures > 3) {
-    notification(
-      "Automatically disabling the fetching of Fabric microservices after three attempts.", //TODO: Add settings config for services polling
-      {
-        status: "danger",
-        timeout: 86400000
-      }
+    reportError(
+      "Automatically disabling the fetching of Fabric microservices after three attempts.",
+      false,
+      err
     );
     Actions.setServicesPollingFailures(0);
     Actions.stopPollingFabricMicroservices();
     // Otherwise just increment the counter and warn the user;
   } else {
-    notification("Fetching Fabric Microservices failed", { status: "danger" });
-    console.log("Fetching Microservices failed", err);
+    reportError("Fetching Fabric Microservices failed", true, err);
     Actions.setServicesPollingFailures(servicesPollingFailures + 1);
   }
 }
