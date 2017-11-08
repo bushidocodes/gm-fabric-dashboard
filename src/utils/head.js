@@ -8,6 +8,7 @@
 export function getFabricServer() {
   const fabricServer = document.head.querySelector("[property=fabricServer]")
     .content;
+
   return fabricServer !== "__FABRIC_SERVER__" ? fabricServer : null;
 }
 
