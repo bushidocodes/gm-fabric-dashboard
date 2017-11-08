@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { COLOR_HIGHLIGHT, COLOR_CONTENT_MUTED } from "style/styleVariables";
 
@@ -29,5 +30,9 @@ const GMLink = styled(Link)`
     `};
   }
 `;
+
+GMLink.propTypes = {
+  disabled: PropTypes.bool
+};
 
 export default GMLink;

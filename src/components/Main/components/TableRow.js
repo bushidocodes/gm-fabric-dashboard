@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import {
   spacingScale,
@@ -32,5 +33,9 @@ const TableRow = styled.li`
     ${rowChildSpacing()};
   }
 `;
+
+TableRow.propTypes = {
+  open: PropTypes.bool
+};
 
 export default TableRow;

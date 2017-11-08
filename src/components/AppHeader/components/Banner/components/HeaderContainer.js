@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { contrastColor, spacingScale } from "style/styleFunctions";
 import { COLOR_ALT_BACKGROUND } from "style/styleVariables";
@@ -14,5 +15,9 @@ const HeaderContainer = styled.div`
     padding: ${spacingScale(2)} ${spacingScale(4)} ${spacingScale(3)};
   }
 `;
+
+HeaderContainer.propTypes = {
+  hideBackground: PropTypes.bool
+};
 
 export default HeaderContainer;

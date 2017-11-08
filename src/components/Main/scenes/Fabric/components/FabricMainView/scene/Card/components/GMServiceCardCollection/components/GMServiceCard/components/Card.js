@@ -1,4 +1,5 @@
 import { PADDING_BASE, FONT_SIZE_SM } from "style/styleVariables";
+import { PropTypes } from "prop-types";
 
 import Color from "color";
 import styled from "styled-components";
@@ -46,6 +47,14 @@ export const CardContainer = styled.div`
   }
 `;
 
+CardContainer.propTypes = {
+  cardBackgroundColor: PropTypes.string,
+  cardBorderAltColor: PropTypes.string,
+  cardBorderColor: PropTypes.string,
+  cardFontColor: PropTypes.string,
+  height: PropTypes.string
+};
+
 export const CardFooter = styled.div`
   display: flex;
   align-items: center;
@@ -68,3 +77,7 @@ export const CardFooter = styled.div`
     pointer-events: auto;
   }
 `;
+
+CardFooter.propTypes = {
+  cardFontWeight: PropTypes.string
+};

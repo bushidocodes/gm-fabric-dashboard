@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { contrastColor } from "style/styleFunctions";
 
@@ -14,5 +15,9 @@ const VizFill = styled.div`
   left: 0;
   bottom: 0;
 `;
+
+VizFill.propTypes = {
+  width: PropTypes.number
+};
 
 export default VizFill;

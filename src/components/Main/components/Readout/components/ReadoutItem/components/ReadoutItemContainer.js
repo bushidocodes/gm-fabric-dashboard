@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { spacingScale } from "style/styleFunctions";
 
@@ -22,5 +23,9 @@ const ReadoutItemContainer = styled.div`
     opacity: 0.125;
   }
 `;
+
+ReadoutItemContainer.propTypes = {
+  flex: PropTypes.string
+};
 
 export default ReadoutItemContainer;

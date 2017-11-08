@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { spacingScale, errorColor } from "style/styleFunctions";
 
@@ -9,5 +10,9 @@ const TableCol = styled.div`
   ${props =>
     props.errorPercent ? `color: ${errorColor(props.errorPercent)}` : ""};
 `;
+
+TableCol.propTypes = {
+  errorPercent: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
 
 export default TableCol;

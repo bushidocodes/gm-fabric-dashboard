@@ -30,7 +30,7 @@ class GMGrid extends Component {
 
   /**
    * Mapper function that takes a chart object and renders the appropriate component with the appropriate state
-   * @param {Object} chart 
+   * @param {Object} chart
    * @param {string} chart.type - String representing the chart type (GMLineChart, GMTable, GMBasicMetrics)
    * @param {Object} chart.data
    * @param {Object[][]} chart.data.detailLines - Array of array of objects. The elements of the top level array are in the format expected by the parseJSONString utility function
@@ -114,7 +114,7 @@ class GMGrid extends Component {
   /**
    * Event handler for updating the layout of charts on the GMGrid. It is triggered by drag-and-drop actions on the charts
    * Note that this also seems to always be called on inital render
-   * @param {Object} allLayouts 
+   * @param {Object} allLayouts
    */
   updateDashboardLayout(allLayouts) {
     return;
@@ -133,7 +133,7 @@ class GMGrid extends Component {
 
   /**
    * Renders a dashboard as a responsive grid
-   * @param {Object} dashboard 
+   * @param {Object} dashboard
    */
   renderDashboard(dashboard) {
     // While this parent div looks superfluous, it is needed to ensure the proper vertical heigh of the dashboard
@@ -146,7 +146,8 @@ class GMGrid extends Component {
           isResizable={false}
           layouts={dashboard.grid.layouts}
           onLayoutChange={(currentLayout, allLayouts) =>
-            this.updateDashboardLayout(allLayouts)}
+            this.updateDashboardLayout(allLayouts)
+          }
           rowHeight={dashboard.grid.rowHeight}
         >
           {dashboard.charts.map(chart => (

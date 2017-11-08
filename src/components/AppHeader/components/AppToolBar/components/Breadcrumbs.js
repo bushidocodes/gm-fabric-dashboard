@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { hide } from "components/globalPatterns";
 
@@ -15,5 +16,9 @@ const Breadcrumbs = styled.ol`
     ${props => (props.hideRoot ? hide() : "")};
   }
 `;
+
+Breadcrumbs.propTypes = {
+  hideRoot: PropTypes.bool
+};
 
 export default Breadcrumbs;

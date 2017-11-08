@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { spacingScale } from "style/styleFunctions";
 import { CONTENT_MAX_WIDTH } from "style/styleVariables";
@@ -20,5 +21,9 @@ const SectionContent = styled.div`
     flex: 0 0 160px;
   }
 `;
+
+SectionContent.propTypes = {
+  flex: PropTypes.bool
+};
 
 export default SectionContent;

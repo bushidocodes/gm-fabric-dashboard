@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 import { spacingScale } from "style/styleFunctions";
 
 const Runtime = styled.span`
@@ -8,5 +9,9 @@ const Runtime = styled.span`
   flex: 1 1 100%;
   padding-right: ${spacingScale(1)};
 `;
+
+Runtime.propTypes = {
+  cardFontColor: PropTypes.string
+};
 
 export default Runtime;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 const DocsLink = styled.a`
   justify-self: flex-end;
@@ -21,5 +22,9 @@ const DocsLink = styled.a`
     transform: scale(1.1);
   }
 `;
+
+DocsLink.propTypes = {
+  cardFontColor: PropTypes.string
+};
 
 export default DocsLink;

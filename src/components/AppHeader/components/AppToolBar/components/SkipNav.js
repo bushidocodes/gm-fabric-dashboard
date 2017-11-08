@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import { FONT_SIZE_SM, COLOR_WHITE, COLOR_GREEN } from "style/styleVariables";
 
@@ -24,5 +25,9 @@ const SkipNav = styled.button.attrs({
     top: 0;
   }
 `;
+
+SkipNav.propTypes = {
+  skipToId: PropTypes.string
+};
 
 export default SkipNav;

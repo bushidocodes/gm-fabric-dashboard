@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 import {
   COLOR_CONTENT_BACKGROUND,
@@ -28,5 +29,9 @@ const ReadoutContainer = styled.div`
     flex: 0 0 100%;
     order: ${props => (props.primary ? 0 : 1)};
 `;
+
+ReadoutContainer.propTypes = {
+  primary: PropTypes.bool
+};
 
 export default ReadoutContainer;

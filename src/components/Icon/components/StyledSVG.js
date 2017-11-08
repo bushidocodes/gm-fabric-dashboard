@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 const VIEWBOXSIZE = 24;
 
@@ -18,5 +19,10 @@ const StyledSVG = styled.svg.attrs({
     overflow: visible;
   }
 `;
+
+StyledSVG.propTypes = {
+  glyphColor: PropTypes.string,
+  iconRatio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};
 
 export default StyledSVG;

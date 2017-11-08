@@ -1,6 +1,7 @@
 // NPM Modules
 import Color from "color";
 import styled from "styled-components";
+import { PropTypes } from "prop-types";
 
 // External Dependencies
 import {
@@ -81,5 +82,10 @@ const StyledButton = styled.button`
     margin-bottom: -2px;
   }
 `;
+
+StyledButton.propTypes = {
+  disabled: PropTypes.bool,
+  selected: PropTypes.bool
+};
 
 export default StyledButton;

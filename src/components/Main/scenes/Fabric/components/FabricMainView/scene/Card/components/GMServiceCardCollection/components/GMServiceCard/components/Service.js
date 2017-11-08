@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
 
 export const ServiceLink = styled(Link)`
   &,
@@ -8,7 +9,7 @@ export const ServiceLink = styled(Link)`
   &:focus {
     text-decoration: none;
     cursor: ${props => props.cursor};
-    color: ${props => props.cardfontcolor};
+    color: ${props => props.cardFontColor};
   }
 
   &:not([disabled]) {
@@ -30,7 +31,7 @@ export const ServiceLink = styled(Link)`
       right: -2px;
       bottom: -2px;
       left: -2px;
-      border: 2px solid ${props => props.cardhighlightcolor};
+      border: 2px solid ${props => props.cardHighlightColor};
       pointer-events: none;
       opacity: 0;
       z-index: 20;
@@ -48,4 +49,11 @@ export const ServiceLink = styled(Link)`
     }
   }
 `;
+
+ServiceLink.propTypes = {
+  cardFontColor: PropTypes.string,
+  cardHighlightColor: PropTypes.string,
+  cursor: PropTypes.string
+};
+
 export const ServiceInfo = ServiceLink.withComponent("div");

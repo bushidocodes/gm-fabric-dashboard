@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FONT_SIZE_BASE, FONT_STACK_DATA } from "style/styleVariables";
+import { PropTypes } from "prop-types";
 
 const Title = styled.div`
   text-align: left;
@@ -11,5 +12,9 @@ const Title = styled.div`
   position: relative;
   z-index: 2;
 `;
+
+Title.propTypes = {
+  cardFontWeight: PropTypes.string
+};
 
 export default Title;
