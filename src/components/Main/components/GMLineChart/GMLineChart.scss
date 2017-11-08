@@ -34,11 +34,11 @@ $chart-height-base: 250px;
 
   .chart-content {
     flex: 1 1 100%;
+    min-height: 250px;
     position: relative;
 
     > * {
       margin: $chart-spacing;
-      margin-bottom: 5em;
     }
   }
 
@@ -109,8 +109,5 @@ $chart-height-base: 250px;
   &:not([class*="chart-height-"]),
   &.chart-height-max {
     height: 100%;
-  }
-  &.chart-width-max {
-    width: 100%;
   }
 }

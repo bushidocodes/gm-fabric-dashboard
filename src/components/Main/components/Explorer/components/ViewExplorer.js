@@ -10,7 +10,7 @@ const ViewExplorer = styled.div`
   min-height: 400px;
   padding: 0 ${spacingScale(2)} ${spacingScale(2)};
   height: 100%;
-  @media all and (min-width: 1200px) {
+  @media all and (min-width: 800px) {
     flex-direction: row;
   }
 `;

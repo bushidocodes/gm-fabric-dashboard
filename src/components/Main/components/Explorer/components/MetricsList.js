@@ -8,7 +8,7 @@ const MetricsList = styled.div`
   border-right: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
   position: relative;
   margin-bottom: ${spacingScale(2)};
-  @media all and (min-width: 1200px) {
+  @media all and (min-width: 800px) {
     flex: 0 0 40%;
     max-width: 550px;
     margin-right: ${spacingScale(2)};

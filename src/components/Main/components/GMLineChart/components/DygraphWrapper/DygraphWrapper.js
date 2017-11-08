@@ -19,13 +19,11 @@ import DygraphContainer from "./components/DygraphContainer";
  */
 export default class DygraphWrapper extends React.Component {
   static propTypes = {
-    height: PropTypes.number,
     timeSeries: PropTypes.array.isRequired
   };
 
   componentDidMount() {
     const [data, options] = this.props.timeSeries;
-    options.height = this.props.height;
     this.drawChart(this.div, data, options);
   }
 
@@ -74,7 +72,6 @@ export default class DygraphWrapper extends React.Component {
    */
   drawChart(elem, data, options) {
     // Default Dygraph Options
-    options.height = options.height || 200;
     options.labelsKMB = _.has(options, "labelsKMB") ? options.labelsKMB : true; // Abbreviate with KMB
     options.strokeWidth = options.strokeWidth || 2.0;
     options.legend = options.legend || "always";

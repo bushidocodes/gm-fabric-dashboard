@@ -9,7 +9,7 @@ const MetricsGraphDisplay = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media all and (min-width: 1200px) {
+  @media all and (min-width: 800px) {
     flex: 1 0 60%;
   }
   .chart {

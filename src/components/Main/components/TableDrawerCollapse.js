@@ -14,7 +14,7 @@ const TableDrawerCollapse = styled(Collapse)`
   > div:first-child {
     -webkit-box-shadow: inset 0 1px #ebebeb;
     box-shadow: inset 0 1px #ebebeb;
-    height: 250px;
+    height: 300px;
     box-sizing: border-box;
     cursor: default;
     white-space: normal;
