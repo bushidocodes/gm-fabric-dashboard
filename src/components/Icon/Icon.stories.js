@@ -8,32 +8,55 @@ import Icon from "./Icon";
 import Glyph from "../Glyphs";
 
 const glyphNames = [
-  "Docs",
+  "Http",
   "Threads",
   "Summary",
-  "Http",
+  "Docs",
   "Explorer",
   "Configuration",
   "JVM",
-  "TriangleDown",
   "Cog",
   "Card",
+  "Poll",
   "Play",
   "Pause",
-  "Poll",
-  "Tape"
+  "EKG",
+  "Key",
+  "RunningSmall",
+  "Scatterplot",
+  "LinkedIn",
+  "GitHub",
+  "Power",
+  "Memory",
+  "CPU",
+  "Finagle",
+  "Service",
+  "ServiceInstance",
+  "Fabric",
+  "Exclamation",
+  "Negation",
+  "Tape",
+  "Timer"
 ];
 
 const iconBackgroundNames = [
   "BackgroundSquare",
+  "BackgroundSquareSmall",
+  "BackgroundCircleSmall",
   "BackgroundSquareBeveled",
   "BackgroundSquareRounded",
   "BackgroundSquareRoundedSmooth",
   "BackgroundSquircle",
-  "BackgroundTriangle"
+  "BackgroundTriangle",
+  "BackgroundTriangleSmall"
 ];
 
-const iconBorderNames = ["BorderSquare"];
+const iconBorderNames = [
+  "BorderSquare",
+  "BorderCircleSmall",
+  "BorderSquareSmall",
+  "BorderTriangleSmall"
+];
 
 // dynamic glyph name is used for story knob testing only.
 // call the glyph component by name specifically, <CardGlyph> instead of <Glyph name="CardGlyph"> for code implementation
