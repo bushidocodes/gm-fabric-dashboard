@@ -3,7 +3,6 @@ import _ from "lodash";
 import { PropTypes } from "prop-types";
 import qs from "query-string";
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
 
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
@@ -218,4 +217,4 @@ class FabricGrid extends Component {
   }
 }
 
-export default withRouter(FabricGrid);
+export default FabricGrid;

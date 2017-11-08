@@ -21,9 +21,10 @@ function generateStatusRoutes(services) {
         exact
         key={`/${route}`}
         path={`/${route}`}
-        render={() => {
+        render={props => {
           return (
             <FabricGrid
+              {...props}
               services={_.values(services).filter(service => {
                 let status = computeStatus(
                   service.instances.length,

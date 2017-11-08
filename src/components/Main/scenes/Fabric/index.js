@@ -139,7 +139,9 @@ function FabricRouter({ services }) {
       <Route
         exact
         path="/"
-        render={() => <FabricGrid services={_.values(services)} />}
+        render={props => {
+          return <FabricGrid {...props} services={_.values(services)} />;
+        }}
       />
     </Switch>
   );
