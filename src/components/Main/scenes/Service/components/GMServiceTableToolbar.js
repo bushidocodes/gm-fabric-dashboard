@@ -51,7 +51,7 @@ function GMServiceTableToolbar({
               label: "Name"
             },
             {
-              value: "start_timem",
+              value: "start_time",
               label: "Uptime"
             }
           ]}

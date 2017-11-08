@@ -11,7 +11,7 @@ export default class UpTime extends React.Component {
 
   state = {
     startTime: this.props.startTime,
-    uptime: 0
+    uptime: []
   };
 
   // start timer in componentDidMount

@@ -49,7 +49,16 @@ export const convertMS = (ms = 0) => {
     else if (el < 10) return `0${el}`;
     else return el;
   });
-  return `${d}d ${h}h ${m}m ${s}s`;
+
+  if (d !== "00") {
+    return [`${d}d`, `${h}h`, `${m}m`, `${s}s`];
+  } else if ((d === "00") & (h !== "00")) {
+    return [`${h}h`, `${m}m`, `${s}s`];
+  } else if ((d === "00") & (h === "00") & (m !== "00")) {
+    return [`${m}m`, `${s}s`];
+  } else {
+    return [`${s}s`];
+  }
 };
 
 /**

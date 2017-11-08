@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 import React from "react";
 import { PropTypes } from "prop-types";
 
@@ -7,6 +9,7 @@ import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getSparkLineOfValue } from "utils/sparklines";
+import ArrayValue from "components/ArrayValue";
 
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
@@ -32,7 +35,11 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
             value: (
               <UpTime
                 startTime={getLatestAttribute(metrics, "jvm/start_time")}
-                render={uptime => <div>{uptime}</div>}
+                render={uptime => (
+                  <ArrayValue>
+                    {_.map(uptime, el => <span>{el} </span>)}
+                  </ArrayValue>
+                )}
               />
             )
           }

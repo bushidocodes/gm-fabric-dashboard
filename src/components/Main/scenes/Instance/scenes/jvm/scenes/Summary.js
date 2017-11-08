@@ -14,6 +14,8 @@ import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import { getErrorPercent } from "utils/jvm/selectors";
 
+import ArrayValue from "components/ArrayValue";
+
 /**
  * Static Summary page for JVM runtime
  * @function SummaryGrid
@@ -40,7 +42,11 @@ function SummaryGrid({
                 value: (
                   <UpTime
                     startTime={getLatestAttribute(metrics, "jvm/start_time")}
-                    render={uptime => <div>{uptime}</div>}
+                    render={uptime => (
+                      <ArrayValue>
+                        {_.map(uptime, el => <span>{el} </span>)}
+                      </ArrayValue>
+                    )}
                   />
                 )
               }

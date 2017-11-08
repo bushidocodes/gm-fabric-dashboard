@@ -13,6 +13,7 @@ import Readout from "components/Main/components/Readout";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
+import ArrayValue from "components/ArrayValue";
 
 /**
  * Static Summary page for GO runtime
@@ -58,7 +59,11 @@ function SummaryGrid({
                 value: (
                   <UpTime
                     startTime={startTime}
-                    render={uptime => <div>{uptime}</div>}
+                    render={uptime => (
+                      <ArrayValue>
+                        {_.map(uptime, el => <span>{el} </span>)}
+                      </ArrayValue>
+                    )}
                   />
                 )
               }

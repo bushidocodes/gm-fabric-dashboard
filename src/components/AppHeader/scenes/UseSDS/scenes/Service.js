@@ -39,6 +39,8 @@ function mapStateToProps(state, ownProps) {
   return {
     instanceCount:
       services &&
+      services[`${decodeParameter(serviceName)}|${serviceVersion}`] &&
+      services[`${decodeParameter(serviceName)}|${serviceVersion}`].instances &&
       services[`${decodeParameter(serviceName)}|${serviceVersion}`].instances
         .length,
     pathname

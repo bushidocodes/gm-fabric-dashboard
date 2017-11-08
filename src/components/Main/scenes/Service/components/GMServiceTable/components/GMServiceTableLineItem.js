@@ -1,7 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-
+import _ from "lodash";
 import TableCol from "components/Main/components/TableCol";
+import TableColArray from "components/Main/components/TableColArray";
 import TableRow from "components/Main/components/TableRow";
 import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 import { encodeParameter } from "utils";
@@ -12,7 +13,7 @@ GMServiceTableLineItem.propTypes = {
   path: PropTypes.string.isRequired,
   requests: PropTypes.string,
   status: PropTypes.string.isRequired,
-  uptime: PropTypes.string
+  uptime: PropTypes.array
 };
 
 GMServiceTableLineItem.defaultProps = {
@@ -26,7 +27,7 @@ function GMServiceTableLineItem({
   name,
   requests,
   error,
-  uptime,
+  uptime = [],
   path
 }) {
   return (
@@ -34,7 +35,7 @@ function GMServiceTableLineItem({
       <TableCol style={{ flex: "1 1 30%" }}>
         <GMLink to={encodeParameter(path)}>{name}</GMLink>
       </TableCol>
-      <TableCol style={{ textAlign: "right" }}>{uptime}</TableCol>
+      <TableColArray>{_.map(uptime, el => <span>{el} </span>)}</TableColArray>
     </TableRow>
   );
 }
