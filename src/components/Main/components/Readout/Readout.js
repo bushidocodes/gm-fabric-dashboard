@@ -19,6 +19,7 @@ export default function Readout({
           key={`${item.title}|${item.value}|${item.detail}`}
           icon={item.icon}
           iconName={item.iconName}
+          iconBorderStyle={item.iconBorderStyle}
           iconShape={item.iconShape}
           iconColor={item.iconColor}
           title={item.title}

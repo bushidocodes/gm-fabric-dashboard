@@ -37,7 +37,7 @@ function SummaryGrid({
                 detail: dateFormat(
                   getLatestAttribute(metrics, "jvm/start_time")
                 ),
-                icon: "future",
+                icon: "Summary",
                 title: "Uptime",
                 value: (
                   <UpTime
@@ -57,14 +57,15 @@ function SummaryGrid({
             primary={true}
             readoutItems={[
               {
-                icon: "bolt",
+                icon: "Timer",
                 title: "Avg. Response Time",
                 value: `${_.round(
                   getLatestAttribute(metrics, "time/2XX.avg")
                 )}ms`
               },
               {
-                icon: "warning",
+                icon: "Exclamation",
+                iconBorderStyle: "BorderTriangleSmall",
                 title: "Error Rate",
                 value: `${errorPercent}%`
               }
@@ -74,7 +75,7 @@ function SummaryGrid({
           <Readout
             readoutItems={[
               {
-                icon: "server",
+                icon: "CPU",
                 title: "Host CPU Cores",
                 value: `${getLatestAttribute(metrics, "jvm/num_cpus")}`
               }
