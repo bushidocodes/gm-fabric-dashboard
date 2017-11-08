@@ -22,6 +22,11 @@ const ReadoutItemContainer = styled.div`
     border-top: 1px solid currentColor;
     opacity: 0.125;
   }
+
+  button {
+    margin: ${spacingScale(1)} 0;
+    align-self: center;
+  }
 `;
 
 ReadoutItemContainer.propTypes = {

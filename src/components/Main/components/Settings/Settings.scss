@@ -17,8 +17,8 @@
   }
 
   .control-group {
-    background-color: contrast-color($color-content-background, 4%);
-    border-radius: $border-radius-base * 2;
+    border: 1px solid edge-color($color-content-background);
+    border-radius: $border-radius-base;
     padding: spacing-scale(4);
     display: flex;
     justify-content: center;
@@ -40,6 +40,7 @@
     padding: 0px;
     height: 140px;
     width: 160px;
+
     .label {
       position: absolute;
       bottom: 10px;
@@ -49,9 +50,21 @@
       height: 100%;
       width: 100%;
     }
-    &:hover .label,
-    :hover .btn-glyph {
+    .btn-glyph {
       color: $color-highlight;
+      will-change: transform;
+      transition: all 0.3s ease;
+    }
+
+    &:hover .btn-glyph,
+    &:active .btn-glyph,
+    &:focus .btn-glyph {
+      transition: all 0.1s ease;
+      transform: scale(1.1);
+    }
+    &:active .btn-glyph {
+      transition: all 0;
+      transform: scale(1);
     }
   }
 
@@ -63,16 +76,21 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    &:hover .label {
-      color: $color-highlight;
-    }
 
     .input-range__label.input-range__label--value {
+      font-family: $font-stack-base;
       text-align: center;
       font-weight: 600;
-      font-size: $font-size-base;
       color: $color-highlight;
-      top: -2em;
+      font-size: $font-size-lg * 1.5;
+      line-height: 0;
+      margin-left: -50%;
+      will-change: transform;
+      transform: translateX(-50%) translateY(4px);
+
+      .input-range__label-container {
+        position: static;
+      }
     }
 
     .label {
@@ -81,18 +99,26 @@
       bottom: 10px;
       width: 100%;
       text-align: center;
-      font-weight: $button-font-weight-default;
     }
 
-    .input-range__label--value {
-      .input-range__label-container {
-        font-size: 32px;
-        top: -30px;
+    .input-range__slider-container {
+      transition: left 0;
+      will-change: transform;
+    }
+
+    .input-range__slider {
+      transition: transform 0.3s ease;
+
+      &:hover,
+      &:focus,
+      &:active {
+        transform: scale(1.1);
       }
     }
 
     .input-range__track {
-      background-color: $color-brand-secondary;
+      border-radius: 20px;
+      background-color: contrast-color($color-content-background, 12%);
     }
   }
 }

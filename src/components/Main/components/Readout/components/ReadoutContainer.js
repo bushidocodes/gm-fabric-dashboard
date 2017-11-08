@@ -28,6 +28,19 @@ const ReadoutContainer = styled.div`
   @media all and (max-width: 1000px) {
     flex: 0 0 100%;
     order: ${props => (props.primary ? 0 : 1)};
+  }
+
+  &:first-child:last-child {
+    flex-grow: 0;
+
+    > * {
+      text-align: center;
+
+      > :first-child {
+        padding-left: 0;
+      }
+    }
+  }
 `;
 
 ReadoutContainer.propTypes = {

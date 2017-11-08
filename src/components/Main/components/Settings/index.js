@@ -46,10 +46,6 @@ function SettingsGrid({
       icon="close"
       label="Clear Cache"
       tabIndex={0}
-      style={{
-        display: "block",
-        margin: "20px auto 10px auto"
-      }}
     />
   );
   return (
@@ -77,27 +73,15 @@ function SettingsGrid({
         />
 
         <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
-          <div style={{ width: "20em", textAlign: "center" }}>
-            <Readout
-              readoutContainerStyle={{
-                height: "150px"
-              }}
-              readoutItemsStyle={{
-                paddingLeft: "0px"
-              }}
-              readoutItemsContainerStyle={{
-                flex: " "
-              }}
-              readoutItems={[
-                {
-                  detail: "Cache Size",
-                  title: " ",
-                  value: `${metricsCacheSize}`,
-                  children: button
-                }
-              ]}
-            />
-          </div>
+          <Readout
+            readoutItems={[
+              {
+                title: "Cache Size",
+                value: `${metricsCacheSize}`,
+                children: button
+              }
+            ]}
+          />
         </LayoutSection>
       </ErrorBoundary>
     </div>

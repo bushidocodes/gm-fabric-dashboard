@@ -26,7 +26,7 @@
     flex-direction: row;
     > :not(:first-child) {
       margin-left: $button-content-spacing-base;
-      flex-basis: 2em;
+      flex-basis: auto;
     }
   } @else if $button-content-orientation == vertical {
     padding-top: $button-content-spacing-base;
@@ -123,7 +123,7 @@
     @include button-style-set($color-brand-primary);
   }
   &.btn-type-polling {
-    @include button-style-set(contrast-color($color-content-background, 4%));
+    @include button-style-set($color-content-background);
   }
 
   // Sizes
