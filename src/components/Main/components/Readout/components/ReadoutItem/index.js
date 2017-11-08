@@ -6,6 +6,7 @@ import {
   SparklinesReferenceLine
 } from "react-sparklines";
 
+import Glyph from "components/Glyphs/index";
 import ReadoutItemContainer from "./components/ReadoutItemContainer";
 import ReadoutItemData from "./components/ReadoutItemData";
 import ReadoutItemGraph from "./components/ReadoutItemGraph";
@@ -32,7 +33,11 @@ export default function ReadoutItem({
 }) {
   return (
     <ReadoutItemContainer style={readoutItemsContainerStyle}>
-      {icon && <ReadoutItemIcon icon={icon} />}
+      {icon && (
+        <ReadoutItemIcon>
+          <Glyph name={icon} />
+        </ReadoutItemIcon>
+      )}
       <ReadoutItemData style={readoutItemsStyle}>
         <ReadoutItemTitle>{title || "—"}</ReadoutItemTitle>
         <ReadoutItemValue>{value || "—"}</ReadoutItemValue>

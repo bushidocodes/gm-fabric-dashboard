@@ -18,7 +18,7 @@ export default function SidebarContent({ headerTabs }) {
   return (
     <TabNav>
       {headerTabs}
-      <Tab href={`/explorer`} icon="search" tabIndex={1} title="Explorer" />
+      <Tab href={`/explorer`} icon="Explorer" tabIndex={1} title="Explorer" />
     </TabNav>
   );
 }

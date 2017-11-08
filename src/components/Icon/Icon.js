@@ -23,6 +23,11 @@ Icon.propTypes = {
   transform: PropTypes.string
 };
 
+/**
+ * Renders an Icon with Glyph component passed in as props.children with any additional styling props
+ * @param {any} { optional styling props}
+ * @returns JSX elements
+ */
 export default function Icon({
   ariaLabelledby = "ariaLabelledby",
   borderColor = "currentColor",
@@ -62,7 +67,7 @@ export default function Icon({
         />
       )}
       <StyledG title={glyphName} ratio={glyphRatio}>
-        <title>{title ? title : glyphName}</title>}
+        <title>{title ? title : glyphName}</title>
         {children}
       </StyledG>
     </StyledSVG>

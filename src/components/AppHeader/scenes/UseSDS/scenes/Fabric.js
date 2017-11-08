@@ -41,7 +41,6 @@ function FabricAppHeaderContent({ statusCount, services }) {
                 value: statusCount[status]
               }
             ]}
-            chartData={[0, statusCount[status]]}
             key={status}
           />
         );

@@ -17,6 +17,7 @@ export default function Readout({
       {readoutItems.map(item => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
+          icon={item.icon}
           iconName={item.iconName}
           iconShape={item.iconShape}
           iconColor={item.iconColor}

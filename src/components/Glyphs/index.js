@@ -1,71 +1,85 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
+import _ from "lodash";
 
+import CPU from "./CPU";
 import Card from "./Card";
 import Cog from "./Cog";
-import CPU from "./CPU";
 import Configuration from "./Configuration";
 import Docs from "./Docs";
+import EKG from "./EKG";
 import Exclamation from "./Exclamation";
 import Explorer from "./Explorer";
 import Fabric from "./Fabric";
-import Service from "./Service";
-import ServiceInstance from "./ServiceInstance";
-import Scatterplot from "./Scatterplot";
-import Http from "./Http";
-import GitHub from "./GitHub";
-import EKG from "./EKG";
-import Key from "./Key";
-import Timer from "./Timer";
 import Finagle from "./Finagle";
+import Functions from "./Functions";
+import GitHub from "./GitHub";
+import Http from "./Http";
 import JVM from "./JVM";
+import Key from "./Key";
+import LinkedIn from "./LinkedIn";
+import List from "./List";
 import Memory from "./Memory";
 import Negation from "./Negation";
-import LinkedIn from "./LinkedIn";
+import NoKey from "./NoKey";
+import NoMetrics from "./NoMetrics";
 import Pause from "./Pause";
-import Power from "./Power";
 import Play from "./Play";
 import Poll from "./Poll";
+import Power from "./Power";
 import RunningSmall from "./RunningSmall";
+import Scatterplot from "./Scatterplot";
+import Service from "./Service";
+import ServiceInstance from "./ServiceInstance";
 import Summary from "./Summary";
 import Tape from "./Tape";
 import Threads from "./Threads";
-
-// this dynamic  component is used for story testing only.
+import Timer from "./Timer";
 
 // import all glyph components
 const glyphs = {
-  Http,
-  Threads,
-  Summary,
-  Docs,
-  Explorer,
-  Configuration,
   CPU,
-  JVM,
-  Cog,
   Card,
-  Poll,
-  Play,
+  Cog,
+  Configuration,
+  Docs,
   EKG,
-  Key,
-  Pause,
-  RunningSmall,
-  LinkedIn,
-  GitHub,
-  Power,
+  Exclamation,
+  Explorer,
+  Fabric,
   Finagle,
-  Scatterplot,
+  Functions,
+  GitHub,
+  Http,
+  JVM,
+  Key,
+  LinkedIn,
+  List,
   Memory,
-  Timer,
+  Negation,
+  NoKey,
+  NoMetrics,
+  Pause,
+  Play,
+  Poll,
+  Power,
+  RunningSmall,
+  Scatterplot,
   Service,
   ServiceInstance,
-  Fabric,
-  Exclamation,
-  Negation,
-  Tape
+  Summary,
+  Tape,
+  Threads,
+  Timer
 };
 
+/**
+ * returns Glyph by pass glyph name or empty <g> element if not found
+ *
+ * @export class Glyph
+ * @class Glyph
+ * @extends {Component}
+ */
 export default class Glyph extends Component {
   static propTypes = {
     name: PropTypes.string,
@@ -77,23 +91,28 @@ export default class Glyph extends Component {
   };
 
   render() {
-    const { name, ratio } = this.props;
+    let { name, ratio } = this.props;
+    // use upperFirst instead of capitalize to respect camelCase
+    name = _.upperFirst(name);
+
+    // if glyph name is not found, return empty glyph
+    if (!glyphs[name]) return <g />;
 
     // dynamically render glyph component by name
     const GlyphComponent = glyphs[name];
+
     return (
       <g
         className="glyph"
         fill="currentColor"
         transform={"scale(" + ratio + ")"}
       >
-        <GlyphComponent name={name} />
+        <GlyphComponent />
       </g>
     );
   }
 }
 
 Glyph.defaultProps = {
-  name: "Threads",
   ratio: 1
 };

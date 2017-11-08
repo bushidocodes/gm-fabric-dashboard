@@ -8,6 +8,7 @@ import TabVal from "./components/TabVal";
 import TabIcon from "./components/TabIcon";
 import TabLink from "./components/TabLink";
 import TabGraph from "./components/TabGraph";
+import Glyph from "components/Glyphs/index";
 
 import {
   Sparklines,
@@ -32,7 +33,9 @@ function Tab({ href, icon, lines = [], title, chartData }) {
   return (
     <TabLink to={href}>
       <TabTitle>
-        {icon ? <TabIcon name="Summary" /> : ""}
+        <TabIcon name={icon}>
+          <Glyph name={icon} />
+        </TabIcon>
         <h1>{title}</h1>
       </TabTitle>
       {lines.map(item => {

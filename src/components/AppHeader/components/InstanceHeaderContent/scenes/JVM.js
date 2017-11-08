@@ -28,7 +28,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
     <TabNav>
       <Tab
         href={`${basePath}/summary`}
-        icon="star"
+        icon="Summary"
         lines={[
           {
             name: "Uptime",
@@ -48,7 +48,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
       />
       <Tab
         href={`${basePath}/routes`}
-        icon="link"
+        icon="Functions"
         lines={[
           {
             name: "Requests",
@@ -62,7 +62,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
       <Tab
         chartData={getSparkLineOfValue(metrics, "jvm/thread/count")}
         href={`${basePath}/threads`}
-        icon="table"
+        icon="Threads"
         lines={[
           {
             name: "Threads",
@@ -74,7 +74,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
       {headerTabs}
       {/* Holding off on the configuration tab until we have something to configure */}
       {/* <TabGroup> */}
-      <Tab href={`${basePath}/explorer`} icon="search" title="Explorer" />
+      <Tab href={`${basePath}/explorer`} icon="Explorer" title="Explorer" />
       {/* <Tab
           href={`${basePath}/configuration`}
           icon="search"
