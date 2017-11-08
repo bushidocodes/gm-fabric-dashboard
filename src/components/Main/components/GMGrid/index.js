@@ -12,6 +12,7 @@ import ErrorBoundary from "components/ErrorBoundary";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
+import NotFoundError from "components/Main/components/NotFoundError";
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -167,7 +168,7 @@ class GMGrid extends Component {
   render() {
     const { dashboard } = this.props;
     if (!dashboard) {
-      return <div>{`Dashboard does not exist`}</div>;
+      return <NotFoundError errorMsg={`Dashboard does not exist`} />;
     } else {
       return this.renderDashboard(dashboard);
     }
