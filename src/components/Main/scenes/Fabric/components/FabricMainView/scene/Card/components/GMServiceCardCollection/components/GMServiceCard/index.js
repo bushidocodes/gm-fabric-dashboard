@@ -53,7 +53,14 @@ export default function GMServiceCard({
   const maxNameLen = 50;
   const titleName =
     name.length > maxNameLen ? `${name.trim().substr(0, maxNameLen)}...` : name;
-  const titleNameAttribute = name === titleName ? null : name;
+  let titleNameAttribute = name === titleName ? null : name;
+
+  if (!metered) {
+    titleNameAttribute = "Metrics are not available for this service.";
+  } else if (!authorized) {
+    titleNameAttribute = "You do not have permission to manage this service.";
+  }
+
   switch (status) {
     case "Down":
       cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
@@ -91,29 +98,28 @@ export default function GMServiceCard({
     >
       <BackgroundIcon status={status} alt={status} />
       <ServiceLink
-        to={`/${encodeParameter(name)}/${version}`}
+        cardfontcolor={cardFontColor}
+        cursor={
+          status !== "Down" && authorized && metered ? "pointer" : "not-allowed"
+        }
         onClick={
           status !== "Down" && authorized && metered
             ? null
             : e => e.preventDefault()
         }
-        cursor={
-          status !== "Down" && authorized && metered ? "pointer" : "not-allowed"
-        }
-        cardfontcolor={cardFontColor}
+        title={titleNameAttribute}
+        to={`/${encodeParameter(name)}/${version}`}
       >
-        <Title title={titleNameAttribute} cardFontWeight={cardFontWeight}>
-          {titleName}
-        </Title>
+        <Title cardFontWeight={cardFontWeight}>{titleName}</Title>
       </ServiceLink>
       <CardFooter cardFontWeight={cardFontWeight}>
         {!metered && (
-          <Icon title="Metrics are not available for this service.">
+          <Icon title="No Metrics">
             <NoMetrics />
           </Icon>
         )}
         {!authorized && (
-          <Icon title="You do not have permission to manage this service.">
+          <Icon title="Not Authorized">
             <NoKey />
           </Icon>
         )}
@@ -121,8 +127,8 @@ export default function GMServiceCard({
         {version && <span>{version}</span>}
         {version &&
           docsLink && (
-            <DocsLink href={docsLink}>
-              <Icon>
+            <DocsLink href={docsLink} target="_blank">
+              <Icon title="API Documentation">
                 <Docs />
               </Icon>
             </DocsLink>

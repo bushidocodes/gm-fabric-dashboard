@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 const DocsLink = styled.a`
   justify-self: flex-end;
-  margin-left: 0;
-  cursor: pointer;
   pointer-events: auto;
-  color: ${props => props.cardFontColor};
+  color: inherit;
   transition: all 0.3s ease;
   transform: scale(1);
   will-change: transform;
+  display: block;
 
   &:hover,
   &:focus {

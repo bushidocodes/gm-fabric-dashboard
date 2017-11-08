@@ -2,12 +2,21 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import { Line, LineLeft, LineRight } from "./components/Line";
-import { ItemName, ItemVersion } from "./components/Item";
+import {
+  ItemName,
+  ItemVersion,
+  ItemIcon,
+  ItemRuntime
+} from "./components/Item";
 import IconWrapper from "./components/IconWrapper";
-import DocLink from "./components/DocLink";
+import DocsLink from "./components/DocsLink";
+
+import Icon from "components/Icon";
+import NoKey from "components/Glyphs/NoKey";
+import Docs from "components/Glyphs/Docs";
+import NoMetrics from "components/Glyphs/NoMetrics";
 
 import StatusIcon from "components/StatusIcon";
-import Docs from "images/icons/docs.svg";
 import GMLink from "components/Main/scenes/Fabric/components/GMLink";
 
 export default class GMServiceListItem extends Component {
@@ -17,6 +26,7 @@ export default class GMServiceListItem extends Component {
     groupByAttribute: PropTypes.string,
     metered: PropTypes.bool,
     name: PropTypes.string.isRequired,
+    runtime: PropTypes.string,
     status: PropTypes.string,
     version: PropTypes.string
   };
@@ -26,49 +36,73 @@ export default class GMServiceListItem extends Component {
       authorized,
       metered,
       name,
+      runtime,
       status,
       version,
       docsLink,
       groupByAttribute = ""
     } = this.props;
 
+    let isAccessible = true;
+    if (!authorized || !metered || status === "Down") {
+      isAccessible = false;
+    }
+
+    let title = name;
+    if (!metered) {
+      title = "Metrics are not available for this service.";
+    } else if (!authorized) {
+      title = "You do not have permission to manage this service.";
+    }
+
     return (
-      <div>
-        <Line>
-          <LineLeft>
-            <GMLink
-              to={`/${name}/${version}`}
-              onClick={
-                status !== "Down" && authorized && metered
-                  ? null
-                  : e => e.preventDefault()
-              }
-              cursor={
-                status !== "Down" && authorized && metered
-                  ? "pointer"
-                  : "not-allowed"
-              }
-              tabIndex="0"
-              disabled={status === "Down"}
-            >
-              <IconWrapper>
-                {groupByAttribute.toLowerCase() !== "status" && (
-                  <StatusIcon status={status} />
-                )}
-              </IconWrapper>
-              <ItemName>{name}</ItemName>
-              <ItemVersion>{version}</ItemVersion>
-            </GMLink>
-          </LineLeft>
-          <LineRight>
-            {docsLink && (
-              <DocLink href={docsLink} target="_blank">
-                <img alt="Docs" src={Docs} />
-              </DocLink>
+      <Line>
+        <LineLeft>
+          <GMLink
+            disabled={!isAccessible}
+            onClick={isAccessible ? null : e => e.preventDefault()}
+            tabIndex="0"
+            title={title}
+            to={`/${name}/${version}`}
+          >
+            <IconWrapper>
+              {groupByAttribute.toLowerCase() !== "status" && (
+                <StatusIcon status={status} />
+              )}
+            </IconWrapper>
+            {!metered && (
+              <ItemIcon>
+                <Icon title="No Metrics">
+                  <NoMetrics />
+                </Icon>
+              </ItemIcon>
             )}
-          </LineRight>
-        </Line>
-      </div>
+            {!authorized && (
+              <ItemIcon>
+                <Icon title="Not Authorized">
+                  <NoKey />
+                </Icon>
+              </ItemIcon>
+            )}
+            <ItemName clickable={isAccessible}>{name}</ItemName>
+            <ItemRuntime>
+              <span>{runtime}</span>
+            </ItemRuntime>
+          </GMLink>
+        </LineLeft>
+        <LineRight>
+          <ItemVersion>
+            <span>{version}</span>
+          </ItemVersion>
+          {docsLink && (
+            <DocsLink href={docsLink} target="_blank">
+              <Icon title="API Documentation">
+                <Docs />
+              </Icon>{" "}
+            </DocsLink>
+          )}
+        </LineRight>
+      </Line>
     );
   }
 }

@@ -24,6 +24,7 @@ export default function GMServiceList({ items, groupByAttribute }) {
           key={`${item.name}${item.version}`}
           instances={item.instances}
           name={item.name}
+          runtime={item.runtime}
           status={item.status}
           version={item.version}
           docsLink={item.docsLink}
