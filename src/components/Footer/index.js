@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import LongLogo from "./components/LongLogo";
 import Links from "./components/Links";
 import Link from "./components/Link";
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs";
 
 import longLogo from "./assets/decipher-logo-long.png";
 
@@ -30,7 +32,9 @@ export default function AppFooter() {
           target="_blank"
           title="Decipher Technology Studios Github"
         >
-          <i data-uk-icon={`icon: github; ratio: .8;`} />
+          <Icon iconRatio={0.8}>
+            <Glyph name="GitHub" />
+          </Icon>
         </Link>
         <Link
           href="http://twitter.com/deciphernow"
@@ -38,7 +42,9 @@ export default function AppFooter() {
           target="_blank"
           title="Decipher Technology Studios Twitter"
         >
-          <i data-uk-icon={`icon: twitter; ratio: .8;`} />
+          <Icon iconRatio={0.8}>
+            <Glyph name="Twitter" />
+          </Icon>
         </Link>
         <Link
           href="http://www.linkedin.com/company/decipher-technology-studios"
@@ -46,7 +52,9 @@ export default function AppFooter() {
           target="_blank"
           title="Decipher Technology Studios LinkedIn"
         >
-          <i data-uk-icon={`icon: linkedin; ratio: .8;`} />
+          <Icon iconRatio={0.8}>
+            <Glyph name="LinkedIn" />
+          </Icon>
         </Link>
       </Links>
     </Footer>

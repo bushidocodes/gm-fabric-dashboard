@@ -10,7 +10,7 @@ const Link = styled.a`
   padding: 0 ${spacingScale(1)};
 
   &:hover {
-    color: ${COLOR_HIGHLIGHT};
+    color: ${COLOR_HIGHLIGHT.string()};
   }
 `;
 

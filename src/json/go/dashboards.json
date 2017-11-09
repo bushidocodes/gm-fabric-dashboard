@@ -3,7 +3,7 @@
     "name": "Go",
     "runtime": "GO",
     "summaryCard": {
-      "icon": "code",
+      "icon": "Go",
       "chart": {
         "type": "value",
         "dataAttribute": "go_metrics/runtime/alloc_bytes"

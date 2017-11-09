@@ -3,13 +3,12 @@
     "name": "HTTP",
     "runtime": "JVM",
     "summaryCard": {
-      "icon": "world",
+      "icon": "Http",
       "lines": [
         {
           "name": "Received",
           "value": [
             {
-              "type": "latest",
               "type": "latest",
               "value": "https/received_bytes",
               "baseUnit": "B",
@@ -260,7 +259,7 @@
     "name": "JVM",
     "runtime": "JVM",
     "summaryCard": {
-      "icon": "code",
+      "icon": "JVM",
       "chart": {
         "type": "value",
         "dataAttribute": "jvm/mem/current/used"
@@ -420,7 +419,7 @@
     "name": "Finagle",
     "runtime": "JVM",
     "summaryCard": {
-      "icon": "code",
+      "icon": "Finagle",
       "lines": [
         {
           "name": "Active Tasks",

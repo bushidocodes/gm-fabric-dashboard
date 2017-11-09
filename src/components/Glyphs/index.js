@@ -35,6 +35,7 @@ import Summary from "./Summary";
 import Tape from "./Tape";
 import Threads from "./Threads";
 import Timer from "./Timer";
+import Twitter from "./Twitter";
 
 // import all glyph components
 const glyphs = {
@@ -50,6 +51,7 @@ const glyphs = {
   Finagle,
   Functions,
   GitHub,
+  Go: JVM,
   Http,
   JVM,
   Key,
@@ -70,7 +72,8 @@ const glyphs = {
   Summary,
   Tape,
   Threads,
-  Timer
+  Timer,
+  Twitter
 };
 
 /**

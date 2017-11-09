@@ -23,9 +23,14 @@ exports[`A Footer container should render 1`] = `
       target="_blank"
       title="Decipher Technology Studios Github"
     >
-      <i
-        data-uk-icon="icon: github; ratio: .8;"
-      />
+      <Icon
+        iconRatio={0.8}
+      >
+        <Glyph
+          name="GitHub"
+          ratio={1}
+        />
+      </Icon>
     </styled.a>
     <styled.a
       href="http://twitter.com/deciphernow"
@@ -33,9 +38,14 @@ exports[`A Footer container should render 1`] = `
       target="_blank"
       title="Decipher Technology Studios Twitter"
     >
-      <i
-        data-uk-icon="icon: twitter; ratio: .8;"
-      />
+      <Icon
+        iconRatio={0.8}
+      >
+        <Glyph
+          name="Twitter"
+          ratio={1}
+        />
+      </Icon>
     </styled.a>
     <styled.a
       href="http://www.linkedin.com/company/decipher-technology-studios"
@@ -43,9 +53,14 @@ exports[`A Footer container should render 1`] = `
       target="_blank"
       title="Decipher Technology Studios LinkedIn"
     >
-      <i
-        data-uk-icon="icon: linkedin; ratio: .8;"
-      />
+      <Icon
+        iconRatio={0.8}
+      >
+        <Glyph
+          name="LinkedIn"
+          ratio={1}
+        />
+      </Icon>
     </styled.a>
   </styled.div>
 </styled.footer>
