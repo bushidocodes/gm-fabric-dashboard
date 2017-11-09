@@ -23,7 +23,7 @@ AppToolBar.propTypes = {
   toolbarButtons: PropTypes.array
 };
 
-const AppVersion = "0.9.0";
+const AppVersion = "0.9.1";
 const BrandName = "Fabric";
 const defaultToolbarButtons = [
   {
