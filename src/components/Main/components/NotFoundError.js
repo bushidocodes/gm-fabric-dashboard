@@ -5,6 +5,9 @@ import ErrorBox from "./ErrorBox";
 import ErrorContent from "./ErrorContent";
 import Span from "./Span";
 
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/index";
+
 /**Stateless functional React component that renders the error message box
  * Takes an error message and returns error message box
  * @param {string} errorMsg
@@ -15,7 +18,11 @@ const NotFoundError = ({ errorMsg = "Not Found" }) => {
   return (
     <ErrorBox>
       <ErrorContent>
-        <Span data-uk-icon="icon: warning; ratio: 1.8" />
+        <Span>
+          <Icon borderStyle="BorderTriangleSmall" iconRatio={"2"}>
+            <Glyph name={"Exclamation"} />
+          </Icon>
+        </Span>
         <Span>{errorMsg}</Span>
       </ErrorContent>
     </ErrorBox>

@@ -8,14 +8,6 @@
 // Mixins
 @mixin function-button-icon-size(
   $button-icon-size: $button-icon-size-default) {
-  [class*="icon"] {
-    height: $button-icon-size;
-    svg {
-      width: auto;
-      height: $button-icon-size;
-    }
-    width: 30px;
-  }
 }
 
 @mixin function-button-orientation(

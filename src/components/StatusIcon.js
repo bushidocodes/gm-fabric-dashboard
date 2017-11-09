@@ -15,10 +15,15 @@ import Exclamation from "components/Glyphs/Exclamation";
 
 StatusIcon.propTypes = {
   backgroundColor: PropTypes.string,
+  iconRatio: PropTypes.string,
   status: PropTypes.string
 };
 
-export default function StatusIcon({ status = "down", backgroundColor }) {
+export default function StatusIcon({
+  status = "down",
+  backgroundColor,
+  iconRatio
+}) {
   if (status.toLowerCase() === "down") {
     const downBackgroundColor = backgroundColor || COLOR_DANGER.string();
     const downGlyphColor = backgroundColor || COLOR_DANGER.string();
@@ -28,6 +33,7 @@ export default function StatusIcon({ status = "down", backgroundColor }) {
         glyphColor={downGlyphColor}
         backgroundStyle="BackgroundSquareSmall"
         backgroundOpacity=".2"
+        iconRatio={iconRatio}
       >
         <Negation />
       </Icon>
@@ -49,6 +55,7 @@ export default function StatusIcon({ status = "down", backgroundColor }) {
         glyphColor={warningGlyphColor}
         backgroundStyle="BackgroundTriangleSmall"
         backgroundOpacity=".4"
+        iconRatio={iconRatio}
       >
         <Exclamation />
       </Icon>
@@ -62,6 +69,7 @@ export default function StatusIcon({ status = "down", backgroundColor }) {
         glyphColor={stableGlyphColor}
         backgroundStyle="BackgroundCircleSmall"
         backgroundOpacity=".2"
+        iconRatio={iconRatio}
       >
         <RunningSmall />
       </Icon>

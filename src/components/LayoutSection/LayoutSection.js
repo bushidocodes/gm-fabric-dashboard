@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import SectionContent from "./components/SectionContent";
 import SectionIcon from "./components/SectionIcon";
 import SectionTitle from "./components/SectionTitle";
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/";
 
 LayoutSection.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -24,13 +26,11 @@ function LayoutSection({ children, title, icon, flex = false }) {
   return (
     <LayoutSectionWrap>
       <Header>
-        {icon ? (
-          <SectionIcon>
-            <img src={icon} alt="" />
-          </SectionIcon>
-        ) : (
-          <SectionIcon data-uk-icon={`icon: grid; ratio: 1`} />
-        )}
+        <SectionIcon>
+          <Icon>
+            <Glyph name={icon} />
+          </Icon>
+        </SectionIcon>
         <SectionTitle>{title}</SectionTitle>
       </Header>
       <SectionContent flex={flex}>{children}</SectionContent>

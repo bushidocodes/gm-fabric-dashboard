@@ -13,7 +13,6 @@ import LayoutSection from "components/LayoutSection";
 import ErrorBoundary from "components/ErrorBoundary";
 import Readout from "components/Main/components/Readout";
 
-import TapeIcon from "images/icons/tape.svg";
 import "react-input-range/lib/css/index.css";
 import "./Settings.scss";
 
@@ -72,7 +71,7 @@ function SettingsGrid({
           title={fabricServer ? "Instance Polling" : "Polling"}
         />
 
-        <LayoutSection icon={TapeIcon} title={"Metrics Cache"} flex>
+        <LayoutSection icon={"Tape"} title={"Metrics Cache"} flex>
           <Readout
             readoutItems={[
               {

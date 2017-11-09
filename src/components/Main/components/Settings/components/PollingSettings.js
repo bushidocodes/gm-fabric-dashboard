@@ -6,8 +6,6 @@ import InputRange from "react-input-range";
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 
-import PollIcon from "images/icons/poll.svg";
-
 /**
  * Control to start/stop polling and change the polling rate
  * Styled to resemble a Readout and intended to be a child of SettingsGrid
@@ -34,7 +32,7 @@ class PollingSettings extends Component {
     const buttonGlyph = isPolling ? "Pause" : "Play";
     const buttonLabel = isPolling ? "Pause Updates" : "Resume Updates";
     return (
-      <LayoutSection title={title} icon={PollIcon} flex>
+      <LayoutSection title={title} icon={"Poll"} flex>
         <div
           className="control-group control-group-polling-start-stop"
           id={`ctrl-btn-${title}`}

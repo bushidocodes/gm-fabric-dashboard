@@ -10,6 +10,9 @@ import TableColDaemon from "components/Main/components/TableColDaemon";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import TableRow from "components/Main/components/TableRow";
 
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/";
+
 /**
  * Line Item containing threads data. Intended to be child of TreadsTable
  * @export
@@ -86,10 +89,9 @@ export default class ThreadsTableLineItem extends Component {
         </TableColThread>
         <TableColThread>
           {stack.length ? (
-            <span
-              className="stack-trace-indicator icon"
-              data-uk-icon={"icon: table;"}
-            />
+            <Icon>
+              <Glyph name="Threads" />
+            </Icon>
           ) : (
             ""
           )}

@@ -4,6 +4,12 @@ import React from "react";
 import DygraphContainer from "./components/DygraphWrapper";
 import "./GMLineChart.scss";
 
+import Span from "components/Main/components/Span";
+
+import Icon from "components/Icon";
+
+import Glyph from "components/Glyphs/index";
+
 /**
  * Reuseable Dygraph-based Line Chart component for rendering a time series
  *
@@ -44,7 +50,12 @@ export default function GMLineChart({
         {timeSeries[0].length === 0 ? (
           <div className="chart-empty">
             <h1>
-              <i data-uk-icon={`icon: warning`} /> No Chartable Data
+              <Span>
+                <Icon borderStyle="BorderTriangleSmall">
+                  <Glyph name={"Exclamation"} />
+                </Icon>
+              </Span>
+              <Span>No Chartable Data</Span>
             </h1>
             {expectedAttributes &&
               expectedAttributes.length > 0 && (

@@ -74,7 +74,9 @@ function FabricRouter({ services }) {
           else if (!serviceIsMetered)
             message = `${serviceName} does not have metrics to display`;
           else if (!instanceIsValid) {
-            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
+            message = `${instanceID} is not a known instance of ${
+              serviceName
+            } ${version}`;
             pathname = `/${serviceName}/${version}`;
           }
 

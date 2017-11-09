@@ -1,7 +1,9 @@
 import { PropTypes } from "prop-types";
 import React from "react";
 import "./Button.scss";
-import Glyph from "../Glyphs/index.js";
+
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/";
 
 Button.propTypes = {
   active: PropTypes.bool, // If the button should be style as active or not
@@ -73,7 +75,11 @@ function Button({
       title={label}
       style={style}
     >
-      {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
+      {icon && (
+        <Icon className="icon">
+          <Glyph name={icon} />
+        </Icon>
+      )}
       {glyph && (
         <div width="100%" className="btn-glyph">
           <svg width="100px" height="80px" viewBox="0 0 50 60">

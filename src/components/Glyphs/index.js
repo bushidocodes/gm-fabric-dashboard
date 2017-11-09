@@ -4,6 +4,7 @@ import _ from "lodash";
 
 import CPU from "./CPU";
 import Card from "./Card";
+import Close from "./Close";
 import Cog from "./Cog";
 import Configuration from "./Configuration";
 import Docs from "./Docs";
@@ -41,6 +42,7 @@ import Twitter from "./Twitter";
 const glyphs = {
   CPU,
   Card,
+  Close,
   Cog,
   Configuration,
   Docs,
@@ -98,9 +100,11 @@ export default class Glyph extends Component {
     // use upperFirst instead of capitalize to respect camelCase
     name = _.upperFirst(name);
 
-    // if glyph name is not found, return empty glyph
-    if (!glyphs[name]) return <g />;
-
+    // if glyph name is not found, return empty glyph and console log an error message
+    if (!glyphs[name]) {
+      console.log(`${name} is not found in glyph adapter`);
+      return <g />;
+    }
     // dynamically render glyph component by name
     const GlyphComponent = glyphs[name];
 

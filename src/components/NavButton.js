@@ -2,6 +2,9 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/";
+
 NavButton.propTypes = {
   hideLabel: PropTypes.bool, // boolean that toggles if the label should be shown as text after the icon
   icon: PropTypes.string, // string of UIKit Icon to use for button
@@ -55,7 +58,11 @@ function NavButton({
       title={label}
       to={to}
     >
-      {icon && <span className="icon" data-uk-icon={`icon: ${icon};`} />}
+      {icon && (
+        <Icon className="icon">
+          <Glyph name={icon} />
+        </Icon>
+      )}
       {!hideLabel && (
         <span className="label">
           {prefix ? <span className="label-prefix">{prefix}</span> : ""}
