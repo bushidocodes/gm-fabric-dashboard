@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.9.1] - 2017-11-09
+### Added
+- Implemented a new custom icon system
+- Added more unit tests for utility functions
+- Improved user experience for invalid services and service instances
+### Changed
+- Fixed spaces in service names in url bar
+- Increased net change calculations to three decimal points
+- App Header in Service View now has a tab
+- Updated appearance for polling settings
+- Refactored SCSS into Styled Components
+### Removed
+- Removed all UIKit icons
+- Removed jQuery
+
+### Test Coverage: 4.57% ([0.9.1 Coverage Report])
+### Bundle Size: ~1.25 MB ([0.9.1 Bundle Size Report])
+### Production Build: ([0.9.1 Build])
 ## [0.9.0] - 2017-11-03
 ### Added
 - New App Header Nav ✨
@@ -273,7 +291,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.1...HEAD
+[0.9.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.0...v0.9.1
+[0.9.1 Coverage Report]: https://1926-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[0.9.1 Bundle Size Report]: https://1926-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[0.9.1 Build]: https://1926-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 [0.9.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.8.1...v0.9.0
 [0.9.0 Coverage Report]: https://1649-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.9.0 Bundle Size Report]: https://1649-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
