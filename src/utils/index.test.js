@@ -51,8 +51,7 @@ describe("convertMS", () => {
     expect(convertMS("not a number")).toEqual(undefined);
     expect(convertMS("")).toEqual(undefined);
   });
-  // uncomment after implementing a fix in convertMS function
-  xtest('works on string number such as "0.477112"', () => {
+  test('works on string number such as "0.477112"', () => {
     expect(convertMS("342342451")).toEqual(["03d", "23h", "05m", "42s"]);
   });
 });
@@ -62,6 +61,13 @@ describe("relativeReqPercent", () => {
     { name: "Taco", requests: 200 },
     { name: "Salad", requests: 100 }
   ];
+
+  const testArrayWithSomeMatchingKeys = [
+    { name: "Fries", requests: 300 },
+    { name: "Taco" },
+    { name: "Salad", requests: 20 }
+  ];
+
   const key = "requests";
 
   test("Takes an array of objects and key and returns a new field relativeReqPercent added to each object", () => {
@@ -74,10 +80,13 @@ describe("relativeReqPercent", () => {
   test("returns original array if no key is passed", () => {
     expect(relativeReqPercent(testArray)).toEqual(testArray);
   });
-
-  // uncomment after implementing a fix in relativeReqPercent function
-  xtest("returns original array if there is no corresponding key", () => {
+  test("returns original array if there is no corresponding key", () => {
     expect(relativeReqPercent(testArray, "not a valid key")).toEqual(testArray);
+  });
+  test("returns original array all objects don't have the key ", () => {
+    expect(
+      relativeReqPercent(testArrayWithSomeMatchingKeys, "not a valid key")
+    ).toEqual(testArrayWithSomeMatchingKeys);
   });
 });
 describe("calculateErrorPercent", () => {
@@ -96,9 +105,16 @@ describe("formatAsDecimalString", () => {
     expect(formatAsDecimalString(0.4254134)).toEqual("0.425");
     expect(formatAsDecimalString(0.8)).toEqual("0.800");
   });
-  // uncomment after implementing a fix in formatAsDecimalString function
-  xtest('works on number string such as "0.477112" ', () => {
+
+  test('works on number string such as "0.477112" ', () => {
     expect(formatAsDecimalString("0.477112")).toEqual("0.477");
+  });
+
+  test("returns undefined when provided an empty string", () => {
+    expect(formatAsDecimalString("")).toEqual(undefined);
+  });
+  test("returns undefined when provided an invalid parameter", () => {
+    expect(formatAsDecimalString("I am not a valid number")).toEqual(undefined);
   });
 });
 

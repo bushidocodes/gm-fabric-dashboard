@@ -31,10 +31,14 @@ export function clearFabricIntervalIfNeeded() {
  * @param {number} ms
  * @returns {string}
  */
-//TO-DO type convert? currently can't process "342342451"
 export const convertMS = (ms = 0) => {
-  if (typeof ms !== "number") {
-    console.log("Wrong paramater is passed to function");
+  if (ms === "") {
+    console.log("convertMS received an empty string");
+    return;
+  }
+  ms = _.toNumber(ms);
+  if (_.isNaN(ms) || typeof ms !== "number") {
+    console.log("convertMS received a wrong parameter");
     return;
   }
   let s = Math.floor(ms / 1000);
@@ -70,12 +74,15 @@ export const convertMS = (ms = 0) => {
  * @param {array, string}
  * @returns {array}
  */
-
-// TO-DO if there is no corresponding key, do not return relativeReqPercent: NaN.  currently evaluates to NaN.
 export const relativeReqPercent = (arrObj = [], key = "") => {
   if (_.isEmpty(arrObj) || key === "") return arrObj;
   let max = _.max(_.map(arrObj, key));
-
+  if (!max) {
+    console.log(
+      "relativeReqPercent did not find the passed key in all objects"
+    );
+    return arrObj;
+  }
   return _.map(arrObj, el =>
     _.extend({}, el, { relativeReqPercent: el[key] / max * 100 })
   );
@@ -94,8 +101,17 @@ export function calculateErrorPercent(requests, errors) {
   return formatAsDecimalString(errorPercent);
 }
 
-//TO-DO doesn't work for "0.477112"...should we type convert?
 export function formatAsDecimalString(number, numberOfDecimals = 3) {
+  if (number === "") {
+    console.log("formatAsDecimalString received an empty string");
+    return;
+  }
+  number = _.toNumber(number);
+  if (_.isNaN(number) || typeof number !== "number") {
+    console.log("formatAsDecimalString received a wrong paramater");
+    return;
+  }
+
   return number.toLocaleString(undefined, {
     maximumFractionDigits: numberOfDecimals,
     minimumFractionDigits: numberOfDecimals
