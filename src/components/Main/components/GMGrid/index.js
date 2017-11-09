@@ -146,8 +146,7 @@ class GMGrid extends Component {
           isResizable={false}
           layouts={dashboard.grid.layouts}
           onLayoutChange={(currentLayout, allLayouts) =>
-            this.updateDashboardLayout(allLayouts)
-          }
+            this.updateDashboardLayout(allLayouts)}
           rowHeight={dashboard.grid.rowHeight}
         >
           {dashboard.charts.map(chart => (

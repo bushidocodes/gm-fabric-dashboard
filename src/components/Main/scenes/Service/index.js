@@ -7,10 +7,13 @@ import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
 
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
+import { reportError } from "services/notification";
 
 class GMServiceView extends Component {
   static propTypes = {
+    history: PropTypes.object.isRequired,
     instances: PropTypes.array.isRequired,
+    location: PropTypes.object.isRequired,
     serviceName: PropTypes.string.isRequired,
     serviceVersion: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired
@@ -22,6 +25,17 @@ class GMServiceView extends Component {
       filterString: "",
       sortByAttribute: "name" // name or start_time
     };
+  }
+
+  componentDidMount() {
+    const { location: { state }, history } = this.props;
+    if (state && state.message) {
+      reportError(state.message);
+      // Reset location state
+      history.replace({
+        state: ""
+      });
+    }
   }
 
   setFilterString = filterString => this.setState({ filterString });

@@ -49,19 +49,41 @@ function FabricRouter({ services }) {
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
-          const authorized = service && service.authorized;
-          const metered = service && service.metered;
           // Lookup the runtime of the microservice named serviceName
           const runtime =
-            services && serviceName && services[`${serviceName}|${version}`]
-              ? services[`${serviceName}|${version}`].runtime
-              : "";
-          // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
-          // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
+            services && serviceName && service ? service.runtime : "";
+
+          const userIsAuthorized = service && service.authorized;
+
+          const serviceIsMetered = service && service.metered;
+
+          // Check our instanceID against this services' instances
+          const instanceIsValid =
+            service &&
+            service.instances.some(obj => {
+              return obj.name === instanceID;
+            });
+
+          // Set a message to pass to location state if one of the following checks fail
+          // If isValidInstance is false, also set a pathname that will redirect to the service view
+          let message,
+            pathname = "/";
+
+          if (!userIsAuthorized)
+            message = `You are not authorized to view ${serviceName}`;
+          else if (!serviceIsMetered)
+            message = `${serviceName} does not have metrics to display`;
+          else if (!instanceIsValid) {
+            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
+            pathname = `/${serviceName}/${version}`;
+          }
 
           // If the services object has not been passed to the router yet and defaults to an empty string,
-          // or it has and is truthy, then render the instance router
-          return authorized === "" || (authorized && metered) ? (
+          // or it has been loaded and is truthy, then render the instance router
+          // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
+          // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
+          return userIsAuthorized === "" ||
+            (userIsAuthorized && serviceIsMetered && instanceIsValid) ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
@@ -72,8 +94,10 @@ function FabricRouter({ services }) {
           ) : (
             <Redirect
               to={{
-                pathname: "/",
-                state: { authorized, metered, serviceName }
+                pathname: pathname,
+                state: {
+                  message
+                }
               }}
             />
           );
@@ -98,13 +122,12 @@ function FabricRouter({ services }) {
       <Route
         exact
         path="/:serviceName/:version/"
-        render={({ match: { params: { serviceName, version } } }) => {
+        render={({ match: { params: { serviceName, version } }, ...props }) => {
           serviceName = decodeParameter(serviceName);
           const service =
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
-          const authorized = service && service.authorized;
 
           const instances = (service && service.instances) || [];
 
@@ -113,13 +136,24 @@ function FabricRouter({ services }) {
             service.minimum,
             service.maximum
           );
+          const userIsAuthorized = service && service.authorized;
 
-          const metered = service && service.metered;
+          const serviceIsMetered = service && service.metered;
+
+          // Set a message to pass to location state if one of the following checks fail
+          let message;
+
+          if (!userIsAuthorized)
+            message = `You are not authorized to view ${serviceName}`;
+          else if (!serviceIsMetered)
+            message = `${serviceName} does not have metrics to display`;
 
           // If the services object has not been passed to the router yet and defaults to an empty string,
-          // or it has and is truthy, then render the instance router
-          return authorized === "" || (authorized && metered) ? (
+          // or it has been loaded and is truthy, then render the instance router
+          return userIsAuthorized === "" ||
+            (userIsAuthorized && serviceIsMetered) ? (
             <GMServiceView
+              {...props}
               serviceName={serviceName}
               serviceVersion={version}
               instances={instances}
@@ -129,7 +163,7 @@ function FabricRouter({ services }) {
             <Redirect
               to={{
                 pathname: "/",
-                state: { authorized, metered, serviceName }
+                state: { message }
               }}
             />
           );

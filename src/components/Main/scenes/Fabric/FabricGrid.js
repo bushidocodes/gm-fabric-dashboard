@@ -4,11 +4,10 @@ import { PropTypes } from "prop-types";
 import qs from "query-string";
 import React, { Component } from "react";
 
+import { reportError } from "services/notification";
+import NotFoundError from "components/Main/components/NotFoundError";
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
-
-import NotFoundError from "components/Main/components/NotFoundError";
-import { reportError } from "services/notification";
 
 class FabricGrid extends Component {
   static propTypes = {
@@ -44,18 +43,10 @@ class FabricGrid extends Component {
     // Refresh services from the Fabric Server every time this loads
     const { location: { state }, history } = this.props;
     Actions.fetchAndStoreFabricMicroservices();
-    // State added by fabric router to determine authorization for a given service
-    if (state && !state.authorized) {
-      reportError(`You are not authorized to view ${state.serviceName}`, false);
-      // Reset location state
-      history.replace({
-        state: ""
-      });
-    } else if (state && !state.metered) {
-      reportError(
-        `${state.serviceName} does not have metrics to display`,
-        false
-      );
+    // State added by fabric router
+    // Display message if one is found on state
+    if (state && state.message) {
+      reportError(state.message);
       // Reset location state
       history.replace({
         state: ""
