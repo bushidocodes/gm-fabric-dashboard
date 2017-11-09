@@ -1,9 +1,10 @@
-import { notification } from "uikit";
-
 export function reportError(errorLabel, shouldTimeout, errorObject = "") {
-  notification(errorLabel, {
-    status: "danger",
-    timeout: shouldTimeout ? 5000 : 0
+  window.addNotification({
+    level: "error",
+    position: "tc",
+    message: errorLabel,
+    autoDismiss: shouldTimeout ? 5 : 0,
+    title: "Error"
   });
   console.log(errorLabel, errorObject);
 }
