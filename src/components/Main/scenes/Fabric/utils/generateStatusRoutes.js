@@ -8,10 +8,10 @@ import { microserviceStatuses } from "utils/constants";
 import { computeStatus } from "utils/selectors";
 
 /** HOC that loops through microserviceStatuses and generates routes,
-* passing the filtered services to FabricGrid
-* @export
-* @returns JSX.Element
-**/
+ * passing the filtered services to FabricGrid
+ * @export
+ * @returns JSX.Element
+ **/
 
 function generateStatusRoutes(services) {
   return microserviceStatuses.map(route => {

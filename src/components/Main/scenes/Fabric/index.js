@@ -80,10 +80,14 @@ function FabricRouter({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${version}`;
+            message = `You are not authorized to view ${serviceName} ${
+              version
+            }`;
           } else if (!instanceIsValid) {
             // If isValidInstance is false, also set a pathname that will redirect to the service view
-            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
+            message = `${instanceID} is not a known instance of ${
+              serviceName
+            } ${version}`;
             pathname = `/${serviceName}/${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
@@ -162,7 +166,9 @@ function FabricRouter({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${version}`;
+            message = `You are not authorized to view ${serviceName} ${
+              version
+            }`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
           }
