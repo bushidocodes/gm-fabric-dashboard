@@ -1,22 +1,25 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
-import { contrastColor } from "style/styleFunctions";
+import { COLOR_SUCCESS, COLOR_DANGER } from "style/styleVariables";
 
 const VizFill = styled.div`
   width: ${props => (props.width ? `${props.width}%` : "0%")};
-  position: absolute;
-  background-color: ${props =>
-    props.width
-      ? `${contrastColor("red", props.width / 100, "blue")}`
+  color: ${props =>
+    props.colorDegree
+      ? `${COLOR_SUCCESS.mix(COLOR_DANGER, props.colorDegree / 100)}`
       : "currentColor"};
-  border-radius: 0 1px 0 0;
-  height: 2px;
-  left: 0;
+  min-width: 2px;
+  position: absolute;
+  background-color: currentColor;
+  border-radius: inherit;
+  top: 0;
   bottom: 0;
+  left: 0;
 `;
 
 VizFill.propTypes = {
+  colorDegree: PropTypes.number,
   width: PropTypes.number
 };
 

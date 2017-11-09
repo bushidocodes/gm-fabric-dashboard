@@ -63,7 +63,10 @@ export default class RoutesTableLineItem extends Component {
           <Badge>{this.props.verb}</Badge>
           {this.props.route}
           <VizBar>
-            <VizFill width={this.props.relativeReqPercent} />
+            <VizFill
+              width={this.props.relativeReqPercent}
+              colorDegree={Number(this.props.errorPercent)}
+            />
           </VizBar>
         </TableColVizBar>
         <SparklineCol>
