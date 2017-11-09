@@ -43,20 +43,28 @@ function FabricRouter({ services }) {
         render={({
           match: { url, params: { serviceName, version, instanceID } }
         }) => {
-          const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
           serviceName = decodeParameter(serviceName);
+
+          // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
+          const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
+
           const service =
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
+
           // Lookup the runtime of the microservice named serviceName
+          // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
           const runtime =
             services && serviceName && service ? service.runtime : "";
 
-          const userIsAuthorized = service && service.authorized;
+          // Check if our services object has been passed to the router
+          const servicesAreNotLoaded = !Object.keys(services).length;
 
-          const serviceIsMetered = service && service.metered;
-
+          // Set our authorization booleans
+          const userIsAuthorized = service.authorized;
+          const serviceIsMetered = service.metered;
+          const serviceIsValid = service;
           // Check our instanceID against this services' instances
           const instanceIsValid =
             service &&
@@ -65,27 +73,30 @@ function FabricRouter({ services }) {
             });
 
           // Set a message to pass to location state if one of the following checks fail
-          // If isValidInstance is false, also set a pathname that will redirect to the service view
           let message,
             pathname = "/";
 
-          if (!userIsAuthorized)
-            message = `You are not authorized to view ${serviceName}`;
-          else if (!serviceIsMetered)
-            message = `${serviceName} does not have metrics to display`;
-          else if (!instanceIsValid) {
-            message = `${instanceID} is not a known instance of ${
-              serviceName
-            } ${version}`;
+          // Checks are ordered by priority of the message
+          if (!serviceIsValid) {
+            message = `${serviceName} ${version} is not a known microservice`;
+          } else if (!userIsAuthorized) {
+            message = `You are not authorized to view ${serviceName} ${version}`;
+          } else if (!instanceIsValid) {
+            // If isValidInstance is false, also set a pathname that will redirect to the service view
+            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
             pathname = `/${serviceName}/${version}`;
+          } else if (!serviceIsMetered) {
+            message = `${serviceName} does not have metrics to display`;
           }
 
-          // If the services object has not been passed to the router yet and defaults to an empty string,
-          // or it has been loaded and is truthy, then render the instance router
-          // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
-          // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
-          return userIsAuthorized === "" ||
-            (userIsAuthorized && serviceIsMetered && instanceIsValid) ? (
+          // If the services object has not been passed to the router yet,
+          // or if the user is authorized and the service exists and is metered
+          // then render the instance router, else redirect with error message
+          return servicesAreNotLoaded ||
+            (userIsAuthorized &&
+              serviceIsMetered &&
+              serviceIsValid &&
+              instanceIsValid) ? (
             <InstanceRouter
               runtime={runtime}
               baseURL={baseURL}
@@ -130,30 +141,37 @@ function FabricRouter({ services }) {
             services && serviceName && services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
-
           const instances = (service && service.instances) || [];
-
           const status = computeStatus(
             instances.length,
             service.minimum,
             service.maximum
           );
-          const userIsAuthorized = service && service.authorized;
 
-          const serviceIsMetered = service && service.metered;
+          // Check if our services object has been passed to the router
+          const servicesAreNotLoaded = !Object.keys(services).length;
+
+          // Set our authorization booleans
+          const userIsAuthorized = service.authorized;
+          const serviceIsMetered = service.metered;
+          const serviceIsValid = service;
 
           // Set a message to pass to location state if one of the following checks fail
           let message;
-
-          if (!userIsAuthorized)
-            message = `You are not authorized to view ${serviceName}`;
-          else if (!serviceIsMetered)
+          // Checks are ordered by priority of the message
+          if (!serviceIsValid) {
+            message = `${serviceName} ${version} is not a known microservice`;
+          } else if (!userIsAuthorized) {
+            message = `You are not authorized to view ${serviceName} ${version}`;
+          } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
+          }
 
-          // If the services object has not been passed to the router yet and defaults to an empty string,
-          // or it has been loaded and is truthy, then render the instance router
-          return userIsAuthorized === "" ||
-            (userIsAuthorized && serviceIsMetered) ? (
+          // If the services object has not been passed to the router yet,
+          // or if the user is authorized and the service exists and is metered
+          // then render the instance router, else redirect with error message
+          return servicesAreNotLoaded ||
+            (userIsAuthorized && serviceIsMetered && serviceIsValid) ? (
             <GMServiceView
               {...props}
               serviceName={serviceName}
