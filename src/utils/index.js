@@ -31,6 +31,7 @@ export function clearFabricIntervalIfNeeded() {
  * @param {number} ms
  * @returns {string}
  */
+//TO-DO type convert? currently can't process "342342451"
 export const convertMS = (ms = 0) => {
   if (typeof ms !== "number") {
     console.log("Wrong paramater is passed to function");
@@ -69,6 +70,8 @@ export const convertMS = (ms = 0) => {
  * @param {array, string}
  * @returns {array}
  */
+
+// TO-DO if there is no corresponding key, do not return relativeReqPercent: NaN.  currently evaluates to NaN.
 export const relativeReqPercent = (arrObj = [], key = "") => {
   if (_.isEmpty(arrObj) || key === "") return arrObj;
   let max = _.max(_.map(arrObj, key));
@@ -91,6 +94,7 @@ export function calculateErrorPercent(requests, errors) {
   return formatAsDecimalString(errorPercent);
 }
 
+//TO-DO doesn't work for "0.477112"...should we type convert?
 export function formatAsDecimalString(number, numberOfDecimals = 3) {
   return number.toLocaleString(undefined, {
     maximumFractionDigits: numberOfDecimals,
