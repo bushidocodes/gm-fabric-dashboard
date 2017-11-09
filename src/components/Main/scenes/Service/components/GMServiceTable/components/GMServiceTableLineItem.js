@@ -35,7 +35,9 @@ function GMServiceTableLineItem({
       <TableCol style={{ flex: "1 1 30%" }}>
         <GMLink to={encodeParameter(path)}>{name}</GMLink>
       </TableCol>
-      <TableColArray>{_.map(uptime, el => <span>{el} </span>)}</TableColArray>
+      <TableColArray>
+        {_.map(uptime, el => <span key={el}>{el} </span>)}
+      </TableColArray>
     </TableRow>
   );
 }

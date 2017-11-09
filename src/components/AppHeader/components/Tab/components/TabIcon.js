@@ -18,7 +18,7 @@ const TabIconContainer = styled.span`
 
 TabIcon.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  name: PropTypes.name
+  name: PropTypes.string
 };
 
 /**

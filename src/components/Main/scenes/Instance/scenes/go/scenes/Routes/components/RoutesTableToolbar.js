@@ -72,7 +72,7 @@ export default function RoutesTableToolbar({
           clearable={false}
           searchable={false}
           valueRenderer={val => [
-            <span>
+            <span key={val}>
               <span>Sort </span>
               <SecondaryText>{val.label}</SecondaryText>
             </span>

@@ -37,7 +37,7 @@ export default function SidebarContent({ basePath, metrics, headerTabs }) {
                 startTime={getLatestAttribute(metrics, "jvm/start_time")}
                 render={uptime => (
                   <ArrayValue>
-                    {_.map(uptime, el => <span>{el} </span>)}
+                    {_.map(uptime, el => <span key={el}>{el} </span>)}
                   </ArrayValue>
                 )}
               />

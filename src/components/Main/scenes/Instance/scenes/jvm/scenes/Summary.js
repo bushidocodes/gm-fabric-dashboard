@@ -29,7 +29,7 @@ function SummaryGrid({
 }) {
   return (
     <ErrorBoundary>
-      <LayoutSection title={"Vitals"}>
+      <LayoutSection title="Vitals" icon={"EKG"}>
         <ReadoutGroup>
           <Readout
             readoutItems={[
@@ -44,7 +44,7 @@ function SummaryGrid({
                     startTime={getLatestAttribute(metrics, "jvm/start_time")}
                     render={uptime => (
                       <ArrayValue>
-                        {_.map(uptime, el => <span>{el} </span>)}
+                        {_.map(uptime, el => <span key={el}>{el} </span>)}
                       </ArrayValue>
                     )}
                   />
@@ -84,7 +84,7 @@ function SummaryGrid({
         </ReadoutGroup>
       </LayoutSection>
 
-      <LayoutSection title={"Statistics"}>
+      <LayoutSection title="Statistics" icon="Scatterplot">
         <div style={{ height: "250px" }}>
           <GMLineChart
             timeSeries={mapDygraphKeysToNetChange(
