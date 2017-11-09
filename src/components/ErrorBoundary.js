@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import NotFoundError from "components/Main/components/NotFoundError";
+
 class ErrorBoundary extends React.Component {
   static propTypes = {
     children: PropTypes.oneOfType([
@@ -27,12 +29,7 @@ class ErrorBoundary extends React.Component {
     return this.props.fallBackUI ? (
       this.props.fallBackUI
     ) : (
-      <div className="no-routes-found-error">
-        <div className="content">
-          <span data-uk-icon="icon: warning; ratio: 1.8" />
-          <span>{`Error: ${this.state.info}`}</span>
-        </div>
-      </div>
+      <NotFoundError errorMsg={`Error: ${JSON.stringify(this.state.info)}`} />
     );
   };
   // If there is an error, render the fallback UI, else render children
