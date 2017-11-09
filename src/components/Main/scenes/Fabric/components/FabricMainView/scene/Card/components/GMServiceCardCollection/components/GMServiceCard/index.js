@@ -55,6 +55,11 @@ export default function GMServiceCard({
     name.length > maxNameLen ? `${name.trim().substr(0, maxNameLen)}...` : name;
   let titleNameAttribute = name === titleName ? null : name;
 
+  let isAccessible = true;
+  if (!metered || !authorized || status === "Down") {
+    isAccessible = false;
+  }
+
   if (!metered) {
     titleNameAttribute = "Metrics are not available for this service.";
   } else if (!authorized) {
@@ -88,6 +93,7 @@ export default function GMServiceCard({
 
   return (
     <CardContainer
+      isAccessible={isAccessible}
       cardBackgroundColor={cardBackgroundColor}
       cardBorderColor={cardBorderColor}
       cardFontColor={cardFontColor}
@@ -96,17 +102,9 @@ export default function GMServiceCard({
       width={width}
       height={height}
     >
-      <BackgroundIcon status={status} alt={status} />
       <ServiceLink
-        cardfontcolor={cardFontColor}
-        cursor={
-          status !== "Down" && authorized && metered ? "pointer" : "not-allowed"
-        }
-        onClick={
-          status !== "Down" && authorized && metered
-            ? null
-            : e => e.preventDefault()
-        }
+        disabled={isAccessible ? null : true}
+        onClick={isAccessible ? null : e => e.preventDefault()}
         title={titleNameAttribute}
         to={`/${encodeParameter(name)}/${version}`}
       >
@@ -134,6 +132,7 @@ export default function GMServiceCard({
             </DocsLink>
           )}
       </CardFooter>
+      <BackgroundIcon status={status} alt={status} />
     </CardContainer>
   );
 }

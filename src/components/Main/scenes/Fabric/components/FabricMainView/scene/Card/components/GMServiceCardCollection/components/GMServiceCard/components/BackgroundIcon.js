@@ -47,7 +47,7 @@ export default function BackgroundIcon({ status }) {
   }
 
   return (
-    <BackgroundIconContainer>
+    <BackgroundIconContainer className="background-icon">
       <Icon
         iconRatio="4"
         glyphColor={iconBaseColor}

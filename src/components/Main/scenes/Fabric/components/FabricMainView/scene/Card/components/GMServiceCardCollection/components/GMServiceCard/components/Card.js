@@ -5,6 +5,7 @@ import Color from "color";
 import styled from "styled-components";
 
 const CARD_SPACING = PADDING_BASE;
+const CARD_INTERACTION_SCALE = 1.05;
 
 export const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
@@ -45,6 +46,40 @@ export const CardContainer = styled.div`
   a {
     color: inherit;
   }
+
+  ${props =>
+    props.isAccessible &&
+    `
+    background-image: none;
+    transition: all 0.4s ease;
+
+    .background-icon,
+    a,
+    h1,
+    footer {
+      transition: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(${CARD_INTERACTION_SCALE});
+      transition: all 0.1s ease;
+
+      h1,
+      footer {
+        transform: scale(calc(1/${CARD_INTERACTION_SCALE}));
+      }
+
+      .background-icon {
+        transform: scale(${CARD_INTERACTION_SCALE});
+      }
+    }
+
+    &:active {
+      transform: scale(${parseInt(CARD_INTERACTION_SCALE, 10) * 0.95});
+      transition: all 0 ease;
+    }
+  `};
 `;
 
 CardContainer.propTypes = {
@@ -52,10 +87,11 @@ CardContainer.propTypes = {
   cardBorderAltColor: PropTypes.string,
   cardBorderColor: PropTypes.string,
   cardFontColor: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
+  isAccessible: PropTypes.bool
 };
 
-export const CardFooter = styled.div`
+export const CardFooter = styled.footer`
   display: flex;
   align-items: center;
   font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
@@ -73,7 +109,8 @@ export const CardFooter = styled.div`
     margin-right: -0.5em;
   }
 
-  > * {
+  > a,
+  > svg {
     pointer-events: auto;
   }
 `;
