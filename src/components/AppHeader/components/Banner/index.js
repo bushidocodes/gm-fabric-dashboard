@@ -3,6 +3,7 @@ import React from "react";
 
 import HeaderContainer from "./components/HeaderContainer";
 import Header from "./components/Header";
+import BannerArt from "./components/BannerArt";
 import Extra from "./components/Extra";
 
 Banner.propTypes = {
@@ -19,6 +20,7 @@ Banner.propTypes = {
 function Banner({ title, extras, hideBackground = false }) {
   return (
     <HeaderContainer hideBackground={hideBackground}>
+      <BannerArt />
       <Header>{title || "—"}</Header>
       {extras && (
         <div>
