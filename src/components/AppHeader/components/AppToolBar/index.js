@@ -80,7 +80,7 @@ function AppToolBar({
             const prettyVal = idx === 0 ? decodeParameter(val) : val;
             // Only render BC if val is truthy (aka don't render a BC if we are on the root)
             return val ? (
-              <Breadcrumb key={val}>
+              <Breadcrumb key={`${val}|${idx}`}>
                 <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
                   {prettyVal.length < 30
                     ? prettyVal
