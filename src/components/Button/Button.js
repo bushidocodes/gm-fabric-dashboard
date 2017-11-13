@@ -12,7 +12,7 @@ Button.propTypes = {
   disabled: PropTypes.bool, // disables the button
   glyph: PropTypes.string, // Glyph to display in the button
   glyphColor: PropTypes.string, // Color for the glyph
-  glyphRatio: PropTypes.number, // Relative size for the glyph
+  glyphRatio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Relative size for the glyph
   label: PropTypes.string.isRequired, // label for the button
   orientation: PropTypes.oneOf(["vertical", "horizontal"]), // Vertical: Icon top, label bottom; Horizontal: Icon left, label right;
   outline: PropTypes.oneOf([
@@ -76,13 +76,12 @@ function Button({
       title={label}
       style={style}
     >
-      {glyph ? (
+      {glyph && (
         <Icon>
           <Glyph glyphColor={glyphColor} name={glyph} ratio={glyphRatio} />
         </Icon>
-      ) : (
-        { children }
       )}
+      {children}
       <span className="label">
         {prefix ? <span className="label-prefix">{prefix}</span> : ""}
         {label}

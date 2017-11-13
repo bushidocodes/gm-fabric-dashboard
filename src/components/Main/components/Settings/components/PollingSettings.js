@@ -48,8 +48,8 @@ class PollingSettings extends Component {
               }
             }}
             glyph={buttonGlyph}
-            glyphRatio="3"
-            glyphColor={COLOR_SUCCESS}
+            glyphRatio={3}
+            glyphColor={COLOR_SUCCESS.string()}
             label={buttonLabel}
             orientation={"vertical"}
             outline={"raised"}

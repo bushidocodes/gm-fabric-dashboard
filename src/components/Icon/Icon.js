@@ -41,7 +41,7 @@ export default function Icon({
   children,
   glyphColor = "currentColor",
   glyphName = "",
-  glyphRatio = "1",
+  glyphRatio = 1,
   iconRatio = "1",
   title = "",
   transform

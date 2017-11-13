@@ -18,7 +18,7 @@ const ReadoutItemIconStyle = styled.div`
 ReadoutItemIcon.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   iconBorderStyle: PropTypes.string,
-  iconBorderWidth: PropTypes.oneOf([PropTypes.number, PropTypes.string])
+  iconBorderWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 /**
