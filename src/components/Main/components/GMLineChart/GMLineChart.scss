@@ -95,7 +95,7 @@ $chart-height-base: 250px;
   }
 
   &.chart-height-normal {
-    @include chart-height($chart-height-base);
+    height: auto;
   }
 
   &.chart-height-lg {

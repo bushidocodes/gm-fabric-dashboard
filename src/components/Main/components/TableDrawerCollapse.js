@@ -14,13 +14,14 @@ const TableDrawerCollapse = styled(Collapse)`
   > div:first-child {
     -webkit-box-shadow: inset 0 1px #ebebeb;
     box-shadow: inset 0 1px #ebebeb;
-    height: 300px;
+    height: auto;
     box-sizing: border-box;
     cursor: default;
     white-space: normal;
     text-align: left;
-
+   
     margin: 0 ${spacingScale(2)};
+    padding: ${spacingScale(2)} 0;
     box-shadow: inset 0 1px ${contrastColor(
       COLOR_CONTENT_BACKGROUND,
       0.02
