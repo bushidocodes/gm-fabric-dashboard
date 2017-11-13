@@ -76,6 +76,7 @@ class SettingsGrid extends Component {
               startPolling={Actions.startPollingFabricMicroservices}
               interval={fabricPollingInterval}
               isPolling={isPollingFabric}
+              glyph="Fabric"
               title="Fabric Polling"
             />
           )}
@@ -85,6 +86,7 @@ class SettingsGrid extends Component {
             startPolling={Actions.startPollingInstanceMetrics}
             interval={instanceMetricsPollingInterval}
             isPolling={isPollingInstanceMetrics}
+            glyph="ServiceInstance"
             title={fabricServer ? "Instance Polling" : "Polling"}
           />
 

@@ -13,6 +13,7 @@ import LayoutSection from "components/LayoutSection";
 class PollingSettings extends Component {
   static propTypes = {
     changePollingInterval: PropTypes.func.isRequired,
+    glyph: PropTypes.string.isRequired,
     interval: PropTypes.number.isRequired,
     isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,
@@ -28,11 +29,11 @@ class PollingSettings extends Component {
   };
 
   render() {
-    const { isPolling, stopPolling, startPolling, title } = this.props;
+    const { isPolling, stopPolling, startPolling, title, glyph } = this.props;
     const buttonGlyph = isPolling ? "Pause" : "Play";
     const buttonLabel = isPolling ? "Pause Updates" : "Resume Updates";
     return (
-      <LayoutSection title={title} icon={"Poll"} flex>
+      <LayoutSection title={title} icon={glyph} flex>
         <div
           className="control-group control-group-polling-start-stop"
           id={`ctrl-btn-${title}`}
