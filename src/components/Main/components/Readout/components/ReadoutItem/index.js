@@ -26,6 +26,7 @@ export default function ReadoutItem({
   iconName,
   iconBackgroundStyle,
   iconBorderStyle,
+  iconBorderWidth,
   iconShape,
   iconColor,
   readoutItemsStyle,
@@ -39,6 +40,7 @@ export default function ReadoutItem({
         <ReadoutItemIcon
           iconBackgroundStyle={iconBackgroundStyle}
           iconBorderStyle={iconBorderStyle}
+          iconBorderWidth={iconBorderWidth || "2"}
         >
           <Glyph name={icon} />
         </ReadoutItemIcon>
@@ -73,6 +75,7 @@ ReadoutItem.propTypes = {
   icon: PropTypes.string,
   iconBackgroundStyle: PropTypes.string,
   iconBorderStyle: PropTypes.string,
+  iconBorderWidth: PropTypes.string,
   iconColor: PropTypes.string,
   iconName: PropTypes.string,
   iconShape: PropTypes.string,

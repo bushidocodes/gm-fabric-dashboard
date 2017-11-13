@@ -17,7 +17,8 @@ const ReadoutItemIconStyle = styled.div`
 
 ReadoutItemIcon.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  iconBorderStyle: PropTypes.string
+  iconBorderStyle: PropTypes.string,
+  iconBorderWidth: PropTypes.oneOf([PropTypes.number, PropTypes.string])
 };
 
 /**
@@ -26,10 +27,19 @@ ReadoutItemIcon.propTypes = {
  * @param {children }
  * @returns JSX.Element
  */
-export default function ReadoutItemIcon({ children, iconBorderStyle = null }) {
+export default function ReadoutItemIcon({
+  children,
+  iconBorderStyle = null,
+  iconBorderWidth = "1"
+}) {
   return (
     <ReadoutItemIconStyle>
-      <Icon iconRatio="2" borderStyle={iconBorderStyle}>
+      <Icon
+        iconRatio="2"
+        borderStyle={iconBorderStyle}
+        borderWidth={iconBorderWidth}
+        backgroundOpacity=".2"
+      >
         {children}
       </Icon>
     </ReadoutItemIconStyle>

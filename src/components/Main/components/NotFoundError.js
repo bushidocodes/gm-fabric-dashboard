@@ -19,7 +19,7 @@ const NotFoundError = ({ errorMsg = "Not Found" }) => {
     <ErrorBox>
       <ErrorContent>
         <Span>
-          <Icon borderStyle="BorderTriangleSmall" iconRatio={"2"}>
+          <Icon borderStyle="BorderTriangleSmall" iconRatio={"3"}>
             <Glyph name={"Exclamation"} />
           </Icon>
         </Span>

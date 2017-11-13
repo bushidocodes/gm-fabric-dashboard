@@ -1,32 +1,8 @@
 import React from "react";
-import { PropTypes } from "prop-types";
 
-BorderSquareSmall.propTypes = {
-  borderColor: PropTypes.string,
-  borderOpacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-const title = "SquareSmall";
-
-function BorderSquareSmall({
-  ratio = 1,
-  borderColor = "transparent",
-  borderOpacity = "1"
-}) {
+function BorderSquareSmall() {
   return (
-    <g
-      id={title}
-      className="iconborder"
-      fillOpacity={borderOpacity}
-      fill={borderColor}
-      fillRule="evenodd"
-    >
-      <path
-        d="M5,5 L5,19 L19,19 L19,5 L5,5 Z M20,5 L20,19 L20,19 C20,19.5522847 19.5522847,20 19,20 L5,20 L5,20 C4.44771525,20 4,19.5522847 4,19 L4,5 L4,5 C4,4.44771525 4.44771525,4 5,4 L19,4 L19,4 C19.5522847,4 20,4.44771525 20,5 Z"
-        id="Border"
-      />
-    </g>
+    <path d="M6,4 L18,4 C19.1045695,4 20,4.8954305 20,6 L20,18 C20,19.1045695 19.1045695,20 18,20 L6,20 C4.8954305,20 4,19.1045695 4,18 L4,6 C4,4.8954305 4.8954305,4 6,4 Z" />
   );
 }
 

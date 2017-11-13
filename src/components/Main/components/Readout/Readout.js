@@ -20,6 +20,7 @@ export default function Readout({
           icon={item.icon}
           iconName={item.iconName}
           iconBorderStyle={item.iconBorderStyle}
+          iconBorderWidth={item.iconBorderWidth}
           iconShape={item.iconShape}
           iconColor={item.iconColor}
           title={item.title}

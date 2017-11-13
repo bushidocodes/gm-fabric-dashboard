@@ -18,7 +18,9 @@ export default class IconBorder extends Component {
   static propTypes = {
     borderColor: PropTypes.string,
     borderOpacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    name: PropTypes.string
+    borderWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    name: PropTypes.string,
+    ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
 
   components = {
@@ -26,22 +28,29 @@ export default class IconBorder extends Component {
   };
 
   render() {
-    const { name, borderColor, borderOpacity } = this.props;
+    const { ratio, name, borderColor, borderOpacity, borderWidth } = this.props;
 
     // dynamically render glyph component by name
     const IconBorderComponent = borderStyles[name];
     return (
-      <IconBorderComponent
-        name={name}
-        borderColor={borderColor}
-        borderOpacity={borderOpacity}
-      />
+      <g
+        id={name}
+        className="iconBorder"
+        stroke={borderColor}
+        strokeOpacity={borderOpacity}
+        strokeWidth={borderWidth / ratio}
+        fill="transparent"
+      >
+        <IconBorderComponent name={name} />
+      </g>
     );
   }
 }
 
 IconBorder.defaultProps = {
+  ratio: 1,
   borderColor: "transparent",
   borderOpacity: 1,
+  borderWidth: 1,
   name: "BorderSquare"
 };

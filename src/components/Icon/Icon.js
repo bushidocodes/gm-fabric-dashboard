@@ -14,6 +14,7 @@ Icon.propTypes = {
   borderColor: PropTypes.string,
   borderOpacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   borderStyle: PropTypes.string,
+  borderWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   glyphColor: PropTypes.string,
   glyphName: PropTypes.string,
@@ -30,16 +31,17 @@ Icon.propTypes = {
  */
 export default function Icon({
   ariaLabelledby = "ariaLabelledby",
-  borderColor = "currentColor",
-  borderOpacity = "1",
-  children,
   backgroundColor = "currentColor",
   backgroundOpacity = "1",
+  backgroundStyle,
+  borderColor = "currentColor",
+  borderOpacity = "1",
+  borderStyle,
+  borderWidth = "1",
+  children,
   glyphColor = "currentColor",
   glyphName = "",
   glyphRatio = "1",
-  borderStyle,
-  backgroundStyle,
   iconRatio = "1",
   title = "",
   transform
@@ -63,6 +65,7 @@ export default function Icon({
           name={borderStyle}
           borderColor={borderColor}
           borderOpacity={borderOpacity}
+          borderWidth={borderWidth}
           ratio={iconRatio}
         />
       )}

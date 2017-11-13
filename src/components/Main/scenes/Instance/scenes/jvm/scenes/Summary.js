@@ -66,6 +66,7 @@ function SummaryGrid({
               {
                 icon: "Exclamation",
                 iconBorderStyle: "BorderTriangleSmall",
+                iconBorderWidth: 2,
                 title: "Error Rate",
                 value: `${errorPercent}%`
               }
