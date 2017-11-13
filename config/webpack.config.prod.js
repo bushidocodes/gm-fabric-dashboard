@@ -195,8 +195,7 @@ module.exports = {
                   loader: require.resolve("css-loader"),
                   options: {
                     importLoaders: 1,
-                    minimize: true,
-                    sourceMap: true
+                    minimize: true
                   }
                 },
                 require.resolve("resolve-url-loader"),
@@ -265,7 +264,7 @@ module.exports = {
     new webpack.DefinePlugin(env.stringified),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
+      sourceMap: false
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
