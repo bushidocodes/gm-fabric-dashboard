@@ -10,6 +10,10 @@ server.use(middlewares);
 
 // Add custom routes before JSON Server router
 server.get("/metrics", (req, res) => {
+  const requestsIndexGet = Math.floor(Math.random() * 10) + 1;
+  metrics["Total/requests"] = requestsIndexGet + requestsIndexGet;
+  metrics["HTTP/requests"] = requestsIndexGet;
+  metrics["HTTPS/requests"] = requestsIndexGet;
   res.json(metrics);
 });
 

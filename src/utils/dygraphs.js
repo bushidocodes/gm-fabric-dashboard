@@ -4,7 +4,7 @@ import { cloneDeep, uniq } from "lodash";
  * Returns time series data of one or more in Dygraph format
  * Note that this requires all metrics to occur at the same timestamp
  * See http://dygraphs.com/data.html#array
- * 
+ *
  * @param {Object} metrics - metric
  * @param {String[]} keys - keys that we want to pluck from metrics
  * @param {String[]} labels - label to apply to key at same index
@@ -42,7 +42,7 @@ export function getDygraphOfValue(metrics, keys, labels = []) {
  * Returns time series data of one or more in Dygraph format
  * Note that this requires all metrics to occur at the same timestamp
  * See http://dygraphs.com/data.html#array
- * 
+ *
  * @param {Object[]} dygraphData - valid dygraph data object returned by getDygraphOfValue
  * @param {String[]} labelsToMap - keys that we want to map over and change from value to net change
  * @returns {Object[]}
@@ -84,17 +84,21 @@ function _netChangeMapper(val, idx, arr, positionOfLabelToMap) {
       (currentVal - lastVal) / ((currentTime - lastTime) / 1000),
       3
     );
-    result[positionOfLabelToMap] = netChange;
+    // Our net change calculation may sometimes generate a negative value. This is
+    // undesired from a visual perspective because a chart's net change should never
+    // be below zero. If we detect a negative value then return zero to maintain
+    // a sane looking chart.
+    result[positionOfLabelToMap] = netChange < 0 ? 0 : netChange;
     return result;
   }
 }
 
 /**
  * Rounds a number to a certain number of decimal places;
- * 
- * @param {number} val 
- * @param {number} numberOfDecimalsPlaces 
- * @returns 
+ *
+ * @param {number} val
+ * @param {number} numberOfDecimalsPlaces
+ * @returns
  */
 export function floatRound(val, numberOfDecimalsPlaces) {
   const multiplier = Math.pow(10, numberOfDecimalsPlaces);
