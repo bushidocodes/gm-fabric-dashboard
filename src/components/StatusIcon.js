@@ -32,7 +32,7 @@ export default function StatusIcon({
         backgroundColor={downBackgroundColor}
         glyphColor={downGlyphColor}
         backgroundStyle="BackgroundSquareSmall"
-        backgroundOpacity=".2"
+        backgroundOpacity=".3"
         iconRatio={iconRatio}
       >
         <Negation />
@@ -54,7 +54,7 @@ export default function StatusIcon({
         backgroundColor={warningBackgroundColor}
         glyphColor={warningGlyphColor}
         backgroundStyle="BackgroundTriangleSmall"
-        backgroundOpacity=".4"
+        backgroundOpacity=".3"
         iconRatio={iconRatio}
       >
         <Exclamation />
@@ -68,7 +68,7 @@ export default function StatusIcon({
         backgroundColor={stableBackgroundColor}
         glyphColor={stableGlyphColor}
         backgroundStyle="BackgroundCircleSmall"
-        backgroundOpacity=".2"
+        backgroundOpacity=".3"
         iconRatio={iconRatio}
       >
         <RunningSmall />
