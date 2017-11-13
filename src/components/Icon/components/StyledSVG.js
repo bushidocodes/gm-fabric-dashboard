@@ -14,6 +14,7 @@ const StyledSVG = styled.svg.attrs({
   width: ${props => props.iconRatio * VIEWBOXSIZE}px;
   color: ${props => props.glyphColor};
   word-spacing: 0;
+  vertical-align: middle;
 
   &:not(:root) {
     overflow: visible;
