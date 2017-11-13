@@ -4,7 +4,6 @@ import { MemoryRouter, Route } from "react-router";
 import _ from "lodash";
 
 import FabricGrid from "./FabricGrid";
-import GMServiceCardView from "./components/FabricMainView/scene/Card/components/GMServiceCardView";
 import "store/states/fabric.js";
 
 const mockServices = {

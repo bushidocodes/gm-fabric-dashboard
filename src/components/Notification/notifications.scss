@@ -1,0 +1,179 @@
+// Notifications Style
+@import "../../style/variables";
+@import "../../style/functions";
+@import "../../style/mixins";
+
+$notification-width: 320px;
+
+@mixin NotificationsWrapper() {
+  > [class^="notifications-"] {
+    position: fixed;
+    width: $notification-width;
+    padding: 0 spacing-scale(0.5) spacing-scale(0.5);
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9998;
+    height: auto;
+
+    // Top-aligned items
+    &[class*="-t"] {
+      top: 0;
+      bottom: auto;
+    }
+    // Bottom-aligned items
+    &[class*="-b"] {
+      top: auto;
+      bottom: 0;
+    }
+    // Center-aligned items
+    &[class$="c"] {
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    // Left-aligned items
+    &[class$="l"] {
+      left: 0;
+    }
+    // Right-aligned items
+    &[class$="r"] {
+      right: 0;
+    }
+  }
+}
+
+$notification-background-color: #fff;
+$notification-insert-transition-duration: 0.3s;
+
+@mixin Notification() {
+  background-color: transparentize($notification-background-color, 0);
+  overflow: hidden;
+  border-radius: 2px;
+  color: contrast-color($notification-background-color);
+  font-weight: 600;
+  display: block;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0;
+  position: relative;
+  transform: translateY(1em) scale(0.8);
+  box-shadow: 0 0 0 1px
+    transparentize(desaturate(lighten(#00ab2a, 20%), 40%), 0.8);
+  transition: all $notification-insert-transition-duration ease;
+  width: 100%;
+  z-index: 1;
+  padding: 0 spacing-scale(1);
+  margin: 0;
+  flex: 0 0 0px;
+  min-height: 0;
+  line-height: 0;
+
+  &[class*="-visible"] {
+    flex: 1 1 0px;
+    opacity: 1;
+    padding: spacing-scale(1);
+    margin-top: spacing-scale(1);
+    transform: translateY(0) scale(1);
+    line-height: 1.4;
+    filter: blur(0);
+
+    > * {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &[class*="-hidden"] {
+    transition: all 1s ease;
+    flex: 0 0 0px;
+    transform: translateY(-0.5em);
+    filter: blur(1px);
+
+    .notification-title {
+      transition: all $notification-insert-transition-duration*2 ease;
+      line-height: 0;
+      margin: 0;
+    }
+
+    > * {
+      transform: translateY(-1em);
+      opacity: 0;
+    }
+  }
+
+  > * {
+    transition: opacity $notification-insert-transition-duration*2 ease,
+      transform $notification-insert-transition-duration*2 ease;
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+  }
+
+  &[class*="-success"] {
+    // border-color: $color-success;
+  }
+  &[class*="-error"] {
+    // border-color: $color-danger;
+  }
+  &[class*="-warning"] {
+    // border-color: $color-warning;
+  }
+  &[class*="-info"] {
+    // border-color: $color-info;
+  }
+
+  span.notification-dismiss {
+    display: none;
+  }
+}
+
+@mixin NotificationTitle() {
+  margin: 0 0 spacing-scale(0.5);
+  font-size: $font-size-base;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: $font-size-sm;
+  font-family: $font-stack-data;
+  padding: 0;
+}
+
+@mixin NotificationMessage() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin NotificationActionWrapper() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin NotificationActionButton() {
+  margin: 0;
+  padding: 0;
+}
+
+.notifications-wrapper {
+  @include NotificationsWrapper();
+}
+
+.notification {
+  @include Notification();
+}
+
+.notification-title {
+  @include NotificationTitle();
+}
+
+.notification-message {
+  @include NotificationMessage();
+}
+
+.notification-action-wrapper {
+  @include NotificationActionWrapper();
+}
+
+.notification-action-button {
+  @include NotificationActionButton();
+}
