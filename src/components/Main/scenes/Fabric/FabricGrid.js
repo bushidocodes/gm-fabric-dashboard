@@ -40,12 +40,15 @@ class FabricGrid extends Component {
   }
 
   componentDidMount() {
-    // Refresh services from the Fabric Server every time this loads
     const { location: { state }, history } = this.props;
+    // Refresh services from the Fabric Server every time this loads
     Actions.fetchAndStoreFabricMicroservices();
     // State added by fabric router
     // Display message if one is found on state
     if (state && state.message) {
+      // Disable polling and clear metrics cache
+      Actions.stopPollingAndPurgeInstanceMetrics();
+      // Display notification
       reportError(state.message);
       // Reset location state
       history.replace({

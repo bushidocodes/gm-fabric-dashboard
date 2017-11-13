@@ -108,6 +108,27 @@ function stopPollingInstanceMetricsEffect() {
 Effect("stopPollingInstanceMetrics", stopPollingInstanceMetricsEffect);
 
 /**
+ * Action that stops polling and clears metrics cache
+ */
+function stopPollingAndPurgeInstanceMetricsEffect() {
+  console.log("Polling stopped and metrics cache cleared");
+  // Reset selected service, version, and instance
+  Actions.setSelectedService(null);
+  Actions.setSelectedServiceVersion(null);
+  Actions.setSelectedInstance(null);
+  // Stop polling
+  Actions.stopPollingInstanceMetrics();
+  Actions.setMetricsPollingFailures(0);
+  // Clear metrics
+  Actions.clearMetrics();
+}
+
+Effect(
+  "stopPollingAndPurgeInstanceMetrics",
+  stopPollingAndPurgeInstanceMetricsEffect
+);
+
+/**
  * Async Jumpstate effect used to change the polling interval
  * @param {number} interval
  */

@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import { Actions } from "jumpstate";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
@@ -30,6 +31,9 @@ class GMServiceView extends Component {
   componentDidMount() {
     const { location: { state }, history } = this.props;
     if (state && state.message) {
+      // Disable polling and clear metrics cache
+      Actions.stopPollingAndPurgeInstanceMetrics();
+      // Display notification
       reportError(state.message);
       // Reset location state
       history.replace({
