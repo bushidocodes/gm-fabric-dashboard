@@ -6,6 +6,9 @@
 
 Grey Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Grey Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
 
+## Demo
+![Animated GIF showing product in action](https://media.giphy.com/media/3o6fJ7w7GS3PyUKq2c/giphy.gif)
+
 ## Prerequisites
 
 ### 1. Install Docker
