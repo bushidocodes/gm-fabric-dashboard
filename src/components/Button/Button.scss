@@ -6,8 +6,12 @@
 // Variables for Buttons are contained in button-mixins.scss
 
 // Mixins
-@mixin function-button-icon-size(
-  $button-icon-size: $button-icon-size-default) {
+@mixin function-button-icon-ratio(
+  $button-icon-ratio: $button-icon-ratio-default) {
+  > svg {
+    width: $icon-viewbox-size * $button-icon-ratio;
+    height: $icon-viewbox-size * $button-icon-ratio;
+  }
 }
 
 @mixin function-button-orientation(
@@ -137,21 +141,21 @@
   }
 
   // Icons
-  &:not([class*="btn-icon-size"]),
-  &.btn-icon-size-normal {
-    @include function-button-icon-size ();
+  &:not([class*="btn-icon-ratio"]),
+  &.btn-icon-ratio-normal {
+    @include function-button-icon-ratio ();
   }
-  &.btn-icon-size-xs {
-    @include function-button-icon-size ($button-icon-size-default * .5);
+  &.btn-icon-ratio-xs {
+    @include function-button-icon-ratio ($button-icon-ratio-default * .5);
   }
-  &.btn-icon-size-sm {
-    @include function-button-icon-size ($button-icon-size-default * .75);
+  &.btn-icon-ratio-sm {
+    @include function-button-icon-ratio ($button-icon-ratio-default * .75);
   }
-  &.btn-icon-size-lg {
-    @include function-button-icon-size ($button-icon-size-default * 1.25);
+  &.btn-icon-ratio-lg {
+    @include function-button-icon-ratio ($button-icon-ratio-default * 1.25);
   }
-  &.btn-icon-size-xl {
-    @include function-button-icon-size ($button-icon-size-default * 1.5);
+  &.btn-icon-ratio-xl {
+    @include function-button-icon-ratio ($button-icon-ratio-default * 1.5);
   }
 
   // Orientations

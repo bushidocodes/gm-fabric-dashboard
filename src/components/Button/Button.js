@@ -7,11 +7,12 @@ import Glyph from "components/Glyphs/";
 
 Button.propTypes = {
   active: PropTypes.bool, // If the button should be style as active or not
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   clickAction: PropTypes.any.isRequired, // click handler
   disabled: PropTypes.bool, // disables the button
-  glyph: PropTypes.string,
-  icon: PropTypes.string, // string of UIKit Icon to use for button
-  iconSize: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the icon
+  glyph: PropTypes.string, // Glyph to display in the button
+  glyphColor: PropTypes.string, // Color for the glyph
+  glyphRatio: PropTypes.number, // Relative size for the glyph
   label: PropTypes.string.isRequired, // label for the button
   orientation: PropTypes.oneOf(["vertical", "horizontal"]), // Vertical: Icon top, label bottom; Horizontal: Icon left, label right;
   outline: PropTypes.oneOf([
@@ -43,11 +44,12 @@ Button.propTypes = {
  */
 function Button({
   active,
+  children,
   clickAction,
   disabled,
   glyph,
-  icon,
-  iconSize,
+  glyphRatio,
+  glyphColor,
   label,
   orientation,
   prefix,
@@ -64,7 +66,6 @@ function Button({
         "btn" +
         (active ? ` active` : "") +
         (type ? ` btn-type-${type}` : "") +
-        (iconSize ? ` btn-icon-size-${iconSize}` : "") +
         (size ? ` btn-size-${size}` : "") +
         (outline ? ` btn-outline-${outline}` : "") +
         (orientation ? ` btn-orientation-${orientation}` : "")
@@ -75,17 +76,12 @@ function Button({
       title={label}
       style={style}
     >
-      {icon && (
-        <Icon className="icon">
-          <Glyph name={icon} />
+      {glyph ? (
+        <Icon>
+          <Glyph glyphColor={glyphColor} name={glyph} ratio={glyphRatio} />
         </Icon>
-      )}
-      {glyph && (
-        <div width="100%" className="btn-glyph">
-          <svg width="100px" height="80px" viewBox="0 0 50 60">
-            <Glyph name={glyph} ratio={2} />
-          </svg>
-        </div>
+      ) : (
+        { children }
       )}
       <span className="label">
         {prefix ? <span className="label-prefix">{prefix}</span> : ""}

@@ -4,8 +4,8 @@
 // Local Variables
 
 $button-font-size-base-default: $font-size-base;
-$button-font-weight-default: 500;
-$button-icon-size-default: 1.5em; // default: 1.5em
+$button-font-weight-default: 600;
+$button-icon-ratio-default: 1; // default: 1.5em
 $button-size-default: normal; // xs, sm, normal, lg, xl // default: normal
 $button-background-color-base-default: $color-white;
 $button-border-color-base-default: $button-background-color-base-default;
@@ -14,7 +14,7 @@ $button-label-color-base-default: contrast-color(
 );
 
 $button-content-orientation-default: horizontal; // horizontal, vertical // default: horizontal
-$button-content-spacing-base-default: spacing-scale(0.75);
+$button-content-spacing-base-default: spacing-scale(0.5);
 
 $button-border-width-base-default: 1px;
 $button-border-radius-base-default: $border-radius-base;
@@ -29,7 +29,16 @@ $button-hover-reaction-degree-default: $button-reaction-degree-default * 0.25;
 $button-active-reaction-degree-default: $button-reaction-degree-default * 2;
 $button-down-reaction-degree-default: $button-reaction-degree-default * 1;
 
+$button-active-mix-base-color: $color-highlight;
+$button-active-mix-base-label-color: contrast-color(
+  $button-active-mix-base-color
+);
+$button-active-mix-degree: 0%;
+
 // Helpers
+@function mix-with-active($color) {
+  @return mix($color, $button-active-mix-base-color, $button-active-mix-degree);
+}
 
 // Button, Inspector, Forms
 @mixin function-button-base(
@@ -37,6 +46,7 @@ $button-border-width-base: $button-border-width-base-default,
 $button-font-weight: $button-font-weight-default) {
   box-sizing: border-box;
   user-select: none;
+  font-family: $font-stack-base;
   font-weight: $button-font-weight;
   border-width: $button-border-width-base;
   line-height: $line-height-base;
@@ -47,6 +57,25 @@ $button-font-weight: $button-font-weight-default) {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transition: all 0.1s ease;
+  }
+
+  &:focus,
+  &:active {
+    transition: all 0 ease;
+  }
+
+  &:not[disabled] {
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.5),
+        0 0 0 1px transparentize($color-highlight, 0.25),
+        0 0 0 4px transparentize($color-highlight, 0.75);
+    }
+  }
 
   > * {
     flex: 0 1 auto;
@@ -69,7 +98,7 @@ $button-font-weight: $button-font-weight-default) {
 @mixin function-button-size(
   $button-size: $button-size-default,
   $button-font-size-base: $font-size-base,
-  $button-icon-size: $button-icon-size-default,
+  $button-icon-ratio: $button-icon-ratio-default,
   $button-border-radius-base: $button-border-radius-base-default,
   $button-content-spacing-base: $button-content-spacing-base-default
 ) {
@@ -179,26 +208,26 @@ $button-font-weight: $button-font-weight-default) {
     );
     // Active styles
     $active-background-styles: (
-      background-color: darker-color($button-background-color-base, $button-active-reaction-degree)
+      background-color: mix-with-active(darker-color($button-background-color-base, $button-active-reaction-degree))
     );
     $active-label-styles: (
-      color: darker-color($button-label-color-base, $button-active-reaction-degree)
+      color: mix(darker-color($button-label-color-base, $button-active-reaction-degree), $button-active-mix-base-label-color, $button-active-mix-degree)
     );
     $active-border-styles: (
-      border-color: darker-color($button-border-color-base, $button-active-reaction-degree)
+      border-color: mix-with-active(darker-color($button-border-color-base, $button-active-reaction-degree))
     );
     // Active Down styles
     $active-down-background-styles: (
-      background-color: darker-color($button-background-color-base, $button-active-reaction-degree +
-            $button-down-reaction-degree)
+      background-color: mix-with-active(darker-color($button-background-color-base, $button-active-reaction-degree +
+              $button-down-reaction-degree))
     );
     $active-down-label-styles: (
-      color: darker-color($button-label-color-base, $button-active-reaction-degree +
-            $button-down-reaction-degree)
+      color: mix(darker-color($button-label-color-base, $button-active-reaction-degree +
+              $button-down-reaction-degree), $button-active-mix-base-label-color, $button-active-mix-degree)
     );
     $active-down-border-styles: (
-      border-color: darker-color($button-border-color-base, $button-active-reaction-degree +
-            $button-down-reaction-degree)
+      border-color: mix-with-active(darker-color($button-border-color-base, $button-active-reaction-degree +
+              $button-down-reaction-degree))
     );
   } @else {
     // Assume button reaction style == lighten
@@ -539,6 +568,12 @@ $button-font-weight: $button-font-weight-default) {
         color: map-get($active-down-styles, color);
       }
     }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $color-highlight;
+    z-index: 1;
   }
 
   &[disabled],

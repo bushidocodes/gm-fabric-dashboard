@@ -49,7 +49,7 @@ class SettingsGrid extends Component {
     const button = (
       <Button
         clickAction={this.clearCacheClickAction}
-        icon="close"
+        glyph="Close"
         label="Clear Cache"
         tabIndex={0}
       />

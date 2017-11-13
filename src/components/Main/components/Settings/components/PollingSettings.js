@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
+import { COLOR_SUCCESS } from "style/styleVariables";
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 
@@ -47,6 +48,8 @@ class PollingSettings extends Component {
               }
             }}
             glyph={buttonGlyph}
+            glyphRatio="3"
+            glyphColor={COLOR_SUCCESS}
             label={buttonLabel}
             orientation={"vertical"}
             outline={"raised"}

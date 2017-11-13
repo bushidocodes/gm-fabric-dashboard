@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import _ from "lodash";
+import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
 
 import Bars from "./Bars";
 import Bell from "./Bell";
@@ -114,6 +115,7 @@ const glyphs = {
  */
 export default class Glyph extends Component {
   static propTypes = {
+    glyphColor: PropTypes.string,
     name: PropTypes.string,
     ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
@@ -123,7 +125,7 @@ export default class Glyph extends Component {
   };
 
   render() {
-    let { name, ratio } = this.props;
+    let { name, ratio, glyphColor } = this.props;
     // use upperFirst instead of capitalize to respect camelCase
     name = _.upperFirst(name);
 
@@ -135,11 +137,22 @@ export default class Glyph extends Component {
     // dynamically render glyph component by name
     const GlyphComponent = glyphs[name];
 
+    const viewBoxSize = ICON_VIEWBOX_SIZE;
+    const glyphTranslateDist = (ratio - 1) * (0.5 * viewBoxSize) * -1;
+
     return (
       <g
         className="glyph"
-        fill="currentColor"
-        transform={"scale(" + ratio + ")"}
+        fill={glyphColor}
+        transform={
+          "translate(" +
+          glyphTranslateDist +
+          " " +
+          glyphTranslateDist +
+          ") scale(" +
+          ratio +
+          ")"
+        }
       >
         <GlyphComponent />
       </g>
@@ -148,5 +161,6 @@ export default class Glyph extends Component {
 }
 
 Glyph.defaultProps = {
-  ratio: 1
+  ratio: 1,
+  glyphColor: "currentColor"
 };

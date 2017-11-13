@@ -46,23 +46,20 @@
       bottom: 10px;
       width: 100%;
     }
-    .uk-button {
-      height: 100%;
-      width: 100%;
-    }
-    .btn-glyph {
+
+    > svg {
       color: $color-highlight;
       will-change: transform;
       transition: all 0.3s ease;
     }
 
-    &:hover .btn-glyph,
-    &:active .btn-glyph,
-    &:focus .btn-glyph {
+    &:hover svg,
+    &:active svg,
+    &:focus svg {
       transition: all 0.1s ease;
       transform: scale(1.1);
     }
-    &:active .btn-glyph {
+    &:active svg {
       transition: all 0;
       transform: scale(1);
     }

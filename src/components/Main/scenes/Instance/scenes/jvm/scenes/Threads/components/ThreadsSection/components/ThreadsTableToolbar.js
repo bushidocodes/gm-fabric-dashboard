@@ -4,10 +4,7 @@ import React, { Component } from "react";
 
 // Importing external deps from src as WebPack Modules directory
 import ButtonGroup from "components/ButtonGroup";
-import StyledButton from "components/StyledButton";
-import StyledButtonRoundedLeft from "components/StyledButtonRoundedLeft";
-import StyledButtonRoundedRight from "components/StyledButtonRoundedRight";
-import SecondaryText from "components/SecondaryText";
+import Button from "components/Button";
 import Toolbar from "components/Main/components/Toolbar";
 import ToolbarCenter from "components/Main/components/ToolbarCenter";
 
@@ -28,42 +25,39 @@ class ThreadsTableToolbar extends Component {
       <Toolbar>
         <ToolbarCenter>
           <ButtonGroup>
-            <StyledButtonRoundedLeft
-              onClick={() => Actions.setThreadsFilter("all")}
+            <Button
+              active={threadsFilter === "all"}
+              clickAction={() => Actions.setThreadsFilter("all")}
               disabled={!threadCounts.all}
-              selected={threadsFilter === "all"}
               tabIndex={0}
-            >
-              All Threads
-              <SecondaryText>{threadCounts.all}</SecondaryText>
-            </StyledButtonRoundedLeft>
-            <StyledButton
-              onClick={() => Actions.setThreadsFilter("active")}
+              label="All Threads"
+              suffix={threadCounts.all}
+            />
+
+            <Button
+              active={threadsFilter === "active"}
+              clickAction={() => Actions.setThreadsFilter("active")}
               disabled={!threadCounts.active}
-              selected={threadsFilter === "active"}
               tabIndex={0}
-            >
-              Active
-              <SecondaryText>{threadCounts.active}</SecondaryText>
-            </StyledButton>
-            <StyledButton
-              onClick={() => Actions.setThreadsFilter("idle")}
+              label="Active"
+              suffix={threadCounts.active}
+            />
+            <Button
+              active={threadsFilter === "idle"}
+              clickAction={() => Actions.setThreadsFilter("idle")}
               disabled={!threadCounts.idle}
-              selected={threadsFilter === "idle"}
               tabIndex={0}
-            >
-              Idle
-              <SecondaryText>{threadCounts.idle}</SecondaryText>
-            </StyledButton>
-            <StyledButtonRoundedRight
-              onClick={() => Actions.setThreadsFilter("stopped")}
+              label="Idle"
+              suffix={threadCounts.idle}
+            />
+            <Button
+              active={threadsFilter === "stopped"}
+              clickAction={() => Actions.setThreadsFilter("stopped")}
               disabled={!threadCounts.stopped}
-              selected={threadsFilter === "stopped"}
               tabIndex={0}
-            >
-              Stopped
-              <SecondaryText>{threadCounts.stopped}</SecondaryText>
-            </StyledButtonRoundedRight>
+              label="Stopped"
+              suffix={threadCounts.stopped}
+            />
           </ButtonGroup>
         </ToolbarCenter>
       </Toolbar>

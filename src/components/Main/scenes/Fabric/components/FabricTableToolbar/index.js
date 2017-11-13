@@ -6,11 +6,7 @@ import React, { Component } from "react";
 import SearchInput from "./components/GMSearchInput";
 
 // External Dependencies
-import List from "components/Glyphs/List";
-import Card from "components/Glyphs/Card";
-import Icon from "components/Icon";
-import StyledButtonRoundedLeft from "components/StyledButtonRoundedLeft";
-import StyledButtonRoundedRight from "components/StyledButtonRoundedRight";
+import Button from "components/Button";
 import SecondaryText from "components/SecondaryText";
 import GMSelect from "components/Main/components/GMSelect";
 import Toolbar from "components/Main/components/Toolbar";
@@ -57,24 +53,18 @@ export default class FabricTableToolbar extends Component {
           </form>
         </ToolbarLeft>
         <ToolbarCenter>
-          <StyledButtonRoundedLeft
-            selected={displayType === "Card"}
-            onClick={() => setDisplayType("Card")}
-          >
-            <Icon glyphName="Card View" glyphColor="currentColor">
-              <Card />
-            </Icon>
-            <span>Cards</span>
-          </StyledButtonRoundedLeft>
-          <StyledButtonRoundedRight
-            selected={displayType === "Table"}
-            onClick={() => setDisplayType("Table")}
-          >
-            <Icon glyphName="Card View" glyphColor="currentColor">
-              <List />
-            </Icon>
-            <span>Table</span>
-          </StyledButtonRoundedRight>
+          <Button
+            active={displayType === "Card"}
+            clickAction={() => setDisplayType("Card")}
+            glyph="Card"
+            label="Card"
+          />
+          <Button
+            active={displayType === "Table"}
+            clickAction={() => setDisplayType("Table")}
+            glyph="List"
+            label="List"
+          />
         </ToolbarCenter>
         <ToolbarRight>
           <GMSelect

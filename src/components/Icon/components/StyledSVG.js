@@ -1,17 +1,16 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
-
-const VIEWBOXSIZE = 24;
+import { ICON_VIEWBOX_SIZE } from "style/styleVariables";
 
 const StyledSVG = styled.svg.attrs({
   version: "1.1",
   xmlns: "http://www.w3.org/2000/svg",
   xmlnsXlink: "http://www.w3.org/1999/xlink",
-  viewBox: "0 0 24 24"
+  viewBox: `0 0 ${ICON_VIEWBOX_SIZE} ${ICON_VIEWBOX_SIZE}`
 })`
   z-index: 1;
-  height: ${props => props.iconRatio * VIEWBOXSIZE}px;
-  width: ${props => props.iconRatio * VIEWBOXSIZE}px;
+  height: ${props => props.iconRatio * ICON_VIEWBOX_SIZE}px;
+  width: ${props => props.iconRatio * ICON_VIEWBOX_SIZE}px;
   color: ${props => props.glyphColor};
   word-spacing: 0;
   vertical-align: middle;
