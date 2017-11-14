@@ -2,18 +2,37 @@ import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
-import SummaryGrid from "./scenes/Summary";
-import RoutesGrid from "./scenes/Routes";
-import FunctionsGrid from "./scenes/Functions";
-
-import Explorer from "components/Main/components/Explorer";
-import GMGrid from "components/Main/components/GMGrid";
-import SettingsGrid from "components/Main/components/Settings";
+import { LazyLoader } from "components/LazyLoader";
 import NotFound from "components/Main/scenes/Instance/components/NotFound";
+
+const SummaryGrid = LazyLoader({
+  loader: () => import("./scenes/Summary")
+});
+
+const FunctionsGrid = LazyLoader({
+  loader: () => import("./scenes/Functions")
+});
+
+const RoutesGrid = LazyLoader({
+  loader: () => import("./scenes/Routes")
+});
+
+const SettingsGrid = LazyLoader({
+  loader: () => import("components/Main/components/Settings")
+});
+
+const Explorer = LazyLoader({
+  loader: () => import("components/Main/components/Explorer")
+});
+
+const GMGrid = LazyLoader({
+  loader: () => import("components/Main/components/GMGrid")
+});
 
 Router.propTypes = {
   baseURL: PropTypes.string
 };
+
 /**
  * Go Runtime Router
  * @export

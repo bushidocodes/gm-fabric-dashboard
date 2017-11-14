@@ -4,9 +4,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import DefaultRouter from "./scenes/default";
-import GoRouter from "./scenes/go";
-import JVMRouter from "./scenes/jvm";
+import { LazyLoader } from "components/LazyLoader";
+
+const DefaultRouter = LazyLoader({
+  loader: () => import("./scenes/default")
+});
+
+const GoRouter = LazyLoader({
+  loader: () => import("./scenes/go")
+});
+
+const JVMRouter = LazyLoader({
+  loader: () => import("./scenes/jvm")
+});
 
 /**
  * InstanceRouter is an intermediate router that is responsible for directing to the appropriate runtime-specific router

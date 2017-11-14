@@ -2,14 +2,32 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import SummaryGrid from "./scenes/Summary";
-import ThreadsGrid from "./scenes/Threads";
-import RoutesGrid from "./scenes/Routes";
-import SettingsGrid from "components/Main/components/Settings";
-
-import Explorer from "components/Main/components/Explorer";
-import GMGrid from "components/Main/components/GMGrid";
+import { LazyLoader } from "components/LazyLoader";
 import NotFound from "components/Main/scenes/Instance/components/NotFound";
+
+const SummaryGrid = LazyLoader({
+  loader: () => import("./scenes/Summary")
+});
+
+const ThreadsGrid = LazyLoader({
+  loader: () => import("./scenes/Threads")
+});
+
+const RoutesGrid = LazyLoader({
+  loader: () => import("./scenes/Routes")
+});
+
+const SettingsGrid = LazyLoader({
+  loader: () => import("components/Main/components/Settings")
+});
+
+const Explorer = LazyLoader({
+  loader: () => import("components/Main/components/Explorer")
+});
+
+const GMGrid = LazyLoader({
+  loader: () => import("components/Main/components/GMGrid")
+});
 
 Router.propTypes = {
   baseURL: PropTypes.string

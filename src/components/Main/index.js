@@ -5,11 +5,18 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import AppContent from "./components/AppContent";
-import FabricRouter from "./scenes/Fabric";
-import InstanceRouter from "./scenes/Instance";
+import { LazyLoader } from "components/LazyLoader";
 
 import { getFabricServer } from "utils/head";
 import { getRuntime } from "utils/selectors";
+
+const FabricRouter = LazyLoader({
+  loader: () => import("./scenes/Fabric")
+});
+
+const InstanceRouter = LazyLoader({
+  loader: () => import("./scenes/Instance")
+});
 
 /**
  * Base React Component of GM Fabric Dashboard

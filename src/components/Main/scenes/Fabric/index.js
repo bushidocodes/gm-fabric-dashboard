@@ -8,10 +8,17 @@ import FabricGrid from "./FabricGrid";
 import GMServiceView from "components/Main/scenes/Service";
 import generateStatusRoutes from "./utils/generateStatusRoutes";
 import { decodeParameter } from "utils";
+import { LazyLoader } from "components/LazyLoader";
 
-import InstanceRouter from "components/Main/scenes/Instance";
-import SettingsGrid from "components/Main/components/Settings";
 import { computeStatus } from "utils/selectors";
+
+const InstanceRouter = LazyLoader({
+  loader: () => import("components/Main/scenes/Instance")
+});
+
+const SettingsGrid = LazyLoader({
+  loader: () => import("components/Main/components/Settings")
+});
 
 FabricRouter.propTypes = {
   services: PropTypes.object
@@ -80,14 +87,10 @@ function FabricRouter({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${
-              version
-            }`;
+            message = `You are not authorized to view ${serviceName} ${version}`;
           } else if (!instanceIsValid) {
             // If isValidInstance is false, also set a pathname that will redirect to the service view
-            message = `${instanceID} is not a known instance of ${
-              serviceName
-            } ${version}`;
+            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
             pathname = `/${serviceName}/${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
@@ -166,9 +169,7 @@ function FabricRouter({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${
-              version
-            }`;
+            message = `You are not authorized to view ${serviceName} ${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
           }
