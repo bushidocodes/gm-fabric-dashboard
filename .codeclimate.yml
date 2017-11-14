@@ -1,0 +1,41 @@
+---
+engines:
+  csslint:
+    enabled: false
+  duplication:
+    enabled: true
+  eslint:
+    enabled: true
+    channel: "eslint-4"
+    config: .eslintrc
+  fixme:
+    enabled: true
+  nodesecurity:
+    enabled: true
+  radon:
+    enabled: false
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+  - "!**.test.js"
+  - "**.jsx"
+  - "**.md"
+  - "**.module"
+exclude_paths:
+- ".circleci/"
+- ".storybook"
+- ".vscode/"
+- "build/"
+- "build_reports/"
+- "bundlesize/"
+- "config/"
+- "coverage/"
+- "docker/"
+- "docker-dev/"
+- "json-mock/"
+- "junit/"
+- "node_modules/"
+- "**/*.test.js"
+- "**/*.stories.js"
+- "src/json/"
