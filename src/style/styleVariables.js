@@ -25,6 +25,10 @@ export const COLOR_DANGER = Color("red")
 export const COLOR_WARNING = Color("#FAC60F");
 export const COLOR_INFO = Color("blue");
 
+export const COLOR_STOP_1 = COLOR_SUCCESS;
+export const COLOR_STOP_2 = COLOR_WARNING.mix(COLOR_DANGER, 0.3).darken(0.1);
+export const COLOR_STOP_3 = COLOR_DANGER;
+
 // Z-Index Mapping
 export const ZINDEX_STICKY = "1010";
 export const ZINDEX_DROPDOWN = "1020";

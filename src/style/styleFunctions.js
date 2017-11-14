@@ -1,14 +1,17 @@
 import Color from "color";
 
 import {
-  DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO,
-  PADDING_BASE,
-  COLOR_SUCCESS,
   COLOR_DANGER,
+  COLOR_STOP_1,
+  COLOR_STOP_2,
+  COLOR_STOP_3,
+  COLOR_SUCCESS,
   COLOR_WARNING,
-  FONT_STACK_CODE,
+  DARK_ON_LIGHT_CONTRAST_ENHANCEMENT_RATIO,
   FONT_SIZE_BASE,
-  LINE_HEIGHT_BASE
+  FONT_STACK_CODE,
+  LINE_HEIGHT_BASE,
+  PADDING_BASE
 } from "./styleVariables";
 
 /**
@@ -125,19 +128,17 @@ export function contentTypeCode() {
 
 /**
  * function errorColor
- * takes errorPercent as number(0.1% passed in as .1 not .001) and returns string color (green | yellow | red = default).]
- * < 0.1% error rate is green, > 0.1% and < 1% is yellow, and >1% is red
+ * takes errorPercent as number(0.1% passed in as .1 not .001) and returns string color (green to red)
+ * < 0.1% error rate is green, > 0.1% and < 1% is (green to red) and >1% is red
  *
  * @param {number|string} errorPercent
  * @returns {string} - color for the errorPercent text
  */
 
-// TO DO: enhance color function that returns a range of color based on error percent and background color
-
 export function errorColor(errorPercent = 1) {
   const percent =
     typeof errorPercent === "number" ? errorPercent : parseFloat(errorPercent);
-  if (percent < 0.1) return "darkgreen";
-  else if (percent > 0.1 && percent < 1) return "#666600";
-  else return "darkred";
+  if (percent < 0.1) return COLOR_STOP_1.string();
+  else if (percent > 0.1 && percent < 1) return COLOR_STOP_2.string();
+  else return COLOR_STOP_3.string();
 }
