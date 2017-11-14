@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Service View Toolbar matches snapshot 1`] = `
+<div
+  className="sc-htpNat biDwrT"
+>
+  <div
+    className="sc-bxivhb jiCkMx"
+  >
+    <form>
+      <input
+        aria-label="Search All Instances"
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Search Instances"
+        type="search"
+        value="someVal"
+      />
+    </form>
+  </div>
+  <div
+    className="sc-ifAKCX hRJdFb"
+  >
+    <div
+      className="Select sc-bwzfXH fvuMQG Select--single has-value"
+      style={undefined}
+    >
+      <input
+        disabled={false}
+        name="form-field-sort-by"
+        type="hidden"
+        value="name"
+      />
+      <div
+        className="Select-control"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={undefined}
+      >
+        <span
+          className="Select-multi-value-wrapper"
+          id="react-select-3--value"
+        >
+          <div
+            className="Select-value"
+            style={undefined}
+            title={undefined}
+          >
+            <span
+              aria-selected="true"
+              className="Select-value-label"
+              id="react-select-3--value-item"
+              role="option"
+            >
+              <span>
+                <span>
+                  Sort 
+                </span>
+                <span
+                  className="sc-bdVaJa itCzqF"
+                >
+                  Name
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            aria-activedescendant="react-select-3--value"
+            aria-expanded={false}
+            aria-owns=""
+            aria-readonly="false"
+            className="Select-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            role="combobox"
+            style={
+              Object {
+                "border": 0,
+                "display": "inline-block",
+                "width": 1,
+              }
+            }
+            tabIndex={0}
+          />
+        </span>
+        <span
+          className="Select-arrow-zone"
+          onMouseDown={[Function]}
+        >
+          <span
+            className="Select-arrow"
+            onMouseDown={[Function]}
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

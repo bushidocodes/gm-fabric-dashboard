@@ -9,7 +9,6 @@ import ToolbarRight from "components/Main/components/ToolbarRight";
 
 GMServiceTableToolbar.propTypes = {
   filterString: PropTypes.string,
-  serviceName: PropTypes.string.isRequired,
   setFilterString: PropTypes.func.isRequired,
   setSortByAttribute: PropTypes.func.isRequired,
   sortByAttribute: PropTypes.string
@@ -21,7 +20,6 @@ GMServiceTableToolbar.defaultProps = {
 };
 
 function GMServiceTableToolbar({
-  serviceName,
   filterString,
   setFilterString,
   setSortByAttribute,
