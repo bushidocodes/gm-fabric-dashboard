@@ -4,10 +4,7 @@ import { PropTypes } from "prop-types";
 const StyledG = styled.g.attrs({
   fill: "currentColor"
 })`
-  ${(props => props.ratio !== 1) &&
-    `
-    transform: scale(${props => props.ratio});
-  `};
+  transform: scale(${props => props.ratio});
 `;
 
 StyledG.propTypes = {

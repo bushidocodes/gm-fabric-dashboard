@@ -4,7 +4,6 @@ import { withKnobs, select, number, color } from "@storybook/addon-knobs";
 
 import Icon from "./Icon";
 
-// receives dynamic glyph-name for testing with storybook.  do not integrate into codebase.
 import Glyph from "../Glyphs";
 
 const glyphNames = [
@@ -49,7 +48,12 @@ const glyphNames = [
   "Tape",
   "Threads",
   "Timer",
-  "ViewCollapse"
+  "ViewCollapse",
+  "GET",
+  "PUT",
+  "POST",
+  "DELETE",
+  "PATCH"
 ];
 
 const iconBackgroundNames = [
