@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.blackbox.siteSpecific'
+version = '1.0-SNAPSHOT'
+
+description = """Blackbox Generic"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(Test) {
+	systemProperty 'blackbox.environment', System.getProperty('blackbox.environment', 'local')
+	systemProperty 'blackbox.browser', System.getProperty('blackbox.browser', 'chrome')
+}
+
+repositories {
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile 'junit:junit:4.6'
+    compile 'org.seleniumhq.selenium:selenium-java:2.53.0'
+	compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.sun.jersey:jersey-client:1.8'
+}
+
+sourceSets {
+	source {
+		java {
+			srcDir 'src/main/java/'
+		}
+	}
+}
+
+test {
+	testLogging {
+		events 'started', 'failed', 'passed', 'skipped'
+        showStandardStreams = true
+	}
+	outputs.upToDateWhen { false }
+}
+
+task smokeTests(type: Test) {
+    include '**/smoke/*'
+
+    testLogging {
+        events 'started', 'failed', 'passed', 'skipped'
+        showStandardStreams = true
+    }
+    outputs.upToDateWhen { false }
+}
