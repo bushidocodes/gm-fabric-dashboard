@@ -8,22 +8,13 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.client.urlconnection.HTTPSProperties;
+import org.apache.commons.io.input.ClassLoaderObjectInputStream;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import javax.net.ssl.*;
 import java.io.IOException;
-import java.io.InputStream;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
+import java.net.URL;
+import java.security.*;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 
 public class RestUtil {
     private static String responseType = "application/json";
@@ -32,11 +23,15 @@ public class RestUtil {
     WebResource webResource;
     ClientResponse clientResponse;
     KeyStore keyStore;
+    KeyStore trustStore;
     SSLContext sslContext;
+    KeyManagerFactory keyManagerFactory;
     TrustManagerFactory trustManagerFactory;
 
-    private static final String KEYSTORE_FILE_PATH = "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/security/cacerts";
+    private static final String KEYSTORE_FILE_NAME = "keystore.jks";
+    private static final String TRUSTSTORE_FILE_NAME = "truststore.jks";
     private static final String KEYSTORE_PASSWORD = "changeit";
+    private static final String TRUSTSTORE_PASSWORD = "changeit";
 
 
     // <editor-fold desc="Constructor">
@@ -45,16 +40,24 @@ public class RestUtil {
         sslContext = null;
 
         try {
+            keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+            trustManagerFactory = TrustManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
             keyStore = KeyStore.getInstance("JKS");
-            keyStore.load(new FileInputStream(KEYSTORE_FILE_PATH), KEYSTORE_PASSWORD.toCharArray());
-            trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-            trustManagerFactory.init(keyStore);
+            trustStore = KeyStore.getInstance("JKS");
+
+            keyStore.load(ClassLoader.getSystemResourceAsStream(KEYSTORE_FILE_NAME), KEYSTORE_PASSWORD.toCharArray());
+            keyManagerFactory.init(keyStore, KEYSTORE_PASSWORD.toCharArray());
+            trustStore.load(ClassLoader.getSystemResourceAsStream(TRUSTSTORE_FILE_NAME), TRUSTSTORE_PASSWORD.toCharArray());
+            trustManagerFactory.init(trustStore);
+
             sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(null, trustManagerFactory.getTrustManagers(), null);
-        } catch(KeyStoreException |
+
+            sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
+        } catch(NoSuchAlgorithmException |
+                KeyStoreException |
                 IOException |
-                NoSuchAlgorithmException |
                 CertificateException |
+                UnrecoverableKeyException |
                 KeyManagementException
                 e) {
             e.printStackTrace();
