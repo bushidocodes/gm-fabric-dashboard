@@ -39,7 +39,6 @@ function SectionCardsView({
     const statusSort = pathname.slice(1);
 
     let headers;
-
     // If we pulled a status from the path, use that as the header
     // Else if we are on the main fabric grid, use microServiceStatuses as the headers
     if (statusSort && groupByAttribute === "Status") {
@@ -50,9 +49,18 @@ function SectionCardsView({
       headers = headerTitles;
     }
 
+    let verifiedHeaders = [];
+    verifiedHeaders = headers.filter(header => {
+      // several checks to make sure there are microservices within the array
+      return (
+        !_.isEmpty(dataGroupedByHeader[header]) &&
+        !_.isEmpty(dataGroupedByHeader[header][0])
+      );
+    });
+
     return (
       <GMServiceViewContainer>
-        {headers.map((header, i) => (
+        {verifiedHeaders.map((header, i) => (
           <GMServiceCardView key={header}>
             <SectionHeader>
               <GMServiceHeader
