@@ -15,6 +15,8 @@ import TableRow from "components/Main/components/TableRow";
 import VizBar from "components/Main/components/VizBar";
 import VizFill from "components/Main/components/VizFill";
 import Badge from "components/Main/scenes/Instance/components/Badge";
+import Icon from "components/Icon";
+import Glyph from "components/Glyphs/index";
 
 /**
  * A row of data in RoutesTable
@@ -58,7 +60,12 @@ export default class RoutesTableLineItem extends Component {
         tabIndex="0"
       >
         <TableColVizBar>
-          <Badge>{this.props.verb}</Badge>
+          <Badge>
+            <Icon>
+              <Glyph name={this.props.verb} />
+            </Icon>
+            {this.props.verb}
+          </Badge>
           {this.props.route}
           <VizBar>
             <VizFill

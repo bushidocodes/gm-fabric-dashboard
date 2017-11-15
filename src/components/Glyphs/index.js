@@ -52,6 +52,12 @@ import Timer from "./Timer";
 import Twitter from "./Twitter";
 import ViewCollapse from "./ViewCollapse";
 
+import HTTPGet from "components/Glyphs/HttpGet";
+import HTTPPut from "components/Glyphs/HttpPut";
+import HTTPPost from "components/Glyphs/HttpPost";
+import HTTPPatch from "components/Glyphs/HttpPatch";
+import HTTPDelete from "components/Glyphs/HttpDelete";
+
 // import all glyph components
 
 const glyphs = {
@@ -62,6 +68,7 @@ const glyphs = {
   Close,
   Cog,
   Configuration,
+  DELETE: HTTPDelete,
   Docs,
   EKG,
   EditGraph,
@@ -71,6 +78,7 @@ const glyphs = {
   Fabric,
   Finagle,
   Functions,
+  GET: HTTPGet,
   GRPC,
   GitHub,
   Go: JVM,
@@ -85,6 +93,9 @@ const glyphs = {
   Negation,
   NoKey,
   NoMetrics,
+  PATCH: HTTPPatch,
+  POST: HTTPPost,
+  PUT: HTTPPut,
   Pause,
   Person,
   Play,

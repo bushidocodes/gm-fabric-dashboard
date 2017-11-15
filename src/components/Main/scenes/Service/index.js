@@ -54,7 +54,6 @@ class GMServiceView extends Component {
           setFilterString={this.setFilterString}
           setSortByAttribute={this.setSortByAttribute}
           filterString={filterString}
-          serviceName={serviceName}
           sortByAttribute={sortByAttribute}
         />
         <ErrorBoundary>
