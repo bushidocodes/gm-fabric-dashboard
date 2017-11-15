@@ -8,8 +8,8 @@ jobs:
     environment:
       CC_TEST_REPORTER_ID: 8d6b13736e5671bfae1278c53eae2dc43fe937f0deb7215ec76b2b684bea0682
     docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
+      # Using Carbon, the Node.js 8.x LTS branch
+      - image: circleci/node:carbon
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
