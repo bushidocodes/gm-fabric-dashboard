@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
+<div>
+  <div
+    className="sc-jzJRlG inNhF"
+  >
+    <div
+      className="sc-cSHVUG fIzzUT"
+    >
+      <form>
+        <input
+          aria-label="Search All Functions"
+          className="form-control"
+          onChange={[Function]}
+          placeholder="Search Functions"
+          type="search"
+          value=""
+        />
+      </form>
+    </div>
+    <div
+      className="sc-kAzzGY bjaDHO"
+    >
+      <div
+        className="Select sc-fjdhpX WPAlo Select--single has-value"
+        style={undefined}
+      >
+        <input
+          disabled={false}
+          name="form-field-sort-by"
+          type="hidden"
+          value="func"
+        />
+        <div
+          className="Select-control"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          style={undefined}
+        >
+          <span
+            className="Select-multi-value-wrapper"
+            id="react-select-2--value"
+          >
+            <div
+              className="Select-value"
+              style={undefined}
+              title={undefined}
+            >
+              <span
+                aria-selected="true"
+                className="Select-value-label"
+                id="react-select-2--value-item"
+                role="option"
+              >
+                <span>
+                  <span>
+                    Sort 
+                  </span>
+                  <span
+                    className="sc-chPdSV eAoYmb"
+                  >
+                    Function
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div
+              aria-activedescendant="react-select-2--value"
+              aria-expanded={false}
+              aria-owns=""
+              aria-readonly="false"
+              className="Select-input"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              role="combobox"
+              style={
+                Object {
+                  "border": 0,
+                  "display": "inline-block",
+                  "width": 1,
+                }
+              }
+              tabIndex={0}
+            />
+          </span>
+          <span
+            className="Select-arrow-zone"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="Select-arrow"
+              onMouseDown={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="sc-gZMcBi iAnTQa"
+  >
+    <div
+      className="sc-gqjmRU duSiPg"
+    >
+      <div
+        className="sc-VigVT hcIqnf"
+        style={
+          Object {
+            "flex": "1 1 20%",
+          }
+        }
+      >
+        Function
+      </div>
+      <div
+        className="sc-VigVT hcIqnf"
+      >
+        Requests/sec
+      </div>
+      <div
+        className="sc-VigVT hcIqnf"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Requests
+      </div>
+      <div
+        className="sc-VigVT hcIqnf"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Error %
+      </div>
+      <div
+        className="sc-VigVT hcIqnf"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Latency 50%
+      </div>
+      <div
+        className="sc-VigVT hcIqnf"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Latency 99%
+      </div>
+    </div>
+    <ol
+      className="sc-jTzLTM iFmIZH"
+    >
+      <li
+        className="sc-ifAKCX cKAqQu"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+      >
+        <div
+          className="sc-bZQynM cnRgVz"
+        >
+          CatalogStream
+          <div
+            className="sc-dnqmqq cYSnuS"
+          >
+            <div
+              className="sc-iwsKbI iMaXzj"
+              width={100}
+            />
+          </div>
+        </div>
+        <div
+          className="sc-gzVnrw congVV"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={61}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={120}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={179}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 61 16 120 16 179 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          13
+        </div>
+        <div
+          className="sc-EHOje eLdfhj"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000%
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          1956
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          3484
+        </div>
+      </li>
+      <li
+        className="sc-ifAKCX cKAqQu"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+      >
+        <div
+          className="sc-bZQynM cnRgVz"
+        >
+          OrderItem
+          <div
+            className="sc-dnqmqq cYSnuS"
+          >
+            <div
+              className="sc-iwsKbI iMaXzj"
+              width={100}
+            />
+          </div>
+        </div>
+        <div
+          className="sc-gzVnrw congVV"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={80.66666666666667}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={159.33333333333334}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          13
+        </div>
+        <div
+          className="sc-EHOje eLdfhj"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000%
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          2339
+        </div>
+        <div
+          className="sc-EHOje etCFUo"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          3565
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+`;
