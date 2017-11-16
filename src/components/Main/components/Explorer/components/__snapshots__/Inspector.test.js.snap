@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inspector matches snapshot 1`] = `
+<div
+  className="inspector"
+>
+  <div
+    className="inspector-toolbar"
+  >
+    <input
+      aria-label="Search All Metrics"
+      className="inspector-search"
+      onChange={[Function]}
+      placeholder="Search"
+      type="search"
+      value=""
+    />
+  </div>
+  <ul
+    className="inspector-data"
+  >
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/build/revision
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/clientregistry/initialresolution_ms
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/clientregistry/size
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/future_pool/active_tasks
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/future_pool/completed_tasks
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/future_pool/pool_size
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      finagle/timer/deviation_ms.avg
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/closes
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connection_duration.count
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connection_received_bytes.count
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connection_requests.count
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connection_sent_bytes.count
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connections
+    </li>
+    <li
+      className="inspector-item "
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      tabIndex="0"
+    >
+      http/connects
+    </li>
+  </ul>
+</div>
+`;
