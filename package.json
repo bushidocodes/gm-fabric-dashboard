@@ -86,6 +86,7 @@
     "@storybook/react": "^3.2.15",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.3.0",
+    "commander": "^2.11.0",
     "cross-env": "^5.1.1",
     "documentation": "^5.3.3",
     "enzyme": "^3.1.1",
@@ -104,6 +105,7 @@
     "moxios": "^0.4.0",
     "node-sass": "^4.6.1",
     "prettier": "^1.8.2",
+    "prompt": "^1.0.0",
     "raf": "^3.4.0",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.1.1",
@@ -114,10 +116,12 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
-    "publish": "bash scripts/publish.sh",
-    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "build-docker":
+      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "docs":
+      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check":
+      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "precommit": "lint-staged",
@@ -127,6 +131,7 @@
     "mock-go": "node json-mock/go/gm-fabric-go.js",
     "mock-poa": "node json-mock/poa/gm-fabric-poa.js",
     "mock-sds": "node json-mock/discovery-service/sds.js",
+    "publish": "node scripts/publish.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
