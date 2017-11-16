@@ -4,9 +4,10 @@ import { MemoryRouter, Route } from "react-router";
 import _ from "lodash";
 
 import FabricGrid from "./FabricGrid";
+import { computeStatus } from "utils/selectors";
 import "store/states/fabric.js";
 
-const mockServices = {
+const mockServices = _.values({
   "AAC Remote Information|1": {
     authorized: true,
     capability: "Crime Fighting",
@@ -51,19 +52,27 @@ const mockServices = {
     threaded: false,
     version: "4.6"
   }
-};
+});
 
 // Wrap Fabric Grid in Memory Router to mock route props (history, match, location)
-const RouterWrap = route => {
+const RouterWrap = (route, services = mockServices) => {
   return (
     <MemoryRouter initialEntries={route}>
-      <Route
-        render={props => (
-          <FabricGrid {...props} services={_.values(mockServices)} />
-        )}
-      />
+      <Route render={props => <FabricGrid {...props} services={services} />} />
     </MemoryRouter>
   );
+};
+
+// A helper function that takes in a filter string and returns only services that match
+const filterServicesByStatus = filter => {
+  return mockServices.filter(service => {
+    let status = computeStatus(
+      service.instances.length,
+      service.minimum,
+      service.maximum
+    );
+    return status.toLowerCase() === filter;
+  });
 };
 
 let FabricGridWrap;
@@ -181,8 +190,11 @@ describe("Fabric Grid Main View", () => {
 });
 
 describe("Fabric Grid Status Views", () => {
+  // In the following tests, we have to generate filtered services to pass down to the route,
+  // to mock what we do in FabricGrid router
   test("render the correct services in stable view", () => {
-    FabricGridWrap = mount(RouterWrap(["/stable"]));
+    const filteredServices = filterServicesByStatus("stable");
+    FabricGridWrap = mount(RouterWrap(["/stable"], filteredServices));
 
     // Check that there is only one stable card rendered
     expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
@@ -198,7 +210,8 @@ describe("Fabric Grid Status Views", () => {
   });
 
   test("render the correct services in warning view", () => {
-    FabricGridWrap = mount(RouterWrap(["/warning"]));
+    const filteredServices = filterServicesByStatus("warning");
+    FabricGridWrap = mount(RouterWrap(["/warning"], filteredServices));
 
     // Check that there is only one warning card rendered
     expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
@@ -212,7 +225,8 @@ describe("Fabric Grid Status Views", () => {
   });
 
   test("render the correct services in down view", () => {
-    FabricGridWrap = mount(RouterWrap(["/down"]));
+    const filteredServices = filterServicesByStatus("down");
+    FabricGridWrap = mount(RouterWrap(["/down"], filteredServices));
 
     // Check that there is only one down card rendered
     expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
