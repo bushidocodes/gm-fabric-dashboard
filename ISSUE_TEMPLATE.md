@@ -9,6 +9,8 @@
   1.
   1.
   1.
+  
+## Supporting Images or Videos
 
 ## Specifications
 
