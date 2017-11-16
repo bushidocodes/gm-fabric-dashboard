@@ -38,7 +38,7 @@ jobs:
       # Donwload and cache Code Climate test reporter
       - restore_cache:
           keys:
-            - cc-test-reporter-{{ checksum "cc-test-reporter" }}
+            - cc-test-reporter-{{ checksum "./cc-test-reporter" }}
             - cc-test-reporter
 
       - run:
@@ -48,7 +48,7 @@ jobs:
             chmod +x ./cc-test-reporter
 
       - save_cache:
-          key: cc-test-reporter-{{ checksum "cc-test-reporter" }}
+          key: cc-test-reporter-{{ checksum "./cc-test-reporter" }}
           paths:
             - cc-test-reporter
 
