@@ -10,7 +10,7 @@ jobs:
     docker:
       # Using Carbon, the Node.js 8.x LTS branch
       - image: circleci/node:carbon
-      
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -24,37 +24,48 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies
 
       - run: npm install
 
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # Donwload and cache Code Climate test reporter
+      - restore_cache:
+          keys:
+            - cc-test-reporter-{{ checksum "cc-test-reporter" }}
+            - cc-test-reporter
 
       - run:
           name: Install Code Climate Test Reporter
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-      # run tests!
 
+      - save_cache:
+          key: cc-test-reporter-{{ checksum "cc-test-reporter" }}
+          paths:
+            - cc-test-reporter
+
+      # run tests!
       - run:
           name: Prepare Code Climate Test Reporter
           command: |
             ./cc-test-reporter before-build
-      - run: 
+      - run:
           name: Run tests
           command: |
             npm test -- --testResultsProcessor="jest-junit" --coverage
-      # Note: When re-running a build in CircleCI, Code Climate returns a 
+      # Note: When re-running a build in CircleCI, Code Climate returns a
       # failure state with the error message:
       #
       # Error: response from https://api.codeclimate.com/v1/test_reports.
-      # HTTP 409: A test report for commit f4014287c1624ae09d9008a78bd6f343912b976d 
+      # HTTP 409: A test report for commit f4014287c1624ae09d9008a78bd6f343912b976d
       # already exists
       #
       # This causes the CircleCI build to fail. As a workaround, I have
@@ -74,7 +85,7 @@ jobs:
       - store_artifacts:
           path: coverage
       # Generate a build
-      - run: 
+      - run:
           name: Build the application
           command: |
             npm run build
