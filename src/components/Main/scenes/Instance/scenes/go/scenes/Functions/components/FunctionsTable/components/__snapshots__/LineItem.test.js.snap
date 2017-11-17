@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`] = `
+<li
+  className="sc-ifAKCX cKAqQu"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="link"
+>
+  <div
+    className="sc-bZQynM cnRgVz"
+  >
+    CatalogStream
+    <div
+      className="sc-dnqmqq cYSnuS"
+    >
+      <div
+        className="sc-iwsKbI jYlLPe"
+        width={20}
+      />
+    </div>
+  </div>
+  <div
+    className="sc-gzVnrw congVV"
+  >
+    <svg
+      preserveAspectRatio="xMaxYMin"
+      style={undefined}
+      viewBox="0 0 240 32"
+    >
+      <g>
+        <circle
+          cx={2}
+          cy={29.999999999999996}
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          r={2}
+          style={
+            Object {
+              "fill": "none",
+              "fillOpacity": ".1",
+              "pointerEvents": "auto",
+              "stroke": "currentColor",
+              "strokeWidth": "0",
+            }
+          }
+        />
+        <circle
+          cx={80.66666666666667}
+          cy={29.442675159235666}
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          r={2}
+          style={
+            Object {
+              "fill": "none",
+              "fillOpacity": ".1",
+              "pointerEvents": "auto",
+              "stroke": "currentColor",
+              "strokeWidth": "0",
+            }
+          }
+        />
+        <circle
+          cx={159.33333333333334}
+          cy={20.4140127388535}
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          r={2}
+          style={
+            Object {
+              "fill": "none",
+              "fillOpacity": ".1",
+              "pointerEvents": "auto",
+              "stroke": "currentColor",
+              "strokeWidth": "0",
+            }
+          }
+        />
+        <circle
+          cx={238}
+          cy={2}
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          r={2}
+          style={
+            Object {
+              "fill": "none",
+              "fillOpacity": ".1",
+              "pointerEvents": "auto",
+              "stroke": "currentColor",
+              "strokeWidth": "0",
+            }
+          }
+        />
+        <polyline
+          points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
+          style={
+            Object {
+              "fill": "none",
+              "fillOpacity": ".1",
+              "pointerEvents": "auto",
+              "stroke": "currentColor",
+              "strokeWidth": "0",
+            }
+          }
+        />
+        <polyline
+          points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
+          style={
+            Object {
+              "fill": "none",
+              "stroke": "currentColor",
+              "strokeLinecap": "round",
+              "strokeLinejoin": "round",
+              "strokeWidth": 1,
+            }
+          }
+        />
+      </g>
+      <line
+        style={
+          Object {
+            "opacity": "0.4",
+            "stroke": "grey",
+          }
+        }
+        x1={2}
+        x2={238}
+        y1={22.46417197452229}
+        y2={22.46417197452229}
+      />
+    </svg>
+  </div>
+  <div
+    className="sc-EHOje etCFUo"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    14333
+  </div>
+  <div
+    className="sc-EHOje fALxvF"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    10.000%
+  </div>
+  <div
+    className="sc-EHOje etCFUo"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    445
+  </div>
+  <div
+    className="sc-EHOje etCFUo"
+    style={
+      Object {
+        "textAlign": "right",
+      }
+    }
+  >
+    35
+  </div>
+</li>
+`;

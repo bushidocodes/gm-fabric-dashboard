@@ -6,6 +6,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.0] - 2017-11-16
+### Added
+- New styles for modals and notification
+- Added more unit tests
+- Implemented code splitting at the route level
+### Changed
+- Updated npm dependencies
+- Updated README with demo
+- Updated error text and bar colors
+- Updated publish script
+- Added auto restart to docker image
+### Removed
+- Removed sourcemaps from production bundle
+
+### Test Coverage: 25.35% ([1.0.0 Coverage Report])
+### Bundle Size: ~1.42 MB ([1.0.0 Bundle Size Report])
+### Production Build: ([1.0.0 Build])
+
 ## [0.9.1] - 2017-11-09
 ### Added
 - Implemented a new custom icon system
@@ -17,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - App Header in Service View now has a tab
 - Updated appearance for polling settings
 - Refactored SCSS into Styled Components
+- Fixed various cross-browser issues
 ### Removed
 - Removed all UIKit icons
 - Removed jQuery
@@ -291,7 +310,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.0...HEAD
+
+[1.0.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.1...v1.0.0
+[1.0.0 Coverage Report]: https://2176-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
+[1.0.0 Bundle Size Report]: https://2176-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[1.0.0 Build]: https://2176-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
+
 [0.9.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.0...v0.9.1
 [0.9.1 Coverage Report]: https://1928-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
 [0.9.1 Bundle Size Report]: https://1928-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html

@@ -25,34 +25,35 @@ SectionCardsView.propTypes = {
   sortByAttribute: PropTypes.string.isRequired
 };
 
-function SectionCardsView({
-  groupByAttribute,
-  sortByAttribute,
-  services,
-  location: { pathname }
-}) {
+function SectionCardsView({ groupByAttribute, sortByAttribute, services }) {
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item =>
       item.headerTitle.toLowerCase()
     );
     const headerTitles = Object.keys(dataGroupedByHeader);
-    const statusSort = pathname.slice(1);
 
     let headers;
 
-    // If we pulled a status from the path, use that as the header
-    // Else if we are on the main fabric grid, use microServiceStatuses as the headers
-    if (statusSort && groupByAttribute === "Status") {
-      headers = [statusSort];
-    } else if (!statusSort && groupByAttribute === "Status") {
+    // If we are sorting by status, use microServiceStatuses as the headers
+    // as they need to be in the order "Down, Warning, Stable"
+    if (groupByAttribute === "Status") {
       headers = microserviceStatuses.map(item => item.toLowerCase());
     } else {
       headers = headerTitles;
     }
 
+    let verifiedHeaders = [];
+    verifiedHeaders = headers.filter(header => {
+      // checks to make sure there are microservices within the array
+      return (
+        !_.isEmpty(dataGroupedByHeader[header]) &&
+        !_.isEmpty(dataGroupedByHeader[header][0])
+      );
+    });
+
     return (
       <GMServiceViewContainer>
-        {headers.map((header, i) => (
+        {verifiedHeaders.map((header, i) => (
           <GMServiceCardView key={header}>
             <SectionHeader>
               <GMServiceHeader

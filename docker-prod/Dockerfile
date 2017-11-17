@@ -9,6 +9,6 @@ COPY ./build ./build
 
 RUN npm install
 
-CMD [ "node", "index.js" ]
+CMD ["npm", "start"  ]
 
 EXPOSE 1337

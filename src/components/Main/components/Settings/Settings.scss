@@ -105,12 +105,27 @@
 
     .input-range__slider {
       transition: transform 0.3s ease;
+      background: #0aab2a;
+      border: none;
+      border-radius: 0;
 
       &:hover,
       &:focus,
       &:active {
         transform: scale(1.1);
       }
+    }
+
+    .input-range__slider:before {
+      color: #0aab2a;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #0aab2a;
+      top: 100%;
+      content: "";
+      position: absolute;
     }
 
     .input-range__track {

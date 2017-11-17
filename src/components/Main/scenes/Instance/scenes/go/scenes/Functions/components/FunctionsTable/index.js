@@ -28,7 +28,7 @@ export default function FunctionsTable({ funcs = [] }) {
   return (
     <Table>
       <TableHeader>
-        <TableColHeader>Function</TableColHeader>
+        <TableColHeader style={{ flex: "1 1 20%" }}>Function</TableColHeader>
         <TableColHeader>Requests/sec</TableColHeader>
         <TableColHeader style={{ textAlign: "right" }}>Requests</TableColHeader>
         <TableColHeader style={{ textAlign: "right" }}>Error %</TableColHeader>
