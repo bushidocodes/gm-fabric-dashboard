@@ -8,13 +8,10 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.client.urlconnection.HTTPSProperties;
-import org.apache.commons.io.input.ClassLoaderObjectInputStream;
 
 import javax.net.ssl.*;
-import java.io.IOException;
-import java.net.URL;
+import java.security.cert.X509Certificate;
 import java.security.*;
-import java.security.cert.CertificateException;
 
 public class RestUtil {
     private static String responseType = "application/json";
@@ -68,7 +65,28 @@ public class RestUtil {
 //        ClientConfig config = new DefaultClientConfig();
 //        config.getProperties().put(HTTPSProperties.PROPERTY_HTTPS_PROPERTIES, new HTTPSProperties(null, sslContext));
 
-        restClient = Client.create();
+        // Create a trust manager that does not validate certificate chains
+        TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
+            public java.security.cert.X509Certificate[] getAcceptedIssuers() { return null; }
+            public void checkClientTrusted(X509Certificate[] certs, String authType) { }
+            public void checkServerTrusted(X509Certificate[] certs, String authType) { }
+        }};
+
+        // Install the all-trusting trust manager
+        try {
+            sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
+        } catch (NoSuchAlgorithmException |
+                KeyManagementException
+                e) {
+            e.printStackTrace();
+        }
+
+        ClientConfig config = new DefaultClientConfig();
+        config.getProperties().put(HTTPSProperties.PROPERTY_HTTPS_PROPERTIES, new HTTPSProperties(null, sslContext));
+
+        restClient = Client.create(config);
         jsonParser = new JsonParser();
     }
 
@@ -90,7 +108,6 @@ public class RestUtil {
         // Make the REST call and get the REST response
         webResource = restClient.resource(restUrl);
         clientResponse = webResource.accept(responseType)
-                .header("password", "password")
                 .get(ClientResponse.class);
 
         String responseString = clientResponse.getEntity(String.class);  // DEBUG
