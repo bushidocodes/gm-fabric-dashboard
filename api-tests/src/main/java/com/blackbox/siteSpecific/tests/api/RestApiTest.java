@@ -35,15 +35,5 @@ public class RestApiTest extends ApiTest {
         } catch (Exception e) {
             e.printStackTrace(System.out);
         }
-
-//        // Set up objects
-//        String restUrl = "https://edge.deciphernow.com/services/discovery-service/1.0/services";
-//        JsonElement restResponse;
-//
-//        // Make the REST call and gather the response
-//        restResponse = restUtil.get(restUrl);
-//
-//        // Display the JSON contents
-//        System.out.println(restResponse);
     }
 }
