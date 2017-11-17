@@ -30,8 +30,8 @@ public class RestUtil {
 
     private static final String KEYSTORE_FILE_NAME = "keystore.jks";
     private static final String TRUSTSTORE_FILE_NAME = "truststore.jks";
-    private static final String KEYSTORE_PASSWORD = "changeit";
-    private static final String TRUSTSTORE_PASSWORD = "changeit";
+    private static final String KEYSTORE_PASSWORD = "";
+    private static final String TRUSTSTORE_PASSWORD = "";
 
 
     // <editor-fold desc="Constructor">
@@ -39,34 +39,36 @@ public class RestUtil {
     public RestUtil() {
         sslContext = null;
 
-        try {
-            keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            trustManagerFactory = TrustManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            keyStore = KeyStore.getInstance("JKS");
-            trustStore = KeyStore.getInstance("JKS");
+//        try {
+//            keyManagerFactory = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+//            trustManagerFactory = TrustManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+//            keyStore = KeyStore.getInstance("JKS");
+//            trustStore = KeyStore.getInstance("JKS");
+//
+//            keyStore.load(ClassLoader.getSystemResourceAsStream(KEYSTORE_FILE_NAME), KEYSTORE_PASSWORD.toCharArray());
+//            System.out.println("Keystore Aliases:" + keyStore.aliases());  // DEBUG
+//            keyManagerFactory.init(keyStore, KEYSTORE_PASSWORD.toCharArray());
+//            trustStore.load(ClassLoader.getSystemResourceAsStream(TRUSTSTORE_FILE_NAME), TRUSTSTORE_PASSWORD.toCharArray());
+//            System.out.println("Truststore Aliases: " + trustStore.aliases());  // DEBUG
+//            trustManagerFactory.init(trustStore);
+//
+//            sslContext = SSLContext.getInstance("TLS");
+//
+//            sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
+//        } catch(NoSuchAlgorithmException |
+//                KeyStoreException |
+//                IOException |
+//                CertificateException |
+//                UnrecoverableKeyException |
+//                KeyManagementException
+//                e) {
+//            e.printStackTrace();
+//        }
 
-            keyStore.load(ClassLoader.getSystemResourceAsStream(KEYSTORE_FILE_NAME), KEYSTORE_PASSWORD.toCharArray());
-            keyManagerFactory.init(keyStore, KEYSTORE_PASSWORD.toCharArray());
-            trustStore.load(ClassLoader.getSystemResourceAsStream(TRUSTSTORE_FILE_NAME), TRUSTSTORE_PASSWORD.toCharArray());
-            trustManagerFactory.init(trustStore);
+//        ClientConfig config = new DefaultClientConfig();
+//        config.getProperties().put(HTTPSProperties.PROPERTY_HTTPS_PROPERTIES, new HTTPSProperties(null, sslContext));
 
-            sslContext = SSLContext.getInstance("TLS");
-
-            sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
-        } catch(NoSuchAlgorithmException |
-                KeyStoreException |
-                IOException |
-                CertificateException |
-                UnrecoverableKeyException |
-                KeyManagementException
-                e) {
-            e.printStackTrace();
-        }
-
-        ClientConfig config = new DefaultClientConfig();
-        config.getProperties().put(HTTPSProperties.PROPERTY_HTTPS_PROPERTIES, new HTTPSProperties(null, sslContext));
-
-        restClient = Client.create(config);
+        restClient = Client.create();
         jsonParser = new JsonParser();
     }
 
@@ -87,7 +89,9 @@ public class RestUtil {
     public JsonElement get(String restUrl) {
         // Make the REST call and get the REST response
         webResource = restClient.resource(restUrl);
-        clientResponse = webResource.accept(responseType).get(ClientResponse.class);
+        clientResponse = webResource.accept(responseType)
+                .header("password", "password")
+                .get(ClientResponse.class);
 
         String responseString = clientResponse.getEntity(String.class);  // DEBUG
         System.out.println(responseString);  // DEBUG
