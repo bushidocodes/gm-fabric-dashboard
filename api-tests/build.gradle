@@ -26,7 +26,7 @@ dependencies {
 }
 
 sourceSets {
-	source {
+	test {
 		java {
 			srcDir 'src/main/java/'
 		}
@@ -49,4 +49,16 @@ task smokeTests(type: Test) {
         showStandardStreams = true
     }
     outputs.upToDateWhen { false }
+}
+
+task apiTests(type: Test) {
+	println 'Running the API tests...'
+
+	include '**/api/*'
+
+	testLogging {
+		events 'started', 'failed', 'passed', 'skipped'
+		showStandardStreams = true
+	}
+	outputs.upToDateWhen { false }
 }

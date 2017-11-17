@@ -32,3 +32,5 @@ docs.md
 # API tests
 api-tests/.idea
 api-tests/out
+api-tests/.gradle
+api-tests/build
