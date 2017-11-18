@@ -1,6 +1,7 @@
 package com.blackbox.siteSpecific.framework.services;
 
 import com.blackbox.common.api.RestUtil;
+import com.blackbox.dataModels.ServiceInstance;
 import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonElement;
 
@@ -42,7 +43,15 @@ public class DiscoveryService {
         return restUtil.get(buildUrlFromParameters(metricsUrl, new String[]{service, version, instance}));
     }
 
+    public JsonElement getMetrics(ServiceInstance serviceInstance) {
+        return getMetrics(serviceInstance.getService(), serviceInstance.getVersion(), serviceInstance.getInstance());
+    }
+
     public JsonElement getThreads(String service, String version, String instance) {
         return restUtil.get(buildUrlFromParameters(threadsUrl, new String[]{service, version, instance}));
+    }
+
+    public JsonElement getThreads(ServiceInstance serviceInstance) {
+        return getThreads(serviceInstance.getService(), serviceInstance.getVersion(), serviceInstance.getInstance());
     }
 }
