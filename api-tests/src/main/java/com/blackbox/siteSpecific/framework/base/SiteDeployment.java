@@ -5,17 +5,20 @@ import java.util.Map;
 
 public class SiteDeployment {
     public String siteUrl;
+    public String discoveryServiceUrl;
     public String deploymentFlag, browserFlag;
     public BrowserType browserType;
 
     public SiteDeployment() {
         // Load the system deployment variables
         Map<String, String> systemEnvironment = System.getenv();
-        deploymentFlag = System.getProperty("blackbox.environment", "local");
+        deploymentFlag = System.getProperty("blackbox.environment", "edge");
         browserFlag = System.getProperty("blackbox.browser", "chrome");
 
-        if(deploymentFlag.toUpperCase().equals("LOCAL")) {
-            siteUrl = "http://www.google.com/";
+        if(deploymentFlag.toUpperCase().equals("EDGE")) {
+            siteUrl = "https://edge.deciphernow.com";
+
+            discoveryServiceUrl = "https://edge.deciphernow.com/services/discovery-service/1.0";
         }
 
         // Set the browser type
