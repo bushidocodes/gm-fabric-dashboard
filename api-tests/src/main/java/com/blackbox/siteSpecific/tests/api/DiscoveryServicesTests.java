@@ -12,8 +12,9 @@ public class DiscoveryServicesTests extends ApiTest {
     public void happyPaths() {
         // Set up objects
         DiscoveryService discoveryService = new DiscoveryService(deployment);
-        JsonElement response;
-        ServiceInstance serviceInstance;
+        ArrayList<ServiceModel> services;
+        int serviceIndex = 0;
+        int serviceInstanceIndex = 0;
 
         // Get the list of available services
         discoveryService.getServices();
@@ -23,5 +24,14 @@ public class DiscoveryServicesTests extends ApiTest {
 
         // Validate the format of the JSON response
         Assert.assertTrue(discoveryService.isServicesResponseFormatValid());
+
+        // Model the services from the response
+        services = discoveryService.modelServices();
+
+        // Get metrics for a service
+        discoveryService.getMetrics(
+                services.get(serviceIndex).getName(),
+                services.get(serviceIndex).getVersion(),
+                services.get(serviceIndex).getInstances().get(serviceInstanceIndex).getName());
     }
 }
