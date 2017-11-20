@@ -92,6 +92,13 @@ class SettingsGrid extends Component {
 
           <LayoutSection icon={"Tape"} title={"Metrics Cache"} flex>
             <Readout
+              readoutItemsContainerStyle={{
+                minHeight: "125px"
+              }}
+              //below is necessary to over rule a media query under 1000px applying to all Readout container, making them flex 100%
+              readoutContainerStyle={{
+                flex: "0 0 300px"
+              }}
               readoutItems={[
                 {
                   title: "Cache Size",
