@@ -1,0 +1,506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SettingsGrid component Matches snapshot 1`] = `
+<div
+  className="view-app-settings settings-grid"
+>
+  <section
+    className="sc-htpNat gOoNtI"
+  >
+    <header
+      className="sc-bxivhb cnFCnx"
+    >
+      <span
+        className="sc-EHOje bfNwRO"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          className="sc-bwzfXH flKpft"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            className="sc-bdVaJa iPrjqu"
+            fill="currentColor"
+            title=""
+          >
+            <title>
+              
+            </title>
+            <g
+              className="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M10.4915289,10.6867475 C10.8581835,10.2659432 11.3980346,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,12.149429 13.9836124,12.2950305 13.9525363,12.4351054 L16.4807554,13.6992149 C16.8475649,13.2712029 17.3921111,13 18,13 C19.1045695,13 20,13.8954305 20,15 C20,16.1045695 19.1045695,17 18,17 C16.8954305,17 16,16.1045695 16,15 C16,14.8620114 16.0139744,14.7272866 16.0405851,14.5971638 L13.4975725,13.3256575 C13.1311622,13.7392765 12.5960287,14 12,14 C10.8954305,14 10,13.1045695 10,12 C10,11.8562885 10.0151576,11.7161172 10.0439612,11.5809976 L7.50847107,10.3132525 C7.14181648,10.7340568 6.60196542,11 6,11 C4.8954305,11 4,10.1045695 4,9 C4,7.8954305 4.8954305,7 6,7 C7.1045695,7 8,7.8954305 8,9 C8,9.14371154 7.98484245,9.28388284 7.95603883,9.41900242 L10.4915289,10.6867475 Z M10.0405851,17.5971638 L7.49757253,16.3256575 C7.13116215,16.7392765 6.59602869,17 6,17 C4.8954305,17 4,16.1045695 4,15 C4,13.8954305 4.8954305,13 6,13 C7.1045695,13 8,13.8954305 8,15 C8,15.149429 7.98361238,15.2950305 7.95253631,15.4351054 L10.4807554,16.6992149 C10.8475649,16.2712029 11.3921111,16 12,16 C13.1045695,16 14,16.8954305 14,18 C14,19.1045695 13.1045695,20 12,20 C10.8954305,20 10,19.1045695 10,18 C10,17.8620114 10.0139744,17.7272866 10.0405851,17.5971638 Z M16.0439612,8.58099758 L13.5084711,7.31325253 C13.1418165,7.73405681 12.6019654,8 12,8 C10.8954305,8 10,7.1045695 10,6 C10,4.8954305 10.8954305,4 12,4 C13.1045695,4 14,4.8954305 14,6 C14,6.14371154 13.9848424,6.28388284 13.9560388,6.41900242 L16.4915289,7.68674747 C16.8581835,7.26594319 17.3980346,7 18,7 C19.1045695,7 20,7.8954305 20,9 C20,10.1045695 19.1045695,11 18,11 C16.8954305,11 16,10.1045695 16,9 C16,8.85628846 16.0151576,8.71611716 16.0439612,8.58099758 Z"
+                id="Combined-Shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        className="sc-bZQynM hEJNNX"
+      >
+        Fabric Polling
+      </h3>
+    </header>
+    <div
+      className="sc-ifAKCX frfOOq"
+    >
+      <div
+        className="control-group control-group-polling-start-stop"
+        id="ctrl-btn-Fabric Polling"
+      >
+        <button
+          className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
+          disabled={undefined}
+          onClick={[Function]}
+          style={
+            Object {
+              "height": "100%",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+          tabIndex={0}
+          title="Pause Updates"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-bwzfXH flKpft"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="sc-bdVaJa iPrjqu"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <g
+                className="glyph"
+                fill="rgb(10, 171, 42)"
+                transform="translate(-24 -24) scale(3)"
+              >
+                <path
+                  d="M6,5 L10.6153846,5 L10.6153846,19 L6,19 L6,5 Z M13.3846154,5 L18,5 L18,19 L13.3846154,19 L13.3846154,5 Z"
+                  id="Combined-Shape"
+                />
+              </g>
+            </g>
+          </svg>
+          <span
+            className="label"
+          >
+            
+            Pause Updates
+            
+          </span>
+        </button>
+      </div>
+      <div
+        className="control-group control-group-polling-interval"
+        id="ctrl-slider-Fabric Polling"
+      >
+        <div
+          aria-disabled={false}
+          className="input-range"
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+        >
+          <span
+            className="input-range__label input-range__label--min"
+          >
+            <span
+              className="input-range__label-container"
+            >
+              5
+            </span>
+          </span>
+          <div
+            className="input-range__track input-range__track--background"
+            onMouseDown={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              className="input-range__track input-range__track--active"
+              style={
+                Object {
+                  "left": "0%",
+                  "width": "4.3478260869565215%",
+                }
+              }
+            />
+            <span
+              className="input-range__slider-container"
+              style={
+                Object {
+                  "left": "4.3478260869565215%",
+                  "position": "absolute",
+                }
+              }
+            >
+              <span
+                className="input-range__label input-range__label--value"
+              >
+                <span
+                  className="input-range__label-container"
+                >
+                  10
+                </span>
+              </span>
+              <div
+                aria-controls={undefined}
+                aria-labelledby={undefined}
+                aria-valuemax={120}
+                aria-valuemin={5}
+                aria-valuenow={10}
+                className="input-range__slider"
+                draggable="false"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchStart={[Function]}
+                role="slider"
+                tabIndex="0"
+              />
+            </span>
+          </div>
+          <span
+            className="input-range__label input-range__label--max"
+          >
+            <span
+              className="input-range__label-container"
+            >
+              120
+            </span>
+          </span>
+        </div>
+        <span
+          className="label"
+          id="interval-name-Fabric Polling"
+        >
+          Updates Per Minute
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-htpNat gOoNtI"
+  >
+    <header
+      className="sc-bxivhb cnFCnx"
+    >
+      <span
+        className="sc-EHOje bfNwRO"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          className="sc-bwzfXH flKpft"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            className="sc-bdVaJa iPrjqu"
+            fill="currentColor"
+            title=""
+          >
+            <title>
+              
+            </title>
+            <g
+              className="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M6.19728719,10.4682661 L3.58689267,10.0076082 C3.3149522,9.95961873 3.05559772,10.1411669 3.00760822,10.4131073 C2.95961873,10.6850478 3.14116686,10.9444023 3.41310733,10.9923918 L6.02457766,11.4532395 C6.05503334,11.1160942 6.11337821,10.7869947 6.19728719,10.4682661 Z M17.9754223,12.5467605 L20.5868927,13.0076082 C20.8588331,13.0555977 21.0403813,13.3149522 20.9923918,13.5868927 C20.9444023,13.8588331 20.6850478,14.0403813 20.4131073,13.9923918 L17.8027128,13.5317339 C17.8866218,13.2130053 17.9449667,12.8839058 17.9754223,12.5467605 Z M7,12 C7,9.23857625 9.23857625,7 12,7 C14.7614237,7 17,9.23857625 17,12 C17,14.7614237 14.7614237,17 12,17 C9.23857625,17 7,14.7614237 7,12 Z M16.0107373,12.4288082 L16.0107373,11.5125591 L14.8991901,11.1460594 L14.641357,10.5218647 L15.145564,9.46817824 L14.4981164,8.82107731 L13.4610543,9.34219399 L12.8365252,9.08449893 L12.4411811,7.985 L11.5244411,7.985 L11.1634748,9.09595204 L10.5274865,9.3536471 L9.4732355,8.84971009 L8.82578791,9.49681102 L9.34718376,10.5333178 L9.08935065,11.1575125 L7.98926271,11.5469184 L7.98926271,12.4574409 L9.1008099,12.8239406 L9.35864301,13.4481353 L8.85443604,14.5018218 L9.50188363,15.1489227 L10.5389457,14.627806 L11.1634748,14.8855011 L11.5588189,15.985 L12.4698292,15.985 L12.8307956,14.874048 L13.4667839,14.6163529 L14.5210349,15.1202899 L15.1684825,14.473189 L14.641357,13.4366822 L14.9106494,12.8124875 L16.0107373,12.417355 L16.0107373,12.4288082 Z M12,13.7058304 C11.0488823,13.7058304 10.2811126,12.9384717 10.2811126,11.9878633 C10.2811126,11.0372548 11.0488823,10.2698962 12,10.2698962 C12.9511177,10.2698962 13.7188874,11.0372548 13.7188874,11.9878633 C13.7188874,12.9384717 12.9511177,13.7058304 12,13.7058304 Z"
+                id="Combined-Shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        className="sc-bZQynM hEJNNX"
+      >
+        Instance Polling
+      </h3>
+    </header>
+    <div
+      className="sc-ifAKCX frfOOq"
+    >
+      <div
+        className="control-group control-group-polling-start-stop"
+        id="ctrl-btn-Instance Polling"
+      >
+        <button
+          className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
+          disabled={undefined}
+          onClick={[Function]}
+          style={
+            Object {
+              "height": "100%",
+              "position": "relative",
+              "width": "100%",
+            }
+          }
+          tabIndex={0}
+          title="Resume Updates"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-bwzfXH flKpft"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="sc-bdVaJa iPrjqu"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <g
+                className="glyph"
+                fill="rgb(10, 171, 42)"
+                transform="translate(-24 -24) scale(3)"
+              >
+                <polygon
+                  id="Triangle-6"
+                  points="19 12 7 20 7 4"
+                />
+              </g>
+            </g>
+          </svg>
+          <span
+            className="label"
+          >
+            
+            Resume Updates
+            
+          </span>
+        </button>
+      </div>
+      <div
+        className="control-group control-group-polling-interval"
+        id="ctrl-slider-Instance Polling"
+      >
+        <div
+          aria-disabled={false}
+          className="input-range"
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onTouchStart={[Function]}
+        >
+          <span
+            className="input-range__label input-range__label--min"
+          >
+            <span
+              className="input-range__label-container"
+            >
+              5
+            </span>
+          </span>
+          <div
+            className="input-range__track input-range__track--background"
+            onMouseDown={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              className="input-range__track input-range__track--active"
+              style={
+                Object {
+                  "left": "0%",
+                  "width": "4.3478260869565215%",
+                }
+              }
+            />
+            <span
+              className="input-range__slider-container"
+              style={
+                Object {
+                  "left": "4.3478260869565215%",
+                  "position": "absolute",
+                }
+              }
+            >
+              <span
+                className="input-range__label input-range__label--value"
+              >
+                <span
+                  className="input-range__label-container"
+                >
+                  10
+                </span>
+              </span>
+              <div
+                aria-controls={undefined}
+                aria-labelledby={undefined}
+                aria-valuemax={120}
+                aria-valuemin={5}
+                aria-valuenow={10}
+                className="input-range__slider"
+                draggable="false"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onTouchStart={[Function]}
+                role="slider"
+                tabIndex="0"
+              />
+            </span>
+          </div>
+          <span
+            className="input-range__label input-range__label--max"
+          >
+            <span
+              className="input-range__label-container"
+            >
+              120
+            </span>
+          </span>
+        </div>
+        <span
+          className="label"
+          id="interval-name-Instance Polling"
+        >
+          Updates Per Minute
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-htpNat gOoNtI"
+  >
+    <header
+      className="sc-bxivhb cnFCnx"
+    >
+      <span
+        className="sc-EHOje bfNwRO"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          className="sc-bwzfXH flKpft"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            className="sc-bdVaJa iPrjqu"
+            fill="currentColor"
+            title=""
+          >
+            <title>
+              
+            </title>
+            <g
+              className="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M9.08563005,15.9573707 C9.69514275,15.552113 10.2056702,15.0097978 10.573215,14.3744224 L13.426785,14.3744224 C13.7943298,15.0097978 14.3048573,15.552113 14.9143699,15.9573707 L9.08563005,15.9573707 Z M6.459681,15.9573707 C4.27408551,15.9573707 2.50231029,14.1855955 2.50231029,12 C2.50231029,9.81440451 4.27408551,8.04262929 6.459681,8.04262929 C8.6452765,8.04262929 10.4170517,9.81440451 10.4170517,12 C10.4170517,14.1855955 8.6452765,15.9573707 6.459681,15.9573707 Z M6.459681,14.3744224 C7.7710383,14.3744224 8.83410343,13.3113573 8.83410343,12 C8.83410343,10.6886427 7.7710383,9.62557757 6.459681,9.62557757 C5.14832371,9.62557757 4.08525857,10.6886427 4.08525857,12 C4.08525857,13.3113573 5.14832371,14.3744224 6.459681,14.3744224 Z M17.540319,15.9573707 C15.3547235,15.9573707 13.5829483,14.1855955 13.5829483,12 C13.5829483,9.81440451 15.3547235,8.04262929 17.540319,8.04262929 C19.7259145,8.04262929 21.4976897,9.81440451 21.4976897,12 C21.4976897,14.1855955 19.7259145,15.9573707 17.540319,15.9573707 Z M17.540319,14.3744224 C18.8516763,14.3744224 19.9147414,13.3113573 19.9147414,12 C19.9147414,10.6886427 18.8516763,9.62557757 17.540319,9.62557757 C16.2289617,9.62557757 15.1658966,10.6886427 15.1658966,12 C15.1658966,13.3113573 16.2289617,14.3744224 17.540319,14.3744224 Z"
+                id="shape"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        className="sc-bZQynM hEJNNX"
+      >
+        Metrics Cache
+      </h3>
+    </header>
+    <div
+      className="sc-ifAKCX frfOOq"
+    >
+      <div
+        className="sc-jzJRlG hwifvl"
+        style={undefined}
+      >
+        <div
+          className="sc-cSHVUG kgocme"
+          style={undefined}
+        >
+          <div
+            className="sc-kAzzGY fXObhU"
+            style={undefined}
+          >
+            <h2
+              className="sc-kGXeez QxPzB"
+            >
+              Cache Size
+            </h2>
+            <span
+              className="sc-kpOJdX JeTxr"
+            >
+              50.82 KB
+            </span>
+            <button
+              className="btn"
+              disabled={undefined}
+              onClick={[Function]}
+              style={undefined}
+              tabIndex={0}
+              title="Clear Cache"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                className="sc-bwzfXH flKpft"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  className="sc-bdVaJa iPrjqu"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title>
+                    
+                  </title>
+                  <g
+                    className="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M12,10.9528132 L6.76406623,5.71687948 C6.47489359,5.42770684 6.00605212,5.42770684 5.71687948,5.71687948 C5.42770684,6.00605212 5.42770684,6.47489359 5.71687948,6.76406623 L10.9528132,12 L5.71687948,17.2359338 C5.42770684,17.5251064 5.42770684,17.9939479 5.71687948,18.2831205 C6.00605212,18.5722932 6.47489359,18.5722932 6.76406623,18.2831205 L12,13.0471868 L17.2359338,18.2831205 C17.5251064,18.5722932 17.9939479,18.5722932 18.2831205,18.2831205 C18.5722932,17.9939479 18.5722932,17.5251064 18.2831205,17.2359338 L13.0471868,12 L18.2831205,6.76406623 C18.5722932,6.47489359 18.5722932,6.00605212 18.2831205,5.71687948 C17.9939479,5.42770684 17.5251064,5.42770684 17.2359338,5.71687948 L12,10.9528132 Z"
+                      id="Combined-Shape"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <span
+                className="label"
+              >
+                
+                Clear Cache
+                
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;
