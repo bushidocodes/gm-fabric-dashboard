@@ -71,7 +71,7 @@ exports[`Go Instance Routes View: <RoutesTable /> Snapshot renders snapshot corr
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
-      tabIndex="0"
+      tabIndex={0}
     >
       <div
         className="sc-bZQynM cnRgVz"
@@ -249,7 +249,7 @@ exports[`Go Instance Routes View: <RoutesTable /> Snapshot renders snapshot corr
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
-      tabIndex="0"
+      tabIndex={0}
     >
       <div
         className="sc-bZQynM cnRgVz"
