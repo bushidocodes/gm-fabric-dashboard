@@ -13,8 +13,6 @@ public class DiscoveryServicesTests extends ApiTest {
         // Set up objects
         DiscoveryService discoveryService = new DiscoveryService(deployment);
         ArrayList<ServiceModel> services;
-        int serviceIndex = 0;
-        int serviceInstanceIndex = 0;
 
         // Get the list of available services
         discoveryService.getServices();
@@ -27,11 +25,5 @@ public class DiscoveryServicesTests extends ApiTest {
 
         // Model the services from the response
         services = discoveryService.modelServices();
-
-        // Get metrics for a service
-        discoveryService.getMetrics(
-                services.get(serviceIndex).getName(),
-                services.get(serviceIndex).getVersion(),
-                services.get(serviceIndex).getInstances().get(serviceInstanceIndex).getName());
     }
 }
