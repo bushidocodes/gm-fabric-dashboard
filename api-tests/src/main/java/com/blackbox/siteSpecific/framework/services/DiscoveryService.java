@@ -2,11 +2,14 @@ package com.blackbox.siteSpecific.framework.services;
 
 import com.blackbox.common.api.RestUtil;
 import com.blackbox.dataModels.JsonElementStructure;
-import com.blackbox.dataModels.ServiceInstance;
+import com.blackbox.dataModels.ServiceInstanceModel;
+import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import java.util.ArrayList;
 
 public class DiscoveryService {
     private static final String URL_SEPARATOR = "/";
@@ -23,6 +26,21 @@ public class DiscoveryService {
     JsonElementStructure[] servicesResponseStructure;
     JsonElementStructure[] servicesInstancesResponseStructure;
 
+    public static final String SERVICES_RESPONSE_NAME_KEY = "name";
+    public static final String SERVICES_RESPONSE_VERSION_KEY = "version";
+    public static final String SERVICES_RESPONSE_OWNER_KEY = "owner";
+    public static final String SERVICES_RESPONSE_CAPABILITY_KEY = "capability";
+    public static final String SERVICES_RESPONSE_MINIMUM_KEY = "minimum";
+    public static final String SERVICES_RESPONSE_MAXIMUM_KEY = "maximum";
+    public static final String SERVICES_RESPONSE_DOCUMENTATION_KEY = "documentation";
+    public static final String SERVICES_RESPONSE_AUTHORIZED_KEY = "authorized";
+    public static final String SERVICES_RESPONSE_METERED_KEY = "metered";
+    public static final String SERVICES_RESPONSE_THREADED_KEY = "threaded";
+    public static final String SERVICES_RESPONSE_RUNTIME_KEY = "runtime";
+    public static final String SERVICES_RESPONSE_INSTANCES_KEY = "instances";
+    public static final String SERVICES_RESPONSE_INSTANCES_NAME_KEY = "name";
+    public static final String SERVICES_RESPONSE_INSTANCES_START_TIME_KEY = "start_time";
+
 
     // <editor-fold desc="Constructor">
 
@@ -35,23 +53,67 @@ public class DiscoveryService {
         threadsUrl = baseUrl + THREADS_ENDPOINT;
 
         servicesResponseStructure = new JsonElementStructure[]{
-                new JsonElementStructure.JsonElementFormatBuilder().setName("name").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("version").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("owner").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("capability").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("minimum").setType(int.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("maximum").setType(int.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("documentation").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("authorized").setType(boolean.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("metered").setType(boolean.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("threaded").setType(boolean.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("runtime").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("instances").setType(JsonArray.class).build()
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_NAME_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_VERSION_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_OWNER_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_CAPABILITY_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_MINIMUM_KEY)
+                        .setType(int.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_MAXIMUM_KEY)
+                        .setType(int.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_DOCUMENTATION_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_AUTHORIZED_KEY)
+                        .setType(boolean.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_METERED_KEY)
+                        .setType(boolean.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_THREADED_KEY)
+                        .setType(boolean.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_RUNTIME_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_INSTANCES_KEY)
+                        .setType(JsonArray.class)
+                        .build()
         };
         servicesInstancesResponseStructure = new JsonElementStructure[]{
-                new JsonElementStructure.JsonElementFormatBuilder().setName("name").setType(String.class).build(),
-                new JsonElementStructure.JsonElementFormatBuilder().setName("start_time").setType(int.class).build()
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_INSTANCES_NAME_KEY)
+                        .setType(String.class)
+                        .build(),
+                new JsonElementStructure.JsonElementFormatBuilder()
+                        .setName(SERVICES_RESPONSE_INSTANCES_START_TIME_KEY)
+                        .setType(double.class)
+                        .build()
         };
+
+        response = null;
     }
 
     // </editor-fold>
@@ -82,16 +144,8 @@ public class DiscoveryService {
         response = restUtil.get(buildUrlFromParameters(metricsUrl, new String[]{service, version, instance}));
     }
 
-    public void getMetrics(ServiceInstance serviceInstance) {
-        getMetrics(serviceInstance.getService(), serviceInstance.getVersion(), serviceInstance.getInstance());
-    }
-
     public void getThreads(String service, String version, String instance) {
         response = restUtil.get(buildUrlFromParameters(threadsUrl, new String[]{service, version, instance}));
-    }
-
-    public void getThreads(ServiceInstance serviceInstance) {
-        getThreads(serviceInstance.getService(), serviceInstance.getVersion(), serviceInstance.getInstance());
     }
 
     // </editor-fold>
@@ -108,28 +162,29 @@ public class DiscoveryService {
 
     // <editor-fold desc="Validate Response Format">
 
-    public boolean isServicesResponseFormatValid(JsonObject jsonData) {
+    public boolean isServicesResponseFormatValid(JsonObject jsonObject) {
         String throwawayString;
         int throwawayInt;
         boolean throwawayBoolean;
+        double throwawayDouble;
         JsonArray instancesJsonArray;
 
         for(JsonElementStructure jsonElementStructure: servicesResponseStructure) {
             if(jsonElementStructure.getType() == String.class) {
-                throwawayString = jsonData.get(jsonElementStructure.getKey()).getAsString();
+                throwawayString = jsonObject.get(jsonElementStructure.getKey()).getAsString();
             } else if(jsonElementStructure.getType() == int.class) {
-                throwawayInt = jsonData.get(jsonElementStructure.getKey()).getAsInt();
+                throwawayInt = jsonObject.get(jsonElementStructure.getKey()).getAsInt();
             } else if(jsonElementStructure.getType() == boolean.class) {
-                throwawayBoolean = jsonData.get(jsonElementStructure.getKey()).getAsBoolean();
+                throwawayBoolean = jsonObject.get(jsonElementStructure.getKey()).getAsBoolean();
             } else if(jsonElementStructure.getType() == JsonArray.class) {
-                instancesJsonArray = jsonData.get(jsonElementStructure.getKey()).getAsJsonArray();
+                instancesJsonArray = jsonObject.get(jsonElementStructure.getKey()).getAsJsonArray();
 
                 for(int index = 0; index < instancesJsonArray.size(); index++) {
                     for(JsonElementStructure instanceElementStructure: servicesInstancesResponseStructure) {
                         if(instanceElementStructure.isOfType(String.class)) {
                             throwawayString = instancesJsonArray.get(index).getAsJsonObject().get(instanceElementStructure.getKey()).getAsString();
-                        } else if(instanceElementStructure.isOfType(int.class)) {
-                            throwawayInt = instancesJsonArray.get(index).getAsJsonObject().get(instanceElementStructure.getKey()).getAsInt();
+                        } else if(instanceElementStructure.isOfType(double.class)) {
+                            throwawayDouble = instancesJsonArray.get(index).getAsJsonObject().get(instanceElementStructure.getKey()).getAsDouble();
                         } else {
                             throw new RuntimeException(String.format("Instances member \"%s\" has unexpected type %s",
                                     instanceElementStructure.getKey(),
@@ -161,6 +216,79 @@ public class DiscoveryService {
         } else {
             return false;
         }
+    }
+
+    // </editor-fold>
+
+
+    // <editor-fold desc="Parse Data from Response">
+
+    public int getServiceCount() {
+        if(response == null) {
+            throw new RuntimeException("Response is empty, a call may not have been made yet.");
+        } else {
+            if(response.isJsonObject()) {
+                return 1;
+            } else if(response.isJsonArray()) {
+                return response.getAsJsonArray().size();
+            } else {
+                throw new RuntimeException(String.format("Response was not an object of %s or %s as expected.",
+                        JsonObject.class,
+                        JsonArray.class));
+            }
+        }
+    }
+    
+    private ServiceModel modelService(JsonObject jsonObject) {
+        JsonArray instances;
+        JsonObject currentInstance;
+
+        ServiceModel serviceModel = new ServiceModel.ServiceModelBuilder()
+                .setName(jsonObject.get(SERVICES_RESPONSE_NAME_KEY).getAsString())
+                .setVersion(jsonObject.get(SERVICES_RESPONSE_VERSION_KEY).getAsString())
+                .setOwner(jsonObject.get(SERVICES_RESPONSE_OWNER_KEY).getAsString())
+                .setCapability(jsonObject.get(SERVICES_RESPONSE_CAPABILITY_KEY).getAsString())
+                .setMinimum(jsonObject.get(SERVICES_RESPONSE_MINIMUM_KEY).getAsInt())
+                .setMaximum(jsonObject.get(SERVICES_RESPONSE_MAXIMUM_KEY).getAsInt())
+                .setDocumentation(jsonObject.get(SERVICES_RESPONSE_DOCUMENTATION_KEY).getAsString())
+                .setAuthorized(jsonObject.get(SERVICES_RESPONSE_AUTHORIZED_KEY).getAsBoolean())
+                .setMetered(jsonObject.get(SERVICES_RESPONSE_METERED_KEY).getAsBoolean())
+                .setThreaded(jsonObject.get(SERVICES_RESPONSE_THREADED_KEY).getAsBoolean())
+                .setRuntime(jsonObject.get(SERVICES_RESPONSE_RUNTIME_KEY).getAsString())
+                .build();
+
+        instances = jsonObject.get(SERVICES_RESPONSE_INSTANCES_KEY).getAsJsonArray();
+        for(int instanceIndex = 0; instanceIndex < instances.size(); instanceIndex++) {
+            currentInstance = instances.get(instanceIndex).getAsJsonObject();
+            serviceModel.addInstance(new ServiceInstanceModel.ServiceInstanceModelBuilder()
+                    .setName(currentInstance.get(SERVICES_RESPONSE_INSTANCES_NAME_KEY).getAsString())
+                    .setStartTime(currentInstance.get(SERVICES_RESPONSE_INSTANCES_START_TIME_KEY).getAsDouble())
+                    .build());
+        }
+
+        return serviceModel;
+    }
+
+    public ArrayList<ServiceModel> modelServices() {
+        ArrayList<ServiceModel> services = new ArrayList<ServiceModel>();
+
+        if(response == null) {
+            throw new RuntimeException("Response is empty, a call may not have been made yet.");
+        } else {
+            if(response.isJsonObject()) {
+                services.add(modelService(response.getAsJsonObject()));
+            } else if(response.isJsonArray()) {
+                for(int index = 0; index < response.getAsJsonArray().size(); index++) {
+                    services.add(modelService(response.getAsJsonArray().get(index).getAsJsonObject()));
+                }
+            } else {
+                throw new RuntimeException(String.format("Response was not an object of %s or %s as expected.",
+                        JsonObject.class,
+                        JsonArray.class));
+            }
+        }
+
+        return services;
     }
 
     // </editor-fold>
