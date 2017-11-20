@@ -1596,7 +1596,9 @@ export default {
         "1500416119215": 9492080,
         "1500416134216": 9492080
       }
-    }
+    },
+    instanceMetricsPollingInterval: 10000,
+    isPollingInstanceMetrics: false
   },
   threadsTable: [
     {
@@ -1679,6 +1681,674 @@ export default {
     }
   ],
   settings: {
-    threadsFilter: "active"
+    threadsFilter: "active",
+    fabricServer: "http://localhost:1337"
+  },
+  fabric: {
+    fabricPollingInterval: 10000,
+    isPollingFabric: true
+  },
+  dashboards: {
+    http: {
+      name: "HTTP",
+      runtime: "JVM",
+      summaryCard: {
+        icon: "Http",
+        lines: [
+          {
+            name: "Received",
+            value: [
+              {
+                type: "latest",
+                value: "https/received_bytes",
+                baseUnit: "B",
+                resultUnit: "GB",
+                precision: 3
+              },
+              {
+                type: "string",
+                value: "GB"
+              }
+            ]
+          },
+          {
+            name: "Sent",
+            value: [
+              {
+                type: "latest",
+                value: "https/sent_bytes",
+                baseUnit: "B",
+                resultUnit: "GB",
+                precision: 3
+              },
+              {
+                type: "string",
+                value: "GB"
+              }
+            ]
+          }
+        ]
+      },
+      grid: {
+        breakpoints: {
+          lg: 1200,
+          md: 996,
+          sm: 768
+        },
+        cols: {
+          lg: 12,
+          md: 8,
+          sm: 4
+        },
+        layouts: {
+          lg: [
+            {
+              i: "Connections",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Data Transfer Rates",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Requests",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Response Status Codes",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            }
+          ],
+          md: [
+            {
+              i: "Connections",
+              x: 0,
+              y: 0,
+              w: 8,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Data Transfer Rates",
+              x: 0,
+              y: 6,
+              w: 8,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Requests",
+              x: 0,
+              y: 12,
+              w: 8,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Response Status Codes",
+              x: 6,
+              y: 18,
+              w: 8,
+              h: 6,
+              minW: 3,
+              minH: 4
+            }
+          ],
+          sm: [
+            {
+              i: "Connections",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Data Transfer Rates",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Requests",
+              x: 0,
+              y: 6,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            },
+            {
+              i: "Response Status Codes",
+              x: 6,
+              y: 6,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 4
+            }
+          ]
+        },
+        rowHeight: 60
+      },
+      charts: [
+        {
+          title: "Connections",
+          type: "GMLineChart",
+          data: {
+            timeseries: [
+              {
+                type: "value",
+                attribute: "http/connections",
+                label: "HTTP Connections"
+              },
+              {
+                type: "value",
+                attribute: "https/connections",
+                label: "HTTPS Connections"
+              }
+            ]
+          }
+        },
+        {
+          title: "Data Transfer Rates",
+          type: "GMLineChart",
+          data: {
+            timeseries: [
+              {
+                type: "netChange",
+                attribute: "http/sent_bytes",
+                label: "HTTP Sent Bytes (kBps)",
+                baseUnit: "B",
+                resultUnit: "kB",
+                precision: 3
+              },
+              {
+                type: "netChange",
+                attribute: "https/sent_bytes",
+                label: "HTTPS Sent Bytes (kBps)",
+                baseUnit: "B",
+                resultUnit: "kB",
+                precision: 3
+              },
+              {
+                type: "netChange",
+                attribute: "http/received_bytes",
+                label: "HTTP Received (kBps)",
+                baseUnit: "B",
+                resultUnit: "kB",
+                precision: 3
+              },
+              {
+                type: "netChange",
+                attribute: "https/received_bytes",
+                label: "HTTPS Received (kBps)",
+                baseUnit: "B",
+                resultUnit: "kB",
+                precision: 3
+              }
+            ]
+          }
+        },
+        {
+          title: "Requests",
+          type: "GMTable",
+          data: {
+            headers: ["Requests", "Success"],
+            rows: [
+              ["http", "http/requests", "http/success"],
+              ["https", "https/requests", "https/success"]
+            ]
+          }
+        },
+        {
+          title: "Response Status Codes",
+          type: "GMBasicMetrics",
+          data: {
+            detailLines: [
+              ["2XX", "status/2XX", "primary", "status/2XX", "value"],
+              ["200", "status/200", "primary", "status/200", "value"],
+              ["4XX", "status/4XX", "normal", "status/4XX", "value"],
+              ["400", "status/400", "normal", "status/400", "value"],
+              ["499", "status/499", "normal", "status/499", "value"],
+              ["5XX", "status/5XX", "normal", "status/5XX", "value"],
+              ["500", "status/500", "normal", "status/500", "value"]
+            ]
+          }
+        }
+      ]
+    },
+    jvm: {
+      name: "JVM",
+      runtime: "JVM",
+      summaryCard: {
+        icon: "JVM",
+        chart: {
+          type: "value",
+          dataAttribute: "jvm/mem/current/used"
+        },
+        lines: [
+          {
+            name: "MEM USED",
+            value: [
+              {
+                type: "latest",
+                value: "jvm/mem/current/used",
+                baseUnit: "B",
+                resultUnit: "MB",
+                precision: 3
+              },
+              {
+                type: "string",
+                value: "MB"
+              }
+            ]
+          }
+        ]
+      },
+      grid: {
+        breakpoints: {
+          lg: 1200,
+          md: 996,
+          sm: 768
+        },
+        cols: {
+          lg: 12,
+          md: 8,
+          sm: 4
+        },
+        layouts: {
+          lg: [
+            { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Classes",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 9,
+              minW: 4,
+              minH: 5
+            }
+          ],
+          md: [
+            { i: "Heap", x: 0, y: 0, w: 8, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Classes",
+              x: 0,
+              y: 9,
+              w: 8,
+              h: 9,
+              minW: 4,
+              minH: 5
+            }
+          ],
+          sm: [
+            { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Classes",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 9,
+              minW: 4,
+              minH: 5
+            }
+          ]
+        },
+        rowHeight: 60
+      },
+      charts: [
+        {
+          title: "Heap",
+          type: "GMLineChart",
+          data: {
+            detailLines: [
+              [
+                {
+                  type: "string",
+                  value: "Max Heap:"
+                },
+                {
+                  type: "latest",
+                  value: "jvm/heap/max",
+                  baseUnit: "B",
+                  resultUnit: "GB",
+                  precision: 3
+                },
+                {
+                  type: "string",
+                  value: "GB"
+                }
+              ]
+            ],
+            timeseries: [
+              {
+                type: "value",
+                attribute: "jvm/heap/committed",
+                label: "JVM Heap Committed (MB)",
+                baseUnit: "B",
+                resultUnit: "MB",
+                precision: 3
+              },
+              {
+                type: "value",
+                attribute: "jvm/heap/used",
+                label: "JVM Heap Used (MB)",
+                baseUnit: "B",
+                resultUnit: "MB",
+                precision: 3
+              }
+            ]
+          }
+        },
+        {
+          title: "Classes",
+          type: "GMLineChart",
+          data: {
+            detailLines: [
+              [
+                {
+                  type: "string",
+                  value: "Total Loaded:"
+                },
+                {
+                  type: "latest",
+                  value: "jvm/classes/total_loaded"
+                }
+              ],
+              [
+                {
+                  type: "string",
+                  value: "Total Unloaded:"
+                },
+                {
+                  type: "latest",
+                  value: "jvm/classes/total_unloaded"
+                }
+              ]
+            ],
+            timeseries: [
+              {
+                type: "value",
+                attribute: "jvm/classes/current_loaded",
+                label: "# of currently loaded JVM Classes"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    finagle: {
+      name: "Finagle",
+      runtime: "JVM",
+      summaryCard: {
+        icon: "Finagle",
+        lines: [
+          {
+            name: "Active Tasks",
+            value: [
+              {
+                type: "latest",
+                value: "finagle/future_pool/active_tasks"
+              }
+            ]
+          },
+          {
+            name: "Pend. Tasks",
+            value: [
+              {
+                type: "latest",
+                value: "finagle/timer/pending_tasks.count"
+              }
+            ]
+          }
+        ]
+      },
+      grid: {
+        breakpoints: {
+          lg: 1200,
+          md: 996,
+          sm: 768
+        },
+        cols: {
+          lg: 12,
+          md: 8,
+          sm: 4
+        },
+        layouts: {
+          lg: [
+            {
+              i: "Timer Deviation",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Pending Timer Tasks",
+              x: 6,
+              y: 0,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Future Pool",
+              x: 0,
+              y: 6,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Client Registry",
+              x: 6,
+              y: 6,
+              w: 6,
+              h: 6,
+              minW: 3,
+              minH: 5
+            }
+          ],
+          md: [
+            {
+              i: "Timer Deviation",
+              x: 0,
+              y: 0,
+              w: 4,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Pending Timer Tasks",
+              x: 4,
+              y: 0,
+              w: 4,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Future Pool",
+              x: 0,
+              y: 6,
+              w: 4,
+              h: 6,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Client Registry",
+              x: 4,
+              y: 6,
+              w: 4,
+              h: 6,
+              minW: 3,
+              minH: 5
+            }
+          ],
+          sm: [
+            {
+              i: "Timer Deviation",
+              x: 0,
+              y: 0,
+              w: 4,
+              h: 5,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Pending Timer Tasks",
+              x: 4,
+              y: 0,
+              w: 4,
+              h: 5,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Future Pool",
+              x: 8,
+              y: 0,
+              w: 4,
+              h: 5,
+              minW: 3,
+              minH: 5
+            },
+            {
+              i: "Client Registry",
+              x: 0,
+              y: 5,
+              w: 4,
+              h: 5,
+              minW: 3,
+              minH: 5
+            }
+          ]
+        },
+        rowHeight: 60
+      },
+      charts: [
+        {
+          title: "Timer Deviation",
+          type: "GMBasicMetrics",
+          data: {
+            detailLines: [
+              [
+                "Count",
+                "finagle/timer/deviation_ms.count",
+                "primary",
+                "finagle/timer/deviation_ms.count",
+                "value"
+              ],
+              [
+                "Average",
+                "finagle/timer/deviation_ms.avg",
+                "secondary",
+                "finagle/timer/deviation_ms.avg",
+                "value"
+              ],
+              ["Max", "finagle/timer/deviation_ms.max", "normal"],
+              ["Min", "finagle/timer/deviation_ms.min", "normal"],
+              ["Sum", "finagle/timer/deviation_ms.sum", "normal"]
+            ]
+          }
+        },
+        {
+          title: "Pending Timer Tasks",
+          type: "GMBasicMetrics",
+          data: {
+            detailLines: [
+              [
+                "Count",
+                "finagle/timer/pending_tasks.count",
+                "primary",
+                "finagle/timer/pending_tasks.count",
+                "value"
+              ],
+              [
+                "Average",
+                "finagle/timer/pending_tasks.avg",
+                "secondary",
+                "finagle/timer/pending_tasks.avg",
+                "value"
+              ],
+              ["Max", "finagle/timer/pending_tasks.max", "normal"],
+              ["Min", "finagle/timer/pending_tasks.min", "normal"],
+              ["Sum", "finagle/timer/pending_tasks.sum", "normal"]
+            ]
+          }
+        },
+        {
+          title: "Future Pool",
+          type: "GMBasicMetrics",
+          data: {
+            detailLines: [
+              [
+                "Active Tasks",
+                "finagle/future_pool/active_tasks",
+                "primary",
+                "finagle/future_pool/active_tasks",
+                "value"
+              ],
+              [
+                "Completed Tasks",
+                "finagle/futurePool/completed_tasks",
+                "secondary",
+                "finagle/futurePool/completed_tasks",
+                "value"
+              ],
+              ["Pool Size", "finagle/timer/pool_size", "normal"]
+            ]
+          }
+        },
+        {
+          title: "Client Registry",
+          type: "GMBasicMetrics",
+          data: {
+            detailLines: [
+              ["Size", "finagle/clientregistry/size", "primary"],
+              [
+                "Initial Resolution",
+                "finagle/clientregistry/initialresolution_ms",
+                "secondary"
+              ]
+            ]
+          }
+        }
+      ]
+    }
   }
 };

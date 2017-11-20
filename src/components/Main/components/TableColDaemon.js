@@ -5,7 +5,7 @@ import { spacingScale, rowChildSpacing } from "style/styleFunctions";
 const TableColDaemon = TableCol.extend`
   flex: 0 1 8em;
   padding-right: ${spacingScale(2)};
-  text-align: "right";
+  text-align: right;
   ${props => (props.header ? `${rowChildSpacing()}` : "")};
 `;
 
