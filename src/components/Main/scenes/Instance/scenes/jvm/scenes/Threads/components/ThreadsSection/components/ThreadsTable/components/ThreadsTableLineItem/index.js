@@ -1,8 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 
-import IndicatorIcon from "./components/IndicatorIcon";
-
 import StackTrace from "components/Main/components/StackTrace";
 import TableCol from "components/Main/components/TableCol";
 import TableColThread from "components/Main/components/TableColThread";
@@ -10,6 +8,7 @@ import TableColDaemon from "components/Main/components/TableColDaemon";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import TableRow from "components/Main/components/TableRow";
 
+import StatusIcon from "components/StatusIcon";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
 
@@ -35,24 +34,24 @@ export default class ThreadsTableLineItem extends Component {
   };
 
   /**
-   * Takes a state and returns a corresponding color associated with that state
+   * Takes a state and returns a corresponding status string associated with that state
    * @param {string} state
    * @returns string
    * @memberof ThreadsTableLineItem
    */
-  indicatorColor(state) {
+  getStatus(state) {
     switch (state) {
       case "RUNNABLE":
-        return "#0aab2a";
+        return "stable";
       case "WAITING":
       case "TIMED_WAITING":
-        return "#F5A623";
+        return "warning";
       case "TERMINATED":
       case "BLOCKED":
       case "NEW":
-        return "#BC1C1C";
+        return "down";
       default:
-        return "blue";
+        return "default";
     }
   }
 
@@ -66,7 +65,7 @@ export default class ThreadsTableLineItem extends Component {
 
   render() {
     const { daemon, id, name, priority, stack, state } = this.props;
-    const indicatorIcon = this.indicatorColor(state);
+    const status = this.getStatus(state);
 
     return (
       <TableRow
@@ -84,10 +83,10 @@ export default class ThreadsTableLineItem extends Component {
         tabIndex={0}
       >
         <TableColThread paddingLeft>{`${Number(id)}`}</TableColThread>
-        <TableColThread style={{ textAlign: "right" }}>
-          <IndicatorIcon alt={state} color={indicatorIcon} diameter={15} />
+        <TableColThread style={{ textAlign: "center" }}>
+          <StatusIcon status={status} />
         </TableColThread>
-        <TableColThread>
+        <TableColThread style={{ textAlign: "center" }}>
           {stack.length ? (
             <Icon>
               <Glyph name="Threads" />
