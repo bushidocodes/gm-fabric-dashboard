@@ -1,18 +1,16 @@
 package com.blackbox.siteSpecific.framework.services;
 
-import com.blackbox.common.api.RestUtil;
+import com.blackbox.common.api.RestService;
 import com.blackbox.dataModels.JsonElementStructure;
 import com.blackbox.dataModels.ServiceInstanceModel;
 import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
-public class DiscoveryService {
-    private static final String URL_SEPARATOR = "/";
+public class DiscoveryService extends RestService {
     private String baseUrl;
     private final String SERVICES_ENDPOINT = "/services";
     private String servicesUrl;
@@ -20,8 +18,6 @@ public class DiscoveryService {
     private String metricsUrl;
     private final String THREADS_ENDPOINT = "/threads";
     private String threadsUrl;
-    private RestUtil restUtil;
-    private JsonElement response;
 
     JsonElementStructure[] servicesResponseStructure;
     JsonElementStructure[] servicesInstancesResponseStructure;
@@ -45,7 +41,7 @@ public class DiscoveryService {
     // <editor-fold desc="Constructor">
 
     public DiscoveryService(SiteDeployment deployment) {
-        restUtil = new RestUtil();
+        super();
 
         baseUrl = deployment.discoveryServiceUrl;
         servicesUrl = baseUrl + SERVICES_ENDPOINT;
@@ -112,23 +108,23 @@ public class DiscoveryService {
                         .setType(double.class)
                         .build()
         };
-
-        response = null;
     }
 
     // </editor-fold>
 
 
-    // <editor-fold desc="Build Parameterized URL">
+    // <editor-fold desc="Get URLs">
 
-    private String buildUrlFromParameters(String baseUrl, String[] parameters) {
-        String concatenatedUrl = baseUrl;
+    public String getServicesUrl() {
+        return servicesUrl;
+    }
 
-        for(String parameter: parameters) {
-            concatenatedUrl = concatenatedUrl + URL_SEPARATOR + parameter;
-        }
+    public String getMetricsUrl() {
+        return metricsUrl;
+    }
 
-        return concatenatedUrl;
+    public String getThreadsUrl() {
+        return threadsUrl;
     }
 
     // </editor-fold>
@@ -137,24 +133,15 @@ public class DiscoveryService {
     // <editor-fold desc="Make REST Calls">
 
     public void getServices() {
-        response = restUtil.get(servicesUrl);
+        getUrl(servicesUrl);
     }
 
     public void getMetrics(String service, String version, String instance) {
-        response = restUtil.get(buildUrlFromParameters(metricsUrl, new String[]{service, version, instance}));
+        getUrl(metricsUrl, new String[]{service, version, instance});
     }
 
     public void getThreads(String service, String version, String instance) {
-        response = restUtil.get(buildUrlFromParameters(threadsUrl, new String[]{service, version, instance}));
-    }
-
-    // </editor-fold>
-
-
-    // <editor-fold desc="Get Response">
-
-    public JsonElement getResponse() {
-        return response;
+        getUrl(threadsUrl, new String[]{service, version, instance});
     }
 
     // </editor-fold>
