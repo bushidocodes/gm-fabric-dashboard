@@ -1,11 +1,10 @@
-import _ from "lodash";
-import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
+import _ from "lodash";
 
 import GMServiceTable from "./components/GMServiceTable";
 import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
-
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
 import { reportError } from "services/notification";
@@ -24,7 +23,8 @@ class GMServiceView extends Component {
     super(props);
     this.state = {
       filterString: "",
-      sortByAttribute: "name" // name or start_time
+      sortByAttribute: "name", // name or start_time
+      ascending: true
     };
   }
 
@@ -43,11 +43,20 @@ class GMServiceView extends Component {
   }
 
   setFilterString = filterString => this.setState({ filterString });
-  setSortByAttribute = sortByAttribute => this.setState({ sortByAttribute });
+
+  setSortByAttribute = sortByAttribute => {
+    if (this.state.sortByAttribute === sortByAttribute) {
+      this.setState({ ascending: !this.state.ascending });
+    } else {
+      this.setState({ sortByAttribute });
+    }
+  };
 
   render() {
     const { instances, serviceName, serviceVersion, status } = this.props;
-    const { filterString, sortByAttribute } = this.state;
+    const { filterString, sortByAttribute, ascending } = this.state;
+    const sortOrder = ascending ? ["asc"] : ["desc"];
+
     return instances && instances.length ? (
       <div>
         <GMServiceTableToolbar
@@ -61,9 +70,12 @@ class GMServiceView extends Component {
             serviceName={serviceName}
             serviceVersion={serviceVersion}
             instances={_.orderBy(
-              instances.filter(({ name }) => name.indexOf(filterString) !== -1),
+              instances.filter(
+                ({ name }) =>
+                  name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1
+              ),
               [sortByAttribute.toLowerCase()],
-              ["asc"]
+              sortOrder
             )}
             status={status}
           />

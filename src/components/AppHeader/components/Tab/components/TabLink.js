@@ -68,6 +68,10 @@ const TabLink = styled(NavLink).attrs({
       background-color: ${COLOR_TAB_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
     }
   }
+  
+  &:focus {
+    outline: ${COLOR_TAB_HIGHLIGHT.string()} auto 3px;
+  }
 `;
 
 export default TabLink;

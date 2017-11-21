@@ -12,7 +12,9 @@ import {
   TABLE_HOVER
 } from "style/styleVariables";
 
-const TableRow = styled.li`
+const TableRow = styled.li.attrs({
+  tabIndex: 0
+})`
   display: flex;
   align-items: flex-start;
   width: 100%;
