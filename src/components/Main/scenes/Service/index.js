@@ -61,7 +61,10 @@ class GMServiceView extends Component {
             serviceName={serviceName}
             serviceVersion={serviceVersion}
             instances={_.orderBy(
-              instances.filter(({ name }) => name.indexOf(filterString) !== -1),
+              instances.filter(
+                ({ name }) =>
+                  name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1
+              ),
               [sortByAttribute.toLowerCase()],
               ["asc"]
             )}
