@@ -4,12 +4,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import javax.net.ssl.*;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.*;
 
 public class RestUtil {
-    private static String responseType = "application/json";
     JsonParser jsonParser;
     private String keyStorePath;
     private String keystorePassword;
@@ -51,18 +51,19 @@ public class RestUtil {
 
     // <editor-fold desc="Methods to Make REST Calls">
 
-    public JsonElement get(String restUrl) {
+    public JsonElement get(String url) {
         URL convertedUrl;
-        String response = null;
+        String response;
 
         try {
-            convertedUrl = new URL(restUrl);
+            convertedUrl = new URL(url);
             response = Https.fetch(keyManagers, trustManagers, convertedUrl);
         } catch(NoSuchAlgorithmException |
-                IOException |
                 KeyManagementException
                 e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } catch(IOException e) {
+            throw new ApiTestingException(e);
         }
 
         return jsonParser.parse(response);
