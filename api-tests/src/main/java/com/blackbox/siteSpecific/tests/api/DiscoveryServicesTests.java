@@ -1,5 +1,6 @@
 package com.blackbox.siteSpecific.tests.api;
 
+import com.blackbox.dataModels.ServiceList;
 import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.ApiTest;
 import com.blackbox.siteSpecific.framework.services.DiscoveryService;
@@ -9,8 +10,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class DiscoveryServicesTests extends ApiTest {
-    private ArrayList<ServiceModel> services;
-    private final int serviceIndex = 0;
+    private ServiceList services;
+    private final String serviceName = "Discovery Service";
     private final int serviceInstanceIndex = 0;
 
     private final String NONEXISTENT_SERVICE_NAME = "Bananagrams";
@@ -32,13 +33,23 @@ public class DiscoveryServicesTests extends ApiTest {
         Assert.assertTrue(discoveryService.isServicesResponseFormatValid());
 
         // Model the services from the response
-        this.services = discoveryService.modelServices();
+        services = discoveryService.modelServices();
 
-        // TODO: Get metrics for a service
+        // Get metrics for a service
+        discoveryService.getMetrics(
+                services.get(serviceName).getUrlName(),
+                services.get(serviceName).getVersion(),
+                services.get(serviceName).getInstance(serviceInstanceIndex).getName()
+        );
 
         // TODO: Validate the format of the /metrics response
 
-        // TODO: Get threads for a service
+        // Get threads for a service
+        discoveryService.getThreads(
+                services.get(serviceName).getUrlName(),
+                services.get(serviceName).getVersion(),
+                services.get(serviceName).getInstance(serviceInstanceIndex).getName()
+        );
 
         // TODO: Validate the format of the /threads response
     }
@@ -48,7 +59,6 @@ public class DiscoveryServicesTests extends ApiTest {
     public void negativeTests() {
         // Set up objects
         DiscoveryService discoveryService = new DiscoveryService(deployment);
-        boolean servicesEndpointExceptionReceived = false;
 
         // Get and model the services if they have not already been modeled
         if(services == null) {
@@ -60,7 +70,7 @@ public class DiscoveryServicesTests extends ApiTest {
         // Hit an invalid endpoint based on the /services endpoint and verify the call fails
         discoveryService.getUrlExpectFailure(
                 discoveryService.getServicesUrl(),
-                services.get(serviceIndex).getUrlName());
+                services.get(serviceName).getUrlName());
         Assert.assertFalse(discoveryService.didLastRequestSucceed());
 
         // Hit the /metrics endpoint with parameters for a nonexistent service and verify the call fails

@@ -3,6 +3,7 @@ package com.blackbox.siteSpecific.framework.services;
 import com.blackbox.common.api.RestService;
 import com.blackbox.dataModels.JsonElementStructure;
 import com.blackbox.dataModels.ServiceInstanceModel;
+import com.blackbox.dataModels.ServiceList;
 import com.blackbox.dataModels.ServiceModel;
 import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonArray;
@@ -256,8 +257,8 @@ public class DiscoveryService extends RestService {
         return serviceModel;
     }
 
-    public ArrayList<ServiceModel> modelServices() {
-        ArrayList<ServiceModel> services = new ArrayList<ServiceModel>();
+    public ServiceList modelServices() {
+        ServiceList services = new ServiceList();
 
         if(response == null) {
             throw new RuntimeException("Response is empty, a call may not have been made yet.");
