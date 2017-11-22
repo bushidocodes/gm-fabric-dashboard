@@ -95,12 +95,24 @@ public class DiscoveryService extends RestService {
         getUrl(servicesUrl);
     }
 
+    public void getServicesExpectFailure() {
+        getUrlExpectFailure(servicesUrl);
+    }
+
     public void getMetrics(String service, String version, String instance) {
         getUrl(metricsUrl, new String[]{service, version, instance});
     }
 
+    public void getMetricsExpectFailure(String service, String version, String instance) {
+        getUrlExpectFailure(metricsUrl, new String[]{service, version, instance});
+    }
+
     public void getThreads(String service, String version, String instance) {
         getUrl(threadsUrl, new String[]{service, version, instance});
+    }
+
+    public void getThreadsExpectFailure(String service, String version, String instance) {
+        getUrlExpectFailure(threadsUrl, new String[]{service, version, instance});
     }
 
     // </editor-fold>
