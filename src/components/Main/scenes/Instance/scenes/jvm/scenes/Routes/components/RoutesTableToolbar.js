@@ -1,10 +1,12 @@
 import { PropTypes } from "prop-types";
 import React from "react";
+
 import GMSelect from "components/Main/components/GMSelect";
 import SecondaryText from "components/SecondaryText";
 import Toolbar from "components/Main/components/Toolbar";
 import ToolbarLeft from "components/Main/components/ToolbarLeft";
 import ToolbarRight from "components/Main/components/ToolbarRight";
+import SearchInput from "components/Main/components/GMSearchInput";
 
 RoutesTableToolbar.propTypes = {
   filterString: PropTypes.string.isRequired,
@@ -32,12 +34,10 @@ export default function RoutesTableToolbar({
     <Toolbar>
       <ToolbarLeft>
         <form>
-          <input
-            className="form-control"
+          <SearchInput
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Routes"
             aria-label="Search All Routes"
-            type="search"
             value={filterString}
           />
         </form>

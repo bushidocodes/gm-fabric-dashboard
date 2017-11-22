@@ -13,7 +13,7 @@ const Breadcrumbs = styled.ol`
   align-items: stretch;
 
   > li:first-child {
-    ${props => (props.hideRoot ? hide() : "")};
+    ${props => (props.hideRoot ? hide : "")};
   }
 `;
 

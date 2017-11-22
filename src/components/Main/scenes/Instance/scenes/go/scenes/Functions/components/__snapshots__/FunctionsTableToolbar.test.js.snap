@@ -10,7 +10,7 @@ exports[`Go Instance Functions View: <FunctionsTableToolbar /> matches snapshot 
     <form>
       <input
         aria-label="Search All Functions"
-        className="form-control"
+        className="sc-EHOje hQMWfh"
         onChange={[Function]}
         placeholder="Search Functions"
         type="search"

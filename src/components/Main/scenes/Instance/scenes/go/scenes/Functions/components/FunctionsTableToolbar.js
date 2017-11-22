@@ -5,6 +5,7 @@ import Toolbar from "components/Main/components/Toolbar";
 import ToolbarLeft from "components/Main/components/ToolbarLeft";
 import ToolbarRight from "components/Main/components/ToolbarRight";
 import SecondaryText from "components/SecondaryText";
+import SearchInput from "components/Main/components/GMSearchInput";
 
 FunctionsTableToolbar.propTypes = {
   filterString: PropTypes.string.isRequired,
@@ -32,12 +33,10 @@ export default function FunctionsTableToolbar({
     <Toolbar>
       <ToolbarLeft>
         <form>
-          <input
-            className="form-control"
+          <SearchInput
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Functions"
             aria-label="Search All Functions"
-            type="search"
             value={filterString}
           />
         </form>
