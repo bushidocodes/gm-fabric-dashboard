@@ -1,4 +1,10 @@
 export default {
+  fabric: {
+    selectedService:
+      "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
+    selectedServiceVersion: "4.3",
+    selectedInstance: "2smao7xwboy0000000000"
+  },
   instance: {
     metrics: {
       "http/connections": {
