@@ -36,9 +36,9 @@ export default class Inspector extends Component {
           <ul className="inspector-data">
             {filteredData.map(key => (
               <li
-                className={`inspector-item ${selectedMetric === key
-                  ? "active"
-                  : ""}`}
+                className={`inspector-item ${
+                  selectedMetric === key ? "active" : ""
+                }`}
                 key={key}
                 onClick={evt => onClick(evt.target.innerText)}
                 onKeyDown={evt => {

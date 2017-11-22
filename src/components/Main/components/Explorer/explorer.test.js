@@ -36,6 +36,7 @@ describe("Explorer View", () => {
 
   test("matches snapshot", () => {
     const tree = renderer.create(RouterWrap).toJSON();
+
     expect(tree).toMatchSnapshot();
   });
 

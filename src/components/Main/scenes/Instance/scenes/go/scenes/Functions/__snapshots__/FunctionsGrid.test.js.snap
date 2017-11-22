@@ -11,7 +11,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       <form>
         <input
           aria-label="Search All Functions"
-          className="form-control"
+          className="sc-kgoBCf XZgZb"
           onChange={[Function]}
           placeholder="Search Functions"
           type="search"

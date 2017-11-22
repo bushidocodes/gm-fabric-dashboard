@@ -2,10 +2,11 @@ import { createSelector } from "reselect";
 import _ from "lodash";
 
 import { getLatestAttribute } from "../latestAttribute";
-import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
+import { getRoutesTree, getRoutesMetrics } from "../selectors";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 import { getSparkLineOfNetChange } from "../sparklines";
 import { calculateErrorPercent } from "utils";
+import { metricsKeySelectorGenerator } from "utils/selectors";
 
 /**
  * A reselect selector that builds the data required to render the RoutesTable component
@@ -21,7 +22,9 @@ export const getRoutesTable = createSelector(
       routesTree[routePath].forEach(routeVerb => {
         const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
         const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
-        const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
+        const outThroughputKey = `route${routePath}/${
+          routeVerb
+        }/out_throughput`;
         const latency50Key = `route${routePath}/${routeVerb}/latency_ms.p50`;
         const latency99Key = `route${routePath}/${routeVerb}/latency_ms.p99`;
         const requestsKey = `route${routePath}/${routeVerb}/requests`;
@@ -68,12 +71,7 @@ export const getRoutesTable = createSelector(
  * A Reselect selector that filters the metrics and only returns the timeseries
  * that contain the string 'functions' somewhere in the key.
  */
-export const getFunctionsMetrics = createSelector(getMetrics, metrics => {
-  return _.pick(
-    metrics,
-    Object.keys(metrics).filter(key => key.indexOf("function") !== -1)
-  );
-});
+export const getFunctionsMetrics = metricsKeySelectorGenerator("function");
 
 /**
  * A Reselect selector that generates a special hierarchical tree structure of route data
@@ -87,8 +85,8 @@ export const getFunctionsList = createSelector(
 /**
  * Takes an object filtered to only have keys with "function" and returns an array of strings of function names
  * Extracts functionName from the structure function/functionName/some/other/values
- * @param {any} functionsMetrics 
- * @returns 
+ * @param {any} functionsMetrics
+ * @returns
  */
 function _getFunctionsList(functionsMetrics) {
   const keys = Object.keys(functionsMetrics);
@@ -132,9 +130,7 @@ function _getFunctionsTable(funcs, funcMetrics) {
     labelKeyPairs.forEach(([label, key]) => {
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);
     });
-    res[
-      "requestsPerSecond_dygraph"
-    ] = mapDygraphKeysToNetChange(
+    res["requestsPerSecond_dygraph"] = mapDygraphKeysToNetChange(
       getDygraphOfValue(
         funcMetrics,
         [`function/${func}/requests`],

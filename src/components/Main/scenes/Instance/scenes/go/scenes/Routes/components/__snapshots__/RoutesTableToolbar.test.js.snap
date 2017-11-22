@@ -10,7 +10,7 @@ exports[`Go Instance Routes View: <RoutesTableToolbar /> matches snapshot 1`] = 
     <form>
       <input
         aria-label="Search All Routes"
-        className="form-control"
+        className="sc-EHOje hQMWfh"
         onChange={[Function]}
         placeholder="Search Routes"
         type="search"

@@ -6,6 +6,7 @@ import GMSelect from "components/Main/components/GMSelect";
 import Toolbar from "components/Main/components/Toolbar";
 import ToolbarLeft from "components/Main/components/ToolbarLeft";
 import ToolbarRight from "components/Main/components/ToolbarRight";
+import SearchInput from "components/Main/components/GMSearchInput";
 
 GMServiceTableToolbar.propTypes = {
   filterString: PropTypes.string,
@@ -29,12 +30,10 @@ function GMServiceTableToolbar({
     <Toolbar>
       <ToolbarLeft>
         <form>
-          <input
-            className="form-control"
+          <SearchInput
             onChange={evt => setFilterString(evt.target.value)}
             placeholder="Search Instances"
             aria-label="Search All Instances"
-            type="search"
             value={filterString}
           />
         </form>

@@ -1,12 +1,8 @@
-// NPM Modules
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 
-// Internal Components
-import SearchInput from "./components/GMSearchInput";
-
-// External Dependencies
 import Button from "components/Button";
+import SearchInput from "components/Main/components/GMSearchInput";
 import SecondaryText from "components/SecondaryText";
 import GMSelect from "components/Main/components/GMSelect";
 import Toolbar from "components/Main/components/Toolbar";
@@ -44,7 +40,6 @@ export default class FabricTableToolbar extends Component {
         <ToolbarLeft>
           <form>
             <SearchInput
-              className="form-control"
               onChange={evt => onSearchInputChange(evt.target.value)}
               placeholder="Search Services"
               aria-label="Search All Services"
