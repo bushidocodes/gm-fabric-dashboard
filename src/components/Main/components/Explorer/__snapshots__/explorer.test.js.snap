@@ -255,6 +255,246 @@ exports[`Explorer View matches snapshot 1`] = `
           onKeyDown={[Function]}
           tabIndex="0"
         >
+          function/CatalogStream/errors.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/in_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.avg
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.max
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.min
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p50
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p90
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p95
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p99
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p9990
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.p9999
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/latency_ms.sum
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/out_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/CatalogStream/requests
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/errors.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/in_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.avg
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.max
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.min
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p50
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p90
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p95
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p99
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p9990
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.p9999
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/latency_ms.sum
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/out_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          function/OrderItem/requests
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
           http/closes
         </li>
         <li
@@ -976,6 +1216,126 @@ exports[`Explorer View matches snapshot 1`] = `
           tabIndex="0"
         >
           response_size.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/errors.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/in_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.avg
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.count
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.max
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.min
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p50
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p90
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p95
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p99
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p9990
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.p9999
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/latency_ms.sum
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/out_throughput
+        </li>
+        <li
+          className="inspector-item "
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex="0"
+        >
+          route/functionalroles/GET/requests
         </li>
         <li
           className="inspector-item "

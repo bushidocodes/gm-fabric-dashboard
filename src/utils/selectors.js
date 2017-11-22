@@ -123,15 +123,31 @@ export const generateHeaderTabs = createSelector(
 );
 
 /**
- * A Reselect selector that filters the metrics and only returns the timeseries
- * that contain the string 'route' somewhere in the key.
+ * A Reselect selector factory
+ * Returns a selector that returns all metrics with a key that includes
+ * the string keyQuery. By default, the string is assumed to strictly match
+ * the first characters of the key. However, the search can be forced to match
+ * loosely. Note that this is more fagile because monitored microservices might
+ * use the string you're querying in a way that you're not expecting!
+ * @export
+ * @param {string} keyQuery
+ * @param {boolean} [isPrefix=true]
+ * @returns function
  */
-export const getRoutesMetrics = createSelector([getMetrics], metrics => {
-  return _.pick(
-    metrics,
-    Object.keys(metrics).filter(key => key.indexOf("route") !== -1)
+export function metricsKeySelectorGenerator(keyQuery, isPrefix = true) {
+  const filterFunc = isPrefix
+    ? key => key.substr(0, keyQuery.length) === keyQuery
+    : key => key.indexOf(keyQuery) !== -1;
+  return createSelector([getMetrics], metrics =>
+    _.pick(metrics, Object.keys(metrics).filter(filterFunc))
   );
-});
+}
+
+/**
+ * A Reselect selector that filters the metrics and only returns the timeseries
+ * that starts with the string 'route'.
+ */
+export const getRoutesMetrics = metricsKeySelectorGenerator("route");
 
 /**
  * A Reselect selector that generates a special hierarchical tree structure of route data

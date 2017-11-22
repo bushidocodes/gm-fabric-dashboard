@@ -5,7 +5,7 @@ const router = jsonServer.router();
 const middlewares = jsonServer.defaults();
 const jvmMetrics = require("../jvm/metrics.json");
 const jvmThreads = require("../jvm/threads.json");
-const goMetrics = require("../go/metrics.json");
+const goMetrics = require("../go/metricsWithFunctions.json");
 const _ = require("lodash");
 const { PORT } = require("../constants");
 
@@ -74,7 +74,9 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
 server.use(router);
 server.listen(PORT, () => {
   console.log(
-    `JSON Server is running on port ${PORT} and mocking the Service Discovery Service`
+    `JSON Server is running on port ${
+      PORT
+    } and mocking the Service Discovery Service`
   );
 });
 

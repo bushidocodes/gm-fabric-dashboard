@@ -3,6 +3,7 @@ import { Actions } from "jumpstate";
 import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
+import _ from "lodash";
 
 import * as noFuncState from "json/mockReduxState";
 import * as state from "json/mockReduxStateMetrics";
@@ -14,6 +15,12 @@ import "services";
 const mockStore = configureStore();
 const mockState = state.default,
   noMetricsState = noFuncState.default;
+
+// Filter out metrics starting with the key function
+noMetricsState.instance.metrics = _.omitBy(
+  noFuncState.default.instance.metrics,
+  (value, key) => key.substr(0, 8) === "function"
+);
 let wrapper, FunctionsGridInstance;
 
 const FunctionsGridWithMockStore = (
