@@ -50,64 +50,22 @@ public class DiscoveryService extends RestService {
         threadsUrl = baseUrl + THREADS_ENDPOINT;
 
         servicesResponseStructure = new JsonElementStructure[]{
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_NAME_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_VERSION_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_OWNER_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_CAPABILITY_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_MINIMUM_KEY)
-                        .setType(int.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_MAXIMUM_KEY)
-                        .setType(int.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_DOCUMENTATION_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_AUTHORIZED_KEY)
-                        .setType(boolean.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_METERED_KEY)
-                        .setType(boolean.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_THREADED_KEY)
-                        .setType(boolean.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_RUNTIME_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_INSTANCES_KEY)
-                        .setType(JsonArray.class)
-                        .build()
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_NAME_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_VERSION_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_OWNER_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_CAPABILITY_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_MINIMUM_KEY).setType(int.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_MAXIMUM_KEY).setType(int.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_DOCUMENTATION_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_AUTHORIZED_KEY).setType(boolean.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_METERED_KEY).setType(boolean.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_THREADED_KEY).setType(boolean.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_RUNTIME_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_INSTANCES_KEY).setType(JsonArray.class).build()
         };
         servicesInstancesResponseStructure = new JsonElementStructure[]{
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_INSTANCES_NAME_KEY)
-                        .setType(String.class)
-                        .build(),
-                new JsonElementStructure.JsonElementFormatBuilder()
-                        .setName(SERVICES_RESPONSE_INSTANCES_START_TIME_KEY)
-                        .setType(double.class)
-                        .build()
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_INSTANCES_NAME_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(SERVICES_RESPONSE_INSTANCES_START_TIME_KEY).setType(double.class).build()
         };
     }
 
