@@ -332,9 +332,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.1...HEAD
 
 [1.0.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.0...v1.0.1
-[1.0.1 Coverage Report]: https://2276-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html 
-[1.0.1 Bundle Size Report]: https://2276-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
-[1.0.1 Build]: https://2276-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
+[1.0.1 Coverage Report]: https://2278-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html 
+[1.0.1 Bundle Size Report]: https://2278-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[1.0.1 Build]: https://2278-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 
 [1.0.0]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v0.9.1...v1.0.0
 [1.0.0 Coverage Report]: https://2176-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html
