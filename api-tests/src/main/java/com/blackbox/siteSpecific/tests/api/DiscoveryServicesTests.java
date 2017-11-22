@@ -8,6 +8,8 @@ import com.blackbox.siteSpecific.framework.services.DiscoveryService;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.awt.*;
+
 public class DiscoveryServicesTests extends ApiTest {
     private ServiceList services;
     private final String discoveryServiceName = "Discovery Service";
@@ -79,11 +81,12 @@ public class DiscoveryServicesTests extends ApiTest {
             System.out.println("WARNING: No authorized metered services were found.");
         }
 
-        System.out.println("Tests performed against the following data:");
+        System.out.println("Happy path tests performed against the following data:");
         System.out.println(String.format("    Total Services: %d", servicesCount));
-        System.out.println(String.format("    Authorized Services: %d", authorizedServicesCount));
-        System.out.println(String.format("    Authorized Metered Services: %d", authorizedMeteredServicesCount));
-        System.out.println(String.format("    Authorized Threaded Services: %d", authorizedThreadedServicesCount));
+        System.out.println(String.format("        Authorized : %d", authorizedServicesCount));
+        System.out.println(String.format("            Metered:  %d", authorizedMeteredServicesCount));
+        System.out.println(String.format("            Threaded: %d", authorizedThreadedServicesCount));
+        System.out.println(String.format("        Unauthorized : %d", (servicesCount - authorizedServicesCount)));
     }
 
 
@@ -200,10 +203,11 @@ public class DiscoveryServicesTests extends ApiTest {
             System.out.println("WARNING: All authorized services were threaded.");
         }
 
-        System.out.println("Tests performed against the following data:");
+        System.out.println("Negative tests performed against the following data:");
         System.out.println(String.format("    Total Services: %d", servicesCount));
-        System.out.println(String.format("    Unauthorized Services: %d", unauthorizedServicesCount));
-        System.out.println(String.format("    Unmetered Authorized Services: %d", unmeteredServicesCount));
-        System.out.println(String.format("    Unthreaded Authorized Services: %d", unthreadedServicesCount));
+        System.out.println(String.format("        Unauthorized: %d", unauthorizedServicesCount));
+        System.out.println(String.format("        Authorized:   %d", (servicesCount - unauthorizedServicesCount)));
+        System.out.println(String.format("            Unmetered:  %d", unmeteredServicesCount));
+        System.out.println(String.format("            Unthreaded: %d", unthreadedServicesCount));
     }
 }
