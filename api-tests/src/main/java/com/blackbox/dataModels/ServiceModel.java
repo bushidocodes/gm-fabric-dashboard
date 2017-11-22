@@ -16,6 +16,9 @@ public class ServiceModel {
     private String runtime;
     private ArrayList<ServiceInstanceModel> instances;
 
+    private static final String GO_RUNTIME_VALUE = "GO";
+    private static final String JVM_RUNTIME_VALUE = "JVM";
+
 
     // <editor-fold desc="Constructors">
 
@@ -36,6 +39,21 @@ public class ServiceModel {
         setThreaded(builder.nestedThreaded);
         setRuntime(builder.nestedRuntime);
         setInstances(builder.nestedInstances);
+    }
+
+    public ServiceModel(ServiceModel service) {
+        setName(service.getName());
+        setVersion(service.getVersion());
+        setOwner(service.getOwner());
+        setCapability(service.getCapability());
+        setMinimum(service.getMinimum());
+        setMaximum(service.getMaximum());
+        setDocumentation(service.getDocumentation());
+        setAuthorized(service.isAuthorized());
+        setMetered(service.isMetered());
+        setThreaded(service.isThreaded());
+        setRuntime(service.getRuntime());
+        setInstances(service.getInstances());
     }
 
     // </editor-fold>
@@ -161,6 +179,14 @@ public class ServiceModel {
 
     public ServiceInstanceModel getInstance(int index) {
         return this.instances.get(index);
+    }
+
+    public boolean isGoService() {
+        return runtime.equals(GO_RUNTIME_VALUE);
+    }
+
+    public boolean isJvmService() {
+        return runtime.equals(JVM_RUNTIME_VALUE);
     }
 
     // </editor-fold>
