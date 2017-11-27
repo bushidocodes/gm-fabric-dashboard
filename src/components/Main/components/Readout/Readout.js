@@ -36,6 +36,7 @@ export default function Readout({
   );
 }
 
+// TODO: Replace Style objects with custom shape proptype
 Readout.propTypes = {
   children: PropTypes.element,
   primary: PropTypes.bool,

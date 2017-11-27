@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "react-router-redux";
 
 import AppContainer from "./components/AppContainer";
-import Header from "./components/AppHeader";
+import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/Footer";
 import Notification from "./components/Notification";
 import Main from "./components/Main";
@@ -22,7 +22,7 @@ ReactDOM.render(
     <Router history={history}>
       <AppContainer>
         <Notification />
-        <Header />
+        <AppHeader />
         <Main />
         <AppFooter />
       </AppContainer>

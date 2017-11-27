@@ -8,6 +8,8 @@ import { getAppHeaderContent, getStatusCount } from "utils/selectors";
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 
+// TODO: Replace statusCount with PropType of shape
+// TODO: Tighten down what is in the services array
 FabricAppHeaderContent.propTypes = {
   services: PropTypes.array,
   statusCount: PropTypes.object
