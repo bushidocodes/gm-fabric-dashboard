@@ -31,7 +31,6 @@ function FabricAppHeaderContent({ statusCount, services }) {
         ]}
       />
       {microserviceStatuses.map(status => {
-        status = status.toLowerCase();
         return (
           <Tab
             title={status}

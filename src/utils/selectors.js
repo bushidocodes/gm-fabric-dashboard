@@ -5,6 +5,7 @@ import { createSelector } from "reselect";
 import { parseJSONString } from "./latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
 import { encodeParameter } from "utils";
+import { microserviceStatuses } from "utils/constants";
 
 // TODO: Revisit architecture here
 // This import makes me feel like generateSidebarCards should not be a selector
@@ -207,35 +208,24 @@ export const getAppHeaderContent = createSelector(getServices, services => {
 
 /**
  * getStatusCount is a utility function that takes an array of service objects and
- * returns an object with a count for each status
+ * returns an object with a count for each status.
+ * if status is not one of predefined microservice statuses (Down, Warning or Stable),
+ * status is counted as Down
  * @param {Object[]}
  * @returns {Object}
  */
 export const getStatusCount = createSelector(getServices, services => {
-  let stableServicesCount = 0,
-    warningServicesCount = 0,
-    downServicesCount = 0,
-    status;
-  _.values(services).forEach(service => {
-    status = computeStatus(
-      service.instances.length,
-      service.minimum,
-      service.maximum
-    );
-    if (status === "Stable") {
-      ++stableServicesCount;
-    } else if (status === "Warning") {
-      ++warningServicesCount;
-    } else {
-      ++downServicesCount;
-    }
-  });
-  return {
-    down: downServicesCount,
-    warning: warningServicesCount,
-    stable: stableServicesCount,
-    total: _.values(services).length
-  };
+  let statusCount = _.countBy(
+    _.values(services).map(service => {
+      let status = computeStatus(
+        service.instances.length,
+        service.minimum,
+        service.maximum
+      );
+      return _.includes(microserviceStatuses, status) ? status : "Down";
+    })
+  );
+  return _.assign(statusCount, { total: _.values(services).length });
 });
 
 /**
