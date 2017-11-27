@@ -11,6 +11,7 @@ import { getLatestAttribute } from "utils/latestAttribute";
 import { getSparkLineOfValue } from "utils/sparklines";
 import ArrayValue from "components/ArrayValue";
 
+// TODO: Make metrics PropType of shape
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.array,

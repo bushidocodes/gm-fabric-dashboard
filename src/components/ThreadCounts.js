@@ -8,6 +8,8 @@ import { getThreadCounts } from "utils/jvm/selectors";
  * @class ThreadCounts
  * @extends {Component}
  */
+
+// TODO: Make threadCounts a Shape PropType
 class ThreadCounts extends React.Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
