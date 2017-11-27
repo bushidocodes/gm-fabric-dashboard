@@ -1,8 +1,8 @@
 import _ from "lodash";
-
+import { floatRound } from "./dygraphs";
 /**
  * Returns spark line of a metric's value
- * 
+ *
  * @param {Object} metrics - An arbitrary nested object passed from Redux via component props
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
@@ -16,7 +16,7 @@ export function getSparkLineOfValue(metrics, key) {
 
 /**
  * Returns sparkline of a metric's net change since that last time the metric was polled
- * 
+ *
  * @param {Object} metrics - An arbitrary nested object passed from Redux via component props
  * @param {String} key - A string representation of the path to the desired key
  * @returns {Array}
@@ -32,11 +32,11 @@ export function getSparkLineOfNetChange(metrics, key) {
       const last = arr[idx - 1];
       const currentTime = timestamps[idx];
       const lastTime = timestamps[idx - 1];
-      return idx === 0
-        ? 0
-        : Math.round(
-            (Number(value) - Number(last)) / ((currentTime - lastTime) / 1000)
-          );
+      let netChange = floatRound(
+        (Number(value) - Number(last)) / ((currentTime - lastTime) / 1000),
+        3
+      );
+      return idx === 0 || netChange < 0 ? 0 : netChange;
     })
     .slice(1);
   return results;
