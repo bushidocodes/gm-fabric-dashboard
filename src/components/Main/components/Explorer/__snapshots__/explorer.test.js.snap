@@ -2,10 +2,10 @@
 
 exports[`Explorer View matches snapshot 1`] = `
 <div
-  className="sc-ifAKCX rBUpt"
+  className="sc-iwsKbI exSmPK"
 >
   <div
-    className="sc-EHOje gtCHXJ"
+    className="sc-gZMcBi hsSIGM"
   >
     <div
       className="inspector"
@@ -1549,7 +1549,7 @@ exports[`Explorer View matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-bZQynM cMRZbV"
+    className="sc-gqjmRU ccGZcu"
   >
     <p>
       Select a metric to display

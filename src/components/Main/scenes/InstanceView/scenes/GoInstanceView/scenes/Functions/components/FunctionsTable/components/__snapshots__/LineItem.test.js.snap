@@ -2,27 +2,27 @@
 
 exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`] = `
 <li
-  className="sc-ifAKCX cKAqQu"
+  className="sc-iwsKbI hSkJsz"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="link"
   tabIndex={0}
 >
   <div
-    className="sc-bZQynM cnRgVz"
+    className="sc-gqjmRU hKUSHB"
   >
     CatalogStream
     <div
-      className="sc-dnqmqq cYSnuS"
+      className="sc-fjdhpX enphkh"
     >
       <div
-        className="sc-iwsKbI jYlLPe"
+        className="sc-jzJRlG gcSeRc"
         width={20}
       />
     </div>
   </div>
   <div
-    className="sc-gzVnrw congVV"
+    className="sc-VigVT fpCZTm"
   >
     <svg
       preserveAspectRatio="xMaxYMin"
@@ -134,7 +134,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
     </svg>
   </div>
   <div
-    className="sc-EHOje etCFUo"
+    className="sc-gZMcBi bYmXBK"
     style={
       Object {
         "textAlign": "right",
@@ -144,7 +144,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
     14333
   </div>
   <div
-    className="sc-EHOje fALxvF"
+    className="sc-gZMcBi dlcBjU"
     style={
       Object {
         "textAlign": "right",
@@ -154,7 +154,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
     10.000%
   </div>
   <div
-    className="sc-EHOje etCFUo"
+    className="sc-gZMcBi bYmXBK"
     style={
       Object {
         "textAlign": "right",
@@ -164,7 +164,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
     445
   </div>
   <div
-    className="sc-EHOje etCFUo"
+    className="sc-gZMcBi bYmXBK"
     style={
       Object {
         "textAlign": "right",

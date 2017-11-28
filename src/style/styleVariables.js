@@ -86,6 +86,11 @@ export const FONT_SIZE_BASE = "14px";
 export const FONT_SIZE_SM = "11px";
 export const FONT_SIZE_XS = "9px";
 
+// Line chart
+
+export const CHART_BACKGROUND_COLOR = "transparent";
+export const CHART_HEIGHT_BASE = "250px";
+
 export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
 
 export const TABLE_HOVER = COLOR_CONTENT_BACKGROUND.darken(0.02).string();

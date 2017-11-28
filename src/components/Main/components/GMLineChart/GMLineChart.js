@@ -2,12 +2,14 @@ import { PropTypes } from "prop-types";
 import React from "react";
 
 import DygraphContainer from "./components/DygraphWrapper";
-import "./GMLineChart.scss";
-
+import LineChartDisplay from "./components/LineChartDisplay";
+import LineChartTitle from "./components/LineChartTitle";
+import LineChartContent from "./components/LineChartContent";
+import LineChartDetails from "./components/LineChartDetails";
+import LineChartEmpty from "./components/LineChartEmpty";
+import LineDetail from "./components/LineDetail";
 import Span from "components/Main/components/Span";
-
 import Icon from "components/Icon";
-
 import Glyph from "components/Glyphs/index";
 
 /**
@@ -42,13 +44,11 @@ export default function GMLineChart({
   title
 }) {
   return (
-    <div
-      className={"chart line-chart" + (height ? ` chart-height-${height}` : "")}
-    >
-      {title && <h3 className="chart-title">{title}</h3>}
-      <div className="chart-content">
+    <LineChartDisplay height={height}>
+      {title && <LineChartTitle>{title}</LineChartTitle>}
+      <LineChartContent>
         {timeSeries[0].length === 0 ? (
-          <div className="chart-empty">
+          <LineChartEmpty>
             <h1>
               <Span>
                 <Icon borderStyle="BorderTriangleSmall">
@@ -68,19 +68,17 @@ export default function GMLineChart({
                   </ul>
                 </div>
               )}
-          </div>
+          </LineChartEmpty>
         ) : (
           <DygraphContainer timeSeries={timeSeries} />
         )}
-      </div>
-      <div className="chart-details">
+      </LineChartContent>
+      <LineChartDetails>
         {detailLines &&
           detailLines.map(element => (
-            <div className="chart-detail" key={element}>
-              {element}
-            </div>
+            <LineDetail key={element}>{element}</LineDetail>
           ))}
-      </div>
-    </div>
+      </LineChartDetails>
+    </LineChartDisplay>
   );
 }
