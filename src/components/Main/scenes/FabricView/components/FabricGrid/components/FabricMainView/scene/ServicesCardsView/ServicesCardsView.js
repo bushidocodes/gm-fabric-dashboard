@@ -43,8 +43,7 @@ function CardsView({ groupByAttribute, sortByAttribute, services }) {
       headers = headerTitles;
     }
 
-    let verifiedHeaders = [];
-    verifiedHeaders = headers.filter(header => {
+    let verifiedHeaders = headers.filter(header => {
       // checks to make sure there are microservices within the array
       return (
         !_.isEmpty(dataGroupedByHeader[header]) &&
