@@ -4,8 +4,6 @@
 
 // getStatusCount Results Shape
 
-// getThreadCounts Results Shape
-
 // Button Style Shape
 
 // React Router History Shape

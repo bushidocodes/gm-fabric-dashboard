@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JVM > ThreadsSection component Matched the snapshot 1`] = `
+<ThreadsSection
+  dispatch={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  threadCounts={
+    Object {
+      "active": 1,
+      "all": 6,
+      "idle": 2,
+      "stopped": 3,
+    }
+  }
+  threads={
+    Array [
+      Object {
+        "daemon": true,
+        "id": "2",
+        "name": "Test Runnable",
+        "priority": 8,
+        "stack": Array [
+          "java.lang.Object.wait(Native Method)",
+          "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
+          "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
+          "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)",
+        ],
+        "state": "RUNNABLE",
+      },
+    ]
+  }
+  threadsFilter="active"
+/>
+`;
