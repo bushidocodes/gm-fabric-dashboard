@@ -10,7 +10,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 tasks.withType(Test) {
-	systemProperty 'blackbox.environment', System.getProperty('blackbox.environment', 'local')
+	systemProperty 'blackbox.environment', System.getProperty('blackbox.environment', 'edge')
 	systemProperty 'blackbox.browser', System.getProperty('blackbox.browser', 'chrome')
 }
 
@@ -40,19 +40,7 @@ test {
 	outputs.upToDateWhen { false }
 }
 
-task smokeTests(type: Test) {
-    include '**/smoke/*'
-
-    testLogging {
-        events 'started', 'failed', 'passed', 'skipped'
-        showStandardStreams = true
-    }
-    outputs.upToDateWhen { false }
-}
-
 task apiTests(type: Test) {
-	println 'Running the API tests...'
-
 	include '**/api/*'
 
 	testLogging {
