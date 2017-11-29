@@ -6,6 +6,8 @@ import InputRange from "react-input-range";
 import { COLOR_SUCCESS } from "style/styleVariables";
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
+import PollingBtnContainer from "./components/PollingBtnContainer";
+import PollingSliderContainer from "./components/PollingSliderContainer";
 
 /**
  * Control to start/stop polling and change the polling rate
@@ -35,10 +37,7 @@ class PollingSettings extends Component {
     const buttonLabel = isPolling ? "Pause Updates" : "Resume Updates";
     return (
       <LayoutSection title={title} icon={glyph} flex>
-        <div
-          className="control-group control-group-polling-start-stop"
-          id={`ctrl-btn-${title}`}
-        >
+        <PollingBtnContainer>
           <Button
             clickAction={() => {
               if (isPolling) {
@@ -61,12 +60,9 @@ class PollingSettings extends Component {
               position: "relative"
             }}
           />
-        </div>
+        </PollingBtnContainer>
 
-        <div
-          className="control-group control-group-polling-interval"
-          id={`ctrl-slider-${title}`}
-        >
+        <PollingSliderContainer id={`ctrl-slider-${title}`}>
           <InputRange
             aria-labelledby="polling interval-name"
             maxValue={120}
@@ -80,7 +76,7 @@ class PollingSettings extends Component {
           <span className="label" id={`interval-name-${title}`}>
             {"Updates Per Minute"}
           </span>
-        </div>
+        </PollingSliderContainer>
       </LayoutSection>
     );
   }
