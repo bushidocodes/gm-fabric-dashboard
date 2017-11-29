@@ -81,10 +81,17 @@ export const FONT_STACK_CODE = FONT_GROUP_CODE;
 export const LINE_HEIGHT_BASE = 1.4;
 export const FONT_WEIGHT_BASE = 500;
 export const FONT_SIZE_HERO = "32px";
+export const FONT_SIZE_H2 = "24px";
+export const FONT_SIZE_H3 = "22px";
 export const FONT_SIZE_LG = "18px";
 export const FONT_SIZE_BASE = "14px";
 export const FONT_SIZE_SM = "11px";
 export const FONT_SIZE_XS = "9px";
+
+// Line chart
+
+export const CHART_BACKGROUND_COLOR = "transparent";
+export const CHART_HEIGHT_BASE = "250px";
 
 export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
 
@@ -159,6 +166,26 @@ injectGlobal`
     flex-direction: column;
     margin: 0;
     padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: ${FONT_STACK_BASE};
+    font-weight: ${FONT_WEIGHT_BASE};
+    color: inherit;
+  }
+
+  h1 {
+    font-size: ${FONT_SIZE_HERO};
+  }
+
+  h2 {
+    font-size: ${FONT_SIZE_H2};
+  }
+
+  h3 {
+    font-size: ${FONT_SIZE_H3};
   }
 
   a {

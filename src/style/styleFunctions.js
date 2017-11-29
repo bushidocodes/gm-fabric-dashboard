@@ -11,7 +11,8 @@ import {
   FONT_SIZE_BASE,
   FONT_STACK_CODE,
   LINE_HEIGHT_BASE,
-  PADDING_BASE
+  PADDING_BASE,
+  CHART_HEIGHT_BASE
 } from "./styleVariables";
 
 /**
@@ -142,3 +143,35 @@ export function errorColor(errorPercent = 1) {
   else if (percent > 0.1 && percent < 1) return COLOR_STOP_2.string();
   else return COLOR_STOP_3.string();
 }
+
+/**
+ * function chartHeight
+ * takes height as string and returns height attribute.
+ * if height is not one of the prespecified strings, returns height 100%
+ * @param {string} height ("xs", "sm", "normal", "lg", "xl", "max")
+ * @returns {string} - height attribute
+ */
+export const chartHeight = height => {
+  if (height === "normal") return `height: auto`;
+
+  let factor;
+  switch (height) {
+    case "normal":
+      return `height: auto`;
+    case "xs":
+      factor = 0.5;
+      break;
+    case "sm":
+      factor = 0.75;
+      break;
+    case "lg":
+      factor = 1.25;
+      break;
+    case "xl":
+      factor = 1.5;
+      break;
+    default:
+      return `height: 100%`;
+  }
+  return `height: ${parseInt(CHART_HEIGHT_BASE, 10) * factor}px;`;
+};

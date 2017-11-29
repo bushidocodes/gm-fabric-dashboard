@@ -26,7 +26,7 @@ export default function GMServiceTable({
     <Table>
       <TableHeader>
         <TableColHeader paddingLeft style={{ flex: "1 1 30%" }}>
-          ID
+          Name
         </TableColHeader>
         <TableColHeader paddingRight style={{ textAlign: "right" }}>
           Uptime

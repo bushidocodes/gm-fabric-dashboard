@@ -6,6 +6,13 @@ import {
   SparklinesReferenceLine
 } from "react-sparklines";
 
+import DataDisplay from "./DataDisplay";
+import DataTitle from "./DataTitle";
+import DataPair from "./DataPair";
+import DataKey from "./DataKey";
+import DataValue from "./DataValue";
+import DataSparkline from "./DataSparkline";
+
 GMBasicMetrics.propTypes = {
   detailLines: PropTypes.array.isRequired,
   title: PropTypes.string.isRequired
@@ -13,23 +20,20 @@ GMBasicMetrics.propTypes = {
 
 /**
  * Basic component for rendering a group of related metrics. Includes sparklines
- * @param {Object} props - refer to propTypes 
+ * @param {Object} props - refer to propTypes
  */
 export default function GMBasicMetrics({ detailLines, title }) {
   return (
-    <div className="kv kv-hero kv-highlight">
-      <h3 className="kv-title">{title}</h3>
+    <DataDisplay>
+      <DataTitle>{title}</DataTitle>
       {detailLines.map(([heading, value, priority, sparkline = []]) => {
         return (
-          <div
-            className={`kv-pair kv-pair-${priority}`}
-            key={`${heading}-${value}`}
-          >
-            <div className={`kv-key kv-key-${priority}`}>{heading}</div>
-            <div className={`kv-value kv-value-${priority}`}>
+          <DataPair priority={priority} key={`${heading}-${value}`}>
+            <DataKey>{heading}</DataKey>
+            <DataValue>
               {value.toLocaleString()}
               {sparkline.length > 0 && (
-                <div className={`kv-sparkline kv-sparkline-${priority}`}>
+                <DataSparkline>
                   <Sparklines
                     data={sparkline}
                     height={32}
@@ -50,12 +54,12 @@ export default function GMBasicMetrics({ detailLines, title }) {
                       type="mean"
                     />
                   </Sparklines>
-                </div>
+                </DataSparkline>
               )}
-            </div>
-          </div>
+            </DataValue>
+          </DataPair>
         );
       })}
-    </div>
+    </DataDisplay>
   );
 }
