@@ -3,7 +3,7 @@
 exports[`SettingsGrid component Matches snapshot 1`] = `
 <div>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"
@@ -192,7 +192,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"
@@ -381,7 +381,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"
