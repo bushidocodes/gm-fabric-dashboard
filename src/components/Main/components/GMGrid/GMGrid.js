@@ -26,7 +26,8 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
  * React Router URL parameter and renders the appropriate UI components.
  */
 
-class GMGrid extends Component {
+// named export for unconnected component {GMGrid} for unit tests
+export class GMGrid extends Component {
   static propTypes = {
     dashboard: dashboardShape,
     match: routerMatchShape,
@@ -188,5 +189,5 @@ function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
     dashboard: dashboards[ownProps.match.params.dashboardName]
   };
 }
-
+// default export for the connected component
 export default connect(mapStateToProps)(GMGrid);

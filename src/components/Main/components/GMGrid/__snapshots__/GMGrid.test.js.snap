@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
+<ErrorBoundary>
+  <_class
+    breakpoints={
+      Object {
+        "lg": 1200,
+        "md": 996,
+        "sm": 768,
+      }
+    }
+    cols={
+      Object {
+        "lg": 12,
+        "md": 8,
+        "sm": 4,
+      }
+    }
+    isDraggable={false}
+    isResizable={false}
+    layouts={
+      Object {
+        "lg": Array [
+          Object {
+            "h": 9,
+            "i": "Heap",
+            "minH": 5,
+            "minW": 4,
+            "w": 6,
+            "x": 0,
+            "y": 0,
+          },
+          Object {
+            "h": 9,
+            "i": "Goroutines",
+            "minH": 5,
+            "minW": 4,
+            "w": 6,
+            "x": 6,
+            "y": 0,
+          },
+        ],
+        "md": Array [
+          Object {
+            "h": 9,
+            "i": "Heap",
+            "minH": 5,
+            "minW": 4,
+            "w": 8,
+            "x": 0,
+            "y": 0,
+          },
+          Object {
+            "h": 9,
+            "i": "Goroutines",
+            "minH": 5,
+            "minW": 4,
+            "w": 8,
+            "x": 0,
+            "y": 9,
+          },
+        ],
+        "sm": Array [
+          Object {
+            "h": 9,
+            "i": "Heap",
+            "minH": 5,
+            "minW": 4,
+            "w": 6,
+            "x": 0,
+            "y": 0,
+          },
+          Object {
+            "h": 9,
+            "i": "Goroutines",
+            "minH": 5,
+            "minW": 4,
+            "w": 6,
+            "x": 6,
+            "y": 0,
+          },
+        ],
+      }
+    }
+    measureBeforeMount={false}
+    onLayoutChange={[Function]}
+    rowHeight={60}
+  >
+    <div
+      key="Requests"
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
+      <GMTable
+        headers={
+          Array [
+            "Requests",
+            "Success",
+          ]
+        }
+        rows={
+          Array [
+            Array [
+              "http",
+              0,
+              0,
+            ],
+            Array [
+              "https",
+              0,
+              0,
+            ],
+          ]
+        }
+        title="Requests"
+      />
+    </div>
+    <div
+      key="Response Status Codes"
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
+      <GMBasicMetrics
+        detailLines={
+          Array [
+            Array [
+              "2XX",
+              0,
+              "primary",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "200",
+              0,
+              "primary",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "4XX",
+              0,
+              "normal",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "400",
+              0,
+              "normal",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "499",
+              0,
+              "normal",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "5XX",
+              0,
+              "normal",
+              Array [
+                0,
+                0,
+              ],
+            ],
+            Array [
+              "500",
+              0,
+              "normal",
+              Array [
+                0,
+                0,
+              ],
+            ],
+          ]
+        }
+        title="Response Status Codes"
+      />
+    </div>
+    <div
+      key="Heap"
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
+      <GMLineChart
+        detailLines={
+          Array [
+            "Garbage Collection Runs: 0",
+            "Total GC Pause: 0 ms",
+          ]
+        }
+        expectedAttributes={
+          Array [
+            "go_metrics/runtime/alloc_bytes",
+          ]
+        }
+        height="max"
+        timeSeries={
+          Array [
+            Array [],
+            Object {
+              "labels": Array [],
+            },
+          ]
+        }
+        title="Heap"
+      />
+    </div>
+    <div
+      key="Goroutines"
+      style={
+        Object {
+          "overflow": "hidden",
+        }
+      }
+    >
+      <GMLineChart
+        expectedAttributes={
+          Array [
+            "go_metrics/runtime/num_goroutines",
+          ]
+        }
+        height="max"
+        timeSeries={
+          Array [
+            Array [],
+            Object {
+              "labels": Array [],
+            },
+          ]
+        }
+        title="Goroutines"
+      />
+    </div>
+  </_class>
+</ErrorBoundary>
+`;

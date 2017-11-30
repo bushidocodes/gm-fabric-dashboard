@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
+<styled.div
+  height="xs"
+>
+  <styled.h3>
+    Classes
+  </styled.h3>
+  <styled.div>
+    <DygraphWrapper
+      timeSeries={
+        Array [
+          Array [
+            Array [
+              "Wed Nov 29 2017 18:46:51 GMT-0500 (EST)",
+              10181,
+            ],
+            Array [
+              "Wed Nov 29 2017 18:46:51 GMT-0500 (EST)",
+              10181,
+            ],
+          ],
+          Object {
+            "labels": Array [
+              "time",
+              "# of currently loaded JVM Classes",
+            ],
+          },
+        ]
+      }
+    />
+  </styled.div>
+  <styled.div>
+    <styled.div
+      key="Total Loaded: 10,200"
+    >
+      Total Loaded: 10,200
+    </styled.div>
+    <styled.div
+      key="Total Unloaded: 19"
+    >
+      Total Unloaded: 19
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
