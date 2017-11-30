@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVM > ThreadsSection component Matched the snapshot 1`] = `
-<ThreadsSection
-  dispatch={[Function]}
+<Connect(ThreadsSection)
   store={
     Object {
       "clearActions": [Function],
@@ -13,52 +12,561 @@ exports[`JVM > ThreadsSection component Matched the snapshot 1`] = `
       "subscribe": [Function],
     }
   }
-  storeSubscription={
-    Subscription {
-      "listeners": Object {
-        "clear": [Function],
-        "get": [Function],
-        "notify": [Function],
-        "subscribe": [Function],
-      },
-      "onStateChange": [Function],
-      "parentSub": undefined,
-      "store": Object {
+>
+  <ThreadsSection
+    dispatch={[Function]}
+    store={
+      Object {
         "clearActions": [Function],
         "dispatch": [Function],
         "getActions": [Function],
         "getState": [Function],
         "replaceReducer": [Function],
         "subscribe": [Function],
-      },
-      "unsubscribe": [Function],
+      }
     }
-  }
-  threadCounts={
-    Object {
-      "active": 1,
-      "all": 6,
-      "idle": 2,
-      "stopped": 3,
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
     }
-  }
-  threads={
-    Array [
+    threadCounts={
       Object {
-        "daemon": true,
-        "id": "2",
-        "name": "Test Runnable",
-        "priority": 8,
-        "stack": Array [
-          "java.lang.Object.wait(Native Method)",
-          "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-          "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-          "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)",
-        ],
-        "state": "RUNNABLE",
-      },
-    ]
-  }
-  threadsFilter="active"
-/>
+        "active": 1,
+        "all": 6,
+        "idle": 2,
+        "stopped": 3,
+      }
+    }
+    threads={
+      Array [
+        Object {
+          "daemon": true,
+          "id": "2",
+          "name": "Test Runnable",
+          "priority": 8,
+          "stack": Array [
+            "java.lang.Object.wait(Native Method)",
+            "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
+            "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
+            "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)",
+          ],
+          "state": "RUNNABLE",
+        },
+      ]
+    }
+    threadsFilter="active"
+  >
+    <div>
+      <ThreadsTableToolbar
+        threadCounts={
+          Object {
+            "active": 1,
+            "all": 6,
+            "idle": 2,
+            "stopped": 3,
+          }
+        }
+        threadsFilter="active"
+      >
+        <styled.div>
+          <div
+            className="sc-kGXeez bSgYKS"
+          >
+            <styled.div>
+              <div
+                className="sc-kpOJdX YlRrM"
+              >
+                <styled.div>
+                  <div
+                    className="sc-kgoBCf iOKiQh"
+                  >
+                    <Button
+                      active={false}
+                      clickAction={[Function]}
+                      disabled={false}
+                      label="All Threads"
+                      suffix={6}
+                      tabIndex={0}
+                    >
+                      <button
+                        className="btn"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="All Threads"
+                      >
+                        <span
+                          className="label"
+                        >
+                          All Threads
+                          <span
+                            className="label-suffix"
+                          >
+                            6
+                          </span>
+                        </span>
+                      </button>
+                    </Button>
+                    <Button
+                      active={true}
+                      clickAction={[Function]}
+                      disabled={false}
+                      label="Active"
+                      suffix={1}
+                      tabIndex={0}
+                    >
+                      <button
+                        className="btn active"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="Active"
+                      >
+                        <span
+                          className="label"
+                        >
+                          Active
+                          <span
+                            className="label-suffix"
+                          >
+                            1
+                          </span>
+                        </span>
+                      </button>
+                    </Button>
+                    <Button
+                      active={false}
+                      clickAction={[Function]}
+                      disabled={false}
+                      label="Idle"
+                      suffix={2}
+                      tabIndex={0}
+                    >
+                      <button
+                        className="btn"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="Idle"
+                      >
+                        <span
+                          className="label"
+                        >
+                          Idle
+                          <span
+                            className="label-suffix"
+                          >
+                            2
+                          </span>
+                        </span>
+                      </button>
+                    </Button>
+                    <Button
+                      active={false}
+                      clickAction={[Function]}
+                      disabled={false}
+                      label="Stopped"
+                      suffix={3}
+                      tabIndex={0}
+                    >
+                      <button
+                        className="btn"
+                        disabled={false}
+                        onClick={[Function]}
+                        tabIndex={0}
+                        title="Stopped"
+                      >
+                        <span
+                          className="label"
+                        >
+                          Stopped
+                          <span
+                            className="label-suffix"
+                          >
+                            3
+                          </span>
+                        </span>
+                      </button>
+                    </Button>
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+          </div>
+        </styled.div>
+      </ThreadsTableToolbar>
+      <ThreadsTable
+        filteredThreadData={
+          Array [
+            Object {
+              "daemon": true,
+              "id": "2",
+              "name": "Test Runnable",
+              "priority": 8,
+              "stack": Array [
+                "java.lang.Object.wait(Native Method)",
+                "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
+                "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
+                "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)",
+              ],
+              "state": "RUNNABLE",
+            },
+          ]
+        }
+      >
+        <styled.div>
+          <div
+            className="sc-htoDjs jAhemH"
+          >
+            <styled.div>
+              <div
+                className="sc-dnqmqq gIvpQT"
+              >
+                <styled.div
+                  paddingLeft={true}
+                >
+                  <div
+                    className="sc-gqjmRU fJIGBQ"
+                  >
+                    ID
+                  </div>
+                </styled.div>
+                <styled.div
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-gqjmRU gQSUoL"
+                    style={
+                      Object {
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    State
+                  </div>
+                </styled.div>
+                <styled.div>
+                  <div
+                    className="sc-gqjmRU gQSUoL"
+                  >
+                    Trace
+                  </div>
+                </styled.div>
+                <styled.div
+                  style={
+                    Object {
+                      "flex": "1 1 auto",
+                    }
+                  }
+                >
+                  <div
+                    className="sc-gZMcBi hVuIxC"
+                    style={
+                      Object {
+                        "flex": "1 1 auto",
+                      }
+                    }
+                  >
+                    Name
+                  </div>
+                </styled.div>
+                <styled.div
+                  header={true}
+                >
+                  <div
+                    className="sc-bxivhb kvyvhu"
+                  >
+                    Daemon
+                  </div>
+                </styled.div>
+                <styled.div
+                  header={true}
+                >
+                  <div
+                    className="sc-bxivhb kvyvhu"
+                  >
+                    Priority
+                  </div>
+                </styled.div>
+              </div>
+            </styled.div>
+            <styled.ol>
+              <ol
+                className="sc-iwsKbI hzfbcM"
+              >
+                <ThreadsTableLineItem
+                  arrIndex={0}
+                  daemon={true}
+                  id={2}
+                  key="2"
+                  name="Test Runnable"
+                  priority={8}
+                  stack={
+                    Array [
+                      "java.lang.Object.wait(Native Method)",
+                      "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
+                      "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
+                      "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)",
+                    ]
+                  }
+                  state="RUNNABLE"
+                >
+                  <styled.li
+                    key="2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="link"
+                    selectable={false}
+                    style={
+                      Object {
+                        "cursor": "pointer",
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <li
+                      className="sc-EHOje cCjpET"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="link"
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                      tabIndex={0}
+                    >
+                      <styled.div
+                        paddingLeft={true}
+                      >
+                        <div
+                          className="sc-htpNat iVAdOU"
+                        >
+                          2
+                        </div>
+                      </styled.div>
+                      <styled.div
+                        style={
+                          Object {
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        <div
+                          className="sc-htpNat eydWWN"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <StatusIcon
+                            status="stable"
+                          >
+                            <Icon
+                              backgroundColor="rgb(10, 171, 42)"
+                              backgroundOpacity=".3"
+                              backgroundStyle="BackgroundCircleSmall"
+                              glyphColor="rgb(10, 171, 42)"
+                            >
+                              <styled.svg
+                                aria-labelledby="ariaLabelledby"
+                                glyphColor="rgb(10, 171, 42)"
+                                iconRatio="1"
+                              >
+                                <svg
+                                  aria-labelledby="ariaLabelledby"
+                                  className="sc-gzVnrw XkNQd"
+                                  version="1.1"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                                >
+                                  <IconBackground
+                                    backgroundColor="rgb(10, 171, 42)"
+                                    backgroundOpacity=".3"
+                                    name="BackgroundCircleSmall"
+                                    ratio="1"
+                                  >
+                                    <BackgroundCircleSmall
+                                      backgroundColor="rgb(10, 171, 42)"
+                                      backgroundOpacity=".3"
+                                      name="BackgroundCircleSmall"
+                                    >
+                                      <g
+                                        className="iconBackground"
+                                        fill="rgb(10, 171, 42)"
+                                        fillOpacity=".3"
+                                        fillRule="evenodd"
+                                        id="Square"
+                                      >
+                                        <path
+                                          d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
+                                          id="BackgroundCircleSmall"
+                                        />
+                                      </g>
+                                    </BackgroundCircleSmall>
+                                  </IconBackground>
+                                  <styled.g
+                                    ratio={1}
+                                    title=""
+                                  >
+                                    <g
+                                      className="sc-bZQynM iePCjc"
+                                      fill="currentColor"
+                                      title=""
+                                    >
+                                      <title />
+                                      <RunningSmall>
+                                        <path
+                                          d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
+                                          id="GlyphRunningSmall"
+                                        />
+                                      </RunningSmall>
+                                    </g>
+                                  </styled.g>
+                                </svg>
+                              </styled.svg>
+                            </Icon>
+                          </StatusIcon>
+                        </div>
+                      </styled.div>
+                      <styled.div
+                        style={
+                          Object {
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        <div
+                          className="sc-htpNat eydWWN"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <Icon>
+                            <styled.svg
+                              aria-labelledby="ariaLabelledby"
+                              glyphColor="currentColor"
+                              iconRatio="1"
+                            >
+                              <svg
+                                aria-labelledby="ariaLabelledby"
+                                className="sc-gzVnrw eCnGhT"
+                                version="1.1"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlnsXlink="http://www.w3.org/1999/xlink"
+                              >
+                                <styled.g
+                                  ratio={1}
+                                  title=""
+                                >
+                                  <g
+                                    className="sc-bZQynM iePCjc"
+                                    fill="currentColor"
+                                    title=""
+                                  >
+                                    <title />
+                                    <Glyph
+                                      glyphColor="currentColor"
+                                      name="Threads"
+                                      ratio={1}
+                                    >
+                                      <g
+                                        className="glyph"
+                                        fill="currentColor"
+                                        transform="translate(0 0) scale(1)"
+                                      >
+                                        <Threads>
+                                          <path
+                                            d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
+                                            id="shape"
+                                          />
+                                        </Threads>
+                                      </g>
+                                    </Glyph>
+                                  </g>
+                                </styled.g>
+                              </svg>
+                            </styled.svg>
+                          </Icon>
+                        </div>
+                      </styled.div>
+                      <styled.div
+                        style={
+                          Object {
+                            "flex": "1 1 auto",
+                          }
+                        }
+                      >
+                        <div
+                          className="sc-bwzfXH fLpJPH"
+                          style={
+                            Object {
+                              "flex": "1 1 auto",
+                            }
+                          }
+                        >
+                          Test Runnable
+                        </div>
+                      </styled.div>
+                      <styled.div>
+                        <div
+                          className="sc-bxivhb fPNLHk"
+                        >
+                          Yes
+                        </div>
+                      </styled.div>
+                      <styled.div>
+                        <div
+                          className="sc-bxivhb fPNLHk"
+                        >
+                          8
+                        </div>
+                      </styled.div>
+                      <Styled(UnmountClosed)
+                        isOpened={false}
+                        onClick={[Function]}
+                      >
+                        <UnmountClosed
+                          className="sc-ifAKCX jNPudG"
+                          isOpened={false}
+                          onClick={[Function]}
+                        />
+                      </Styled(UnmountClosed)>
+                    </li>
+                  </styled.li>
+                </ThreadsTableLineItem>
+              </ol>
+            </styled.ol>
+          </div>
+        </styled.div>
+      </ThreadsTable>
+    </div>
+  </ThreadsSection>
+</Connect(ThreadsSection)>
 `;
