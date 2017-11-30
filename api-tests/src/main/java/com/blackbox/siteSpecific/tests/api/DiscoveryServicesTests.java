@@ -21,7 +21,7 @@ public class DiscoveryServicesTests extends ApiTest {
     @Test
     public void happyPaths() {
         // Set up objects
-        DiscoveryService discoveryService = new DiscoveryService(deployment);
+        DiscoveryService discoveryService = new DiscoveryService(deployment, deployment.truststore, deployment.testerOneKeystore);
         ServiceModel service;
         int servicesCount = 0;
         int authorizedServicesCount = 0;
@@ -93,7 +93,7 @@ public class DiscoveryServicesTests extends ApiTest {
     @Test
     public void negativeTests() {
         // Set up objects
-        DiscoveryService discoveryService = new DiscoveryService(deployment);
+        DiscoveryService discoveryService = new DiscoveryService(deployment, deployment.truststore, deployment.testerTwoKeystore);
         ServiceModel service;
         int servicesCount = 0;
         int unauthorizedServicesCount = 0;

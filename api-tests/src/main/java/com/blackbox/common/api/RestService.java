@@ -1,5 +1,6 @@
 package com.blackbox.common.api;
 
+import com.blackbox.common.helpers.KeystoreModel;
 import com.google.gson.JsonElement;
 
 public class RestService {
@@ -11,8 +12,8 @@ public class RestService {
 
     // <editor-fold desc="Constructor">
 
-    public RestService() {
-        restUtil = new RestUtil();
+    public RestService(KeystoreModel truststore, KeystoreModel keystore) {
+        restUtil = new RestUtil(truststore, keystore);
         response = null;
         didLastRequestSucceed = false;
     }
