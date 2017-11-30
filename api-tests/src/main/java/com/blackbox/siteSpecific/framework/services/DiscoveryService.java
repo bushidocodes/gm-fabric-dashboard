@@ -9,8 +9,6 @@ import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import java.util.ArrayList;
-
 public class DiscoveryService extends RestService {
     private String baseUrl;
     private final String SERVICES_ENDPOINT = "/services";
@@ -92,27 +90,27 @@ public class DiscoveryService extends RestService {
     // <editor-fold desc="Make REST Calls">
 
     public void getServices() {
-        getUrl(servicesUrl);
+        getUrl(servicesUrl, EMPTY_PARAMETERS, EMPTY_ARGUMENTS);
     }
 
     public void getServicesExpectFailure() {
-        getUrlExpectFailure(servicesUrl);
+        getUrlExpectFailure(servicesUrl, EMPTY_PARAMETERS, EMPTY_ARGUMENTS);
     }
 
     public void getMetrics(String service, String version, String instance) {
-        getUrl(metricsUrl, new String[]{service, version, instance});
+        getUrl(metricsUrl, new String[]{service, version, instance}, EMPTY_ARGUMENTS);
     }
 
     public void getMetricsExpectFailure(String service, String version, String instance) {
-        getUrlExpectFailure(metricsUrl, new String[]{service, version, instance});
+        getUrlExpectFailure(metricsUrl, new String[]{service, version, instance}, EMPTY_ARGUMENTS);
     }
 
     public void getThreads(String service, String version, String instance) {
-        getUrl(threadsUrl, new String[]{service, version, instance});
+        getUrl(threadsUrl, new String[]{service, version, instance}, EMPTY_ARGUMENTS);
     }
 
     public void getThreadsExpectFailure(String service, String version, String instance) {
-        getUrlExpectFailure(threadsUrl, new String[]{service, version, instance});
+        getUrlExpectFailure(threadsUrl, new String[]{service, version, instance}, EMPTY_ARGUMENTS);
     }
 
     // </editor-fold>
