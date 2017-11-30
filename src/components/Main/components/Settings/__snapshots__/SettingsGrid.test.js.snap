@@ -61,6 +61,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               "height": "100%",
               "position": "relative",
               "width": "100%",
+              "zIndex": 0,
             }
           }
           tabIndex={0}
@@ -250,6 +251,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               "height": "100%",
               "position": "relative",
               "width": "100%",
+              "zIndex": 0,
             }
           }
           tabIndex={0}

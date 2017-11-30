@@ -60,6 +60,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
             "height": "100%",
             "position": "relative",
             "width": "100%",
+            "zIndex": 0,
           }
         }
         tabIndex={0}

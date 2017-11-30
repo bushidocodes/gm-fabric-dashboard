@@ -2,14 +2,14 @@
 
 exports[`Inspector matches snapshot 1`] = `
 <div
-  className="inspector"
+  className="sc-bdVaJa dsqchu"
 >
   <div
-    className="inspector-toolbar"
+    className="sc-bwzfXH kyXIzm"
   >
     <input
       aria-label="Search All Metrics"
-      className="inspector-search"
+      className="sc-ifAKCX dhqUEo"
       onChange={[Function]}
       placeholder="Search"
       type="search"
@@ -17,120 +17,120 @@ exports[`Inspector matches snapshot 1`] = `
     />
   </div>
   <ul
-    className="inspector-data"
+    className="sc-htpNat leFimP"
   >
-    <li
-      className="inspector-item "
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/build/revision
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/clientregistry/initialresolution_ms
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/clientregistry/size
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/future_pool/active_tasks
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/future_pool/completed_tasks
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/future_pool/pool_size
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       finagle/timer/deviation_ms.avg
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/closes
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connection_duration.count
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connection_received_bytes.count
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connection_requests.count
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connection_sent_bytes.count
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connections
-    </li>
-    <li
-      className="inspector-item "
+    </div>
+    <div
+      className="sc-bxivhb jgcmsu"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
     >
       http/connects
-    </li>
+    </div>
   </ul>
 </div>
 `;
