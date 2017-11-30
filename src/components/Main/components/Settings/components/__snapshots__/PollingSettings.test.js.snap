@@ -46,11 +46,10 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
     </h3>
   </header>
   <div
-    className="sc-ifAKCX frfOOq"
+    className="sc-ifAKCX iLlrDi"
   >
     <div
-      className="control-group control-group-polling-start-stop"
-      id="ctrl-btn-Instance Polling"
+      className="sc-gzVnrw hLRaYR"
     >
       <button
         className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
@@ -104,7 +103,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
       </button>
     </div>
     <div
-      className="control-group control-group-polling-interval"
+      className="sc-htoDjs guaXXs"
       id="ctrl-slider-Instance Polling"
     >
       <div

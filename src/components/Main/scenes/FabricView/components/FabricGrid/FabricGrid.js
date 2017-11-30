@@ -5,17 +5,22 @@ import qs from "query-string";
 import React, { Component } from "react";
 
 import { reportError } from "services/notification";
+import {
+  routerHistoryShape,
+  routerLocationShape,
+  routerMatchShape,
+  serviceShape
+} from "components/PropTypes";
 import NotFoundError from "components/Main/components/NotFoundError";
 import FabricTableToolbar from "./components/FabricTableToolbar";
 import FabricMainView from "./components/FabricMainView";
 
-// TODO: Make history, location, and match a shape PropType
 class FabricGrid extends Component {
   static propTypes = {
-    history: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    match: PropTypes.object.isRequired,
-    services: PropTypes.array.isRequired,
+    history: routerHistoryShape,
+    location: routerLocationShape,
+    match: routerMatchShape,
+    services: PropTypes.arrayOf(serviceShape),
     statusView: PropTypes.bool
   };
   static defaultProps = {

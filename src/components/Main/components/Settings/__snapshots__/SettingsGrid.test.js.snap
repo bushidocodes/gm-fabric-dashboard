@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SettingsGrid component Matches snapshot 1`] = `
-<div
-  className="view-app-settings settings-grid"
->
+<div>
   <section
     className="sc-htpNat gOoNtI"
   >
@@ -49,11 +47,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       </h3>
     </header>
     <div
-      className="sc-ifAKCX frfOOq"
+      className="sc-ifAKCX iLlrDi"
     >
       <div
-        className="control-group control-group-polling-start-stop"
-        id="ctrl-btn-Fabric Polling"
+        className="sc-gzVnrw hLRaYR"
       >
         <button
           className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
@@ -107,7 +104,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         </button>
       </div>
       <div
-        className="control-group control-group-polling-interval"
+        className="sc-htoDjs guaXXs"
         id="ctrl-slider-Fabric Polling"
       >
         <div
@@ -239,11 +236,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       </h3>
     </header>
     <div
-      className="sc-ifAKCX frfOOq"
+      className="sc-ifAKCX iLlrDi"
     >
       <div
-        className="control-group control-group-polling-start-stop"
-        id="ctrl-btn-Instance Polling"
+        className="sc-gzVnrw hLRaYR"
       >
         <button
           className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
@@ -297,7 +293,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         </button>
       </div>
       <div
-        className="control-group control-group-polling-interval"
+        className="sc-htoDjs guaXXs"
         id="ctrl-slider-Instance Polling"
       >
         <div
@@ -429,10 +425,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       </h3>
     </header>
     <div
-      className="sc-ifAKCX frfOOq"
+      className="sc-ifAKCX iLlrDi"
     >
       <div
-        className="sc-jzJRlG hwifvl"
+        className="sc-kAzzGY jKhply"
         style={
           Object {
             "flex": "0 0 300px",
@@ -440,7 +436,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-cSHVUG kgocme"
+          className="sc-chPdSV ldJDls"
           style={
             Object {
               "minHeight": "125px",
@@ -448,16 +444,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           }
         >
           <div
-            className="sc-kAzzGY fXObhU"
+            className="sc-kgoBCf kEnjUD"
             style={undefined}
           >
             <h2
-              className="sc-kGXeez QxPzB"
+              className="sc-dxgOiQ QuPHr"
             >
               Cache Size
             </h2>
             <span
-              className="sc-kpOJdX JeTxr"
+              className="sc-ckVGcZ hevYTV"
             >
               67.48 KB
             </span>

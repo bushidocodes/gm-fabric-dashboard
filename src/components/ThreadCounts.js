@@ -2,18 +2,17 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 
-import { getThreadCounts } from "utils/jvm/selectors";
+import { getThreadCounts, threadCountsShape } from "utils/jvm/selectors";
 
 /** reusable library component that returns threadCounts
  * @class ThreadCounts
  * @extends {Component}
  */
 
-// TODO: Make threadCounts a Shape PropType
 class ThreadCounts extends React.Component {
   static propTypes = {
     render: PropTypes.func.isRequired,
-    threadCounts: PropTypes.object
+    threadCounts: threadCountsShape.isRequired
   };
 
   render() {

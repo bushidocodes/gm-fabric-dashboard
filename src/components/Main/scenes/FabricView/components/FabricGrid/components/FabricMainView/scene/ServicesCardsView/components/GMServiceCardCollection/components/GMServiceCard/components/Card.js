@@ -67,7 +67,7 @@ export const CardContainer = styled.div`
 
       h1,
       footer {
-        transform: scale(calc(1/${CARD_INTERACTION_SCALE}));
+        transform: scale(calc(1/${CARD_INTERACTION_SCALE})) translate3d(0,0,0);
       }
 
       .background-icon {

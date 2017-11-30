@@ -9,6 +9,7 @@ const AppContent = styled.div`
   flex-direction: column;
   flex: 1 1 100%;
   position: relative;
+  outline: none;
 `;
 
 export default AppContent;

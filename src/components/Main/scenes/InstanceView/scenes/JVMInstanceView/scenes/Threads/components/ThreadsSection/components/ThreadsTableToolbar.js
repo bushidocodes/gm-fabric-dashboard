@@ -1,6 +1,7 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import { threadCountsShape } from "utils/jvm/selectors";
 
 // Importing external deps from src as WebPack Modules directory
 import ButtonGroup from "components/ButtonGroup";
@@ -14,10 +15,9 @@ import ToolbarCenter from "components/Main/components/ToolbarCenter";
  * @extends {Component}
  */
 
-// TODO: Make threadCounts a Shape PropType
 class ThreadsTableToolbar extends Component {
   static propTypes = {
-    threadCounts: PropTypes.object,
+    threadCounts: threadCountsShape.isRequired,
     threadsFilter: PropTypes.string
   };
   render() {

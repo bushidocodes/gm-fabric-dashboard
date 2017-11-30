@@ -1,6 +1,5 @@
 "use strict";
 
-require("babel-polyfill");
 const autoprefixer = require("autoprefixer");
 const path = require("path");
 const webpack = require("webpack");
@@ -12,6 +11,7 @@ const eslintFormatter = require("react-dev-utils/eslintFormatter");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getClientEnvironment = require("./env");
 const paths = require("./paths");
+const babelPlugins = require("./babelPlugins");
 var LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -168,8 +168,7 @@ module.exports = {
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
           cacheDirectory: true,
-          plugins: ["lodash", "styled-components"],
-          presets: [require.resolve("babel-preset-react-app")]
+          ...babelPlugins
         }
       },
       // "postcss" loader applies autoprefixer to our CSS.
@@ -199,12 +198,6 @@ module.exports = {
               plugins: () => [
                 require("postcss-flexbugs-fixes"),
                 autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9" // React doesn't support IE8 anyway
-                  ],
                   flexbox: "no-2009"
                 })
               ]

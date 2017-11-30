@@ -14,7 +14,6 @@ import ConfirmationModal from "components/ConfirmationModal";
 import Readout from "components/Main/components/Readout";
 
 import "react-input-range/lib/css/index.css";
-import "./SettingsGrid.scss";
 
 /**
  * Settings Page containing controls for things like polling rate, local storage, etc.
@@ -55,7 +54,7 @@ class SettingsGrid extends Component {
       />
     );
     return (
-      <div className="view-app-settings settings-grid">
+      <div>
         <ConfirmationModal
           isOpen={this.state.isClearCacheModelOpen}
           onCancel={() => this.setState({ isClearCacheModelOpen: false })}
@@ -89,7 +88,6 @@ class SettingsGrid extends Component {
             glyph="ServiceInstance"
             title={fabricServer ? "Instance Polling" : "Polling"}
           />
-
           <LayoutSection icon={"Tape"} title={"Metrics Cache"} flex>
             <Readout
               readoutItemsContainerStyle={{

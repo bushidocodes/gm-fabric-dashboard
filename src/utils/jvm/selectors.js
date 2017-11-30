@@ -5,16 +5,17 @@ import { getSparkLineOfNetChange } from "../sparklines";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "../dygraphs";
 import { getMetrics, getRoutesTree, getRoutesMetrics } from "../selectors";
 import { calculateErrorPercent, formatAsDecimalString } from "utils";
+import PropTypes from "prop-types";
 
 // JVM - Specific Redux state
 const getCurrentThreads = state => state.threadsTable;
 const getThreadsFilter = state => state.settings.threadsFilter;
 
 /**
-   * A selector that takes metrics and returns percent error without % symbol
-   * toLocaleString() forces three decimal points and
-   * returns language sensitive representation of number (commas and periods)
-   */
+ * A selector that takes metrics and returns percent error without % symbol
+ * toLocaleString() forces three decimal points and
+ * returns language sensitive representation of number (commas and periods)
+ */
 export const getErrorPercent = createSelector(getMetrics, metrics => {
   if (Object.keys(metrics).length === 0) return formatAsDecimalString(0);
   const totalRequests =
@@ -118,6 +119,13 @@ export const getVisibleThreads = createSelector(
     }
   }
 );
+
+export const threadCountsShape = PropTypes.shape({
+  active: PropTypes.number,
+  idle: PropTypes.number,
+  stopped: PropTypes.number,
+  all: PropTypes.number
+});
 
 /**
  * Count the current threads according to the state and provide an object containing

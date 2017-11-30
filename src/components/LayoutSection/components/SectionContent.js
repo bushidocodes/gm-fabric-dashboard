@@ -14,12 +14,6 @@ const SectionContent = styled.div`
     props.flex
       ? "display: flex; flex-direction: row; justify-content: center;"
       : ""};
-  > .control-group-polling-interval {
-    flex: 0 1 50%;
-  }
-  > #ctrl-btn {
-    flex: 0 0 160px;
-  }
 `;
 
 SectionContent.propTypes = {
