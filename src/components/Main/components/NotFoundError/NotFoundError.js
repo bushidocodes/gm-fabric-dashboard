@@ -1,12 +1,12 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import ErrorBox from "./ErrorBox";
-import ErrorContent from "./ErrorContent";
-import Span from "./Span";
+import ErrorBox from "./components/ErrorBox";
+import ErrorContent from "./components/ErrorContent";
 
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/index";
+import Span from "components/Main/components/Span";
 
 /**Stateless functional React component that renders the error message box
  * Takes an error message and returns error message box

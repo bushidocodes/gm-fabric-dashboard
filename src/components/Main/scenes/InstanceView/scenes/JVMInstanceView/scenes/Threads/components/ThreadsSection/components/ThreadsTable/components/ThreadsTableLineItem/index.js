@@ -1,7 +1,8 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 
-import StackTrace from "components/Main/components/StackTrace";
+import StackTrace from "./components/StackTrace";
+
 import TableCol from "components/Main/components/TableCol";
 import TableColThread from "components/Main/components/TableColThread";
 import TableColDaemon from "components/Main/components/TableColDaemon";
