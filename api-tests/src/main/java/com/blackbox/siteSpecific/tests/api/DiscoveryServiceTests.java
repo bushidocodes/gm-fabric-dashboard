@@ -8,9 +8,7 @@ import com.blackbox.siteSpecific.framework.services.DiscoveryService;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.awt.*;
-
-public class DiscoveryServicesTests extends ApiTest {
+public class DiscoveryServiceTests extends ApiTest {
     private ServiceList services;
     private final String discoveryServiceName = "Discovery Service";
 
@@ -156,7 +154,7 @@ public class DiscoveryServicesTests extends ApiTest {
         }
 
         // Hit an invalid endpoint based on the /services endpoint and verify the call fails
-        discoveryService.getUrlExpectFailure(discoveryService.getServicesUrl(), services.get(discoveryServiceName).getUrlName());
+        discoveryService.getUrlExpectFailure(discoveryService.getServicesUrl(), new String[]{services.get(discoveryServiceName).getUrlName()}, DiscoveryService.EMPTY_ARGUMENTS);
         Assert.assertFalse(discoveryService.didLastRequestSucceed());
         malformedUrlCount++;
 
@@ -166,7 +164,7 @@ public class DiscoveryServicesTests extends ApiTest {
         malformedUrlCount++;
 
         // Hit the /metrics endpoint without parameters and verify the call fails
-        discoveryService.getUrlExpectFailure(discoveryService.getMetricsUrl());
+        discoveryService.getUrlExpectFailure(discoveryService.getMetricsUrl(), DiscoveryService.EMPTY_PARAMETERS, DiscoveryService.EMPTY_ARGUMENTS);
         Assert.assertFalse(discoveryService.didLastRequestSucceed());
         malformedUrlCount++;
 
@@ -181,7 +179,7 @@ public class DiscoveryServicesTests extends ApiTest {
         malformedUrlCount++;
 
         // Hit the /threads endpoint without parameters and verify the call fails
-        discoveryService.getUrlExpectFailure(discoveryService.getThreadsUrl());
+        discoveryService.getUrlExpectFailure(discoveryService.getThreadsUrl(), DiscoveryService.EMPTY_PARAMETERS, DiscoveryService.EMPTY_ARGUMENTS);
         Assert.assertFalse(discoveryService.didLastRequestSucceed());
         malformedUrlCount++;
 
