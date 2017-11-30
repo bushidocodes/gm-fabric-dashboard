@@ -6,6 +6,7 @@ import java.util.Map;
 public class SiteDeployment {
     public String siteUrl;
     public String discoveryServiceUrl;
+    public String finderServiceUrl;
     public String deploymentFlag, browserFlag;
     public BrowserType browserType;
 
@@ -19,6 +20,7 @@ public class SiteDeployment {
             siteUrl = "https://edge.deciphernow.com";
 
             discoveryServiceUrl = "https://edge.deciphernow.com/services/discovery-service/1.0";
+            finderServiceUrl = "https://edge.deciphernow.com/services/finder-service/1.0/";
         }
 
         // Set the browser type
