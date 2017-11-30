@@ -9,6 +9,11 @@ import DefaultHeaderContent from "./scenes/Default";
 
 import { generateHeaderTabs } from "utils/selectors";
 import { decodeParameter } from "utils";
+import {
+  routerHistoryShape,
+  routerLocationShape,
+  routerMatchShape
+} from "components/PropTypes";
 
 /**
  * Main area of Sidebar containing one or more SidebarCards
@@ -16,11 +21,14 @@ import { decodeParameter } from "utils";
  * @extends {Component}
  */
 
-// TODO: Make metrics PropType of shape
 class InstanceHeaderContent extends Component {
   static propTypes = {
     basePath: PropTypes.string,
-    headerTabs: PropTypes.array,
+    dispatch: PropTypes.func,
+    headerTabs: PropTypes.arrayOf(PropTypes.element),
+    history: routerHistoryShape,
+    location: routerLocationShape,
+    match: routerMatchShape,
     metrics: PropTypes.object.isRequired,
     runtime: PropTypes.string
   };
