@@ -6,8 +6,8 @@ import { threadCountsShape } from "utils/jvm/selectors";
 // Importing external deps from src as WebPack Modules directory
 import ButtonGroup from "components/ButtonGroup";
 import Button from "components/Button";
-import Toolbar from "components/Main/components/Toolbar";
-import ToolbarCenter from "components/Main/components/ToolbarCenter";
+import Toolbar from "components/Main/components/TableToolbar/components/Toolbar";
+import ToolbarCenter from "components/Main/components/TableToolbar/components/ToolbarCenter";
 
 /**
  * Toolbar containing buttons to control what is rendered in the threads table

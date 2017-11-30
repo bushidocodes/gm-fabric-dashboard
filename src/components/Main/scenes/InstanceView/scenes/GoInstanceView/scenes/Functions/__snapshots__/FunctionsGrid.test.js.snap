@@ -3,15 +3,17 @@
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
 <div>
   <div
-    className="sc-kpOJdX djMwLE"
+    className="sc-ckVGcZ konKeT"
   >
     <div
-      className="sc-dxgOiQ fWhFZN"
+      className="sc-jKJlTe hUnWQY"
     >
-      <form>
+      <form
+        onSubmit={[Function]}
+      >
         <input
-          aria-label="Search All Functions"
-          className="sc-eNQAEJ bpCmXX"
+          aria-label="Search Functions"
+          className="sc-kGXeez ljbeeX"
           onChange={[Function]}
           placeholder="Search Functions"
           type="search"
@@ -20,10 +22,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="sc-ckVGcZ gMBpcY"
+      className="sc-hMqMXs jBhXSB"
+    />
+    <div
+      className="sc-eNQAEJ ifrloj"
     >
       <div
-        className="Select sc-kGXeez gggNjm Select--single has-value"
+        className="Select sc-kpOJdX kDtvQI Select--single has-value"
         style={undefined}
       >
         <input
@@ -58,10 +63,11 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
               >
                 <span>
                   <span>
-                    Sort 
+                    Sort
+                     
                   </span>
                   <span
-                    className="sc-jKJlTe iouGcQ"
+                    className="sc-dxgOiQ idZMDV"
                   >
                     Function
                   </span>

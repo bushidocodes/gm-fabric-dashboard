@@ -99,9 +99,9 @@ describe("Fabric Grid Main View", () => {
     ).toBe(true);
   });
 
-  test("renders all services in table view", () => {
+  test("renders all services in list view", () => {
     // Remount with new search query
-    FabricGridWrap = mount(RouterWrap([{ search: "?viewType=Table" }]));
+    FabricGridWrap = mount(RouterWrap([{ search: "?viewType=List" }]));
 
     let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
 
@@ -111,7 +111,7 @@ describe("Fabric Grid Main View", () => {
     expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
       0
     );
-    expect(FabricGridInstance.state.displayType).toBe("Table");
+    expect(FabricGridInstance.state.displayType).toBe("List");
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
     expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
     expect(
@@ -181,7 +181,7 @@ describe("Fabric Grid Main View", () => {
 
     button.at(1).simulate("click");
 
-    expect(FabricGridInstance.state.displayType).toBe("Table");
+    expect(FabricGridInstance.state.displayType).toBe("List");
 
     button.at(0).simulate("click");
 
@@ -262,11 +262,11 @@ describe("Fabric Grid Instance Method", () => {
 
   test("popAndDecodeHistory parses the query string and sets local state", () => {
     FabricGridInstance.popAndDecodeHistory(
-      "viewType=Table&groupBy=Owner&searchQuery=aac"
+      "viewType=List&groupBy=Owner&searchQuery=aac"
     );
 
     expect(FabricGridInstance.state.searchQuery).not.toBe("Card");
-    expect(FabricGridInstance.state.displayType).toBe("Table");
+    expect(FabricGridInstance.state.displayType).toBe("List");
     expect(FabricGridInstance.state.searchQuery).not.toBe("Status");
     expect(FabricGridInstance.state.groupByAttribute).toBe("Owner");
     expect(FabricGridInstance.state.searchQuery).not.toBe(null);
