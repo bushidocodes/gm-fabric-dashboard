@@ -9,6 +9,7 @@ import { LazyLoader } from "components/LazyLoader";
 
 import { getFabricServer } from "utils/head";
 import { getRuntime } from "utils/selectors";
+import { dashboardShape } from "components/PropTypes";
 
 const FabricRouter = LazyLoader({
   loader: () => import("./scenes/FabricView")
@@ -24,10 +25,9 @@ const InstanceRouter = LazyLoader({
  * @extends {Component}
  */
 
-// TODO: Replace some of these object types with shapes
 class Main extends Component {
   static propTypes = {
-    dashboards: PropTypes.object,
+    dashboards: PropTypes.objectOf(dashboardShape),
     fabricServer: PropTypes.string,
     instanceMetricsPollingInterval: PropTypes.number.isRequired,
     metricsEndpoint: PropTypes.string,

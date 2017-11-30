@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 import ReadoutContainer from "./components/ReadoutContainer";
-import ReadoutItem from "./components/ReadoutItem";
+import ReadoutItem, { ReadoutItemShape } from "./components/ReadoutItem";
 
 export default function Readout({
   primary,
@@ -17,17 +17,7 @@ export default function Readout({
       {readoutItems.map(item => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
-          icon={item.icon}
-          iconName={item.iconName}
-          iconBorderStyle={item.iconBorderStyle}
-          iconBorderWidth={item.iconBorderWidth}
-          iconShape={item.iconShape}
-          iconColor={item.iconColor}
-          title={item.title}
-          value={item.value}
-          detail={item.detail}
-          graphData={item.graphData}
-          children={item.children}
+          {...item}
           readoutItemsStyle={readoutItemsStyle}
           readoutItemsContainerStyle={readoutItemsContainerStyle}
         />
@@ -36,12 +26,14 @@ export default function Readout({
   );
 }
 
-// TODO: Replace Style objects with custom shape proptype
 Readout.propTypes = {
   children: PropTypes.element,
   primary: PropTypes.bool,
   readoutContainerStyle: PropTypes.object,
-  readoutItems: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  readoutItems: PropTypes.oneOfType([
+    PropTypes.arrayOf(ReadoutItemShape),
+    PropTypes.object
+  ]),
   readoutItemsContainerStyle: PropTypes.object,
   readoutItemsStyle: PropTypes.object
 };

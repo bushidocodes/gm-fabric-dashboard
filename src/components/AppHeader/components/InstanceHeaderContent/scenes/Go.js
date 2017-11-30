@@ -8,12 +8,12 @@ import TabNav from "components/AppHeader/components/TabNav";
 import UpTime from "components/UpTime";
 
 import ArrayValue from "components/ArrayValue";
+import { metricsShape } from "components/PropTypes";
 
-// TODO: Make metrics PropType of shape
 SidebarContent.propTypes = {
   basePath: PropTypes.string,
-  headerTabs: PropTypes.array,
-  metrics: PropTypes.object.isRequired
+  headerTabs: PropTypes.arrayOf(PropTypes.element),
+  metrics: metricsShape.isRequired
 };
 
 /**

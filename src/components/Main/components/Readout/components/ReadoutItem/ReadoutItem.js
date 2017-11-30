@@ -68,10 +68,10 @@ export default function ReadoutItem({
   );
 }
 
-ReadoutItem.propTypes = {
+const readoutItemPropTypes = {
   children: PropTypes.element,
   detail: PropTypes.string,
-  graphData: PropTypes.array,
+  graphData: PropTypes.arrayOf(PropTypes.number),
   icon: PropTypes.string,
   iconBackgroundStyle: PropTypes.string,
   iconBorderStyle: PropTypes.string,
@@ -88,3 +88,6 @@ ReadoutItem.propTypes = {
     PropTypes.object
   ])
 };
+
+export const ReadoutItemShape = PropTypes.shape(readoutItemPropTypes);
+ReadoutItem.propTypes = readoutItemPropTypes;

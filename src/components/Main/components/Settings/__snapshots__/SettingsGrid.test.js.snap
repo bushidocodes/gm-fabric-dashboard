@@ -3,7 +3,7 @@
 exports[`SettingsGrid component Matches snapshot 1`] = `
 <div>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"
@@ -61,6 +61,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               "height": "100%",
               "position": "relative",
               "width": "100%",
+              "zIndex": 0,
             }
           }
           tabIndex={0}
@@ -192,7 +193,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"
@@ -250,6 +251,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               "height": "100%",
               "position": "relative",
               "width": "100%",
+              "zIndex": 0,
             }
           }
           tabIndex={0}
@@ -381,7 +383,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     </div>
   </section>
   <section
-    className="sc-htpNat gOoNtI"
+    className="sc-htpNat hqfgNm"
   >
     <header
       className="sc-bxivhb cnFCnx"

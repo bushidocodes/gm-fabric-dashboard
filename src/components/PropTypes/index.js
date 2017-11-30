@@ -84,3 +84,114 @@ export const serviceShape = PropTypes.shape({
 // version: Version of the service
 // docsLink: URL to the documentation
 // status: string equal to "Stable", "Warning", or "Down"
+
+// Dashboard Chart
+const dychartTimeseriesPointShape = PropTypes.shape({
+  attribute: PropTypes.string.isRequred,
+  baseUnit: PropTypes.string,
+  label: PropTypes.string.isRequred,
+  precision: PropTypes.number,
+  resultUnit: PropTypes.string,
+  type: PropTypes.string.isRequred,
+  value: PropTypes.string
+});
+const gmLineChartShape = PropTypes.shape({
+  data: PropTypes.shape({
+    timeseries: PropTypes.arrayOf(dychartTimeseriesPointShape)
+  }),
+  title: PropTypes.string,
+  type: PropTypes.string.isRequred
+});
+const gmBasicMetricsChartShape = PropTypes.shape({
+  data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  title: PropTypes.string,
+  type: PropTypes.string.isRequred
+});
+
+const gmTableChartShape = PropTypes.shape({
+  data: {
+    headers: PropTypes.arrayOf(PropTypes.string),
+    rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
+  },
+  title: PropTypes.string,
+  type: PropTypes.string.isRequred
+});
+
+const dashboardLayoutItemShape = PropTypes.shape({
+  h: PropTypes.number.isRequred,
+  i: PropTypes.string.isRequred,
+  minH: PropTypes.number.isRequred,
+  minW: PropTypes.number.isRequred,
+  w: PropTypes.number.isRequred,
+  x: PropTypes.number.isRequred,
+  y: PropTypes.number.isRequred
+});
+
+const gridShape = PropTypes.shape({
+  breakpoints: PropTypes.shape({
+    lg: PropTypes.number,
+    md: PropTypes.number,
+    sm: PropTypes.number
+  }),
+  cols: PropTypes.shape({
+    lg: PropTypes.number,
+    md: PropTypes.number,
+    sm: PropTypes.number
+  }),
+  layouts: PropTypes.shape({
+    lg: PropTypes.arrayOf(dashboardLayoutItemShape),
+    md: PropTypes.arrayOf(dashboardLayoutItemShape),
+    sm: PropTypes.arrayOf(dashboardLayoutItemShape)
+  }),
+  rowHeight: PropTypes.number
+});
+
+export const dashboardShape = PropTypes.shape({
+  charts: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      gmLineChartShape,
+      gmBasicMetricsChartShape,
+      gmTableChartShape
+    ])
+  ),
+  grid: gridShape,
+  name: PropTypes.string,
+  runtime: PropTypes.string,
+  summaryCard: PropTypes.shape({
+    icon: PropTypes.string,
+    lines: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        value: PropTypes.arrayOf(
+          PropTypes.shape({
+            baseUnit: PropTypes.string,
+            precision: PropTypes.number,
+            resultUnit: PropTypes.string,
+            type: PropTypes.string,
+            value: PropTypes.string
+          })
+        )
+      })
+    )
+  })
+});
+
+export const threadsTableItemShape = PropTypes.shape({
+  daemon: PropTypes.bool,
+  name: PropTypes.string,
+  priority: PropTypes.number,
+  stack: PropTypes.arrayOf(PropTypes.string),
+  state: PropTypes.string
+});
+
+export const serviceItemShape = PropTypes.shape({
+  authorized: PropTypes.bool,
+  docsLink: PropTypes.string,
+  headerTitle: PropTypes.string,
+  instances: PropTypes.arrayOf(serviceInstanceShape),
+  metered: PropTypes.bool,
+  name: PropTypes.string,
+  runtime: PropTypes.string,
+  status: PropTypes.string,
+  version: PropTypes.string
+});

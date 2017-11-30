@@ -1,5 +1,4 @@
 import _ from "lodash";
-import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
@@ -11,6 +10,7 @@ import { decodeParameter } from "utils";
 import { LazyLoader } from "components/LazyLoader";
 
 import { computeStatus } from "utils/selectors";
+import { serviceShape } from "components/PropTypes";
 
 const InstanceRouter = LazyLoader({
   loader: () => import("components/Main/scenes/InstanceView")
@@ -20,9 +20,8 @@ const SettingsGrid = LazyLoader({
   loader: () => import("components/Main/components/Settings")
 });
 
-// TODO: Make services a shape PropType
 FabricView.propTypes = {
-  services: PropTypes.object
+  services: serviceShape
 };
 
 /**

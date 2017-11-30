@@ -3,20 +3,21 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { microserviceStatuses } from "utils/constants";
-import { getAppHeaderContent, getStatusCount } from "utils/selectors";
+import { getStatusCount } from "utils/selectors";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
 
-// TODO: Replace statusCount with PropType of shape
-// TODO: Tighten down what is in the services array
 FabricAppHeaderContent.propTypes = {
-  services: PropTypes.array,
-  statusCount: PropTypes.object
+  statusCount: PropTypes.shape({
+    Down: PropTypes.number,
+    Stable: PropTypes.number,
+    Warning: PropTypes.number,
+    total: PropTypes.number.isRequired
+  })
 };
 
-// TODO: replace chartData & lines with something dynamic. Refer to issue #786
-function FabricAppHeaderContent({ statusCount, services }) {
+function FabricAppHeaderContent({ statusCount }) {
   return (
     <TabNav>
       <Tab
@@ -52,7 +53,6 @@ function FabricAppHeaderContent({ statusCount, services }) {
 
 function mapStateToProps(state) {
   return {
-    services: getAppHeaderContent(state),
     statusCount: getStatusCount(state)
   };
 }

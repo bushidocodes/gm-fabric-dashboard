@@ -57,7 +57,8 @@ class PollingSettings extends Component {
             style={{
               width: "100%",
               height: "100%",
-              position: "relative"
+              position: "relative",
+              zIndex: 0
             }}
           />
         </PollingBtnContainer>

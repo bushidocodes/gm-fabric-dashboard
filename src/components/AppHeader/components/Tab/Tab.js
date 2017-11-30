@@ -48,7 +48,11 @@ function Tab({ href, icon, lines = [], title, chartData }) {
       })}
       {chartData ? (
         <TabGraph>
-          <Sparklines data={chartData} height={24}>
+          <Sparklines
+            data={chartData}
+            height={24}
+            preserveAspectRatio="xMaxYMin"
+          >
             <SparklinesLine
               style={{
                 stroke: "currentColor",
