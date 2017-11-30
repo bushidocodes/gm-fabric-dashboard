@@ -15,6 +15,7 @@ import { getLatestAttribute } from "utils/latestAttribute";
 import { getErrorPercent } from "utils/jvm/selectors";
 
 import ArrayValue from "components/ArrayValue";
+import { metricsShape } from "components/PropTypes";
 
 /**
  * Static Summary page for JVM runtime
@@ -104,10 +105,9 @@ function SummaryGrid({
   );
 }
 
-// TODO: Make metrics a shape PropType
 SummaryGrid.propTypes = {
   errorPercent: PropTypes.string,
-  metrics: PropTypes.object,
+  metrics: metricsShape,
   selectedInstance: PropTypes.string,
   selectedService: PropTypes.string,
   selectedServiceVersion: PropTypes.string

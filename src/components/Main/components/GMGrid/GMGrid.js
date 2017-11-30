@@ -9,6 +9,11 @@ import GMLineChart from "../GMLineChart";
 import GMTable from "./components/GMTable";
 
 import ErrorBoundary from "components/ErrorBoundary";
+import {
+  dashboardShape,
+  routerMatchShape,
+  metricsShape
+} from "components/PropTypes";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
@@ -21,12 +26,11 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
  * React Router URL parameter and renders the appropriate UI components.
  */
 
-// TODO: Replace some of the object types with shapes
 class GMGrid extends Component {
   static propTypes = {
-    dashboard: PropTypes.object,
-    match: PropTypes.object.isRequired,
-    metrics: PropTypes.object.isRequired,
+    dashboard: dashboardShape,
+    match: routerMatchShape,
+    metrics: metricsShape.isRequired,
     name: PropTypes.string
   };
 

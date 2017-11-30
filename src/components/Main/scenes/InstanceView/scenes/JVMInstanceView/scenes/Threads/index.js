@@ -6,10 +6,10 @@ import { connect } from "react-redux";
 import ThreadsSection from "./components/ThreadsSection";
 
 import ErrorBoundary from "components/ErrorBoundary";
+import { threadsTableItemShape } from "components/PropTypes";
 
 /**
  * Very redundant feeling wrapper container that contains a ThreadsSection
- * TODO: Refactor to combine section and grid and break out threads control like RoutesTableToolbar
  * @class ThreadsGrid
  * @extends {Component}
  */
@@ -20,7 +20,7 @@ class ThreadsGrid extends Component {
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string,
     threadsEndpoint: PropTypes.string,
-    threadsTable: PropTypes.array
+    threadsTable: PropTypes.arrayOf(threadsTableItemShape)
   };
 
   componentDidMount() {

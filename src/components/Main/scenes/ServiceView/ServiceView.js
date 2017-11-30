@@ -8,13 +8,18 @@ import GMServiceTableToolbar from "./components/GMServiceTableToolbar";
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
 import { reportError } from "services/notification";
+import {
+  routerHistoryShape,
+  routerLocationShape,
+  serviceInstanceShape
+} from "components/PropTypes";
 
 // TODO: Make history and location a shape PropType
 class ServiceView extends Component {
   static propTypes = {
-    history: PropTypes.object.isRequired,
-    instances: PropTypes.array.isRequired,
-    location: PropTypes.object.isRequired,
+    history: routerHistoryShape.isRequired,
+    instances: PropTypes.arrayOf(serviceInstanceShape).isRequired,
+    location: routerLocationShape.isRequired,
     serviceName: PropTypes.string.isRequired,
     serviceVersion: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired
