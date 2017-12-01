@@ -97,6 +97,11 @@ export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
 
 export const TABLE_HOVER = COLOR_CONTENT_BACKGROUND.darken(0.02).string();
 
+// Notifications
+export const NOTIFICATION_WIDTH = "320px";
+export const NOTIFICATION_BACKGROUND_COLOR = COLOR_WHITE;
+export const NOTIFICATION_TRANSITION = 0.3;
+
 export const media = {
   breadcrumbsBreakpoint200: (...args) => css`
     @media (max-width: 800px) {
