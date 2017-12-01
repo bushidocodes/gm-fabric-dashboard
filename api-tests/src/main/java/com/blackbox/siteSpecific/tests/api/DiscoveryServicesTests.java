@@ -209,5 +209,6 @@ public class DiscoveryServicesTests extends ApiTest {
         System.out.println(String.format("        Authorized:   %d", (servicesCount - unauthorizedServicesCount)));
         System.out.println(String.format("            Unmetered:  %d", unmeteredServicesCount));
         System.out.println(String.format("            Unthreaded: %d", unthreadedServicesCount));
+        System.out.println(String.format("    Malformed URLs Accessed: %d", malformedUrlCount));
     }
 }
