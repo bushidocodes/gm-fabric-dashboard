@@ -9,7 +9,7 @@ public class FinderServiceTests extends ApiTest {
     @Test
     public void happyPath() {
         // Set up objects
-        FinderService finderService = new FinderService(deployment);
+        FinderService finderService = new FinderService(deployment, deployment.truststore, deployment.testerOneKeystore);
 
         // Hit the /data/sources endpoint
         finderService.getDataSources();

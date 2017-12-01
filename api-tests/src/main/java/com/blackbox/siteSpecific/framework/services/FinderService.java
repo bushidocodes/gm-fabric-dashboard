@@ -1,6 +1,7 @@
 package com.blackbox.siteSpecific.framework.services;
 
 import com.blackbox.common.api.RestService;
+import com.blackbox.common.helpers.KeystoreModel;
 import com.blackbox.dataModels.JsonElementStructure;
 import com.blackbox.siteSpecific.framework.base.SiteDeployment;
 import com.google.gson.JsonArray;
@@ -51,8 +52,8 @@ public class FinderService extends RestService {
 
     // <editor-fold desc="Constructor">
 
-    public FinderService(SiteDeployment deployment) {
-        super();
+    public FinderService(SiteDeployment deployment, KeystoreModel truststore, KeystoreModel keystore) {
+        super(truststore, keystore);
 
         baseUrl = deployment.finderServiceUrl;
         dataSourcesUrl = baseUrl + DATA_SOURCES_ENDPOINT;
