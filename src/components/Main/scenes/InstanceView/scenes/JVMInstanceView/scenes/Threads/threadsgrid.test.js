@@ -10,13 +10,36 @@ import mockState from "json/mockReduxState";
 
 // Components
 import ThreadsGrid from "./index";
-import ThreadsSection from "./components/ThreadsSection";
+import ThreadsTableToolbar from "./components/ThreadsTableToolbar";
+import ThreadsTable from "./components/ThreadsTable";
 import ErrorBoundary from "components/ErrorBoundary";
-import ThreadsTableLineItem from "./components/ThreadsSection/components/ThreadsTable/components/ThreadsTableLineItem";
+import ThreadsTableLineItem from "./components/ThreadsTable/components/ThreadsTableLineItem";
 
 // import Actions
 import "services";
 
+const toolBarProps = {
+  threadCounts: { active: 1, all: 6, idle: 2, stopped: 3 },
+  threadsFilter: "active"
+};
+
+const threadsTableProps = {
+  filteredThreadData: [
+    {
+      daemon: true,
+      id: "2",
+      name: "Test Runnable",
+      priority: 8,
+      stack: [
+        "java.lang.Object.wait(Native Method)",
+        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
+        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
+        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
+      ],
+      state: "RUNNABLE"
+    }
+  ]
+};
 // Create a mock store and initialize with mock data
 const store = configureStore()(mockState);
 
@@ -31,89 +54,6 @@ const RouterWrap = (
 
 let wrapper;
 
-const expectedProps = {
-  threadsTable: [
-    {
-      daemon: true,
-      id: "1",
-      name: "Test Waiting",
-      priority: 10,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.Object.wait(Object.java:502)",
-        "java.lang.ref.Reference.tryHandlePending(Reference.java:191)",
-        "java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)"
-      ],
-      state: "WAITING"
-    },
-    {
-      daemon: true,
-      id: "2",
-      name: "Test Runnable",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "RUNNABLE"
-    },
-    {
-      daemon: true,
-      id: "3",
-      name: "Test Timed Waiting",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "TIMED_WAITING"
-    },
-    {
-      daemon: true,
-      id: "4",
-      name: "Test Terminated",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "TERMINATED"
-    },
-    {
-      daemon: true,
-      id: "5",
-      name: "Test Blocked",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "BLOCKED"
-    },
-    {
-      daemon: true,
-      id: "6",
-      name: "Test New",
-      priority: 8,
-      stack: [
-        "java.lang.Object.wait(Native Method)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)",
-        "java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)",
-        "java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)"
-      ],
-      state: "NEW"
-    }
-  ]
-};
-
 describe("ThreadsGrid View", () => {
   beforeEach(() => {
     wrapper = mount(RouterWrap);
@@ -125,13 +65,21 @@ describe("ThreadsGrid View", () => {
   });
 
   test("renders correct components", () => {
-    expect(wrapper.find(ThreadsSection)).toHaveLength(1);
+    expect(wrapper.find(ThreadsTableToolbar)).toHaveLength(1);
+    expect(wrapper.find(ThreadsTable)).toHaveLength(1);
     expect(wrapper.find(ErrorBoundary)).toHaveLength(1);
     // nested component
     expect(wrapper.find(ThreadsTableLineItem)).toHaveLength(1);
   });
 
-  test("passes the correct props down to ThreadsSection", () => {
-    expect(wrapper.find(ThreadsSection).props()).toMatchObject(expectedProps);
+  // Will be updating tests shortly after new TableToolbar is implemented for threads view
+  test("passes the correct props down to ThreadsTableToolbar", () => {
+    expect(wrapper.find(ThreadsTableToolbar).props()).toMatchObject(
+      toolBarProps
+    );
+  });
+
+  test("passes the correct props down to ThreadsTable", () => {
+    expect(wrapper.find(ThreadsTable).props()).toMatchObject(threadsTableProps);
   });
 });
