@@ -11,18 +11,12 @@ import GMServiceCardView from "./components/GMServiceCardView";
 import GMServiceViewContainer from "./components/GMServiceViewContainer";
 import SectionContent from "./components/SectionContent";
 import SectionHeader from "./components/SectionHeader";
+import { serviceItemShape, routerLocationShape } from "components/PropTypes";
 
-// TODO: Replace services with custom shape proptype
-// Array of { headerTitle, name, version, docsLink, status }
-// headerTitle: Thing that we group by
-// name: Name of the service
-// version: Version of the service
-// docsLink: URL to the documentation
-// status: string equal to "Stable", "Warning", or "Down"
 CardsView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,
-  location: PropTypes.object,
-  services: PropTypes.array.isRequired,
+  location: routerLocationShape,
+  services: PropTypes.arrayOf(serviceItemShape).isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 

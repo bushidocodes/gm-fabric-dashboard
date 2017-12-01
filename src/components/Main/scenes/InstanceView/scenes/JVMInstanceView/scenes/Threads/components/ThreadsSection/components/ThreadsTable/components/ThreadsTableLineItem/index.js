@@ -65,6 +65,7 @@ export default class ThreadsTableLineItem extends Component {
 
   render() {
     const { daemon, id, name, priority, stack, state } = this.props;
+
     const status = this.getStatus(state);
 
     return (

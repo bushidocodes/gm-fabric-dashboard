@@ -1,6 +1,7 @@
 package com.blackbox.siteSpecific.framework.services;
 
 import com.blackbox.common.api.RestService;
+import com.blackbox.common.helpers.KeystoreModel;
 import com.blackbox.dataModels.JsonElementStructure;
 import com.blackbox.dataModels.ServiceInstanceModel;
 import com.blackbox.dataModels.ServiceList;
@@ -39,8 +40,8 @@ public class DiscoveryService extends RestService {
 
     // <editor-fold desc="Constructor">
 
-    public DiscoveryService(SiteDeployment deployment) {
-        super();
+    public DiscoveryService(SiteDeployment deployment, KeystoreModel truststore, KeystoreModel keystore) {
+        super(truststore, keystore);
 
         baseUrl = deployment.discoveryServiceUrl;
         servicesUrl = baseUrl + SERVICES_ENDPOINT;

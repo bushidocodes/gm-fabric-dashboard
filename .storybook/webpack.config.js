@@ -7,6 +7,7 @@ const webpack = require("webpack");
 const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const paths = require("../config/paths");
 const WatchMissingNodeModulesPlugin = require("react-dev-utils/WatchMissingNodeModulesPlugin");
+const babelPlugins = require("../config/babelPlugins");
 
 module.exports = {
   resolve: {
@@ -42,8 +43,7 @@ module.exports = {
           // It enables caching results in ./node_modules/.cache/babel-loader/
           // directory for faster rebuilds.
           cacheDirectory: true,
-          plugins: ["lodash", "styled-components"],
-          presets: [require.resolve("babel-preset-react-app")]
+          ...babelPlugins
         }
       },
       // "postcss" loader applies autoprefixer to our CSS.

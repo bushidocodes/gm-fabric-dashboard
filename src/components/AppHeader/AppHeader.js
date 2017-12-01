@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 import React from "react";
 import { getFabricServer } from "utils/head";
 import { withRouter } from "react-router-dom";
@@ -10,11 +9,11 @@ import Banner from "./components/Banner";
 import UseSDS from "./scenes/UseSDS";
 import NoSDS from "./scenes/NoSDS";
 
+import { routerLocationShape } from "components/PropTypes";
 import { trimID } from "utils";
 
-// TODO: Is there such thing as community PropTypes definitions for shapes???
 AppHeader.propTypes = {
-  location: PropTypes.object
+  location: routerLocationShape
 };
 /**
  * Stateless functional React component that renders the App Header

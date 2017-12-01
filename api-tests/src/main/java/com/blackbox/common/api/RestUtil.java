@@ -1,39 +1,31 @@
 package com.blackbox.common.api;
 
+import com.blackbox.common.helpers.KeystoreModel;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import javax.net.ssl.*;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.*;
 
 public class RestUtil {
     JsonParser jsonParser;
-    private String keyStorePath;
-    private String keystorePassword;
-    private String trustStorePath;
-    private String trustStorePassword;
-    KeyStore keyStore;
-    KeyStore trustStore;
+    KeyStore keystore;
+    KeyStore truststore;
     KeyManager[] keyManagers;
     TrustManager[] trustManagers;
 
 
     // <editor-fold desc="Constructor">
 
-    public RestUtil() {
-        keyStorePath = "/opt/keystore.jks";
-        keystorePassword = "password";
-        trustStorePath = "/opt/truststore-josh.jks";
-        trustStorePassword = "password";
+    public RestUtil(KeystoreModel truststoreFile, KeystoreModel keystoreFile) {
 
         try {
-            keyStore = Https.loadKeyStore(keyStorePath, keystorePassword);
-            trustStore = Https.loadKeyStore(trustStorePath, trustStorePassword);
-            keyManagers = Https.loadKeyManagers(keyStore, keystorePassword);
-            trustManagers = Https.loadTrustManager(trustStore);
+            keystore = Https.loadKeyStore(keystoreFile.getPath(), keystoreFile.getPassword());
+            truststore = Https.loadKeyStore(truststoreFile.getPath(), truststoreFile.getPassword());
+            keyManagers = Https.loadKeyManagers(keystore, keystoreFile.getPassword());
+            trustManagers = Https.loadTrustManager(truststore);
         } catch(CertificateException |
                 IOException |
                 KeyStoreException |

@@ -10,12 +10,12 @@ import SectionHeader from "./components/SectionHeader";
 
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
 import { microserviceStatuses } from "utils/constants";
+import { routerLocationShape, serviceItemShape } from "components/PropTypes";
 
-// TODO: Make location a shape PropType
 ListView.propTypes = {
   groupByAttribute: PropTypes.string.isRequired,
-  location: PropTypes.object,
-  services: PropTypes.array.isRequired,
+  location: routerLocationShape,
+  services: PropTypes.arrayOf(serviceItemShape).isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 

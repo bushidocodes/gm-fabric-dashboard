@@ -1,0 +1,360 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GMBasicMetrics> stateless child component of GMGrid matches snapshot 1`] = `
+<styled.div>
+  <styled.h3>
+    Response Status Codes
+  </styled.h3>
+  <styled.div
+    key="2XX-3468388"
+    priority="primary"
+  >
+    <styled.div>
+      2XX
+    </styled.div>
+    <styled.div>
+      3,468,388
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="200-3468388"
+    priority="primary"
+  >
+    <styled.div>
+      200
+    </styled.div>
+    <styled.div>
+      3,468,388
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+              3468388,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="4XX-12"
+    priority="normal"
+  >
+    <styled.div>
+      4XX
+    </styled.div>
+    <styled.div>
+      12
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+              12,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="400-8"
+    priority="normal"
+  >
+    <styled.div>
+      400
+    </styled.div>
+    <styled.div>
+      8
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="499-4"
+    priority="normal"
+  >
+    <styled.div>
+      499
+    </styled.div>
+    <styled.div>
+      4
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="5XX-16"
+    priority="normal"
+  >
+    <styled.div>
+      5XX
+    </styled.div>
+    <styled.div>
+      16
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    key="500-16"
+    priority="normal"
+  >
+    <styled.div>
+      500
+    </styled.div>
+    <styled.div>
+      16
+      <styled.div>
+        <Sparklines
+          data={
+            Array [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+            ]
+          }
+          height={32}
+          margin={2}
+          preserveAspectRatio="xMaxYMin"
+          width={240}
+        >
+          <SparklinesLine
+            onMouseMove={[Function]}
+            style={
+              Object {
+                "fill": "none",
+                "stroke": "currentColor",
+                "strokeWidth": 1,
+              }
+            }
+          />
+          <SparklinesReferenceLine
+            style={
+              Object {
+                "opacity": "0.4",
+                "stroke": "grey",
+              }
+            }
+            type="mean"
+          />
+        </Sparklines>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

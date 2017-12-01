@@ -3,6 +3,8 @@ import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 
 import Inspector from "./Inspector";
+import InspectorItem from "./components/InspectorItem";
+import InspectorSearch from "./components/InspectorSearch";
 
 const mockData = [
   "finagle/build/revision",
@@ -41,8 +43,8 @@ describe("Inspector", () => {
   });
 
   test("renders data", () => {
-    expect(wrapper.find(".inspector-item")).toHaveLength(14);
-    wrapper.find(".inspector-item").forEach((item, idx) => {
+    expect(wrapper.find(InspectorItem)).toHaveLength(14);
+    wrapper.find(InspectorItem).forEach((item, idx) => {
       expect(item.text()).toBe(mockData[idx]);
     });
   });
@@ -54,29 +56,33 @@ describe("Inspector", () => {
   });
 
   test("calls onSearch when user inputs search query", () => {
-    wrapper.find(".inspector-search").simulate("change");
+    wrapper.find(InspectorSearch).simulate("change");
     expect(wrapper.props().onSearch).toHaveBeenCalled();
   });
 
   test("calls onClick when user selects a metric", () => {
     wrapper
-      .find(".inspector-item")
+      .find(InspectorItem)
       .first()
       .simulate("click");
     expect(wrapper.props().onClick).toHaveBeenCalled();
   });
 
-  test("adds active classname to selected metric", () => {
-    expect(wrapper.find(".active")).toHaveLength(0);
+  test("passes active prop to the selected metric's styled-component", () => {
+    // Function that returns the ReactWrapper of any element(s) with an "active" prop
+    const findActiveItem = () => wrapper.findWhere(item => item.props().active);
+    expect(findActiveItem()).toHaveLength(0);
+
+    // Set a selected metric and search for item with active prop again
     wrapper.setProps({ selectedMetric: "http/closes" });
-    expect(wrapper.find(".active")).toHaveLength(1);
-    expect(wrapper.find(".active").text()).toBe("http/closes");
+    expect(findActiveItem()).toHaveLength(1);
+    expect(findActiveItem().text()).toBe("http/closes");
   });
 
   test("filters data by searchQuery", () => {
     wrapper.setProps({ searchQuery: "finagle" });
-    expect(wrapper.find(".inspector-item")).toHaveLength(7);
-    wrapper.find(".inspector-item").forEach((item, idx) => {
+    expect(wrapper.find(InspectorItem)).toHaveLength(7);
+    wrapper.find(InspectorItem).forEach((item, idx) => {
       expect(item.text()).toBe(mockData[idx]);
     });
   });

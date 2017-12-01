@@ -12,6 +12,12 @@ import MetricsList from "./components/MetricsList";
 import MetricsGraphDisplay from "./components/MetricsGraphDisplay";
 
 import ErrorBoundary from "components/ErrorBoundary";
+import {
+  metricsShape,
+  routerHistoryShape,
+  routerLocationShape,
+  routerMatchShape
+} from "components/PropTypes";
 
 /**
  * General purpose component for rendering any arbitrary timeseries data stored in Redux
@@ -20,15 +26,14 @@ import ErrorBoundary from "components/ErrorBoundary";
  * @extends {Component}
  */
 
-// TODO: Replace some of these object PropTypes
-// with shapes
 class Explorer extends Component {
   static propTypes = {
-    history: PropTypes.object,
-    keys: PropTypes.array, // Metrics keys
-    location: PropTypes.object,
-    match: PropTypes.object,
-    metrics: PropTypes.object
+    dispatch: PropTypes.func,
+    history: routerHistoryShape,
+    keys: PropTypes.arrayOf(PropTypes.string), // Metrics keys
+    location: routerLocationShape,
+    match: routerMatchShape,
+    metrics: metricsShape
   };
 
   constructor(props) {

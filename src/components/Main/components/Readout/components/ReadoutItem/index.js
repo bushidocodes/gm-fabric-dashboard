@@ -1,2 +1,3 @@
-import ReadoutItem from "./ReadoutItem";
+import ReadoutItem, { ReadoutItemShape } from "./ReadoutItem";
 export default ReadoutItem;
+export { ReadoutItemShape };

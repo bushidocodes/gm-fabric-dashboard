@@ -19,7 +19,7 @@ public class DiscoveryServiceTests extends ApiTest {
     @Test
     public void happyPaths() {
         // Set up objects
-        DiscoveryService discoveryService = new DiscoveryService(deployment);
+        DiscoveryService discoveryService = new DiscoveryService(deployment, deployment.truststore, deployment.testerOneKeystore);
         ServiceModel service;
         int servicesCount = 0;
         int authorizedServicesCount = 0;
@@ -91,7 +91,7 @@ public class DiscoveryServiceTests extends ApiTest {
     @Test
     public void negativeTests() {
         // Set up objects
-        DiscoveryService discoveryService = new DiscoveryService(deployment);
+        DiscoveryService discoveryService = new DiscoveryService(deployment, deployment.truststore, deployment.testerTwoKeystore);
         ServiceModel service;
         int servicesCount = 0;
         int unauthorizedServicesCount = 0;
@@ -207,5 +207,6 @@ public class DiscoveryServiceTests extends ApiTest {
         System.out.println(String.format("        Authorized:   %d", (servicesCount - unauthorizedServicesCount)));
         System.out.println(String.format("            Unmetered:  %d", unmeteredServicesCount));
         System.out.println(String.format("            Unthreaded: %d", unthreadedServicesCount));
+        System.out.println(String.format("    Malformed URLs Accessed: %d", malformedUrlCount));
     }
 }

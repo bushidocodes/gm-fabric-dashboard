@@ -1,6 +1,11 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import "./Inspector.scss";
+
+import InspectorWrap from "./components/InspectorWrap";
+import InspectorToolbar from "./components/InspectorToolbar";
+import InspectorData from "./components/InspectorData";
+import InspectorItem from "./components/InspectorItem";
+import InspectorSearch from "./components/InspectorSearch";
 
 /** Filterable list of selectable string */
 export default class Inspector extends Component {
@@ -21,24 +26,21 @@ export default class Inspector extends Component {
         )
       : data;
     return (
-      <div className="inspector">
-        <div className="inspector-toolbar">
-          <input
-            className="inspector-search"
+      <InspectorWrap>
+        <InspectorToolbar>
+          <InspectorSearch
             onChange={evt => this.props.onSearch(evt.target.value)}
             placeholder="Search"
             aria-label="Search All Metrics"
             type="search"
             value={searchQuery}
           />
-        </div>
+        </InspectorToolbar>
         {data.length > 0 && (
-          <ul className="inspector-data">
+          <InspectorData>
             {filteredData.map(key => (
-              <li
-                className={`inspector-item ${
-                  selectedMetric === key ? "active" : ""
-                }`}
+              <InspectorItem
+                active={selectedMetric === key}
                 key={key}
                 onClick={evt => onClick(evt.target.innerText)}
                 onKeyDown={evt => {
@@ -49,11 +51,11 @@ export default class Inspector extends Component {
                 tabIndex="0"
               >
                 {key}
-              </li>
+              </InspectorItem>
             ))}
-          </ul>
+          </InspectorData>
         )}
-      </div>
+      </InspectorWrap>
     );
   }
 }

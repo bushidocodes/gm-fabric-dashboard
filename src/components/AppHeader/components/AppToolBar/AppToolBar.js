@@ -46,6 +46,9 @@ function AppToolBar({
 }) {
   return (
     <AppToolBarHeader>
+      <SkipNav type="button" skipToId="main-content">
+        Skip Navigation
+      </SkipNav>
       <BrandContainer>
         <BrandLogo alt="" src={decipherLogo} />
         <BrandText>
@@ -59,9 +62,6 @@ function AppToolBar({
           </Link>
         </BrandText>
       </BrandContainer>
-      <SkipNav type="button" skipToId="main-content">
-        Skip Navigation
-      </SkipNav>
 
       <Breadcrumbs hideRoot>
         <Breadcrumb>

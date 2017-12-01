@@ -14,6 +14,7 @@ import { calculateErrorPercent, formatAsDecimalString } from "utils";
 import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import ArrayValue from "components/ArrayValue";
+import { metricsShape } from "components/PropTypes";
 
 /**
  * Static Summary page for GO runtime
@@ -128,9 +129,8 @@ function SummaryGrid({
   );
 }
 
-// TODO: Make metrics a shape PropType
 SummaryGrid.propTypes = {
-  metrics: PropTypes.object,
+  metrics: metricsShape,
   selectedInstance: PropTypes.string,
   selectedService: PropTypes.string,
   selectedServiceVersion: PropTypes.string
