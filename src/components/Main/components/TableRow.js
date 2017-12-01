@@ -27,10 +27,20 @@ const TableRow = styled.li.attrs({
     props.open
       ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
       : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
-      height: ${props => (props.open ? "auto" : "default")}
+  height: ${props => (props.open ? "auto" : "default")};
+
   &:hover {
     background-color: ${TABLE_HOVER};
   }
+
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &:focus:active:hover {
+    outline: 0;
+  }
+
   > * {
     ${rowChildSpacing()};
   }

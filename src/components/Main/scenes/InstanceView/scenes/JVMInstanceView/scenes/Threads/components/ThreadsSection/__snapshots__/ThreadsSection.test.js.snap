@@ -346,7 +346,7 @@ exports[`JVM > ThreadsSection component Matched the snapshot 1`] = `
                     tabIndex={0}
                   >
                     <li
-                      className="sc-EHOje cCjpET"
+                      className="sc-EHOje cjsqKx"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                       role="link"

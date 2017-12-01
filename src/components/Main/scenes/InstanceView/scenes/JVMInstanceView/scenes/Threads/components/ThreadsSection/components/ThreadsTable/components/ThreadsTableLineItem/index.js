@@ -56,11 +56,26 @@ export default class ThreadsTableLineItem extends Component {
     }
   }
 
+  blurTableRow = e => {
+    // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
+    let node = e.target;
+    while (
+      typeof node.className !== "string" ||
+      node.className.indexOf("TableRow") !== 0
+    ) {
+      node = node.parentNode;
+    }
+    node.blur();
+  };
+
   /**
    * Toggles the stacktrace drawer open or closed
    * @memberof ThreadsTableLineItem
    */
-  toggleStack = () => {
+  toggleStack = e => {
+    if (e) {
+      this.blurTableRow(e);
+    }
     this.setState({ isOpen: !this.state.isOpen });
   };
 
@@ -73,7 +88,9 @@ export default class ThreadsTableLineItem extends Component {
       <TableRow
         selectable={this.state.isOpen}
         key={id}
-        onClick={stack.length > 0 ? this.toggleStack : () => {}}
+        onClick={evt => {
+          stack.length > 0 ? this.toggleStack(evt) : this.blurTableRow(evt);
+        }}
         onKeyDown={evt => {
           if (stack.length && evt.keyCode === 13) {
             evt.preventDefault();
@@ -104,6 +121,7 @@ export default class ThreadsTableLineItem extends Component {
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
+            this.blurTableRow(evt);
           }}
         >
           <StackTrace>

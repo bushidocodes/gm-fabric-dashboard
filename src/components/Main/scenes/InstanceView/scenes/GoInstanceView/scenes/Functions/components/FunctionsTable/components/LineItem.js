@@ -38,7 +38,22 @@ export default class FunctionsTableLineItem extends Component {
     isOpen: false
   };
 
-  toggleDrawer = () => {
+  blurTableRow = e => {
+    // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
+    let node = e.target;
+    while (
+      typeof node.className !== "string" ||
+      node.className.indexOf("TableRow") !== 0
+    ) {
+      node = node.parentNode;
+    }
+    node.blur();
+  };
+
+  toggleDrawer = e => {
+    if (e) {
+      this.blurTableRow(e);
+    }
     this.setState({ isOpen: !this.state.isOpen });
   };
 
@@ -46,7 +61,7 @@ export default class FunctionsTableLineItem extends Component {
     return (
       <TableRow
         selectable={this.state.isOpen}
-        onClick={this.toggleDrawer}
+        onClick={evt => this.toggleDrawer(evt)}
         onKeyDown={evt => {
           if (evt.keyCode === 13) {
             evt.preventDefault();
@@ -101,6 +116,7 @@ export default class FunctionsTableLineItem extends Component {
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
+            this.blurTableRow(evt);
           }}
         >
           <GMLineChart

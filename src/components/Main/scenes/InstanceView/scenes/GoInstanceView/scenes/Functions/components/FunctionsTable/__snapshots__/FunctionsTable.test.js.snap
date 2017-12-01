@@ -67,7 +67,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
     className="sc-kgoBCf dHvlms"
   >
     <li
-      className="sc-iwsKbI hSkJsz"
+      className="sc-iwsKbI geNuyD"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
@@ -240,7 +240,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       </div>
     </li>
     <li
-      className="sc-iwsKbI hSkJsz"
+      className="sc-iwsKbI geNuyD"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"

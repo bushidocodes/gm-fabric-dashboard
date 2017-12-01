@@ -21,6 +21,13 @@ const mockProps = {
   state: "WAITING"
 };
 
+const mockedEvent = {
+  target: {
+    className: "TableRow",
+    blur: () => {}
+  }
+};
+
 describe("ThreadsTableLineItem component", () => {
   beforeEach(() => {
     ThreadsTableLineItemWrap = mount(<ThreadsTableLineItem {...mockProps} />);
@@ -35,10 +42,11 @@ describe("ThreadsTableLineItem component", () => {
     ThreadsTableLineItemWrap = shallow(<ThreadsTableLineItem {...mockProps} />);
 
     const row = ThreadsTableLineItemWrap.find(TableRow);
-    row.simulate("click");
+    row.simulate("click", mockedEvent);
+
     expect(ThreadsTableLineItemWrap.state().isOpen).toEqual(true);
 
-    row.simulate("click");
+    row.simulate("click", mockedEvent);
     expect(ThreadsTableLineItemWrap.state().isOpen).toEqual(false);
   });
 });

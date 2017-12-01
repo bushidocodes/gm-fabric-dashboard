@@ -42,7 +42,10 @@ export default class Inspector extends Component {
               <InspectorItem
                 active={selectedMetric === key}
                 key={key}
-                onClick={evt => onClick(evt.target.innerText)}
+                onClick={evt => {
+                  onClick(evt.target.innerText);
+                  evt.target.blur();
+                }}
                 onKeyDown={evt => {
                   if (evt.keyCode === 13) {
                     onClick(evt.target.innerText);

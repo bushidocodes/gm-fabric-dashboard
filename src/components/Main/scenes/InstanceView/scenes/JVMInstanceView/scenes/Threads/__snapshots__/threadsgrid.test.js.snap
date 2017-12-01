@@ -146,7 +146,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         className="sc-iwsKbI hzfbcM"
       >
         <li
-          className="sc-EHOje cCjpET"
+          className="sc-EHOje cjsqKx"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="link"
