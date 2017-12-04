@@ -34,7 +34,7 @@ class PollingSettings extends Component {
   render() {
     const { isPolling, stopPolling, startPolling, title, glyph } = this.props;
     const buttonGlyph = isPolling ? "Pause" : "Play";
-    const buttonLabel = isPolling ? "Pause Updates" : "Resume Updates";
+    const buttonLabel = isPolling ? "Pause Polling" : "Resume Polling";
     return (
       <LayoutSection title={title} icon={glyph} flex>
         <PollingBtnContainer>
@@ -75,7 +75,7 @@ class PollingSettings extends Component {
             value={this.state.localInterval}
           />
           <span className="label" id={`interval-name-${title}`}>
-            {"Updates Per Minute"}
+            {"Polling Interval (s)"}
           </span>
         </PollingSliderContainer>
       </LayoutSection>
