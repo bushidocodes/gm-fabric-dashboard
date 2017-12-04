@@ -321,21 +321,21 @@ public class FinderService extends RestService {
 
     // <editor-fold desc="Parse Data from Response">
 
-//    public int getServiceCount() {
-//        if(response == null) {
-//            throw new RuntimeException("Response is empty, a call may not have been made yet.");
-//        } else {
-//            if(response.isJsonObject()) {
-//                return 1;
-//            } else if(response.isJsonArray()) {
-//                return response.getAsJsonArray().size();
-//            } else {
-//                throw new RuntimeException(String.format("Response was not an object of %s or %s as expected.",
-//                        JsonObject.class,
-//                        JsonArray.class));
-//            }
-//        }
-//    }
+    public int getResponseEntryCount() {
+        if(response == null) {
+            throw new RuntimeException("Response is empty, a call may not have been made yet.");
+        } else {
+            if(response.isJsonObject()) {
+                return 1;
+            } else if(response.isJsonArray()) {
+                return response.getAsJsonArray().size();
+            } else {
+                throw new RuntimeException(String.format("Response was not an object of %s or %s as expected.",
+                        JsonObject.class,
+                        JsonArray.class));
+            }
+        }
+    }
     
 //    private ServiceModel modelService(JsonObject jsonObject) {
 //        JsonArray instances;
