@@ -103,12 +103,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       className="sc-dnqmqq gIvpQT"
     >
       <div
-        className="sc-gqjmRU fJIGBQ"
+        className="sc-gqjmRU eRWJRn"
       >
         ID
       </div>
       <div
-        className="sc-gqjmRU gQSUoL"
+        className="sc-gqjmRU cXvZrz"
         style={
           Object {
             "textAlign": "center",
@@ -118,12 +118,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         State
       </div>
       <div
-        className="sc-gqjmRU gQSUoL"
+        className="sc-gqjmRU cXvZrz"
       >
         Trace
       </div>
       <div
-        className="sc-gZMcBi hVuIxC"
+        className="sc-gZMcBi jDQMJe"
         style={
           Object {
             "flex": "1 1 auto",
@@ -133,12 +133,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         Name
       </div>
       <div
-        className="sc-bxivhb kvyvhu"
+        className="sc-bxivhb fXvOVg"
       >
         Daemon
       </div>
       <div
-        className="sc-bxivhb kvyvhu"
+        className="sc-bxivhb fXvOVg"
       >
         Priority
       </div>
@@ -159,12 +159,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         tabIndex={0}
       >
         <div
-          className="sc-htpNat iVAdOU"
+          className="sc-htpNat kRaCoM"
         >
           2
         </div>
         <div
-          className="sc-htpNat eydWWN"
+          className="sc-htpNat caWwDh"
           style={
             Object {
               "textAlign": "center",
@@ -207,7 +207,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="sc-htpNat eydWWN"
+          className="sc-htpNat caWwDh"
           style={
             Object {
               "textAlign": "center",
@@ -244,7 +244,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="sc-bwzfXH fLpJPH"
+          className="sc-bwzfXH dECyiq"
           style={
             Object {
               "flex": "1 1 auto",
@@ -254,12 +254,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           Test Runnable
         </div>
         <div
-          className="sc-bxivhb fPNLHk"
+          className="sc-bxivhb iwomYX"
         >
           Yes
         </div>
         <div
-          className="sc-bxivhb fPNLHk"
+          className="sc-bxivhb iwomYX"
         >
           8
         </div>

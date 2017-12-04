@@ -27,7 +27,7 @@ const TableRow = styled.li.attrs({
     props.open
       ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
       : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
-  height: ${props => (props.open ? "auto" : "default")};
+  height: ${props => (props.selectable ? "auto" : "default")};
 
   &:hover {
     background-color: ${TABLE_HOVER};

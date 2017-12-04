@@ -25,7 +25,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             paddingLeft={true}
           >
             <div
-              className="sc-gqjmRU fJIGBQ"
+              className="sc-gqjmRU eRWJRn"
             >
               ID
             </div>
@@ -38,7 +38,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             }
           >
             <div
-              className="sc-gqjmRU gQSUoL"
+              className="sc-gqjmRU cXvZrz"
               style={
                 Object {
                   "textAlign": "center",
@@ -50,7 +50,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-gqjmRU gQSUoL"
+              className="sc-gqjmRU cXvZrz"
             >
               Trace
             </div>
@@ -63,7 +63,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             }
           >
             <div
-              className="sc-gZMcBi hVuIxC"
+              className="sc-gZMcBi jDQMJe"
               style={
                 Object {
                   "flex": "1 1 auto",
@@ -77,7 +77,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             header={true}
           >
             <div
-              className="sc-bxivhb kvyvhu"
+              className="sc-bxivhb fXvOVg"
             >
               Daemon
             </div>
@@ -86,7 +86,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             header={true}
           >
             <div
-              className="sc-bxivhb kvyvhu"
+              className="sc-bxivhb fXvOVg"
             >
               Priority
             </div>
