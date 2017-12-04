@@ -6,6 +6,7 @@ import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
 import NavButton from "components/NavButton";
 import ButtonGroup from "components/ButtonGroup";
 import { decodeParameter } from "utils";
+import { AppVersion } from "utils/constants";
 
 import AppToolBarHeader from "./components/AppToolBarHeader";
 import BrandContainer from "./components/BrandContainer";
@@ -23,8 +24,6 @@ AppToolBar.propTypes = {
   toolbarButtons: PropTypes.array
 };
 
-const AppVersion = "1.0.1";
-const BrandName = "Fabric";
 const defaultToolbarButtons = [
   {
     path: "/settings",
@@ -58,7 +57,7 @@ function AppToolBar({
               search: ""
             }}
           >
-            {BrandName}
+            Fabric
           </Link>
         </BrandText>
       </BrandContainer>
