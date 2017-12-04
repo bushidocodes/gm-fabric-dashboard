@@ -50,7 +50,7 @@ export default function FabricMainView({
         />
       </ErrorBoundary>
     );
-  } else if (displayType === "Table") {
+  } else if (displayType === "List") {
     return (
       <ErrorBoundary>
         <ServicesListView

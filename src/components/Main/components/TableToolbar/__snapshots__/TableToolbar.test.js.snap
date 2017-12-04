@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Toolbar matches snapshot 1`] = `
+<div
+  className="sc-EHOje dMHSiZ"
+>
+  <div
+    className="sc-bZQynM VzWwq"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search Services"
+        className="sc-bdVaJa dexvml"
+        onChange={[Function]}
+        placeholder="Search Services"
+        type="search"
+        value=""
+      />
+    </form>
+  </div>
+  <div
+    className="sc-htoDjs dxGVYy"
+  >
+    <button
+      className="btn active"
+      disabled={undefined}
+      onClick={[Function]}
+      style={undefined}
+      tabIndex={undefined}
+      title="Card"
+    >
+      <svg
+        aria-labelledby="ariaLabelledby"
+        className="sc-htpNat FamBZ"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          className="sc-bwzfXH blkLhm"
+          fill="currentColor"
+          title=""
+        >
+          <title>
+            
+          </title>
+          <g
+            className="glyph"
+            fill="currentColor"
+            transform="translate(0 0) scale(1)"
+          >
+            <path
+              d="M7,4 L17,4 C18.1045695,4 19,4.8954305 19,6 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L7,19 L7,19 C5.8954305,19 5,18.1045695 5,17 L5,6 L5,6 C5,4.8954305 5.8954305,4 7,4 L7,4 Z M10.5,16 L16.5,16 C16.7761424,16 17,16.2238576 17,16.5 C17,16.7761424 16.7761424,17 16.5,17 L10.5,17 C10.2238576,17 10,16.7761424 10,16.5 C10,16.2238576 10.2238576,16 10.5,16 Z M7.5,10 L14.5,10 C14.7761424,10 15,10.2238576 15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L7.5,11 C7.22385763,11 7,10.7761424 7,10.5 C7,10.2238576 7.22385763,10 7.5,10 Z M7.5,12 L10.5,12 C10.7761424,12 11,12.2238576 11,12.5 C11,12.7761424 10.7761424,13 10.5,13 L7.5,13 C7.22385763,13 7,12.7761424 7,12.5 C7,12.2238576 7.22385763,12 7.5,12 Z M8,6 L16,6 C16.5522847,6 17,6.44771525 17,7 L17,8 C17,8.55228475 16.5522847,9 16,9 L8,9 C7.44771525,9 7,8.55228475 7,8 L7,7 C7,6.44771525 7.44771525,6 8,6 Z M7,5 L7,5 C6.44771525,5 6,5.44771525 6,6 L6,17 C6,17.5522847 6.44771525,18 7,18 L17,18 C17.5522847,18 18,17.5522847 18,17 L18,6 C18,5.44771525 17.5522847,5 17,5 L7,5 Z"
+              id="path-1"
+            />
+          </g>
+        </g>
+      </svg>
+      <span
+        className="label"
+      >
+        
+        Card
+        
+      </span>
+    </button>
+    <button
+      className="btn"
+      disabled={undefined}
+      onClick={[Function]}
+      style={undefined}
+      tabIndex={undefined}
+      title="List"
+    >
+      <svg
+        aria-labelledby="ariaLabelledby"
+        className="sc-htpNat FamBZ"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
+        <g
+          className="sc-bwzfXH blkLhm"
+          fill="currentColor"
+          title=""
+        >
+          <title>
+            
+          </title>
+          <g
+            className="glyph"
+            fill="currentColor"
+            transform="translate(0 0) scale(1)"
+          >
+            <path
+              d="M5.5,8 C4.67157288,8 4,7.32842712 4,6.5 C4,5.67157288 4.67157288,5 5.5,5 C6.32842712,5 7,5.67157288 7,6.5 C7,7.32842712 6.32842712,8 5.5,8 Z M5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 C6.32842712,10 7,10.6715729 7,11.5 C7,12.3284271 6.32842712,13 5.5,13 Z M5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 C6.32842712,15 7,15.6715729 7,16.5 C7,17.3284271 6.32842712,18 5.5,18 Z M9,5.5 L19,5.5 C19.5522847,5.5 20,5.94771525 20,6.5 L20,6.5 C20,7.05228475 19.5522847,7.5 19,7.5 L9,7.5 C8.44771525,7.5 8,7.05228475 8,6.5 L8,6.5 L8,6.5 C8,5.94771525 8.44771525,5.5 9,5.5 Z M9,10.5 L19,10.5 C19.5522847,10.5 20,10.9477153 20,11.5 C20,12.0522847 19.5522847,12.5 19,12.5 L9,12.5 C8.44771525,12.5 8,12.0522847 8,11.5 C8,10.9477153 8.44771525,10.5 9,10.5 Z M9,15.5 L19,15.5 C19.5522847,15.5 20,15.9477153 20,16.5 C20,17.0522847 19.5522847,17.5 19,17.5 L9,17.5 C8.44771525,17.5 8,17.0522847 8,16.5 C8,15.9477153 8.44771525,15.5 9,15.5 Z"
+              id="Combined-Shape"
+            />
+          </g>
+        </g>
+      </svg>
+      <span
+        className="label"
+      >
+        
+        List
+        
+      </span>
+    </button>
+  </div>
+  <div
+    className="sc-gzVnrw cElssY"
+  >
+    <div
+      className="Select sc-bxivhb pPOlh Select--single has-value"
+      style={undefined}
+    >
+      <input
+        disabled={false}
+        name="form-field-group-by"
+        type="hidden"
+        value="Status"
+      />
+      <div
+        className="Select-control"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={undefined}
+      >
+        <span
+          className="Select-multi-value-wrapper"
+          id="react-select-4--value"
+        >
+          <div
+            className="Select-value"
+            style={undefined}
+            title={undefined}
+          >
+            <span
+              aria-selected="true"
+              className="Select-value-label"
+              id="react-select-4--value-item"
+              role="option"
+            >
+              <span>
+                <span>
+                  Group
+                   
+                </span>
+                <span
+                  className="sc-ifAKCX dAlnhc"
+                >
+                  Status
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            aria-activedescendant="react-select-4--value"
+            aria-expanded={false}
+            aria-owns=""
+            aria-readonly="false"
+            className="Select-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            role="combobox"
+            style={
+              Object {
+                "border": 0,
+                "display": "inline-block",
+                "width": 1,
+              }
+            }
+            tabIndex={0}
+          />
+        </span>
+        <span
+          className="Select-arrow-zone"
+          onMouseDown={[Function]}
+        >
+          <span
+            className="Select-arrow"
+            onMouseDown={[Function]}
+          />
+        </span>
+      </div>
+    </div>
+    <div
+      className="Select sc-bxivhb pPOlh Select--single has-value"
+      style={undefined}
+    >
+      <input
+        disabled={false}
+        name="form-field-sort-by"
+        type="hidden"
+        value="Name"
+      />
+      <div
+        className="Select-control"
+        onKeyDown={[Function]}
+        onMouseDown={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={undefined}
+      >
+        <span
+          className="Select-multi-value-wrapper"
+          id="react-select-5--value"
+        >
+          <div
+            className="Select-value"
+            style={undefined}
+            title={undefined}
+          >
+            <span
+              aria-selected="true"
+              className="Select-value-label"
+              id="react-select-5--value-item"
+              role="option"
+            >
+              <span>
+                <span>
+                  Sort
+                   
+                </span>
+                <span
+                  className="sc-ifAKCX dAlnhc"
+                >
+                  Name
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            aria-activedescendant="react-select-5--value"
+            aria-expanded={false}
+            aria-owns=""
+            aria-readonly="false"
+            className="Select-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            role="combobox"
+            style={
+              Object {
+                "border": 0,
+                "display": "inline-block",
+                "width": 1,
+              }
+            }
+            tabIndex={0}
+          />
+        </span>
+        <span
+          className="Select-arrow-zone"
+          onMouseDown={[Function]}
+        >
+          <span
+            className="Select-arrow"
+            onMouseDown={[Function]}
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

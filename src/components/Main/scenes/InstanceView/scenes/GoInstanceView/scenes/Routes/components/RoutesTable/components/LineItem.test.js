@@ -9,6 +9,12 @@ import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 
 let wrapper;
+const mockedEvent = {
+  target: {
+    className: "TableRow",
+    blur: () => {}
+  }
+};
 
 describe("Go Instance Routes View: <RoutesTableLineItem/>", () => {
   beforeEach(() => {
@@ -80,10 +86,10 @@ describe("Go Instance Routes View: <RoutesTableLineItem/>", () => {
     );
 
     const row = wrapper.find(TableRow);
-    row.simulate("click");
+    row.simulate("click", mockedEvent);
     expect(wrapper.state().isOpen).toEqual(true);
 
-    row.simulate("click");
+    row.simulate("click", mockedEvent);
     expect(wrapper.state().isOpen).toEqual(false);
   });
 
@@ -104,7 +110,7 @@ describe("Go Instance Routes View: <RoutesTableLineItem/>", () => {
     );
 
     const row = wrapper.find(TableRow);
-    row.simulate("click");
+    row.simulate("click", mockedEvent);
     const drawer = wrapper.find(TableDrawerCollapse);
 
     expect(wrapper.state().isOpen).toEqual(true);

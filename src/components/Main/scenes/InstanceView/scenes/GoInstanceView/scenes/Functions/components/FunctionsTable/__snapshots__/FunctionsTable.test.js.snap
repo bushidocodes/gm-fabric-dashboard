@@ -8,7 +8,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
     className="sc-kAzzGY dYUejF"
   >
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
       style={
         Object {
           "flex": "1 1 20%",
@@ -18,12 +18,12 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Function
     </div>
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
     >
       Requests/sec
     </div>
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
       style={
         Object {
           "textAlign": "right",
@@ -33,7 +33,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Requests
     </div>
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
       style={
         Object {
           "textAlign": "right",
@@ -43,7 +43,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Error %
     </div>
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
       style={
         Object {
           "textAlign": "right",
@@ -53,7 +53,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Latency 50%
     </div>
     <div
-      className="sc-chPdSV gpMWZo"
+      className="sc-chPdSV HHZwB"
       style={
         Object {
           "textAlign": "right",
@@ -67,14 +67,14 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
     className="sc-kgoBCf dHvlms"
   >
     <li
-      className="sc-iwsKbI hSkJsz"
+      className="sc-iwsKbI geNuyD"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="sc-gqjmRU hKUSHB"
+        className="sc-gqjmRU gbBQLn"
       >
         CatalogStream
         <div
@@ -87,7 +87,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         </div>
       </div>
       <div
-        className="sc-VigVT fpCZTm"
+        className="sc-VigVT iaXEFZ"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -199,7 +199,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         </svg>
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",
@@ -209,7 +209,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         399334
       </div>
       <div
-        className="sc-gZMcBi iBOdIj"
+        className="sc-gZMcBi deEsMZ"
         style={
           Object {
             "textAlign": "right",
@@ -219,7 +219,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         0.000%
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",
@@ -229,7 +229,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         0
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",
@@ -240,14 +240,14 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       </div>
     </li>
     <li
-      className="sc-iwsKbI hSkJsz"
+      className="sc-iwsKbI geNuyD"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="sc-gqjmRU hKUSHB"
+        className="sc-gqjmRU gbBQLn"
       >
         OrderItem
         <div
@@ -260,7 +260,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         </div>
       </div>
       <div
-        className="sc-VigVT fpCZTm"
+        className="sc-VigVT iaXEFZ"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -372,7 +372,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         </svg>
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",
@@ -382,7 +382,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         0
       </div>
       <div
-        className="sc-gZMcBi iBOdIj"
+        className="sc-gZMcBi deEsMZ"
         style={
           Object {
             "textAlign": "right",
@@ -392,7 +392,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         0.000%
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",
@@ -402,7 +402,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
         0
       </div>
       <div
-        className="sc-gZMcBi bYmXBK"
+        className="sc-gZMcBi dKkxkg"
         style={
           Object {
             "textAlign": "right",

@@ -3,15 +3,17 @@
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
 <div>
   <div
-    className="sc-kpOJdX djMwLE"
+    className="sc-ckVGcZ konKeT"
   >
     <div
-      className="sc-dxgOiQ fWhFZN"
+      className="sc-jKJlTe hUnWQY"
     >
-      <form>
+      <form
+        onSubmit={[Function]}
+      >
         <input
-          aria-label="Search All Functions"
-          className="sc-eNQAEJ bpCmXX"
+          aria-label="Search Functions"
+          className="sc-kGXeez ljbeeX"
           onChange={[Function]}
           placeholder="Search Functions"
           type="search"
@@ -20,10 +22,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="sc-ckVGcZ gMBpcY"
+      className="sc-hMqMXs jBhXSB"
+    />
+    <div
+      className="sc-eNQAEJ ifrloj"
     >
       <div
-        className="Select sc-kGXeez gggNjm Select--single has-value"
+        className="Select sc-kpOJdX kDtvQI Select--single has-value"
         style={undefined}
       >
         <input
@@ -58,10 +63,11 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
               >
                 <span>
                   <span>
-                    Sort 
+                    Sort
+                     
                   </span>
                   <span
-                    className="sc-jKJlTe iouGcQ"
+                    className="sc-dxgOiQ idZMDV"
                   >
                     Function
                   </span>
@@ -107,7 +113,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       className="sc-kAzzGY dYUejF"
     >
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
         style={
           Object {
             "flex": "1 1 20%",
@@ -117,12 +123,12 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Function
       </div>
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
       >
         Requests/sec
       </div>
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
         style={
           Object {
             "textAlign": "right",
@@ -132,7 +138,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Requests
       </div>
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
         style={
           Object {
             "textAlign": "right",
@@ -142,7 +148,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Error %
       </div>
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
         style={
           Object {
             "textAlign": "right",
@@ -152,7 +158,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Latency 50%
       </div>
       <div
-        className="sc-chPdSV gpMWZo"
+        className="sc-chPdSV HHZwB"
         style={
           Object {
             "textAlign": "right",
@@ -166,14 +172,14 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       className="sc-kgoBCf dHvlms"
     >
       <li
-        className="sc-iwsKbI hSkJsz"
+        className="sc-iwsKbI geNuyD"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"
         tabIndex={0}
       >
         <div
-          className="sc-gqjmRU hKUSHB"
+          className="sc-gqjmRU gbBQLn"
         >
           CatalogStream
           <div
@@ -186,7 +192,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-VigVT fpCZTm"
+          className="sc-VigVT iaXEFZ"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -314,7 +320,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",
@@ -324,7 +330,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           13
         </div>
         <div
-          className="sc-gZMcBi iBOdIj"
+          className="sc-gZMcBi deEsMZ"
           style={
             Object {
               "textAlign": "right",
@@ -334,7 +340,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           0.000%
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",
@@ -344,7 +350,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           1956
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",
@@ -355,14 +361,14 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
       </li>
       <li
-        className="sc-iwsKbI hSkJsz"
+        className="sc-iwsKbI geNuyD"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"
         tabIndex={0}
       >
         <div
-          className="sc-gqjmRU hKUSHB"
+          className="sc-gqjmRU gbBQLn"
         >
           OrderItem
           <div
@@ -375,7 +381,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-VigVT fpCZTm"
+          className="sc-VigVT iaXEFZ"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -487,7 +493,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",
@@ -497,7 +503,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           13
         </div>
         <div
-          className="sc-gZMcBi iBOdIj"
+          className="sc-gZMcBi deEsMZ"
           style={
             Object {
               "textAlign": "right",
@@ -507,7 +513,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           0.000%
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",
@@ -517,7 +523,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
           2339
         </div>
         <div
-          className="sc-gZMcBi bYmXBK"
+          className="sc-gZMcBi dKkxkg"
           style={
             Object {
               "textAlign": "right",

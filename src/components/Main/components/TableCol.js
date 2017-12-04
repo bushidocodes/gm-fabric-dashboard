@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import { spacingScale, errorColor } from "style/styleFunctions";
 
 const TableCol = styled.div`
-  flex: 1 1 15%;
+  flex: 1 1 12%;
   min-height: ${spacingScale(4.5)};
   text-align: left;
   ${props =>

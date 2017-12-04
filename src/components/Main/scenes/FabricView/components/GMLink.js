@@ -12,6 +12,14 @@ const GMLink = styled(Link)`
   display: flex;
   cursor: pointer;
 
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &:focus:active:hover {
+    outline: 0;
+  }
+
   ${props =>
     props.disabled &&
     `

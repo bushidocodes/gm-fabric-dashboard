@@ -64,7 +64,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
           }
         }
         tabIndex={0}
-        title="Pause Updates"
+        title="Pause Polling"
       >
         <svg
           aria-labelledby="ariaLabelledby"
@@ -98,7 +98,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
           className="label"
         >
           
-          Pause Updates
+          Pause Polling
           
         </span>
       </button>
@@ -186,7 +186,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
         className="label"
         id="interval-name-Instance Polling"
       >
-        Updates Per Minute
+        Polling Interval (s)
       </span>
     </div>
   </div>

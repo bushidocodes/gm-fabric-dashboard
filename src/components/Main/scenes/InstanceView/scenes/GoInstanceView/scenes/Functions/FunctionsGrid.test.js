@@ -1,5 +1,4 @@
 import React from "react";
-import { Actions } from "jumpstate";
 import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
@@ -43,6 +42,28 @@ let funcArr = [
     requests: 13
   }
 ];
+const sortByOptions = [
+  {
+    value: "func",
+    label: "Function"
+  },
+  {
+    value: "requests",
+    label: "Requests"
+  },
+  {
+    value: "errorCount",
+    label: "Error %"
+  },
+  {
+    value: "latency50",
+    label: "Latency 50%"
+  },
+  {
+    value: "latency99",
+    label: "Latency 99%"
+  }
+];
 
 describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("Matches snapshot", () => {
@@ -57,9 +78,8 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
     expect(wrapper.find(NotFoundError).length).toBe(1);
   });
 
-  test("returns correct number of <FunctionsTableToolbar> and <FunctionsTable> and does not render <NotFoundError> when functions are found ", () => {
+  test("returns correct number of <FunctionsTable> and does not render <NotFoundError> when functions are found ", () => {
     wrapper = mount(FunctionsGridWithMockStore);
-    expect(wrapper.find("FunctionsTableToolbar").length).toBe(1);
     expect(wrapper.find("FunctionsTable").length).toBe(1);
     expect(wrapper.find(NotFoundError).length).toBe(0);
   });
@@ -72,13 +92,21 @@ describe("FunctionsGrid Child Components", () => {
   });
 
   test("passes props to FunctionsTableToolbar", () => {
-    expect(wrapper.find("FunctionsTableToolbar").props()).toMatchObject({
-      filterString: "",
-      keyToSortBy: "func",
-      setFilterString: FunctionsGridInstance.setFilterString,
-      setKeyToSortBy: FunctionsGridInstance.setKeyToSortBy
+    FunctionsGridInstance = wrapper.find("FunctionsGrid").instance();
+    expect(wrapper.find("TableToolbar").props()).toMatchObject({
+      searchInputProps: {
+        filterString: "",
+        setFilterString: FunctionsGridInstance.setFilterString,
+        searchPlaceholder: "Search Functions"
+      },
+      sortByProps: {
+        sortByOptions,
+        sortByAttribute: "func",
+        setSortByAttribute: FunctionsGridInstance.setKeyToSortBy
+      }
     });
   });
+
   test("passes functions as props to FunctionsTable", () => {
     expect(wrapper.find("FunctionsTable").props()).toMatchObject({
       funcs: [

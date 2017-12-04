@@ -31,6 +31,14 @@ export default class ServicesListItem extends Component {
     version: PropTypes.string
   };
 
+  manageFocus = (node, e) => {
+    if (node) {
+      // the row is composed of a div encapsulating an a tag, clicking that produces an outline may fall on ether of those elements, thus we want to remove focus from ether one
+      node.tagName === "A" ? node.blur() : node.parentNode.blur();
+    }
+    e.preventDefault();
+  };
+
   render() {
     const {
       authorized,
@@ -60,8 +68,8 @@ export default class ServicesListItem extends Component {
         <LineLeft>
           <GMLink
             disabled={!isAccessible}
-            onClick={isAccessible ? null : e => e.preventDefault()}
             tabIndex="0"
+            onClick={isAccessible ? null : e => this.manageFocus(e.target, e)}
             title={title}
             to={`/${name}/${version}`}
           >
