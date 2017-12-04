@@ -28,6 +28,8 @@ public class FinderServiceTests extends ApiTest {
 
         // Validate the format of the /data/sources/(sourceId) response
         Assert.assertTrue(finderService.isDataSourcesResponseFormatValid());
+        Assert.assertTrue(finderService.getResponseEntryCount() == 1);
+        Assert.assertTrue(finderService.getResponse().getAsJsonObject().get(FinderService.DATA_SOURCES_RESPONSE_ID_KEY).getAsString().equals(sourceId));
 
         // Hit the /data/sources/internal endpoint
         finderService.getDataSourcesInternal();
@@ -39,7 +41,6 @@ public class FinderServiceTests extends ApiTest {
         finderService.getDataSourcesCategories();
 
         // Validate the format of the /data/sources/categories response
-        // NOTE: This is currently failing because one of the entries in the response does not have the urlTemplate field.
         Assert.assertTrue(finderService.isDataSourcesCategoriesResponseFormatValid());
 
         // Select an ID from the /data/sources/categories response and use it to hit the /data/sources/categories/(categoryId) endpoint
@@ -48,5 +49,7 @@ public class FinderServiceTests extends ApiTest {
 
         // Validate the format of the /data/sources/categories/(categoryId) response
         Assert.assertTrue(finderService.isDataSourcesCategoriesResponseFormatValid());
+        Assert.assertTrue(finderService.getResponseEntryCount() == 1);
+        Assert.assertTrue(finderService.getResponse().getAsJsonObject().get(FinderService.DATA_SOURCES_CATEGORIES_RESPONSE_ID_KEY).getAsString().equals(categoryId));
     }
 }
