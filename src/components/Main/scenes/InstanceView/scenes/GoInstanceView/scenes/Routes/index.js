@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import RoutesTable from "./components/RoutesTable";
-import RoutesTableToolbar from "./components/RoutesTableToolbar";
+import TableToolbar from "components/Main/components/TableToolbar";
 
 import { getRoutesTable } from "utils/go/selectors";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -21,6 +21,30 @@ class RoutesGrid extends Component {
   static propTypes = {
     routes: PropTypes.array
   };
+
+  // Options for sort dropdown rendered in TableToolbar
+  static sortByOptions = [
+    {
+      value: "route",
+      label: "Route"
+    },
+    {
+      value: "requests",
+      label: "Requests"
+    },
+    {
+      value: "errorPercent",
+      label: "Error %"
+    },
+    {
+      value: "latency50",
+      label: "Latency 50%"
+    },
+    {
+      value: "latency99",
+      label: "Latency 99%"
+    }
+  ];
 
   constructor(props) {
     super(props);
@@ -82,12 +106,20 @@ class RoutesGrid extends Component {
     if (this.props.routes && this.props.routes.length > 0) {
       return (
         <div>
-          <RoutesTableToolbar
-            filterString={this.state.filterString}
-            setFilterString={this.setFilterString}
-            keyToSortBy={this.state.keyToSortBy}
-            setKeyToSortBy={this.setKeyToSortBy}
-          />
+          {
+            <TableToolbar
+              searchInputProps={{
+                filterString: this.state.filterString,
+                setFilterString: this.setFilterString,
+                searchPlaceholder: "Search Routes"
+              }}
+              sortByProps={{
+                sortByOptions: RoutesGrid.sortByOptions,
+                sortByAttribute: this.state.keyToSortBy,
+                setSortByAttribute: this.setKeyToSortBy
+              }}
+            />
+          }
           <ErrorBoundary>
             <RoutesTable
               routes={this.sort(

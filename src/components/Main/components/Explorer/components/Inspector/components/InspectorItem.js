@@ -18,6 +18,14 @@ const InspectorItem = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};
   will-change: transform;
 
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &:focus:active:hover {
+    outline: 0;
+  }
+
   &:first-child {
     margin-top: ${spacingScale(1)};
   }

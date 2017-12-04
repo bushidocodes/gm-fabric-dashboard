@@ -38,9 +38,9 @@ describe("PollingSettings component", () => {
     expect(wrapper.find("button").length).toBe(1);
   });
 
-  test("If isPolling prop is set to 'true', button displays 'Pause Updates'", () => {
+  test("If isPolling prop is set to 'true', button displays 'Pause Polling'", () => {
     wrapper.setProps({ isPolling: true });
-    expect(wrapper.find("button").props().title).toBe("Pause Updates");
+    expect(wrapper.find("button").props().title).toBe("Pause Polling");
   });
 
   test("If isPolling prop is set to 'true', and button is clicked, the function that is called is Stop Polling", () => {
@@ -49,9 +49,9 @@ describe("PollingSettings component", () => {
     expect(mockStopPolling).toBeCalled();
   });
 
-  test("If isPolling prop is set to 'false', the PollingSettings Button displays 'Resume Updates'", () => {
+  test("If isPolling prop is set to 'false', the PollingSettings Button displays 'Resume Polling'", () => {
     wrapper.setProps({ isPolling: false });
-    expect(wrapper.find("button").props().title).toBe("Resume Updates");
+    expect(wrapper.find("button").props().title).toBe("Resume Polling");
   });
 
   test("If isPolling prop is set to 'false', and button is clicked, the function that is called is Start Polling", () => {

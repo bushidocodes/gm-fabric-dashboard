@@ -65,7 +65,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             }
           }
           tabIndex={0}
-          title="Pause Updates"
+          title="Pause Polling"
         >
           <svg
             aria-labelledby="ariaLabelledby"
@@ -99,7 +99,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             className="label"
           >
             
-            Pause Updates
+            Pause Polling
             
           </span>
         </button>
@@ -187,7 +187,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           className="label"
           id="interval-name-Fabric Polling"
         >
-          Updates Per Minute
+          Polling Interval (s)
         </span>
       </div>
     </div>
@@ -255,7 +255,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             }
           }
           tabIndex={0}
-          title="Resume Updates"
+          title="Resume Polling"
         >
           <svg
             aria-labelledby="ariaLabelledby"
@@ -289,7 +289,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
             className="label"
           >
             
-            Resume Updates
+            Resume Polling
             
           </span>
         </button>
@@ -377,7 +377,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           className="label"
           id="interval-name-Instance Polling"
         >
-          Updates Per Minute
+          Polling Interval (s)
         </span>
       </div>
     </div>
@@ -438,7 +438,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-chPdSV ldJDls"
+          className="sc-chPdSV bgSTKf"
           style={
             Object {
               "minHeight": "125px",

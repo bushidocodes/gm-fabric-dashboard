@@ -3,13 +3,22 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import ThreadsSection from "./components/ThreadsSection";
+import ThreadsTable from "./components/ThreadsTable";
+import ThreadsTableToolbar from "./components/ThreadsTableToolbar";
+import ThreadsTableWrapper from "./components/ThreadsTableWrapper";
 
 import ErrorBoundary from "components/ErrorBoundary";
 import { threadsTableItemShape } from "components/PropTypes";
 
+// Importing external deps from src as WebPack Modules directory
+import {
+  getVisibleThreads,
+  getThreadCounts,
+  threadCountsShape
+} from "utils/jvm/selectors";
+
 /**
- * Very redundant feeling wrapper container that contains a ThreadsSection
+ * Parent container of ThreadsTable and ThreadsTableToolbar
  * @class ThreadsGrid
  * @extends {Component}
  */
@@ -19,7 +28,10 @@ class ThreadsGrid extends Component {
     selectedInstance: PropTypes.string,
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string,
+    threadCounts: threadCountsShape.isRequired,
+    threads: PropTypes.array,
     threadsEndpoint: PropTypes.string,
+    threadsFilter: PropTypes.string,
     threadsTable: PropTypes.arrayOf(threadsTableItemShape)
   };
 
@@ -31,6 +43,7 @@ class ThreadsGrid extends Component {
       selectedInstance,
       threadsEndpoint
     } = this.props;
+
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
     // so we need to dynamically build the endpoint for the threads API. If falsy, we can just
     // pull the static configuration value from Redux via threadsEndpoint.
@@ -49,29 +62,32 @@ class ThreadsGrid extends Component {
   }
 
   render() {
-    const { threadsTable } = this.props;
+    const { threadCounts, threadsFilter, threads } = this.props;
     return (
-      <div>
-        <ErrorBoundary>
-          <ThreadsSection threadsTable={threadsTable} />
-        </ErrorBoundary>
-      </div>
+      <ErrorBoundary>
+        <ThreadsTableWrapper>
+          <ThreadsTableToolbar
+            threadCounts={threadCounts}
+            threadsFilter={threadsFilter}
+          />
+          <ThreadsTable filteredThreadData={threads} />
+        </ThreadsTableWrapper>
+      </ErrorBoundary>
     );
   }
 }
 
-function mapStateToProps({
-  fabric: { selectedService, selectedServiceVersion, selectedInstance },
-  settings: { fabricServer, threadsEndpoint },
-  threadsTable
-}) {
+function mapStateToProps(state) {
   return {
-    fabricServer,
-    selectedService,
-    selectedServiceVersion,
-    selectedInstance,
-    threadsEndpoint,
-    threadsTable
+    fabricServer: state.settings.fabricServer,
+    threads: getVisibleThreads(state),
+    threadCounts: getThreadCounts(state),
+    threadsFilter: state.settings.threadsFilter,
+    threadsEndpoint: state.settings.threadsEndpoint,
+    threadsTable: state.threadsTable,
+    selectedService: state.fabric.selectedService,
+    selectedServiceVersion: state.fabric.selectedServiceVersion,
+    selectedInstance: state.fabric.selectedInstance
   };
 }
 

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import FunctionsTable from "./components/FunctionsTable";
-import FunctionsTableToolbar from "./components/FunctionsTableToolbar";
+import TableToolbar from "components/Main/components/TableToolbar";
 
 import { getFunctionsTable } from "utils/go/selectors";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -21,6 +21,30 @@ class FunctionsGrid extends Component {
   static propTypes = {
     funcs: PropTypes.array
   };
+
+  // Options for sort dropdown rendered in TableToolbar
+  static sortByOptions = [
+    {
+      value: "func",
+      label: "Function"
+    },
+    {
+      value: "requests",
+      label: "Requests"
+    },
+    {
+      value: "errorCount",
+      label: "Error %"
+    },
+    {
+      value: "latency50",
+      label: "Latency 50%"
+    },
+    {
+      value: "latency99",
+      label: "Latency 99%"
+    }
+  ];
 
   constructor(props) {
     super(props);
@@ -83,12 +107,20 @@ class FunctionsGrid extends Component {
     if (this.props.funcs && this.props.funcs.length > 0) {
       return (
         <div>
-          <FunctionsTableToolbar
-            filterString={this.state.filterString}
-            keyToSortBy={this.state.keyToSortBy}
-            setFilterString={this.setFilterString}
-            setKeyToSortBy={this.setKeyToSortBy}
-          />
+          {
+            <TableToolbar
+              searchInputProps={{
+                filterString: this.state.filterString,
+                setFilterString: this.setFilterString,
+                searchPlaceholder: "Search Functions"
+              }}
+              sortByProps={{
+                sortByOptions: FunctionsGrid.sortByOptions,
+                sortByAttribute: this.state.keyToSortBy,
+                setSortByAttribute: this.setKeyToSortBy
+              }}
+            />
+          }
           <ErrorBoundary>
             <FunctionsTable
               funcs={this.sort(

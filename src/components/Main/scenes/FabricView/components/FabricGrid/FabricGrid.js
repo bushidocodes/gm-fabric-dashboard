@@ -12,7 +12,7 @@ import {
   serviceShape
 } from "components/PropTypes";
 import NotFoundError from "components/Main/components/NotFoundError";
-import FabricTableToolbar from "./components/FabricTableToolbar";
+import TableToolbar from "components/Main/components/TableToolbar";
 import FabricMainView from "./components/FabricMainView";
 
 class FabricGrid extends Component {
@@ -23,10 +23,42 @@ class FabricGrid extends Component {
     services: PropTypes.arrayOf(serviceShape),
     statusView: PropTypes.bool
   };
+
   static defaultProps = {
     services: [],
     statusView: false
   };
+
+  // Options for group and sort dropdowns rendered in TableToolbar
+  static groupByOptions = [
+    {
+      value: "Owner",
+      label: "Owner"
+    },
+    {
+      value: "Capability",
+      label: "Capability"
+    },
+    {
+      value: "Status",
+      label: "Status"
+    },
+    {
+      value: "None",
+      label: "None"
+    }
+  ];
+
+  static sortByOptions = [
+    {
+      value: "Name",
+      label: "Name"
+    },
+    {
+      value: "Status",
+      label: "Status"
+    }
+  ];
 
   constructor(props) {
     super(props);
@@ -188,19 +220,35 @@ class FabricGrid extends Component {
       );
     });
 
+    // If we're not rendering a statusView,
+    // then pass down sortBy props to render the sortBy dropdown
+    const sortByProps = statusView
+      ? null
+      : {
+          sortByOptions: FabricGrid.sortByOptions,
+          sortByAttribute: this.state.sortByAttribute,
+          setSortByAttribute: this.setSortByAttribute
+        };
+
     if (services && services.length > 0) {
       return (
         <div>
-          <FabricTableToolbar
-            displayType={this.state.displayType}
-            setDisplayType={this.setDisplayType}
-            searchQuery={this.state.searchQuery}
-            onSearchInputChange={this.onSearchInputChange}
-            groupByAttribute={this.state.groupByAttribute}
-            setGroupByAttribute={this.setGroupByAttribute}
-            sortByAttribute={this.state.sortByAttribute}
-            setSortByAttribute={this.setSortByAttribute}
-            statusView={statusView}
+          <TableToolbar
+            displayTypeProps={{
+              displayType: this.state.displayType,
+              setDisplayType: this.setDisplayType
+            }}
+            searchInputProps={{
+              filterString: this.state.searchQuery,
+              setFilterString: this.onSearchInputChange,
+              searchPlaceholder: "Search Services"
+            }}
+            groupByProps={{
+              groupByOptions: FabricGrid.groupByOptions,
+              groupByAttribute: this.state.groupByAttribute,
+              setGroupByAttribute: this.setGroupByAttribute
+            }}
+            sortByProps={sortByProps}
           />
           {/* pass filtered services to FabricMainView */}
           <FabricMainView

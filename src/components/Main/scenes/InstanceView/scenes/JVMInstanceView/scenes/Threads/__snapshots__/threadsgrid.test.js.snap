@@ -1,270 +1,270 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
-<div>
-  <div>
+<div
+  className="sc-dxgOiQ eWaXcx"
+>
+  <div
+    className="sc-kGXeez bSgYKS"
+  >
     <div
-      className="sc-kGXeez bSgYKS"
+      className="sc-kpOJdX YlRrM"
     >
       <div
-        className="sc-kpOJdX YlRrM"
+        className="sc-kgoBCf iOKiQh"
       >
-        <div
-          className="sc-kgoBCf iOKiQh"
+        <button
+          className="btn"
+          disabled={false}
+          onClick={[Function]}
+          style={undefined}
+          tabIndex={0}
+          title="All Threads"
         >
-          <button
-            className="btn"
-            disabled={false}
-            onClick={[Function]}
-            style={undefined}
-            tabIndex={0}
-            title="All Threads"
+          <span
+            className="label"
           >
+            
+            All Threads
             <span
-              className="label"
+              className="label-suffix"
             >
-              
-              All Threads
-              <span
-                className="label-suffix"
-              >
-                6
-              </span>
+              6
             </span>
-          </button>
-          <button
-            className="btn active"
-            disabled={false}
-            onClick={[Function]}
-            style={undefined}
-            tabIndex={0}
-            title="Active"
+          </span>
+        </button>
+        <button
+          className="btn active"
+          disabled={false}
+          onClick={[Function]}
+          style={undefined}
+          tabIndex={0}
+          title="Active"
+        >
+          <span
+            className="label"
           >
+            
+            Active
             <span
-              className="label"
+              className="label-suffix"
             >
-              
-              Active
-              <span
-                className="label-suffix"
-              >
-                1
-              </span>
+              1
             </span>
-          </button>
-          <button
-            className="btn"
-            disabled={false}
-            onClick={[Function]}
-            style={undefined}
-            tabIndex={0}
-            title="Idle"
+          </span>
+        </button>
+        <button
+          className="btn"
+          disabled={false}
+          onClick={[Function]}
+          style={undefined}
+          tabIndex={0}
+          title="Idle"
+        >
+          <span
+            className="label"
           >
+            
+            Idle
             <span
-              className="label"
+              className="label-suffix"
             >
-              
-              Idle
-              <span
-                className="label-suffix"
-              >
-                2
-              </span>
+              2
             </span>
-          </button>
-          <button
-            className="btn"
-            disabled={false}
-            onClick={[Function]}
-            style={undefined}
-            tabIndex={0}
-            title="Stopped"
+          </span>
+        </button>
+        <button
+          className="btn"
+          disabled={false}
+          onClick={[Function]}
+          style={undefined}
+          tabIndex={0}
+          title="Stopped"
+        >
+          <span
+            className="label"
           >
+            
+            Stopped
             <span
-              className="label"
+              className="label-suffix"
             >
-              
-              Stopped
-              <span
-                className="label-suffix"
-              >
-                3
-              </span>
+              3
             </span>
-          </button>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
+  </div>
+  <div
+    className="sc-htoDjs jAhemH"
+  >
     <div
-      className="sc-htoDjs jAhemH"
+      className="sc-dnqmqq gIvpQT"
     >
       <div
-        className="sc-dnqmqq gIvpQT"
+        className="sc-gqjmRU eRWJRn"
+      >
+        ID
+      </div>
+      <div
+        className="sc-gqjmRU cXvZrz"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        State
+      </div>
+      <div
+        className="sc-gqjmRU cXvZrz"
+      >
+        Trace
+      </div>
+      <div
+        className="sc-gZMcBi jDQMJe"
+        style={
+          Object {
+            "flex": "1 1 auto",
+          }
+        }
+      >
+        Name
+      </div>
+      <div
+        className="sc-bxivhb fXvOVg"
+      >
+        Daemon
+      </div>
+      <div
+        className="sc-bxivhb fXvOVg"
+      >
+        Priority
+      </div>
+    </div>
+    <ol
+      className="sc-iwsKbI hzfbcM"
+    >
+      <li
+        className="sc-EHOje cjsqKx"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+        tabIndex={0}
       >
         <div
-          className="sc-gqjmRU fJIGBQ"
+          className="sc-htpNat kRaCoM"
         >
-          ID
+          2
         </div>
         <div
-          className="sc-gqjmRU gQSUoL"
+          className="sc-htpNat caWwDh"
           style={
             Object {
               "textAlign": "center",
             }
           }
         >
-          State
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-gzVnrw XkNQd"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="iconBackground"
+              fill="rgb(10, 171, 42)"
+              fillOpacity=".3"
+              fillRule="evenodd"
+              id="Square"
+            >
+              <path
+                d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
+                id="BackgroundCircleSmall"
+              />
+            </g>
+            <g
+              className="sc-bZQynM iePCjc"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <path
+                d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
+                id="GlyphRunningSmall"
+              />
+            </g>
+          </svg>
         </div>
         <div
-          className="sc-gqjmRU gQSUoL"
+          className="sc-htpNat caWwDh"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
         >
-          Trace
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-gzVnrw eCnGhT"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="sc-bZQynM iePCjc"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <g
+                className="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
+                  id="shape"
+                />
+              </g>
+            </g>
+          </svg>
         </div>
         <div
-          className="sc-gZMcBi hVuIxC"
+          className="sc-bwzfXH dECyiq"
           style={
             Object {
               "flex": "1 1 auto",
             }
           }
         >
-          Name
+          Test Runnable
         </div>
         <div
-          className="sc-bxivhb kvyvhu"
+          className="sc-bxivhb iwomYX"
         >
-          Daemon
+          Yes
         </div>
         <div
-          className="sc-bxivhb kvyvhu"
+          className="sc-bxivhb iwomYX"
         >
-          Priority
+          8
         </div>
-      </div>
-      <ol
-        className="sc-iwsKbI hzfbcM"
-      >
-        <li
-          className="sc-EHOje cCjpET"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="link"
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-          tabIndex={0}
-        >
-          <div
-            className="sc-htpNat iVAdOU"
-          >
-            2
-          </div>
-          <div
-            className="sc-htpNat eydWWN"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <svg
-              aria-labelledby="ariaLabelledby"
-              className="sc-gzVnrw XkNQd"
-              version="1.1"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <g
-                className="iconBackground"
-                fill="rgb(10, 171, 42)"
-                fillOpacity=".3"
-                fillRule="evenodd"
-                id="Square"
-              >
-                <path
-                  d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
-                  id="BackgroundCircleSmall"
-                />
-              </g>
-              <g
-                className="sc-bZQynM iePCjc"
-                fill="currentColor"
-                title=""
-              >
-                <title>
-                  
-                </title>
-                <path
-                  d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
-                  id="GlyphRunningSmall"
-                />
-              </g>
-            </svg>
-          </div>
-          <div
-            className="sc-htpNat eydWWN"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <svg
-              aria-labelledby="ariaLabelledby"
-              className="sc-gzVnrw eCnGhT"
-              version="1.1"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-            >
-              <g
-                className="sc-bZQynM iePCjc"
-                fill="currentColor"
-                title=""
-              >
-                <title>
-                  
-                </title>
-                <g
-                  className="glyph"
-                  fill="currentColor"
-                  transform="translate(0 0) scale(1)"
-                >
-                  <path
-                    d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
-                    id="shape"
-                  />
-                </g>
-              </g>
-            </svg>
-          </div>
-          <div
-            className="sc-bwzfXH fLpJPH"
-            style={
-              Object {
-                "flex": "1 1 auto",
-              }
-            }
-          >
-            Test Runnable
-          </div>
-          <div
-            className="sc-bxivhb fPNLHk"
-          >
-            Yes
-          </div>
-          <div
-            className="sc-bxivhb fPNLHk"
-          >
-            8
-          </div>
-        </li>
-      </ol>
-    </div>
+      </li>
+    </ol>
   </div>
 </div>
 `;

@@ -31,7 +31,7 @@ function GMServiceTableLineItem({
   path
 }) {
   return (
-    <TableRow>
+    <TableRow tabIndex="-1">
       <TableCol style={{ flex: "1 1 30%" }}>
         <GMLink to={encodeParameter(path)}>{name}</GMLink>
       </TableCol>
