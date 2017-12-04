@@ -27,7 +27,7 @@ const NotificationBody = `
     line-height: 0;
 
     &[class*="-visible"] {
-      flex: 1 1;
+      flex: 1 1 auto;
       opacity: 1;
       padding: ${spacingScale(1)};
       margin-top: ${spacingScale(1)};
