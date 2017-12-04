@@ -29,6 +29,7 @@ public class FinderService extends RestService {
     private final String INCLUDE_TEMPLATE_ARGUMENT = "includeTemplate";
 
     JsonElementStructure[] dataSourcesResponseStructure;
+    JsonElementStructure[] dataSourcesCategoriesResponseStructure;
 
     public static final String DATA_SOURCES_RESPONSE_ID_KEY = "id";
     public static final String DATA_SOURCES_RESPONSE_DISPLAY_NAME_KEY = "displayName";
@@ -48,6 +49,16 @@ public class FinderService extends RestService {
     public static final String DATA_SOURCES_RESPONSE_CSV_EXPORTS_KEY = "csvExports";
     public static final String DATA_SOURCES_RESPONSE_PAGINATION_KEY = "pagination";
     public static final String DATA_SOURCES_RESPONSE_FACETS_KEY = "facets";
+
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_ID_KEY = "id";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_DISPLAY_NAME_KEY = "displayName";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_DESCRIPTION_KEY = "description";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_INDEXES_KEY = "indexes";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_DATA_TYPE_KEY = "dataType";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_TOOLTIP_KEY = "tooltip";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_STYLE_KEY = "style";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_QUERY_TEMPLATE_KEY = "queryTemplate";
+    public static final String DATA_SOURCES_CATEGORIES_RESPONSE_FACETS_KEY = "facets";
 
 
     // <editor-fold desc="Constructor">
@@ -81,6 +92,18 @@ public class FinderService extends RestService {
                 new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_RESPONSE_CSV_EXPORTS_KEY).setType(JsonObject.class).build(),
                 new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_RESPONSE_PAGINATION_KEY).setType(String.class).build(),
                 new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_RESPONSE_FACETS_KEY).setType(JsonArray.class).build()
+        };
+
+        dataSourcesCategoriesResponseStructure = new JsonElementStructure[]{
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_ID_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_DISPLAY_NAME_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_DESCRIPTION_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_INDEXES_KEY).setType(JsonArray.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_DATA_TYPE_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_TOOLTIP_KEY).setType(String.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_STYLE_KEY).setType(JsonObject.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_QUERY_TEMPLATE_KEY).setType(JsonObject.class).build(),
+                new JsonElementStructure.JsonElementFormatBuilder().setName(DATA_SOURCES_CATEGORIES_RESPONSE_FACETS_KEY).setType(JsonArray.class).build()
         };
     }
 
@@ -227,16 +250,14 @@ public class FinderService extends RestService {
 
     // <editor-fold desc="Validate Response Format">
 
-    private boolean isDataSourcesResponseFormatValid(JsonObject jsonObject) {
+    private boolean isResponseFormatValid(JsonObject jsonObject, JsonElementStructure[] jsonStructure) {
         String throwawayString;
         boolean throwawayBoolean;
         JsonObject throwawayJsonObject;
         JsonArray throwawayJsonArray;
 
-        for(JsonElementStructure jsonElementStructure: dataSourcesResponseStructure) {
+        for(JsonElementStructure jsonElementStructure: jsonStructure) {
             if(jsonElementStructure.getType() == String.class) {
-                System.out.println(String.format("Looking for key \"%s\" with a String value", jsonElementStructure.getKey()));  // DEBUG
-                System.out.println(jsonObject);  // DEBUG
                 throwawayString = jsonObject.get(jsonElementStructure.getKey()).getAsString();
             } else if(jsonElementStructure.getType() == boolean.class) {
                 throwawayBoolean = jsonObject.get(jsonElementStructure.getKey()).getAsBoolean();
@@ -256,10 +277,26 @@ public class FinderService extends RestService {
 
     public boolean isDataSourcesResponseFormatValid() {
         if(response.isJsonObject()) {
-            return isDataSourcesResponseFormatValid(response.getAsJsonObject());
+            return isResponseFormatValid(response.getAsJsonObject(), dataSourcesResponseStructure);
         } else if(response.isJsonArray()) {
             for(int index = 0; index < response.getAsJsonArray().size(); index++) {
-                if(!isDataSourcesResponseFormatValid(response.getAsJsonArray().get(index).getAsJsonObject())) {
+                if(!isResponseFormatValid(response.getAsJsonArray().get(index).getAsJsonObject(), dataSourcesResponseStructure)) {
+                    return false;
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isDataSourcesCategoriesResponseFormatValid() {
+        if(response.isJsonObject()) {
+            return isResponseFormatValid(response.getAsJsonObject(), dataSourcesCategoriesResponseStructure);
+        } else if(response.isJsonArray()) {
+            for(int index = 0; index < response.getAsJsonArray().size(); index++) {
+                if(!isResponseFormatValid(response.getAsJsonArray().get(index).getAsJsonObject(), dataSourcesCategoriesResponseStructure)) {
                     return false;
                 }
             }
