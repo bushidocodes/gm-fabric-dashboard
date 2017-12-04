@@ -438,7 +438,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-chPdSV ldJDls"
+          className="sc-chPdSV bgSTKf"
           style={
             Object {
               "minHeight": "125px",
