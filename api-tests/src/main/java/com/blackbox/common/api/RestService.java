@@ -54,11 +54,11 @@ public class RestService {
         String concatenatedUrl = url;
 
         if((parameters != null) && (parameters.length > 0)) {
-            url = buildUrlWithParameters(url, parameters);
+            concatenatedUrl = buildUrlWithParameters(url, parameters);
         }
 
         if((arguments != null) && (arguments.length > 0)) {
-            url = buildUrlWithArguments(url, arguments);
+            concatenatedUrl = buildUrlWithArguments(url, arguments);
         }
 
         return concatenatedUrl;
