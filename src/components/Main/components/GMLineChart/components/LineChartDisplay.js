@@ -8,6 +8,7 @@ const LineChartDisplay = styled.div`
   background-color: ${CHART_BACKGROUND_COLOR};
   width: 100%;
   height: 100%;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;

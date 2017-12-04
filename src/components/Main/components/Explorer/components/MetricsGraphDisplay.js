@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const MetricsGraphDisplay = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1 1 100%;
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
 

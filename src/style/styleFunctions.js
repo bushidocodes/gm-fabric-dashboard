@@ -152,8 +152,6 @@ export function errorColor(errorPercent = 1) {
  * @returns {string} - height attribute
  */
 export const chartHeight = height => {
-  if (height === "normal") return `height: auto`;
-
   let factor;
   switch (height) {
     case "normal":
@@ -170,6 +168,7 @@ export const chartHeight = height => {
     case "xl":
       factor = 1.5;
       break;
+    case "max":
     default:
       return `height: 100%`;
   }
