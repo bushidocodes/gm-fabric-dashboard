@@ -6,6 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.0.2] - 2017-12-04
+### Added
+* Added more unit tests
+* Added PropType shapes as nested PropTypes validation
+* Added a skeleton for a user guide
+### Changed
+* Refactor filenames and imports to be search-friendly
+* Refactored SCSS files into Styled Components
+* Fixed bugs in IE11 and Safari 10.1
+* Improved visual interaction without affecting accessibility features
+### Removed
+* Removed SCSS stylesheets
+
+### Test Coverage: 38.22% ([1.0.2 Coverage Report])
+### Bundle Size: ~2.61 MB ([1.0.2 Bundle Size Report])
+### Production Build: ([1.0.2 Build])
+
 ## [1.0.1] - 2017-11-22
 ### Added
 * Added more unit tests
@@ -329,7 +346,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Test Coverage: 2%
 
-[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.2...HEAD
+
+[1.0.2]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.1...v1.0.2
+[1.0.2 Coverage Report]: https://2548-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html 
+[1.0.2 Bundle Size Report]: https://2548-85883218-gh.circle-artifacts.com/0/home/circleci/repo/bundlesize/report.html
+[1.0.2 Build]: https://2548-85883218-gh.circle-artifacts.com/0/home/circleci/repo/build.tar.gz
 
 [1.0.1]: https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.0...v1.0.1
 [1.0.1 Coverage Report]: https://2278-85883218-gh.circle-artifacts.com/0/home/circleci/repo/coverage/lcov-report/index.html 
