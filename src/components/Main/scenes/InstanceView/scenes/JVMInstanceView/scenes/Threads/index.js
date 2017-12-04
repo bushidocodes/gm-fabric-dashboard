@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 import ThreadsTable from "./components/ThreadsTable";
 import ThreadsTableToolbar from "./components/ThreadsTableToolbar";
+import ThreadsTableWrapper from "./components/ThreadsTableWrapper";
 
 import ErrorBoundary from "components/ErrorBoundary";
 import { threadsTableItemShape } from "components/PropTypes";
@@ -64,11 +65,13 @@ class ThreadsGrid extends Component {
     const { threadCounts, threadsFilter, threads } = this.props;
     return (
       <ErrorBoundary>
-        <ThreadsTableToolbar
-          threadCounts={threadCounts}
-          threadsFilter={threadsFilter}
-        />
-        <ThreadsTable filteredThreadData={threads} />
+        <ThreadsTableWrapper>
+          <ThreadsTableToolbar
+            threadCounts={threadCounts}
+            threadsFilter={threadsFilter}
+          />
+          <ThreadsTable filteredThreadData={threads} />
+        </ThreadsTableWrapper>
       </ErrorBoundary>
     );
   }

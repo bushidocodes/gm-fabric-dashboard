@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
-Array [
+<div
+  className="sc-dxgOiQ eWaXcx"
+>
   <div
     className="sc-kGXeez bSgYKS"
   >
@@ -93,7 +95,7 @@ Array [
         </button>
       </div>
     </div>
-  </div>,
+  </div>
   <div
     className="sc-htoDjs jAhemH"
   >
@@ -263,6 +265,6 @@ Array [
         </div>
       </li>
     </ol>
-  </div>,
-]
+  </div>
+</div>
 `;
