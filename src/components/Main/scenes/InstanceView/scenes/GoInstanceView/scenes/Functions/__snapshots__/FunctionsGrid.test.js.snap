@@ -28,7 +28,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       className="sc-eNQAEJ ifrloj"
     >
       <div
-        className="Select sc-kpOJdX kDtvQI Select--single has-value"
+        className="Select sc-kpOJdX jyorIk Select--single has-value"
         style={undefined}
       >
         <input

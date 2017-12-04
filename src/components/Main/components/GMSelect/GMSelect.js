@@ -9,6 +9,7 @@ import "react-select/dist/react-select.css";
 const GMSelect = styled(Select)`
   flex-grow: 1;
   max-width: 125px;
+  width: 100%;
   height: 28px;
   font-weight: 600;
   font-size: 14px;

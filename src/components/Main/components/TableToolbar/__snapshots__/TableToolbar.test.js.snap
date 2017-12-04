@@ -116,7 +116,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
     className="sc-gzVnrw cElssY"
   >
     <div
-      className="Select sc-bxivhb pPOlh Select--single has-value"
+      className="Select sc-bxivhb iHWWTX Select--single has-value"
       style={undefined}
     >
       <input
@@ -193,7 +193,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
       </div>
     </div>
     <div
-      className="Select sc-bxivhb pPOlh Select--single has-value"
+      className="Select sc-bxivhb iHWWTX Select--single has-value"
       style={undefined}
     >
       <input
