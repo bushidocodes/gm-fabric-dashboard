@@ -50,7 +50,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       className="sc-ifAKCX iLlrDi"
     >
       <div
-        className="sc-gzVnrw hLRaYR"
+        className="sc-gzVnrw hnFWsC"
       >
         <button
           className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"
@@ -240,7 +240,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       className="sc-ifAKCX iLlrDi"
     >
       <div
-        className="sc-gzVnrw hLRaYR"
+        className="sc-gzVnrw hnFWsC"
       >
         <button
           className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"

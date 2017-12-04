@@ -27,6 +27,10 @@ const PollingBtnContainer = styled.div`
     transition: all 0.3s ease;
   }
 
+  .btn-type-polling > svg {
+    height: 100%;
+  }
+
   &:hover svg,
   &:active svg,
   &:focus svg {
