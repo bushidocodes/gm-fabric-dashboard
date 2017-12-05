@@ -4,7 +4,7 @@ checks:
   method-lines:
     config:
       threshold: 50
-engines:
+plugins:
   csslint:
     enabled: false
   duplication:
@@ -24,16 +24,7 @@ engines:
     enabled: true
   radon:
     enabled: false
-ratings:
-  paths:
-  - "**.css"
-  - "**.js"
-  - "!**.stories.js"
-  - "!**.test.js"
-  - "**.jsx"
-  - "**.md"
-  - "**.module"
-exclude_paths:
+exclude_patterns:
 - ".circleci/"
 - ".storybook"
 - ".vscode/"
@@ -46,6 +37,6 @@ exclude_paths:
 - "json-mock/"
 - "junit/"
 - "node_modules/"
+- "src/json/"
 - "**/*.test.js"
 - "**/*.stories.js"
-- "src/json/"
