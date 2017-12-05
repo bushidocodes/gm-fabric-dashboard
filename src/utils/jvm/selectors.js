@@ -54,18 +54,18 @@ export const getRoutesTable = createSelector(
 
         const latency50Key = `route${routePath}/${routeVerb}/time.p50`;
         const latency99Key = `route${routePath}/${routeVerb}/time.p99`;
-        const totalRequests = getLatestAttribute(routesMetrics, requestsKey);
+        const requests = getLatestAttribute(routesMetrics, requestsKey);
         const totalSuccesses = getLatestAttribute(routesMetrics, successesKey);
         const latency50 = getLatestAttribute(routesMetrics, latency50Key);
         const latency99 = getLatestAttribute(routesMetrics, latency99Key);
         const errorPercent = calculateErrorPercent(
-          totalRequests,
-          totalRequests - totalSuccesses
+          requests,
+          requests - totalSuccesses
         );
         routesTable.push({
           ...baseObj,
           errorPercent,
-          totalRequests,
+          requests,
           verb: routeVerb,
           latency50,
           latency99,

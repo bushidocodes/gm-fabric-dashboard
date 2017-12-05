@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`] = `
+exports[`<TableLineItem/> matches snapshot 1`] = `
 <li
   className="sc-iwsKbI geNuyD"
   onClick={[Function]}
@@ -16,7 +16,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
       className="sc-fjdhpX enphkh"
     >
       <div
-        className="sc-jzJRlG gcSeRc"
+        className="sc-jzJRlG eEybjz"
         width={20}
       />
     </div>
@@ -141,7 +141,7 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
       }
     }
   >
-    14333
+    14,333
   </div>
   <div
     className="sc-gZMcBi gIBRDa"
@@ -151,7 +151,8 @@ exports[`Go Instance Routes View: <FunctionsTableLineItem/> matches snapshot 1`]
       }
     }
   >
-    10.000%
+    10.000
+    %
   </div>
   <div
     className="sc-gZMcBi dKkxkg"

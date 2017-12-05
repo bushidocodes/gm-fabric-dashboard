@@ -10,6 +10,7 @@ import FunctionsGrid from "./index";
 import NotFoundError from "components/Main/components/NotFoundError";
 //import Action effects
 import "services";
+import Table from "components/Main/components/Table";
 
 const mockStore = configureStore();
 const mockState = state.default,
@@ -78,9 +79,9 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
     expect(wrapper.find(NotFoundError).length).toBe(1);
   });
 
-  test("returns correct number of <FunctionsTable> and does not render <NotFoundError> when functions are found ", () => {
+  test("returns correct number of <Table> and does not render <NotFoundError> when functions are found ", () => {
     wrapper = mount(FunctionsGridWithMockStore);
-    expect(wrapper.find("FunctionsTable").length).toBe(1);
+    expect(wrapper.find(Table).length).toBe(1);
     expect(wrapper.find(NotFoundError).length).toBe(0);
   });
 });
@@ -107,9 +108,9 @@ describe("FunctionsGrid Child Components", () => {
     });
   });
 
-  test("passes functions as props to FunctionsTable", () => {
-    expect(wrapper.find("FunctionsTable").props()).toMatchObject({
-      funcs: [
+  test("passes functions as props to Table", () => {
+    expect(wrapper.find(Table).props()).toMatchObject({
+      items: [
         {
           errorPercent: "0.000",
           errorsCount: 0,

@@ -3,7 +3,7 @@ import React from "react";
 
 import ThreadsTableLineItem from "./components/ThreadsTableLineItem";
 
-import Table from "components/Main/components/Table";
+import TableDisplay from "components/Main/components/TableDisplay";
 import TableHeader from "components/Main/components/TableHeader";
 import TableBody from "components/Main/components/TableBody";
 import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
@@ -22,7 +22,7 @@ ThreadsTable.propTypes = {
  */
 export default function ThreadsTable({ filteredThreadData = [] }) {
   return (
-    <Table>
+    <TableDisplay>
       <TableHeader>
         <TableColHeaderThread paddingLeft>ID</TableColHeaderThread>
         <TableColHeaderThread style={{ textAlign: "center" }}>
@@ -47,6 +47,6 @@ export default function ThreadsTable({ filteredThreadData = [] }) {
           }
         )}
       </TableBody>
-    </Table>
+    </TableDisplay>
   );
 }

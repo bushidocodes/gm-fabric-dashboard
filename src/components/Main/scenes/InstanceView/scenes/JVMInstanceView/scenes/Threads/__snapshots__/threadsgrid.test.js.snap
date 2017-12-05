@@ -103,12 +103,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       className="sc-dnqmqq gIvpQT"
     >
       <div
-        className="sc-gqjmRU eRWJRn"
+        className="sc-gqjmRU bgJCyR"
       >
         ID
       </div>
       <div
-        className="sc-gqjmRU cXvZrz"
+        className="sc-gqjmRU bgJCyR"
         style={
           Object {
             "textAlign": "center",
@@ -118,12 +118,12 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         State
       </div>
       <div
-        className="sc-gqjmRU cXvZrz"
+        className="sc-gqjmRU bgJCyR"
       >
         Trace
       </div>
       <div
-        className="sc-gZMcBi jDQMJe"
+        className="sc-gZMcBi uehcm"
         style={
           Object {
             "flex": "1 1 auto",

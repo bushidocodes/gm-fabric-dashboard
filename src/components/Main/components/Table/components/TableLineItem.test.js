@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import renderer from "react-test-renderer";
 
-import FunctionsTableLineItem from "./LineItem";
+import TableLineItem from "./TableLineItem";
 import TableRow from "components/Main/components/TableRow";
 import TableCol from "components/Main/components/TableCol";
 import TableColVizBar from "components/Main/components/TableColVizBar";
@@ -10,6 +10,7 @@ import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 
 let wrapper;
+
 const mockedEvent = {
   target: {
     className: "TableRow",
@@ -17,11 +18,11 @@ const mockedEvent = {
   }
 };
 
-const FunctionsTableLineItemWithProps = (
-  <FunctionsTableLineItem
+const TableLineItemWithProps = (
+  <TableLineItem
     errorPercent={"10.000"}
     errorsCount={32}
-    func={"CatalogStream"}
+    item={"CatalogStream"}
     latency50={445}
     latency99={35}
     relativeReqPercent={20}
@@ -31,23 +32,9 @@ const FunctionsTableLineItemWithProps = (
   />
 );
 
-describe("Go Instance Routes View: <FunctionsTableLineItem/>", () => {
+describe("<TableLineItem/>", () => {
   beforeEach(() => {
-    wrapper = mount(FunctionsTableLineItemWithProps);
-  });
-
-  test("set props", () => {
-    expect(wrapper.props()).toMatchObject({
-      errorPercent: "10.000",
-      errorsCount: 32,
-      func: "CatalogStream",
-      latency50: 445,
-      latency99: 35,
-      relativeReqPercent: 20,
-      requests: 14333,
-      requestsPerSecond_dygraph: [0, 1, 5, 30, 56],
-      requestsPerSecond_sparkline: [0, 25, 430, 1256]
-    });
+    wrapper = mount(TableLineItemWithProps);
   });
 
   test("renders styled-components", () => {
@@ -60,7 +47,7 @@ describe("Go Instance Routes View: <FunctionsTableLineItem/>", () => {
 
   // use 'shallow' instead of mount for instance tests
   test("should toggle row's open/closed state when row is clicked", () => {
-    wrapper = shallow(FunctionsTableLineItemWithProps);
+    wrapper = shallow(TableLineItemWithProps);
 
     const row = wrapper.find(TableRow);
     row.simulate("click", mockedEvent);
@@ -71,7 +58,7 @@ describe("Go Instance Routes View: <FunctionsTableLineItem/>", () => {
   });
 
   test("should toggle drawer's open/closed state when row is clicked", () => {
-    wrapper = shallow(FunctionsTableLineItemWithProps);
+    wrapper = shallow(TableLineItemWithProps);
 
     const row = wrapper.find(TableRow);
     row.simulate("click", mockedEvent);
@@ -82,7 +69,7 @@ describe("Go Instance Routes View: <FunctionsTableLineItem/>", () => {
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(FunctionsTableLineItemWithProps).toJSON();
+    const tree = renderer.create(TableLineItemWithProps).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

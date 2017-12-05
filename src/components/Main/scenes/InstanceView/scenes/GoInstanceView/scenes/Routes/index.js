@@ -2,7 +2,8 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import RoutesTable from "./components/RoutesTable";
+import Table from "components/Main/components/Table";
+
 import TableToolbar from "components/Main/components/TableToolbar";
 
 import { getRoutesTable } from "utils/go/selectors";
@@ -121,8 +122,9 @@ class RoutesGrid extends Component {
             />
           }
           <ErrorBoundary>
-            <RoutesTable
-              routes={this.sort(
+            <Table
+              type={"Route"}
+              items={this.sort(
                 this.props.routes.filter(
                   routeObj =>
                     routeObj.route

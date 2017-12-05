@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { FONT_STACK_DATA, CONTENT_MAX_WIDTH } from "style/styleVariables";
 
-const Table = styled.div`
+const TableDisplay = styled.div`
   width: 100%;
   font-family: ${FONT_STACK_DATA};
   display: block;
@@ -11,4 +11,4 @@ const Table = styled.div`
   margin-right: auto;
 `;
 
-export default Table;
+export default TableDisplay;

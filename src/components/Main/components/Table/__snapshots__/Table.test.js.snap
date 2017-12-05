@@ -1,29 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot correctly 1`] = `
+exports[`Table component matches snapshot 1`] = `
 <div
-  className="sc-cSHVUG YOnkJ"
+  className="sc-kgoBCf kkeWgK"
 >
   <div
-    className="sc-kAzzGY dYUejF"
+    className="sc-kGXeez jwWveI"
   >
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
       style={
         Object {
           "flex": "1 1 20%",
         }
       }
     >
-      Function
+      Route
     </div>
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
+      style={Object {}}
     >
       Requests/sec
     </div>
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
       style={
         Object {
           "textAlign": "right",
@@ -33,7 +34,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Requests
     </div>
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
       style={
         Object {
           "textAlign": "right",
@@ -43,7 +44,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Error %
     </div>
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
       style={
         Object {
           "textAlign": "right",
@@ -53,7 +54,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       Latency 50%
     </div>
     <div
-      className="sc-chPdSV HHZwB"
+      className="sc-dxgOiQ kJtwbL"
       style={
         Object {
           "textAlign": "right",
@@ -64,7 +65,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
     </div>
   </div>
   <ol
-    className="sc-kgoBCf dHvlms"
+    className="sc-kpOJdX gsKXmQ"
   >
     <li
       className="sc-iwsKbI geNuyD"
@@ -76,7 +77,40 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       <div
         className="sc-gqjmRU gbBQLn"
       >
-        CatalogStream
+        <span
+          className="sc-cSHVUG jAqXzX"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-dnqmqq fEBdoQ"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="sc-htoDjs kAQDYI"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <g
+                className="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                  id="get"
+                />
+              </g>
+            </g>
+          </svg>
+          GET
+        </span>
+        /categories
         <div
           className="sc-fjdhpX enphkh"
         >
@@ -206,7 +240,7 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
           }
         }
       >
-        399334
+        399,334
       </div>
       <div
         className="sc-gZMcBi deEsMZ"
@@ -216,7 +250,8 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
           }
         }
       >
-        0.000%
+        0.000
+        %
       </div>
       <div
         className="sc-gZMcBi dKkxkg"
@@ -249,7 +284,40 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
       <div
         className="sc-gqjmRU gbBQLn"
       >
-        OrderItem
+        <span
+          className="sc-cSHVUG jAqXzX"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            className="sc-dnqmqq fEBdoQ"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              className="sc-htoDjs kAQDYI"
+              fill="currentColor"
+              title=""
+            >
+              <title>
+                
+              </title>
+              <g
+                className="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                  id="get"
+                />
+              </g>
+            </g>
+          </svg>
+          GET
+        </span>
+        /topics
         <div
           className="sc-fjdhpX enphkh"
         >
@@ -389,7 +457,8 @@ exports[`Go Instance Routes View: <FunctionsTable /> Snapshot renders snapshot c
           }
         }
       >
-        0.000%
+        0.000
+        %
       </div>
       <div
         className="sc-gZMcBi dKkxkg"

@@ -7,11 +7,11 @@ import {
 } from "react-sparklines";
 
 import GMLineChart from "components/Main/components/GMLineChart";
-import SparklineCol from "components/Main/components/SparklineCol";
+import TableRow from "components/Main/components/TableRow";
 import TableCol from "components/Main/components/TableCol";
 import TableColVizBar from "components/Main/components/TableColVizBar";
+import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
-import TableRow from "components/Main/components/TableRow";
 import VizBar from "components/Main/components/VizBar";
 import VizFill from "components/Main/components/VizFill";
 import Badge from "components/Main/scenes/InstanceView/components/Badge";
@@ -19,22 +19,22 @@ import Icon from "components/Icon";
 import Glyph from "components/Glyphs/index";
 
 /**
- * A row of data in RoutesTable
+ * A row of data in Functions and Routes table
  * @export
- * @class RoutesTableLineItem
+ * @class TableLineItem
  * @extends {Component}
  */
-export default class RoutesTableLineItem extends Component {
+export default class TableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
+    item: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
     relativeReqPercent: PropTypes.number,
+    requests: PropTypes.number,
     requestsPerSecond_dygraph: PropTypes.array.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
-    route: PropTypes.string.isRequired,
-    totalRequests: PropTypes.number.isRequired,
-    verb: PropTypes.string.isRequired
+    verb: PropTypes.string
   };
 
   state = {
@@ -75,13 +75,15 @@ export default class RoutesTableLineItem extends Component {
         role="link"
       >
         <TableColVizBar>
-          <Badge>
-            <Icon>
-              <Glyph name={this.props.verb} />
-            </Icon>
-            {this.props.verb}
-          </Badge>
-          {this.props.route}
+          {this.props.verb && (
+            <Badge>
+              <Icon>
+                <Glyph name={this.props.verb} />
+              </Icon>
+              {this.props.verb}
+            </Badge>
+          )}
+          {this.props.item}
           <VizBar>
             <VizFill
               width={this.props.relativeReqPercent}
@@ -89,6 +91,7 @@ export default class RoutesTableLineItem extends Component {
             />
           </VizBar>
         </TableColVizBar>
+
         <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}
@@ -112,7 +115,7 @@ export default class RoutesTableLineItem extends Component {
           </Sparklines>
         </SparklineCol>
         <TableCol style={{ textAlign: "right" }}>
-          {this.props.totalRequests.toLocaleString()}
+          {this.props.requests && this.props.requests.toLocaleString()}
         </TableCol>
         <TableCol
           style={{ textAlign: "right" }}
@@ -126,7 +129,6 @@ export default class RoutesTableLineItem extends Component {
         <TableCol style={{ textAlign: "right" }}>
           {this.props.latency99}
         </TableCol>
-
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {
@@ -136,7 +138,7 @@ export default class RoutesTableLineItem extends Component {
         >
           <GMLineChart
             timeSeries={this.props.requestsPerSecond_dygraph}
-            title={"Requests over Time for " + this.props.route}
+            title={"Requests over Time for " + this.props.item}
           />
         </TableDrawerCollapse>
       </TableRow>

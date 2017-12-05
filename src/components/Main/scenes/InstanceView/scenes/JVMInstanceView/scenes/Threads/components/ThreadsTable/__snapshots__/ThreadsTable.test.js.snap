@@ -25,7 +25,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             paddingLeft={true}
           >
             <div
-              className="sc-gqjmRU eRWJRn"
+              className="sc-gqjmRU bgJCyR"
             >
               ID
             </div>
@@ -38,7 +38,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             }
           >
             <div
-              className="sc-gqjmRU cXvZrz"
+              className="sc-gqjmRU bgJCyR"
               style={
                 Object {
                   "textAlign": "center",
@@ -50,7 +50,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
           </styled.div>
           <styled.div>
             <div
-              className="sc-gqjmRU cXvZrz"
+              className="sc-gqjmRU bgJCyR"
             >
               Trace
             </div>
@@ -63,7 +63,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             }
           >
             <div
-              className="sc-gZMcBi jDQMJe"
+              className="sc-gZMcBi uehcm"
               style={
                 Object {
                   "flex": "1 1 auto",

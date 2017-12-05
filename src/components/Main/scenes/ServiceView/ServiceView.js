@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 
-import GMServiceTable from "./components/GMServiceTable";
+import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFoundError from "components/Main/components/NotFoundError";
@@ -90,10 +90,11 @@ class ServiceView extends Component {
           }}
         />
         <ErrorBoundary>
-          <GMServiceTable
+          <Table
+            type={"Instance"}
             serviceName={serviceName}
             serviceVersion={serviceVersion}
-            instances={_.orderBy(
+            items={_.orderBy(
               instances.filter(
                 ({ name }) =>
                   name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1

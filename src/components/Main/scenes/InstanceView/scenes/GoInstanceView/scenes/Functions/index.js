@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import FunctionsTable from "./components/FunctionsTable";
+import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
 
 import { getFunctionsTable } from "utils/go/selectors";
@@ -122,8 +122,9 @@ class FunctionsGrid extends Component {
             />
           }
           <ErrorBoundary>
-            <FunctionsTable
-              funcs={this.sort(
+            <Table
+              type={"Function"}
+              items={this.sort(
                 this.props.funcs.filter(
                   funcObj =>
                     funcObj.func

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import TableToolbar from "components/Main/components/TableToolbar";
-import RoutesTable from "./components/RoutesTable";
+import Table from "components/Main/components/Table";
 import ErrorBoundary from "components/ErrorBoundary";
 import { getRoutesTable } from "utils/jvm/selectors";
 import NotFoundError from "components/Main/components/NotFoundError";
@@ -26,8 +26,8 @@ class RoutesGrid extends Component {
       label: "Route"
     },
     {
-      value: "totalRequests",
-      label: "Total Requests"
+      value: "requests",
+      label: "Requests"
     },
     {
       value: "errorPercent",
@@ -110,8 +110,9 @@ class RoutesGrid extends Component {
             />
           }
           <ErrorBoundary>
-            <RoutesTable
-              routes={this.sort(
+            <Table
+              type={"Route"}
+              items={this.sort(
                 this.props.routes.filter(
                   routeObj =>
                     routeObj.route
