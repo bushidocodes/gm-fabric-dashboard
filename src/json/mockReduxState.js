@@ -2458,7 +2458,7 @@ export default {
         },
         lines: [
           {
-            name: "MEM USED",
+            name: "Mem. Used",
             value: [
               {
                 type: "latest",
