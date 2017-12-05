@@ -10,18 +10,9 @@ import mockState from "json/mockReduxState";
 
 // Components
 import ThreadsGrid from "./index";
-import ThreadsTableToolbar from "./components/ThreadsTableToolbar";
-import ThreadsTable from "./components/ThreadsTable";
-import ErrorBoundary from "components/ErrorBoundary";
-import ThreadsTableLineItem from "./components/ThreadsTable/components/ThreadsTableLineItem";
 
 // import Actions
 import "services";
-
-const toolBarProps = {
-  threadCounts: { active: 1, all: 6, idle: 2, stopped: 3 },
-  threadsFilter: "active"
-};
 
 const threadsTableProps = {
   filteredThreadData: [
@@ -65,21 +56,42 @@ describe("ThreadsGrid View", () => {
   });
 
   test("renders correct components", () => {
-    expect(wrapper.find(ThreadsTableToolbar)).toHaveLength(1);
-    expect(wrapper.find(ThreadsTable)).toHaveLength(1);
-    expect(wrapper.find(ErrorBoundary)).toHaveLength(1);
-    // nested component
-    expect(wrapper.find(ThreadsTableLineItem)).toHaveLength(1);
+    expect(wrapper.find("TableToolbar")).toHaveLength(1);
+    expect(wrapper.find("ThreadsTable")).toHaveLength(1);
+    expect(wrapper.find("ErrorBoundary")).toHaveLength(1);
   });
 
-  // Will be updating tests shortly after new TableToolbar is implemented for threads view
-  test("passes the correct props down to ThreadsTableToolbar", () => {
-    expect(wrapper.find(ThreadsTableToolbar).props()).toMatchObject(
-      toolBarProps
-    );
+  test("passes the correct props down to TableToolbar", () => {
+    const threadsGridInstance = wrapper.find("ThreadsGrid").instance();
+    expect(wrapper.find("TableToolbar").props()).toMatchObject({
+      groupByProps: {
+        groupByAttribute: "none",
+        groupByOptions: [
+          { label: "State", value: "state" },
+          { label: "None", value: "none" }
+        ],
+        setGroupByAttribute: threadsGridInstance.setGroupByAttribute
+      },
+      searchInputProps: {
+        filterString: "",
+        searchPlaceholder: "Search Threads",
+        setFilterString: threadsGridInstance.setFilterString
+      },
+      sortByProps: {
+        setSortByAttribute: threadsGridInstance.setSortByAttribute,
+        sortByAttribute: "id",
+        sortByOptions: [
+          { label: "State", value: "state" },
+          { label: "Name", value: "name" },
+          { label: "ID", value: "id" }
+        ]
+      }
+    });
   });
 
   test("passes the correct props down to ThreadsTable", () => {
-    expect(wrapper.find(ThreadsTable).props()).toMatchObject(threadsTableProps);
+    expect(wrapper.find("ThreadsTable").props()).toMatchObject(
+      threadsTableProps
+    );
   });
 });

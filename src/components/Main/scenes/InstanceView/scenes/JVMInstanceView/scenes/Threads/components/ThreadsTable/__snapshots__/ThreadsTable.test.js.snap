@@ -2,6 +2,8 @@
 
 exports[`ThreadsTable component Matched the snapshot 1`] = `
 <ThreadsTable
+  filteredThreadData={Array []}
+  groupByAttribute="none"
   store={
     Object {
       "clearActions": [Function],
@@ -15,89 +17,93 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
 >
   <styled.div>
     <div
-      className="sc-htoDjs jAhemH"
+      className="sc-VigVT iKLSiy"
     >
-      <styled.div>
-        <div
-          className="sc-dnqmqq gIvpQT"
-        >
-          <styled.div
-            paddingLeft={true}
+      <ThreadsTableHeader>
+        <styled.div>
+          <div
+            className="sc-bdVaJa enQjcb"
           >
-            <div
-              className="sc-gqjmRU bgJCyR"
-            >
-              ID
-            </div>
-          </styled.div>
-          <styled.div
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
-          >
-            <div
-              className="sc-gqjmRU bgJCyR"
+            <styled.div>
+              <div
+                className="sc-bxivhb jpLLbZ"
+              >
+                ID
+              </div>
+            </styled.div>
+            <styled.div
               style={
                 Object {
                   "textAlign": "center",
                 }
               }
             >
-              State
-            </div>
-          </styled.div>
-          <styled.div>
-            <div
-              className="sc-gqjmRU bgJCyR"
-            >
-              Trace
-            </div>
-          </styled.div>
-          <styled.div
-            style={
-              Object {
-                "flex": "1 1 auto",
-              }
-            }
-          >
-            <div
-              className="sc-gZMcBi uehcm"
+              <div
+                className="sc-bxivhb jpLLbZ"
+                style={
+                  Object {
+                    "textAlign": "center",
+                  }
+                }
+              >
+                State
+              </div>
+            </styled.div>
+            <styled.div>
+              <div
+                className="sc-bxivhb jpLLbZ"
+              >
+                Trace
+              </div>
+            </styled.div>
+            <styled.div
               style={
                 Object {
                   "flex": "1 1 auto",
                 }
               }
             >
-              Name
-            </div>
-          </styled.div>
-          <styled.div
-            header={true}
-          >
-            <div
-              className="sc-bxivhb fXvOVg"
+              <div
+                className="sc-htpNat dvYNGM"
+                style={
+                  Object {
+                    "flex": "1 1 auto",
+                  }
+                }
+              >
+                Name
+              </div>
+            </styled.div>
+            <styled.div
+              header={true}
             >
-              Daemon
-            </div>
-          </styled.div>
-          <styled.div
-            header={true}
-          >
-            <div
-              className="sc-bxivhb fXvOVg"
+              <div
+                className="sc-ifAKCX bqqRVa"
+              >
+                Daemon
+              </div>
+            </styled.div>
+            <styled.div
+              header={true}
             >
-              Priority
-            </div>
-          </styled.div>
-        </div>
-      </styled.div>
-      <styled.ol>
-        <ol
-          className="sc-iwsKbI hzfbcM"
-        />
-      </styled.ol>
+              <div
+                className="sc-ifAKCX bqqRVa"
+              >
+                Priority
+              </div>
+            </styled.div>
+          </div>
+        </styled.div>
+      </ThreadsTableHeader>
+      <ThreadsList
+        threads={Array []}
+      >
+        <styled.ol>
+          <ol
+            className="sc-EHOje eEvHuy"
+          />
+        </styled.ol>
+      </ThreadsList>
     </div>
   </styled.div>
 </ThreadsTable>

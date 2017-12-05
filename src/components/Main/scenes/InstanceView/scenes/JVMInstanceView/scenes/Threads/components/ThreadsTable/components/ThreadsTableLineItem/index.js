@@ -21,7 +21,6 @@ import Glyph from "components/Glyphs/";
  */
 export default class ThreadsTableLineItem extends Component {
   static propTypes = {
-    arrIndex: PropTypes.number,
     daemon: PropTypes.bool,
     id: PropTypes.number,
     name: PropTypes.string,

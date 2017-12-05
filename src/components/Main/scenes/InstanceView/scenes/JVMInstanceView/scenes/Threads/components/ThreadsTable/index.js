@@ -1,52 +1,95 @@
 import { PropTypes } from "prop-types";
 import React from "react";
+import _ from "lodash";
 
-import ThreadsTableLineItem from "./components/ThreadsTableLineItem";
-
-import TableDisplay from "components/Main/components/TableDisplay";
-import TableHeader from "components/Main/components/TableHeader";
-import TableBody from "components/Main/components/TableBody";
-import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
+import ThreadsTableHeader from "./components/ThreadsTableHeader";
+import ThreadsList from "./components/ThreadsList";
+import ThreadsTableStatusHeader from "./components/ThreadsTableStatusHeader";
 import TableColHeader from "components/Main/components/TableColHeader";
-import TableColDaemon from "components/Main/components/TableColDaemon";
+import TableDisplay from "components/Main/components/TableDisplay";
+import { threadStates } from "utils/constants";
 
 ThreadsTable.propTypes = {
-  filteredThreadData: PropTypes.array
+  filteredThreadData: PropTypes.array,
+  groupByAttribute: PropTypes.string
+};
+
+ThreadsTable.defaultProps = {
+  filteredThreadData: [],
+  groupByAttribute: "none"
 };
 
 /**
- * Table of threads containing a header and 0..n lineitems
+ * Renders a table and appropriate headers based on the provided thread data
  * @export
- * @param {any} { filteredThreadData = [] }
+ * @param {Object[]} { filteredThreadData = [] }
+ * @param {string} { groupByAttribute = "none" }
  * @returns JSX.Element
  */
-export default function ThreadsTable({ filteredThreadData = [] }) {
-  return (
-    <TableDisplay>
-      <TableHeader>
-        <TableColHeaderThread paddingLeft>ID</TableColHeaderThread>
-        <TableColHeaderThread style={{ textAlign: "center" }}>
-          State
-        </TableColHeaderThread>
-        <TableColHeaderThread>Trace</TableColHeaderThread>
-        <TableColHeader style={{ flex: "1 1 auto" }}>Name</TableColHeader>
-        <TableColDaemon header>Daemon</TableColDaemon>
-        <TableColDaemon header>Priority</TableColDaemon>
-      </TableHeader>
-      <TableBody>
-        {filteredThreadData.map(
-          ({ daemon, id, name, priority, stack, state }, arrIndex) => {
-            return (
-              <ThreadsTableLineItem
-                {...{ daemon, name, priority, stack, state }}
-                arrIndex={arrIndex}
-                id={Number(id)}
-                key={id}
-              />
-            );
-          }
-        )}
-      </TableBody>
-    </TableDisplay>
-  );
+
+export default function ThreadsTable({ filteredThreadData, groupByAttribute }) {
+  // If we are grouping threads by state, we need to render headers
+
+  if (groupByAttribute === "state") {
+    // Add a header property to each thread object
+    // based on its state so that they can be grouped
+    const mappedThreads = filteredThreadData.map(thread => {
+      return {
+        ...thread,
+        header: getHeader(thread, groupByAttribute)
+      };
+    });
+
+    // Create an object with keys matching headers
+    // and values being an array of corresponding thread objects
+    const dataGroupedByHeader = _.groupBy(
+      mappedThreads,
+      thread => thread.header
+    );
+
+    // Loop through thread states to preserve the order stopped, idle, active
+    // only include headers that have corresponding threads
+    let headers = threadStates.filter(
+      header => !_.isEmpty(dataGroupedByHeader[header])
+    );
+
+    return (
+      <TableDisplay>
+        <ThreadsTableHeader />
+        {headers.map((header, idx) => [
+          <ThreadsTableStatusHeader key={`header|${header}|${idx}`}>
+            <TableColHeader>{header}</TableColHeader>
+          </ThreadsTableStatusHeader>,
+          <ThreadsList
+            threads={dataGroupedByHeader[header]}
+            key={`list|${header}|${idx}`}
+          />
+        ])}
+      </TableDisplay>
+    );
+  } else {
+    return (
+      <TableDisplay>
+        <ThreadsTableHeader />
+        <ThreadsList threads={filteredThreadData} />
+      </TableDisplay>
+    );
+  }
+}
+
+function getHeader(thread, groupByAttribute) {
+  switch (thread.state) {
+    case "RUNNABLE":
+      return "Active";
+    case "WAITING":
+    case "TIMED_WAITING":
+      return "Idle";
+    case "TERMINATED":
+    case "BLOCKED":
+    case "NEW":
+      return "Stopped";
+    case "None":
+    default:
+      return "none";
+  }
 }
