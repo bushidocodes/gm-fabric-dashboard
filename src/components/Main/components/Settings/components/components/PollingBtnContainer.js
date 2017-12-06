@@ -19,7 +19,7 @@ const PollingBtnContainer = styled.div`
     position: absolute;
     bottom: 10px;
     width: 100%;
-    left: 0px;
+    left: 0;
   }
   > svg {
     color: ${COLOR_BRAND_PRIMARY.toString()};

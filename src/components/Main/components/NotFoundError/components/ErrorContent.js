@@ -12,9 +12,8 @@ const ErrorContent = styled.div`
   font-size: ${FONT_SIZE_HERO};
   border: 1px solid ${COLOR_WARNING.string()};
   display: inline-flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
   color: ${COLOR_CONTENT.string()};
   border-radius: ${parseInt(BORDER_RADIUS_BASE, 10) * 2}px;

@@ -6,14 +6,25 @@ import { COLOR_HIGHLIGHT, COLOR_CONTENT_MUTED } from "style/styleVariables";
 
 const GMLink = styled(Link)`
   width: 100%;
-  cursor: ${props => props.cursor};
+  cursor: ${props => (props.cursor ? props.cursor : "pointer")};
   text-decoration: none;
   color: black;
   display: flex;
-  cursor: pointer;
 
   &:focus {
     outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  &:hover {
+    ${props =>
+      props.disabled
+        ? `
+        color: ${COLOR_CONTENT_MUTED.string()};
+        cursor: not-allowed;
+    `
+        : `
+        color: ${COLOR_HIGHLIGHT.string()};
+    `};
   }
 
   &:focus:active:hover {
@@ -26,17 +37,7 @@ const GMLink = styled(Link)`
       color: ${COLOR_CONTENT_MUTED.string()};
       cursor: not-allowed;
 
-  `} &:hover {
-    ${props =>
-      props.disabled
-        ? `
-        color: ${COLOR_CONTENT_MUTED.string()};
-        cursor: not-allowed;
-    `
-        : `
-        color: ${COLOR_HIGHLIGHT.string()};
-    `};
-  }
+  `};
 `;
 
 GMLink.propTypes = {

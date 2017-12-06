@@ -29,7 +29,6 @@ const Breadcrumb = styled.li`
     max-width: auto;
     white-space: nowrap;
     text-overflow: ellipsis;
-    color: inherit;
     padding: ${spacingScale(1)} 0;
     color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
     &:hover {

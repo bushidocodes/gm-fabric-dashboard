@@ -20,7 +20,7 @@ exports[`Inspector matches snapshot 1`] = `
     className="sc-htpNat leFimP"
   >
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -28,7 +28,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/build/revision
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -36,7 +36,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/clientregistry/initialresolution_ms
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -44,7 +44,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/clientregistry/size
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -52,7 +52,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/active_tasks
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -60,7 +60,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/completed_tasks
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -68,7 +68,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/pool_size
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -76,7 +76,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/timer/deviation_ms.avg
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -84,7 +84,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/closes
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -92,7 +92,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_duration.count
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -100,7 +100,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_received_bytes.count
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -108,7 +108,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_requests.count
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -116,7 +116,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_sent_bytes.count
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -124,7 +124,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connections
     </div>
     <div
-      className="sc-bxivhb jyfPQc"
+      className="sc-bxivhb gsASnU"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"

@@ -12,7 +12,10 @@ const SectionContent = styled.div`
   width: 100%;
   ${props =>
     props.flex
-      ? "display: flex; flex-direction: row; justify-content: center;"
+      ? `
+      display: flex; 
+      flex-direction: row; 
+      justify-content: center;`
       : ""};
 `;
 

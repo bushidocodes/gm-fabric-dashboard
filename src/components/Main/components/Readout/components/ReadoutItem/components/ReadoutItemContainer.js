@@ -13,7 +13,7 @@ const ReadoutItemContainer = styled.div`
   justify-content: center;
   position: relative;
   padding: ${spacingScale(1)} ${spacingScale(0.5)};
-  -webkit-flex: 1 1 0;
+  -webkit-flex: 1 1 0; /* stylelint-disable-line */
 
   & + &:before {
     content: "";

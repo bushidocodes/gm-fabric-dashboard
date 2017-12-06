@@ -42,7 +42,7 @@ const TabLink = styled(NavLink).attrs({
   }
 
   &:hover {
-    background-color: ${COLOR_TAB_BACKGROUND_BASE.mix(
+    background-color: ${/* sc-block */ COLOR_TAB_BACKGROUND_BASE.mix(
       COLOR_TAB_BACKGROUND_ACTIVE,
       0.3
     ).string()};

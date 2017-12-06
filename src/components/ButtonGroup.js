@@ -11,7 +11,6 @@ const ButtonGroup = styled.div`
   }
   ${props =>
     props.toolbar ? `padding: ${spacingScale(0)} ${spacingScale(1)};` : ""};
-  }
 `;
 
 ButtonGroup.propTypes = {

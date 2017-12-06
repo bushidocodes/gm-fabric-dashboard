@@ -9,7 +9,6 @@ import {
 import { spacingScale } from "style/styleFunctions";
 
 const InspectorItem = styled.div`
-  display: block;
   cursor: pointer;
   display: flex;
   padding: ${spacingScale(0.5)} ${spacingScale(1)};
@@ -18,16 +17,12 @@ const InspectorItem = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};
   will-change: transform;
 
-  &:focus {
-    outline: -webkit-focus-ring-color auto 5px;
-  }
-
-  &:focus:active:hover {
-    outline: 0;
-  }
-
   &:first-child {
     margin-top: ${spacingScale(1)};
+  }
+
+  &:focus {
+    outline: -webkit-focus-ring-color auto 5px;
   }
 
   &:hover {
@@ -39,6 +34,11 @@ const InspectorItem = styled.div`
     transform: scale(0.9875);
     transition-duration: 0;
   }
+
+  &:focus:active:hover {
+    outline: 0;
+  }
+
   ${props =>
     props.active &&
     `background: ${COLOR_HIGHLIGHT.string()};

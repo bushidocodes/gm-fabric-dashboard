@@ -138,7 +138,7 @@ injectGlobal`
     font-family: "Rubik";
     font-style: normal;
     font-weight: 500;
-    src: url(${Rubik500})
+    src: url(${Rubik500});
   }
   @font-face {
     font-family: "Rubik";
@@ -153,7 +153,9 @@ injectGlobal`
     src: url(${SourceCodePro400});
   }
 
-  *, *:before, *:after{
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }

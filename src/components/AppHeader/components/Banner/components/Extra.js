@@ -13,8 +13,8 @@ const Extra = styled.a`
   position: relative;
   display: inline-block;
   font-size: ${FONT_SIZE_BASE};
-  color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.9).string()}};
-  background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.2).string()}};
+  color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.9).string()};
+  background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.2).string()};
   padding: ${spacingScale(0.25)} ${spacingScale(1)};
   border-radius: ${BORDER_RADIUS_BASE};
   transition: all 0.15s ease;
@@ -24,13 +24,13 @@ const Extra = styled.a`
   }
 
   &:hover {
-    background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.25).string()}};
-    color: ${contrastColor(COLOR_ALT_BACKGROUND, 1).string()}};
+    background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0.25).string()};
+    color: ${contrastColor(COLOR_ALT_BACKGROUND, 1).string()};
   }
 
   &:active {
-    background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0).string()}};
-    color: ${contrastColor(COLOR_ALT_BACKGROUND, 1).string()}};
+    background-color: ${contrastColor(COLOR_ALT_BACKGROUND, 0).string()};
+    color: ${contrastColor(COLOR_ALT_BACKGROUND, 1).string()};
   }
 `;
 

@@ -29,7 +29,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
     tabIndex={0}
   >
     <li
-      className="sc-EHOje cjsqKx"
+      className="sc-EHOje cEYiN"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"

@@ -7,5 +7,7 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "cSpell.words": ["component", "selectable", "moxios", "unmount", "will"]
+  "cSpell.words": ["component", "selectable", "moxios", "unmount", "will"],
+  "stylelint.enable": true,
+  "stylelint.additionalDocumentSelectors": ["javascript", "javascriptreact"]
 }

@@ -7,8 +7,6 @@ const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-left: 0;
-  padding-right: 0;
   padding: 0 0 ${APP_FOOTER_HEIGHT};
 `;
 

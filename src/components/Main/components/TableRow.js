@@ -19,7 +19,6 @@ const TableRow = styled.li.attrs({
   align-items: flex-start;
   width: 100%;
   box-shadow: inset 0 -1px ${TABLE_BORDER};
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   flex-wrap: wrap;
   cursor: pointer;
   min-height: ${spacingScale(4.5)};

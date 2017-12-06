@@ -46,10 +46,10 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
     </h3>
   </header>
   <div
-    className="sc-ifAKCX iLlrDi"
+    className="sc-ifAKCX gYPKtN"
   >
     <div
-      className="sc-gzVnrw hnFWsC"
+      className="sc-gzVnrw jEOHSk"
     >
       <button
         className="btn btn-type-polling btn-outline-raised btn-orientation-vertical"

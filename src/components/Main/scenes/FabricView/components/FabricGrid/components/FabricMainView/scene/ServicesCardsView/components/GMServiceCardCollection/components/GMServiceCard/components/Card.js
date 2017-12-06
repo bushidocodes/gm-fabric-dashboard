@@ -101,17 +101,17 @@ export const CardFooter = styled.footer`
   pointer-events: none;
   letter-spacing: 0.03em;
 
-  > svg:first-child {
-    margin-left: -0.5em;
+  > a,
+  > svg {
+    pointer-events: auto;
   }
 
   > a:last-child {
     margin-right: -0.5em;
   }
 
-  > a,
-  > svg {
-    pointer-events: auto;
+  > svg:first-child {
+    margin-left: -0.5em;
   }
 `;
 

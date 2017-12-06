@@ -5,10 +5,9 @@ import { edgeColor, spacingScale } from "style/styleFunctions";
 
 const SectionContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   margin: ${spacingScale(1)} 0 0;
   border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
-  flex-wrap: nowrap;
   position: relative;
   z-index: 1;
 
