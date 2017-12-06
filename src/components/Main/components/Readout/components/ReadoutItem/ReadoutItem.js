@@ -7,7 +7,7 @@ import {
 } from "react-sparklines";
 
 import Glyph from "components/Glyphs/index";
-import ReadoutItemContainer from "./components/ReadoutItemContainer";
+import ItemDisplay from "./components/ItemDisplay";
 import ReadoutItemData from "./components/ReadoutItemData";
 import ReadoutItemGraph from "./components/ReadoutItemGraph";
 import ReadoutItemIcon from "./components/ReadoutItemIcon";
@@ -19,6 +19,7 @@ import ReadoutItemDetail from "./components/ReadoutItemDetail";
 // when we have "future", "bolt", "warning", "server", "link" svg elements...
 
 export default function ReadoutItem({
+  cacheCard,
   children,
   detail,
   graphData,
@@ -29,13 +30,11 @@ export default function ReadoutItem({
   iconBorderWidth,
   iconShape,
   iconColor,
-  readoutItemsStyle,
-  readoutItemsContainerStyle,
   title,
   value
 }) {
   return (
-    <ReadoutItemContainer style={readoutItemsContainerStyle}>
+    <ItemDisplay cacheCard={cacheCard}>
       {icon && (
         <ReadoutItemIcon
           iconBackgroundStyle={iconBackgroundStyle}
@@ -45,7 +44,7 @@ export default function ReadoutItem({
           <Glyph name={icon} />
         </ReadoutItemIcon>
       )}
-      <ReadoutItemData style={readoutItemsStyle}>
+      <ReadoutItemData>
         <ReadoutItemTitle>{title || "—"}</ReadoutItemTitle>
         <ReadoutItemValue>{value || "—"}</ReadoutItemValue>
         {detail && <ReadoutItemDetail>{detail}</ReadoutItemDetail>}
@@ -64,11 +63,12 @@ export default function ReadoutItem({
         )}
         {children}
       </ReadoutItemData>
-    </ReadoutItemContainer>
+    </ItemDisplay>
   );
 }
 
 const readoutItemPropTypes = {
+  cacheCard: PropTypes.bool,
   children: PropTypes.element,
   detail: PropTypes.string,
   graphData: PropTypes.arrayOf(PropTypes.number),
@@ -79,8 +79,6 @@ const readoutItemPropTypes = {
   iconColor: PropTypes.string,
   iconName: PropTypes.string,
   iconShape: PropTypes.string,
-  readoutItemsContainerStyle: PropTypes.object,
-  readoutItemsStyle: PropTypes.object,
   title: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,

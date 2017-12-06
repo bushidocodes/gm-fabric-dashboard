@@ -8,6 +8,7 @@ const DocsLink = styled.a`
   transform: scale(1);
   will-change: transform;
   display: block;
+  z-index: 20;
 
   &:hover,
   &:focus {

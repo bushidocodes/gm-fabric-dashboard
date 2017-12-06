@@ -4,7 +4,8 @@ import { PropTypes } from "prop-types";
 import { spacingScale } from "style/styleFunctions";
 
 // -webkit-flex: 1 1 0; added as a fix for flex-item not centering in safari 10.1
-const ReadoutItemContainer = styled.div`
+// for "cacheCard", set minimum height to overrule media query for  child readoutItemContainer size.  flex-basis of 100% is overruled in the parent container.
+const ItemDisplay = styled.div`
   flex: ${props => (props.flex ? props.flex : "0 1 100%")};
   min-height: 75px;
   display: flex;
@@ -14,6 +15,8 @@ const ReadoutItemContainer = styled.div`
   position: relative;
   padding: ${spacingScale(1)} ${spacingScale(0.5)};
   -webkit-flex: 1 1 0; /* stylelint-disable-line */
+
+  ${props => (props.cacheCard ? "min-height: 125px" : "")};
 
   & + &:before {
     content: "";
@@ -31,8 +34,8 @@ const ReadoutItemContainer = styled.div`
   }
 `;
 
-ReadoutItemContainer.propTypes = {
+ItemDisplay.propTypes = {
   flex: PropTypes.string
 };
 
-export default ReadoutItemContainer;
+export default ItemDisplay;

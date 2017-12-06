@@ -1,39 +1,34 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import ReadoutContainer from "./components/ReadoutContainer";
+import ReadoutDisplay from "./components/ReadoutDisplay";
 import ReadoutItem, { ReadoutItemShape } from "./components/ReadoutItem";
 
 export default function Readout({
-  primary,
-  readoutItems = [],
+  cacheCard,
   children,
-  readoutContainerStyle,
-  readoutItemsStyle,
-  readoutItemsContainerStyle
+  primary,
+  readoutItems = []
 }) {
   return (
-    <ReadoutContainer primary={primary} style={readoutContainerStyle}>
+    <ReadoutDisplay primary={primary} cacheCard={cacheCard}>
       {readoutItems.map(item => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
           {...item}
-          readoutItemsStyle={readoutItemsStyle}
-          readoutItemsContainerStyle={readoutItemsContainerStyle}
+          cacheCard={cacheCard}
         />
       ))}
-    </ReadoutContainer>
+    </ReadoutDisplay>
   );
 }
 
 Readout.propTypes = {
+  cacheCard: PropTypes.bool,
   children: PropTypes.element,
   primary: PropTypes.bool,
-  readoutContainerStyle: PropTypes.object,
   readoutItems: PropTypes.oneOfType([
     PropTypes.arrayOf(ReadoutItemShape),
     PropTypes.object
-  ]),
-  readoutItemsContainerStyle: PropTypes.object,
-  readoutItemsStyle: PropTypes.object
+  ])
 };

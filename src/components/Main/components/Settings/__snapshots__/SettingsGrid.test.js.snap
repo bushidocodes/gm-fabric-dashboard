@@ -430,24 +430,13 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       className="sc-ifAKCX gYPKtN"
     >
       <div
-        className="sc-kAzzGY jKhply"
-        style={
-          Object {
-            "flex": "0 0 300px",
-          }
-        }
+        className="sc-kAzzGY iySNxG"
       >
         <div
-          className="sc-chPdSV dbqOSK"
-          style={
-            Object {
-              "minHeight": "125px",
-            }
-          }
+          className="sc-chPdSV jaJuBN"
         >
           <div
             className="sc-kgoBCf kEnjUD"
-            style={undefined}
           >
             <h2
               className="sc-dxgOiQ QuPHr"

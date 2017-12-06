@@ -8,69 +8,48 @@ import Readout from "./Readout";
 
 const mockReadoutItem = [
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
-    value: "30000%",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    value: "30000%"
   }
 ];
 const mockReadoutFewItems = [
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
-    value: "57.838%",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    value: "57.838%"
   },
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Error Rate",
-    value: "0.0012%",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    value: "0.0012%"
   }
 ];
 
 const mockReadoutManyItems = [
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
     value: "30000%",
-    detail: "detail text 0",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    detail: "detail text 0"
   },
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
     value: "33000%",
-    detail: "detail text 1 ",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    detail: "detail text 1 "
   },
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
     value: "31000%",
-    detail: "detail text 2",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    detail: "detail text 2"
   },
   {
-    iconName: "ShapeIcon",
-    iconShape: "triangle",
-    iconColor: "rgba(0, 0, 0, 0.8)",
+    icon: "Summary",
     title: "Avg. Response Time",
     value: "34000%",
-    detail: "detail text 3",
-    graphData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    detail: "detail text 3"
   }
 ];
 

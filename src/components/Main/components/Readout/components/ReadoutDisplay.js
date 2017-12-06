@@ -8,7 +8,9 @@ import {
 } from "style/styleVariables";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 
-const ReadoutContainer = styled.div`
+// TO-DO: remove cacheCard props passed to readout- styled-components after implementing reusable card component
+// for "cacheCard", overrule flex-basis of 100%
+const ReadoutDisplay = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};
   flex: 1 1 300px;
   align-items: stretch;
@@ -28,8 +30,8 @@ const ReadoutContainer = styled.div`
   @media all and (max-width: 1000px) {
     flex: 0 0 100%;
     order: ${props => (props.primary ? 0 : 1)};
+    ${props => (props.cacheCard ? "flex: 0 0 300px" : "")};
   }
-
   &:first-child:last-child {
     flex-grow: 0;
 
@@ -43,8 +45,8 @@ const ReadoutContainer = styled.div`
   }
 `;
 
-ReadoutContainer.propTypes = {
+ReadoutDisplay.propTypes = {
   primary: PropTypes.bool
 };
 
-export default ReadoutContainer;
+export default ReadoutDisplay;
