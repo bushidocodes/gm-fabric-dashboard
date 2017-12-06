@@ -3,14 +3,19 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
+import qs from "query-string";
 
 import ThreadsTable from "./components/ThreadsTable";
 import TableToolbar from "components/Main/components/TableToolbar";
-
 import ErrorBoundary from "components/ErrorBoundary";
 
 // Importing external deps from src as WebPack Modules directory
 import { getVisibleThreads } from "utils/jvm/selectors";
+import {
+  routerHistoryShape,
+  routerLocationShape,
+  routerMatchShape
+} from "components/PropTypes";
 
 /**
  * Parent container of ThreadsTable and TableToolbar
@@ -20,6 +25,9 @@ import { getVisibleThreads } from "utils/jvm/selectors";
 class ThreadsGrid extends Component {
   static propTypes = {
     fabricServer: PropTypes.string,
+    history: routerHistoryShape,
+    location: routerLocationShape,
+    match: routerMatchShape,
     selectedInstance: PropTypes.string,
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string,
@@ -58,10 +66,17 @@ class ThreadsGrid extends Component {
     super(props);
     this.state = {
       filterString: "",
+      lastPushedFilterString: "",
       groupByAttribute: "none",
       sortByAttribute: "id",
       ascending: true
     };
+    // Debounce
+    this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
+  }
+
+  componentWillMount() {
+    this.popAndDecodeHistory(this.props.location.search);
   }
 
   componentDidMount() {
@@ -90,11 +105,115 @@ class ThreadsGrid extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    // We need to check to see if the query string props are the result of user interaction
+    // with the search box. We do that by keeping track of the last thing the search box
+    // pushed to the query string and filtering out those props. The only expection to this
+    // is which the app router action was POP, which means the user hit the back button or
+    // otherwise navigated using the client-side router history
+    if (
+      nextProps.location.search !== `?${this.state.lastPushedQueryString}` ||
+      nextProps.history.action === "POP"
+    ) {
+      this.popAndDecodeHistory(nextProps.location.search);
+    }
+  }
+
+  setFilterString = filterString =>
+    this.setState({ filterString }, () => {
+      this.encodeAndPushHistory();
+    });
+
+  setSortByAttribute = sortByAttribute => {
+    if (sortByAttribute === this.state.sortByAttribute) {
+      this.setState({ ascending: !this.state.ascending }, () => {
+        this.encodeAndPushHistory();
+      });
+    } else {
+      this.setState({ sortByAttribute }, () => {
+        this.encodeAndPushHistory();
+      });
+    }
+  };
+
+  setGroupByAttribute = groupByAttribute =>
+    this.setState({ groupByAttribute }, () => {
+      this.encodeAndPushHistory();
+    });
+
+  /**
+   * encodeAndPushHistory encodes local state as a query string and invokes the debounced
+   * version of _pushHistory to periodically write to browser history.
+   *
+   * @memberof ThreadsGrid
+   */
+  encodeAndPushHistory = () => {
+    // Clean local state
+    const filterString = this.state.filterString.trim().toLowerCase();
+    const groupBy = this.state.groupByAttribute;
+    const sortBy = this.state.sortByAttribute;
+    // Only encode the truthy pieces of local state into a form ready to be pushed to the
+    // browser's query string. If no local state is truthy, call debouncedPushHistory without
+    // an argument to remove the search query from the URL.
+    let objToEncode = {};
+
+    if (filterString) {
+      objToEncode.filterString = filterString;
+    }
+
+    // If sortBy or groupBy are set to anything but the defaults,
+    // then push to the query string
+    if (sortBy !== "id") {
+      objToEncode.sortBy = sortBy;
+    }
+    if (groupBy !== "none") {
+      objToEncode.groupBy = groupBy;
+    }
+
+    this.debouncedPushHistory(qs.stringify(objToEncode));
+  };
+
+  /**
+   * _pushHistory is used to push local state to the browser's query string. This function is not
+   * called directly but via encodeAndPushHistory, which uses lodash's debounce to prevent individual
+   * key strokes from polluting the browser history API.
+   * @memberof ThreadsGrid
+   */
+  _pushHistory = filterString => {
+    // Save a query string to local state as lastPushedFilterString to prevent
+    // accidental overwriting of user entry and then push the query string
+    // to the browser history
+    this.setState({ lastPushedFilterString: filterString }, () => {
+      this.props.history.push({
+        pathname: this.props.match.url,
+        search: filterString
+      });
+    });
+  };
+
+  /**
+   * popAndDecodeHistory is used to decode and pull local state from the browser's query string
+   * @memberof ThreadsGrid
+   */
+  popAndDecodeHistory = queryString => {
+    // Parse the query string for the filterString parameter
+    const { filterString = "", groupBy = "none", sortBy = "id" } = qs.parse(
+      queryString
+    );
+
+    this.setState({
+      filterString,
+      groupByAttribute: groupBy,
+      sortByAttribute: sortBy
+    });
+  };
+
   /**
    * Helper function that takes the threads passed as props
    * and sorts according to how sortByAttribute and ascending
    * are set in the local state object.
    * @param {Array} threads
+   * @memberof ThreadsGrid
    */
   sort = threads => {
     const { sortByAttribute, ascending } = this.state;
@@ -107,18 +226,6 @@ class ThreadsGrid extends Component {
     };
     return _.orderBy(threads, sortFunc, sortOrder);
   };
-
-  setFilterString = filterString => this.setState({ filterString });
-
-  setSortByAttribute = sortByAttribute => {
-    if (sortByAttribute === this.state.sortByAttribute) {
-      this.setState({ ascending: !this.state.ascending });
-    } else {
-      this.setState({ sortByAttribute });
-    }
-  };
-
-  setGroupByAttribute = groupByAttribute => this.setState({ groupByAttribute });
 
   render() {
     const { threads } = this.props;
