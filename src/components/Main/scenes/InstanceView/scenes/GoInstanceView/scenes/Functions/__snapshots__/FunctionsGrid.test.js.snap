@@ -3,17 +3,17 @@
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
 <div>
   <div
-    className="sc-hMqMXs gNBVRw"
+    className="sc-kEYyzF jhruec"
   >
     <div
-      className="sc-kEYyzF TnoYO"
+      className="sc-kkGfuU bCsyHF"
     >
       <form
         onSubmit={[Function]}
       >
         <input
           aria-label="Search Functions"
-          className="sc-ckVGcZ cTrVEh"
+          className="sc-jKJlTe gbUnPG"
           onChange={[Function]}
           placeholder="Search Functions"
           type="search"
@@ -22,13 +22,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="sc-iAyFgw fOOYMT"
+      className="sc-hSdWYo jLbWpp"
     />
     <div
-      className="sc-kkGfuU gGNjyy"
+      className="sc-iAyFgw lmMktf"
     >
       <div
-        className="Select sc-jKJlTe eFJNSE Select--single has-value"
+        className="Select sc-eNQAEJ dKZitV Select--single has-value"
         style={undefined}
       >
         <input
@@ -67,7 +67,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                      
                   </span>
                   <span
-                    className="sc-eNQAEJ dYhgyG"
+                    className="sc-hMqMXs kmFzMC"
                   >
                     Function
                   </span>
@@ -107,13 +107,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-kgoBCf kkeWgK"
+    className="sc-kGXeez gmTwDL"
   >
     <div
-      className="sc-kGXeez jwWveI"
+      className="sc-kpOJdX CbCXF"
     >
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={
           Object {
             "flex": "1 1 20%",
@@ -123,13 +123,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Function
       </div>
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={Object {}}
       >
         Requests/sec
       </div>
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={
           Object {
             "textAlign": "right",
@@ -139,7 +139,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Requests
       </div>
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={
           Object {
             "textAlign": "right",
@@ -149,7 +149,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Error %
       </div>
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={
           Object {
             "textAlign": "right",
@@ -159,7 +159,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Latency 50%
       </div>
       <div
-        className="sc-dxgOiQ kJtwbL"
+        className="sc-ckVGcZ laNQRn"
         style={
           Object {
             "textAlign": "right",
@@ -170,7 +170,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </div>
     </div>
     <ol
-      className="sc-kpOJdX gsKXmQ"
+      className="sc-dxgOiQ kRrBSL"
     >
       <li
         className="sc-iwsKbI CIhGw"

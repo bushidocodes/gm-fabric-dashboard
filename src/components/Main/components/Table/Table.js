@@ -4,10 +4,12 @@ import _ from "lodash";
 
 import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
+import UpTime from "components/UpTime";
+import ArrayValue from "components/ArrayValue";
 import TableDisplay from "components/Main/components/TableDisplay";
 import TableHeader from "components/Main/components/TableHeader";
 import TableBody from "components/Main/components/TableBody";
-import { relativeReqPercent, convertMS } from "utils";
+import { relativeReqPercent } from "utils";
 // Table-specific utils functions
 import { getTableHeaders, getItem } from "./utils";
 
@@ -74,7 +76,16 @@ export default function Table({
           items.map(instance => (
             <GMServiceTableLineItem
               name={instance.name}
-              uptime={convertMS(Date.now() - instance.start_time)}
+              uptime={
+                <UpTime
+                  startTime={instance.start_time}
+                  render={uptime => (
+                    <ArrayValue>
+                      {_.map(uptime, el => <span key={el}>{el} </span>)}
+                    </ArrayValue>
+                  )}
+                />
+              }
               path={`/${serviceName}/${serviceVersion}/${instance.name}`}
               status={status}
               key={`${serviceName}/${serviceVersion}/${instance.name}`}

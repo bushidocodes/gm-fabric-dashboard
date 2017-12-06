@@ -2,13 +2,13 @@
 
 exports[`Table component matches snapshot 1`] = `
 <div
-  className="sc-kgoBCf kkeWgK"
+  className="sc-kGXeez gmTwDL"
 >
   <div
-    className="sc-kGXeez jwWveI"
+    className="sc-kpOJdX CbCXF"
   >
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={
         Object {
           "flex": "1 1 20%",
@@ -18,13 +18,13 @@ exports[`Table component matches snapshot 1`] = `
       Route
     </div>
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={Object {}}
     >
       Requests/sec
     </div>
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={
         Object {
           "textAlign": "right",
@@ -34,7 +34,7 @@ exports[`Table component matches snapshot 1`] = `
       Requests
     </div>
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={
         Object {
           "textAlign": "right",
@@ -44,7 +44,7 @@ exports[`Table component matches snapshot 1`] = `
       Error %
     </div>
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={
         Object {
           "textAlign": "right",
@@ -54,7 +54,7 @@ exports[`Table component matches snapshot 1`] = `
       Latency 50%
     </div>
     <div
-      className="sc-dxgOiQ kJtwbL"
+      className="sc-ckVGcZ laNQRn"
       style={
         Object {
           "textAlign": "right",
@@ -65,7 +65,7 @@ exports[`Table component matches snapshot 1`] = `
     </div>
   </div>
   <ol
-    className="sc-kpOJdX gsKXmQ"
+    className="sc-dxgOiQ kRrBSL"
   >
     <li
       className="sc-iwsKbI CIhGw"
