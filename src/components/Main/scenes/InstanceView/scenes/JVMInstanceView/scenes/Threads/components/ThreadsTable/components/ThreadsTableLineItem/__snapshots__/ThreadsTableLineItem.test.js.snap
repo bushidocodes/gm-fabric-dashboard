@@ -29,7 +29,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
     tabIndex={0}
   >
     <li
-      className="sc-EHOje cEYiN"
+      className="sc-ifAKCX lcJjke"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
@@ -41,15 +41,6 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
       tabIndex={0}
     >
       <styled.div
-        paddingLeft={true}
-      >
-        <div
-          className="sc-htpNat kRaCoM"
-        >
-          11
-        </div>
-      </styled.div>
-      <styled.div
         style={
           Object {
             "textAlign": "center",
@@ -57,7 +48,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
         }
       >
         <div
-          className="sc-htpNat caWwDh"
+          className="sc-htpNat hCwLvp"
           style={
             Object {
               "textAlign": "center",
@@ -80,7 +71,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
               >
                 <svg
                   aria-labelledby="ariaLabelledby"
-                  className="sc-gzVnrw YXFCT"
+                  className="sc-bZQynM iFCtoG"
                   version="1.1"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +107,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
                     title=""
                   >
                     <g
-                      className="sc-bZQynM iePCjc"
+                      className="sc-EHOje cmgglm"
                       fill="currentColor"
                       title=""
                     >
@@ -143,7 +134,68 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
         }
       >
         <div
-          className="sc-htpNat caWwDh"
+          className="sc-htpNat hCwLvp"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          11
+        </div>
+      </styled.div>
+      <styled.div>
+        <div
+          className="sc-bwzfXH dECyiq"
+        >
+          finagle/netty3-7
+        </div>
+      </styled.div>
+      <styled.div
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        <div
+          className="sc-htpNat hCwLvp"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          Yes
+        </div>
+      </styled.div>
+      <styled.div
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        <div
+          className="sc-htpNat hCwLvp"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          10
+        </div>
+      </styled.div>
+      <styled.div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <div
+          className="sc-htpNat hCwLvp"
           style={
             Object {
               "textAlign": "center",
@@ -158,7 +210,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                className="sc-gzVnrw eCnGhT"
+                className="sc-bZQynM bRvplg"
                 version="1.1"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +221,7 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
                   title=""
                 >
                   <g
-                    className="sc-bZQynM iePCjc"
+                    className="sc-EHOje cmgglm"
                     fill="currentColor"
                     title=""
                   >
@@ -199,44 +251,12 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
           </Icon>
         </div>
       </styled.div>
-      <styled.div
-        style={
-          Object {
-            "flex": "1 1 auto",
-          }
-        }
-      >
-        <div
-          className="sc-bwzfXH dECyiq"
-          style={
-            Object {
-              "flex": "1 1 auto",
-            }
-          }
-        >
-          finagle/netty3-7
-        </div>
-      </styled.div>
-      <styled.div>
-        <div
-          className="sc-bxivhb iwomYX"
-        >
-          Yes
-        </div>
-      </styled.div>
-      <styled.div>
-        <div
-          className="sc-bxivhb iwomYX"
-        >
-          10
-        </div>
-      </styled.div>
       <Styled(UnmountClosed)
         isOpened={false}
         onClick={[Function]}
       >
         <UnmountClosed
-          className="sc-ifAKCX jNPudG"
+          className="sc-bxivhb iiOIu"
           isOpened={false}
           onClick={[Function]}
         />

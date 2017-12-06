@@ -17,18 +17,29 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
 >
   <styled.div>
     <div
-      className="sc-VigVT iKLSiy"
+      className="sc-gqjmRU fDbTMp"
     >
       <ThreadsTableHeader>
         <styled.div>
           <div
             className="sc-bdVaJa enQjcb"
           >
-            <styled.div>
+            <styled.div
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
               <div
-                className="sc-bxivhb jpLLbZ"
+                className="sc-bxivhb bnxARi"
+                style={
+                  Object {
+                    "textAlign": "center",
+                  }
+                }
               >
-                ID
+                State
               </div>
             </styled.div>
             <styled.div
@@ -39,58 +50,63 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb jpLLbZ"
+                className="sc-bxivhb bnxARi"
                 style={
                   Object {
                     "textAlign": "center",
                   }
                 }
               >
-                State
+                ID
               </div>
             </styled.div>
             <styled.div>
               <div
-                className="sc-bxivhb jpLLbZ"
-              >
-                Trace
-              </div>
-            </styled.div>
-            <styled.div
-              style={
-                Object {
-                  "flex": "1 1 auto",
-                }
-              }
-            >
-              <div
                 className="sc-htpNat dvYNGM"
-                style={
-                  Object {
-                    "flex": "1 1 auto",
-                  }
-                }
               >
                 Name
               </div>
             </styled.div>
             <styled.div
-              header={true}
+              style={
+                Object {
+                  "textAlign": "right",
+                }
+              }
             >
               <div
-                className="sc-ifAKCX bqqRVa"
+                className="sc-bxivhb bnxARi"
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
               >
                 Daemon
               </div>
             </styled.div>
             <styled.div
-              header={true}
+              style={
+                Object {
+                  "textAlign": "right",
+                }
+              }
             >
               <div
-                className="sc-ifAKCX bqqRVa"
+                className="sc-bxivhb bnxARi"
+                style={
+                  Object {
+                    "textAlign": "right",
+                  }
+                }
               >
                 Priority
               </div>
+            </styled.div>
+            <styled.div>
+              <div
+                className="sc-bxivhb bnxARi"
+              />
             </styled.div>
           </div>
         </styled.div>
@@ -100,7 +116,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
       >
         <styled.ol>
           <ol
-            className="sc-EHOje eEvHuy"
+            className="sc-ifAKCX dBhpth"
           />
         </styled.ol>
       </ThreadsList>

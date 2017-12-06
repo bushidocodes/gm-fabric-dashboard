@@ -8,8 +8,8 @@ import {
 } from "style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
-  TABLE_BORDER,
-  TABLE_HOVER
+  TABLE_HOVER,
+  TABLE_BORDER
 } from "style/styleVariables";
 
 const TableRow = styled.li.attrs({
@@ -18,9 +18,10 @@ const TableRow = styled.li.attrs({
   display: flex;
   align-items: flex-start;
   width: 100%;
-  box-shadow: inset 0 -1px ${TABLE_BORDER};
+  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   flex-wrap: wrap;
   cursor: pointer;
+  box-shadow: inset 0 -1px ${TABLE_BORDER};
   min-height: ${spacingScale(4.5)};
   background-color: ${props =>
     props.open

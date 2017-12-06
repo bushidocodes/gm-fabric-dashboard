@@ -5,7 +5,6 @@ import StackTrace from "./components/StackTrace";
 
 import TableCol from "components/Main/components/TableCol";
 import TableColThread from "components/Main/components/TableColThread";
-import TableColDaemon from "components/Main/components/TableColDaemon";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import TableRow from "components/Main/components/TableRow";
 
@@ -100,9 +99,18 @@ export default class ThreadsTableLineItem extends Component {
         style={stack.length ? { cursor: "pointer" } : {}}
         tabIndex={0}
       >
-        <TableColThread paddingLeft>{`${Number(id)}`}</TableColThread>
         <TableColThread style={{ textAlign: "center" }}>
           <StatusIcon status={status} />
+        </TableColThread>
+        <TableColThread style={{ textAlign: "center" }}>{`${Number(
+          id
+        )}`}</TableColThread>
+        <TableCol>{name}</TableCol>
+        <TableColThread style={{ textAlign: "right" }}>
+          {daemon ? "Yes" : "No"}
+        </TableColThread>
+        <TableColThread style={{ textAlign: "right" }}>
+          {priority}
         </TableColThread>
         <TableColThread style={{ textAlign: "center" }}>
           {stack.length ? (
@@ -113,9 +121,6 @@ export default class ThreadsTableLineItem extends Component {
             ""
           )}
         </TableColThread>
-        <TableCol style={{ flex: "1 1 auto" }}>{name}</TableCol>
-        <TableColDaemon>{daemon ? "Yes" : "No"}</TableColDaemon>
-        <TableColDaemon>{priority}</TableColDaemon>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {
