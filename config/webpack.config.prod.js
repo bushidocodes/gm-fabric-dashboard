@@ -11,10 +11,11 @@ const eslintFormatter = require("react-dev-utils/eslintFormatter");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const paths = require("./paths");
 const getClientEnvironment = require("./env");
 const babelPlugins = require("./babelPlugins");
-var LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const extractVendors = require("./extractVendors");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -54,9 +55,10 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: "source-map",
   // In production, we only want to load the polyfills and the app code.
-
-  // require "babel-polyfill" at the top of the entry point -- resolves object.assign
-  entry: ["babel-polyfill", require.resolve("./polyfills"), paths.appIndexJs],
+  entry: {
+    main: paths.appIndexJs,
+    vendor: ["babel-polyfill", require.resolve("./polyfills")]
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -80,7 +82,19 @@ module.exports = {
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
+    // These are the reasonable defaults supported by the Node ecosystem.
+    // We also include JSX as a common component filename extension to support
+    // some tools, although we do not recommend using it, see:
+    // https://github.com/facebookincubator/create-react-app/issues/290
+    // `web` extension prefixes have been added for better support
+    // for React Native Web.
     extensions: [".js", ".json", ".jsx"],
+    alias: {
+      // Support React Native Web
+      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+      "react-native": "react-native-web",
+      dygraphs: paths.appNodeModules + "/dygraphs/src-es5/dygraph.js"
+    },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -298,7 +312,9 @@ module.exports = {
       guards: true,
       paths: true,
       shorthands: true
-    })
+    }),
+    // Extract vendor modules into separate static files.
+    ...extractVendors
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

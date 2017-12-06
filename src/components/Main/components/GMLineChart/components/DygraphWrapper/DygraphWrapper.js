@@ -1,4 +1,4 @@
-import Dygraph from "dygraphs/index.es5.js";
+import Dygraph from "dygraphs";
 import { isEqual } from "lodash";
 import { PropTypes } from "prop-types";
 import React from "react";
