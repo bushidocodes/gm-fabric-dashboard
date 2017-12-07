@@ -1,6 +1,5 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, object, select } from "@storybook/addon-knobs";
 
 import TableToolbar from "./index.js";
 

@@ -173,7 +173,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       className="sc-ckVGcZ fBDfui"
     >
       <li
-        className="sc-iwsKbI cinlGT"
+        className="sc-iwsKbI dLYrzy"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"
@@ -369,7 +369,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         </div>
       </li>
       <li
-        className="sc-iwsKbI cinlGT"
+        className="sc-iwsKbI dLYrzy"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"

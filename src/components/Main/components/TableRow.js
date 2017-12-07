@@ -15,19 +15,18 @@ import {
 const TableRow = styled.li.attrs({
   tabIndex: 0
 })`
-  display: flex;
   align-items: center;
-  width: 100%;
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
-  flex-wrap: wrap;
-  cursor: pointer;
-  box-shadow: inset 0 -1px ${TABLE_BORDER};
-  min-height: ${spacingScale(4.5)};
   background-color: ${props =>
     props.open
       ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
       : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
+  box-shadow: inset 0 -1px ${TABLE_BORDER};
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
   height: ${props => (props.selectable ? "auto" : "default")};
+  min-height: ${spacingScale(4.5)};
+  width: 100%;
 
   &:hover {
     background-color: ${TABLE_HOVER};

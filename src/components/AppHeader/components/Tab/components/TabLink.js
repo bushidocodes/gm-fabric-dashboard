@@ -16,29 +16,26 @@ const COLOR_TAB_HIGHLIGHT = COLOR_HIGHLIGHT;
 const TabLink = styled(NavLink).attrs({
   exact: true
 })`
-  flex: 1 1 ${TAB_WIDTH_BASE};
-  background-color: ${COLOR_TAB_BACKGROUND_BASE.string()};
   border-top: 1px solid transparent;
+  font-weight: 600;
+  flex: 1 1 ${TAB_WIDTH_BASE};
+  margin: 1px 1px 0 0;
   padding: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(1)};
   position: relative;
-  font-weight: 600;
-  transition: all .15s ease;
-  margin: 1px 1px 0 0;
-
+  transition: all 0.15s ease; 
   &:after {
+    border-radius: 1px;
+    box-shadow: 0 0 1em 1px ${COLOR_TAB_HIGHLIGHT.string()};
     color: inherit;
     content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
     height: 1px;
-    border-radius: 1px;
-    background-color: ${COLOR_TAB_HIGHLIGHT.string()};
-    box-shadow: 0 0 1em 1px ${COLOR_TAB_HIGHLIGHT.string()};
-    z-index: 100;
-    pointer-events: none;
+    left: 0;
     opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: -2px;
+    z-index: 100;
   }
 
   &:hover {
@@ -55,17 +52,17 @@ const TabLink = styled(NavLink).attrs({
   &.active {
     background-color: ${COLOR_TAB_BACKGROUND_ACTIVE.string()};
     &:after {
-      transition: .1s;
-      opacity: 1;
       background-color: ${COLOR_TAB_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
+      opacity: 1;
+      transition: .1s;
     }
   }
 
   &:active {
     &:after {
-      transition: .1s;
-      opacity 1;
       background-color: ${COLOR_TAB_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
+      opacity 1;
+      transition: .1s;
     }
   }
   

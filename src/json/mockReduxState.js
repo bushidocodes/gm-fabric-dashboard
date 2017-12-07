@@ -1,5 +1,7 @@
 export default {
   fabric: {
+    fabricPollingInterval: 10000,
+    isPollingFabric: true,
     selectedService:
       "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
     selectedServiceVersion: "4.3",
@@ -2185,10 +2187,6 @@ export default {
   settings: {
     threadsFilter: "active",
     fabricServer: "http://localhost:1337"
-  },
-  fabric: {
-    fabricPollingInterval: 10000,
-    isPollingFabric: true
   },
   dashboards: {
     http: {

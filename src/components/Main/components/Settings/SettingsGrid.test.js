@@ -1,11 +1,8 @@
 import React from "react";
-import { Actions } from "jumpstate";
-import { configure, shallow, mount, getElement } from "enzyme";
+import { mount } from "enzyme";
 import renderer from "react-test-renderer";
-import { MemoryRouter, Route } from "react-router-dom";
 import * as state from "json/mockReduxState";
 import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
 
 import SettingsGrid from "./index";
 

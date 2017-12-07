@@ -68,7 +68,7 @@ exports[`Table component matches snapshot 1`] = `
     className="sc-ckVGcZ fBDfui"
   >
     <li
-      className="sc-iwsKbI cinlGT"
+      className="sc-iwsKbI dLYrzy"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
@@ -282,7 +282,7 @@ exports[`Table component matches snapshot 1`] = `
       </div>
     </li>
     <li
-      className="sc-iwsKbI cinlGT"
+      className="sc-iwsKbI dLYrzy"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"

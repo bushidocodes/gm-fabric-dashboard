@@ -2,7 +2,7 @@
 
 exports[`<TableLineItem/> matches snapshot 1`] = `
 <li
-  className="sc-iwsKbI cinlGT"
+  className="sc-iwsKbI dLYrzy"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="link"

@@ -7,7 +7,6 @@ import LayoutSection from "components/LayoutSection";
 import GMLineChart from "components/Main/components/GMLineChart";
 import Readout from "components/Main/components/Readout";
 import ErrorBoundary from "components/ErrorBoundary";
-import UpTime from "components/UpTime";
 
 import SummaryGrid from "./Summary";
 

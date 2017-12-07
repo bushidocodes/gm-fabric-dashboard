@@ -5,8 +5,15 @@ const TableColThread = TableCol.extend`
   flex: 0 1 5em;
   ${props =>
     props.right
-      ? `text-align: right; justify-content: flex-end; flex: 0 1 7em;`
-      : `text-align: center; justify-content: center;`}:
+      ? `
+      text-align: right; 
+      justify-content: flex-end; 
+      flex: 0 1 7em;
+      `
+      : `
+      text-align: center; 
+      justify-content: center;
+      `};
 `;
 
 TableColThread.propTypes = {

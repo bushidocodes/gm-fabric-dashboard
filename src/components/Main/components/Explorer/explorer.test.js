@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
@@ -7,7 +7,6 @@ import renderer from "react-test-renderer";
 
 // Utilities
 import mockState from "json/mockReduxState";
-import { getDygraphOfValue } from "utils/dygraphs";
 
 // Components
 import Explorer from "./index.js";

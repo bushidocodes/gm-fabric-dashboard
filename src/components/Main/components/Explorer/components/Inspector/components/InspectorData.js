@@ -4,12 +4,12 @@ import { spacingScale } from "style/styleFunctions";
 
 const InspectorData = styled.ul`
   flex: 1 1 100%;
-  width: 100%;
-  overflow-scroll: touch;
   margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
-  word-break: break-all;
   padding: 0 ${spacingScale(1)};
+  width: 100%;
+  word-break: break-all;
 `;
 
 export default InspectorData;

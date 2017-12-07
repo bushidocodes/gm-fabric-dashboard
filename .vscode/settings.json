@@ -1,13 +1,12 @@
 {
   // Place your settings in this file to overwrite default and user settings.
-  "editor.fontSize": 14,
+
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "cSpell.words": ["component", "selectable", "moxios", "unmount", "will"],
   "stylelint.enable": true,
   "stylelint.additionalDocumentSelectors": ["javascript", "javascriptreact"]
 }
