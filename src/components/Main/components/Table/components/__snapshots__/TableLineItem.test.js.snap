@@ -11,7 +11,13 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   <div
     className="sc-gqjmRU iDjtew"
   >
-    CatalogStream
+    <div
+      className="sc-kAzzGY jwHwft"
+    >
+      <div>
+        CatalogStream
+      </div>
+    </div>
     <div
       className="sc-fjdhpX enphkh"
     >

@@ -3,17 +3,17 @@
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
 <div>
   <div
-    className="sc-kEYyzF jhruec"
+    className="sc-kkGfuU bYVPlm"
   >
     <div
-      className="sc-kkGfuU bCsyHF"
+      className="sc-iAyFgw gmNCJE"
     >
       <form
         onSubmit={[Function]}
       >
         <input
           aria-label="Search Functions"
-          className="sc-jKJlTe gbUnPG"
+          className="sc-eNQAEJ bpCmXX"
           onChange={[Function]}
           placeholder="Search Functions"
           type="search"
@@ -22,13 +22,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="sc-hSdWYo jLbWpp"
+      className="sc-eHgmQL eoSCNH"
     />
     <div
-      className="sc-iAyFgw lmMktf"
+      className="sc-hSdWYo cFCvHW"
     >
       <div
-        className="Select sc-eNQAEJ dKZitV Select--single has-value"
+        className="Select sc-hMqMXs ihaVAp Select--single has-value"
         style={undefined}
       >
         <input
@@ -67,7 +67,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
                      
                   </span>
                   <span
-                    className="sc-hMqMXs kmFzMC"
+                    className="sc-kEYyzF hrzGH"
                   >
                     Function
                   </span>
@@ -107,13 +107,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-kGXeez gmTwDL"
+    className="sc-kpOJdX iDOOel"
   >
     <div
-      className="sc-kpOJdX CbCXF"
+      className="sc-dxgOiQ eMxRXt"
     >
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={
           Object {
             "flex": "1 1 20%",
@@ -123,13 +123,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Function
       </div>
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={Object {}}
       >
         Requests/sec
       </div>
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={
           Object {
             "textAlign": "right",
@@ -139,7 +139,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Requests
       </div>
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={
           Object {
             "textAlign": "right",
@@ -149,7 +149,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Error %
       </div>
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={
           Object {
             "textAlign": "right",
@@ -159,7 +159,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         Latency 50%
       </div>
       <div
-        className="sc-ckVGcZ RjGrv"
+        className="sc-jKJlTe fCVWfW"
         style={
           Object {
             "textAlign": "right",
@@ -170,7 +170,7 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
       </div>
     </div>
     <ol
-      className="sc-dxgOiQ kRrBSL"
+      className="sc-ckVGcZ fBDfui"
     >
       <li
         className="sc-iwsKbI cinlGT"
@@ -182,7 +182,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         <div
           className="sc-gqjmRU iDjtew"
         >
-          CatalogStream
+          <div
+            className="sc-kAzzGY jwHwft"
+          >
+            <div>
+              CatalogStream
+            </div>
+          </div>
           <div
             className="sc-fjdhpX enphkh"
           >
@@ -372,7 +378,13 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
         <div
           className="sc-gqjmRU iDjtew"
         >
-          OrderItem
+          <div
+            className="sc-kAzzGY jwHwft"
+          >
+            <div>
+              OrderItem
+            </div>
+          </div>
           <div
             className="sc-fjdhpX enphkh"
           >
