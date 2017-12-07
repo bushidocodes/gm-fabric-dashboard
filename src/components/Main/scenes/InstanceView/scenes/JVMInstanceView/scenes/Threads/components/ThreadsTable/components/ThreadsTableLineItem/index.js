@@ -99,20 +99,14 @@ export default class ThreadsTableLineItem extends Component {
         style={stack.length ? { cursor: "pointer" } : {}}
         tabIndex={0}
       >
-        <TableColThread style={{ textAlign: "center" }}>
+        <TableColThread>
           <StatusIcon status={status} />
         </TableColThread>
-        <TableColThread style={{ textAlign: "center" }}>{`${Number(
-          id
-        )}`}</TableColThread>
+        <TableColThread>{`${Number(id)}`}</TableColThread>
         <TableCol>{name}</TableCol>
-        <TableColThread style={{ textAlign: "right" }}>
-          {daemon ? "Yes" : "No"}
-        </TableColThread>
-        <TableColThread style={{ textAlign: "right" }}>
-          {priority}
-        </TableColThread>
-        <TableColThread style={{ textAlign: "center" }}>
+        <TableColThread right>{daemon ? "Yes" : "No"}</TableColThread>
+        <TableColThread right>{priority}</TableColThread>
+        <TableColThread>
           {stack.length ? (
             <Icon>
               <Glyph name="Threads" />

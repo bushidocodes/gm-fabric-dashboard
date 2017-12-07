@@ -16,7 +16,7 @@ const TableRow = styled.li.attrs({
   tabIndex: 0
 })`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   flex-wrap: wrap;

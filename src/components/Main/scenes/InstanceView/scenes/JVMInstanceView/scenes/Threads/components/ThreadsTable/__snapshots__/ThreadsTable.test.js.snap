@@ -32,7 +32,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb bnxARi"
+                className="sc-bxivhb gtaVCz"
                 style={
                   Object {
                     "textAlign": "center",
@@ -50,7 +50,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb bnxARi"
+                className="sc-bxivhb gtaVCz"
                 style={
                   Object {
                     "textAlign": "center",
@@ -62,7 +62,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             </styled.div>
             <styled.div>
               <div
-                className="sc-htpNat dvYNGM"
+                className="sc-htpNat lnlelj"
               >
                 Name
               </div>
@@ -70,14 +70,16 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             <styled.div
               style={
                 Object {
+                  "flex": "0 1 7em",
                   "textAlign": "right",
                 }
               }
             >
               <div
-                className="sc-bxivhb bnxARi"
+                className="sc-bxivhb gtaVCz"
                 style={
                   Object {
+                    "flex": "0 1 7em",
                     "textAlign": "right",
                   }
                 }
@@ -88,14 +90,16 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             <styled.div
               style={
                 Object {
+                  "flex": "0 1 7em",
                   "textAlign": "right",
                 }
               }
             >
               <div
-                className="sc-bxivhb bnxARi"
+                className="sc-bxivhb gtaVCz"
                 style={
                   Object {
+                    "flex": "0 1 7em",
                     "textAlign": "right",
                   }
                 }
@@ -105,7 +109,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             </styled.div>
             <styled.div>
               <div
-                className="sc-bxivhb bnxARi"
+                className="sc-bxivhb gtaVCz"
               />
             </styled.div>
           </div>

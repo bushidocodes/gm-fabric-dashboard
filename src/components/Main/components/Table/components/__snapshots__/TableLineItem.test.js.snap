@@ -2,14 +2,14 @@
 
 exports[`<TableLineItem/> matches snapshot 1`] = `
 <li
-  className="sc-iwsKbI CIhGw"
+  className="sc-iwsKbI cinlGT"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="link"
   tabIndex={0}
 >
   <div
-    className="sc-gqjmRU gbBQLn"
+    className="sc-gqjmRU iDjtew"
   >
     CatalogStream
     <div
@@ -22,7 +22,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-VigVT iaXEFZ"
+    className="sc-VigVT fKpGKu"
   >
     <svg
       preserveAspectRatio="xMaxYMin"
@@ -134,7 +134,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="sc-gZMcBi dKkxkg"
+    className="sc-gZMcBi eruWrD"
     style={
       Object {
         "textAlign": "right",
@@ -144,7 +144,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     14,333
   </div>
   <div
-    className="sc-gZMcBi gIBRDa"
+    className="sc-gZMcBi eQtUyX"
     style={
       Object {
         "textAlign": "right",
@@ -155,7 +155,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     %
   </div>
   <div
-    className="sc-gZMcBi dKkxkg"
+    className="sc-gZMcBi eruWrD"
     style={
       Object {
         "textAlign": "right",
@@ -165,7 +165,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     445
   </div>
   <div
-    className="sc-gZMcBi dKkxkg"
+    className="sc-gZMcBi eruWrD"
     style={
       Object {
         "textAlign": "right",

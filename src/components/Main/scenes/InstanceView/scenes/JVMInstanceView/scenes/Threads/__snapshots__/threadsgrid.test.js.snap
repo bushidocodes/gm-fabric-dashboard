@@ -190,7 +190,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       className="sc-bdVaJa enQjcb"
     >
       <div
-        className="sc-bxivhb bnxARi"
+        className="sc-bxivhb veDT"
         style={
           Object {
             "textAlign": "center",
@@ -200,7 +200,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         State
       </div>
       <div
-        className="sc-bxivhb bnxARi"
+        className="sc-bxivhb veDT"
         style={
           Object {
             "textAlign": "center",
@@ -215,9 +215,10 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         Name
       </div>
       <div
-        className="sc-bxivhb bnxARi"
+        className="sc-bxivhb veDT"
         style={
           Object {
+            "flex": "0 1 7em",
             "textAlign": "right",
           }
         }
@@ -225,9 +226,10 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         Daemon
       </div>
       <div
-        className="sc-bxivhb bnxARi"
+        className="sc-bxivhb veDT"
         style={
           Object {
+            "flex": "0 1 7em",
             "textAlign": "right",
           }
         }
@@ -235,7 +237,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         Priority
       </div>
       <div
-        className="sc-bxivhb bnxARi"
+        className="sc-bxivhb veDT"
       />
     </div>
     <ol
@@ -254,12 +256,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         tabIndex={0}
       >
         <div
-          className="sc-bZQynM cDSfIa"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="sc-bZQynM hyswyu"
         >
           <svg
             aria-labelledby="ariaLabelledby"
@@ -298,47 +295,33 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="sc-bZQynM cDSfIa"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="sc-bZQynM hyswyu"
         >
           2
         </div>
         <div
           className="sc-bwzfXH dECyiq"
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+            }
+          }
         >
           Test Runnable
         </div>
         <div
-          className="sc-bZQynM cDSfIa"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
+          className="sc-bZQynM eubTfk"
         >
           Yes
         </div>
         <div
-          className="sc-bZQynM cDSfIa"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
+          className="sc-bZQynM eubTfk"
         >
           8
         </div>
         <div
-          className="sc-bZQynM cDSfIa"
-          style={
-            Object {
-              "textAlign": "center",
-            }
-          }
+          className="sc-bZQynM hyswyu"
         >
           <svg
             aria-labelledby="ariaLabelledby"

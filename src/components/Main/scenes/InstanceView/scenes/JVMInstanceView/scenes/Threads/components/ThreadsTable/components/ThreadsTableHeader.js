@@ -20,10 +20,10 @@ export default function ThreadsTableHeader() {
         ID
       </TableColHeaderThread>
       <TableColHeader>Name</TableColHeader>
-      <TableColHeaderThread style={{ textAlign: "right" }}>
+      <TableColHeaderThread style={{ textAlign: "right", flex: "0 1 7em" }}>
         Daemon
       </TableColHeaderThread>
-      <TableColHeaderThread style={{ textAlign: "right" }}>
+      <TableColHeaderThread style={{ textAlign: "right", flex: "0 1 7em" }}>
         Priority
       </TableColHeaderThread>
       <TableColHeaderThread />

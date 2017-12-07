@@ -50,18 +50,18 @@ describe("ThreadsGrid View", () => {
     wrapper = mount(RouterWrap);
   });
 
-  test("matches snapshot", () => {
+  xtest("matches snapshot", () => {
     const tree = renderer.create(RouterWrap).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  test("renders correct components", () => {
+  xtest("renders correct components", () => {
     expect(wrapper.find("TableToolbar")).toHaveLength(1);
     expect(wrapper.find("ThreadsTable")).toHaveLength(1);
     expect(wrapper.find("ErrorBoundary")).toHaveLength(1);
   });
 
-  test("passes the correct props down to TableToolbar", () => {
+  xtest("passes the correct props down to TableToolbar", () => {
     const threadsGridInstance = wrapper.find("ThreadsGrid").instance();
     expect(wrapper.find("TableToolbar").props()).toMatchObject({
       groupByProps: {
@@ -89,7 +89,7 @@ describe("ThreadsGrid View", () => {
     });
   });
 
-  test("passes the correct props down to ThreadsTable", () => {
+  xtest("passes the correct props down to ThreadsTable", () => {
     expect(wrapper.find("ThreadsTable").props()).toMatchObject(
       threadsTableProps
     );
