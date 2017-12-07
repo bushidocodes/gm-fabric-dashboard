@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
+// pseudo element is added to expand clickable area of 'Docs' Icon on services card
 const DocsLink = styled.a`
+  display: inline-block;
   justify-self: flex-end;
   margin-left: 0;
   cursor: pointer;
@@ -10,6 +12,7 @@ const DocsLink = styled.a`
   transition: all 0.3s ease;
   transform: scale(1);
   will-change: transform;
+  position: relative;
 
   &:hover,
   &:focus {
@@ -20,6 +23,16 @@ const DocsLink = styled.a`
 
   &:active {
     transform: scale(1.1);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    bottom: -14px;
+    left: -4px;
+    right: -14px;
   }
 `;
 
