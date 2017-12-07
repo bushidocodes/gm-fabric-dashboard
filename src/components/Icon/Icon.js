@@ -51,6 +51,7 @@ export default function Icon({
       aria-labelledby={ariaLabelledby}
       iconRatio={iconRatio}
       glyphColor={glyphColor}
+      focusable="false"
     >
       {backgroundStyle && (
         <IconBackground

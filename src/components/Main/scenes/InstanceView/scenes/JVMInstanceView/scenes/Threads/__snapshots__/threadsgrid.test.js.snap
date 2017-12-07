@@ -264,6 +264,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           <svg
             aria-labelledby="ariaLabelledby"
             className="sc-iwsKbI eVQaWV"
+            focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -342,6 +343,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
           <svg
             aria-labelledby="ariaLabelledby"
             className="sc-iwsKbI lkkRCT"
+            focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"

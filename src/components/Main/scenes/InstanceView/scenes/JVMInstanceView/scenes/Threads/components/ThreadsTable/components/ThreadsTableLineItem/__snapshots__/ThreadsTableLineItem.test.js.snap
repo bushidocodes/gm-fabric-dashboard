@@ -66,12 +66,14 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
             >
               <styled.svg
                 aria-labelledby="ariaLabelledby"
+                focusable="false"
                 glyphColor="hsl(46.69999999999999, 100%, 41.6%)"
                 iconRatio="1"
               >
                 <svg
                   aria-labelledby="ariaLabelledby"
                   className="sc-bZQynM iFCtoG"
+                  focusable="false"
                   version="1.1"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -205,12 +207,14 @@ exports[`ThreadsTableLineItem component Matched the snapshot 1`] = `
           <Icon>
             <styled.svg
               aria-labelledby="ariaLabelledby"
+              focusable="false"
               glyphColor="currentColor"
               iconRatio="1"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
                 className="sc-bZQynM bRvplg"
+                focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
