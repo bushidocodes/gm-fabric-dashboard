@@ -76,9 +76,11 @@ exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
             </div>
             <div
               aria-activedescendant="react-select-2--value"
+              aria-disabled="false"
               aria-expanded={false}
+              aria-label={undefined}
+              aria-labelledby={undefined}
               aria-owns=""
-              aria-readonly="false"
               className="Select-input"
               onBlur={[Function]}
               onFocus={[Function]}

@@ -166,9 +166,11 @@ exports[`Table Toolbar matches snapshot 1`] = `
           </div>
           <div
             aria-activedescendant="react-select-4--value"
+            aria-disabled="false"
             aria-expanded={false}
+            aria-label={undefined}
+            aria-labelledby={undefined}
             aria-owns=""
-            aria-readonly="false"
             className="Select-input"
             onBlur={[Function]}
             onFocus={[Function]}
@@ -243,9 +245,11 @@ exports[`Table Toolbar matches snapshot 1`] = `
           </div>
           <div
             aria-activedescendant="react-select-5--value"
+            aria-disabled="false"
             aria-expanded={false}
+            aria-label={undefined}
+            aria-labelledby={undefined}
             aria-owns=""
-            aria-readonly="false"
             className="Select-input"
             onBlur={[Function]}
             onFocus={[Function]}
