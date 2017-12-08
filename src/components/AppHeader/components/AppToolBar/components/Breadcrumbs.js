@@ -4,13 +4,13 @@ import { PropTypes } from "prop-types";
 import { hide } from "components/globalPatterns";
 
 const Breadcrumbs = styled.ol`
-  flex: 1 1 auto;
+  align-items: stretch;
   display: flex;
-  margin: 0;
-  padding: 0;
+  flex: 1 1 auto;
   flex-direction: row;
   height: inherit;
-  align-items: stretch;
+  margin: 0;
+  padding: 0;
 
   > li:first-child {
     ${props => (props.hideRoot ? hide : "")};

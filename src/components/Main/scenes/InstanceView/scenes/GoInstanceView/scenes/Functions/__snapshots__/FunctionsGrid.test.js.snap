@@ -1,556 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
-<div>
-  <div
-    className="sc-kkGfuU bYVPlm"
-  >
-    <div
-      className="sc-iAyFgw gmNCJE"
-    >
-      <form
-        onSubmit={[Function]}
-      >
-        <input
-          aria-label="Search Functions"
-          className="sc-eNQAEJ bpCmXX"
-          onChange={[Function]}
-          placeholder="Search Functions"
-          type="search"
-          value=""
-        />
-      </form>
-    </div>
-    <div
-      className="sc-eHgmQL eoSCNH"
-    />
-    <div
-      className="sc-hSdWYo cFCvHW"
-    >
-      <div
-        className="Select sc-hMqMXs ihaVAp Select--single has-value"
-        style={undefined}
-      >
-        <input
-          disabled={false}
-          name="form-field-sort-by"
-          type="hidden"
-          value="func"
-        />
-        <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={undefined}
-        >
-          <span
-            className="Select-multi-value-wrapper"
-            id="react-select-2--value"
-          >
-            <div
-              className="Select-value"
-              style={undefined}
-              title={undefined}
-            >
-              <span
-                aria-selected="true"
-                className="Select-value-label"
-                id="react-select-2--value-item"
-                role="option"
-              >
-                <span>
-                  <span>
-                    Sort
-                     
-                  </span>
-                  <span
-                    className="sc-kEYyzF hrzGH"
-                  >
-                    Function
-                  </span>
-                </span>
-              </span>
-            </div>
-            <div
-              aria-activedescendant="react-select-2--value"
-              aria-disabled="false"
-              aria-expanded={false}
-              aria-label={undefined}
-              aria-labelledby={undefined}
-              aria-owns=""
-              className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
-              style={
-                Object {
-                  "border": 0,
-                  "display": "inline-block",
-                  "width": 1,
-                }
-              }
-              tabIndex={0}
-            />
-          </span>
-          <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
-          >
-            <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="sc-kpOJdX iDOOel"
-  >
-    <div
-      className="sc-dxgOiQ eMxRXt"
-    >
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={
+<FunctionsGrid
+  dispatch={[Function]}
+  funcs={
+    Array [
+      Object {
+        "errorPercent": "0.000",
+        "errorsCount": 0,
+        "func": "CatalogStream",
+        "inThroughput": 227,
+        "latency50": 1956,
+        "latency90": 3469,
+        "latency95": 3484,
+        "latency99": 3484,
+        "latency9990": 3484,
+        "latency9999": 3484,
+        "latencyAvg": 1942.692308,
+        "latencyCount": 13,
+        "latencyMax": 3484,
+        "latencyMin": 600,
+        "outThroughput": 2889,
+        "requests": 13,
+        "requestsPerSecond_dygraph": Array [
+          Array [
+            Array [
+              2017-11-14T22:48:14.557Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:19.598Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:24.508Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:29.508Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:34.507Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:39.507Z,
+              0,
+            ],
+          ],
           Object {
-            "flex": "1 1 20%",
-          }
-        }
-      >
-        Function
-      </div>
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={Object {}}
-      >
-        Requests/sec
-      </div>
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={
+            "labels": Array [
+              "time",
+              "Requests",
+            ],
+          },
+        ],
+        "requestsPerSecond_sparkline": Array [
+          0,
+          0,
+          0,
+          0,
+          0,
+        ],
+      },
+      Object {
+        "errorPercent": "0.000",
+        "errorsCount": 0,
+        "func": "OrderItem",
+        "inThroughput": 225,
+        "latency50": 2339,
+        "latency90": 3476,
+        "latency95": 3565,
+        "latency99": 3565,
+        "latency9990": 3565,
+        "latency9999": 3565,
+        "latencyAvg": 2398.615385,
+        "latencyCount": 13,
+        "latencyMax": 3565,
+        "latencyMin": 1345,
+        "outThroughput": 143,
+        "requests": 13,
+        "requestsPerSecond_dygraph": Array [
+          Array [
+            Array [
+              2017-11-14T22:48:14.557Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:19.598Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:24.508Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:29.508Z,
+              0,
+            ],
+            Array [
+              2017-11-14T22:48:34.507Z,
+              0,
+            ],
+          ],
           Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        Requests
-      </div>
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        Error %
-      </div>
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        Latency 50%
-      </div>
-      <div
-        className="sc-jKJlTe fCVWfW"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        Latency 99%
-      </div>
-    </div>
-    <ol
-      className="sc-ckVGcZ fBDfui"
-    >
-      <li
-        className="sc-iwsKbI dLYrzy"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="link"
-        tabIndex={0}
-      >
-        <div
-          className="sc-gqjmRU iDjtew"
-        >
-          <div
-            className="sc-kAzzGY jwHwft"
-          >
-            <div>
-              CatalogStream
-            </div>
-          </div>
-          <div
-            className="sc-fjdhpX enphkh"
-          >
-            <div
-              className="sc-jzJRlG hdTTKB"
-              width={100}
-            />
-          </div>
-        </div>
-        <div
-          className="sc-VigVT fKpGKu"
-        >
-          <svg
-            preserveAspectRatio="xMaxYMin"
-            style={undefined}
-            viewBox="0 0 240 32"
-          >
-            <g>
-              <circle
-                cx={2}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={61}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={120}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={179}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={238}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <polyline
-                points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <polyline
-                points="2 16 61 16 120 16 179 16 238 16"
-                style={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": 1,
-                  }
-                }
-              />
-            </g>
-            <line
-              style={
-                Object {
-                  "opacity": "0.4",
-                  "stroke": "grey",
-                }
-              }
-              x1={2}
-              x2={238}
-              y1={18}
-              y2={18}
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          13
-        </div>
-        <div
-          className="sc-gZMcBi gFwTHf"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          0.000
-          %
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          1956
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          3484
-        </div>
-      </li>
-      <li
-        className="sc-iwsKbI dLYrzy"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="link"
-        tabIndex={0}
-      >
-        <div
-          className="sc-gqjmRU iDjtew"
-        >
-          <div
-            className="sc-kAzzGY jwHwft"
-          >
-            <div>
-              OrderItem
-            </div>
-          </div>
-          <div
-            className="sc-fjdhpX enphkh"
-          >
-            <div
-              className="sc-jzJRlG hdTTKB"
-              width={100}
-            />
-          </div>
-        </div>
-        <div
-          className="sc-VigVT fKpGKu"
-        >
-          <svg
-            preserveAspectRatio="xMaxYMin"
-            style={undefined}
-            viewBox="0 0 240 32"
-          >
-            <g>
-              <circle
-                cx={2}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={80.66666666666667}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={159.33333333333334}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <circle
-                cx={238}
-                cy={16}
-                onClick={[Function]}
-                onMouseEnter={[Function]}
-                r={2}
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <polyline
-                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
-                style={
-                  Object {
-                    "fill": "none",
-                    "fillOpacity": ".1",
-                    "pointerEvents": "auto",
-                    "stroke": "currentColor",
-                    "strokeWidth": "0",
-                  }
-                }
-              />
-              <polyline
-                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"
-                style={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": 1,
-                  }
-                }
-              />
-            </g>
-            <line
-              style={
-                Object {
-                  "opacity": "0.4",
-                  "stroke": "grey",
-                }
-              }
-              x1={2}
-              x2={238}
-              y1={18}
-              y2={18}
-            />
-          </svg>
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          13
-        </div>
-        <div
-          className="sc-gZMcBi gFwTHf"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          0.000
-          %
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          2339
-        </div>
-        <div
-          className="sc-gZMcBi eruWrD"
-          style={
-            Object {
-              "textAlign": "right",
-            }
-          }
-        >
-          3565
-        </div>
-      </li>
-    </ol>
-  </div>
-</div>
+            "labels": Array [
+              "time",
+              "Requests",
+            ],
+          },
+        ],
+        "requestsPerSecond_sparkline": Array [
+          0,
+          0,
+          0,
+          0,
+        ],
+      },
+    ]
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+/>
 `;

@@ -1,6 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
-import renderer from "react-test-renderer";
+import { mount, shallow } from "enzyme";
 
 import TableToolbar from "./index.js";
 
@@ -56,9 +55,7 @@ describe("Table Toolbar", () => {
   });
 
   test("matches snapshot", () => {
-    const tree = renderer
-      .create(<TableToolbar {...mockFabricViewProps} />)
-      .toJSON();
+    const tree = shallow(<TableToolbar {...mockFabricViewProps} />);
     expect(tree).toMatchSnapshot();
   });
 

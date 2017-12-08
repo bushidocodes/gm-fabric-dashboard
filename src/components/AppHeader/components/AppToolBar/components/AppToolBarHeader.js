@@ -13,15 +13,15 @@ const APP_TOOLBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
 const APP_TOOLBAR_TEXT_COLOR = contrastColor(COLOR_ALT_BACKGROUND).string();
 
 const AppToolBarHeader = styled.nav`
-  display: flex;
-  font-weight: 600;
-  flex-direction: row;
   align-items: center;
   background-color: ${APP_TOOLBAR_BACKGROUND_COLOR};
-  flex: 0 0 ${APP_TOOLBAR_HEIGHT};
-  font-size: ${APP_TOOLBAR_FONT_SIZE};
   color: ${APP_TOOLBAR_TEXT_COLOR};
+  display: flex;
+  flex: 0 0 ${APP_TOOLBAR_HEIGHT};
+  flex-direction: row;
   font-family: ${FONT_STACK_BASE};
+  font-size: ${APP_TOOLBAR_FONT_SIZE};
+  font-weight: 600;
 `;
 
 export default AppToolBarHeader;

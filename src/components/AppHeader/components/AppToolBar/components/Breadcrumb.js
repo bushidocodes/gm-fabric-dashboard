@@ -7,10 +7,10 @@ import { media } from "style/styleVariables";
 const APP_TOOLBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
 
 const Breadcrumb = styled.li`
-  flex: 0 0 auto;
-  display: flex;
   align-items: center;
   color: black;
+  display: flex;
+  flex: 0 0 auto;
   ${media.breadcrumbsBreakpoint200`
     max-width: calc(100vw/4);
     overflow: hidden;
@@ -18,19 +18,19 @@ const Breadcrumb = styled.li`
     max-width: calc(100vw/9);
     overflow: hidden;
   `} &:before {
-    content: ">";
-    transform: scaleX(0.5);
-    display: flex;
     color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.8).string()};
+    content: ">";
+    display: flex;
     padding: 0 ${spacingScale(0.5)};
+    transform: scaleX(0.5);
   }
   a {
+    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
     display: flex;
     max-width: auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     padding: ${spacingScale(1)} 0;
-    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
+    text-overflow: ellipsis;
+    white-space: nowrap;
     &:hover {
       color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 1).string()};
     }

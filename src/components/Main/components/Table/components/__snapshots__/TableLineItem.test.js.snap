@@ -1,34 +1,156 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TableLineItem/> matches snapshot 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: default;
+  min-height: 36px;
+  width: 100%;
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c0:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c0:focus:active:hover {
+  outline: 0;
+}
+
+.c0 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c0 > *:first-child {
+  padding-left: 16px;
+}
+
+.c6 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c7 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  color: hsl(0,100%,42.5%);
+}
+
+.c1 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c5 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  height: 24px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c5 svg {
+  height: inherit;
+}
+
+.c3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 16px;
+  border-radius: 1px 4px 4px 1px;
+  height: 3px;
+  background-color: rgb(230,230,230);
+}
+
+.c4 {
+  width: 20%;
+  color: rgb(32,154,38);
+  min-width: 2px;
+  position: absolute;
+  background-color: currentColor;
+  border-radius: inherit;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
 <li
-  className="sc-iwsKbI dLYrzy"
+  className="c0"
   onClick={[Function]}
   onKeyDown={[Function]}
   role="link"
   tabIndex={0}
 >
   <div
-    className="sc-gqjmRU iDjtew"
+    className="c1"
   >
     <div
-      className="sc-kAzzGY jwHwft"
+      className="c2"
     >
       <div>
         CatalogStream
       </div>
     </div>
     <div
-      className="sc-fjdhpX enphkh"
+      className="c3"
     >
       <div
-        className="sc-jzJRlG eEybjz"
+        className="c4"
         width={20}
       />
     </div>
   </div>
   <div
-    className="sc-VigVT fKpGKu"
+    className="c5"
   >
     <svg
       preserveAspectRatio="xMaxYMin"
@@ -140,7 +262,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     </svg>
   </div>
   <div
-    className="sc-gZMcBi eruWrD"
+    className="c6"
     style={
       Object {
         "textAlign": "right",
@@ -150,7 +272,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     14,333
   </div>
   <div
-    className="sc-gZMcBi eQtUyX"
+    className="c7"
     style={
       Object {
         "textAlign": "right",
@@ -161,7 +283,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     %
   </div>
   <div
-    className="sc-gZMcBi eruWrD"
+    className="c6"
     style={
       Object {
         "textAlign": "right",
@@ -171,7 +293,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     445
   </div>
   <div
-    className="sc-gZMcBi eruWrD"
+    className="c6"
     style={
       Object {
         "textAlign": "right",

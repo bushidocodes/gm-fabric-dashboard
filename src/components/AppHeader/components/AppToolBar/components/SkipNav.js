@@ -10,16 +10,16 @@ const SkipNav = styled.button.attrs({
     }
   }
 })`
-  position: absolute;
-  text-transform: uppercase;
-  border: none;
-  padding: 0.6em;
-  transition: top 0.5s ease;
-  top: -10em;
-  left: 0;
   background-color: ${COLOR_GREEN.string()};
+  border: none;
   color: ${COLOR_WHITE.string()};
   font-size: ${FONT_SIZE_SM};
+  left: 0;
+  position: absolute;
+  padding: 0.6em;
+  text-transform: uppercase;
+  top: -10em;
+  transition: top 0.5s ease;
 
   &:focus {
     top: 0;

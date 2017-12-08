@@ -1,6 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsTable component Matched the snapshot 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  background-color: rgb(255,255,255);
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-flex: 0 1 5em;
+  -ms-flex: 0 1 5em;
+  flex: 0 1 5em;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+.c4 {
+  margin: 0;
+  display: block;
+  list-style: none;
+  padding: 0;
+}
+
+.c0 {
+  width: 100%;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  display: block;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 <ThreadsTable
   filteredThreadData={Array []}
   groupByAttribute="none"
@@ -17,12 +89,12 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
 >
   <styled.div>
     <div
-      className="sc-gqjmRU fDbTMp"
+      className="c0"
     >
       <ThreadsTableHeader>
         <styled.div>
           <div
-            className="sc-bdVaJa enQjcb"
+            className="c1"
           >
             <styled.div
               style={
@@ -32,7 +104,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb gtaVCz"
+                className="c2"
                 style={
                   Object {
                     "textAlign": "center",
@@ -50,7 +122,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb gtaVCz"
+                className="c2"
                 style={
                   Object {
                     "textAlign": "center",
@@ -62,7 +134,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             </styled.div>
             <styled.div>
               <div
-                className="sc-htpNat lnlelj"
+                className="c3"
               >
                 Name
               </div>
@@ -76,7 +148,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb gtaVCz"
+                className="c2"
                 style={
                   Object {
                     "flex": "0 1 7em",
@@ -96,7 +168,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
               }
             >
               <div
-                className="sc-bxivhb gtaVCz"
+                className="c2"
                 style={
                   Object {
                     "flex": "0 1 7em",
@@ -109,7 +181,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
             </styled.div>
             <styled.div>
               <div
-                className="sc-bxivhb gtaVCz"
+                className="c2"
               />
             </styled.div>
           </div>
@@ -120,7 +192,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
       >
         <styled.ol>
           <ol
-            className="sc-ifAKCX dBhpth"
+            className="c4"
           />
         </styled.ol>
       </ThreadsList>

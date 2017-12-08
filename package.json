@@ -107,6 +107,7 @@
     "jest": "^21.2.1",
     "jest-cli": "^21.2.1",
     "jest-junit": "^3.4.0",
+    "jest-styled-components": "^4.9.0",
     "json-server": "^0.12.1",
     "lint-staged": "^6.0.0",
     "lodash-webpack-plugin": "^0.11.4",
@@ -130,9 +131,12 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
-    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "build-docker":
+      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "docs":
+      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check":
+      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "lint-css": "stylelint 'src/**/*.{js,jsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
@@ -148,14 +152,8 @@
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "git add"],
+    "*.scss": ["prettier --write", "git add"]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -166,17 +164,15 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
       "<rootDir>/config/jest/jestSetup.js"
     ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupTestFrameworkScriptFile":
+      "<rootDir>/config/jest/jestTestFrameworkSetup.js",
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -188,28 +184,15 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx"
-    ]
+    "moduleDirectories": ["node_modules", "src"],
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "prettier": {
     "bracketSpacing": true,

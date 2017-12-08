@@ -1,6 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
-import renderer from "react-test-renderer";
+import { mount, shallow } from "enzyme";
 import configureStore from "redux-mock-store";
 import _ from "lodash";
 
@@ -68,7 +67,7 @@ const sortByOptions = [
 
 describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("Matches snapshot", () => {
-    const tree = renderer.create(FunctionsGridWithMockStore).toJSON();
+    const tree = shallow(FunctionsGridWithMockStore);
     expect(tree).toMatchSnapshot();
   });
 
