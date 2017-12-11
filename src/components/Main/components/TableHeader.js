@@ -7,7 +7,7 @@ import {
 } from "style/styleVariables";
 
 const TableHeader = styled.div`
-  align-items: flex-start;
+  align-items: center;
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   box-shadow: inset 0 -1px ${TABLE_BORDER};
   display: flex;

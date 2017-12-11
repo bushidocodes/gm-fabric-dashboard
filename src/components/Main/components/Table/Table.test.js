@@ -6,6 +6,7 @@ import Table from "./index.js";
 import TableLineItem from "./components/TableLineItem";
 import GMServiceTableLineItem from "./components/GMServiceTableLineItem";
 import TableColHeader from "components/Main/components/TableColHeader";
+import TableColLatencyHeader from "components/Main/components/TableColLatencyHeader";
 
 let wrapper;
 let routesProps = {
@@ -103,18 +104,7 @@ describe("Table component", () => {
         .at(3)
         .text()
     ).toBe("Error %");
-    expect(
-      wrapper
-        .find(TableColHeader)
-        .at(4)
-        .text()
-    ).toBe("Latency 50%");
-    expect(
-      wrapper
-        .find(TableColHeader)
-        .at(5)
-        .text()
-    ).toBe("Latency 99%");
+    expect(wrapper.find(TableColLatencyHeader).text()).toBe("Latency50%99%");
   });
 
   test("when provided routes data, renders <TableLineItem />", () => {

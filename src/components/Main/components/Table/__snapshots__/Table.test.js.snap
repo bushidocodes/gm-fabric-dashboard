@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table component matches snapshot 1`] = `
-.c9 {
+.c12 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c8 {
+.c11 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -16,11 +16,11 @@ exports[`Table component matches snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c8:not(:root) {
+.c11:not(:root) {
   overflow: visible;
 }
 
-.c4 {
+.c7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -40,19 +40,19 @@ exports[`Table component matches snapshot 1`] = `
   width: 100%;
 }
 
-.c4:hover {
+.c7:hover {
   background-color: hsl(0,0%,98%);
 }
 
-.c4:focus {
+.c7:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c4:focus:active:hover {
+.c7:focus:active:hover {
   outline: 0;
 }
 
-.c4 > * {
+.c7 > * {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -61,18 +61,18 @@ exports[`Table component matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c4 > *:first-child {
+.c7 > *:first-child {
   padding-left: 16px;
 }
 
-.c13 {
+.c16 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
 
-.c14 {
+.c17 {
   color: rgb(10,171,42);
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
@@ -80,7 +80,7 @@ exports[`Table component matches snapshot 1`] = `
   text-align: left;
 }
 
-.c5 {
+.c8 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -91,7 +91,7 @@ exports[`Table component matches snapshot 1`] = `
   position: relative;
 }
 
-.c12 {
+.c15 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -101,11 +101,11 @@ exports[`Table component matches snapshot 1`] = `
   padding-bottom: 4px;
 }
 
-.c12 svg {
+.c15 svg {
   height: inherit;
 }
 
-.c10 {
+.c13 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -115,7 +115,7 @@ exports[`Table component matches snapshot 1`] = `
   right: 16px;
 }
 
-.c11 {
+.c14 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -127,7 +127,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 100%;
 }
 
-.c15 {
+.c18 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -139,7 +139,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 0%;
 }
 
-.c7 {
+.c10 {
   font-size: 11px;
   font-weight: 500;
   text-align: center;
@@ -154,19 +154,19 @@ exports[`Table component matches snapshot 1`] = `
   margin-right: 4px;
 }
 
-.c7 svg:first-child {
+.c10 svg:first-child {
   margin-left: -6px;
   margin-right: -4px;
 }
 
-.c6 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c6 > div {
+.c9 > div {
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -184,10 +184,10 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c1 {
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: rgb(255,255,255);
   box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
@@ -202,7 +202,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 100%;
 }
 
-.c3 {
+.c6 {
   display: block;
   list-style: none;
   margin: 0;
@@ -224,6 +224,58 @@ exports[`Table component matches snapshot 1`] = `
 
 .c2:first-child {
   padding-left: 16px;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  font-size: 11px;
+  color: rgb(77,77,77);
 }
 
 <div
@@ -269,48 +321,55 @@ exports[`Table component matches snapshot 1`] = `
       Error %
     </div>
     <div
-      className="c2"
-      style={
-        Object {
-          "textAlign": "right",
-        }
-      }
+      className="c3"
     >
-      Latency 50%
-    </div>
-    <div
-      className="c2"
-      style={
-        Object {
-          "textAlign": "right",
+      <div
+        style={
+          Object {
+            "padding": "8px",
+          }
         }
-      }
-    >
-      Latency 99%
+      >
+        Latency
+      </div>
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          50%
+        </div>
+        <div
+          className="c5"
+        >
+          99%
+        </div>
+      </div>
     </div>
   </div>
   <ol
-    className="c3"
+    className="c6"
   >
     <li
-      className="c4"
+      className="c7"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="c5"
+        className="c8"
       >
         <div
-          className="c6"
+          className="c9"
         >
           <span
-            className="c7"
+            className="c10"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c8"
+              className="c11"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -318,7 +377,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c9"
+                className="c12"
                 fill="currentColor"
                 title=""
               >
@@ -344,16 +403,16 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c10"
+          className="c13"
         >
           <div
-            className="c11"
+            className="c14"
             width={100}
           />
         </div>
       </div>
       <div
-        className="c12"
+        className="c15"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -465,7 +524,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c16"
         style={
           Object {
             "textAlign": "right",
@@ -475,7 +534,7 @@ exports[`Table component matches snapshot 1`] = `
         399,334
       </div>
       <div
-        className="c14"
+        className="c17"
         style={
           Object {
             "textAlign": "right",
@@ -486,45 +545,44 @@ exports[`Table component matches snapshot 1`] = `
         %
       </div>
       <div
-        className="c13"
+        className="c16"
         style={
           Object {
+            "display": "flex",
+            "flexDirection": "column",
             "textAlign": "right",
           }
         }
       >
-        0
-      </div>
-      <div
-        className="c13"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        3
+        <div>
+          0
+          ms
+        </div>
+        <div>
+          3
+          ms
+        </div>
       </div>
     </li>
     <li
-      className="c4"
+      className="c7"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="c5"
+        className="c8"
       >
         <div
-          className="c6"
+          className="c9"
         >
           <span
-            className="c7"
+            className="c10"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c8"
+              className="c11"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -532,7 +590,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c9"
+                className="c12"
                 fill="currentColor"
                 title=""
               >
@@ -558,16 +616,16 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c10"
+          className="c13"
         >
           <div
-            className="c15"
+            className="c18"
             width={0}
           />
         </div>
       </div>
       <div
-        className="c12"
+        className="c15"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -679,7 +737,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        className="c13"
+        className="c16"
         style={
           Object {
             "textAlign": "right",
@@ -689,7 +747,7 @@ exports[`Table component matches snapshot 1`] = `
         0
       </div>
       <div
-        className="c14"
+        className="c17"
         style={
           Object {
             "textAlign": "right",
@@ -700,24 +758,23 @@ exports[`Table component matches snapshot 1`] = `
         %
       </div>
       <div
-        className="c13"
+        className="c16"
         style={
           Object {
+            "display": "flex",
+            "flexDirection": "column",
             "textAlign": "right",
           }
         }
       >
-        0
-      </div>
-      <div
-        className="c13"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
-      >
-        0
+        <div>
+          0
+          ms
+        </div>
+        <div>
+          0
+          ms
+        </div>
       </div>
     </li>
   </ol>

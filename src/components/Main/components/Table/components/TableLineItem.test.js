@@ -41,7 +41,7 @@ describe("<TableLineItem/>", () => {
     expect(wrapper.find(TableRow).length).toBe(1);
     expect(wrapper.find(TableColVizBar).length).toBe(1);
     expect(wrapper.find(SparklineCol).length).toBe(1);
-    expect(wrapper.find(TableCol).length).toBe(4);
+    expect(wrapper.find(TableCol).length).toBe(3);
     expect(wrapper.find(TableDrawerCollapse).length).toBe(1);
   });
 

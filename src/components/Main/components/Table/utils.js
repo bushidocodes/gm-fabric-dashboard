@@ -1,5 +1,6 @@
 import React from "react";
 import TableColHeader from "components/Main/components/TableColHeader";
+import TableColLatencyHeader from "components/Main/components/TableColLatencyHeader";
 
 /** function getTableHeaders
  * takes Table type and returns appropriate headers with styling
@@ -11,14 +12,7 @@ export const getTableHeaders = type => {
   let headerNames = [];
   if (type === "Instance") headerNames = [type, "Uptime"];
   if (type === "Route" || type === "Function")
-    headerNames = [
-      type,
-      "Requests/sec",
-      "Requests",
-      "Error %",
-      "Latency 50%",
-      "Latency 99%"
-    ];
+    headerNames = [type, "Requests/sec", "Requests", "Error %", "Latency"];
   let styleProps = {};
 
   // apply greater flex-basis for first column (20%)
@@ -29,11 +23,16 @@ export const getTableHeaders = type => {
     if (headerIdx === 0) styleProps = { flex: "1 1 20%" };
     if (headerIdx !== 0 && header !== "Requests/sec")
       styleProps = { textAlign: "right" };
-    return (
-      <TableColHeader style={styleProps} key={header}>
-        {header}
-      </TableColHeader>
-    );
+
+    if (header === "Latency") {
+      return <TableColLatencyHeader key={header} />;
+    } else {
+      return (
+        <TableColHeader style={styleProps} key={header}>
+          {header}
+        </TableColHeader>
+      );
+    }
   });
 };
 

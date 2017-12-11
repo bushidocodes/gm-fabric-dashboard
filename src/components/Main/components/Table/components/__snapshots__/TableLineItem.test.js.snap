@@ -286,21 +286,20 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     className="c6"
     style={
       Object {
+        "display": "flex",
+        "flexDirection": "column",
         "textAlign": "right",
       }
     }
   >
-    445
-  </div>
-  <div
-    className="c6"
-    style={
-      Object {
-        "textAlign": "right",
-      }
-    }
-  >
-    35
+    <div>
+      445
+      ms
+    </div>
+    <div>
+      35
+      ms
+    </div>
   </div>
 </li>
 `;

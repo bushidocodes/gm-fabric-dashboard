@@ -150,11 +150,15 @@ export default class TableLineItem extends Component {
         >
           {this.props.errorPercent}%
         </TableCol>
-        <TableCol style={{ textAlign: "right" }}>
-          {this.props.latency50}
-        </TableCol>
-        <TableCol style={{ textAlign: "right" }}>
-          {this.props.latency99}
+        <TableCol
+          style={{
+            textAlign: "right",
+            display: "flex",
+            flexDirection: "column"
+          }}
+        >
+          <div>{this.props.latency50}ms</div>
+          <div>{this.props.latency99}ms</div>
         </TableCol>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
