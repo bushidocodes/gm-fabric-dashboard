@@ -100,6 +100,7 @@ function AppToolBar({
       <ButtonGroup toolbar>
         {toolbarButtons.map(button => (
           <NavButton
+            active={pathname === "/settings" ? true : false}
             key={button.path}
             hideLabel
             icon={button.icon}

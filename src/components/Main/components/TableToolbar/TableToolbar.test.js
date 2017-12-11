@@ -2,6 +2,8 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import TableToolbar from "./index.js";
+import Button from "../../../Button";
+import ButtonWrapper from "../../../Button/components/ButtonWrap";
 
 const sortByOptions = [
   {
@@ -100,17 +102,17 @@ describe("Table Toolbar", () => {
   });
 
   test("adds an active class to button that matches displayType", () => {
-    let cardButton = wrapper.find("button").find({ title: "Card" });
-    let listButton = wrapper.find("button").find({ title: "List" });
-    expect(cardButton.hasClass("active")).toBe(true);
-    expect(listButton.hasClass("active")).toBe(false);
+    let cardButton = wrapper.find(Button).at(0);
+    let listButton = wrapper.find(Button).at(1);
+    expect(cardButton.props().active).toBe(true);
+    expect(listButton.props().active).toBe(false);
     wrapper.setProps({
       displayTypeProps: { displayType: "List", setDisplayType: jest.fn() }
     });
-    listButton = wrapper.find("button").find({ title: "List" });
-    cardButton = wrapper.find("button").find({ title: "Card" });
-    expect(listButton.hasClass("active")).toBe(true);
-    expect(cardButton.hasClass("active")).toBe(false);
+    cardButton = wrapper.find(Button).at(0);
+    listButton = wrapper.find(Button).at(1);
+    expect(listButton.props().active).toBe(true);
+    expect(cardButton.props().active).toBe(false);
   });
 
   // TODO: Figure out how to simulate a change event with react-select so we can test onChange handlers

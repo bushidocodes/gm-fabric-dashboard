@@ -52,6 +52,7 @@ class PollingSettings extends Component {
             label={buttonLabel}
             orientation={"vertical"}
             outline={"raised"}
+            size={"xl"}
             tabIndex={0}
             type={"polling"}
             style={{
@@ -59,6 +60,13 @@ class PollingSettings extends Component {
               height: "100%",
               position: "relative",
               zIndex: 0
+            }}
+            labelStyle={{
+              fontSize: "14px",
+              position: "absolute",
+              bottom: "10px",
+              width: "100%",
+              left: "0px"
             }}
           />
         </PollingBtnContainer>

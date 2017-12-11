@@ -4,6 +4,7 @@ import renderer from "react-test-renderer";
 import * as state from "json/mockReduxState";
 import configureStore from "redux-mock-store";
 
+import Button from "components/Button";
 import SettingsGrid from "./index";
 
 //import all necessary Action effect so the Actions object is set within this test harness
@@ -54,6 +55,10 @@ describe("SettingsGrid component", () => {
   });
 
   test("Clear Cache button exists", () => {
-    expect(SettingGridWrap.find({ title: "Clear Cache" })).toHaveLength(1);
+    expect(
+      SettingGridWrap.find(Button)
+        .at(2)
+        .props().label === "Clear Cache"
+    ).toBe(true);
   });
 });

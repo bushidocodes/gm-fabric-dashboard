@@ -81,9 +81,7 @@ class ThreadsGrid extends Component {
 
     if (this.props.fabricServer) {
       Actions.fetchAndStoreInstanceThreads(
-        `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${
-          selectedInstance
-        }`
+        `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
       );
     } else {
       Actions.fetchAndStoreInstanceThreads(threadsEndpoint);

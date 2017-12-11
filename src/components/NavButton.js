@@ -5,11 +5,17 @@ import { NavLink } from "react-router-dom";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
 
+import ButtonWrap from "./Button/components/ButtonWrap.js";
+import ButtonPrefix from "./Button/components/ButtonLabelPrefix.js";
+import ButtonSuffix from "./Button/components/ButtonLabelSuffix.js";
+
 NavButton.propTypes = {
+  active: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
   hideLabel: PropTypes.bool, // boolean that toggles if the label should be shown as text after the icon
   icon: PropTypes.string, // string of UIKit Icon to use for button
   iconSize: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the icon
   label: PropTypes.string.isRequired, // label for the button
+  labelStyle: PropTypes.object,
   orientation: PropTypes.oneOf(["vertical", "horizontal"]), // Vertical: Icon top, label bottom; Horizontal: Icon left, label right;
   outline: PropTypes.oneOf([
     "raised", // Add highlight effect to top edge and shadow effect to bottom edge
@@ -30,6 +36,7 @@ NavButton.propTypes = {
  * @param {Object} props - refer to propTypes
  * */
 function NavButton({
+  active,
   hideLabel,
   icon,
   iconSize,
@@ -41,35 +48,37 @@ function NavButton({
   outline,
   tabIndex,
   type,
-  to
+  to,
+  labelStyle
 }) {
   return (
     <NavLink
       activeClassName={"active"}
-      className={
-        "btn" +
-        (type ? ` btn-type-${type}` : "") +
-        (iconSize ? ` btn-icon-size-${iconSize}` : "") +
-        (size ? ` btn-size-${size}` : "") +
-        (outline ? ` btn-outline-${outline}` : "") +
-        (orientation ? ` btn-orientation-${orientation}` : "")
-      }
       tabIndex={tabIndex}
       title={label}
       to={to}
     >
-      {icon && (
-        <Icon className="icon">
-          <Glyph name={icon} />
-        </Icon>
-      )}
-      {!hideLabel && (
-        <span className="label">
-          {prefix ? <span className="label-prefix">{prefix}</span> : ""}
-          {label}
-          {suffix ? <span className="label-suffix">{suffix}</span> : ""}
-        </span>
-      )}
+      <ButtonWrap
+        active={active}
+        type={type}
+        iconSize={iconSize}
+        size={size}
+        outline={outline}
+        orientation={orientation}
+      >
+        {icon && (
+          <Icon className="icon">
+            <Glyph name={icon} />
+          </Icon>
+        )}
+        {!hideLabel && (
+          <span style={labelStyle}>
+            {prefix ? <ButtonPrefix>{prefix}</ButtonPrefix> : ""}
+            {label}
+            {suffix ? <ButtonSuffix>{suffix}</ButtonSuffix> : ""}
+          </span>
+        )}
+      </ButtonWrap>
     </NavLink>
   );
 }

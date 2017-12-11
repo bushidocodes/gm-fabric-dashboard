@@ -1,9 +1,11 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import "./Button.scss";
-
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
+
+import ButtonWrap from "./components/ButtonWrap";
+import ButtonLabelPrefix from "./components/ButtonLabelPrefix";
+import ButtonLabelSuffix from "./components/ButtonLabelSuffix";
 
 Button.propTypes = {
   active: PropTypes.bool, // If the button should be style as active or not
@@ -13,14 +15,17 @@ Button.propTypes = {
   glyph: PropTypes.string, // Glyph to display in the button
   glyphColor: PropTypes.string, // Color for the glyph
   glyphRatio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Relative size for the glyph
+  iconSize: PropTypes.string,
   label: PropTypes.string.isRequired, // label for the button
+  labelStyle: PropTypes.object,
   orientation: PropTypes.oneOf(["vertical", "horizontal"]), // Vertical: Icon top, label bottom; Horizontal: Icon left, label right;
   outline: PropTypes.oneOf([
     "raised", // Add highlight effect to top edge and shadow effect to bottom edge
     "outline", // Add outline effect
     "outline-shadow", // Add outline effect, and add shadow effect to bottom edge
     "shadow", // Add shadow effect to bottom edge
-    "none" // No effects
+    "none", // No effects
+    "raised-outline"
   ]),
   prefix: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // Add prefix text to button label
   size: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the button
@@ -58,23 +63,23 @@ function Button({
   suffix,
   outline,
   tabIndex,
-  type
+  type,
+  iconSize,
+  labelStyle
 }) {
   return (
-    <button
-      className={
-        "btn" +
-        (active ? ` active` : "") +
-        (type ? ` btn-type-${type}` : "") +
-        (size ? ` btn-size-${size}` : "") +
-        (outline ? ` btn-outline-${outline}` : "") +
-        (orientation ? ` btn-orientation-${orientation}` : "")
-      }
+    <ButtonWrap
+      active={active}
+      type={type}
+      size={size}
+      outline={outline}
+      orientation={orientation}
       disabled={disabled}
       onClick={clickAction}
       tabIndex={tabIndex}
       title={label}
       style={style}
+      iconSize={iconSize}
     >
       {glyph && (
         <Icon>
@@ -82,12 +87,12 @@ function Button({
         </Icon>
       )}
       {children}
-      <span className="label">
-        {prefix ? <span className="label-prefix">{prefix}</span> : ""}
+      <span style={labelStyle}>
+        {prefix ? <ButtonLabelPrefix>{prefix}</ButtonLabelPrefix> : ""}
         {label}
-        {suffix ? <span className="label-suffix">{suffix}</span> : ""}
+        {suffix ? <ButtonLabelSuffix>{suffix}</ButtonLabelSuffix> : ""}
       </span>
-    </button>
+    </ButtonWrap>
   );
 }
 

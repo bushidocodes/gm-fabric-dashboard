@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
+
 <div>
   <div
     className="sc-jzJRlG inNhF"
@@ -170,6 +171,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
               tabIndex={0}
             />
           </span>
+
           <span
             className="Select-arrow-zone"
             onMouseDown={[Function]}
