@@ -21,7 +21,11 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c0 {
-  margin-bottom: 32px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -32,11 +36,7 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  color: rgb(32,32,32);
+  margin-bottom: 32px;
 }
 
 .c0:first-of-type > * {
@@ -44,29 +44,11 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1300px;
-  width: 100%;
-  padding: 16px;
   border-top: 1px solid rgb(217,217,217);
-}
-
-.c6 {
-  padding: 8px;
-  margin: 0 auto;
-  max-width: 1300px;
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,10 +56,28 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .c2 {
@@ -94,45 +94,45 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  height: 140px;
-  width: 160px;
   border: 1px solid rgb(230,230,230);
   border-radius: 3px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-flex: 0 0 160px;
   -ms-flex: 0 0 160px;
   flex: 0 0 160px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 140px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  width: 160px;
 }
 
 .c7 .label {
-  position: absolute;
   bottom: 10px;
-  width: 100%;
+  position: absolute;
   left: 0;
+  width: 100%;
 }
 
 .c7 > svg {
   color: rgb(10,171,42);
-  will-change: transform;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  will-change: transform;
 }
 
 .c7 .btn-type-polling > svg {
@@ -142,22 +142,28 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 .c7:hover svg,
 .c7:active svg,
 .c7:focus svg {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 
 .c7:active svg {
-  -webkit-transition: all 0;
-  transition: all 0;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+  -webkit-transition: all 0;
+  transition: all 0;
 }
 
 .c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgb(230,230,230);
+  border-radius: 3px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -172,29 +178,23 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  border: 1px solid rgb(230,230,230);
-  border-radius: 3px;
-  padding: 32px;
   margin-left: 16px;
+  padding: 32px;
+  position: relative;
 }
 
 .c8 .input-range__label.input-range__label--value {
-  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  text-align: center;
-  font-weight: 500 + 100;
   color: rgb(10,171,42);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 24px;
+  font-weight: 500 + 100;
   line-height: 0;
   margin-left: -50%;
-  will-change: transform;
   -webkit-transform: translateX(-50%) translateY(4px);
   -ms-transform: translateX(-50%) translateY(4px);
   transform: translateX(-50%) translateY(4px);
+  text-align: center;
+  will-change: transform;
 }
 
 .c8 .input-range__label.input-range__label--value .input-range__label-container {
@@ -202,12 +202,12 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c8 .label {
-  font-size: 14px;
-  position: absolute;
   bottom: 10px;
-  width: 100%;
-  text-align: center;
+  font-size: 14px;
   left: 0px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .c8 .input-range__slider-container {
@@ -217,12 +217,12 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c8 .input-range__slider {
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
   background: rgb(10,171,42);
   border: none;
   border-radius: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .c8 .input-range__slider:hover,
@@ -234,20 +234,20 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c8 .input-range__slider:before {
-  color: rgb(10,171,42);
-  width: 0;
-  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid rgb(10,171,42);
-  top: 100%;
+  color: rgb(10,171,42);
   content: "";
+  height: 0;
   position: absolute;
+  top: 100%;
+  width: 0;
 }
 
 .c8 .input-range__track {
-  border-radius: 20px;
   background-color: rgb(230,230,230);
+  border-radius: 20px;
 }
 
 <section

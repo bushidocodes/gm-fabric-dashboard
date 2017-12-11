@@ -2,15 +2,8 @@
 
 exports[`Inspector matches snapshot 1`] = `
 .c0 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  line-height: 1.2;
-  height: 100%;
   border-radius: 3px;
+  bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,22 +11,29 @@ exports[`Inspector matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  height: 100%;
+  left: 0;
+  line-height: 1.2;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .c1 {
-  -webkit-flex: 0 0 56px;
-  -ms-flex: 0 0 56px;
-  flex: 0 0 56px;
-  padding: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
   box-shadow: 0 1px 0 0 hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 56px;
+  -ms-flex: 0 0 56px;
+  flex: 0 0 56px;
+  padding: 8px;
 }
 
 .c3 {
@@ -49,17 +49,17 @@ exports[`Inspector matches snapshot 1`] = `
 }
 
 .c4 {
+  border-radius: 3px;
   cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding: 4px 8px;
-  word-wrap: break-word;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  border-radius: 3px;
   will-change: transform;
+  word-wrap: break-word;
 }
 
 .c4:first-child {
@@ -125,12 +125,12 @@ exports[`Inspector matches snapshot 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0),0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+  text-align: left;
   -webkit-user-select: auto;
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
-  text-align: left;
-  box-shadow: inset 0 0 0 rgba(0,0,0,0),0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
   width: 100%;
 }
 
@@ -233,8 +233,8 @@ exports[`Inspector matches snapshot 1`] = `
 }
 
 .c2:focus {
-  outline: none;
   box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px rgb(71,192,95), 0 0 0 4px rgb(194,234,202);
+  outline: none;
 }
 
 <div

@@ -5,12 +5,11 @@ import { form_control } from "components/globalPatterns";
 
 const InspectorSearch = styled.input`
   ${form_control};
-
   appearance: none;
-  user-select: auto;
-  text-align: left;
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
     0 0 0 rgba(0, 0, 0, 0);
+  text-align: left;
+  user-select: auto;
   width: 100%;
 
   &[type="text"],
@@ -36,10 +35,10 @@ const InspectorSearch = styled.input`
   }
 
   &:focus {
-    outline: none;
     box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.5),
       0 0 0 1px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.25).string()},
       0 0 0 4px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.75).string()};
+    outline: none;
   }
 `;
 

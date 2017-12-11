@@ -5,11 +5,11 @@ import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const TableDrawerCollapse = styled(Collapse)`
-  min-height: 0;
-  padding: 0;
-  overflow: hidden;
-  flex: 0 0 100%;
   cursor: default;
+  flex: 0 0 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
   white-space: normal;
   > div:first-child {
     box-shadow: inset 0 1px

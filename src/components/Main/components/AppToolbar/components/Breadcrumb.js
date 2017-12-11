@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
 const Breadcrumb = styled.li`
-  flex: 0 0 auto;
-  display: flex;
   align-items: center;
   color: black;
+  display: flex;
+  flex: 0 0 auto;
   &:before {
     content: ">";
-    transform: scaleX(0.5);
     display: flex;
     opacity: 0.5;
     padding: 0 4px;
+    transform: scaleX(0.5);
   }
   a {
+    color: inherit;
     display: flex;
     max-width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     padding: 8px 0;
-    color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     &:hover {
       color: black;
     }

@@ -6,13 +6,13 @@ const TableColThread = TableCol.extend`
   ${props =>
     props.right
       ? `
-      text-align: right; 
-      justify-content: flex-end; 
       flex: 0 1 7em;
+      justify-content: flex-end; 
+      text-align: right; 
       `
       : `
-      text-align: center; 
       justify-content: center;
+      text-align: center; 
       `};
 `;
 

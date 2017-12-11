@@ -22,22 +22,21 @@ const DygraphContainer = styled.div`
   }
 
   .dygraph-legend {
-    text-align: right;
-    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: ${BORDER_RADIUS_BASE};
     color: ${COLOR_CONTENT.opaquer(0.2)
       .hsl()
       .string()};
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: ${BORDER_RADIUS_BASE};
     display: inline-block;
-    z-index: 10000;
-    right: 0 !important;
     left: auto !important;
-    transition: all 0.2s ease, color 0.2s ease;
-    /* color: transparent; */
-    padding: ${spacingScale(1)} ${spacingScale(2)} ${spacingScale(1)};
-    opacity: 0;
     min-width: 18em;
+    opacity: 0;
+    padding: ${spacingScale(1)} ${spacingScale(2)} ${spacingScale(1)};
+    position: absolute;
+    right: 0 !important;
+    text-align: right;
+    transition: all 0.2s ease, color 0.2s ease;
+    z-index: 10000;
 
     /* TODO: Fix this selector */
     & [style*="bold"] {
@@ -46,16 +45,16 @@ const DygraphContainer = styled.div`
   }
 
   &:hover .dygraph-legend {
-    opacity: 1;
     color: ${COLOR_CONTENT.opaquer(0.2)
       .hsl()
       .string()};
+    opacity: 1;
     transition: all 0.2s ease, color 1s ease;
   }
 
   .dygraph-label {
-    opacity: 0.8;
     color: ${COLOR_CONTENT};
+    opacity: 0.8;
   }
 `;
 

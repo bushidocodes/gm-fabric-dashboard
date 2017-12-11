@@ -7,14 +7,14 @@ import {
 } from "style/styleVariables";
 
 const TableHeader = styled.div`
+  align-items: flex-start;
+  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
+  box-shadow: inset 0 -1px ${TABLE_BORDER};
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  width: 100%;
-  box-shadow: inset 0 -1px ${TABLE_BORDER};
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
-  overflow: hidden;
   font-weight: ${FONT_WEIGHT_BASE};
+  overflow: hidden;
+  width: 100%;
 `;
 
 export default TableHeader;

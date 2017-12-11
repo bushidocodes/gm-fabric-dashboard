@@ -4,27 +4,27 @@ import { COLOR_BRAND_PRIMARY, COLOR_WHITE } from "style/styleVariables";
 import { contrastColor } from "style/styleFunctions";
 
 const PollingBtnContainer = styled.div`
+  align-items: center;
   align-self: stretch;
-  height: 140px;
-  width: 160px;
   border: 1px solid ${contrastColor(COLOR_WHITE, 0.1).toString()};
   border-radius: 3px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   flex: 0 0 160px;
+  flex-direction: column;
+  height: 140px;
   justify-content: center;
+  width: 160px;
 
   .label {
-    position: absolute;
     bottom: 10px;
-    width: 100%;
+    position: absolute;
     left: 0;
+    width: 100%;
   }
   > svg {
     color: ${COLOR_BRAND_PRIMARY.toString()};
-    will-change: transform;
     transition: all 0.3s ease;
+    will-change: transform;
   }
 
   .btn-type-polling > svg {
@@ -34,12 +34,12 @@ const PollingBtnContainer = styled.div`
   &:hover svg,
   &:active svg,
   &:focus svg {
-    transition: all 0.1s ease;
     transform: scale(1.1);
+    transition: all 0.1s ease;
   }
   &:active svg {
-    transition: all 0;
     transform: scale(1);
+    transition: all 0;
   }
 `;
 

@@ -7,17 +7,18 @@ import { ZINDEX_DROPDOWN } from "style/styleVariables";
 import "react-select/dist/react-select.css";
 
 const GMSelect = styled(Select)`
-  flex-grow: 1;
-  max-width: 125px;
-  width: 100%;
-  height: 28px;
-  font-weight: 600;
-  font-size: 14px;
-  z-index: ${ZINDEX_DROPDOWN};
-  position: relative;
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: ${ZINDEX_DROPDOWN};
+
   .Select-control {
     height: 28px !important;
 

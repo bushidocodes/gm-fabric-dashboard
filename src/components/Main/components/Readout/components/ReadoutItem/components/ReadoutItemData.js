@@ -4,10 +4,10 @@ import { PropTypes } from "prop-types";
 import { spacingScale } from "style/styleFunctions";
 
 const ReadoutItemData = styled.div`
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: column;
   align-items: stretch;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
   padding: ${spacingScale(1)} 0;
 
   &:first-child {

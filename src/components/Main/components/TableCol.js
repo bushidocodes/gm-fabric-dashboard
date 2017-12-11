@@ -4,11 +4,10 @@ import { PropTypes } from "prop-types";
 import { errorColor } from "style/styleFunctions";
 
 const TableCol = styled.div`
-  flex: 1 1 12%;
-
-  text-align: left;
   ${props =>
     props.errorPercent ? `color: ${errorColor(props.errorPercent)}` : ""};
+  flex: 1 1 12%;
+  text-align: left;
 `;
 
 TableCol.propTypes = {

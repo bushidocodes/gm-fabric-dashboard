@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const ToolbarRight = styled.div`
-  flex: 1 1 33%;
   display: flex;
+  flex: 1 1 33%;
   justify-content: flex-end;
 `;
 

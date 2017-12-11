@@ -9,13 +9,13 @@ import {
 import { spacingScale } from "style/styleFunctions";
 
 const InspectorItem = styled.div`
+  border-radius: ${BORDER_RADIUS_BASE};
   cursor: pointer;
   display: flex;
   padding: ${spacingScale(0.5)} ${spacingScale(1)};
-  word-wrap: break-word;
   transition: all 0.2s ease;
-  border-radius: ${BORDER_RADIUS_BASE};
   will-change: transform;
+  word-wrap: break-word;
 
   &:first-child {
     margin-top: ${spacingScale(1)};

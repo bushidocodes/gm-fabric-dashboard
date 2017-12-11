@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabGraph matches snapshot 1`] = `
+.c0 {
+  height: 24px;
+  color: rgb(213,213,213);
+  margin: 0 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+<div
+  className="c0"
+/>
+`;

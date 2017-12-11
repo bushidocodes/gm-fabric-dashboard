@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GMSelectValueRenderer matches snapshot 1`] = `
+<span>
+  <span>
+    Yo
+     
+  </span>
+  <styled.span>
+    Yo label
+  </styled.span>
+</span>
+`;

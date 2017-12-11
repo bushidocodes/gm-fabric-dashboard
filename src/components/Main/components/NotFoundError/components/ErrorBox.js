@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const ErrorBox = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: auto;
-  user-select: none;
   cursor: default;
+  display: flex;
   flex: 1;
+  height: auto;
+  justify-content: center;
+  user-select: none;
 `;
 
 export default ErrorBox;

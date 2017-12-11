@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageIcon matches snapshot 1`] = `
+<styled.div
+  className="notification-dismiss"
+>
+  <Icon
+    borderOpacity="1"
+    borderStyle="BorderTriangleSmall"
+    borderWidth="2"
+    iconRatio="5"
+  >
+    <Exclamation />
+  </Icon>
+</styled.div>
+`;

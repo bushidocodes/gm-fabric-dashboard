@@ -4,8 +4,8 @@ import { spacingScale } from "style/styleFunctions";
 
 const LineChartContent = styled.div`
   flex: 1 1 100%;
-  min-height: 250px;
   position: relative;
+  min-height: 250px;
 
   > * {
     margin: ${spacingScale(1)};

@@ -4,12 +4,12 @@ import { spacingScale } from "style/styleFunctions";
 import { COLOR_CONTENT } from "style/styleVariables";
 
 const LayoutSectionWrap = styled.section`
-  margin-bottom: ${spacingScale(4)};
+  align-items: stretch;
+  color: ${COLOR_CONTENT.string()};
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  align-items: stretch;
-  color: ${COLOR_CONTENT.string()};
+  margin-bottom: ${spacingScale(4)};
 
   &:first-of-type {
     > * {

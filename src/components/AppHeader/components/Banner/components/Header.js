@@ -14,15 +14,15 @@ const Header = styled.h1`
   white-space: nowrap;
   text-transform: capitalize;
   &:after {
-    content: "";
     background-color: ${COLOR_ALT_BACKGROUND.fade(0.5).string()};
-    position: absolute;
-    left: 0.25em;
-    right: 0.25em;
     bottom: 0.25em;
+    content: "";
+    filter: blur(10px);
+    left: 0.25em;
+    position: absolute;
+    right: 0.25em;
     top: 0.25em;
     z-index: -1;
-    filter: blur(10px);
   }
 `;
 

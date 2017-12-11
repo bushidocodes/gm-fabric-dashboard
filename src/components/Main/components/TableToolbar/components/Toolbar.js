@@ -11,26 +11,26 @@ const TOOLBAR_BACKGROUND_COLOR = contrastColor(COLOR_CONTENT_BACKGROUND, 0.04)
   .string();
 
 const Toolbar = styled.div`
-  display: flex;
-  height: ${spacingScale(4.5)};
   align-items: center;
-  flex-direction: row;
   background-color: ${TOOLBAR_BACKGROUND_COLOR};
-  padding: ${spacingScale(0.25)} ${spacingScale(2)};
-  max-width: ${CONTENT_MAX_WIDTH};
+  display: flex;
+  flex-direction: row;
+  height: ${spacingScale(4.5)};
   margin-left: auto;
   margin-right: auto;
+  max-width: ${CONTENT_MAX_WIDTH};
+  padding: ${spacingScale(0.25)} ${spacingScale(2)};
 
   @media all and (min-width: ${CONTENT_MAX_WIDTH}) {
     &:after {
+      background-color: inherit;
       content: "";
-      pointer-events: none;
       height: inherit;
-      position: absolute;
       left: 0;
+      pointer-events: none;
+      position: absolute;
       right: 0;
       top: 0;
-      background-color: inherit;
       z-index: 1;
     }
 

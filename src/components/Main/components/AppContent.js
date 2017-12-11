@@ -7,11 +7,11 @@ import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 const AppContent = styled.div`
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   display: flex;
-  flex-direction: column;
   flex: 1 1;
   flex-basis: auto;
-  position: relative;
+  flex-direction: column;
   outline: none;
+  position: relative;
 `;
 
 export default AppContent;
