@@ -12,8 +12,6 @@ import Main from "./components/Main";
 import store from "./store";
 import "./services";
 
-import "./style/index.scss";
-
 // Just use hash history because our dashboard will be hosted deeply
 export const history = createHashHistory();
 

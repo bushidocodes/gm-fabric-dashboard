@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
+import { injectGlobal } from "styled-components";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
@@ -18,6 +19,13 @@ import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute, parseJSONString } from "utils/latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "utils/sparklines";
 import NotFoundError from "components/Main/components/NotFoundError";
+import { ReactGridLayout, ReactResizable } from "./style";
+
+// Inject react-grid-layout.css and react-resizable.css into the global stylesheet
+injectGlobal`
+${ReactGridLayout};
+${ReactResizable};
+`;
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
