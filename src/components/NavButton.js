@@ -10,7 +10,7 @@ import ButtonPrefix from "./Button/components/ButtonLabelPrefix.js";
 import ButtonSuffix from "./Button/components/ButtonLabelSuffix.js";
 
 NavButton.propTypes = {
-  active: PropTypes.oneOf(PropTypes.bool, PropTypes.string),
+  active: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   hideLabel: PropTypes.bool, // boolean that toggles if the label should be shown as text after the icon
   icon: PropTypes.string, // string of UIKit Icon to use for button
   iconSize: PropTypes.oneOf(["normal", "xs", "sm", "lg", "xl"]), // Relative size of the icon

@@ -69,8 +69,8 @@ storiesOf("Readout", module)
   ))
   .add("A Readout Group", () => (
     <ReadoutGroup>
-      <Readout readoutItems={mockReadoutItem}>/></Readout>
+      <Readout readoutItems={mockReadoutItem} />
       <Readout primary={true} readoutItems={mockReadoutFewItems} />
-      <Readout readoutItems={mockReadoutFewItems}>/></Readout>
+      <Readout readoutItems={mockReadoutFewItems} />
     </ReadoutGroup>
   ));
