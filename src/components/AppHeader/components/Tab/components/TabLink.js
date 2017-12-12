@@ -23,12 +23,12 @@ const TabLink = styled(NavLink).attrs({
   margin: 1px 1px 0 0;
   padding: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(1)};
   position: relative;
-  transition: all 0.15s ease; 
-  &:after {
+  transition: all 0.15s ease;
+  &::after {
     border-radius: 1px;
     box-shadow: 0 0 1em 1px ${COLOR_TAB_HIGHLIGHT.string()};
     color: inherit;
-    content: '';
+    content: "";
     height: 1px;
     left: 0;
     opacity: 0;
@@ -40,15 +40,13 @@ const TabLink = styled(NavLink).attrs({
   }
 
   &:hover {
-    background-color: ${
-      /* sc-block */ COLOR_TAB_BACKGROUND_BASE.mix(
-        COLOR_TAB_BACKGROUND_ACTIVE,
-        0.3
-      ).string()
-    };
+    background-color: ${/* sc-value */ COLOR_TAB_BACKGROUND_BASE.mix(
+      COLOR_TAB_BACKGROUND_ACTIVE,
+      0.3
+    ).string()};
 
     &:after {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 
@@ -57,18 +55,18 @@ const TabLink = styled(NavLink).attrs({
     &:after {
       background-color: ${COLOR_TAB_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
       opacity: 1;
-      transition: .1s;
+      transition: 0.1s;
     }
   }
 
   &:active {
     &:after {
       background-color: ${COLOR_TAB_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
-      opacity 1;
-      transition: .1s;
+      opacity: 1;
+      transition: 0.1s;
     }
   }
-  
+
   &:focus {
     outline: ${COLOR_TAB_HIGHLIGHT.string()} auto 3px;
   }

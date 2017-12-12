@@ -50,16 +50,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   transition: all 0.3s ease;
   background-color: rgb(255,255,255);
   border-color: rgb(255,255,255);
-  border-top-color: rgb(255,255,255);
-  border-bottom-color: rgb(240,240,240);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,94%);
   color: rgb(0,0,0);
   font-size: 21px;
   border-radius: 3px;
-  padding: NaNpx NaNpx;
-  padding-top: 4pxpx;
+  padding: 2px 4px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  padding-top: 4px;
 }
 
 .c8:hover {
@@ -73,11 +73,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   transition: all 0 ease;
 }
 
-.c8:not([disabled]):focus {
-  outline: none;
-  box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px transparentize(rgb(10,171,42),0.25), 0 0 0 4px transparentize(rgb(10,171,42),0.75);
-}
-
 .c8 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
@@ -87,19 +82,19 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c8:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(236,236,236);
-  border-color: rgb(236,236,236);
-  border-top-color: rgb(250,250,250);
-  border-bottom-color: rgb(222,222,222);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  border-top-color: hsl(0,0%,98%);
+  border-bottom-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
 }
 
 .c8:hover {
-  background-color: rgb(251,251,251);
-  border-color: rgb(251,251,251);
-  border-top-color: rgb(255,255,255);
-  border-bottom-color: rgb(236,236,236);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
 }
 
 .c8:focus {
@@ -114,9 +109,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c8[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: rgb(240,240,240);
-  border-color: rgb(240,240,240);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
 }
 
 .c8 > svg {
@@ -157,13 +152,13 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background-color: rgb(255,255,255);
-  border-color: rgb(240,240,240);
-  border-top-color: rgb(255,255,255);
-  border-bottom-color: rgb(209,209,209);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
   color: rgb(0,0,0);
   font-size: 14px;
   border-radius: 3px;
-  padding: NaNpx NaNpx;
+  padding: 1.4px 4px;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -180,11 +175,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   transition: all 0 ease;
 }
 
-.c15:not([disabled]):focus {
-  outline: none;
-  box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px transparentize(rgb(10,171,42),0.25), 0 0 0 4px transparentize(rgb(10,171,42),0.75);
-}
-
 .c15 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
@@ -194,19 +184,19 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c15:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(236,236,236);
-  border-color: rgb(222,222,222);
-  border-top-color: rgb(243,243,243);
-  border-bottom-color: rgb(193,193,193);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
 }
 
 .c15:hover {
-  background-color: rgb(251,251,251);
-  border-color: rgb(236,236,236);
-  border-top-color: rgb(255,255,255);
-  border-bottom-color: rgb(206,206,206);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
 }
 
 .c15:focus {
@@ -221,9 +211,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 .c15[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: rgb(240,240,240);
-  border-color: rgb(240,240,240);
-  color: rgb(0,0,0);
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
 }
 
 .c15 > svg {
@@ -232,7 +222,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c15 > :not(:first-child) {
-  margin-left: 4pxpx;
+  margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
   flex-basis: auto;

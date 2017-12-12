@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
 
-import ButtonWrap from "./Button/components/ButtonWrap.js";
+import ButtonWrap from "./Button/components/ButtonWrap";
 import ButtonPrefix from "./Button/components/ButtonLabelPrefix.js";
 import ButtonSuffix from "./Button/components/ButtonLabelSuffix.js";
 

@@ -15,11 +15,11 @@ exports[`TabLink matches snapshot 1`] = `
   transition: all 0.15s ease;
 }
 
-.c0:after {
+.c0::after {
   border-radius: 1px;
   box-shadow: 0 0 1em 1px rgb(10,171,42);
   color: inherit;
-  content: '';
+  content: "";
   height: 1px;
   left: 0;
   opacity: 0;
@@ -35,7 +35,7 @@ exports[`TabLink matches snapshot 1`] = `
 }
 
 .c0:hover:after {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .c0.active {
@@ -45,15 +45,15 @@ exports[`TabLink matches snapshot 1`] = `
 .c0.active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .c0:active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .c0:focus {

@@ -25,6 +25,9 @@ import {
  * @returns {Object} - A color library object
  */
 export function contrastColor(backgroundColor, contrast, intentColor) {
+  if (!backgroundColor) {
+    throw new Error("contrastColor requires a backgroundColor");
+  }
   if (typeof backgroundColor === "string") {
     backgroundColor = Color(backgroundColor);
   }
@@ -174,3 +177,32 @@ export const chartHeight = height => {
   }
   return `height: ${parseInt(CHART_HEIGHT_BASE, 10) * factor}px;`;
 };
+
+// Darken the color, but add a touch of saturation for a more natural shadow look
+export function darkenColor(color, percent) {
+  if (color.saturationl() > 10) {
+    // If the element has any substantial color to it, then you can mess with the saturation
+    return color
+      .darken(percent)
+      .saturate(percent)
+      .rgb();
+    // return saturate(darken(color, percent), percent);
+  } else {
+    // Otherwise, don't add color where there wasn't any to start with
+    return color.darken(percent);
+    // return darken(color, percent);
+  }
+}
+
+// Darken the color, but wash out the color a bit, for a more natural highlighted look
+export function lightenColor(color, percent) {
+  if (color.saturationl() > 10) {
+    return color
+      .lighten(percent)
+      .desaturate(percent)
+      .rgb();
+  } else {
+    // Otherwise, don't add color where there wasn't any to start with
+    return color.lighten(percent);
+  }
+}
