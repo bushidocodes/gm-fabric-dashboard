@@ -16,6 +16,7 @@ const COLOR_TAB_HIGHLIGHT = COLOR_HIGHLIGHT;
 const TabLink = styled(NavLink).attrs({
   exact: true
 })`
+  background-color: ${COLOR_TAB_BACKGROUND_BASE.string()};
   border-top: 1px solid transparent;
   font-weight: 600;
   flex: 1 1 ${TAB_WIDTH_BASE};
