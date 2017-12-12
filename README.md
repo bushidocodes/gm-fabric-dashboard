@@ -4,12 +4,15 @@
 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![tested on CircleCI](https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master.svg?style=shield)](https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/maintainability)](https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/test_coverage)](https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/test_coverage)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Dependency Status](https://david-dm.org/deciphernow/gm-fabric-dashboard.svg)](https://david-dm.org/deciphernow/gm-fabric-dashboard)
 
 Grey Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Grey Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
 
 ## Demo
+
 ![Animated GIF showing product in action](https://media.giphy.com/media/3o6fJ7w7GS3PyUKq2c/giphy.gif)
 
 ## Prerequisites
@@ -56,11 +59,11 @@ npm install
 ## Configuration
 
 If JVM microservice (gm-fabric-jvm) :
-  Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
+Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
 If GO microservice (gm-fabric-go):
-  Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
+Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
 If Service Discovery Service (SDS) microservice (mock-sds):
-  Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
+Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
 
 ## Use
 
@@ -97,7 +100,7 @@ Once built, the production bundle is minified and ready for deployment. The dash
 
 In order to support deployment of the dashboard to monitor a microservice that doesn't own the root path, this projects injects the string template `__BASE_URL__` in the minified index.html file and JS bundle that can be replaced to set the desired path. For your convenience, a BASH script is provided to simplify this deployment process and provide an undo option.
 
-For example, if you are going to deploy the dashboard to a microservice located  at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
+For example, if you are going to deploy the dashboard to a microservice located at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
 
 If you intend to retrofit this dashboard on an existing GM Fabric JVM microservice, you likely will need to proxy `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads` to the expected path as outlined above.
 
