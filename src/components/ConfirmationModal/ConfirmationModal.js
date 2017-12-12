@@ -20,9 +20,16 @@ function ConfirmationModal({
   onConfirm,
   onCancel
 }) {
+  // The line below is necessary to designate a app element which will be given aria-visible false when modal is up so screen readers only focus on modal content
+  const rootAppElement = document.querySelectorAll("#root")[0];
   return (
     <StyledModal
       isOpen={isOpen}
+      aria={{
+        labelledby: "question",
+        describedby: "secondaryText"
+      }}
+      appElement={rootAppElement}
       overlayClassName="modalOverlay"
       shouldCloseOnOverlayClick={true}
     >
@@ -40,8 +47,8 @@ function ConfirmationModal({
         >
           <Glyph name="Exclamation" />
         </Icon>
-        <ConfirmationQuery>{question}</ConfirmationQuery>
-        <SecondaryText>{secondary}</SecondaryText>
+        <ConfirmationQuery id="question">{question}</ConfirmationQuery>
+        <SecondaryText id="secondaryText">{secondary}</SecondaryText>
       </Content>
       <Actions>
         <Button clickAction={onCancel} label="Cancel" />

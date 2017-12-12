@@ -2,6 +2,12 @@
 
 exports[`ConfirmationModal matches snapshot when closed 1`] = `
 <Styled(Modal)
+  aria={
+    Object {
+      "describedby": "secondaryText",
+      "labelledby": "question",
+    }
+  }
   isOpen={false}
   overlayClassName="modalOverlay"
   shouldCloseOnOverlayClick={true}
@@ -30,10 +36,14 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
         ratio={1}
       />
     </Icon>
-    <styled.h2>
+    <styled.h2
+      id="question"
+    >
       Will this test pass?
     </styled.h2>
-    <styled.p>
+    <styled.p
+      id="secondaryText"
+    >
       Only time will tell
     </styled.p>
   </styled.div>
@@ -53,6 +63,12 @@ exports[`ConfirmationModal matches snapshot when closed 1`] = `
 
 exports[`ConfirmationModal matches snapshot when open 1`] = `
 <Styled(Modal)
+  aria={
+    Object {
+      "describedby": "secondaryText",
+      "labelledby": "question",
+    }
+  }
   isOpen={true}
   overlayClassName="modalOverlay"
   shouldCloseOnOverlayClick={true}
@@ -81,10 +97,14 @@ exports[`ConfirmationModal matches snapshot when open 1`] = `
         ratio={1}
       />
     </Icon>
-    <styled.h2>
+    <styled.h2
+      id="question"
+    >
       Will this test pass?
     </styled.h2>
-    <styled.p>
+    <styled.p
+      id="secondaryText"
+    >
       Only time will tell
     </styled.p>
   </styled.div>
