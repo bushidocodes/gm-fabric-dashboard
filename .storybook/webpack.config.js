@@ -27,7 +27,7 @@ module.exports = {
       // When you `import` an asset, you get its (virtual) filename.
       // In production, they would get copied to the `build` folder.
       {
-        exclude: [/\.html$/, /\.(js|jsx)$/, /\.scss$/, /\.css$/, /\.json$/],
+        exclude: [/\.html$/, /\.(js|jsx)$/, /\.css$/, /\.json$/],
         loader: require.resolve("file-loader"),
         options: {
           name: "static/media/[name].[hash:8].[ext]"
@@ -52,18 +52,17 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css)$/,
         use: [
           require.resolve("style-loader"),
           {
             loader: require.resolve("css-loader"),
             options: {
-              importLoaders: 3,
+              importLoaders: 1,
               modules: true,
               sourceMap: true
             }
           },
-          require.resolve("resolve-url-loader"),
           {
             loader: require.resolve("postcss-loader"),
             options: {
@@ -80,12 +79,6 @@ module.exports = {
                   flexbox: "no-2009"
                 })
               ]
-            }
-          },
-          {
-            loader: require.resolve("sass-loader"),
-            options: {
-              sourceMap: true
             }
           }
         ]

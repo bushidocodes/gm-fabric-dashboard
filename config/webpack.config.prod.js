@@ -134,7 +134,6 @@ module.exports = {
         exclude: [
           /\.html$/,
           /\.(js|jsx)$/,
-          /\.scss$/,
           /\.css$/,
           /\.json$/,
           /\.bmp$/,
@@ -180,7 +179,7 @@ module.exports = {
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css)$/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
             {
@@ -193,7 +192,6 @@ module.exports = {
                     minimize: true
                   }
                 },
-                require.resolve("resolve-url-loader"),
                 {
                   loader: require.resolve("postcss-loader"),
                   options: {
@@ -207,9 +205,6 @@ module.exports = {
                       })
                     ]
                   }
-                },
-                {
-                  loader: require.resolve("sass-loader")
                 }
               ]
             },

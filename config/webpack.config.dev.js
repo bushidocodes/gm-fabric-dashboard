@@ -135,7 +135,6 @@ module.exports = {
         exclude: [
           /\.html$/,
           /\.(js|jsx)$/,
-          /\.scss$/,
           /\.css$/,
           /\.json$/,
           /\.bmp$/,
@@ -178,7 +177,7 @@ module.exports = {
       // In production, we use a plugin to extract that CSS to a file, but
       // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css)$/,
         use: [
           require.resolve("style-loader"),
           {
@@ -188,7 +187,6 @@ module.exports = {
               sourceMap: true
             }
           },
-          require.resolve("resolve-url-loader"),
           {
             loader: require.resolve("postcss-loader"),
             options: {
@@ -202,12 +200,6 @@ module.exports = {
                   flexbox: "no-2009"
                 })
               ]
-            }
-          },
-          {
-            loader: require.resolve("sass-loader"),
-            options: {
-              sourceMap: true
             }
           }
         ]

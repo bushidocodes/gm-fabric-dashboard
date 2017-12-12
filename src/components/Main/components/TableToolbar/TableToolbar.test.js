@@ -3,7 +3,6 @@ import { mount, shallow } from "enzyme";
 
 import TableToolbar from "./index.js";
 import Button from "../../../Button";
-import ButtonWrapper from "../../../Button/components/ButtonWrap";
 
 const sortByOptions = [
   {
