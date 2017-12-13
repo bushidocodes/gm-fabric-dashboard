@@ -17,7 +17,7 @@ const TableColThread = TableCol.extend`
 `;
 
 TableColThread.propTypes = {
-  right: PropTypes.string
+  right: PropTypes.bool
 };
 
 export default TableColThread;

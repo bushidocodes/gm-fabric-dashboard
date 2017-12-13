@@ -19,7 +19,7 @@ const DataPair = styled.div`
 `;
 
 DataPair.propTypes = {
-  priority: PropTypes.oneOf(["primary", "normal"])
+  priority: PropTypes.oneOf(["primary", "secondary", "normal"])
 };
 
 const dataPairPrimary = () => {
