@@ -14,34 +14,34 @@ import Banner from "./components/Banner";
 const mockTabs = [
   {
     path: "/",
-    icon: "grid",
+    icon: "Summary",
     title: "Summary",
     details: [{ name: "Uptime", value: "15 Days" }]
   },
   {
     path: "go",
-    icon: "grid",
+    icon: "Functions",
     title: "Functions",
     details: [{ name: "Functions", value: "24" }],
     graphData: [6, 2, 5.2, 8, 3, 6, 5.37, 7, 3.3, 8]
   },
   {
     path: "go",
-    icon: "grid",
+    icon: "Threads",
     title: "Threads",
     details: [{ name: "Threads", value: "26" }],
     graphData: [6, 2, 5.2, 8, 3, 6, 5.37, 7, 3.3, 8]
   },
   {
     path: "go",
-    icon: "grid",
+    icon: "Http",
     title: "HTTP",
     details: [{ name: "Error Rate", value: "0.121%" }],
     graphData: [6, 2, 5.2, 8, 3, 6, 5.37, 7, 3.3, 8]
   },
   {
     path: "go",
-    icon: "grid",
+    icon: "JVM",
     title: "JVM",
     details: [{ name: "Memory Used", value: "116 MB" }],
     graphData: [6, 2, 5.2, 8, 3, 6, 5.37, 7, 3.3, 8]
@@ -51,12 +51,12 @@ const mockTabs = [
 const mockSecondaryTabs = [
   {
     path: "/",
-    icon: "grid",
+    icon: "Explorer",
     title: "Explorer"
   },
   {
     path: "go",
-    icon: "grid",
+    icon: "Configuration",
     title: "Configuration"
   }
 ];

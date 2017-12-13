@@ -1,8 +1,9 @@
 import React from "react";
+import { Actions } from "jumpstate";
 import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
 import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+import configureMockStore from "redux-mock-store";
 import renderer from "react-test-renderer";
 
 // Utilities
@@ -11,8 +12,11 @@ import mockState from "json/mockReduxState";
 // Components
 import ThreadsGrid from "./index";
 
-// import Actions
-import "services";
+// Mock the jumpstate effect used in ThreadsGrid
+Actions.fetchAndStoreInstanceThreads = jest.fn();
+
+// Create a mock store and initialize with mock data
+const store = configureMockStore()(mockState);
 
 const threadsTableProps = {
   filteredThreadData: [
@@ -31,8 +35,6 @@ const threadsTableProps = {
     }
   ]
 };
-// Create a mock store and initialize with mock data
-const store = configureStore()(mockState);
 
 // Wrap ThreadsGrid in Memory Router
 const RouterWrap = (
@@ -50,18 +52,18 @@ describe("ThreadsGrid View", () => {
     wrapper = mount(RouterWrap);
   });
 
-  xtest("matches snapshot", () => {
+  test("matches snapshot", () => {
     const tree = renderer.create(RouterWrap).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  xtest("renders correct components", () => {
+  test("renders correct components", () => {
     expect(wrapper.find("TableToolbar")).toHaveLength(1);
     expect(wrapper.find("ThreadsTable")).toHaveLength(1);
     expect(wrapper.find("ErrorBoundary")).toHaveLength(1);
   });
 
-  xtest("passes the correct props down to TableToolbar", () => {
+  test("passes the correct props down to TableToolbar", () => {
     const threadsGridInstance = wrapper.find("ThreadsGrid").instance();
     expect(wrapper.find("TableToolbar").props()).toMatchObject({
       groupByProps: {
@@ -89,7 +91,7 @@ describe("ThreadsGrid View", () => {
     });
   });
 
-  xtest("passes the correct props down to ThreadsTable", () => {
+  test("passes the correct props down to ThreadsTable", () => {
     expect(wrapper.find("ThreadsTable").props()).toMatchObject(
       threadsTableProps
     );

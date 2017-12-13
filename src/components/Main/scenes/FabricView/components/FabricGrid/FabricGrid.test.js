@@ -1,11 +1,17 @@
 import React from "react";
 import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
+import { Actions } from "jumpstate";
 import _ from "lodash";
 
-import FabricGrid from "./FabricGrid";
+// Utilities
 import { computeStatus } from "utils/selectors";
-import "store/states/fabric.js";
+
+// Components
+import FabricGrid from "./FabricGrid";
+
+// Mock the jumpstate effect used in FabricGrid
+Actions.fetchAndStoreFabricMicroservices = jest.fn();
 
 const mockServices = _.values({
   "AAC Remote Information|1": {
