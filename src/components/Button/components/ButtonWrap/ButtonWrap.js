@@ -71,39 +71,40 @@ const ButtonWrap = styled.button`
     flex: 0 1 auto;
   }
 
-  ${// Styles
-  props =>
-    props.type
-      ? // has color (also code in props.outline and props.active)
-        generateButtonStyle({
-          buttonOutlineStyle: camelCaseConverter(props.outline),
-          buttonBackgroundColorBase: generateButtonTypeColor(props.type),
-          buttonBorderColorBase: generateButtonTypeColor(props.type),
-          buttonLabelColorBase: contrastColor(
-            generateButtonTypeColor(props.type),
-            100
-          ),
-          buttonActiveStatus: props.active
-        })
-      : // no color
-        generateButtonStyle({
-          buttonOutlineStyle: camelCaseConverter(props.outline),
-          buttonActiveStatus: props.active
-        })};
-
-  ${// Sizes
-  props =>
-    props.size
-      ? `${generateButtonSize(props.size)}` // has size
-      : `${generateButtonSize()}`} ${// Icons // no size
-    props =>
+  ${props => `
+    ${
+      props.type
+        ? generateButtonStyle({
+            buttonOutlineStyle: camelCaseConverter(props.outline),
+            buttonBackgroundColorBase: generateButtonTypeColor(props.type),
+            buttonBorderColorBase: generateButtonTypeColor(props.type),
+            buttonLabelColorBase: contrastColor(
+              generateButtonTypeColor(props.type),
+              100
+            ),
+            buttonActiveStatus: props.active
+          }) // has color (also code in props.outline and props.active)
+        : generateButtonStyle({
+            buttonOutlineStyle: camelCaseConverter(props.outline),
+            buttonActiveStatus: props.active
+          }) // no color
+    }
+    ${
+      props.size
+        ? generateButtonSize(props.size) // has size
+        : generateButtonSize() // Icons // no size
+    } 
+    ${
       props.iconSize
-        ? `${generateButtonIconRatio(props.iconSize)}` // has iconSize
-        : `${generateButtonIconRatio()}`} ${// Orientation // no iconSize
-    props =>
+        ? generateButtonIconRatio(props.iconSize) // has iconSize
+        : generateButtonIconRatio() // Orientation // no iconSize
+    } 
+    ${
       props.orientation
-        ? `${generateButtonOrientation(props.orientation)}` // has orientation
-        : `${generateButtonOrientation()}`}; // no orientation default horizontal
+        ? generateButtonOrientation(props.orientation) // has orientation
+        : generateButtonOrientation() // no orientation default horizontal
+    } 
+  `};
 `;
 
 // might have to add 'open' prop to satisfy condition in the generateButtonStyles.
