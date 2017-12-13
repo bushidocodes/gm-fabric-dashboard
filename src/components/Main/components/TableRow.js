@@ -17,21 +17,19 @@ const TableRow = styled.li.attrs({
 })`
   align-items: center;
   background-color: ${props =>
-    props.open
+    props.isOpen
       ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
       : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
   box-shadow: inset 0 -1px ${TABLE_BORDER};
-  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
-  height: ${props => (props.selectable ? "auto" : "default")};
   min-height: ${spacingScale(4.5)};
   width: 100%;
+  cursor: ${props => (props.selectable ? `pointer` : `default`)};
 
   &:hover {
-    background-color: ${TABLE_HOVER};
+    ${props => props.selectable && `background-color: ${TABLE_HOVER}; `};
   }
-
   &:focus {
     outline: -webkit-focus-ring-color auto 5px;
   }

@@ -8,7 +8,6 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   align-items: center;
   background-color: rgb(255,255,255);
   box-shadow: inset 0 -1px hsl(0,0%,92%);
-  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,9 +15,9 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  height: default;
   min-height: 36px;
   width: 100%;
+  cursor: pointer;
 }
 
 .c0:hover {

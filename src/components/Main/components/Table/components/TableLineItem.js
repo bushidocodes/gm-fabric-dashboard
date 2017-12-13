@@ -82,14 +82,14 @@ export default class TableLineItem extends Component {
     if (e) {
       this.blurTableRow(e);
     }
-
     this.setState({ isOpen: !this.state.isOpen });
   };
 
   render() {
     return (
       <TableRow
-        selectable={this.state.isOpen}
+        selectable
+        isOpen={this.state.isOpen}
         onClick={evt => this.toggleDrawer(evt)}
         onKeyDown={evt => {
           if (evt.keyCode === 13) {
@@ -118,7 +118,6 @@ export default class TableLineItem extends Component {
             />
           </VizBar>
         </TableColVizBar>
-
         <SparklineCol>
           <Sparklines
             data={this.props.requestsPerSecond_sparkline}

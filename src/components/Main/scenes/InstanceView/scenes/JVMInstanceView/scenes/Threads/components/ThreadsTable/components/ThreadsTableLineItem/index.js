@@ -84,7 +84,8 @@ export default class ThreadsTableLineItem extends Component {
 
     return (
       <TableRow
-        selectable={this.state.isOpen}
+        isOpen={this.state.isOpen}
+        selectable={stack.length > 0}
         key={id}
         onClick={evt => {
           stack.length > 0 ? this.toggleStack(evt) : this.blurTableRow(evt);
@@ -96,7 +97,6 @@ export default class ThreadsTableLineItem extends Component {
           }
         }}
         role="link"
-        style={stack.length ? { cursor: "pointer" } : {}}
         tabIndex={0}
       >
         <TableColThread>
