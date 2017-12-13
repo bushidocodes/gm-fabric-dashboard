@@ -14,13 +14,14 @@ import SectionHeader from "./components/SectionHeader";
 import { serviceItemShape, routerLocationShape } from "components/PropTypes";
 
 CardsView.propTypes = {
+  ascending: PropTypes.bool,
   groupByAttribute: PropTypes.string.isRequired,
   location: routerLocationShape,
   services: PropTypes.arrayOf(serviceItemShape).isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
-function CardsView({ groupByAttribute, sortByAttribute, services }) {
+function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item =>
       item.headerTitle.toLowerCase()
@@ -59,8 +60,14 @@ function CardsView({ groupByAttribute, sortByAttribute, services }) {
               <GMServiceCardCollection
                 items={_.orderBy(
                   dataGroupedByHeader[header],
-                  [sortByAttribute.toLowerCase(), "name"],
-                  ["asc", "asc"]
+                  [
+                    item =>
+                      sortByAttribute === "Status"
+                        ? _.indexOf(microserviceStatuses, item.status)
+                        : item.name,
+                    "name"
+                  ],
+                  ascending ? ["asc", "asc"] : ["desc", "asc"]
                 )}
               />
             </SectionContent>
@@ -76,8 +83,14 @@ function CardsView({ groupByAttribute, sortByAttribute, services }) {
             <GMServiceCardCollection
               items={_.orderBy(
                 services,
-                [sortByAttribute.toLowerCase(), "name"],
-                ["asc", "asc"]
+                [
+                  item =>
+                    sortByAttribute === "Status"
+                      ? _.indexOf(microserviceStatuses, item.status)
+                      : item.name,
+                  "name"
+                ],
+                ascending ? ["asc", "asc"] : ["desc", "asc"]
               )}
             />
           </SectionContent>

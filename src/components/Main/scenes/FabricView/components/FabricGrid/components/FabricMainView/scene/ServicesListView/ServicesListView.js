@@ -13,18 +13,14 @@ import { microserviceStatuses } from "utils/constants";
 import { routerLocationShape, serviceItemShape } from "components/PropTypes";
 
 ListView.propTypes = {
+  ascending: PropTypes.bool,
   groupByAttribute: PropTypes.string.isRequired,
   location: routerLocationShape,
   services: PropTypes.arrayOf(serviceItemShape).isRequired,
   sortByAttribute: PropTypes.string.isRequired
 };
 
-function ListView({
-  groupByAttribute,
-  sortByAttribute,
-  services,
-  location: { pathname }
-}) {
+function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
   // get unique headers
   if (groupByAttribute !== "None") {
     const dataGroupedByHeader = _.groupBy(services, item =>
@@ -64,8 +60,14 @@ function ListView({
               <ServicesList
                 items={_.orderBy(
                   dataGroupedByHeader[header],
-                  [sortByAttribute.toLowerCase(), "name"],
-                  ["asc", "asc"]
+                  [
+                    item =>
+                      sortByAttribute === "Status"
+                        ? _.indexOf(microserviceStatuses, item.status)
+                        : item.name,
+                    "name"
+                  ],
+                  ascending ? ["asc", "asc"] : ["desc", "asc"]
                 )}
                 groupByAttribute={groupByAttribute}
               />
@@ -82,8 +84,14 @@ function ListView({
             <ServicesList
               items={_.orderBy(
                 services,
-                [sortByAttribute.toLowerCase(), "name"],
-                ["asc", "asc"]
+                [
+                  item =>
+                    sortByAttribute === "Status"
+                      ? _.indexOf(microserviceStatuses, item.status)
+                      : item.name,
+                  "name"
+                ],
+                ascending ? ["asc", "asc"] : ["desc", "asc"]
               )}
             />
           </SectionContent>

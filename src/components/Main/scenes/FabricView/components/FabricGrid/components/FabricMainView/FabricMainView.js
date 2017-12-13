@@ -8,6 +8,7 @@ import ErrorBoundary from "components/ErrorBoundary";
 import { computeStatus } from "utils/selectors";
 
 FabricMainView.propTypes = {
+  ascending: PropTypes.bool,
   displayType: PropTypes.string.isRequired,
   groupByAttribute: PropTypes.string.isRequired,
   services: PropTypes.array.isRequired,
@@ -16,6 +17,7 @@ FabricMainView.propTypes = {
 
 // receive filtered 'services' from FabricGrid
 export default function FabricMainView({
+  ascending,
   displayType,
   groupByAttribute,
   sortByAttribute,
@@ -47,6 +49,7 @@ export default function FabricMainView({
           groupByAttribute={groupByAttribute}
           sortByAttribute={sortByAttribute}
           services={mappedServices}
+          ascending={ascending}
         />
       </ErrorBoundary>
     );
@@ -57,6 +60,7 @@ export default function FabricMainView({
           groupByAttribute={groupByAttribute}
           sortByAttribute={sortByAttribute}
           services={mappedServices}
+          ascending={ascending}
         />
       </ErrorBoundary>
     );

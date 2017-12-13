@@ -67,7 +67,8 @@ class FabricGrid extends Component {
       lastPushedQueryString: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
-      displayType: "Card"
+      displayType: "Card",
+      ascending: true
     };
     // Debounce
     this.debouncedPushHistory = _.debounce(this._pushHistory, 500);
@@ -113,10 +114,15 @@ class FabricGrid extends Component {
     this.setState({ groupByAttribute }, () => {
       this.encodeAndPushHistory();
     });
-  setSortByAttribute = sortByAttribute =>
-    this.setState({ sortByAttribute }, () => {
-      this.encodeAndPushHistory();
-    });
+
+  setSortByAttribute = sortByAttribute => {
+    if (this.state.sortByAttribute === sortByAttribute) {
+      this.setState({ ascending: !this.state.ascending });
+    } else {
+      this.setState({ sortByAttribute });
+    }
+  };
+
   setDisplayType = displayType =>
     this.setState({ displayType }, () => {
       this.encodeAndPushHistory();
@@ -213,7 +219,7 @@ class FabricGrid extends Component {
 
   render() {
     const { services, statusView } = this.props;
-    const { searchQuery = "" } = this.state;
+    const { searchQuery = "", ascending } = this.state;
     const filteredServices = services.filter(service => {
       return (
         service.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
@@ -256,6 +262,7 @@ class FabricGrid extends Component {
             groupByAttribute={this.state.groupByAttribute}
             sortByAttribute={this.state.sortByAttribute}
             services={filteredServices}
+            ascending={ascending}
           />
         </div>
       );
