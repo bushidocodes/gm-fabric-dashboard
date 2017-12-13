@@ -147,7 +147,7 @@
     "mock-poa": "node json-mock/poa/gm-fabric-poa.js",
     "mock-sds": "node json-mock/discovery-service/sds.js",
     "publish": "node scripts/publish.js",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./node_modules -p 6006",
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
