@@ -13,6 +13,8 @@ const COLOR_TAB_BACKGROUND_BASE = contrastColor(COLOR_ALT_BACKGROUND, 0.175);
 const COLOR_TAB_BACKGROUND_ACTIVE = contrastColor(COLOR_ALT_BACKGROUND, 0.3);
 const COLOR_TAB_HIGHLIGHT = COLOR_HIGHLIGHT;
 
+// Note: Edge requires the overflow: hidden property to maintian
+// equal sized cards. flex-basis is not sufficient!
 const TabLink = styled(NavLink).attrs({
   exact: true
 })`
@@ -21,6 +23,7 @@ const TabLink = styled(NavLink).attrs({
   font-weight: 600;
   flex: 1 1 ${TAB_WIDTH_BASE};
   margin: 1px 1px 0 0;
+  overflow: hidden;
   padding: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(1)};
   position: relative;
   transition: all 0.15s ease;
