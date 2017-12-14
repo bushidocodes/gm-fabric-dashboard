@@ -96,12 +96,15 @@ export default function TableToolbar({
       <ToolbarRight>
         {groupByProps && (
           <GMSelect
+            matchPos="start"
             name="form-field-group-by"
             options={groupByProps.groupByOptions}
             value={groupByProps.groupByAttribute}
-            onChange={val => groupByProps.setGroupByAttribute(val.value)}
+            onChange={val => {
+              val && groupByProps.setGroupByAttribute(val.value);
+            }}
             clearable={false}
-            searchable={false}
+            searchable={true}
             valueRenderer={val => (
               <GMSelectValueRenderer title="Group" val={val} />
             )}
@@ -109,12 +112,15 @@ export default function TableToolbar({
         )}
         {sortByProps && (
           <GMSelect
+            matchPos="start"
             name="form-field-sort-by"
             options={sortByProps.sortByOptions}
             value={sortByProps.sortByAttribute}
-            onChange={val => sortByProps.setSortByAttribute(val.value)}
+            onChange={val => {
+              val && sortByProps.setSortByAttribute(val.value);
+            }}
             clearable={false}
-            searchable={false}
+            searchable={true}
             valueRenderer={val => (
               <GMSelectValueRenderer title="Sort" val={val} />
             )}

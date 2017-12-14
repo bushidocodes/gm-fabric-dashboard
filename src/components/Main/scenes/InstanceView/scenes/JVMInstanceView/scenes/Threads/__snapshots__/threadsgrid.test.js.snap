@@ -434,7 +434,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
       className="c4"
     >
       <div
-        className="Select c5 Select--single has-value"
+        className="Select c5 Select--single is-searchable has-value"
         style={undefined}
       >
         <input
@@ -481,25 +481,53 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
               </span>
             </div>
             <div
-              aria-activedescendant="react-select-4--value"
-              aria-disabled="false"
-              aria-expanded={false}
-              aria-label={undefined}
-              aria-labelledby={undefined}
-              aria-owns=""
               className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
               style={
                 Object {
-                  "border": 0,
                   "display": "inline-block",
-                  "width": 1,
                 }
               }
-              tabIndex={0}
-            />
+            >
+              <input
+                aria-activedescendant="react-select-4--value"
+                aria-describedby={undefined}
+                aria-expanded="false"
+                aria-haspopup="false"
+                aria-label={undefined}
+                aria-labelledby={undefined}
+                aria-owns=""
+                className={undefined}
+                id={undefined}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                role="combobox"
+                style={
+                  Object {
+                    "boxSizing": "content-box",
+                    "width": "5px",
+                  }
+                }
+                tabIndex={undefined}
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
           </span>
           <span
             className="Select-arrow-zone"
@@ -513,7 +541,7 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="Select c5 Select--single has-value"
+        className="Select c5 Select--single is-searchable has-value"
         style={undefined}
       >
         <input
@@ -560,25 +588,53 @@ exports[`ThreadsGrid View matches snapshot 1`] = `
               </span>
             </div>
             <div
-              aria-activedescendant="react-select-5--value"
-              aria-disabled="false"
-              aria-expanded={false}
-              aria-label={undefined}
-              aria-labelledby={undefined}
-              aria-owns=""
               className="Select-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              role="combobox"
               style={
                 Object {
-                  "border": 0,
                   "display": "inline-block",
-                  "width": 1,
                 }
               }
-              tabIndex={0}
-            />
+            >
+              <input
+                aria-activedescendant="react-select-5--value"
+                aria-describedby={undefined}
+                aria-expanded="false"
+                aria-haspopup="false"
+                aria-label={undefined}
+                aria-labelledby={undefined}
+                aria-owns=""
+                className={undefined}
+                id={undefined}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                role="combobox"
+                style={
+                  Object {
+                    "boxSizing": "content-box",
+                    "width": "5px",
+                  }
+                }
+                tabIndex={undefined}
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
           </span>
           <span
             className="Select-arrow-zone"

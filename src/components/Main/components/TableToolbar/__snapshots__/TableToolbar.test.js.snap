@@ -31,6 +31,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
   <styled.div>
     <Styled(Select)
       clearable={false}
+      matchPos="start"
       name="form-field-group-by"
       onChange={[Function]}
       options={
@@ -45,12 +46,13 @@ exports[`Table Toolbar matches snapshot 1`] = `
           },
         ]
       }
-      searchable={false}
+      searchable={true}
       value="Status"
       valueRenderer={[Function]}
     />
     <Styled(Select)
       clearable={false}
+      matchPos="start"
       name="form-field-sort-by"
       onChange={[Function]}
       options={
@@ -65,7 +67,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
           },
         ]
       }
-      searchable={false}
+      searchable={true}
       value="Name"
       valueRenderer={[Function]}
     />
