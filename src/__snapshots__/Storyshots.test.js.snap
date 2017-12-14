@@ -13024,6 +13024,65 @@ exports[`Storyshots Table Toolbar default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Tooltip default 1`] = `
+.c1 {
+  background-color: black;
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.c0 {
+  border-bottom: 1px dotted rgb(84,196,106);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c0:hover > :last-child {
+  opacity: 0.8;
+  visibility: visible;
+  z-index: 1070;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+      "width": "100vw",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    Hover over me
+    <div
+      className="c1"
+    >
+      This is a super cool tooltip!
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Vizfill bar Vizfill bar 1`] = `
 .c0 {
   -webkit-flex: 1 1 12%;
