@@ -67,6 +67,22 @@ async function publish({
     // Clean old gm-fabric-dashboard images and dangling images
     // Because rmi errors if docker images doesn't return anything, we check to
     // see if the docker images commands actually return valid IDs first
+    let { stdout: dockerImageTags } = await execWrapper(
+      `docker images "deciphernow/gm-fabric-dashboard" --format "{{.Repository}}:{{.Tag}}"`
+    );
+    // Filter out untagged image (deciphernow/gm-fabric-dashboard:<none>) if it exists
+    if (dockerImageTags.includes("deciphernow/gm-fabric-dashboard:<none>")) {
+      dockerImageTags = dockerImageTags.replace(
+        "deciphernow/gm-fabric-dashboard:<none>",
+        ""
+      );
+    }
+    if (dockerImageTags.length > 0) {
+      await execWrapper(
+        `docker rmi --force $(docker images "deciphernow/gm-fabric-dashboard" --format "{{.Repository}}:{{.Tag}}")`
+      );
+    }
+    // Remove untagged image (deciphernow/gm-fabric-dashboard:<none>) if it exists
     const { stdout: dockerImages } = await execWrapper(
       `docker images "deciphernow/gm-fabric-dashboard" --format "{{.ID}}"`
     );
@@ -75,6 +91,7 @@ async function publish({
         `docker rmi --force $(docker images "deciphernow/gm-fabric-dashboard" --format "{{.ID}}")`
       );
     }
+    // Remove dangling images if they exists
     const { stdout: danglingImages } = await execWrapper(
       `docker images --filter "dangling=true" --format "{{.ID}}"`
     );
