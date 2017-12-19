@@ -1,0 +1,1860 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-image: url(app-banner.png);
+  background-size: auto 101px;
+  background-repeat: no-repeat;
+  background-position: 88% 32px;
+  background-color: rgb(0,0,0);
+}
+
+.c12 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c11 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c11:not(:root) {
+  overflow: visible;
+}
+
+.c10 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c10:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c10:focus,
+.c10:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c10 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c10:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c10[disabled],
+.c10[disabled]:hover,
+.c10[disabled]:focus,
+.c10[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c10 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c10 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px 8px;
+}
+
+.c9 * + * {
+  margin-left: 4px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(0,0,0);
+  color: rgb(128,128,128);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 34px;
+  -ms-flex: 0 0 34px;
+  flex: 0 0 34px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0 8px;
+  max-height: 16px;
+  width: auto;
+}
+
+.c5 {
+  color: rgb(255,255,255);
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 900;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+}
+
+.c5 > a {
+  color: rgb(217,217,217);
+}
+
+.c5 > a:hover {
+  color: rgb(255,255,255);
+}
+
+.c8 {
+  color: white;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 9px;
+  font-weight: 600;
+  opacity: 1;
+  padding: 0 8px;
+}
+
+.c8:hover {
+  color: white;
+  opacity: 1;
+}
+
+.c2 {
+  background-color: rgb(10,171,42);
+  border: none;
+  color: rgb(255,255,255);
+  font-size: 11px;
+  left: 0;
+  position: absolute;
+  padding: 0.6em;
+  text-transform: uppercase;
+  top: -10em;
+  -webkit-transition: top 0.5s ease;
+  transition: top 0.5s ease;
+}
+
+.c2:focus {
+  top: 0;
+}
+
+.c6 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 > li:first-child {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7:before {
+  color: rgb(204,204,204);
+  content: ">";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4px;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.c7 a {
+  color: rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: auto;
+  padding: 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7 a:hover {
+  color: rgb(255,255,255);
+}
+
+.c7:first-child:before {
+  content: none;
+}
+
+.c7:first-child a {
+  padding-left: 16px;
+}
+
+.c13 {
+  background: transparent;
+  color: rgb(255,255,255);
+  padding: 12px 16px 12px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c14 {
+  font-size: 32px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.c14:after {
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0.25em;
+  content: "";
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  left: 0.25em;
+  position: absolute;
+  right: 0.25em;
+  top: 0.25em;
+  z-index: -1;
+}
+
+.c17 {
+  color: rgb(255,255,255);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 4px 0 0;
+}
+
+.c17 h1 {
+  font-size: 18px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.c19 {
+  margin: 0 0 4px 24px;
+  font-size: 11px;
+  color: rgb(255,255,255);
+}
+
+.c20 {
+  color: rgb(213,213,213);
+  padding-right: 4px;
+  display: inline-block;
+}
+
+.c21 {
+  margin: 0;
+  display: inline-block;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 25px;
+}
+
+.c16 {
+  background-color: rgb(45,45,45);
+  border-top: 1px solid transparent;
+  font-weight: 600;
+  -webkit-flex: 1 1 1%;
+  -ms-flex: 1 1 1%;
+  flex: 1 1 1%;
+  margin: 1px 1px 0 0;
+  overflow: hidden;
+  padding: 4px 8px 8px;
+  position: relative;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c16::after {
+  border-radius: 1px;
+  box-shadow: 0 0 1em 1px rgb(10,171,42);
+  color: inherit;
+  content: "";
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  z-index: 100;
+}
+
+.c16:hover {
+  background-color: rgb(54,54,54);
+}
+
+.c16:hover:after {
+  opacity: 0.5;
+}
+
+.c16.active {
+  background-color: rgb(77,77,77);
+}
+
+.c16.active:after {
+  background-color: rgb(84,196,106);
+  opacity: 1;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.c16:active:after {
+  background-color: rgb(84,196,106);
+  opacity: 1;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.c16:focus {
+  outline: rgb(10,171,42) auto 3px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  color: rgb(150,150,150);
+  background-color: rgba(0,0,0,0.30000000000000004);
+  padding: 0 1px 1px 1px;
+}
+
+@media (max-width:800px) {
+  .c7 {
+    max-width: calc(100vw/4);
+    overflow: hidden;
+  }
+}
+
+@media (max-width:567px) {
+  .c7 {
+    max-width: calc(100vw/9);
+    overflow: hidden;
+  }
+}
+
+@media all and (min-width:1000px) {
+  .c13 {
+    padding: 16px 32px 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <nav
+    class="c1"
+  >
+    <button
+      class="c2"
+      type="button"
+    >
+      Skip Navigation
+    </button>
+    <div
+      class="c3"
+    >
+      <img
+        alt=""
+        class="c4"
+        src="decipherLogo.svg"
+      />
+      <span
+        class="c5"
+      >
+        <a
+          href="/"
+        >
+          Fabric
+        </a>
+      </span>
+    </div>
+    <ol
+      class="c6"
+    >
+      <li
+        class="c7"
+      >
+        <a
+          href="/"
+        >
+          fabric
+        </a>
+      </li>
+      <li
+        class="c7"
+      >
+        <a
+          href="/Down"
+        >
+          Down
+        </a>
+      </li>
+    </ol>
+    <a
+      class="c8"
+      href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      1.0.3
+    </a>
+    <div
+      class="c9"
+    >
+      <a
+        aria-current="false"
+        href="/settings"
+        title="Settings"
+      >
+        <button
+          class="c10"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M20.4055307,12.9306123 L20.4055307,11.0093482 L18.0759979,10.2408425 L17.5356424,8.93198128 L18.5923377,6.72252749 L17.2354449,5.36563467 L15.0620148,6.45835366 L13.7531536,5.91799811 L12.9246084,3.61248111 L11.0033442,3.61248111 L10.2468464,5.94201392 L8.91396943,6.48236946 L6.70451563,5.42567417 L5.34762281,6.78256699 L6.44034181,8.95599708 L5.89998626,10.2648583 L3.59446926,11.0813956 L3.59446926,12.9906518 L5.92400207,13.7591575 L6.46435761,15.0680187 L5.40766232,17.2774725 L6.76455514,18.6343653 L8.93798523,17.5416463 L10.2468464,18.0820019 L11.0753916,20.3875189 L12.9846479,20.3875189 L13.7411457,18.0579861 L15.0740227,17.5176305 L17.2834765,18.5743258 L18.6403693,17.217433 L17.5356424,15.0440029 L18.1000137,13.7351417 L20.4055307,12.9065965 L20.4055307,12.9306123 Z M12,15.6083743 C10.0066884,15.6083743 8.39762968,13.9993155 8.39762968,12.006004 C8.39762968,10.0126924 10.0066884,8.40363363 12,8.40363363 C13.9933116,8.40363363 15.6023703,10.0126924 15.6023703,12.006004 C15.6023703,13.9993155 13.9933116,15.6083743 12,15.6083743 Z"
+                  id="Shape"
+                />
+              </g>
+            </g>
+          </svg>
+        </button>
+      </a>
+    </div>
+  </nav>
+  <div
+    class="c13"
+  >
+    <h1
+      class="c14"
+    >
+      Down
+    </h1>
+  </div>
+  <div
+    class="c15"
+  >
+    <a
+      aria-current="false"
+      class="c16"
+      href="/"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M18.1298429,7.20118168 L15.5060804,9.82494414 C15.1191719,10.2118526 14.4809862,10.2122484 14.0876093,9.81887154 L14.1811285,9.91239066 C13.7910605,9.52232275 13.7850328,8.88394267 14.1750559,8.49391961 L16.7988183,5.87015715 C16.9812688,5.6877067 17.2767026,5.68732987 17.4650478,5.87567507 L18.1243249,6.53495222 C18.3098228,6.72045014 18.3096724,7.02135216 18.1298429,7.20118168 Z M19.5328064,12.9411765 L15.7652035,12.9411765 C15.2414463,12.9411765 14.8235294,12.5197974 14.8235294,12 C14.8235294,11.4765787 15.2451313,11.0588235 15.7652035,11.0588235 L19.5328064,11.0588235 C19.7908303,11.0588235 20,11.2674603 20,11.5338207 L20,12.4661793 C20,12.728513 19.7871237,12.9411765 19.5328064,12.9411765 Z M16.7988183,18.1298429 L14.1750559,15.5060804 C13.7881474,15.1191719 13.7877516,14.4809862 14.1811285,14.0876093 L14.0876093,14.1811285 C14.4776773,13.7910605 15.1160573,13.7850328 15.5060804,14.1750559 L18.1298429,16.7988183 C18.3122933,16.9812688 18.3126701,17.2767026 18.1243249,17.4650478 L17.4650478,18.1243249 C17.2795499,18.3098228 16.9786478,18.3096724 16.7988183,18.1298429 Z M11.0588235,19.5328064 L11.0588235,15.7652035 C11.0588235,15.2414463 11.4802026,14.8235294 12,14.8235294 C12.5234213,14.8235294 12.9411765,15.2451313 12.9411765,15.7652035 L12.9411765,19.5328064 C12.9411765,19.7908303 12.7325397,20 12.4661793,20 L11.5338207,20 C11.271487,20 11.0588235,19.7871237 11.0588235,19.5328064 Z M5.87015715,16.7988183 L8.49391961,14.1750559 C8.88082811,13.7881474 9.5190138,13.7877516 9.91239066,14.1811285 L9.81887154,14.0876093 C10.2089395,14.4776773 10.2149672,15.1160573 9.82494414,15.5060804 L7.20118168,18.1298429 C7.01873123,18.3122933 6.72329742,18.3126701 6.53495222,18.1243249 L5.87567507,17.4650478 C5.69017716,17.2795499 5.69032763,16.9786478 5.87015715,16.7988183 Z M4.4671936,11.0588235 L8.23479651,11.0588235 C8.75855367,11.0588235 9.17647059,11.4802026 9.17647059,12 C9.17647059,12.5234213 8.75486874,12.9411765 8.23479651,12.9411765 L4.4671936,12.9411765 C4.2091697,12.9411765 4,12.7325397 4,12.4661793 L4,11.5338207 C4,11.271487 4.21287626,11.0588235 4.4671936,11.0588235 Z M7.20118168,5.87015715 L9.82494414,8.49391961 C10.2118526,8.88082811 10.2122484,9.5190138 9.81887154,9.91239066 L9.91239066,9.81887154 C9.52232275,10.2089395 8.88394267,10.2149672 8.49391961,9.82494414 L5.87015715,7.20118168 C5.6877067,7.01873123 5.68732987,6.72329742 5.87567507,6.53495222 L6.53495222,5.87567507 C6.72045014,5.69017716 7.02135216,5.69032763 7.20118168,5.87015715 Z M12.9411765,4.4671936 L12.9411765,8.23479651 C12.9411765,8.75855367 12.5197974,9.17647059 12,9.17647059 C11.4765787,9.17647059 11.0588235,8.75486874 11.0588235,8.23479651 L11.0588235,4.4671936 C11.0588235,4.2091697 11.2674603,4 11.5338207,4 L12.4661793,4 C12.728513,4 12.9411765,4.21287626 12.9411765,4.4671936 Z"
+                  id="Combined-Shape"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+        <h1>
+          All Services
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Services
+        </dt>
+        <dd
+          class="c21"
+        >
+          0
+        </dd>
+      </dl>
+    </a>
+    <a
+      aria-current="true"
+      class="c16 active"
+      href="/Down"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="iconBackground"
+              fill="currentColor"
+              fill-opacity=".3"
+              fill-rule="evenodd"
+              id="SquareSmall"
+            >
+              <path
+                d="M20,5 L20,19 L20,19 C20,19.5522847 19.5522847,20 19,20 L5,20 L5,20 C4.44771525,20 4,19.5522847 4,19 L4,5 L4,5 C4,4.44771525 4.44771525,4 5,4 L19,4 L19,4 C19.5522847,4 20,4.44771525 20,5 Z"
+                id="Background"
+              />
+            </g>
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <path
+                d="M7.14644661,7.85355339 L16.1464466,16.8535534 C16.3417088,17.0488155 16.6582912,17.0488155 16.8535534,16.8535534 C17.0488155,16.6582912 17.0488155,16.3417088 16.8535534,16.1464466 L7.85355339,7.14644661 C7.65829124,6.95118446 7.34170876,6.95118446 7.14644661,7.14644661 C6.95118446,7.34170876 6.95118446,7.65829124 7.14644661,7.85355339 Z"
+                id="Negation"
+              />
+            </g>
+          </svg>
+        </span>
+        <h1>
+          Down
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Services
+        </dt>
+        <dd
+          class="c21"
+        />
+      </dl>
+    </a>
+    <a
+      aria-current="false"
+      class="c16"
+      href="/Warning"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="iconBackground"
+              fill="currentColor"
+              fill-opacity=".3"
+              fill-rule="evenodd"
+              id="TriangleSmall"
+            >
+              <path
+                d="M12.8468583,4.36325889 L20.9902272,17.4723234 C21.2816549,17.9414591 21.1375941,18.5580176 20.6684584,18.8494453 C20.5100456,18.9478516 20.3272715,19 20.1407818,19 L3.80424764,19 C3.25196289,19 2.80424764,18.5522847 2.80424764,18 C2.80424764,17.8125803 2.85691709,17.6289327 2.95624934,17.4700011 L11.1494146,4.36093656 C11.442125,3.89260003 12.0590754,3.75022687 12.5274119,4.0429372 C12.6569646,4.12390762 12.7662427,4.23348515 12.8468583,4.36325889 Z"
+                id="Background"
+              />
+            </g>
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <path
+                d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+                id="Exclamation"
+              />
+            </g>
+          </svg>
+        </span>
+        <h1>
+          Warning
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Services
+        </dt>
+        <dd
+          class="c21"
+        />
+      </dl>
+    </a>
+    <a
+      aria-current="false"
+      class="c16"
+      href="/Stable"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="iconBackground"
+              fill="currentColor"
+              fill-opacity=".3"
+              fill-rule="evenodd"
+              id="Square"
+            >
+              <path
+                d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
+                id="BackgroundCircleSmall"
+              />
+            </g>
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <path
+                d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
+                id="GlyphRunningSmall"
+              />
+            </g>
+          </svg>
+        </span>
+        <h1>
+          Stable
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Services
+        </dt>
+        <dd
+          class="c21"
+        />
+      </dl>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-image: url(app-banner.png);
+  background-size: auto 101px;
+  background-repeat: no-repeat;
+  background-position: 88% 32px;
+  background-color: rgb(0,0,0);
+}
+
+.c12 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c11 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c11:not(:root) {
+  overflow: visible;
+}
+
+.c10 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c10:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c10:focus,
+.c10:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c10 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c10:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c10:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c10[disabled],
+.c10[disabled]:hover,
+.c10[disabled]:focus,
+.c10[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c10 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c10 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px 8px;
+}
+
+.c9 * + * {
+  margin-left: 4px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(0,0,0);
+  color: rgb(128,128,128);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 34px;
+  -ms-flex: 0 0 34px;
+  flex: 0 0 34px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.c3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0 8px;
+  max-height: 16px;
+  width: auto;
+}
+
+.c5 {
+  color: rgb(255,255,255);
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 14px;
+  font-weight: 900;
+  -webkit-letter-spacing: 0.03em;
+  -moz-letter-spacing: 0.03em;
+  -ms-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
+}
+
+.c5 > a {
+  color: rgb(217,217,217);
+}
+
+.c5 > a:hover {
+  color: rgb(255,255,255);
+}
+
+.c8 {
+  color: white;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 9px;
+  font-weight: 600;
+  opacity: 1;
+  padding: 0 8px;
+}
+
+.c8:hover {
+  color: white;
+  opacity: 1;
+}
+
+.c2 {
+  background-color: rgb(10,171,42);
+  border: none;
+  color: rgb(255,255,255);
+  font-size: 11px;
+  left: 0;
+  position: absolute;
+  padding: 0.6em;
+  text-transform: uppercase;
+  top: -10em;
+  -webkit-transition: top 0.5s ease;
+  transition: top 0.5s ease;
+}
+
+.c2:focus {
+  top: 0;
+}
+
+.c6 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 > li:first-child {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c7:before {
+  color: rgb(204,204,204);
+  content: ">";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4px;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+
+.c7 a {
+  color: rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: auto;
+  padding: 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c7 a:hover {
+  color: rgb(255,255,255);
+}
+
+.c7:first-child:before {
+  content: none;
+}
+
+.c7:first-child a {
+  padding-left: 16px;
+}
+
+.c13 {
+  background: transparent;
+  color: rgb(255,255,255);
+  padding: 12px 16px 12px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c14 {
+  font-size: 32px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.c14:after {
+  background-color: rgba(0,0,0,0.5);
+  bottom: 0.25em;
+  content: "";
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  left: 0.25em;
+  position: absolute;
+  right: 0.25em;
+  top: 0.25em;
+  z-index: -1;
+}
+
+.c17 {
+  color: rgb(255,255,255);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 4px 0 0;
+}
+
+.c17 h1 {
+  font-size: 18px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.c19 {
+  margin: 0 0 4px 24px;
+  font-size: 11px;
+  color: rgb(255,255,255);
+}
+
+.c20 {
+  color: rgb(213,213,213);
+  padding-right: 4px;
+  display: inline-block;
+}
+
+.c21 {
+  margin: 0;
+  display: inline-block;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 25px;
+}
+
+.c16 {
+  background-color: rgb(45,45,45);
+  border-top: 1px solid transparent;
+  font-weight: 600;
+  -webkit-flex: 1 1 1%;
+  -ms-flex: 1 1 1%;
+  flex: 1 1 1%;
+  margin: 1px 1px 0 0;
+  overflow: hidden;
+  padding: 4px 8px 8px;
+  position: relative;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c16::after {
+  border-radius: 1px;
+  box-shadow: 0 0 1em 1px rgb(10,171,42);
+  color: inherit;
+  content: "";
+  height: 1px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  z-index: 100;
+}
+
+.c16:hover {
+  background-color: rgb(54,54,54);
+}
+
+.c16:hover:after {
+  opacity: 0.5;
+}
+
+.c16.active {
+  background-color: rgb(77,77,77);
+}
+
+.c16.active:after {
+  background-color: rgb(84,196,106);
+  opacity: 1;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.c16:active:after {
+  background-color: rgb(84,196,106);
+  opacity: 1;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.c16:focus {
+  outline: rgb(10,171,42) auto 3px;
+}
+
+.c22 {
+  height: 24px;
+  color: rgb(213,213,213);
+  margin: 0 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  color: rgb(150,150,150);
+  background-color: rgba(0,0,0,0.30000000000000004);
+  padding: 0 1px 1px 1px;
+}
+
+@media (max-width:800px) {
+  .c7 {
+    max-width: calc(100vw/4);
+    overflow: hidden;
+  }
+}
+
+@media (max-width:567px) {
+  .c7 {
+    max-width: calc(100vw/9);
+    overflow: hidden;
+  }
+}
+
+@media all and (min-width:1000px) {
+  .c13 {
+    padding: 16px 32px 24px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <nav
+    class="c1"
+  >
+    <button
+      class="c2"
+      type="button"
+    >
+      Skip Navigation
+    </button>
+    <div
+      class="c3"
+    >
+      <img
+        alt=""
+        class="c4"
+        src="decipherLogo.svg"
+      />
+      <span
+        class="c5"
+      >
+        <a
+          href="/"
+        >
+          Fabric
+        </a>
+      </span>
+    </div>
+    <ol
+      class="c6"
+    >
+      <li
+        class="c7"
+      >
+        <a
+          href="/"
+        >
+          fabric
+        </a>
+      </li>
+      <li
+        class="c7"
+      >
+        <a
+          href="/Down"
+        >
+          Down
+        </a>
+      </li>
+    </ol>
+    <a
+      class="c8"
+      href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      1.0.3
+    </a>
+    <div
+      class="c9"
+    >
+      <a
+        aria-current="false"
+        href="/settings"
+        title="Settings"
+      >
+        <button
+          class="c10"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M20.4055307,12.9306123 L20.4055307,11.0093482 L18.0759979,10.2408425 L17.5356424,8.93198128 L18.5923377,6.72252749 L17.2354449,5.36563467 L15.0620148,6.45835366 L13.7531536,5.91799811 L12.9246084,3.61248111 L11.0033442,3.61248111 L10.2468464,5.94201392 L8.91396943,6.48236946 L6.70451563,5.42567417 L5.34762281,6.78256699 L6.44034181,8.95599708 L5.89998626,10.2648583 L3.59446926,11.0813956 L3.59446926,12.9906518 L5.92400207,13.7591575 L6.46435761,15.0680187 L5.40766232,17.2774725 L6.76455514,18.6343653 L8.93798523,17.5416463 L10.2468464,18.0820019 L11.0753916,20.3875189 L12.9846479,20.3875189 L13.7411457,18.0579861 L15.0740227,17.5176305 L17.2834765,18.5743258 L18.6403693,17.217433 L17.5356424,15.0440029 L18.1000137,13.7351417 L20.4055307,12.9065965 L20.4055307,12.9306123 Z M12,15.6083743 C10.0066884,15.6083743 8.39762968,13.9993155 8.39762968,12.006004 C8.39762968,10.0126924 10.0066884,8.40363363 12,8.40363363 C13.9933116,8.40363363 15.6023703,10.0126924 15.6023703,12.006004 C15.6023703,13.9993155 13.9933116,15.6083743 12,15.6083743 Z"
+                  id="Shape"
+                />
+              </g>
+            </g>
+          </svg>
+        </button>
+      </a>
+    </div>
+  </nav>
+  <div
+    class="c13"
+  >
+    <h1
+      class="c14"
+    >
+      Down
+    </h1>
+  </div>
+  <div
+    class="c15"
+  >
+    <a
+      aria-current="false"
+      class="c16"
+      href="/Authentication·Statistics·File·Resource·Network·Export·ICPF·Mail·Domain·End/4.3/2smao7xwboy0000000000/http"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M6.80248025,9.7355529 C6.80248025,9.95381395 6.75882869,10.1584306 6.67152427,10.349409 C6.58421985,10.5403875 6.46963452,10.706809 6.32776483,10.8486787 C6.18589515,10.9905484 6.01674537,11.1024055 5.82031042,11.1842534 C5.62387547,11.2661013 5.42198703,11.3070246 5.21463903,11.3070246 C4.99637797,11.3070246 4.78903308,11.2688295 4.59259814,11.1924381 C4.39616319,11.1160468 4.22428519,11.0069179 4.07695898,10.8650482 C3.92963277,10.7231785 3.81231921,10.5594852 3.72501479,10.3739633 C3.63771037,10.1884414 3.59405881,9.98655295 3.59405881,9.76829189 C3.59405881,9.55003084 3.63771037,9.34541417 3.72501479,9.15443575 C3.81231921,8.96345733 3.92963277,8.79703577 4.07695898,8.65516609 C4.22428519,8.51329641 4.39616319,8.40143929 4.59259814,8.3195914 C4.78903308,8.2377435 4.99637797,8.19682017 5.21463903,8.19682017 C5.42198703,8.19682017 5.62387547,8.2377435 5.82031042,8.3195914 C6.01674537,8.40143929 6.18589515,8.51056818 6.32776483,8.64698134 C6.46963452,8.7833945 6.58421985,8.94708783 6.67152427,9.13806625 C6.75882869,9.32904468 6.80248025,9.5282049 6.80248025,9.7355529 Z M6.80248025,14.9901615 C6.80248025,15.2084225 6.75882869,15.4130392 6.67152427,15.6040176 C6.58421985,15.794996 6.46963452,15.9586894 6.32776483,16.0951025 C6.18589515,16.2315157 6.01674537,16.3406446 5.82031042,16.4224925 C5.62387547,16.5043404 5.42198703,16.5452637 5.21463903,16.5452637 C4.99637797,16.5452637 4.78903308,16.5070686 4.59259814,16.4306772 C4.39616319,16.3542859 4.22428519,16.245157 4.07695898,16.1032873 C3.92963277,15.9614176 3.81231921,15.7977243 3.72501479,15.6122024 C3.63771037,15.4266805 3.59405881,15.224792 3.59405881,15.006531 C3.59405881,14.7882699 3.63771037,14.5836532 3.72501479,14.3926748 C3.81231921,14.2016964 3.92963277,14.0352749 4.07695898,13.8934052 C4.22428519,13.7515355 4.39616319,13.6396784 4.59259814,13.5578305 C4.78903308,13.4759826 4.99637797,13.4350592 5.21463903,13.4350592 C5.42198703,13.4350592 5.62387547,13.4759826 5.82031042,13.5578305 C6.01674537,13.6396784 6.18589515,13.7488073 6.32776483,13.8852204 C6.46963452,14.0216336 6.58421985,14.1853269 6.67152427,14.3763053 C6.75882869,14.5672838 6.80248025,14.7719004 6.80248025,14.9901615 Z M9.65077275,18.6623853 L7.80101957,18.0567139 L12.8591942,5.33761467 L14.7089474,5.97602506 L9.65077275,18.6623853 Z M15.3477666,18.6623853 L13.4980134,18.0567139 L18.556188,5.33761467 L20.4059412,5.97602506 L15.3477666,18.6623853 Z"
+                  id="://"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+        <h1>
+          HTTP
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Received
+        </dt>
+        <dd
+          class="c21"
+        >
+          0 GB
+        </dd>
+      </dl>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Sent
+        </dt>
+        <dd
+          class="c21"
+        >
+          0 GB
+        </dd>
+      </dl>
+    </a>
+    <a
+      aria-current="false"
+      class="c16"
+      href="/Authentication·Statistics·File·Resource·Network·Export·ICPF·Mail·Domain·End/4.3/2smao7xwboy0000000000/jvm"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M4.51211974,13.2889916 L14.0848206,13.2889916 L14.0848206,14.8004707 L4.00829338,14.8004707 L6.02359882,16.8157761 L6.02359882,18.3272552 L1.99298794,14.2966443 L6.02359882,10.2660334 L6.02359882,11.7775125 L4.51211974,13.2889916 Z M18.6192578,9.25838072 L17.1077787,7.74690164 L17.1077787,6.23542256 L21.1383896,10.2660334 L17.1077787,14.2966443 L17.1077787,12.7851652 L19.1230842,10.7698598 L9.04655698,10.7698598 L9.04655698,9.25838072 L18.6192578,9.25838072 Z"
+                  id="shape"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+        <h1>
+          JVM
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Mem. Used
+        </dt>
+        <dd
+          class="c21"
+        >
+          196.463 MB
+        </dd>
+      </dl>
+      <div
+        class="c22"
+      >
+        <svg
+          preserveAspectRatio="xMaxYMin"
+          viewBox="0 0 240 24"
+        >
+          <g>
+            <circle
+              cx="2"
+              cy="22"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="31.5"
+              cy="18.34749799893475"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="61"
+              cy="14.475776448032311"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="90.5"
+              cy="14.24707477487396"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="120"
+              cy="10.422942374280039"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="149.5"
+              cy="6.3928019178487085"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="179"
+              cy="6.30912912251677"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="208.5"
+              cy="2.2439563862001384"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <circle
+              cx="238"
+              cy="2"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <polyline
+              points="2 22 31.5 18.34749799893475 61 14.475776448032311 90.5 14.24707477487396 120 10.422942374280039 149.5 6.3928019178487085 179 6.30912912251677 208.5 2.2439563862001384 238 2 238 22 2 22 2 22"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+            />
+            <polyline
+              points="2 22 31.5 18.34749799893475 61 14.475776448032311 90.5 14.24707477487396 120 10.422942374280039 149.5 6.3928019178487085 179 6.30912912251677 208.5 2.2439563862001384 238 2"
+              style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+            />
+          </g>
+          <line
+            style="stroke:currentColor;opacity:0.5"
+            x1="2"
+            x2="238"
+            y1="12.715464335854076"
+            y2="12.715464335854076"
+          />
+        </svg>
+      </div>
+    </a>
+    <a
+      aria-current="false"
+      class="c16"
+      href="/Authentication·Statistics·File·Resource·Network·Export·ICPF·Mail·Domain·End/4.3/2smao7xwboy0000000000/finagle"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M14.429 10.0792c-.4303.2362-.7004.5812-.8188 1.0518-.0827-.0505-.1522-.0905-.2193-.1344-1.011-.66-2.057-1.262-3.099-1.8714-.509-.2974-1.011-.6043-1.474-.9723-.518-.413-.919-.917-1.224-1.502-.31-.593-.534-1.219-.718-1.858-.182-.629-.34-1.265-.508-1.899-.006-.022-.011-.044-.023-.093.081.068.143.116.202.169.529.477 1.057.956 1.586 1.433.666.601 1.334 1.201 2.001 1.802.579.521 1.157 1.043 1.736 1.564l2.001 1.801c.141.127.284.252.425.379.041.037.079.077.131.127zm.2053 9.027c-.009.0963-.016.1705-.0237.2507-.1142.071-.2245.041-.3474-.005.0385-.322-.036-.608-.2676-.837-.164-.162-.3654-.251-.6005-.259-.3-.011-.547.097-.742.324-.191.222-.242.485-.209.764-.105.07-.244-.079-.315.08-.085-.174-.07-.32.088-.882-.233.049-.453.039-.658-.103.023-.045.038-.078.056-.11.036-.063.084-.082.156-.054.057.022.118.037.178.042.206.015.362-.078.465-.248.098-.162.099-.334.007-.502-.014-.028-.03-.054-.06-.106.158.074.263.167.344.284.026.038.026.098.027.148.001.045-.014.091-.026.165.198-.098.385-.157.583-.17.198-.013.386.033.586.104-.009-.084-.017-.153-.024-.222-.05-.493.112-.924.373-1.331.377-.585.888-1.021 1.493-1.3547.145-.08.306-.1334.421-.2616.021-.023.057-.033.088-.046.219-.093.437-.186.656-.277.033-.014.078-.031.106-.019.077.032.125-.017.186-.035-.015-.1146-.031-.217-.041-.32-.004-.047-.01-.1.007-.141.048-.1208-.017-.183-.101-.2498-.595-.472-1.189-.946-1.78-1.423-.073-.059-.135-.0748-.231-.057-.766.142-1.215-.422-1.198-.968.017-.568.463-.891.837-.936.554-.067.982.297 1.079.739.016.073.024.151.021.226-.003.078.019.13.084.18.4975.389.991.783 1.486 1.175.16.127.321.2523.4796.3812.055.0447.107.059.181.053.1214-.0093.245.006.3676.013.0855.005.102.0715.12.1373.021.072.002.137-.055.178-.027.019-.0797.016-.117.007-.259-.0598-.479.011-.662.199-.225.2314-.248.59-.059.8802.023.0358.049.069.075.105-.0127.0235-.02.0476-.035.0645-.062.068-.04.124.0114.188.052.0632.129.1172.114.23-.047.0132-.096.028-.145.042-.196.054-.3698.145-.51.297-.1078.115-.164.251-.1894.417.8965.389 1.6964.925 2.446 1.5514-.085.1066-.159.202-.177.332-.042.2954.1765.5624.4742.5703.019.001.038.0004.057 0 .185-.003.2683.1.2303.287-.1205-.0226-.241-.044-.361-.068-.2686-.053-.53-.006-.789.057-.4196.102-.804.286-1.169.513-.0477.03-.0964.058-.1664.1.0107-.055.0135-.09.0237-.122.128-.402.1894-.814.1645-1.2354-.035-.585-.227-1.113-.598-1.571-.027-.033-.05-.069-.075-.1032-.013.0094-.025.0184-.038.027.0435.103.08.21.131.3085.17.325.312.661.3694 1.026.0424.266.07.535.003.832-.039-.14-.0696-.252-.102-.364-.0157-.055-.0316-.11-.053-.162-.1256-.306-.3214-.58-.411-.903-.2946-.5128-.794-.81-1.4446-.734-.5507.064-1.034.516-1.165 1.073-.129.551.0978 1.135.5688 1.464l.135.093c-.024.123-.047.242-.074.381l-.25-.1185zM6.7737 8.874c.226.053.4278.1005.6295.1483 1.196.283 2.392.5657 3.5874.851.077.0183.155.0482.2225.0894.77.4715 1.537.946 2.304 1.4214.035.022.072.051.09.087.096.186.186.374.277.561.016.034.029.069.052.126-.06-.003-.105-.001-.149-.007-.54-.073-1.08-.151-1.62-.222-.531-.07-1.064-.126-1.594-.202-.683-.098-1.317-.325-1.86-.767-.306-.249-.597-.513-.857-.811-.34-.39-.68-.78-1.019-1.171-.02-.023-.031-.052-.06-.102zm6.945 8.282c-.128.1897-.1534.3674-.0992.5745-.2597-.0233-.5083-.0193-.7494.0697-.181-.2774-.426-.458-.754-.562.061.0825.111.1445.153.2115.057.0887.097.1832.1.2926.008.2795-.177.4573-.455.4352-.097-.0078-.169-.058-.232-.1254-.029-.031-.055-.065-.082-.098-.076-.091-.119-.103-.236-.066-.014.005-.029.006-.04.014-.238.154-.515.151-.78.19-.384.057-.77.11-1.155.158-.306.038-.612.073-.919.099-.288.025-.577.048-.866.051-.362.003-.706-.074-1-.307-.65-.515-1.402-.828-2.182-1.084-.022-.007-.045-.015-.067-.023-.008-.003-.016-.009-.043-.025.061-.002.103-.006.146-.006.798.01 1.595.021 2.393.032.589.009 1.177.019 1.766.028.636.01 1.272.019 1.908.029.313.006.626.017.939.02.054.001.116-.013.1598-.042.554-.363 1.125-.353 1.7075-.082.132.061.2545.142.3925.22zm-3.4835-4.7286c.033-.0056.0502-.0105.0678-.0112.2846-.0107.5693-.0208.854-.031.5597-.0206 1.1205-.028 1.679-.0673.2653-.019.5197.014.777.053.469.071.938.143 1.4064.218.0636.01.1317.031.184.067.5518.379 1.0998.765 1.652 1.144.0776.053.0756.121.0827.2-.153 0-.304.001-.454-.001-.038-.001-.075-.01-.113-.012-.479-.022-.957-.045-1.436-.066-.45-.02-.901-.04-1.351-.058-.265-.011-.531-.013-.797-.027-.232-.013-.464-.028-.694-.059-.279-.038-.521-.174-.742-.343-.15-.116-.298-.236-.439-.363-.208-.188-.409-.383-.612-.576-.02-.019-.036-.041-.062-.071zm-.487 10.4393c-.025-.0484-.0454-.0832-.0616-.12-.06-.1365-.1565-.2362-.2926-.2972-.0736-.033-.1485-.0634-.221-.0985-.2223-.1075-.3386-.383-.2627-.614.0396-.1205.121-.2002.2315-.2572.1072-.055.1656-.138.1327-.28l-.1692-.0166c.0524-.2065.0706-.4112-.0904-.5882.131-.024.22.015.287.1263.084.1395.105.293.09.453-.008.0885-.008.0885.078.1685.038-.019.081-.0375.122-.06.411-.2272.823-.4537 1.232-.6847.059-.033.113-.084.156-.138.14-.173.268-.356.452-.49.093-.067.191-.12.306-.144.046-.009.092-.044.128-.078.125-.116.246-.236.376-.363.184.069.33-.016.453-.158.084-.097.161-.199.245-.295.12-.137.258-.239.455-.217.145.016.266.07.347.195.06.092.115.186.173.279.015.025.028.05.044.073.207.321.434.395.79.259.02-.008.041-.015.085-.031-.117.192-.244.343-.385.482-.22.216-.474.38-.781.447-.224.049-.451.044-.68.032-.179-.01-.359.004-.538.005-.079.001-.116.039-.134.116-.03.128-.1.236-.211.31-.026.018-.066.036-.09.027-.031-.011-.063-.045-.074-.076-.007-.02.017-.065.039-.079.101-.062.153-.154.175-.265.03-.155-.039-.29-.197-.363.023.054.049.095.058.138.015.077.032.158.027.236-.006.086-.061.143-.149.171-.269.085-.268.087-.17.349.004.013.002.028.004.048-.019.012-.038.026-.059.035-.442.178-.823.452-1.169.774-.176.164-.338.345-.499.525-.105.117-.185.252-.213.412-.003.0155-.021.028-.044.057zm5.042-2.052c.193-.1008.3893-.1953.5777-.3037.346-.199.634-.468.871-.7873.07-.0936.124-.2037.163-.3142.085-.2385.023-.426-.187-.5717-.117-.0807-.243-.1493-.369-.214-.216-.1107-.433-.2185-.621-.3755-.154-.1284-.265-.2826-.303-.4848-.07-.3696.157-.7323.525-.8076.652-.133 1.247.092 1.586.721.164.306.249.635.262.982.007.17-.002.342.002.513.001.085-.027.155-.073.225-.47.707-1.131 1.138-1.947 1.343-.16.04-.324.063-.486.094l-.005-.021zm.118-2.7498c.1846.264.45.412.7165.56.1657.092.3343.181.4907.287.2446.166.2845.372.131.627-.3826.636-.9502 1.004-1.673 1.144-.3806.073-.763.075-1.1665.016.065-.025.115-.045.165-.063.381-.135.727-.327 1.011-.618.381-.392.525-.857.423-1.397-.035-.186-.066-.372-.099-.558zM12.588 14.79c.3987-.1047.7974-.21 1.1962-.3143.4542-.1192.9062-.2478 1.3638-.352.1628-.037.339-.018.509-.0178.1134 0 .227.014.3405.018.2844.011.5687.02.8532.03.0183.001.0365.007.0526.01.032.13.0322.132-.0712.175-.528.223-1.058.445-1.586.669-.392.166-.799.248-1.222.197-.229-.028-.457-.081-.681-.142-.255-.069-.504-.159-.756-.24l.003-.035zm7.427 3.406c.1904-.2435.2092-.456.0656-.663-.134-.193-.3544-.2508-.6517-.1623-.473-.5763-1.122-.926-1.794-1.2987.05 0 .068-.004.083.0006.567.172 1.137.3392 1.702.5193.353.112.695.255 1.01.456.149.095.283.206.384.355.09.134.149.279.131.441-.013.121.031.195.128.26.053.036.097.09.138.142.113.143.111.299.03.453-.065.122-.156.224-.283.304-.123-.285-.367-.354-.638-.378-.071-.006-.14-.018-.223-.029l-.084-.402zm-8.5732.364c-.232.0774-.4554.155-.6804.2267-.4067.1294-.8114.265-1.233.3427-.4236.078-.8482.092-1.273.0237-.3927-.063-.7834-.139-1.1748-.211-.0497-.009-.0978-.026-.1477-.066.131-.023.262-.048.393-.069.449-.072.898-.142 1.348-.213.515-.081 1.03-.163 1.544-.245.266-.042.534-.081.8-.13.096-.017.158-.006.213.086.052.088.129.161.209.258zm7.921-4.8425c.192.7404-.21 1.308-.943 1.4847-.0354-.1397-.153-.185-.2747-.231-.195-.074-.34-.2034-.415-.4035-.077-.2088-.07-.5676.199-.7742.117-.09.291-.1017.412-.016.053.0378.096.091.144.136.048.045.093.0957.147.1315.229.1504.471.084.599-.1576.032-.0603.04-.14.134-.17zm-4.6132 3.1397l-.1193-.157.2618-.2225c.022.0045.036.0033.039.0086.079.1183.172.143.296.0623.042-.0274.099-.034.149-.0463.046-.011.092-.017.142-.0258l.054-.212.343.033v.196l.446.2267.165-.1092.236.2782-.166.1424c-.196-.1108-.401-.185-.62-.2118-.33-.0404-.647-.0127-.903.2352-.236.228-.327.5046-.27.829.025.1402.049.2803.072.421.027.1703.026.1704-.14.2696-.102-.061-.157-.1655-.234-.2622l.133-.1393-.147-.474-.189-.042.019-.359.198.013.24-.452zm-2.3823-.3127c.5967-.2792 1.2066-.4266 1.806-.626-.224.3032-.413.6196-.4894 1.014-.407-.2333-.836-.3523-1.317-.388zm-3.725 5.521c.0745.1648.1422.3054.2023.449.0724.1733.0648.3436-.0444.501-.1432.2064-.3297.355-.5837.3946-.1778.028-.322-.039-.4362-.187.0925-.039.1813-.067.259-.113.125-.074.2103-.189.2873-.31.1414-.221.238-.462.3156-.734zm9.6302-8.443c.0443-.025.1-.052.151-.0858.1275-.084.1662-.185.123-.3304-.0174-.0586-.0482-.1133-.074-.169-.0172-.037-.0364-.073-.0683-.136.0563.021.0865.0286.113.043.192.105.3812.2144.532.3775.0195.021.04.041.0583.0627.1696.1988.175.2946.029.509-.1017.1494-.2646.1956-.4242.1106-.0614-.032-.1137-.084-.1666-.131-.0908-.08-.1788-.163-.2732-.25zm-5.7443 5.6965c-.0695-.0633-.0404-.1362-.043-.2138.1028-.0078.1565-.063.1718-.166.008-.054.0417-.104.065-.159l-.09-.1105.1605-.1692c.037.0244.0707.0467.1093.072.0873-.0404.1774-.082.2762-.1274.0082-.032.018-.072.0303-.12l.2136-.027.04.137.288.102.103-.076.168.144-.073.123c.027.053.06.101.076.155.026.087.066.147.179.13v.23c-.068.039-.117.012-.157-.045-.063-.089-.126-.178-.189-.268-.12-.172-.27-.29-.49-.3-.142-.006-.267.033-.36.138-.108.12-.204.25-.304.376-.052.066-.097.139-.179.178zm-3.6842 2.88c-.1777-.2028-.2085-.406-.1165-.6185.0836-.193.242-.2948.4818-.309-.0262.042-.036.073-.057.0883-.0497.036-.1065.0622-.1578.0963-.1657.111-.2415.262-.2036.463.015.083.031.166.053.281zm10.9376-4.0046c-.1522-.0066-.2398-.0994-.2353-.2505.004-.147.1047-.25.2438-.25.146 0 .268.129.256.271-.012.143-.117.234-.263.228z"
+                  fill-rule="evenodd"
+                  id="Combined-Shape"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+        <h1>
+          Finagle
+        </h1>
+      </div>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Active Tasks
+        </dt>
+        <dd
+          class="c21"
+        >
+          0
+        </dd>
+      </dl>
+      <dl
+        class="c19"
+      >
+        <dt
+          class="c20"
+        >
+          Pend. Tasks
+        </dt>
+        <dd
+          class="c21"
+        >
+          6
+        </dd>
+      </dl>
+    </a>
+    <a
+      aria-current="false"
+      class="c16"
+      href="/explorer"
+    >
+      <div
+        class="c17"
+      >
+        <span
+          class="c18"
+        >
+          <svg
+            aria-labelledby="ariaLabelledby"
+            class="c11"
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              class="c12"
+              fill="currentColor"
+              title=""
+            >
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M8.33638483,18.307209 L6.08293365,20.5606602 L5.02227348,19.5 L7.27572466,17.2465488 C7.59309719,17.6343799 7.94855377,17.9898365 8.33638483,18.307209 Z M6.03114366,15.0598605 L5.88504845,15.3004879 L4,12.9718987 L5.16586731,12.0281013 L5.58305689,12.5434532 C5.5880682,13.4267812 5.74578359,14.2739368 6.03114366,15.0598605 Z M20.5625715,13.0568881 L20.5987088,13.1759286 L20.941843,12.6107664 L22.2240243,13.3892336 L20.138587,16.8240714 L19.8246809,15.7900275 C20.2332591,14.9543591 20.4910375,14.0314977 20.5625715,13.0568881 Z M13.0829337,19 C9.49308278,19 6.58293365,16.0898509 6.58293365,12.5 C6.58293365,8.91014913 9.49308278,6 13.0829337,6 C16.6727845,6 19.5829337,8.91014913 19.5829337,12.5 C19.5829337,16.0898509 16.6727845,19 13.0829337,19 Z M13.0829337,17.5 C15.8443574,17.5 18.0829337,15.2614237 18.0829337,12.5 C18.0829337,9.73857625 15.8443574,7.5 13.0829337,7.5 C10.3215099,7.5 8.08293365,9.73857625 8.08293365,12.5 C8.08293365,15.2614237 10.3215099,17.5 13.0829337,17.5 Z M10.075255,14.9118853 L9.60957463,14.0850721 L9.53044999,12.5423736 L10.9691705,9.47727349 L12.7069714,12.0839749 L11.3865761,12.221457 L13.2013677,7.68447803 L14.5149693,12.2820834 L15.6543782,11.4844971 L16.6379617,12.6995121 L16.472534,14.8791465 L15.368632,13.5155029 L13.650898,14.7179166 L12.9644996,12.315522 L12.2497724,14.1023399 L10.4588959,11.4160251 L11.7618614,11.3186804 L10.075255,14.9118853 Z"
+                  id="Explorer"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+        <h1>
+          Explorer
+        </h1>
+      </div>
+    </a>
+  </div>
+</div>
+`;
