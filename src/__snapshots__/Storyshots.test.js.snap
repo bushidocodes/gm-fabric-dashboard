@@ -2374,6 +2374,2369 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button default 1`] = `
+.c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "space-around",
+      "width": "100vw",
+    }
+  }
+>
+  <button
+    className="c0"
+    disabled={false}
+    onClick={[Function]}
+    orientation="horizontal"
+    size="normal"
+    style={undefined}
+    tabIndex={undefined}
+    title="Hello World"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      Hello World
+      
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button orientations 1`] = `
+.c2 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c1 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c1:not(:root) {
+  overflow: visible;
+}
+
+.c3 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c3:focus,
+.c3:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c3 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c3:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c3[disabled],
+.c3[disabled]:hover,
+.c3[disabled]:focus,
+.c3[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c3 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-top: 0.25px;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "space-around",
+      "width": "100vw",
+    }
+  }
+>
+  <button
+    className="c0"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation="vertical"
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="vertical"
+    type={undefined}
+  >
+    <svg
+      aria-labelledby="ariaLabelledby"
+      className="c1"
+      focusable="false"
+      version="1.1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        className="c2"
+        fill="currentColor"
+        title=""
+      >
+        <title>
+          
+        </title>
+        <g
+          className="glyph"
+          fill="currentColor"
+          transform="translate(0 0) scale(1)"
+        >
+          <path
+            d="M17.9964347,17 L6.005,17 L6.005,16.4978587 L7,16.0010707 C7.65952891,15.3415418 7.6745182,13.8169165 8,12.2152034 C8.65952891,8.98608137 11,8 11,8 C11,7.81812902 11,7.48479568 11,7 L13,7 C13,7.49544061 13,7.82877394 13,8 C13,8 15.3404711,8.98608137 16,12.2152034 C16.3254818,13.8254818 16.3404711,15.3501071 17,16.0010707 L18.005,16.4978587 L17.9964347,17 Z M12.005,20 C12.9557495,20 14,18.9507495 14,18 L10.0738758,18 C10.0738758,18.9507495 11.0542505,20 12.005,20 Z"
+            id="Shape"
+          />
+        </g>
+      </g>
+    </svg>
+    <span
+      style={undefined}
+    >
+      
+      vertical
+      
+    </span>
+  </button>
+  <button
+    className="c3"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation="horizontal"
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="horizontal"
+    type={undefined}
+  >
+    <svg
+      aria-labelledby="ariaLabelledby"
+      className="c1"
+      focusable="false"
+      version="1.1"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <g
+        className="c2"
+        fill="currentColor"
+        title=""
+      >
+        <title>
+          
+        </title>
+        <g
+          className="glyph"
+          fill="currentColor"
+          transform="translate(0 0) scale(1)"
+        >
+          <path
+            d="M17.9964347,17 L6.005,17 L6.005,16.4978587 L7,16.0010707 C7.65952891,15.3415418 7.6745182,13.8169165 8,12.2152034 C8.65952891,8.98608137 11,8 11,8 C11,7.81812902 11,7.48479568 11,7 L13,7 C13,7.49544061 13,7.82877394 13,8 C13,8 15.3404711,8.98608137 16,12.2152034 C16.3254818,13.8254818 16.3404711,15.3501071 17,16.0010707 L18.005,16.4978587 L17.9964347,17 Z M12.005,20 C12.9557495,20 14,18.9507495 14,18 L10.0738758,18 C10.0738758,18.9507495 11.0542505,20 12.005,20 Z"
+            id="Shape"
+          />
+        </g>
+      </g>
+    </svg>
+    <span
+      style={undefined}
+    >
+      
+      horizontal
+      
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button outlines 1`] = `
+.c3 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c3:focus,
+.c3:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c3 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c3:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c3[disabled],
+.c3[disabled]:hover,
+.c3[disabled]:focus,
+.c3[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c3 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c4:focus,
+.c4:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c4 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c4:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c4[disabled],
+.c4[disabled]:hover,
+.c4[disabled]:focus,
+.c4[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c4 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,94%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  border-top-color: hsl(0,0%,98%);
+  border-bottom-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c1 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c1:focus,
+.c1:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c1 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c1:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
+}
+
+.c1:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c1[disabled],
+.c1[disabled]:hover,
+.c1[disabled]:focus,
+.c1[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c1 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c1 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c2 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: rgb(255,255,255);
+  border-bottom-color: hsl(0,0%,94%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c2:focus,
+.c2:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c2 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c2:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,92.5%);
+  border-bottom-color: hsl(0,0%,87%);
+  color: hsl(0,0%,0%);
+}
+
+.c2:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,98.5%);
+  border-bottom-color: hsl(0,0%,92.6%);
+  color: hsl(0,0%,0%);
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c2[disabled],
+.c2[disabled]:hover,
+.c2[disabled]:focus,
+.c2[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c2 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c2 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "space-around",
+      "width": "100vw",
+    }
+  }
+>
+  <button
+    className="c0"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="raised"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      raised
+      
+    </span>
+  </button>
+  <button
+    className="c1"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="outline"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      outline
+      
+    </span>
+  </button>
+  <button
+    className="c2"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="shadow"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      shadow
+      
+    </span>
+  </button>
+  <button
+    className="c3"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="none"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      none
+      
+    </span>
+  </button>
+  <button
+    className="c4"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="raised-outline"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      raised-outline
+      
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button sizes 1`] = `
+.c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c1 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 7px;
+  border-radius: 3px;
+  padding: 1px 4px;
+  text-transform: uppercase;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c1:focus,
+.c1:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c1 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c1:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c1:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c1[disabled],
+.c1[disabled]:hover,
+.c1[disabled]:focus,
+.c1[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c1 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c1 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c2 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 11px;
+  border-radius: 3px;
+  padding: 1px 4px;
+  text-transform: uppercase;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c2:focus,
+.c2:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c2 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c2:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c2:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c2[disabled],
+.c2[disabled]:hover,
+.c2[disabled]:focus,
+.c2[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c2 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c2 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c3 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 18px;
+  border-radius: 3px;
+  padding: 2px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c3:focus,
+.c3:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c3 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c3:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c3[disabled],
+.c3[disabled]:hover,
+.c3[disabled]:focus,
+.c3[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c3 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 21px;
+  border-radius: 3px;
+  padding: 2px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c4:focus,
+.c4:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c4 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c4:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c4[disabled],
+.c4[disabled]:hover,
+.c4[disabled]:focus,
+.c4[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c4 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "space-around",
+      "width": "100vw",
+    }
+  }
+>
+  <button
+    className="c0"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size="normal"
+    style={undefined}
+    tabIndex={undefined}
+    title="normal"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      normal
+      
+    </span>
+  </button>
+  <button
+    className="c1"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size="xs"
+    style={undefined}
+    tabIndex={undefined}
+    title="xs"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      xs
+      
+    </span>
+  </button>
+  <button
+    className="c2"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size="sm"
+    style={undefined}
+    tabIndex={undefined}
+    title="sm"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      sm
+      
+    </span>
+  </button>
+  <button
+    className="c3"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size="lg"
+    style={undefined}
+    tabIndex={undefined}
+    title="lg"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      lg
+      
+    </span>
+  </button>
+  <button
+    className="c4"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size="xl"
+    style={undefined}
+    tabIndex={undefined}
+    title="xl"
+    type={undefined}
+  >
+    <span
+      style={undefined}
+    >
+      
+      xl
+      
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button types 1`] = `
+.c0 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(228,0,0);
+  border-color: rgb(220,0,0);
+  border-top-color: rgb(231,4,4);
+  border-bottom-color: rgb(203,0,0);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c0:focus,
+.c0:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c0 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c0:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: rgb(218,0,0);
+  border-color: rgb(212,0,0);
+  border-top-color: rgb(222,3,3);
+  border-bottom-color: rgb(195,0,0);
+  color: hsl(0,0%,92.5%);
+}
+
+.c0:hover {
+  background-color: rgb(226,0,0);
+  border-color: rgb(219,0,0);
+  border-top-color: rgb(229,4,4);
+  border-bottom-color: rgb(202,0,0);
+  color: hsl(0,0%,98.5%);
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c0[disabled],
+.c0[disabled]:hover,
+.c0[disabled]:focus,
+.c0[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,41.9%);
+  border-color: hsl(0,0%,41.9%);
+  color: hsl(0,0%,94%);
+}
+
+.c0 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c0 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c1 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(0,0,255);
+  border-color: rgb(0,0,247);
+  border-top-color: rgb(11,11,251);
+  border-bottom-color: rgb(0,0,228);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c1:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c1:focus,
+.c1:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c1 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c1:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: rgb(0,0,245);
+  border-color: rgb(0,0,237);
+  border-top-color: rgb(4,4,248);
+  border-bottom-color: rgb(0,0,219);
+  color: hsl(0,0%,92.5%);
+}
+
+.c1:hover {
+  background-color: rgb(0,0,253);
+  border-color: rgb(0,0,245);
+  border-top-color: rgb(9,9,251);
+  border-bottom-color: rgb(0,0,226);
+  color: hsl(0,0%,98.5%);
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c1[disabled],
+.c1[disabled]:hover,
+.c1[disabled]:focus,
+.c1[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(240,0%,47%);
+  border-color: hsl(240,0%,47%);
+  color: hsl(0,0%,94%);
+}
+
+.c1 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c1 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c2 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(10,171,42);
+  border-color: rgb(5,165,37);
+  border-top-color: rgb(13,174,45);
+  border-bottom-color: rgb(0,152,27);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c2:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c2:focus,
+.c2:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c2 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c2:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: rgb(4,164,36);
+  border-color: rgb(0,158,31);
+  border-top-color: rgb(6,166,38);
+  border-bottom-color: rgb(0,146,22);
+  color: hsl(0,0%,92.5%);
+}
+
+.c2:hover {
+  background-color: rgb(9,170,41);
+  border-color: rgb(4,164,36);
+  border-top-color: rgb(11,172,43);
+  border-bottom-color: rgb(0,151,26);
+  color: hsl(0,0%,98.5%);
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c2[disabled],
+.c2[disabled]:hover,
+.c2[disabled]:focus,
+.c2[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(131.89999999999998,0%,33.4%);
+  border-color: hsl(131.89999999999998,0%,33.4%);
+  color: hsl(0,0%,94%);
+}
+
+.c2 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c2 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c3 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(250,198,15);
+  border-color: rgb(251,195,0);
+  border-top-color: rgb(247,198,26);
+  border-bottom-color: rgb(232,177,0);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c3:focus,
+.c3:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c3 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c3:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: rgb(249,193,0);
+  border-color: rgb(241,185,0);
+  border-top-color: rgb(251,196,5);
+  border-bottom-color: rgb(223,168,0);
+  color: hsl(0,0%,92.5%);
+}
+
+.c3:hover {
+  background-color: rgb(252,198,9);
+  border-color: rgb(249,193,0);
+  border-top-color: rgb(248,198,21);
+  border-bottom-color: rgb(230,176,0);
+  color: hsl(0,0%,98.5%);
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c3[disabled],
+.c3[disabled]:hover,
+.c3[disabled]:focus,
+.c3[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(46.69999999999999,0%,48.8%);
+  border-color: hsl(46.69999999999999,0%,48.8%);
+  color: hsl(0,0%,94%);
+}
+
+.c3 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c3 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c4:focus,
+.c4:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c4 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c4:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c4[disabled],
+.c4[disabled]:hover,
+.c4[disabled]:focus,
+.c4[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c4 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "space-around",
+      "width": "100vw",
+    }
+  }
+>
+  <button
+    className="c0"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="danger"
+    type="danger"
+  >
+    <span
+      style={undefined}
+    >
+      
+      danger
+      
+    </span>
+  </button>
+  <button
+    className="c1"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="info"
+    type="info"
+  >
+    <span
+      style={undefined}
+    >
+      
+      info
+      
+    </span>
+  </button>
+  <button
+    className="c2"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="primary"
+    type="primary"
+  >
+    <span
+      style={undefined}
+    >
+      
+      primary
+      
+    </span>
+  </button>
+  <button
+    className="c3"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="warning"
+    type="warning"
+  >
+    <span
+      style={undefined}
+    >
+      
+      warning
+      
+    </span>
+  </button>
+  <button
+    className="c4"
+    disabled={undefined}
+    onClick={[Function]}
+    orientation={undefined}
+    size={undefined}
+    style={undefined}
+    tabIndex={undefined}
+    title="polling"
+    type="polling"
+  >
+    <span
+      style={undefined}
+    >
+      
+      polling
+      
+    </span>
+  </button>
+</div>
+`;
+
 exports[`Storyshots Error text color Error text color 1`] = `
 .c0 {
   -webkit-flex: 1 1 15%;
@@ -12306,109 +14669,6 @@ exports[`Storyshots Table Toolbar default 1`] = `
   overflow: visible;
 }
 
-.c4 {
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
-  border-width: 1px;
-  line-height: 1.4;
-  border-style: solid;
-  text-transform: none;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background-color: rgb(10,171,42);
-  border-color: rgb(0,147,23);
-  border-top-color: rgb(2,154,30);
-  border-bottom-color: rgb(0,136,15);
-  color: rgb(255,255,255);
-  font-size: 14px;
-  border-radius: 3px;
-  padding: 1.4px 4px;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c4:hover {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-
-.c4:focus,
-.c4:active {
-  -webkit-transition: all 0 ease;
-  transition: all 0 ease;
-}
-
-.c4 > * {
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
-.c4:active {
-  background-color: rgb(10,171,42);
-  border-color: rgb(5,165,37);
-  border-top-color: rgb(13,174,45);
-  border-bottom-color: rgb(0,152,27);
-  color: rgb(255,255,255);
-}
-
-.c4:hover {
-  background-color: rgb(10,171,42);
-  border-color: rgb(0,147,23);
-  border-top-color: rgb(2,154,30);
-  border-bottom-color: rgb(0,136,15);
-  color: rgb(255,255,255);
-}
-
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
-  z-index: 1;
-}
-
-.c4[disabled],
-.c4[disabled]:hover,
-.c4[disabled]:focus,
-.c4[disabled]:active {
-  cursor: default;
-  opacity: 0.8;
-  background-color: hsl(0,0%,94%);
-  border-color: hsl(0,0%,94%);
-  color: hsl(0,0%,0%);
-}
-
-.c4 > svg {
-  width: 24px;
-  height: 24px;
-}
-
-.c4 > :not(:first-child) {
-  margin-left: 4px;
-  -webkit-flex-basis: auto;
-  -ms-flex-basis: auto;
-  flex-basis: auto;
-}
-
 .c7 {
   box-sizing: border-box;
   -webkit-user-select: none;
@@ -12508,6 +14768,109 @@ exports[`Storyshots Table Toolbar default 1`] = `
 }
 
 .c7 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c4:focus,
+.c4:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c4 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c4:active {
+  background-color: rgb(10,171,42);
+  border-color: rgb(5,165,37);
+  border-top-color: rgb(13,174,45);
+  border-bottom-color: rgb(0,152,27);
+  color: rgb(255,255,255);
+}
+
+.c4:hover {
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c4[disabled],
+.c4[disabled]:hover,
+.c4[disabled]:focus,
+.c4[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c4 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
