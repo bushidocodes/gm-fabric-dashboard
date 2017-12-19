@@ -7,8 +7,14 @@ import {
   encodeParameter,
   formatAsDecimalString,
   relativeReqPercent,
+  blurTableRow,
   trimID
 } from "./index";
+import React from "react";
+import TableRow from "components/Main/components/TableRow";
+import { mount, shallow } from "enzyme";
+import renderer from "";
+import "jest-styled-components";
 
 describe("trimID", () => {
   test("returns an empty string if not provided an ID", () => {
@@ -131,5 +137,25 @@ describe("decodeParameter", () => {
     expect(decodeParameter("Decipher·Tech·Studios")).toEqual(
       "Decipher Tech Studios"
     );
+  });
+});
+
+describe("blurTableRow", () => {
+  test("traverses up the DOM until it finds TableRow and removes focus", () => {
+    const spy = jest.fn();
+    const wrapper = mount(
+      <TableRow className="TableRow">
+        <div className="div">
+          <span className="span" onClick={spy(e => blurTableRow(e))}>
+            Words
+          </span>
+        </div>
+      </TableRow>
+    );
+    const element = wrapper.instance().TableRow;
+    const focusedElement = document.activeElement;
+    wrapper.find("span").simulate("click");
+    expect(spy).toHaveBeenCalled();
+    expect(focusedElement !== element).toBe(true);
   });
 });

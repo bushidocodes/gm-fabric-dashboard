@@ -6,6 +6,7 @@ import {
   SparklinesLine,
   SparklinesReferenceLine
 } from "react-sparklines";
+import styled from "styled-components";
 
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
@@ -19,7 +20,7 @@ import Badge from "components/Main/scenes/InstanceView/components/Badge";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/index";
 
-import styled from "styled-components";
+import { blurTableRow } from "utils";
 
 // this extra flex container is necessary to truncate route name in chrome browser
 const FlexParent = styled.div`
@@ -66,21 +67,9 @@ export default class TableLineItem extends Component {
       _.forEach(SparklineSVG, svg => svg.setAttribute("focusable", "false"));
   }
 
-  blurTableRow = e => {
-    // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
-    let node = e.target;
-    while (
-      typeof node.className !== "string" ||
-      node.className.indexOf("TableRow") !== 0
-    ) {
-      node = node.parentNode;
-    }
-    node.blur();
-  };
-
   toggleDrawer = e => {
     if (e) {
-      this.blurTableRow(e);
+      blurTableRow(e);
     }
     this.setState({ isOpen: !this.state.isOpen });
   };
@@ -163,7 +152,7 @@ export default class TableLineItem extends Component {
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
-            this.blurTableRow(evt);
+            blurTableRow(evt);
           }}
         >
           <GMLineChart

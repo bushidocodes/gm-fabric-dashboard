@@ -140,3 +140,21 @@ export function encodeParameter(param) {
 export function decodeParameter(param) {
   return param.replace(/·/gi, " ");
 }
+
+/**
+ * Utility function used in table rows to manage focus state. This is accomplished
+ * by searching up the DOM tree to find table row and take away its focus to prevent outline
+ * on click while preserving tabbing outline
+ * @export
+ * @param {Object} e
+ */
+export function blurTableRow(e) {
+  let node = e.target;
+  while (
+    typeof node.className !== "string" ||
+    node.className.indexOf("TableRow") !== 0
+  ) {
+    node = node.parentNode;
+  }
+  node.blur();
+}

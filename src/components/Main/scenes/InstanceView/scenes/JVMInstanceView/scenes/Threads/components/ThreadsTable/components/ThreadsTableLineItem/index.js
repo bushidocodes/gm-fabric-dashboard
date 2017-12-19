@@ -12,6 +12,8 @@ import StatusIcon from "components/StatusIcon";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
 
+import { blurTableRow } from "utils";
+
 /**
  * Line Item containing threads data. Intended to be child of TreadsTable
  * @export
@@ -53,26 +55,13 @@ export default class ThreadsTableLineItem extends Component {
         return "default";
     }
   }
-
-  blurTableRow = e => {
-    // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
-    let node = e.target;
-    while (
-      typeof node.className !== "string" ||
-      node.className.indexOf("TableRow") !== 0
-    ) {
-      node = node.parentNode;
-    }
-    node.blur();
-  };
-
   /**
    * Toggles the stacktrace drawer open or closed
    * @memberof ThreadsTableLineItem
    */
   toggleStack = e => {
     if (e) {
-      this.blurTableRow(e);
+      blurTableRow(e);
     }
     this.setState({ isOpen: !this.state.isOpen });
   };
@@ -88,7 +77,7 @@ export default class ThreadsTableLineItem extends Component {
         selectable={stack.length > 0}
         key={id}
         onClick={evt => {
-          stack.length > 0 ? this.toggleStack(evt) : this.blurTableRow(evt);
+          stack.length > 0 ? this.toggleStack(evt) : blurTableRow(evt);
         }}
         onKeyDown={evt => {
           if (stack.length && evt.keyCode === 13) {
@@ -119,7 +108,7 @@ export default class ThreadsTableLineItem extends Component {
           isOpened={this.state.isOpen}
           onClick={evt => {
             evt.stopPropagation();
-            this.blurTableRow(evt);
+            blurTableRow(evt);
           }}
         >
           <StackTrace>
