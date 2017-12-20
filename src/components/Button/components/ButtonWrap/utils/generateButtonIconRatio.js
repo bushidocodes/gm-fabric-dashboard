@@ -30,12 +30,8 @@ function generateButtonIconRatio(size) {
   const viewboxSize = 24; // default viewbox size 24px
   const ratio = mapSizeToButtonIconRatio(size); // default ratio 1
   const viewboxDimensions = viewboxSize * ratio;
-  return `
-    > svg {
-      width: ${/* sc-value */ viewboxDimensions}px;
-      height: ${/* sc-value */ viewboxDimensions}px;
-    }
-  `;
+  return `> svg { width: ${/* sc-value */ viewboxDimensions}px; 
+  height: ${/* sc-value */ viewboxDimensions}px; }`;
 }
 
 export default generateButtonIconRatio;
