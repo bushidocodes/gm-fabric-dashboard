@@ -16,7 +16,7 @@ exports[`ThreadsTable component Matched the snapshot 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 500;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
 }
 

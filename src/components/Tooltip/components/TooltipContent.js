@@ -7,7 +7,7 @@ import {
 } from "style/styleVariables";
 
 const TooltipContent = styled.div`
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
   color: ${COLOR_WHITE.string()};
   font-family: ${FONT_STACK_BASE};
@@ -15,7 +15,7 @@ const TooltipContent = styled.div`
   opacity: 0;
   padding: 10px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   transition: opacity 1s;
   visibility: hidden;
   white-space: normal;

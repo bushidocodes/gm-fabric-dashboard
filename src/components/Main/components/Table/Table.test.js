@@ -100,17 +100,17 @@ describe("Table component", () => {
     ).toBe("Requests");
     expect(
       wrapper
-        .find(TableColHeader)
-        .at(3)
+        .find(TableColLatencyHeader)
         .text()
-    ).toBe("Error %");
-    expect(wrapper.find(TableColLatencyHeader).text()).toBe("Latency50%99%");
+        .includes("Latency")
+    ).toBe(true);
   });
 
   test("when provided routes data, renders <TableLineItem />", () => {
     expect(wrapper.find(TableLineItem).length).toEqual(2);
     expect(wrapper.find(GMServiceTableLineItem).length).toEqual(0);
   });
+
   test("passes correct data to <TableLineItem />", () => {
     const firstTableLine = wrapper.find(TableLineItem).at(0);
     const secondTableLine = wrapper.find(TableLineItem).at(1);

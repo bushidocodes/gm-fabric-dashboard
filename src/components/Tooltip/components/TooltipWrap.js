@@ -1,18 +1,14 @@
 import styled from "styled-components";
-import {
-  COLOR_HIGHLIGHT,
-  COLOR_WHITE,
-  ZINDEX_TOOLTIP
-} from "style/styleVariables";
+import { COLOR_BLACK, COLOR_WHITE, ZINDEX_TOOLTIP } from "style/styleVariables";
 
 const TooltipWrap = styled.div`
-  border-bottom: 1px dotted ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.3).string()};
+  border-bottom: 1px solid ${COLOR_BLACK.mix(COLOR_WHITE, 0.85).string()};
   cursor: help;
   display: inline-block;
   position: relative;
 
   :hover > :last-child {
-    opacity: 0.8;
+    opacity: 1;
     visibility: visible;
     z-index: ${ZINDEX_TOOLTIP};
   }

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table component matches snapshot 1`] = `
-.c12 {
+.c15 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c11 {
+.c14 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -16,11 +16,11 @@ exports[`Table component matches snapshot 1`] = `
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c14:not(:root) {
   overflow: visible;
 }
 
-.c7 {
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -39,19 +39,19 @@ exports[`Table component matches snapshot 1`] = `
   cursor: pointer;
 }
 
-.c7:hover {
+.c10:hover {
   background-color: hsl(0,0%,98%);
 }
 
-.c7:focus {
+.c10:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c7:focus:active:hover {
+.c10:focus:active:hover {
   outline: 0;
 }
 
-.c7 > * {
+.c10 > * {
   padding-right: 16px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -60,18 +60,18 @@ exports[`Table component matches snapshot 1`] = `
   white-space: nowrap;
 }
 
-.c7 > *:first-child {
+.c10 > *:first-child {
   padding-left: 16px;
 }
 
-.c16 {
+.c19 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
 }
 
-.c17 {
+.c20 {
   color: rgb(10,171,42);
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
@@ -79,7 +79,7 @@ exports[`Table component matches snapshot 1`] = `
   text-align: left;
 }
 
-.c8 {
+.c11 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -90,7 +90,7 @@ exports[`Table component matches snapshot 1`] = `
   position: relative;
 }
 
-.c15 {
+.c18 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -99,11 +99,11 @@ exports[`Table component matches snapshot 1`] = `
   padding-bottom: 4px;
 }
 
-.c15 svg {
+.c18 svg {
   height: 24px;
 }
 
-.c13 {
+.c16 {
   background-color: rgb(230,230,230);
   border-radius: 1px 4px 4px 1px;
   bottom: 0;
@@ -113,7 +113,7 @@ exports[`Table component matches snapshot 1`] = `
   right: 16px;
 }
 
-.c14 {
+.c17 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -125,7 +125,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 100%;
 }
 
-.c18 {
+.c21 {
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
@@ -137,7 +137,7 @@ exports[`Table component matches snapshot 1`] = `
   width: 0%;
 }
 
-.c10 {
+.c13 {
   font-size: 11px;
   font-weight: 500;
   text-align: center;
@@ -152,19 +152,19 @@ exports[`Table component matches snapshot 1`] = `
   margin-right: 4px;
 }
 
-.c10 svg:first-child {
+.c13 svg:first-child {
   margin-left: -6px;
   margin-right: -4px;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c9 > div {
+.c12 > div {
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -196,11 +196,11 @@ exports[`Table component matches snapshot 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-weight: 500;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
 }
 
-.c6 {
+.c9 {
   display: block;
   list-style: none;
   margin: 0;
@@ -222,6 +222,39 @@ exports[`Table component matches snapshot 1`] = `
 
 .c2:first-child {
   padding-left: 16px;
+}
+
+.c6 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c5 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c5:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
 }
 
 .c3 {
@@ -247,13 +280,14 @@ exports[`Table component matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  overflow: visible;
 }
 
 .c3:first-child {
   padding-left: 16px;
 }
 
-.c4 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -271,9 +305,13 @@ exports[`Table component matches snapshot 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c8 {
   font-size: 11px;
   color: rgb(77,77,77);
+}
+
+.c4 {
+  padding: 8px;
 }
 
 <div
@@ -322,24 +360,29 @@ exports[`Table component matches snapshot 1`] = `
       className="c3"
     >
       <div
-        style={
-          Object {
-            "padding": "8px",
-          }
-        }
-      >
-        Latency
-      </div>
-      <div
         className="c4"
       >
         <div
           className="c5"
         >
+          Latency
+          <div
+            className="c6"
+          >
+            Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
+          </div>
+        </div>
+      </div>
+      <div
+        className="c7"
+      >
+        <div
+          className="c8"
+        >
           50%
         </div>
         <div
-          className="c5"
+          className="c8"
         >
           99%
         </div>
@@ -347,27 +390,27 @@ exports[`Table component matches snapshot 1`] = `
     </div>
   </div>
   <ol
-    className="c6"
+    className="c9"
   >
     <li
-      className="c7"
+      className="c10"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="c8"
+        className="c11"
       >
         <div
-          className="c9"
+          className="c12"
         >
           <span
-            className="c10"
+            className="c13"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c11"
+              className="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -375,7 +418,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c12"
+                className="c15"
                 fill="currentColor"
                 title=""
               >
@@ -401,16 +444,16 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c16"
         >
           <div
-            className="c14"
+            className="c17"
             width={100}
           />
         </div>
       </div>
       <div
-        className="c15"
+        className="c18"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -522,7 +565,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        className="c16"
+        className="c19"
         style={
           Object {
             "textAlign": "right",
@@ -532,7 +575,7 @@ exports[`Table component matches snapshot 1`] = `
         399,334
       </div>
       <div
-        className="c17"
+        className="c20"
         style={
           Object {
             "textAlign": "right",
@@ -543,7 +586,7 @@ exports[`Table component matches snapshot 1`] = `
         %
       </div>
       <div
-        className="c16"
+        className="c19"
         style={
           Object {
             "display": "flex",
@@ -563,24 +606,24 @@ exports[`Table component matches snapshot 1`] = `
       </div>
     </li>
     <li
-      className="c7"
+      className="c10"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="link"
       tabIndex={0}
     >
       <div
-        className="c8"
+        className="c11"
       >
         <div
-          className="c9"
+          className="c12"
         >
           <span
-            className="c10"
+            className="c13"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c11"
+              className="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -588,7 +631,7 @@ exports[`Table component matches snapshot 1`] = `
               xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c12"
+                className="c15"
                 fill="currentColor"
                 title=""
               >
@@ -614,16 +657,16 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c13"
+          className="c16"
         >
           <div
-            className="c18"
+            className="c21"
             width={0}
           />
         </div>
       </div>
       <div
-        className="c15"
+        className="c18"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
@@ -735,7 +778,7 @@ exports[`Table component matches snapshot 1`] = `
         </svg>
       </div>
       <div
-        className="c16"
+        className="c19"
         style={
           Object {
             "textAlign": "right",
@@ -745,7 +788,7 @@ exports[`Table component matches snapshot 1`] = `
         0
       </div>
       <div
-        className="c17"
+        className="c20"
         style={
           Object {
             "textAlign": "right",
@@ -756,7 +799,7 @@ exports[`Table component matches snapshot 1`] = `
         %
       </div>
       <div
-        className="c16"
+        className="c19"
         style={
           Object {
             "display": "flex",

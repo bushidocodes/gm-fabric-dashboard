@@ -2,7 +2,7 @@
 
 exports[`Tooltip correctly positions tooltip content based on position prop 1`] = `
 .c1 {
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
   font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -10,7 +10,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 1`] 
   opacity: 0;
   padding: 10px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
@@ -23,14 +23,14 @@ exports[`Tooltip correctly positions tooltip content based on position prop 1`] 
 }
 
 .c0 {
-  border-bottom: 1px dotted rgb(84,196,106);
+  border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
 .c0:hover > :last-child {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
   z-index: 1070;
 }
@@ -49,7 +49,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 1`] 
 
 exports[`Tooltip correctly positions tooltip content based on position prop 2`] = `
 .c1 {
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
   font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -57,7 +57,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 2`] 
   opacity: 0;
   padding: 10px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
@@ -70,14 +70,14 @@ exports[`Tooltip correctly positions tooltip content based on position prop 2`] 
 }
 
 .c0 {
-  border-bottom: 1px dotted rgb(84,196,106);
+  border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
 .c0:hover > :last-child {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
   z-index: 1070;
 }
@@ -96,7 +96,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 2`] 
 
 exports[`Tooltip correctly positions tooltip content based on position prop 3`] = `
 .c1 {
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
   font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -104,7 +104,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 3`] 
   opacity: 0;
   padding: 10px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
@@ -116,14 +116,14 @@ exports[`Tooltip correctly positions tooltip content based on position prop 3`] 
 }
 
 .c0 {
-  border-bottom: 1px dotted rgb(84,196,106);
+  border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
 .c0:hover > :last-child {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
   z-index: 1070;
 }
@@ -142,7 +142,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 3`] 
 
 exports[`Tooltip correctly positions tooltip content based on position prop 4`] = `
 .c1 {
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
   font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
@@ -150,7 +150,7 @@ exports[`Tooltip correctly positions tooltip content based on position prop 4`] 
   opacity: 0;
   padding: 10px;
   position: absolute;
-  text-align: center;
+  text-align: left;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   visibility: hidden;
@@ -162,14 +162,14 @@ exports[`Tooltip correctly positions tooltip content based on position prop 4`] 
 }
 
 .c0 {
-  border-bottom: 1px dotted rgb(84,196,106);
+  border-bottom: 1px solid rgb(217,217,217);
   cursor: help;
   display: inline-block;
   position: relative;
 }
 
 .c0:hover > :last-child {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
   z-index: 1070;
 }

@@ -13,7 +13,7 @@ const TableHeader = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-weight: ${FONT_WEIGHT_BASE};
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
 `;
 
