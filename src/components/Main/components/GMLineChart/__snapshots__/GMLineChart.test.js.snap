@@ -2,12 +2,25 @@
 
 exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
 <styled.div
+  aria-label="A tabular representation of the Classes chart data:
+      median 10181.00
+      average 10181.00
+      mode Mode has frequency of 2 and values of 10181
+      maximum 10181
+      minimum 10181
+      number of observations 2
+      complete data time series follows 10181,10181"
   height="xs"
+  role="presentation"
 >
-  <styled.h3>
+  <styled.h3
+    aria-hidden={true}
+  >
     Classes
   </styled.h3>
-  <styled.div>
+  <styled.div
+    aria-hidden={true}
+  >
     <DygraphWrapper
       timeSeries={
         Array [

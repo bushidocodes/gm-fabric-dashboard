@@ -57,7 +57,7 @@ export default class TableLineItem extends Component {
     isOpen: false
   };
 
-  // In IE10, IE11, and Edge broswer, SVG elements are added to tab order by default and tabIndex is ignored.
+  // In IE10, IE11, and Edge browser, SVG elements are added to tab order by default and tabIndex is ignored.
   // setting focusable: "false" attribute to svg will make svg unfocusable.
   // Sparkline module returns its own svg element so the attribute is set here instead of being
   // set directly on svg.

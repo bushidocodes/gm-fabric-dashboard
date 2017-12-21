@@ -8,6 +8,7 @@ import LineChartContent from "./components/LineChartContent";
 import LineChartDetails from "./components/LineChartDetails";
 import LineChartEmpty from "./components/LineChartEmpty";
 import LineDetail from "./components/LineDetail";
+import { screenReaderGraphDescription } from "./utils";
 import Span from "components/Main/components/Span";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/index";
@@ -44,9 +45,17 @@ export default function GMLineChart({
   title
 }) {
   return (
-    <LineChartDisplay height={height}>
-      {title && <LineChartTitle>{title}</LineChartTitle>}
-      <LineChartContent>
+    <LineChartDisplay
+      height={height}
+      role="presentation"
+      aria-label={
+        timeSeries
+          ? screenReaderGraphDescription(timeSeries, title)
+          : `no ${title} chart data available`
+      }
+    >
+      {title && <LineChartTitle aria-hidden={true}>{title}</LineChartTitle>}
+      <LineChartContent aria-hidden={true}>
         {timeSeries[0].length === 0 ? (
           <LineChartEmpty>
             <h1>

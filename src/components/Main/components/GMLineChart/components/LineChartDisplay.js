@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { CHART_BACKGROUND_COLOR, FONT_STACK_DATA } from "style/styleVariables";
 import { chartHeight } from "style/styleFunctions";
 
-const LineChartDisplay = styled.div`
+const LineChartDisplay = styled.div.attrs({
+  tabIndex: 0
+})`
   align-items: stretch;
   background-color: ${CHART_BACKGROUND_COLOR};
   border: 1px solid transparent;

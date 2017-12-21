@@ -25,5 +25,6 @@ exports[`LineChartDisplay matches snapshot 1`] = `
 
 <div
   className="c0"
+  tabIndex={0}
 />
 `;
