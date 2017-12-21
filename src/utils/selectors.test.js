@@ -1,9 +1,24 @@
+import React from "react";
 import state from "../json/mockReduxState";
+import Tab from "components/AppHeader/components/Tab";
 
 const {
   getRoutesMetrics,
   getRoutesTree,
-  metricsKeySelectorGenerator
+  metricsKeySelectorGenerator,
+  getDashboards,
+  getMetrics,
+  getServices,
+  getFabricServer,
+  getSelectedInstance,
+  getSelectedService,
+  getSelectedServiceName,
+  getSelectedServiceVersion,
+  generateHeaderTabs,
+  getSelectedServiceKey,
+  getStaticRuntime,
+  getStatusCount,
+  getRuntime
 } = require.requireActual("./selectors");
 
 const simpleState = {
@@ -19,7 +34,185 @@ const simpleState = {
   }
 };
 
-describe("Function metricsKeySelectorGenerator", () => {
+describe("getMetrics", () => {
+  test("takes a state object and returns state.instance.metrics", () => {
+    expect(getMetrics(state)).toEqual(state.instance.metrics);
+  });
+});
+
+describe("getStaticRuntime", () => {
+  test("takes a state object and returns state.settings.runtime", () => {
+    expect(getStaticRuntime(state)).toEqual(state.settings.runtime);
+  });
+});
+
+describe("getDashboards", () => {
+  test("takes a state object and returns state.dashboards", () => {
+    expect(getDashboards(state)).toEqual(state.dashboards);
+  });
+});
+
+describe("getServices", () => {
+  test("takes a state object and returns state.fabric.services", () => {
+    expect(getServices(state)).toEqual(state.fabric.services);
+  });
+});
+
+describe("getFabricServer", () => {
+  test("takes a state object and returns state.settings.fabricServer", () => {
+    expect(getFabricServer(state)).toEqual(state.settings.fabricServer);
+  });
+});
+
+describe("getSelectedInstance", () => {
+  test("takes a state object and returns state.fabric.selectedInstance", () => {
+    expect(getSelectedInstance(state)).toEqual(state.fabric.selectedInstance);
+  });
+});
+
+describe("getSelectedServiceName", () => {
+  test("takes a state object and returns state.fabric.selectedService", () => {
+    expect(getSelectedServiceName(state)).toEqual(state.fabric.selectedService);
+  });
+});
+
+describe("getSelectedServiceVersion", () => {
+  test("takes a state object and returns state.fabric.selectedServiceVersion", () => {
+    expect(getSelectedServiceVersion(state)).toEqual(
+      state.fabric.selectedServiceVersion
+    );
+  });
+});
+
+describe("getSelectedServiceKey", () => {
+  test("generates the key used in the Redux store for services composed of a service name and a service version delimited by `|`", () => {
+    expect(getSelectedServiceKey(state)).toEqual(
+      "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3"
+    );
+  });
+});
+
+describe("getSelectedService", () => {
+  test("returns the current selected service from the Redux store if it is found and null if not found", () => {
+    expect(getSelectedService(state)).toMatchObject(
+      state.fabric.services[
+        "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3"
+      ]
+    );
+    // create a modified state where fabric.selectedService, fabric.selectedServiceVersion,
+    // and fabric.selectedInstance are not defined
+    let modState = Object.assign({}, state, {
+      fabric: {
+        fabricPollingInterval: 10000,
+        isPollingFabric: true,
+        services: {}
+      }
+    });
+    expect(getSelectedService(modState)).toBeNull();
+  });
+});
+
+describe("getRuntime", () => {
+  test("returns the runtime attribute of the currently selected service if running with Fabric server", () => {
+    expect(getRuntime(state)).toEqual("GO");
+  });
+
+  test("returns null if running with Fabric server and there is no selected service", () => {
+    // create a modified state where fabric.selectedService, fabric.selectedServiceVersion,
+    // and fabric.selectedInstance are not defined
+    let modState = Object.assign({}, state, {
+      fabric: {
+        fabricPollingInterval: 10000,
+        isPollingFabric: true,
+        services: {}
+      }
+    });
+    expect(getRuntime(modState)).toBeNull();
+  });
+
+  test("returns a static runtime if not running with a Fabric server", () => {
+    // create a modified state where settings.fabricServer is null
+    let modState = Object.assign({}, state, {
+      settings: {
+        runtime: "JVM",
+        fabricServer: null
+      }
+    });
+    expect(getRuntime(modState)).toEqual("JVM");
+  });
+});
+
+describe("generateHeaderTabs", () => {
+  test("returns undefined if state.dashboards is empty", () => {
+    let modState = Object.assign({}, state, { dashboards: {} });
+    expect(generateHeaderTabs(modState)).toBeUndefined();
+  });
+
+  let tabs;
+
+  beforeAll(() => {
+    tabs = generateHeaderTabs(state);
+  });
+
+  test("returns an array of <Tab />'s", () => {
+    tabs.forEach(tab => {
+      expect(tab).toMatchObject(Tab.prototype);
+    });
+  });
+
+  test("passes title prop to <Tab />", () => {
+    const titles = ["HTTP", "JVM", "Finagle"];
+    tabs.forEach((tab, idx) => {
+      expect(tab.props.title).toBe(titles[idx]);
+    });
+  });
+
+  test("passes href prop to <Tab/>", () => {
+    const keys = ["http", "jvm", "finagle"];
+    const mockService =
+      "Authentication·Statistics·File·Resource·Network·Export·ICPF·Mail·Domain·End";
+    const mockVersion = "4.3";
+    const mockInstance = "2smao7xwboy0000000000";
+
+    tabs.forEach((tab, idx) => {
+      expect(tab.props.href).toBe(
+        `/${mockService}/${mockVersion}/${mockInstance}/${keys[idx]}`
+      );
+    });
+  });
+
+  test("passes icon prop to <Tab/>", () => {
+    const icons = ["Http", "JVM", "Finagle"];
+
+    tabs.forEach((tab, idx) => {
+      expect(tab.props.icon).toBe(icons[idx]);
+    });
+  });
+
+  test("passes lines prop to <Tab/> if lines of text are present", () => {
+    const keys = ["http", "jvm", "finagle"];
+    tabs.forEach((tab, i) => {
+      if (state.dashboards[keys[i]].summaryCard.lines) {
+        expect(tab.props).toHaveProperty("lines");
+      } else {
+        expect(tab.props).not.toHaveProperty("lines");
+      }
+    });
+  });
+
+  test("passes chartData prop to <Tab/> if chart is present", () => {
+    const keys = ["http", "jvm", "finagle"];
+    tabs.forEach((tab, i) => {
+      if (state.dashboards[keys[i]].summaryCard.chart) {
+        expect(tab.props.chartData).toBeDefined();
+      } else {
+        expect(tab.props.chartData).toBeUndefined();
+      }
+    });
+  });
+});
+
+describe("metricsKeySelectorGenerator", () => {
   test("returns a Reselect selector", () => {
     expect(metricsKeySelectorGenerator()).toHaveProperty("resultFunc");
     expect(metricsKeySelectorGenerator()).toHaveProperty("recomputations");
@@ -38,7 +231,7 @@ describe("Function metricsKeySelectorGenerator", () => {
   });
 });
 
-describe("Reselect selector getRouteMetrics", () =>
+describe("getRouteMetrics", () =>
   test("returns an object of the metrics that have a key containing the string `route`", () => {
     expect(getRoutesMetrics(state)).toEqual({
       "route/functionalroles/GET/errors.count": {
@@ -286,7 +479,7 @@ describe("Reselect selector getRouteMetrics", () =>
     });
   }));
 
-describe("Reselect selector getRouteTree", () =>
+describe("getRoutesTree", () =>
   test("returns a hierarchical representation of the keys nested under their corresponding routes and HTTP verbs", () => {
     expect(getRoutesTree(state)).toEqual({
       "/functionalroles": ["GET"],
@@ -294,28 +487,8 @@ describe("Reselect selector getRouteTree", () =>
     });
   }));
 
-// TODO: Mock out a state object for the Reselect selectors
-
-// Note: You'll need to refactor generateSidebarCards to make this easier to test
-// The goal should be to refactor out an intermediate selector
-// that produces an array of props objects, but doesn't actually pass them into
-// <SidebarCard>
-describe("getDashboards", () => {
-  xtest("takes a state object and returns state.dashboards", () => {});
-});
-describe("getMetrics", () => {
-  xtest("takes a state object and returns state.instance.metrics", () => {});
-});
-describe("generateSidebarCardProps", () => {
-  //TODO: Do we need a enhance the selector to provide a better error condition here?
-  xtest("returns undefined if state.dashboards is empty", () => {});
-  xtest("returns a title prop equal to value.name", () => {});
-  xtest("returns key and href props equal to key prepended by a /", () => {});
-  xtest("returns an icon prop equal to value.summaryCard.icon", () => {});
-  // etc etc etc. Use Istanbul test reported to
-});
-
-describe("generateSidebarCards", () => {
-  xtest("maps over an array of props generated by generateSidebarCardProps and passes them into <SidebarCards>", () => {});
-  // Any possible error checking that should happen here?
+describe("getStatusCount", () => {
+  test("takes an array of service objects and returns an object with a count for each status", () => {
+    expect(getStatusCount(state)).toMatchObject({ Warning: 1, total: 1 });
+  });
 });

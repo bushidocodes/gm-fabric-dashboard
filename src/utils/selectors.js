@@ -8,7 +8,7 @@ import { encodeParameter } from "utils";
 import { microserviceStatuses } from "utils/constants";
 
 // TODO: Revisit architecture here
-// This import makes me feel like generateSidebarCards should not be a selector
+// This import makes me feel like generateHeaderTabs should not be a selector
 import Tab from "components/AppHeader/components/Tab";
 
 // Reselect Input Selectors
@@ -16,7 +16,6 @@ import Tab from "components/AppHeader/components/Tab";
 export const getMetrics = state => state.instance.metrics;
 export const getStaticRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
-
 export const getServices = state => state.fabric.services;
 
 export const getFabricServer = state => state.settings.fabricServer;
@@ -67,7 +66,7 @@ export const getRuntime = createSelector(
   }
 );
 /**
- * Reselect selector that generates SidebarCard components from JSON
+ * Reselect selector that generates Tab components from JSON
  */
 export const generateHeaderTabs = createSelector(
   [
@@ -84,7 +83,7 @@ export const generateHeaderTabs = createSelector(
           ? `/${encodeParameter(service)}/${version}/${instance}`
           : "";
       return _.toPairs(dashboards).map(([key, value]) => {
-        let chartData, chartTitle, lines;
+        let chartData, lines;
         // Render lines of text if present
         if (_.has(value, "summaryCard.lines")) {
           lines = value.summaryCard.lines.map(line => ({
@@ -94,7 +93,6 @@ export const generateHeaderTabs = createSelector(
         }
         // Render a chart if present
         if (_.has(value, "summaryCard.chart")) {
-          chartTitle = value.summaryCard.chart.title;
           if (value.summaryCard.chart.type === "value") {
             chartData = getSparkLineOfValue(
               metrics,
@@ -110,7 +108,6 @@ export const generateHeaderTabs = createSelector(
         return (
           <Tab
             chartData={chartData}
-            chartTitle={chartTitle}
             href={`${prefix}/${key}`}
             icon={value.summaryCard.icon}
             key={`/${key}`}
@@ -184,27 +181,6 @@ function _buildRoutesTree(routeMetrics) {
     return {};
   }
 }
-
-/**
- * Reselect selector that transforms service data to include
- * {name, version, docsLink, state}
- */
-
-// get service values and return the mapped data
-export const getAppHeaderContent = createSelector(getServices, services => {
-  _.values(services).map(service => {
-    return {
-      name: service.name,
-      version: service.version,
-      docsLink: service.documentation,
-      status: computeStatus(
-        service.instances.length,
-        service.minimum,
-        service.maximum
-      )
-    };
-  });
-});
 
 /**
  * getStatusCount is a utility function that takes an array of service objects and

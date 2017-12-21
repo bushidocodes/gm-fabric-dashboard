@@ -5,7 +5,26 @@ export default {
     selectedService:
       "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
     selectedServiceVersion: "4.3",
-    selectedInstance: "2smao7xwboy0000000000"
+    selectedInstance: "2smao7xwboy0000000000",
+    services: {
+      "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3": {
+        authorized: false,
+        headerTitle: "Warning",
+        name:
+          "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
+        version: "4.3",
+        docsLink: "https://www.google.com",
+        status: "Warning",
+        runtime: "GO",
+        metered: true,
+        instances: [
+          {
+            name: "2smao7xwboy0000000000",
+            start_time: 1508854912461
+          }
+        ]
+      }
+    }
   },
   instance: {
     metrics: {
@@ -2186,7 +2205,10 @@ export default {
   ],
   settings: {
     threadsFilter: "active",
-    fabricServer: "http://localhost:1337"
+    fabricServer: "http://localhost:1337",
+    metricsEndpoint: "admin/metrics.json",
+    runtime: "JVM",
+    threadsEndpoint: "admin/threads"
   },
   dashboards: {
     http: {
