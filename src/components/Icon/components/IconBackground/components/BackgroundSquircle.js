@@ -1,15 +1,15 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
-BackgroundSquare.propTypes = {
+BackgroundSquircle.propTypes = {
   backgroundColor: PropTypes.string,
   backgroundOpacity: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
-const title = "Square";
+const title = "Squircle";
 
-function BackgroundSquare({
+function BackgroundSquircle({
   ratio = 1,
   backgroundColor = "transparent",
   backgroundOpacity = "1"
@@ -30,4 +30,4 @@ function BackgroundSquare({
   );
 }
 
-export default BackgroundSquare;
+export default BackgroundSquircle;
