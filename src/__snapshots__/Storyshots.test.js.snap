@@ -4988,6 +4988,151 @@ exports[`Storyshots Icons  Icon 1`] = `
 </svg>
 `;
 
+exports[`Storyshots NotFoundError default 1`] = `
+.c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 72px;
+  width: 72px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgb(250,198,15);
+  border-radius: 6px;
+  color: rgb(32,32,32);
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-basis: 600px;
+  -ms-flex-basis: 600px;
+  flex-basis: 600px;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  font-size: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 32px;
+  padding: 64px 32px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.c2 {
+  margin-left: 20px;
+}
+
+<div
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <span
+        className="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          className="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            className="iconBorder"
+            fill="transparent"
+            id="BorderTriangleSmall"
+            stroke="currentColor"
+            strokeOpacity="1"
+            strokeWidth={0.3333333333333333}
+          >
+            <path
+              d="M12.8582232,4.46378268 L20.8520757,17.3321581 C21.1381526,17.7926802 20.9967369,18.3979184 20.5362148,18.6839954 C20.3807105,18.7805948 20.2012922,18.8317858 20.0182266,18.8317858 L3.98163949,18.8317858 C3.43949497,18.8317858 3,18.3922908 3,17.8501463 C3,17.6661677 3.05170241,17.4858919 3.14921087,17.3298784 L11.1919455,4.461503 C11.4792815,4.00176536 12.0849044,3.86200624 12.544642,4.14934226 C12.671816,4.22882603 12.7790877,4.33639165 12.8582232,4.46378268 Z"
+            />
+          </g>
+          <g
+            className="c4"
+            fill="currentColor"
+            title=""
+          >
+            <title>
+              
+            </title>
+            <g
+              className="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+                id="Exclamation"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <span
+        className="c2"
+      >
+        Not Found
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Readout A Readout Group 1`] = `
 .c5 {
   -webkit-transform: scale(1);
