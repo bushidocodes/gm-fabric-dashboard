@@ -10501,6 +10501,32 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   overflow: visible;
 }
 
+.c3 {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c3:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c3:hover {
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c3:focus:active:hover {
+  outline: 0;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -10546,32 +10572,6 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
-}
-
-.c3 {
-  width: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c3:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c3:hover {
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c3:focus:active:hover {
-  outline: 0;
 }
 
 .c9 {
@@ -11565,6 +11565,32 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   overflow: visible;
 }
 
+.c3 {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c3:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c3:hover {
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c3:focus:active:hover {
+  outline: 0;
+}
+
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -11610,32 +11636,6 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
-}
-
-.c3 {
-  width: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c3:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c3:hover {
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c3:focus:active:hover {
-  outline: 0;
 }
 
 .c9 {
@@ -13299,6 +13299,32 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   overflow: visible;
 }
 
+.c2 {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c2:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c2:hover {
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c2:focus:active:hover {
+  outline: 0;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13344,32 +13370,6 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
-}
-
-.c2 {
-  width: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c2:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c2:hover {
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c2:focus:active:hover {
-  outline: 0;
 }
 
 .c8 {
@@ -14163,6 +14163,32 @@ exports[`Storyshots Service List Item Service List Item 1`] = `
   overflow: visible;
 }
 
+.c2 {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c2:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c2:hover {
+  color: rgb(77,77,77);
+  cursor: not-allowed;
+}
+
+.c2:focus:active:hover {
+  outline: 0;
+}
+
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -14208,32 +14234,6 @@ exports[`Storyshots Service List Item Service List Item 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
-}
-
-.c2 {
-  width: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c2:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c2:hover {
-  color: rgb(77,77,77);
-  cursor: not-allowed;
-}
-
-.c2:focus:active:hover {
-  outline: 0;
 }
 
 .c8 {
@@ -14647,6 +14647,1701 @@ exports[`Storyshots Status Icon Warning 1`] = `
     />
   </g>
 </svg>
+`;
+
+exports[`Storyshots Table Functions Table 1`] = `
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c10:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c10:focus:active:hover {
+  outline: 0;
+}
+
+.c10 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 > *:first-child {
+  padding-left: 16px;
+}
+
+.c16 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c17 {
+  color: rgb(10,171,42);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c11 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c15 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c15 svg {
+  height: 24px;
+}
+
+.c13 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c14 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c18 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 72.22222222222221%;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 500;
+  overflow: visible;
+  width: 100%;
+}
+
+.c9 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+.c6 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c5 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c5:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 11px;
+  color: rgb(77,77,77);
+}
+
+.c4 {
+  padding: 8px;
+}
+
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+        style={
+          Object {
+            "flex": "1 1 20%",
+          }
+        }
+      >
+        Function
+      </div>
+      <div
+        className="c2"
+        style={Object {}}
+      >
+        Requests/sec
+      </div>
+      <div
+        className="c2"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Requests
+      </div>
+      <div
+        className="c2"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Error %
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            Latency
+            <div
+              className="c6"
+            >
+              Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            50%
+          </div>
+          <div
+            className="c8"
+          >
+            99%
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol
+      className="c9"
+    >
+      <li
+        className="c10"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            <div>
+              CatalogStream
+            </div>
+          </div>
+          <div
+            className="c13"
+          >
+            <div
+              className="c14"
+              width={100}
+            />
+          </div>
+        </div>
+        <div
+          className="c15"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c16"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          18
+        </div>
+        <div
+          className="c17"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c16"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            1956
+            ms
+          </div>
+          <div>
+            3484
+            ms
+          </div>
+        </div>
+      </li>
+      <li
+        className="c10"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            <div>
+              OrderItem
+            </div>
+          </div>
+          <div
+            className="c13"
+          >
+            <div
+              className="c18"
+              width={72.22222222222221}
+            />
+          </div>
+        </div>
+        <div
+          className="c15"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c16"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          13
+        </div>
+        <div
+          className="c17"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c16"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            2339
+            ms
+          </div>
+          <div>
+            3565
+            ms
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Table Instance Table 1`] = `
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: default;
+}
+
+.c4:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c4:focus:active:hover {
+  outline: 0;
+}
+
+.c4 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c4 > *:first-child {
+  padding-left: 16px;
+}
+
+.c5 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c7 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  text-align: right;
+}
+
+.c7 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
+.c6 {
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c6:hover {
+  color: rgb(10,171,42);
+}
+
+.c6:focus:active:hover {
+  outline: 0;
+}
+
+.c8 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 500;
+  overflow: visible;
+  width: 100%;
+}
+
+.c3 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+        style={
+          Object {
+            "flex": "1 1 20%",
+          }
+        }
+      >
+        Instance
+      </div>
+      <div
+        className="c2"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Uptime
+      </div>
+    </div>
+    <ol
+      className="c3"
+    >
+      <li
+        className="c4"
+        onClick={[Function]}
+        tabIndex="-1"
+      >
+        <div
+          className="c5"
+          style={
+            Object {
+              "flex": "1 1 20%",
+            }
+          }
+        >
+          <a
+            className="c6"
+            href="/undefined/undefined/serviceID1"
+            onClick={[Function]}
+          >
+            serviceID1
+          </a>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          />
+        </div>
+      </li>
+      <li
+        className="c4"
+        onClick={[Function]}
+        tabIndex="-1"
+      >
+        <div
+          className="c5"
+          style={
+            Object {
+              "flex": "1 1 20%",
+            }
+          }
+        >
+          <a
+            className="c6"
+            href="/undefined/undefined/serviceID2"
+            onClick={[Function]}
+          >
+            serviceID2
+          </a>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          />
+        </div>
+      </li>
+      <li
+        className="c4"
+        onClick={[Function]}
+        tabIndex="-1"
+      >
+        <div
+          className="c5"
+          style={
+            Object {
+              "flex": "1 1 20%",
+            }
+          }
+        >
+          <a
+            className="c6"
+            href="/undefined/undefined/serviceID3"
+            onClick={[Function]}
+          >
+            serviceID3
+          </a>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          />
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Table Routes Table 1`] = `
+.c15 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c14 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c14:not(:root) {
+  overflow: visible;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c10:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c10:focus:active:hover {
+  outline: 0;
+}
+
+.c10 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 > *:first-child {
+  padding-left: 16px;
+}
+
+.c19 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c20 {
+  color: rgb(10,171,42);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c11 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c18 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c18 svg {
+  height: 24px;
+}
+
+.c16 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c17 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c21 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 0.005641748942172073%;
+}
+
+.c13 {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  -webkit-letter-spacing: 0.06em;
+  -moz-letter-spacing: 0.06em;
+  -ms-letter-spacing: 0.06em;
+  letter-spacing: 0.06em;
+  padding: 2px 4px;
+  background-color: rgb(10,171,42);
+  border-radius: 3px;
+  color: rgb(255,255,255);
+  margin-right: 4px;
+}
+
+.c13 svg:first-child {
+  margin-left: -6px;
+  margin-right: -4px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 500;
+  overflow: visible;
+  width: 100%;
+}
+
+.c9 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+.c6 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c5 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c5:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 11px;
+  color: rgb(77,77,77);
+}
+
+.c4 {
+  padding: 8px;
+}
+
+<div
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <div
+        className="c2"
+        style={
+          Object {
+            "flex": "1 1 20%",
+          }
+        }
+      >
+        Route
+      </div>
+      <div
+        className="c2"
+        style={Object {}}
+      >
+        Requests/sec
+      </div>
+      <div
+        className="c2"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Requests
+      </div>
+      <div
+        className="c2"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Error %
+      </div>
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            Latency
+            <div
+              className="c6"
+            >
+              Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
+            </div>
+          </div>
+        </div>
+        <div
+          className="c7"
+        >
+          <div
+            className="c8"
+          >
+            50%
+          </div>
+          <div
+            className="c8"
+          >
+            99%
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol
+      className="c9"
+    >
+      <li
+        className="c10"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            <span
+              className="c13"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                className="c14"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  className="c15"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title>
+                    
+                  </title>
+                  <g
+                    className="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                      id="get"
+                    />
+                  </g>
+                </g>
+              </svg>
+              GET
+            </span>
+            <div>
+              /functionalroles
+            </div>
+          </div>
+          <div
+            className="c16"
+          >
+            <div
+              className="c17"
+              width={100}
+            />
+          </div>
+        </div>
+        <div
+          className="c18"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c19"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          17,725
+        </div>
+        <div
+          className="c20"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c19"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            0
+            ms
+          </div>
+          <div>
+            9
+            ms
+          </div>
+        </div>
+      </li>
+      <li
+        className="c10"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            <span
+              className="c13"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                className="c14"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  className="c15"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title>
+                    
+                  </title>
+                  <g
+                    className="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                      id="get"
+                    />
+                  </g>
+                </g>
+              </svg>
+              GET
+            </span>
+            <div>
+              /ping
+            </div>
+          </div>
+          <div
+            className="c16"
+          >
+            <div
+              className="c21"
+              width={0.005641748942172073}
+            />
+          </div>
+        </div>
+        <div
+          className="c18"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c19"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          1
+        </div>
+        <div
+          className="c20"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c19"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            0
+            ms
+          </div>
+          <div>
+            0
+            ms
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Table Toolbar default 1`] = `
