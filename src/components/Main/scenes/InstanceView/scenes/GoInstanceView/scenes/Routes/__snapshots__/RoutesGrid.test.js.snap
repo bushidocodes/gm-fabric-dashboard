@@ -1,0 +1,1305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoutesGrid View matches snapshot 1`] = `
+.c22 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c21 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c21:not(:root) {
+  overflow: visible;
+}
+
+.c17 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c17:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c17:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c17:focus:active:hover {
+  outline: 0;
+}
+
+.c17 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c17 > *:first-child {
+  padding-left: 16px;
+}
+
+.c26 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c27 {
+  color: rgb(10,171,42);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c18 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c25 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c25 svg {
+  height: 24px;
+}
+
+.c23 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c24 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c28 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 0.005641748942172073%;
+}
+
+.c20 {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  -webkit-letter-spacing: 0.06em;
+  -moz-letter-spacing: 0.06em;
+  -ms-letter-spacing: 0.06em;
+  letter-spacing: 0.06em;
+  padding: 2px 4px;
+  background-color: rgb(10,171,42);
+  border-radius: 3px;
+  color: rgb(255,255,255);
+  margin-right: 4px;
+}
+
+.c20 svg:first-child {
+  margin-left: -6px;
+  margin-right: -4px;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c19 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.c7 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 500;
+  overflow: visible;
+  width: 100%;
+}
+
+.c16 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c9 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c9:first-child {
+  padding-left: 16px;
+}
+
+.c13 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c12 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c12:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
+}
+
+.c10 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.c10:first-child {
+  padding-left: 16px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c15 {
+  font-size: 11px;
+  color: rgb(77,77,77);
+}
+
+.c11 {
+  padding: 8px;
+}
+
+.c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c5 {
+  font-family: "Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto", "Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue", sans-serif;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: 1020;
+}
+
+.c5 .Select-control {
+  height: 28px !important;
+}
+
+.c5 .Select-control .Select-placeholder {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-value {
+  line-height: 28px !important;
+}
+
+.c5 .Select-control .Select-value .Select-value-label {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-input {
+  height: 28px;
+}
+
+.c6 {
+  margin-left: 4px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+<div>
+  <div
+    className="c0"
+  >
+    <div
+      className="c1"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          aria-label="Search Routes"
+          className="c2"
+          onChange={[Function]}
+          placeholder="Search Routes"
+          type="search"
+          value=""
+        />
+      </form>
+    </div>
+    <div
+      className="c3"
+    />
+    <div
+      className="c4"
+    >
+      <div
+        className="Select c5 Select--single is-searchable has-value"
+        style={undefined}
+      >
+        <input
+          disabled={false}
+          name="form-field-sort-by"
+          type="hidden"
+          value="route"
+        />
+        <div
+          className="Select-control"
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          style={undefined}
+        >
+          <span
+            className="Select-multi-value-wrapper"
+            id="react-select-3--value"
+          >
+            <div
+              className="Select-value"
+              style={undefined}
+              title={undefined}
+            >
+              <span
+                aria-selected="true"
+                className="Select-value-label"
+                id="react-select-3--value-item"
+                role="option"
+              >
+                <span>
+                  <span>
+                    Sort
+                     
+                  </span>
+                  <span
+                    className="c6"
+                  >
+                    Route
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div
+              className="Select-input"
+              style={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            >
+              <input
+                aria-activedescendant="react-select-3--value"
+                aria-describedby={undefined}
+                aria-expanded="false"
+                aria-haspopup="false"
+                aria-label={undefined}
+                aria-labelledby={undefined}
+                aria-owns=""
+                className={undefined}
+                id={undefined}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                role="combobox"
+                style={
+                  Object {
+                    "boxSizing": "content-box",
+                    "width": "5px",
+                  }
+                }
+                tabIndex={undefined}
+                value=""
+              />
+              <div
+                style={
+                  Object {
+                    "height": 0,
+                    "left": 0,
+                    "overflow": "scroll",
+                    "position": "absolute",
+                    "top": 0,
+                    "visibility": "hidden",
+                    "whiteSpace": "pre",
+                  }
+                }
+              >
+                
+              </div>
+            </div>
+          </span>
+          <span
+            className="Select-arrow-zone"
+            onMouseDown={[Function]}
+          >
+            <span
+              className="Select-arrow"
+              onMouseDown={[Function]}
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c7"
+  >
+    <div
+      className="c8"
+    >
+      <div
+        className="c9"
+        style={
+          Object {
+            "flex": "1 1 20%",
+          }
+        }
+      >
+        Route
+      </div>
+      <div
+        className="c9"
+        style={Object {}}
+      >
+        Requests/sec
+      </div>
+      <div
+        className="c9"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Requests
+      </div>
+      <div
+        className="c9"
+        style={
+          Object {
+            "textAlign": "right",
+          }
+        }
+      >
+        Error %
+      </div>
+      <div
+        className="c10"
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            Latency
+            <div
+              className="c13"
+            >
+              Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
+            </div>
+          </div>
+        </div>
+        <div
+          className="c14"
+        >
+          <div
+            className="c15"
+          >
+            50%
+          </div>
+          <div
+            className="c15"
+          >
+            99%
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol
+      className="c16"
+    >
+      <li
+        className="c17"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c18"
+        >
+          <div
+            className="c19"
+          >
+            <span
+              className="c20"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                className="c21"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  className="c22"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title>
+                    
+                  </title>
+                  <g
+                    className="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                      id="get"
+                    />
+                  </g>
+                </g>
+              </svg>
+              GET
+            </span>
+            <div>
+              /functionalroles
+            </div>
+          </div>
+          <div
+            className="c23"
+          >
+            <div
+              className="c24"
+              width={100}
+            />
+          </div>
+        </div>
+        <div
+          className="c25"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={35.714285714285715}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={69.42857142857143}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={103.14285714285714}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={136.85714285714286}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={170.57142857142858}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={204.28571428571428}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c26"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          17,725
+        </div>
+        <div
+          className="c27"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c26"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            0
+            ms
+          </div>
+          <div>
+            9
+            ms
+          </div>
+        </div>
+      </li>
+      <li
+        className="c17"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="link"
+        tabIndex={0}
+      >
+        <div
+          className="c18"
+        >
+          <div
+            className="c19"
+          >
+            <span
+              className="c20"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                className="c21"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  className="c22"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title>
+                    
+                  </title>
+                  <g
+                    className="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M11.5,13.940832 C9.01471863,13.940832 7,11.9261134 7,9.44083202 C7,6.95555065 9.01471863,4.94083202 11.5,4.94083202 C13.9852814,4.94083202 16,6.95555065 16,9.44083202 C16,11.9261134 13.9852814,13.940832 11.5,13.940832 Z M11.5521421,10.940832 C12.3805692,10.940832 13.0521421,10.2692591 13.0521421,9.44083202 C13.0521421,8.6124049 12.3805692,7.94083202 11.5521421,7.94083202 C10.723715,7.94083202 10.0521421,8.6124049 10.0521421,9.44083202 C10.0521421,10.2692591 10.723715,10.940832 11.5521421,10.940832 Z M8.38682576,13.9480614 C9.26316923,14.5385122 10.3188503,14.8831582 11.4550278,14.8831582 C12.5958345,14.8831582 13.6554876,14.535698 14.5339326,13.940832 L15.0304823,14.3285452 L11.4650086,17.0026504 L7.89953494,14.3285452 L8.38682576,13.9480614 Z"
+                      id="get"
+                    />
+                  </g>
+                </g>
+              </svg>
+              GET
+            </span>
+            <div>
+              /ping
+            </div>
+          </div>
+          <div
+            className="c23"
+          >
+            <div
+              className="c28"
+              width={0.005641748942172073}
+            />
+          </div>
+        </div>
+        <div
+          className="c25"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            style={undefined}
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx={2}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={35.714285714285715}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={69.42857142857143}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={103.14285714285714}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={136.85714285714286}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={170.57142857142858}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={204.28571428571428}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <circle
+                cx={238}
+                cy={16}
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                r={2}
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16 238 30 2 30 2 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "fillOpacity": ".1",
+                    "pointerEvents": "auto",
+                    "stroke": "currentColor",
+                    "strokeWidth": "0",
+                  }
+                }
+              />
+              <polyline
+                points="2 16 35.714285714285715 16 69.42857142857143 16 103.14285714285714 16 136.85714285714286 16 170.57142857142858 16 204.28571428571428 16 238 16"
+                style={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": 1,
+                  }
+                }
+              />
+            </g>
+            <line
+              style={
+                Object {
+                  "opacity": "0.4",
+                  "stroke": "grey",
+                }
+              }
+              x1={2}
+              x2={238}
+              y1={18}
+              y2={18}
+            />
+          </svg>
+        </div>
+        <div
+          className="c26"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          1
+        </div>
+        <div
+          className="c27"
+          style={
+            Object {
+              "textAlign": "right",
+            }
+          }
+        >
+          0.000
+          %
+        </div>
+        <div
+          className="c26"
+          style={
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "textAlign": "right",
+            }
+          }
+        >
+          <div>
+            0
+            ms
+          </div>
+          <div>
+            0
+            ms
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+`;
