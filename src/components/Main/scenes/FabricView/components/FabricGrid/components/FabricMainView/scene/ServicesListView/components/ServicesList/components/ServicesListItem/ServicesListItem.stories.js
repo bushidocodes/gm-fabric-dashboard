@@ -14,6 +14,7 @@ storiesOf("Service List Item", module)
   .add("Service List Item", () => (
     <GMServiceListItem
       name={text("Service Name", "Service")}
+      runtime={select("Runtime", ["JVM", "GO"], "JVM")}
       instances={[
         { name: "ee0fa3669fea7e9a0adea649c46bca56", start_time: 1508854912461 },
         { name: "8bedb4551e801f38bf149001a72a1127", start_time: 1508370483156 },
@@ -22,6 +23,7 @@ storiesOf("Service List Item", module)
       version={text("Version", "1.1")}
       status={select("Service State", serviceStatus, "Stable")}
       authorized={boolean("User is Authorized", true)}
+      metered={boolean("Service is Metered", true)}
       docsLink={text("Docs Link", "#")}
     />
   ))
@@ -45,6 +47,8 @@ storiesOf("Service List Item", module)
         ]}
         version="1.1"
         docsLink="http://www.deciphernow.com"
+        runtime="JVM"
+        metered={true}
         status="Stable"
       />
       <GMServiceListItem
@@ -65,6 +69,8 @@ storiesOf("Service List Item", module)
         ]}
         version="1.0"
         docsLink="http://www.deciphernow.com"
+        runtime="JVM"
+        metered={true}
         status="Down"
       />
       <GMServiceListItem
@@ -85,6 +91,8 @@ storiesOf("Service List Item", module)
         ]}
         version="1.1"
         docsLink="http://www.deciphernow.com"
+        runtime="GO"
+        metered={true}
         status="Warning"
       />
       <GMServiceListItem
@@ -106,6 +114,8 @@ storiesOf("Service List Item", module)
         version="3.1"
         docsLink="http://www.deciphernow.com"
         status="Stable"
+        metered={true}
+        runtime="GO"
       />
     </ul>
   ));

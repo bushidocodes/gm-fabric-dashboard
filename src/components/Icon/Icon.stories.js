@@ -75,12 +75,20 @@ const iconBorderNames = [
   "BorderTriangleSmall"
 ];
 
+const wrapperStyle = {
+  display: "flex",
+  width: "100vw",
+  padding: "150px",
+  flexWrap: "wrap",
+  height: "100vh"
+};
+
 // dynamic glyph name is used for story knob testing only.
 // call the glyph component by name specifically, <CardGlyph> instead of <Glyph name="CardGlyph"> for code implementation
 
 storiesOf("Icons", module)
   .addDecorator(withKnobs)
-  .add(" Icon", () => {
+  .add("default", () => {
     const glyphName = select("Glyph", glyphNames, "Card");
 
     return (
@@ -103,5 +111,18 @@ storiesOf("Icons", module)
       >
         <Glyph name={glyphName} />
       </Icon>
+    );
+  })
+  .add("gallery", () => {
+    return (
+      <div style={wrapperStyle}>
+        {glyphNames.map(glyph => {
+          return (
+            <Icon glyphName={glyph} key={glyph}>
+              <Glyph name={glyph} />
+            </Icon>
+          );
+        })}
+      </div>
     );
   });

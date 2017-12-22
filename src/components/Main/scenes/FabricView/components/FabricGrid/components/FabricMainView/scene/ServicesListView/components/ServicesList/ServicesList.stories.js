@@ -36,6 +36,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Stable"
   },
   {
@@ -58,6 +59,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.5",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Down"
   },
   {
@@ -71,6 +73,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.7",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "JVM",
     status: "Warning"
   },
   {
@@ -84,6 +87,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Stable"
   },
   {
@@ -97,6 +101,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "JVM",
     status: "Stable"
   },
   {
@@ -110,6 +115,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "JVM",
     status: "Down"
   },
   {
@@ -123,6 +129,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Down"
   },
   {
@@ -136,6 +143,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "JVM",
     status: "Stable"
   },
   {
@@ -149,6 +157,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "JVM",
     status: "Stable"
   },
   {
@@ -162,6 +171,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Down"
   },
   {
@@ -175,6 +185,7 @@ const groupingByHeadingListViewMockData = [
     version: "1.1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
+    runtime: "GO",
     status: "Warning"
   }
 ];
