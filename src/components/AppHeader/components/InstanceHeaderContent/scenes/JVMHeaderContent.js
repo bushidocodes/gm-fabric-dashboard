@@ -12,19 +12,19 @@ import { getSparkLineOfValue } from "utils/sparklines";
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
 
-SidebarContent.propTypes = {
+JVMHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
   metrics: metricsShape.isRequired
 };
 
 /**
- * JVM Sidebar Content
+ * JVM Header Content
  * @export
  * @param {Object} props - See propTypes
  * @returns JSX.Element
  */
-export default function SidebarContent({ basePath, metrics, headerTabs }) {
+export default function JVMHeaderContent({ basePath, metrics, headerTabs }) {
   return (
     <TabNav>
       <Tab

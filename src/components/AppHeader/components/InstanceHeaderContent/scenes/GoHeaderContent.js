@@ -10,19 +10,19 @@ import UpTime from "components/UpTime";
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
 
-SidebarContent.propTypes = {
+GoHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
   metrics: metricsShape.isRequired
 };
 
 /**
- * Go Sidebar Content
+ * Go Header Content
  * @export
  * @param {Object} props - See propTypes
  * @returns JSX.Element
  */
-export default function SidebarContent({ basePath, metrics, headerTabs }) {
+export default function GoHeaderContent({ basePath, metrics, headerTabs }) {
   return (
     <TabNav>
       <Tab

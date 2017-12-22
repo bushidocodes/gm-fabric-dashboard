@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import JVMHeaderContent from "./scenes/JVM";
-import GoHeaderContent from "./scenes/Go";
-import DefaultHeaderContent from "./scenes/Default";
+import JVMHeaderContent from "./scenes/JVMHeaderContent";
+import GoHeaderContent from "./scenes/GoHeaderContent";
+import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 
 import { generateHeaderTabs } from "utils/selectors";
 import { decodeParameter } from "utils";
@@ -16,15 +16,14 @@ import {
 } from "components/PropTypes";
 
 /**
- * Main area of Sidebar containing one or more SidebarCards
- * @class SidebarContent
+ * Main area of Header containing one or more Tabs
+ * @class InstanceHeaderContent
  * @extends {Component}
  */
 
 class InstanceHeaderContent extends Component {
   static propTypes = {
     basePath: PropTypes.string,
-    dispatch: PropTypes.func,
     headerTabs: PropTypes.arrayOf(PropTypes.element),
     history: routerHistoryShape,
     location: routerLocationShape,
@@ -35,7 +34,6 @@ class InstanceHeaderContent extends Component {
 
   render() {
     const { basePath, metrics, runtime, headerTabs } = this.props;
-
     switch (runtime) {
       case "JVM":
         return (

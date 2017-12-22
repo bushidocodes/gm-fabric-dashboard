@@ -2205,10 +2205,7 @@ export default {
   ],
   settings: {
     threadsFilter: "active",
-    fabricServer: "http://localhost:1337",
-    metricsEndpoint: "admin/metrics.json",
-    runtime: "JVM",
-    threadsEndpoint: "admin/threads"
+    fabricServer: "http://localhost:1337"
   },
   dashboards: {
     http: {
