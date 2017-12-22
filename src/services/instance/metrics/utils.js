@@ -14,7 +14,7 @@ export function buildDiscoveryServiceInstanceMetricsEndpoint(
  * Utility function to convert a native statsd formatted endpoint into the flat
  * object of key-value pairs that we expect
  * A statsd file contains is key value pairs delimited by a colon and terminated by \n
- * @param {*} statsdText 
+ * @param {*} statsdText
  */
 export function formatStatsd(statsdText) {
   let results = {};

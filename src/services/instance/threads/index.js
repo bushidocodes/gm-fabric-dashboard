@@ -1,7 +1,6 @@
 import { Effect, Actions } from "jumpstate";
 import { reportError } from "../../notification";
 import { fetchInstanceThreads } from "./apis";
-// import { buildDiscoveryServiceInstanceThreadsEndpoint } from "./utils";
 
 /**
  * Action that fetches threads information (JVM) and stores in Redux
