@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 
-import FabricAppHeaderContent from "./scenes/Fabric";
-import InstanceHeaderContent from "../../components/InstanceHeaderContent";
-import ServiceHeaderContent from "./scenes/Service";
+import FabricAppHeaderContent from "./FabricHeaderContent";
+import InstanceHeaderContent from "./InstanceHeaderContent";
+import ServiceHeaderContent from "./ServiceHeaderContent";
 
 function AppHeaderContent() {
   return (

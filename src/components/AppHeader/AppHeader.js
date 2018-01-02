@@ -1,16 +1,15 @@
 import React from "react";
-import { getFabricServer } from "utils/head";
 import { withRouter } from "react-router-dom";
-import { decodeParameter } from "utils";
 
 import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";
-import UseSDS from "./scenes/UseSDS";
-import NoSDS from "./scenes/NoSDS";
+import AppHeaderContent from "./scenes";
+import InstanceHeaderContent from "./scenes/InstanceHeaderContent";
 
+import { getFabricServer } from "utils/head";
+import { decodeParameter, trimID } from "utils";
 import { routerLocationShape } from "components/PropTypes";
-import { trimID } from "utils";
 
 AppHeader.propTypes = {
   location: routerLocationShape
@@ -24,7 +23,7 @@ function AppHeader({ location: { pathname } }) {
     <AppHeaderContainer>
       <AppToolBar pathname={pathname} />
       <Banner title={getTitle(pathname)} hideBackground={false} />
-      {getFabricServer() ? <UseSDS /> : <NoSDS />}
+      {getFabricServer() ? <AppHeaderContent /> : <InstanceHeaderContent />}
     </AppHeaderContainer>
   );
 }
