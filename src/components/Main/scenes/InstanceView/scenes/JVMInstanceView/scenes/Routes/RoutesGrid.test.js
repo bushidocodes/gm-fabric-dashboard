@@ -162,7 +162,9 @@ describe("RoutesGrid View", () => {
         sortByOptions: [
           { label: "Route", value: "route" },
           { label: "Requests", value: "requests" },
-          { label: "Error %", value: "errorPercent" }
+          { label: "Error %", value: "errorPercent" },
+          { label: "Latency 50%", value: "latency50" },
+          { label: "Latency 99%", value: "latency99" }
         ]
       }
     });

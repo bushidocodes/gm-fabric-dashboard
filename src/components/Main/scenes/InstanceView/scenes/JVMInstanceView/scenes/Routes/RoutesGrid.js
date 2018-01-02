@@ -32,6 +32,14 @@ class RoutesGrid extends Component {
     {
       value: "errorPercent",
       label: "Error %"
+    },
+    {
+      value: "latency50",
+      label: "Latency 50%"
+    },
+    {
+      value: "latency99",
+      label: "Latency 99%"
     }
   ];
 
