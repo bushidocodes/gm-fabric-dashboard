@@ -11,10 +11,23 @@ exports[`InspectorToolbar matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 56px;
-  -ms-flex: 0 0 56px;
-  flex: 0 0 56px;
+  -webkit-flex: 0 0 112px;
+  -ms-flex: 0 0 112px;
+  flex: 0 0 112px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 > * {
   padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 <div

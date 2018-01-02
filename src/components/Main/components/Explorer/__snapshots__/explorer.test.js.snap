@@ -30,13 +30,26 @@ exports[`Explorer View matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 56px;
-  -ms-flex: 0 0 56px;
-  flex: 0 0 56px;
-  padding: 8px;
+  -webkit-flex: 0 0 112px;
+  -ms-flex: 0 0 112px;
+  flex: 0 0 112px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c5 {
+.c3 > * {
+  padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c7 {
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
@@ -48,7 +61,7 @@ exports[`Explorer View matches snapshot 1`] = `
   word-break: break-all;
 }
 
-.c6 {
+.c8 {
   border-radius: 3px;
   cursor: pointer;
   display: -webkit-box;
@@ -62,19 +75,19 @@ exports[`Explorer View matches snapshot 1`] = `
   word-wrap: break-word;
 }
 
-.c6:first-child {
+.c8:first-child {
   margin-top: 8px;
 }
 
-.c6:focus {
+.c8:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c6:hover {
+.c8:hover {
   color: rgb(10,171,42);
 }
 
-.c6:active {
+.c8:active {
   color: rgb(10,171,42);
   -webkit-transform: scale(0.9875);
   -ms-transform: scale(0.9875);
@@ -83,7 +96,7 @@ exports[`Explorer View matches snapshot 1`] = `
   transition-duration: 0;
 }
 
-.c6:focus:active:hover {
+.c8:focus:active:hover {
   outline: 0;
 }
 
@@ -237,6 +250,14 @@ exports[`Explorer View matches snapshot 1`] = `
   outline: none;
 }
 
+.c5 {
+  color: currentColor;
+}
+
+.c6 {
+  color: currentColor;
+}
+
 .c0 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -266,7 +287,7 @@ exports[`Explorer View matches snapshot 1`] = `
   position: relative;
 }
 
-.c7 {
+.c9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -308,7 +329,7 @@ exports[`Explorer View matches snapshot 1`] = `
 }
 
 @media all and (min-width:800px) {
-  .c7 {
+  .c9 {
     -webkit-flex: 1 0 60%;
     -ms-flex: 1 0 60%;
     flex: 1 0 60%;
@@ -327,20 +348,47 @@ exports[`Explorer View matches snapshot 1`] = `
       <div
         className="c3"
       >
-        <input
-          aria-label="Search All Metrics"
-          className="c4"
-          onChange={[Function]}
-          placeholder="Search"
-          type="search"
-          value=""
-        />
+        <div>
+          <input
+            aria-label="Search All Metrics"
+            className="c4"
+            onChange={[Function]}
+            placeholder="Search"
+            type="search"
+            value=""
+          />
+        </div>
+        <div>
+          <label>
+            <input
+              checked={false}
+              className="c5"
+              disabled={false}
+              name="hideZeroMetric"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            Hide all metrics with only zero values
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              checked={false}
+              className="c6"
+              name="hideStaticMetric"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            Hide all static metrics
+          </label>
+        </div>
       </div>
       <ul
-        className="c5"
+        className="c7"
       >
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -348,7 +396,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/build/revision
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -356,7 +404,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/clientregistry/initialresolution_ms
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -364,7 +412,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/clientregistry/size
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -372,7 +420,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/future_pool/active_tasks
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -380,7 +428,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/future_pool/completed_tasks
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -388,7 +436,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/future_pool/pool_size
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -396,7 +444,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.avg
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -404,7 +452,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -412,7 +460,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -420,7 +468,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.min
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -428,7 +476,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p50
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -436,7 +484,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p90
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -444,7 +492,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p95
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -452,7 +500,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p99
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -460,7 +508,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p9990
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -468,7 +516,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.p9999
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -476,7 +524,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/deviation_ms.sum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -484,7 +532,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.avg
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -492,7 +540,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -500,7 +548,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -508,7 +556,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.min
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -516,7 +564,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p50
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -524,7 +572,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p90
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -532,7 +580,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p95
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -540,7 +588,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p99
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -548,7 +596,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p9990
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -556,7 +604,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.p9999
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -564,7 +612,7 @@ exports[`Explorer View matches snapshot 1`] = `
           finagle/timer/pending_tasks.sum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -572,7 +620,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/errors.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -580,7 +628,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/in_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -588,7 +636,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.avg
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -596,7 +644,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -604,7 +652,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -612,7 +660,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.min
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -620,7 +668,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p50
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -628,7 +676,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p90
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -636,7 +684,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p95
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -644,7 +692,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p99
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -652,7 +700,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p9990
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -660,7 +708,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.p9999
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -668,7 +716,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/latency_ms.sum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -676,7 +724,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/out_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -684,7 +732,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/CatalogStream/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -692,7 +740,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/errors.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -700,7 +748,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/in_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -708,7 +756,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.avg
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -716,7 +764,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -724,7 +772,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -732,7 +780,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.min
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -740,7 +788,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p50
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -748,7 +796,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p90
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -756,7 +804,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p95
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -764,7 +812,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p99
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -772,7 +820,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p9990
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -780,7 +828,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.p9999
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -788,7 +836,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/latency_ms.sum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -796,7 +844,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/out_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -804,7 +852,7 @@ exports[`Explorer View matches snapshot 1`] = `
           function/OrderItem/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -812,7 +860,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/closes
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -820,7 +868,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connection_duration.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -828,7 +876,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connection_received_bytes.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -836,7 +884,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connection_requests.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -844,7 +892,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connection_sent_bytes.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -852,7 +900,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connections
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -860,7 +908,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/connects
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -868,7 +916,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/dtab/size.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -876,7 +924,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/handletime_us.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -884,7 +932,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/nacks
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -892,7 +940,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/nonretryable_nacks
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -900,7 +948,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/pending
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -908,7 +956,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/read_timeout
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -916,7 +964,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/received_bytes
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -924,7 +972,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/request_latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -932,7 +980,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/request_payload_bytes.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -940,7 +988,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -948,7 +996,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/response_payload_bytes.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -956,7 +1004,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/sent_bytes
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -964,7 +1012,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/socket_unwritable_ms
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -972,7 +1020,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/socket_writable_ms
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -980,7 +1028,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/success
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -988,7 +1036,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/transit_latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -996,7 +1044,7 @@ exports[`Explorer View matches snapshot 1`] = `
           http/write_timeout
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1004,7 +1052,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/application_time_millis
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1012,7 +1060,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/classes/current_loaded
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1020,7 +1068,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/classes/total_loaded
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1028,7 +1076,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/classes/total_unloaded
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1036,7 +1084,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/compilation/time_msec
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1044,7 +1092,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/fd_count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1052,7 +1100,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/fd_limit
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1060,7 +1108,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/PS_MarkSweep/cycles
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1068,7 +1116,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/PS_MarkSweep/msec
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1076,7 +1124,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/PS_Scavenge/cycles
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1084,7 +1132,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/PS_Scavenge/msec
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1092,7 +1140,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/cycles
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1100,7 +1148,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/eden/pause_msec.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1108,7 +1156,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/gc/msec
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1116,7 +1164,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/heap/committed
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1124,7 +1172,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/heap/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1132,7 +1180,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/heap/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1140,7 +1188,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/allocations/eden/bytes
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1148,7 +1196,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/direct/count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1156,7 +1204,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/direct/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1164,7 +1212,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/direct/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1172,7 +1220,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/mapped/count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1180,7 +1228,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/mapped/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1188,7 +1236,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/buffer/mapped/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1196,7 +1244,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Code_Cache/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1204,7 +1252,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Code_Cache/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1212,7 +1260,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Compressed_Class_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1220,7 +1268,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Compressed_Class_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1228,7 +1276,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Metaspace/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1236,7 +1284,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/Metaspace/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1244,7 +1292,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Eden_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1252,7 +1300,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Eden_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1260,7 +1308,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Old_Gen/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1268,7 +1316,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Old_Gen/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1276,7 +1324,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Survivor_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1284,7 +1332,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/PS_Survivor_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1292,7 +1340,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/current/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1300,7 +1348,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/metaspace/max_capacity
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1308,7 +1356,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Eden_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1316,7 +1364,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Eden_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1324,7 +1372,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Old_Gen/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1332,7 +1380,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Old_Gen/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1340,7 +1388,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Survivor_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1348,7 +1396,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/PS_Survivor_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1356,7 +1404,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/mem/postGC/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1364,7 +1412,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/nonheap/committed
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1372,7 +1420,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/nonheap/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1380,7 +1428,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/nonheap/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1388,7 +1436,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/num_cpus
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1396,7 +1444,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Eden_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1404,7 +1452,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Eden_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1412,7 +1460,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Old_Gen/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1420,7 +1468,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Old_Gen/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1428,7 +1476,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Survivor_Space/max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1436,7 +1484,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/PS_Survivor_Space/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1444,7 +1492,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/postGC/used
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1452,7 +1500,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/safepoint/count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1460,7 +1508,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/safepoint/sync_time_millis
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1468,7 +1516,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/safepoint/total_time_millis
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1476,7 +1524,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/start_time
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1484,7 +1532,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/tenuring_threshold
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1492,7 +1540,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/thread/count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1500,7 +1548,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/thread/daemon_count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1508,7 +1556,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/thread/peak_count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1516,7 +1564,7 @@ exports[`Explorer View matches snapshot 1`] = `
           jvm/uptime
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1524,7 +1572,7 @@ exports[`Explorer View matches snapshot 1`] = `
           larger_than_threadlocal_out_buffer
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1532,7 +1580,7 @@ exports[`Explorer View matches snapshot 1`] = `
           response_size.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1540,7 +1588,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/errors.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1548,7 +1596,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/in_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1556,7 +1604,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.avg
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1564,7 +1612,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1572,7 +1620,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.max
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1580,7 +1628,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.min
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1588,7 +1636,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p50
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1596,7 +1644,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p90
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1604,7 +1652,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p95
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1612,7 +1660,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p99
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1620,7 +1668,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p9990
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1628,7 +1676,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.p9999
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1636,7 +1684,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/latency_ms.sum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1644,7 +1692,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/out_throughput
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1652,7 +1700,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/functionalroles/GET/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1660,7 +1708,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1668,7 +1716,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/response_size.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1676,7 +1724,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/status/200
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1684,7 +1732,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/status/2XX
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1692,7 +1740,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/time.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1700,7 +1748,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/time/200.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1708,7 +1756,7 @@ exports[`Explorer View matches snapshot 1`] = `
           route/ping/GET/time/2XX.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1716,7 +1764,7 @@ exports[`Explorer View matches snapshot 1`] = `
           scheduler/blocking_ms
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1724,7 +1772,7 @@ exports[`Explorer View matches snapshot 1`] = `
           scheduler/dispatches
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1732,7 +1780,7 @@ exports[`Explorer View matches snapshot 1`] = `
           service/failure
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1740,7 +1788,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/dtab/size.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1748,7 +1796,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/handletime_us.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1756,7 +1804,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/pending
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1764,7 +1812,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/request_latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1772,7 +1820,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/requests
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1780,7 +1828,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/success
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1788,7 +1836,7 @@ exports[`Explorer View matches snapshot 1`] = `
           srv/thrift::non-ssl/transit_latency_ms.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1796,7 +1844,7 @@ exports[`Explorer View matches snapshot 1`] = `
           status/200
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1804,7 +1852,7 @@ exports[`Explorer View matches snapshot 1`] = `
           status/2XX
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1812,7 +1860,7 @@ exports[`Explorer View matches snapshot 1`] = `
           time/200.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1820,7 +1868,7 @@ exports[`Explorer View matches snapshot 1`] = `
           time/2XX.count
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1828,7 +1876,7 @@ exports[`Explorer View matches snapshot 1`] = `
           toggles/com.twitter.finagle.core/checksum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1836,7 +1884,7 @@ exports[`Explorer View matches snapshot 1`] = `
           toggles/com.twitter.finagle.http/checksum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1844,7 +1892,7 @@ exports[`Explorer View matches snapshot 1`] = `
           toggles/com.twitter.finagle.netty4/checksum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1852,7 +1900,7 @@ exports[`Explorer View matches snapshot 1`] = `
           toggles/com.twitter.finagle.stats/checksum
         </div>
         <div
-          className="c6"
+          className="c8"
           onClick={[Function]}
           onKeyDown={[Function]}
           tabIndex="0"
@@ -1863,7 +1911,7 @@ exports[`Explorer View matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="c7"
+    className="c9"
   >
     <p>
       Select a metric to display

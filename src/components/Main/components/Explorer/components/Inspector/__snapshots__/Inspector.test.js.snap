@@ -30,13 +30,26 @@ exports[`Inspector matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: 0 0 56px;
-  -ms-flex: 0 0 56px;
-  flex: 0 0 56px;
-  padding: 8px;
+  -webkit-flex: 0 0 112px;
+  -ms-flex: 0 0 112px;
+  flex: 0 0 112px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.c3 {
+.c1 > * {
+  padding: 8px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.c5 {
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
@@ -48,7 +61,7 @@ exports[`Inspector matches snapshot 1`] = `
   word-break: break-all;
 }
 
-.c4 {
+.c6 {
   border-radius: 3px;
   cursor: pointer;
   display: -webkit-box;
@@ -62,19 +75,19 @@ exports[`Inspector matches snapshot 1`] = `
   word-wrap: break-word;
 }
 
-.c4:first-child {
+.c6:first-child {
   margin-top: 8px;
 }
 
-.c4:focus {
+.c6:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c4:hover {
+.c6:hover {
   color: rgb(10,171,42);
 }
 
-.c4:active {
+.c6:active {
   color: rgb(10,171,42);
   -webkit-transform: scale(0.9875);
   -ms-transform: scale(0.9875);
@@ -83,7 +96,7 @@ exports[`Inspector matches snapshot 1`] = `
   transition-duration: 0;
 }
 
-.c4:focus:active:hover {
+.c6:focus:active:hover {
   outline: 0;
 }
 
@@ -237,26 +250,61 @@ exports[`Inspector matches snapshot 1`] = `
   outline: none;
 }
 
+.c3 {
+  color: currentColor;
+}
+
+.c4 {
+  color: currentColor;
+}
+
 <div
   className="c0"
 >
   <div
     className="c1"
   >
-    <input
-      aria-label="Search All Metrics"
-      className="c2"
-      onChange={[Function]}
-      placeholder="Search"
-      type="search"
-      value=""
-    />
+    <div>
+      <input
+        aria-label="Search All Metrics"
+        className="c2"
+        onChange={[Function]}
+        placeholder="Search"
+        type="search"
+        value=""
+      />
+    </div>
+    <div>
+      <label>
+        <input
+          checked={undefined}
+          className="c3"
+          disabled={undefined}
+          name="hideZeroMetric"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Hide all metrics with only zero values
+      </label>
+    </div>
+    <div>
+      <label>
+        <input
+          checked={undefined}
+          className="c4"
+          name="hideStaticMetric"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        Hide all static metrics
+      </label>
+    </div>
   </div>
   <ul
-    className="c3"
+    className="c5"
   >
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -264,7 +312,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/build/revision
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -272,7 +320,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/clientregistry/initialresolution_ms
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -280,7 +328,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/clientregistry/size
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -288,7 +336,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/active_tasks
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -296,7 +344,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/completed_tasks
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -304,7 +352,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/future_pool/pool_size
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -312,7 +360,7 @@ exports[`Inspector matches snapshot 1`] = `
       finagle/timer/deviation_ms.avg
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -320,7 +368,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/closes
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -328,7 +376,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_duration.count
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -336,7 +384,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_received_bytes.count
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -344,7 +392,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_requests.count
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -352,7 +400,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connection_sent_bytes.count
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
@@ -360,7 +408,7 @@ exports[`Inspector matches snapshot 1`] = `
       http/connections
     </div>
     <div
-      className="c4"
+      className="c6"
       onClick={[Function]}
       onKeyDown={[Function]}
       tabIndex="0"
