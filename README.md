@@ -9,7 +9,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Dependency Status](https://david-dm.org/deciphernow/gm-fabric-dashboard.svg)](https://david-dm.org/deciphernow/gm-fabric-dashboard)
 
-Grey Matter Fabric Dashboard is an administrative interface for managing microservices and distributed systems running on the [Grey Matter microservice framework](http://deciphernow.com/grey-matter#fabric). The framework currently includes support for [JVM-based microservices](https://github.com/DecipherNow/gm-fabric-jvm) and provides a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) to provide instrumentation around existing applications. Support for Go and other languages is currently in progress.
+Grey Matter Fabric Dashboard provides fine-grained health monitoring and statistics for distributed systems built with the [Grey Matter Fabric microservice framework](http://deciphernow.com/grey-matter#fabric). The framework includes SDKs for [JVM-based languages](https://github.com/DecipherNow/gm-fabric-jvm) and [Go](https://github.com/DecipherNow/gm-fabric-go), as well as a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) that makes it possible to extend end-to-end visibility to existing services built outside of our framework. Support for Python and other languages is currently in progress.
 
 ## Demo
 
@@ -60,8 +60,10 @@ npm install
 
 If JVM microservice (gm-fabric-jvm) :
 Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
+
 If GO microservice (gm-fabric-go):
 Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
+
 If Service Discovery Service (SDS) microservice (mock-sds):
 Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
 
@@ -107,15 +109,3 @@ If you intend to retrofit this dashboard on an existing GM Fabric JVM microservi
 In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
 
 In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GO`, or `ENVOY`. Currently, the `setPath.sh` script does not modify this template.
-
-#### Note on experimental Envoy support:
-
-GM Fabric Dashboard is currently undergoing work to support the GM Fabric ecosystem. While the dashboard currently does not support Envoy, we have started work on a docker-compose infrastructure to support future efforts in this area.
-
-```bash
-cd docker
-docker-compose up -d
-```
-
-After starting the Envoy infrastructure, you should see a valid JSON file [at this endpoint](http://localhost:8081/stats).
-You should also see data flowing into [Graphite](http://localhost:9080/).
