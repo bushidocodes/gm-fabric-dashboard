@@ -91,7 +91,7 @@ class FabricGrid extends Component {
       reportError(state.message);
       // Reset location state
       history.replace({
-        state: ""
+        state: {}
       });
     }
   }

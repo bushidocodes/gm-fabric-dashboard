@@ -55,7 +55,7 @@ class ServiceView extends Component {
       reportError(state.message);
       // Reset location state
       history.replace({
-        state: ""
+        state: {}
       });
     }
   }
