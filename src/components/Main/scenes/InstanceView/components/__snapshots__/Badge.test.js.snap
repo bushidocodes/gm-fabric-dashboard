@@ -9,6 +9,7 @@ exports[`Badge matches snapshot 1`] = `
   -moz-letter-spacing: 0.06em;
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
+  height: fit-content;
   padding: 2px 4px;
   background-color: rgb(10,171,42);
   border-radius: 3px;
@@ -17,8 +18,7 @@ exports[`Badge matches snapshot 1`] = `
 }
 
 .c0 svg:first-child {
-  margin-left: -6px;
-  margin-right: -4px;
+  margin: -8px -4px -8px -6px;
 }
 
 <span

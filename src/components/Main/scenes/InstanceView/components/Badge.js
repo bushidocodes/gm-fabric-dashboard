@@ -13,6 +13,7 @@ const Badge = styled.span`
   font-weight: 500;
   text-align: center;
   letter-spacing: 0.06em;
+  height: fit-content;
   padding: ${spacingScale(0.25)} ${spacingScale(0.5)};
   background-color: ${BADGE_COLOR.string()};
   border-radius: ${BORDER_RADIUS_BASE};
@@ -20,8 +21,7 @@ const Badge = styled.span`
   margin-right: ${spacingScale(0.5)};
 
   svg:first-child {
-    margin-left: -6px;
-    margin-right: -4px;
+    margin: -8px -4px -8px -6px;
   }
 `;
 

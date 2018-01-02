@@ -25,6 +25,7 @@ import { blurTableRow } from "utils";
 // this extra flex container is necessary to truncate route name in chrome browser
 const FlexParent = styled.div`
   display: flex;
+  align-items: center;
   > div {
     margin-top: 5px;
     white-space: nowrap;

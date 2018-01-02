@@ -145,6 +145,7 @@ exports[`Table component matches snapshot 1`] = `
   -moz-letter-spacing: 0.06em;
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
+  height: fit-content;
   padding: 2px 4px;
   background-color: rgb(10,171,42);
   border-radius: 3px;
@@ -153,8 +154,7 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 .c13 svg:first-child {
-  margin-left: -6px;
-  margin-right: -4px;
+  margin: -8px -4px -8px -6px;
 }
 
 .c12 {
@@ -162,6 +162,10 @@ exports[`Table component matches snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .c12 > div {
