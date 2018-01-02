@@ -84,7 +84,7 @@ This runs the app in the development mode and automatically opens [http://localh
 
 We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), and [ESList](http://eslint.org/docs/user-guide/integrations) plugins in your editor to use the projects style rules.
 
-Additionally, if you are a VSCode user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+Additionally, if you are a VS Code user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 #### `npm test` to enhance front-end unit test coverage
 
@@ -103,8 +103,6 @@ Once built, the production bundle is minified and ready for deployment. The dash
 In order to support deployment of the dashboard to monitor a microservice that doesn't own the root path, this projects injects the string template `__BASE_URL__` in the minified index.html file and JS bundle that can be replaced to set the desired path. For your convenience, a BASH script is provided to simplify this deployment process and provide an undo option.
 
 For example, if you are going to deploy the dashboard to a microservice located at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
-
-If you intend to retrofit this dashboard on an existing GM Fabric JVM microservice, you likely will need to proxy `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads` to the expected path as outlined above.
 
 In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
 
