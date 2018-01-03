@@ -1,109 +1,109 @@
-<div align="center">
-  <h1>Grey Matter Fabric Dashboard</h1>
-</div>
+<h1 align="center">
+  <br>
+  <img src="./docs/assets/gm-fabric.png" alt="Grey Matter Fabric Logo" width="50">
+  <br>
+  Grey Matter Fabric Dashboard
+  <br>
+</h1>
 
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![tested on CircleCI](https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master.svg?style=shield)](https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/maintainability)](https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/test_coverage)](https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/test_coverage)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![Dependency Status](https://david-dm.org/deciphernow/gm-fabric-dashboard.svg)](https://david-dm.org/deciphernow/gm-fabric-dashboard)
+<h4 align="center">An administrative UI for distributed systems built with the <a href="http://deciphernow.com/grey-matter#fabric" target="_blank">Grey Matter Fabric</a> microservice framework.</h4>
 
-Grey Matter Fabric Dashboard provides fine-grained health monitoring and statistics for distributed systems built with the [Grey Matter Fabric microservice framework](http://deciphernow.com/grey-matter#fabric). The framework includes SDKs for [JVM-based languages](https://github.com/DecipherNow/gm-fabric-jvm) and [Go](https://github.com/DecipherNow/gm-fabric-go), as well as a [pass-through agent](https://github.com/DecipherNow/gm-fabric-jvmagent) that makes it possible to extend end-to-end visibility to existing services built outside of our framework. Support for Python and other languages is currently in progress.
+<p align="center">
+  <a href="https://github.com/prettier/prettier" target="_blank">
+    <img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"
+         alt="styled with prettier">
+  </a>
+  <a href="https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master" target="_blank"><img src="https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master.svg?style=shield" alt="tested on CircleCI"></a>
+  <a href="https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/maintainability" target="_blank"><img src="https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/maintainability" alt="technical debt assessed by CodeClimate"></a>
+  <a href="https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/test_coverage" target="_blank"><img src="https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/test_coverage" alt="test coverage assessed by CodeClimate"></a>
+  <a href="https://opensource.org/licenses/mit-license.php" target="_blank"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103" alt="licensed under MIT"></a>
+  <a href="https://david-dm.org/deciphernow/gm-fabric-dashboard" target="_blank"><img src="https://david-dm.org/deciphernow/gm-fabric-dashboard.svg" alt="dependency vulnerabilities tracked by DavidDM"></a>
+</p>
+
+<p align="center">
+  <a href="#demo">Demo</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#further-resources">Further Resources</a> •
+  <a href="#related-projects">Related Projects</a> •
+  <a href="#license">License</a>
+</p>
 
 ## Demo
 
-![Animated GIF showing product in action](https://media.giphy.com/media/3o6fJ7w7GS3PyUKq2c/giphy.gif)
+<img alt="Animated GIF showing product in action" src="https://media.giphy.com/media/3o6fJ7w7GS3PyUKq2c/giphy.gif" >
 
-## Prerequisites
+## Quick Start
 
-### 1. Install Docker
+#### 1. If you do not already have Node.js 8.x LTS installed, <a href="https://nodejs.org/en/download/" target="_blank">download and install it</a>
 
-Download and install the binary for [Mac](https://store.docker.com/editions/community/docker-ce-desktop-mac), [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows), or [Linux](https://store.docker.com/search?architecture=amd64&offering=community&operating_system=linux&platform=server&q=&type=edition)
+You can check your currently installed Node.js runtime by running the command `node -v`
 
-### 2. Use docker to start an example Grey Matter Microservice
+#### 2. Install and start the GM Fabric Dashboard with a mock of the backend API
 
-### For a JVM-based microservice:
+From the command-line interface, navigate to the directory where you would like to install the dashboard and run the following commands to install the app and start a mock of the server-side API.
 
-Run `docker run -it -p 1337:9990 spmcbride1201/gm-fab-jvm`
+In Mac or Linux
 
-After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/admin/metrics.json). If you see JSON data, you are ready to proceed.
-
-### For a Go-based microservice:
-
-Run `docker run -it -p 1337:10001 drfogout/metricssimple`
-
-After starting your microservice, you should see a valid JSON file [at this endpoint](http://localhost:1337/metrics). If you see JSON data, you are ready to proceed.#
-
-### For a Mock Service Discovery Service (SDS) microservices:
-
-After you install the project (steps in the section Installation), open a new terminal window and in the root of the project run `npm run mock-sds`
-
-### 3. Install Node.js and the npm package manager via a version management tool
-
-Because new major versions of the Node.js runtime are released every six months, half of which are not tied to the [Node.js Long Term Support (LTS) cycle](https://github.com/nodejs/LTS), it is advisable to use a version manager to be able to move between Node.js versions via a version management tool.
-
-If you are using Linux, Mac OS, or the new Windows System for Linux, we suggest using [nvm](https://github.com/creationix/nvm)
-If you are using the standard Windows CMD.exe/PowerShell environment, we suggest using [nvm-windows](https://github.com/coreybutler/nvm-windows)
-
-Refer to the README for these tools for detailed instructions on installing Node and NPM.
-
-## Installation
-
-```sh
+```
 git clone https://github.com/DecipherNow/gm-fabric-dashboard.git
 cd gm-fabric-dashboard
 npm install
+sed -i .old -E 's/__FABRIC_SERVER__/http:\/\/localhost:1337/g' public/index.html
+npm run mock-sds
 ```
 
-## Configuration
+In Windows (PowerShell)
 
-If JVM microservice (gm-fabric-jvm) :
-Edit `./public/index.html` by replacing `__RUNTIME__` with `JVM`
+```
+git clone https://github.com/DecipherNow/gm-fabric-dashboard.git
+cd gm-fabric-dashboard
+npm install
+get-content public/index.html | %{$_ -replace "__FABRIC_SERVER__","http://localhost:1337"}
+npm run mock-sds
+```
 
-If GO microservice (gm-fabric-go):
-Edit `./public/index.html` by replacing `__RUNTIME__` with `GO`
+At this point, you've installed the Grey Matter Fabric Dashboard and started a mock of the server-side API, but you have not yet started the dashboard. You should see the following prompt in your terminal:
 
-If Service Discovery Service (SDS) microservice (mock-sds):
-Edit `./public/index.html` by commenting out `<meta property="fabricServer" content="__FABRIC_SERVER__">` and uncommenting `<meta property="fabricServer" content="http://localhost:1337">`
+```
+> gm-fabric-dashboard@1.0.3 mock-sds /Users/spmcbride1201/projects/test/gm-fabric-dashboard
+> node json-mock/discovery-service/sds.js
 
-## Use
+JSON Server is running on port 1337 and mocking the Service Discovery Service
+```
 
-### General Users trying the Dashboard
+To start the dashboard, open a new tab in your terminal and navigate to the `gm-fabric-dashboard directory and run the following command:
 
-1. Ensure a microservice is running on your system serving metrics.json from [http://localhost:9990/admin/metrics.json](http://localhost:9990/admin/metrics.json)
-2. From the project directory `./gm-fabric-dashboard`, run `npm start` and [http://localhost:3000](http://localhost:3000) will open automatically in your browser
-3. Report bugs or desired enhancements on [the project's issues page](https://github.com/DecipherNow/gm-fabric-dashboard/issues)
-4. When finished, stop the local server serving your dashboard (and perhaps the local server serving your microservice) by pressing `control+c` on the respective terminals running these servers
+```bash
+npm start
+```
 
-### Developers building, testing, and integrating the Dashboard
+This runs the app in the development mode with the following message and automatically opens [http://localhost:3000](http://localhost:3000) in your browser.
 
-#### `npm start` to develop features and crush bugs
+```
+Compiled successfully!
+You can now view gm-fabric-dashboard in the browser.
 
-This runs the app in the development mode and automatically opens [http://localhost:3000](http://localhost:3000) in your browser. You can open the source code in your editor of choice, and the page will reload if you make edits.
+  Local:            http://localhost:3000/
+  On Your Network:  http://10.1.10.87:3000/
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+```
 
-We suggest use of [Prettier](https://github.com/prettier/prettier#editor-integration), [EditorConfig](http://editorconfig.org/#download), and [ESList](http://eslint.org/docs/user-guide/integrations) plugins in your editor to use the projects style rules.
+You can open the source code in your editor of choice, and the page will reload if you make edits.
 
-Additionally, if you are a VS Code user, this project supports in-editor debugging via the [Debugger for Chrome extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) and has a custom dictionary for the [Code Spellchecker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+## Further Resources
 
-#### `npm test` to enhance front-end unit test coverage
+If you are a developer interested in contributing to this project, please refer to our [Contribution Guide](./CONTRIBUTING.md).
 
-This launches the Jest test runner in interactive watch mode.<br>
-See the Create React App section about [running tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests) for more information.
+If you are a general user interested in exploring the features of this software, please refer to our [User Guide](./docs/overview.md) to learn more about the features of this software.
 
-Note: If you are running on Mac OS, tests might fail with the error `Error: Error watching file for changes: EMFILE`. If you see this, install watchman via brew with the command `brew install watchman`. Read more about this workaround [on this Jest issue](https://github.com/facebook/jest/issues/1767)
+If you are a systems administrator and wish to install this software with live metrics and microservices, please refer to our externally-hosted [Grey Matter Fabric documentation site](http://www.deciphernow.com/)
 
-#### `npm run build` to prepare the Dashboard for deployment to the core `gm-fabric-jvm` project
+## Related Projects
 
-This builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Grey Matter Fabric JVM SDK](https://github.com/DecipherNow/gm-fabric-jvm)
+* [Grey Matter Fabric Passthrough Agent](https://github.com/DecipherNow/gm-fabric-jvmagent)
 
-Once built, the production bundle is minified and ready for deployment. The dashboard assumes that it is monitoring a microservice at the root path with Twitter Server metrics accessible at `/admin/metrics.json` and `/admin/threads`. The dashboard itself is served from `/gmadmin/`.
+## License
 
-In order to support deployment of the dashboard to monitor a microservice that doesn't own the root path, this projects injects the string template `__BASE_URL__` in the minified index.html file and JS bundle that can be replaced to set the desired path. For your convenience, a BASH script is provided to simplify this deployment process and provide an undo option.
-
-For example, if you are going to deploy the dashboard to a microservice located at `http://www.deciphernow.com/my/awesome/microservice/`, your dashboard will be located at the path `/my/awesome/microservice/gmadmin/` and poll endpoints at `/my/awesome/microservice/admin/metrics.json` and `/my/awesome/microservice/admin/threads`. To configure the dashboard for this path,`cd` into the ./build directory and execute `sudo ./setPath.sh /my/awesome/microservice/gmadmin/`. Please note that the path should have both an opening and a trailing slash. Additionally, the path must terminate in `/gmadmin/` to allow the dashboard to properly determine the URLs of the scrape targets. If you do not have `/gmadmin/` at the end of the string you pass into `setPath.sh`, the deployment script will fail and exit. After running this script successfully, your application is ready to be deployed.
-
-In case of error or mis-configuration, your original `index.html` has been backed up to `index.html.old`. To revert to the backup, run `sudo ./setPath.sh undo` and rerun with the correct argument.
-
-In addition to `__BASE_URL__`, the HEAD of index.html also has an meta attribute with a `__BASE_RUNTIME__` template string. This signifies to the dashboard whether the dashboard intends to scrape a Finagle-style `metrics.json` or an alternate Decipher-designed metrics endpoint provided by a Go microservice. The permissable values are `JVM`, `GO`, or `ENVOY`. Currently, the `setPath.sh` script does not modify this template.
+MIT
