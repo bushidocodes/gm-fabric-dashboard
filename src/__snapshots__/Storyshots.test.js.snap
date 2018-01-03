@@ -955,7 +955,6 @@ exports[`Storyshots App Header Default App Header 1`] = `
 
 .c17 {
   background-color: rgb(45,45,45);
-  border-top: 1px solid transparent;
   font-weight: 600;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
@@ -979,7 +978,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: -2px;
+  top: 0;
   z-index: 100;
 }
 
@@ -1854,7 +1853,6 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
 
 .c1 {
   background-color: rgb(45,45,45);
-  border-top: 1px solid transparent;
   font-weight: 600;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
@@ -1878,7 +1876,7 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
   pointer-events: none;
   position: absolute;
   right: 0;
-  top: -2px;
+  top: 0;
   z-index: 100;
 }
 

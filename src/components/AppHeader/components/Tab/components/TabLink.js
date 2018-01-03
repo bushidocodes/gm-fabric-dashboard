@@ -19,7 +19,6 @@ const TabLink = styled(NavLink).attrs({
   exact: true
 })`
   background-color: ${COLOR_TAB_BACKGROUND_BASE.string()};
-  border-top: 1px solid transparent;
   font-weight: 600;
   flex: 1 1 ${TAB_WIDTH_BASE};
   margin: 1px 1px 0 0;
@@ -27,6 +26,7 @@ const TabLink = styled(NavLink).attrs({
   padding: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(1)};
   position: relative;
   transition: all 0.15s ease;
+
   &::after {
     border-radius: 1px;
     box-shadow: 0 0 1em 1px ${COLOR_TAB_HIGHLIGHT.string()};
@@ -38,7 +38,7 @@ const TabLink = styled(NavLink).attrs({
     pointer-events: none;
     position: absolute;
     right: 0;
-    top: -2px;
+    top: 0;
     z-index: 100;
   }
 
