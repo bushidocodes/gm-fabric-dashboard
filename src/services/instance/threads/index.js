@@ -16,10 +16,11 @@ function fetchAndStoreInstanceThreadsEffect(endpoint) {
 Effect("fetchAndStoreInstanceThreads", fetchAndStoreInstanceThreadsEffect);
 
 /**
- * Action that handles fetch thread errors, notifying the user via a popup and the console
+ * Action that handles fetch thread errors, notifying the user via a popup and the console and setting state
  * @param {Object} err
  */
 function fetchThreadsFailureEffect(err) {
   reportError("Fetching Threads Data failed.", false, err);
+  Actions.setThreadsError(err);
 }
 Effect("fetchThreadsFailure", fetchThreadsFailureEffect);

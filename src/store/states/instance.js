@@ -10,7 +10,8 @@ const instance = State({
     instanceMetricsPollingInterval: 5000,
     isPollingInstanceMetrics: false,
     metricsPollingFailures: 0,
-    metrics: {}
+    metrics: {},
+    threadsError: {}
   },
   setInstanceMetricsPollingInterval(state, payload) {
     return { ...state, instanceMetricsPollingInterval: payload };
@@ -20,6 +21,9 @@ const instance = State({
   },
   setMetricsPollingFailures(state, payload) {
     return { ...state, metricsPollingFailures: payload };
+  },
+  setThreadsError(state, payload) {
+    return { ...state, threadsError: payload };
   },
   appendToMetrics(state, payload) {
     // Check the size of the state
@@ -53,13 +57,13 @@ export default instance;
 /**
  * Slices off the oldest timeseries data for all the metrics in a metrics object.
  * This is used to keep the Redux store of metrics from getting too large
- * 
+ *
  * Note - A metrics object is a complex object that groups together timeseries data
  * for a bunch of different metrics. The top level object is keyed by the name
  * of each metric. The value of each of those keys is another object that contains
  * keys of UNIX timestamps and values of the value of the metric at that timestamp.
- * 
- * @param {any} [source={}] 
+ *
+ * @param {any} [source={}]
  * @returns Object containing timeseries with all but the oldest timestamp
  */
 export function _sliceMetrics(source = {}) {
