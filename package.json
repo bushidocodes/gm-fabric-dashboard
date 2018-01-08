@@ -109,6 +109,7 @@
     "jest-junit": "^3.4.0",
     "jest-styled-components": "^4.9.0",
     "json-server": "^0.12.1",
+    "junit-merge": "^1.2.3",
     "lint-staged": "^6.0.0",
     "lodash-webpack-plugin": "^0.11.4",
     "moxios": "^0.4.0",
@@ -130,6 +131,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "junit-merge": "junit-merge",
     "build-docker":
       "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "docs":
@@ -155,7 +157,6 @@
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
-    "output": "./junit/junit.xml",
     "classNameTemplate": "{classname}",
     "titleTemplate": "{title}",
     "ancestorSeparator": " › ",
