@@ -40,56 +40,20 @@ You can check your currently installed Node.js runtime by running the command `n
 
 #### 2. Install and start the GM Fabric Dashboard with a mock of the backend API
 
-From the command-line interface, navigate to the directory where you would like to install the dashboard and run the following commands to install the app and start a mock of the server-side API.
-
-In Mac or Linux
+From the command-line interface, navigate to the directory where you would like to install the dashboard and run the following commands to install the app and start the dashboard in development mode running against a mock of the server-side API running locally on your machine.
 
 ```
 git clone https://github.com/DecipherNow/gm-fabric-dashboard.git
 cd gm-fabric-dashboard
 npm install
-sed -i .old -E 's/__FABRIC_SERVER__/http:\/\/localhost:1337/g' public/index.html
-npm run mock-sds
-```
-
-In Windows (PowerShell)
-
-```
-git clone https://github.com/DecipherNow/gm-fabric-dashboard.git
-cd gm-fabric-dashboard
-npm install
-get-content public/index.html | %{$_ -replace "__FABRIC_SERVER__","http://localhost:1337"}
-npm run mock-sds
-```
-
-At this point, you've installed the Grey Matter Fabric Dashboard and started a mock of the server-side API, but you have not yet started the dashboard. You should see the following prompt in your terminal:
-
-```
-> gm-fabric-dashboard@1.0.3 mock-sds /Users/spmcbride1201/projects/test/gm-fabric-dashboard
-> node json-mock/discovery-service/sds.js
-
-JSON Server is running on port 1337 and mocking the Service Discovery Service
-```
-
-To start the dashboard, open a new tab in your terminal and navigate to the `gm-fabric-dashboard directory and run the following command:
-
-```bash
 npm start
 ```
 
-This runs the app in the development mode with the following message and automatically opens [http://localhost:3000](http://localhost:3000) in your browser.
-
-```
-Compiled successfully!
-You can now view gm-fabric-dashboard in the browser.
-
-  Local:            http://localhost:3000/
-  On Your Network:  http://10.1.10.87:3000/
-Note that the development build is not optimized.
-To create a production build, use npm run build.
-```
+Once the project has compiled, the dashboard will lauch at [http://localhost:3000](http://localhost:3000) and open in your browser.
 
 You can open the source code in your editor of choice, and the page will reload if you make edits.
+
+Note: Git will notice changes to the `fabricServer` metatag in your `index.html` file. These changes are caused by npm scripts and can be safely ignored. If staged for a commit, git hooks will check to make sure that this value is pristine in the commit and then immediately revert the value back to `localhost:1337`. Additionally, you may notice the generation of an `.isRunning` placeholder file in your project root. This file is used by the `npm scripts` and is in the `.gitignore` file.
 
 ## Further Resources
 
