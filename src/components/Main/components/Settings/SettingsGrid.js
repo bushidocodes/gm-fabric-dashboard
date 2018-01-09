@@ -2,7 +2,7 @@ import filesize from "filesize";
 import { Actions } from "jumpstate";
 import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import PollingSettings from "./components/PollingSettings";
@@ -54,7 +54,7 @@ class SettingsGrid extends Component {
       />
     );
     return (
-      <div>
+      <Fragment>
         <ConfirmationModal
           isOpen={this.state.isClearCacheModelOpen}
           onCancel={() => this.setState({ isClearCacheModelOpen: false })}
@@ -101,7 +101,7 @@ class SettingsGrid extends Component {
             />
           </LayoutSection>
         </ErrorBoundary>
-      </div>
+      </Fragment>
     );
   }
 }

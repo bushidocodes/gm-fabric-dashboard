@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React from "react";
+import React, { Fragment } from "react";
 
 import DygraphContainer from "./components/DygraphWrapper";
 import LineChartDisplay from "./components/LineChartDisplay";
@@ -68,14 +68,14 @@ export default function GMLineChart({
             </h1>
             {expectedAttributes &&
               expectedAttributes.length > 0 && (
-                <div>
+                <Fragment>
                   <p>Could not find the following metrics:</p>
                   <ul>
                     {expectedAttributes.map(attribute => (
                       <li key={attribute}>{attribute}</li>
                     ))}
                   </ul>
-                </div>
+                </Fragment>
               )}
           </LineChartEmpty>
         ) : (

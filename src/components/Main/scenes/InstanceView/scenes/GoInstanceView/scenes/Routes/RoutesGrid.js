@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import Table from "components/Main/components/Table";
@@ -104,21 +104,19 @@ class RoutesGrid extends Component {
   render() {
     if (this.props.routes && this.props.routes.length > 0) {
       return (
-        <div>
-          {
-            <TableToolbar
-              searchInputProps={{
-                filterString: this.state.filterString,
-                setFilterString: this.setFilterString,
-                searchPlaceholder: "Search Routes"
-              }}
-              sortByProps={{
-                sortByOptions: RoutesGrid.sortByOptions,
-                sortByAttribute: this.state.keyToSortBy,
-                setSortByAttribute: this.setKeyToSortBy
-              }}
-            />
-          }
+        <Fragment>
+          <TableToolbar
+            searchInputProps={{
+              filterString: this.state.filterString,
+              setFilterString: this.setFilterString,
+              searchPlaceholder: "Search Routes"
+            }}
+            sortByProps={{
+              sortByOptions: RoutesGrid.sortByOptions,
+              sortByAttribute: this.state.keyToSortBy,
+              setSortByAttribute: this.setKeyToSortBy
+            }}
+          />
           <ErrorBoundary>
             <Table
               type={"Route"}
@@ -133,7 +131,7 @@ class RoutesGrid extends Component {
               )}
             />
           </ErrorBoundary>
-        </div>
+        </Fragment>
       );
     } else {
       return <NotFoundError errorMsg={"No Routes Found"} />;

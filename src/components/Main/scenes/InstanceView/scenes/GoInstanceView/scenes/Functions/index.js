@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import Table from "components/Main/components/Table";
@@ -106,21 +106,19 @@ class FunctionsGrid extends Component {
   render() {
     if (this.props.funcs && this.props.funcs.length > 0) {
       return (
-        <div>
-          {
-            <TableToolbar
-              searchInputProps={{
-                filterString: this.state.filterString,
-                setFilterString: this.setFilterString,
-                searchPlaceholder: "Search Functions"
-              }}
-              sortByProps={{
-                sortByOptions: FunctionsGrid.sortByOptions,
-                sortByAttribute: this.state.keyToSortBy,
-                setSortByAttribute: this.setKeyToSortBy
-              }}
-            />
-          }
+        <Fragment>
+          <TableToolbar
+            searchInputProps={{
+              filterString: this.state.filterString,
+              setFilterString: this.setFilterString,
+              searchPlaceholder: "Search Functions"
+            }}
+            sortByProps={{
+              sortByOptions: FunctionsGrid.sortByOptions,
+              sortByAttribute: this.state.keyToSortBy,
+              setSortByAttribute: this.setKeyToSortBy
+            }}
+          />
           <ErrorBoundary>
             <Table
               type={"Function"}
@@ -135,7 +133,7 @@ class FunctionsGrid extends Component {
               )}
             />
           </ErrorBoundary>
-        </div>
+        </Fragment>
       );
     } else {
       return <NotFoundError errorMsg={"No Functions Found"} />;

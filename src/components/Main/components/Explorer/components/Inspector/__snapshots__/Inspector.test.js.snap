@@ -264,41 +264,35 @@ exports[`Inspector matches snapshot 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <input
+      aria-label="Search All Metrics"
+      className="c2"
+      onChange={[Function]}
+      placeholder="Search"
+      type="search"
+      value=""
+    />
+    <label>
       <input
-        aria-label="Search All Metrics"
-        className="c2"
+        checked={undefined}
+        className="c3"
+        disabled={undefined}
+        name="hideZeroMetric"
         onChange={[Function]}
-        placeholder="Search"
-        type="search"
-        value=""
+        type="checkbox"
       />
-    </div>
-    <div>
-      <label>
-        <input
-          checked={undefined}
-          className="c3"
-          disabled={undefined}
-          name="hideZeroMetric"
-          onChange={[Function]}
-          type="checkbox"
-        />
-        Hide all metrics with only zero values
-      </label>
-    </div>
-    <div>
-      <label>
-        <input
-          checked={undefined}
-          className="c4"
-          name="hideStaticMetric"
-          onChange={[Function]}
-          type="checkbox"
-        />
-        Hide all static metrics
-      </label>
-    </div>
+      Hide all metrics with only zero values
+    </label>
+    <label>
+      <input
+        checked={undefined}
+        className="c4"
+        name="hideStaticMetric"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Hide all static metrics
+    </label>
   </div>
   <ul
     className="c5"

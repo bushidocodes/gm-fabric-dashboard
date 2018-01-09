@@ -17,6 +17,7 @@ exports[`Toolbar matches snapshot 1`] = `
   height: 36px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: 1300px;
   padding: 2px 16px;
 }

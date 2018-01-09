@@ -569,14 +569,12 @@ exports[`Storyshots App Header Banner 1`] = `
   >
     Security Service: 00ab2a
   </h1>
-  <div>
-    <a
-      className="c2"
-      href="/settings"
-    >
-      Extra, Extra, Read all about it
-    </a>
-  </div>
+  <a
+    className="c2"
+    href="/settings"
+  >
+    Extra, Extra, Read all about it
+  </a>
 </div>
 `;
 
@@ -1325,14 +1323,12 @@ exports[`Storyshots App Header Default App Header 1`] = `
     >
       Security Service: 00ab2a
     </h1>
-    <div>
-      <a
-        className="c15"
-        href="/settings"
-      >
-        Extra, Extra, Read all about it
-      </a>
-    </div>
+    <a
+      className="c15"
+      href="/settings"
+    >
+      Extra, Extra, Read all about it
+    </a>
   </div>
   <div
     className="c16"
@@ -18577,6 +18573,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   height: 36px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: 1300px;
   padding: 2px 16px;
 }

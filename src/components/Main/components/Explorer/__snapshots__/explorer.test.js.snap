@@ -348,41 +348,35 @@ exports[`Explorer View matches snapshot 1`] = `
       <div
         className="c3"
       >
-        <div>
+        <input
+          aria-label="Search All Metrics"
+          className="c4"
+          onChange={[Function]}
+          placeholder="Search"
+          type="search"
+          value=""
+        />
+        <label>
           <input
-            aria-label="Search All Metrics"
-            className="c4"
+            checked={false}
+            className="c5"
+            disabled={false}
+            name="hideZeroMetric"
             onChange={[Function]}
-            placeholder="Search"
-            type="search"
-            value=""
+            type="checkbox"
           />
-        </div>
-        <div>
-          <label>
-            <input
-              checked={false}
-              className="c5"
-              disabled={false}
-              name="hideZeroMetric"
-              onChange={[Function]}
-              type="checkbox"
-            />
-            Hide all metrics with only zero values
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              checked={false}
-              className="c6"
-              name="hideStaticMetric"
-              onChange={[Function]}
-              type="checkbox"
-            />
-            Hide all static metrics
-          </label>
-        </div>
+          Hide all metrics with only zero values
+        </label>
+        <label>
+          <input
+            checked={false}
+            className="c6"
+            name="hideStaticMetric"
+            onChange={[Function]}
+            type="checkbox"
+          />
+          Hide all static metrics
+        </label>
       </div>
       <ul
         className="c7"

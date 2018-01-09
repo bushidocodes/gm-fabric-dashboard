@@ -18,6 +18,7 @@ const Toolbar = styled.div`
   height: ${spacingScale(4.5)};
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: ${CONTENT_MAX_WIDTH};
   padding: ${spacingScale(0.25)} ${spacingScale(2)};
 

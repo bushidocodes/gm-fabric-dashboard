@@ -1,26 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RoutesGrid View matches snapshot 1`] = `
-.c22 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c21 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c21:not(:root) {
-  overflow: visible;
-}
-
-.c2 {
+Array [
+  .c2 {
   background-image: url(magnifier.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -166,6 +148,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
   height: 36px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: 1300px;
   padding: 2px 16px;
 }
@@ -219,312 +202,6 @@ exports[`RoutesGrid View matches snapshot 1`] = `
   justify-content: center;
 }
 
-.c17 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  min-height: 36px;
-  width: 100%;
-  cursor: pointer;
-}
-
-.c17:hover {
-  background-color: hsl(0,0%,98%);
-}
-
-.c17:focus {
-  outline: -webkit-focus-ring-color auto 5px;
-}
-
-.c17:focus:active:hover {
-  outline: 0;
-}
-
-.c17 > * {
-  padding-right: 16px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c17 > *:first-child {
-  padding-left: 16px;
-}
-
-.c26 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-}
-
-.c27 {
-  color: hsl(0,100%,42.5%);
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-}
-
-.c29 {
-  color: rgb(10,171,42);
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-}
-
-.c18 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  -webkit-flex: 1 1 20%;
-  -ms-flex: 1 1 20%;
-  flex: 1 1 20%;
-  position: relative;
-}
-
-.c25 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.c25 svg {
-  height: 24px;
-}
-
-.c23 {
-  background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
-  bottom: 0;
-  height: 3px;
-  left: 0;
-  position: absolute;
-  right: 16px;
-}
-
-.c24 {
-  background-color: currentColor;
-  border-radius: inherit;
-  bottom: 0;
-  color: rgb(228,0,0);
-  left: 0;
-  min-width: 2px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.c28 {
-  background-color: currentColor;
-  border-radius: inherit;
-  bottom: 0;
-  color: currentColor;
-  left: 0;
-  min-width: 2px;
-  position: absolute;
-  top: 0;
-  width: 0.005641748942172073%;
-}
-
-.c20 {
-  font-size: 11px;
-  font-weight: 500;
-  text-align: center;
-  -webkit-letter-spacing: 0.06em;
-  -moz-letter-spacing: 0.06em;
-  -ms-letter-spacing: 0.06em;
-  letter-spacing: 0.06em;
-  height: fit-content;
-  padding: 2px 4px;
-  background-color: rgb(10,171,42);
-  border-radius: 3px;
-  color: rgb(255,255,255);
-  margin-right: 4px;
-}
-
-.c20 svg:first-child {
-  margin: -8px -4px -8px -6px;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c19 > div {
-  margin-top: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
-}
-
-.c7 {
-  display: block;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
-  width: 100%;
-}
-
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  font-weight: 500;
-  overflow: visible;
-  width: 100%;
-}
-
-.c16 {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.c9 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  padding-right: 16px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.c9:first-child {
-  padding-left: 16px;
-}
-
-.c13 {
-  background-color: rgba(0,0,0,0.8);
-  border-radius: 6px;
-  color: rgb(255,255,255);
-  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
-  opacity: 0;
-  padding: 10px;
-  position: absolute;
-  text-align: left;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-  visibility: hidden;
-  white-space: normal;
-  width: 160px;
-  z-index: 1070;
-  right: 120%;
-  top: -5px;
-}
-
-.c12 {
-  border-bottom: 1px solid rgb(217,217,217);
-  cursor: help;
-  display: inline-block;
-  position: relative;
-}
-
-.c12:hover > :last-child {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1070;
-}
-
-.c10 {
-  -webkit-flex: 1 1 12%;
-  -ms-flex: 1 1 12%;
-  flex: 1 1 12%;
-  text-align: left;
-  padding-right: 16px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: visible;
-}
-
-.c10:first-child {
-  padding-left: 16px;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c15 {
-  font-size: 11px;
-  color: rgb(77,77,77);
-}
-
-.c11 {
-  padding: 8px;
-}
-
 @media all and (min-width:1300px) {
   .c0:after {
     background-color: inherit;
@@ -544,8 +221,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
   }
 }
 
-<div>
-  <div
+<div
     className="c0"
   >
     <div
@@ -678,15 +354,340 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    className="c7"
+  </div>,
+  .c15 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c14 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c14:not(:root) {
+  overflow: visible;
+}
+
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c10:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c10:focus:active:hover {
+  outline: 0;
+}
+
+.c10 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 > *:first-child {
+  padding-left: 16px;
+}
+
+.c19 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c20 {
+  color: hsl(0,100%,42.5%);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c22 {
+  color: rgb(10,171,42);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c11 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c18 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c18 svg {
+  height: 24px;
+}
+
+.c16 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c17 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: rgb(228,0,0);
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c21 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 0.005641748942172073%;
+}
+
+.c13 {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  -webkit-letter-spacing: 0.06em;
+  -moz-letter-spacing: 0.06em;
+  -ms-letter-spacing: 0.06em;
+  letter-spacing: 0.06em;
+  height: fit-content;
+  padding: 2px 4px;
+  background-color: rgb(10,171,42);
+  border-radius: 3px;
+  color: rgb(255,255,255);
+  margin-right: 4px;
+}
+
+.c13 svg:first-child {
+  margin: -8px -4px -8px -6px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 500;
+  overflow: visible;
+  width: 100%;
+}
+
+.c9 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+.c6 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c5 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c5:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 11px;
+  color: rgb(77,77,77);
+}
+
+.c4 {
+  padding: 8px;
+}
+
+<div
+    className="c0"
   >
     <div
-      className="c8"
+      className="c1"
     >
       <div
-        className="c9"
+        className="c2"
         style={
           Object {
             "flex": "1 1 20%",
@@ -696,13 +697,13 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         Route
       </div>
       <div
-        className="c9"
+        className="c2"
         style={Object {}}
       >
         Requests/sec
       </div>
       <div
-        className="c9"
+        className="c2"
         style={
           Object {
             "textAlign": "right",
@@ -712,7 +713,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         Requests
       </div>
       <div
-        className="c9"
+        className="c2"
         style={
           Object {
             "textAlign": "right",
@@ -722,32 +723,32 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         Error %
       </div>
       <div
-        className="c10"
+        className="c3"
       >
         <div
-          className="c11"
+          className="c4"
         >
           <div
-            className="c12"
+            className="c5"
           >
             Latency
             <div
-              className="c13"
+              className="c6"
             >
               Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
             </div>
           </div>
         </div>
         <div
-          className="c14"
+          className="c7"
         >
           <div
-            className="c15"
+            className="c8"
           >
             50%
           </div>
           <div
-            className="c15"
+            className="c8"
           >
             99%
           </div>
@@ -755,27 +756,27 @@ exports[`RoutesGrid View matches snapshot 1`] = `
       </div>
     </div>
     <ol
-      className="c16"
+      className="c9"
     >
       <li
-        className="c17"
+        className="c10"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"
         tabIndex={0}
       >
         <div
-          className="c18"
+          className="c11"
         >
           <div
-            className="c19"
+            className="c12"
           >
             <span
-              className="c20"
+              className="c13"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                className="c21"
+                className="c14"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -783,7 +784,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <g
-                  className="c22"
+                  className="c15"
                   fill="currentColor"
                   title=""
                 >
@@ -809,16 +810,16 @@ exports[`RoutesGrid View matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="c23"
+            className="c16"
           >
             <div
-              className="c24"
+              className="c17"
               width={100}
             />
           </div>
         </div>
         <div
-          className="c25"
+          className="c18"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -994,7 +995,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="c26"
+          className="c19"
           style={
             Object {
               "textAlign": "right",
@@ -1004,7 +1005,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           17,725
         </div>
         <div
-          className="c27"
+          className="c20"
           style={
             Object {
               "textAlign": "right",
@@ -1015,7 +1016,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           %
         </div>
         <div
-          className="c26"
+          className="c19"
           style={
             Object {
               "display": "flex",
@@ -1035,24 +1036,24 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
       </li>
       <li
-        className="c17"
+        className="c10"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="link"
         tabIndex={0}
       >
         <div
-          className="c18"
+          className="c11"
         >
           <div
-            className="c19"
+            className="c12"
           >
             <span
-              className="c20"
+              className="c13"
             >
               <svg
                 aria-labelledby="ariaLabelledby"
-                className="c21"
+                className="c14"
                 focusable="false"
                 version="1.1"
                 viewBox="0 0 24 24"
@@ -1060,7 +1061,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <g
-                  className="c22"
+                  className="c15"
                   fill="currentColor"
                   title=""
                 >
@@ -1086,16 +1087,16 @@ exports[`RoutesGrid View matches snapshot 1`] = `
             </div>
           </div>
           <div
-            className="c23"
+            className="c16"
           >
             <div
-              className="c28"
+              className="c21"
               width={0.005641748942172073}
             />
           </div>
         </div>
         <div
-          className="c25"
+          className="c18"
         >
           <svg
             preserveAspectRatio="xMaxYMin"
@@ -1271,7 +1272,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           </svg>
         </div>
         <div
-          className="c26"
+          className="c19"
           style={
             Object {
               "textAlign": "right",
@@ -1281,7 +1282,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           1
         </div>
         <div
-          className="c29"
+          className="c22"
           style={
             Object {
               "textAlign": "right",
@@ -1292,7 +1293,7 @@ exports[`RoutesGrid View matches snapshot 1`] = `
           %
         </div>
         <div
-          className="c26"
+          className="c19"
           style={
             Object {
               "display": "flex",
@@ -1312,6 +1313,6 @@ exports[`RoutesGrid View matches snapshot 1`] = `
         </div>
       </li>
     </ol>
-  </div>
-</div>
+  </div>,
+]
 `;

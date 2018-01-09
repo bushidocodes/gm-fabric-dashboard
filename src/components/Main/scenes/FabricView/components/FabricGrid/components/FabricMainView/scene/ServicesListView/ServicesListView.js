@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { PropTypes } from "prop-types";
-import React from "react";
+import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
 
 import ServicesList from "./components/ServicesList";
@@ -47,7 +47,7 @@ function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
     });
 
     return (
-      <div>
+      <Fragment>
         {verifiedHeaders.map((header, i) => (
           <SectionContainer key={header}>
             <SectionHeader>
@@ -74,29 +74,27 @@ function ListView({ ascending, groupByAttribute, sortByAttribute, services }) {
             </SectionContent>
           </SectionContainer>
         ))}
-      </div>
+      </Fragment>
     );
   } else {
     return (
-      <div>
-        <SectionContainer>
-          <SectionContent>
-            <ServicesList
-              items={_.orderBy(
-                services,
-                [
-                  item =>
-                    sortByAttribute === "Status"
-                      ? _.indexOf(microserviceStatuses, item.status)
-                      : item.name,
-                  "name"
-                ],
-                ascending ? ["asc", "asc"] : ["desc", "asc"]
-              )}
-            />
-          </SectionContent>
-        </SectionContainer>
-      </div>
+      <SectionContainer>
+        <SectionContent>
+          <ServicesList
+            items={_.orderBy(
+              services,
+              [
+                item =>
+                  sortByAttribute === "Status"
+                    ? _.indexOf(microserviceStatuses, item.status)
+                    : item.name,
+                "name"
+              ],
+              ascending ? ["asc", "asc"] : ["desc", "asc"]
+            )}
+          />
+        </SectionContent>
+      </SectionContainer>
     );
   }
 }

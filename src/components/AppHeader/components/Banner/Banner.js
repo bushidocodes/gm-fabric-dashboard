@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import React from "react";
+import React, { Fragment } from "react";
 
 import HeaderContainer from "./components/HeaderContainer";
 import Header from "./components/Header";
@@ -21,13 +21,13 @@ function Banner({ title, extras, hideBackground = false }) {
     <HeaderContainer hideBackground={hideBackground}>
       <Header>{title || "—"}</Header>
       {extras && (
-        <div>
+        <Fragment>
           {extras.map(extra => (
             <Extra href={extra.path} key={extra.title}>
               {extra.title}
             </Extra>
           ))}
-        </div>
+        </Fragment>
       )}
     </HeaderContainer>
   );

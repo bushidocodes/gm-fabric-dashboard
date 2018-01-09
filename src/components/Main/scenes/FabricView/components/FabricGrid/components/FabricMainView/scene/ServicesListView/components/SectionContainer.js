@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { edgeColor, spacingScale } from "style/styleFunctions";
 
-const SectionContainer = styled.div`
+const SectionContainer = styled.section`
   display: flex;
   flex-flow: column nowrap;
   margin: ${spacingScale(1)} 0 0;

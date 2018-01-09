@@ -46,34 +46,28 @@ export default class Inspector extends Component {
     return (
       <InspectorWrap>
         <InspectorToolbar>
-          <div>
-            <InspectorSearch
-              onChange={evt => onSearch(evt.target.value)}
-              placeholder="Search"
-              aria-label="Search All Metrics"
-              type="search"
-              value={searchQuery}
+          <InspectorSearch
+            onChange={evt => onSearch(evt.target.value)}
+            placeholder="Search"
+            aria-label="Search All Metrics"
+            type="search"
+            value={searchQuery}
+          />
+          <label>
+            <InspectorHideZero
+              onChange={evt => onChange(evt.target.checked, evt.target.name)}
+              checked={hideZeroMetric}
+              disabled={hideStaticMetric}
             />
-          </div>
-          <div>
-            <label>
-              <InspectorHideZero
-                onChange={evt => onChange(evt.target.checked, evt.target.name)}
-                checked={hideZeroMetric}
-                disabled={hideStaticMetric}
-              />
-              Hide all metrics with only zero values
-            </label>
-          </div>
-          <div>
-            <label>
-              <InspectorHideStatic
-                onChange={evt => onChange(evt.target.checked, evt.target.name)}
-                checked={hideStaticMetric}
-              />
-              Hide all static metrics
-            </label>
-          </div>
+            Hide all metrics with only zero values
+          </label>
+          <label>
+            <InspectorHideStatic
+              onChange={evt => onChange(evt.target.checked, evt.target.name)}
+              checked={hideStaticMetric}
+            />
+            Hide all static metrics
+          </label>
         </InspectorToolbar>
         {data.length > 0 && (
           <InspectorData>

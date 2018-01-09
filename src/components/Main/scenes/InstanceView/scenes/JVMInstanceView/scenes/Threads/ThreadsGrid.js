@@ -128,31 +128,29 @@ class ThreadsGrid extends Component {
 
     if (threads && threads.length > 0) {
       return (
-        <div>
-          <ErrorBoundary>
-            <TableToolbar
-              searchInputProps={{
-                filterString: this.state.filterString,
-                setFilterString: this.setFilterString,
-                searchPlaceholder: "Search Threads"
-              }}
-              sortByProps={{
-                sortByOptions: ThreadsGrid.sortByOptions,
-                sortByAttribute: this.state.sortByAttribute,
-                setSortByAttribute: this.setSortByAttribute
-              }}
-              groupByProps={{
-                groupByOptions: ThreadsGrid.groupByOptions,
-                groupByAttribute: this.state.groupByAttribute,
-                setGroupByAttribute: this.setGroupByAttribute
-              }}
-            />
-            <ThreadsTable
-              groupByAttribute={this.state.groupByAttribute}
-              filteredThreadData={this.sort(filteredThreads)}
-            />
-          </ErrorBoundary>
-        </div>
+        <ErrorBoundary>
+          <TableToolbar
+            searchInputProps={{
+              filterString: this.state.filterString,
+              setFilterString: this.setFilterString,
+              searchPlaceholder: "Search Threads"
+            }}
+            sortByProps={{
+              sortByOptions: ThreadsGrid.sortByOptions,
+              sortByAttribute: this.state.sortByAttribute,
+              setSortByAttribute: this.setSortByAttribute
+            }}
+            groupByProps={{
+              groupByOptions: ThreadsGrid.groupByOptions,
+              groupByAttribute: this.state.groupByAttribute,
+              setGroupByAttribute: this.setGroupByAttribute
+            }}
+          />
+          <ThreadsTable
+            groupByAttribute={this.state.groupByAttribute}
+            filteredThreadData={this.sort(filteredThreads)}
+          />
+        </ErrorBoundary>
       );
     } else if (_.isEmpty(threadsError)) {
       return <NotFoundError errorMsg="No Threads Found" />;
