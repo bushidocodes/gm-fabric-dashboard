@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { edgeColor } from "style/styleFunctions";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 
-const GMServiceCardView = styled.div`
+const GMServiceCardsView = styled.div`
   display: flex;
   flex-direction: column;
   border-top: 1px solid ${edgeColor(COLOR_CONTENT_BACKGROUND).string()};
@@ -12,4 +12,4 @@ const GMServiceCardView = styled.div`
   }
 `;
 
-export default GMServiceCardView;
+export default GMServiceCardsView;

@@ -88,7 +88,7 @@ describe("Fabric Grid Main View", () => {
     FabricGridWrap = mount(RouterWrap(["/"]));
   });
 
-  test("renders all services in card view", () => {
+  test("renders all services in cards view", () => {
     expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
       3
     );
@@ -96,7 +96,7 @@ describe("Fabric Grid Main View", () => {
       FabricGridWrap.find(FabricGrid).find("GMServiceListItem").length
     ).toBe(0);
     expect(FabricGridWrap.find(FabricGrid).instance().state.displayType).toBe(
-      "Card"
+      "Cards"
     );
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
     expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
@@ -181,7 +181,7 @@ describe("Fabric Grid Main View", () => {
     ).toBe(true);
   });
 
-  test("has buttons that toggle card and table view", () => {
+  test("has buttons that toggle cards and list view", () => {
     let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
     const button = FabricGridWrap.find(FabricGrid).find("button");
 
@@ -191,7 +191,7 @@ describe("Fabric Grid Main View", () => {
 
     button.at(0).simulate("click");
 
-    expect(FabricGridInstance.state.displayType).toBe("Card");
+    expect(FabricGridInstance.state.displayType).toBe("Cards");
   });
 });
 
@@ -271,7 +271,7 @@ describe("Fabric Grid Instance Method", () => {
       "viewType=List&groupBy=Owner&searchQuery=aac"
     );
 
-    expect(FabricGridInstance.state.searchQuery).not.toBe("Card");
+    expect(FabricGridInstance.state.searchQuery).not.toBe("Cards");
     expect(FabricGridInstance.state.displayType).toBe("List");
     expect(FabricGridInstance.state.searchQuery).not.toBe("Status");
     expect(FabricGridInstance.state.groupByAttribute).toBe("Owner");

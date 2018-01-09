@@ -7,7 +7,7 @@ import GMServiceHeader from "components/Main/scenes/FabricView/components/Fabric
 import { microserviceStatuses } from "utils/constants";
 
 import GMServiceCardCollection from "./components/GMServiceCardCollection";
-import GMServiceCardView from "./components/GMServiceCardView";
+import GMServiceCardsView from "./components/GMServiceCardsView";
 import GMServiceViewContainer from "./components/GMServiceViewContainer";
 import SectionContent from "./components/SectionContent";
 import SectionHeader from "./components/SectionHeader";
@@ -49,7 +49,7 @@ function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
     return (
       <GMServiceViewContainer>
         {verifiedHeaders.map((header, i) => (
-          <GMServiceCardView key={header}>
+          <GMServiceCardsView key={header}>
             <SectionHeader>
               <GMServiceHeader
                 headerTitle={header}
@@ -71,14 +71,14 @@ function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
                 )}
               />
             </SectionContent>
-          </GMServiceCardView>
+          </GMServiceCardsView>
         ))}
       </GMServiceViewContainer>
     );
   } else {
     return (
       <GMServiceViewContainer>
-        <GMServiceCardView>
+        <GMServiceCardsView>
           <SectionContent>
             <GMServiceCardCollection
               items={_.orderBy(
@@ -94,7 +94,7 @@ function CardsView({ ascending, groupByAttribute, sortByAttribute, services }) {
               )}
             />
           </SectionContent>
-        </GMServiceCardView>
+        </GMServiceCardsView>
       </GMServiceViewContainer>
     );
   }

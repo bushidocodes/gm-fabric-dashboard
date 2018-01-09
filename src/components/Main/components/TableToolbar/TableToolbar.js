@@ -21,7 +21,7 @@ import ToolbarCenter from "./components/ToolbarCenter";
 
 TableToolbar.propTypes = {
   displayTypeProps: PropTypes.shape({
-    displayType: PropTypes.oneOf(["Card", "List"]).isRequired, // if this is a Fabric Grid Toolbar, display type buttons will be rendered
+    displayType: PropTypes.oneOf(["Cards", "List"]).isRequired, // if this is a Fabric Grid Toolbar, display type buttons will be rendered
     setDisplayType: PropTypes.func.isRequired // onClick handler for ToolbarCenter buttons. Takes in either “Card” or “Table”.
   }),
   groupByProps: PropTypes.shape({
@@ -77,11 +77,11 @@ export default function TableToolbar({
       <ToolbarCenter>
         {displayTypeProps && [
           <Button
-            active={displayTypeProps.displayType === "Card"}
-            clickAction={() => displayTypeProps.setDisplayType("Card")}
+            active={displayTypeProps.displayType === "Cards"}
+            clickAction={() => displayTypeProps.setDisplayType("Cards")}
             glyph="Card"
-            label="Card"
-            key="Card"
+            label="Cards"
+            key="Cards"
           />,
           <Button
             active={displayTypeProps.displayType === "List"}

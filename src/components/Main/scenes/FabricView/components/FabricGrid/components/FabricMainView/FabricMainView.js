@@ -42,7 +42,7 @@ export default function FabricMainView({
     };
   });
 
-  if (displayType === "Card") {
+  if (displayType === "Cards") {
     return (
       <ErrorBoundary>
         <ServicesCardsView

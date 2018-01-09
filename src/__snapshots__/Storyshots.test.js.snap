@@ -18686,7 +18686,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
         size={undefined}
         style={undefined}
         tabIndex={undefined}
-        title="Card"
+        title="Cards"
         type={undefined}
       >
         <svg
@@ -18722,7 +18722,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
           style={undefined}
         >
           
-          Card
+          Cards
           
         </span>
       </button>

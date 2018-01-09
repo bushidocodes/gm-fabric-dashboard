@@ -67,7 +67,7 @@ class FabricGrid extends Component {
       lastPushedQueryString: "",
       groupByAttribute: "Status",
       sortByAttribute: "Name",
-      displayType: "Card",
+      displayType: "Cards",
       ascending: true
     };
     // Debounce
@@ -165,7 +165,7 @@ class FabricGrid extends Component {
     }
 
     // If viewType, sortBy, or groupBy are set to anything but the defaults, then push to the query string
-    if (viewType !== "Card") {
+    if (viewType !== "Cards") {
       objToEncode.viewType = viewType;
     }
     if (sortBy !== "Name") {
@@ -205,7 +205,7 @@ class FabricGrid extends Component {
     const {
       searchQuery = "",
       groupBy = "Status",
-      viewType = "Card",
+      viewType = "Cards",
       sortBy = "Name"
     } = qs.parse(queryString);
 

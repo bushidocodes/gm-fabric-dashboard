@@ -27,7 +27,7 @@ const groupByOptions = [
 
 const mockFabricViewProps = {
   displayTypeProps: {
-    displayType: "Card",
+    displayType: "Cards",
     setDisplayType: () => alert("fired setDisplayType")
   },
   searchInputProps: {

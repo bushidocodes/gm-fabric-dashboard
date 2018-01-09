@@ -28,7 +28,7 @@ const groupByOptions = [
 
 const mockFabricViewProps = {
   displayTypeProps: {
-    displayType: "Card",
+    displayType: "Cards",
     setDisplayType: jest.fn()
   },
   searchInputProps: {
@@ -77,8 +77,8 @@ describe("Table Toolbar", () => {
   });
 
   test("renders display type buttons", () => {
-    // Find buttons with title attributes "Card" and "List"
-    expect(wrapper.find("button").find({ title: "Card" })).toHaveLength(1);
+    // Find buttons with title attributes "Cards" and "List"
+    expect(wrapper.find("button").find({ title: "Cards" })).toHaveLength(1);
     expect(wrapper.find("button").find({ title: "List" })).toHaveLength(1);
   });
 
@@ -86,7 +86,7 @@ describe("Table Toolbar", () => {
     // Simulate a button click and check if setDisplayType was called
     wrapper
       .find("button")
-      .find({ title: "Card" })
+      .find({ title: "Cards" })
       .simulate("click");
     expect(wrapper.props().displayTypeProps.setDisplayType).toHaveBeenCalled();
   });
@@ -95,8 +95,8 @@ describe("Table Toolbar", () => {
     wrapper.setProps({
       displayTypeProps: null
     });
-    // Find buttons with title attributes "Card" and "List"
-    expect(wrapper.find("button").find({ title: "Card" })).toHaveLength(0);
+    // Find buttons with title attributes "Cards" and "List"
+    expect(wrapper.find("button").find({ title: "Cards" })).toHaveLength(0);
     expect(wrapper.find("button").find({ title: "List" })).toHaveLength(0);
   });
 

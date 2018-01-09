@@ -17,8 +17,8 @@ exports[`Table Toolbar matches snapshot 1`] = `
       active={true}
       clickAction={[Function]}
       glyph="Card"
-      key="Card"
-      label="Card"
+      key="Cards"
+      label="Cards"
     />
     <Button
       active={false}

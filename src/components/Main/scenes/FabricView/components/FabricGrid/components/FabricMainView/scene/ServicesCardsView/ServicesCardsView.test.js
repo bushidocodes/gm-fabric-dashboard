@@ -6,7 +6,7 @@ import mockMappedServices from "json/mockMappedServices";
 
 import ServicesCardsView from "./ServicesCardsView";
 import GMServiceCardCollection from "./components/GMServiceCardCollection";
-import GMServiceCardView from "./components/GMServiceCardView";
+import GMServiceCardsView from "./components/GMServiceCardsView";
 import GMServiceViewContainer from "./components/GMServiceViewContainer";
 
 import GMServiceHeader from "components/Main/scenes/FabricView/components/FabricGrid/components/FabricMainView/components/GMServiceHeader";
@@ -60,8 +60,8 @@ describe("ServicesCardsView component rendering", () => {
     expect(wrapper.find(GMServiceViewContainer).length).toBe(1);
   });
 
-  test("Has a 3 GMServiceCardView when we pass services with all statuses ", () => {
-    expect(wrapper.find(GMServiceCardView).length).toBe(3);
+  test("Has a 3 GMServiceCardsView when we pass services with all statuses ", () => {
+    expect(wrapper.find(GMServiceCardsView).length).toBe(3);
   });
 });
 
@@ -78,15 +78,15 @@ describe("ServicesCardsView functionality", () => {
     expect(wrapper.find(GMServiceCardCollection).length).toBe(1);
   });
 
-  test("Has a 1 GMServiceCardView when we only pass stable services to the component ", () => {
+  test("Has a 1 GMServiceCardsView when we only pass stable services to the component ", () => {
     wrapper = mount(RouterWrap(["/"], filteredServices, "Status"));
-    expect(wrapper.find(GMServiceCardView).length).toBe(1);
+    expect(wrapper.find(GMServiceCardsView).length).toBe(1);
   });
 
-  test("Has a 0 GMServiceCardView within GMServicesViewContainer when we don't pass in any services ", () => {
+  test("Has a 0 GMServiceCardsView within GMServicesViewContainer when we don't pass in any services ", () => {
     const filteredServicesEmpty = filterServicesByStatus("");
     wrapper = mount(RouterWrap(["/"], filteredServicesEmpty, "Status"));
     expect(wrapper.find(GMServiceViewContainer).length).toBe(1);
-    expect(wrapper.find(GMServiceCardView).length).toBe(0);
+    expect(wrapper.find(GMServiceCardsView).length).toBe(0);
   });
 });
