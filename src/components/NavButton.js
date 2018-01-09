@@ -20,7 +20,6 @@ NavButton.propTypes = {
   outline: PropTypes.oneOf([
     "raised", // Add highlight effect to top edge and shadow effect to bottom edge
     "outline", // Add outline effect
-    "outline-shadow", // Add outline effect, and add shadow effect to bottom edge
     "shadow", // Add shadow effect to bottom edge
     "none" // No effects
   ]),
