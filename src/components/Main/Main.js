@@ -8,15 +8,10 @@ import AppContent from "./components/AppContent";
 import { LazyLoader } from "components/LazyLoader";
 
 import { getFabricServer } from "utils/head";
-import { getRuntime } from "utils/selectors";
 import { dashboardShape } from "components/PropTypes";
 
 const FabricRouter = LazyLoader({
   loader: () => import("./scenes/FabricView")
-});
-
-const InstanceRouter = LazyLoader({
-  loader: () => import("./scenes/InstanceView")
 });
 
 /**
@@ -43,15 +38,7 @@ class Main extends Component {
       // Begin polling Fabric-wide metrics from the Fabric Server
       Actions.startPollingFabricMicroservices({ endpoint: fabricServer });
     } else {
-      console.log("Fabric Server Not Detected");
-      // Load the dashboard for the runtime
-      Actions.loadDashboardsFromJSON();
-      // And begin polling instance metrics directly from the microservice
-      Actions.startPollingInstanceMetrics({
-        endpoint: this.props.metricsEndpoint
-      });
-      // Perform initial fetch of threads data if runtime is JVM
-      if (this.props.runtime === "jvm") Actions.fetchAndStoreInstanceThreads();
+      console.log("Fabric Server Not Defined!");
     }
   }
 
@@ -68,34 +55,23 @@ class Main extends Component {
     return (
       <AppContent id="main-content" tabIndex="0">
         {/* main-content id is here so that SkipNav can focus on it */}
-        {/* If running with a Fabric Server, load Fabric Router. Otherwise just directly load */}
-        {/* InstanceRouter and pass the runtime value defined in Redux and populated from */}
-        {/* index.html via the head utils */}
-        {getFabricServer() ? (
-          <FabricRouter />
-        ) : (
-          <InstanceRouter runtime={this.props.runtime} />
-        )}
+        <FabricRouter />
       </AppContent>
     );
   }
 }
 
 // pathname is used to populate breadcrumbs
-// interval, metricsEndpoint, and runtime are used to start polling if running without a Fabric Server
 function mapStateToProps(state) {
   const {
     dashboards,
     instance: { instanceMetricsPollingInterval },
-    routing: { location: { pathname } },
-    settings: { metricsEndpoint }
+    routing: { location: { pathname } }
   } = state;
   return {
     dashboards,
     instanceMetricsPollingInterval,
-    metricsEndpoint,
-    pathname,
-    runtime: getRuntime(state)
+    pathname
   };
 }
 

@@ -4,7 +4,7 @@ import { fetchInstanceThreads } from "./apis";
 
 /**
  * Action that fetches threads information (JVM) and stores in Redux
- * @param {string} [endpoint=getThreadsEndpoint()]
+ * @param {string}
  * @returns
  */
 function fetchAndStoreInstanceThreadsEffect(endpoint) {

@@ -16,7 +16,6 @@ const {
   getSelectedServiceVersion,
   generateHeaderTabs,
   getSelectedServiceKey,
-  getStaticRuntime,
   getStatusCount,
   getRuntime
 } = require.requireActual("./selectors");
@@ -37,12 +36,6 @@ const simpleState = {
 describe("getMetrics", () => {
   test("takes a state object and returns state.instance.metrics", () => {
     expect(getMetrics(state)).toEqual(state.instance.metrics);
-  });
-});
-
-describe("getStaticRuntime", () => {
-  test("takes a state object and returns state.settings.runtime", () => {
-    expect(getStaticRuntime(state)).toEqual(state.settings.runtime);
   });
 });
 
@@ -113,11 +106,11 @@ describe("getSelectedService", () => {
 });
 
 describe("getRuntime", () => {
-  test("returns the runtime attribute of the currently selected service if running with Fabric server", () => {
+  test("returns the runtime attribute of the currently selected serviceif there is a selected service", () => {
     expect(getRuntime(state)).toEqual("GO");
   });
 
-  test("returns null if running with Fabric server and there is no selected service", () => {
+  test("returns null if  there is no selected service", () => {
     // create a modified state where fabric.selectedService, fabric.selectedServiceVersion,
     // and fabric.selectedInstance are not defined
     let modState = Object.assign({}, state, {
@@ -128,17 +121,6 @@ describe("getRuntime", () => {
       }
     });
     expect(getRuntime(modState)).toBeNull();
-  });
-
-  test("returns a static runtime if not running with a Fabric server", () => {
-    // create a modified state where settings.fabricServer is null
-    let modState = Object.assign({}, state, {
-      settings: {
-        runtime: "JVM",
-        fabricServer: null
-      }
-    });
-    expect(getRuntime(modState)).toEqual("JVM");
   });
 });
 

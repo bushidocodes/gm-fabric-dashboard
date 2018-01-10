@@ -22,7 +22,6 @@ class ThreadsGrid extends Component {
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string,
     threads: PropTypes.array,
-    threadsEndpoint: PropTypes.string,
     threadsError: PropTypes.object
   };
 
@@ -68,22 +67,15 @@ class ThreadsGrid extends Component {
       fabricServer,
       selectedService,
       selectedServiceVersion,
-      selectedInstance,
-      threadsEndpoint
+      selectedInstance
     } = this.props;
 
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
-    // so we need to dynamically build the endpoint for the threads API. If falsy, we can just
-    // pull the static configuration value from Redux via threadsEndpoint.
-    // Technically Actions.fetchThreads defaults to the static threadsEndpoint, so this is
-    // redundant, but we are showing it here just to be more explicit about the logic.
-
+    // so we need to dynamically build the endpoint for the threads API.
     if (this.props.fabricServer) {
       Actions.fetchAndStoreInstanceThreads(
         `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
       );
-    } else {
-      Actions.fetchAndStoreInstanceThreads(threadsEndpoint);
     }
   }
 
@@ -165,7 +157,6 @@ function mapStateToProps(state) {
     fabricServer: state.settings.fabricServer,
     threads: getVisibleThreads(state),
     threadsError: state.instance.threadsError,
-    threadsEndpoint: state.settings.threadsEndpoint,
     selectedService: state.fabric.selectedService,
     selectedServiceVersion: state.fabric.selectedServiceVersion,
     selectedInstance: state.fabric.selectedInstance

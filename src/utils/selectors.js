@@ -14,7 +14,6 @@ import Tab from "components/AppHeader/components/Tab";
 // Reselect Input Selectors
 
 export const getMetrics = state => state.instance.metrics;
-export const getStaticRuntime = state => state.settings.runtime;
 export const getDashboards = state => state.dashboards;
 export const getServices = state => state.fabric.services;
 
@@ -50,18 +49,16 @@ export const getSelectedService = createSelector(
 );
 
 /**
- * Reselect selector that returns the current runtime
- * When running with a Fabric Server, this is either the runtime attribute of
+ * Reselect selector that returns the runtime attribute of
  * the currently selected service or null
- * When running without a Fabric Server, this is the staticRuntime value
  */
 export const getRuntime = createSelector(
-  [getFabricServer, getSelectedService, getStaticRuntime],
+  [getFabricServer, getSelectedService],
   (fabricServer, service, staticRuntime) => {
     if (fabricServer) {
       return service ? service.runtime : null;
     } else {
-      return staticRuntime;
+      return null;
     }
   }
 );

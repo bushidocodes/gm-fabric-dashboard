@@ -12,9 +12,7 @@ import {
  * @returns
  */
 function fetchAndStoreInstanceMetricsEffect(
-  endpoint = getState().settings.fabricServer
-    ? buildDiscoveryServiceInstanceMetricsEndpoint()
-    : getState().settings.metricsEndpoint
+  endpoint = buildDiscoveryServiceInstanceMetricsEndpoint()
 ) {
   if (!endpoint) {
     console.log("Fetching metrics failed because metrics endpoint was missing");
@@ -70,15 +68,10 @@ Effect("fetchMetricsFailure", fetchMetricsFailureEffect);
  */
 export function startPollingInstanceMetricsEffect(
   {
-    endpoint = getState().settings.fabricServer
-      ? buildDiscoveryServiceInstanceMetricsEndpoint()
-      : getState().settings.metricsEndpoint,
+    endpoint = buildDiscoveryServiceInstanceMetricsEndpoint(),
     interval = getState().instance.instanceMetricsPollingInterval
   } = {
-    endpoint: getState().settings.fabricServer
-      ? buildDiscoveryServiceInstanceMetricsEndpoint()
-      : getState().settings.metricsEndpoint,
-    interval: getState().instance.instanceMetricsPollingInterval
+    endpoint: buildDiscoveryServiceInstanceMetricsEndpoint()
   }
 ) {
   // We need to make sure we clear any existing

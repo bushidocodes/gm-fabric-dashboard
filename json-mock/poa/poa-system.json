@@ -1,9 +1,0 @@
-{
-  "system/cpu.pct": 0,
-  "system/cpu_cores": 4,
-  "os": "linux",
-  "os_arch": "amd64",
-  "memory/available": 1538101248,
-  "memory/used": 557776896,
-  "memory/used_percent": 26.61304
-}

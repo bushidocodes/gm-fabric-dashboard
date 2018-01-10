@@ -382,9 +382,6 @@ export default {
   },
   settings: {
     fabricServer: "http://localhost:1337",
-    metricsEndpoint: null,
-    runtime: null,
-    threadsEndpoint: null,
     threadsFilter: "all"
   },
   routing: {

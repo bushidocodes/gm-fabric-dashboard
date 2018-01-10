@@ -25,9 +25,8 @@ FabricView.propTypes = {
 };
 
 /**
- * Fabric Router is an optional top-level router that only runs when the dashboard is running
- * with a backend server. It is inserted between the root container and the Instance Router
- * and injects the following additional route parameters
+ * Fabric Router is a top-level router that sits between the root container and the Instance Router
+ * that injects the following additional route parameters
  *
  * serviceName - The name of the selected microservice
  * instanceID - The ID of the selected microservice instance of type serviceName
@@ -87,14 +86,10 @@ function FabricView({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${
-              version
-            }`;
+            message = `You are not authorized to view ${serviceName} ${version}`;
           } else if (!instanceIsValid) {
             // If isValidInstance is false, also set a pathname that will redirect to the service view
-            message = `${instanceID} is not a known instance of ${
-              serviceName
-            } ${version}`;
+            message = `${instanceID} is not a known instance of ${serviceName} ${version}`;
             pathname = `/${serviceName}/${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
@@ -173,9 +168,7 @@ function FabricView({ services }) {
           if (!serviceIsValid) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
-            message = `You are not authorized to view ${serviceName} ${
-              version
-            }`;
+            message = `You are not authorized to view ${serviceName} ${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
           }

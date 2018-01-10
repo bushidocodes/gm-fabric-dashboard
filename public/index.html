@@ -7,34 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <!-- Attributes for running with a Fabric Server -->
+  <!-- Attributes for static deployment -->
 
   <!--
-    fabricServer is the endpoint needed to react the fabricServer API. When this
-    value is anything other than \_\_FABRIC_SERVER\_\_, the app runs in Fabric Server
-    mode and the attributes for "running without a Fabric Server" are ignored
+    fabricServer is the endpoint needed to reach the fabricServer API.
   -->
   <meta property="fabricServer" content="__FABRIC_SERVER__">
-
-  <!-- Attributes for running without a Fabric Server -->
-
-  <!--
-    runtime is the microservice type or centralized infrastructure
-    that the dashboard will scrape. Valid options include:
-    JVM and GO.
-  -->
-  <!-- <meta property="runtime" content="JVM"> -->
-  <meta property="runtime" content="__RUNTIME__">
-
-  <!--
-    serviceName is the name associated with the endpoint that the dashboard will
-    scrape. Defaults to "Service"
-  -->
-  <meta property="serviceName" content="__SERVICE_NAME__">
-  <!-- metricsEnpoint is the URL of a flat JSON file to scrape -->
-  <meta property="metricsEndpoint" content="__METRICS_ENDPOINT__">
-  <!-- threadsEnpoint is the URL of a valid Finagle threads endpoint in JSON format -->
-  <meta property="threadsEndpoint" content="__THREADS_ENDPOINT__">
 
   <!--
       manifest.json provides metadata used when your web app is added to the
