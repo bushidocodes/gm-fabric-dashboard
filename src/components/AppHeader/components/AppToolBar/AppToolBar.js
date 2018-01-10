@@ -6,8 +6,6 @@ import decipherLogo from "components/AppHeader/assets/decipherLogo.svg";
 import NavButton from "components/NavButton";
 import ButtonGroup from "components/ButtonGroup";
 import { decodeParameter } from "utils";
-import { AppVersion } from "utils/constants";
-
 import AppToolBarHeader from "./components/AppToolBarHeader";
 import BrandContainer from "./components/BrandContainer";
 import BrandLogo from "./components/BrandLogo";
@@ -18,7 +16,6 @@ import Breadcrumbs from "./components/Breadcrumbs";
 import Breadcrumb from "./components/Breadcrumb";
 
 AppToolBar.propTypes = {
-  appVersion: PropTypes.string,
   hideRoot: PropTypes.bool,
   pathname: PropTypes.string.isRequired,
   toolbarButtons: PropTypes.array
@@ -40,7 +37,6 @@ const defaultToolbarButtons = [
 function AppToolBar({
   pathname,
   hideRoot,
-  appVersion = AppVersion,
   toolbarButtons = defaultToolbarButtons
 }) {
   return (
@@ -95,7 +91,8 @@ function AppToolBar({
         rel="noopener noreferrer"
         target="_blank"
       >
-        {AppVersion}
+        {/*REACT_APP_VERSION is generated from package.json via dotenv*/}
+        {process.env.REACT_APP_VERSION}
       </AppVersionLink>
       <ButtonGroup toolbar>
         {toolbarButtons.map(button => (
