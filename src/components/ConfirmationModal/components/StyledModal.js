@@ -21,20 +21,10 @@ const StyledModal = styled(Modal)`
   opacity: 0;
   padding: ${spacingScale(3)};
   position: absolute;
-  top: 70vh;
+  top: 50vh;
   transform: translateX(-50%) translateY(50px) scale(0.98);
   transition: all 0.2s ease;
   width: ${modalWidthBasis};
-
-  @media only screen and (min-width: 320px) and (max-width: 767px) {
-    top: 80vh;
-    width: 80vw;
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    top: 60vh;
-    width: 80vw;
-  }
 
   > [class*="Content"] > * {
     position: relative;
