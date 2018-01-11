@@ -116,6 +116,19 @@ async function publish({
         ..._generateSemVerStrings(major, minor, patch, releaseCandidate),
         ...tags
       ].map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
+    } else if (process.env.npm_package_version) {
+      console.log(
+        `Detected the following version from npm package.json: ${
+          process.env.npm_package_version
+        }`
+      );
+      releaseTags = [
+        ..._generateSemVerStrings(
+          ...process.env.npm_package_version.split(/\.|-rc/g),
+          releaseCandidate
+        ),
+        ...tags
+      ].map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
     } else {
       releaseTags = tags.map(tag => `deciphernow/gm-fabric-dashboard:${tag}`);
     }
