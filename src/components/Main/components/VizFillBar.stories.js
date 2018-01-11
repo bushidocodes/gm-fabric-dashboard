@@ -2,7 +2,7 @@ import React from "react";
 
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { withKnobs, number } from "@storybook/addon-knobs/react";
 
 import TableColVizBar from "components/Main/components/TableColVizBar";
 import VizBar from "components/Main/components/VizBar";

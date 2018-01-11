@@ -2,7 +2,7 @@
 
 exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
 <ErrorBoundary>
-  <_class
+  <WidthProvider
     breakpoints={
       Object {
         "lg": 1200,
@@ -256,6 +256,6 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
         title="Goroutines"
       />
     </div>
-  </_class>
+  </WidthProvider>
 </ErrorBoundary>
 `;

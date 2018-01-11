@@ -10,9 +10,10 @@
 
 <p align="center">
   <a href="https://github.com/prettier/prettier" target="_blank">
-    <img src="https://img.shields.io/badge/styled_with-prettier-ff69b4.svg"
+    <img src="https://img.shields.io/badge/formatted_with-prettier-ff69b4.svg"
          alt="styled with prettier">
   </a>
+  <a href="https://www.styled-components.com/" target="_blank"><img src="https://img.shields.io/badge/styled_with-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357" alt="styled with styled-components"></a>
   <a href="https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master" target="_blank"><img src="https://circleci.com/gh/DecipherNow/gm-fabric-dashboard/tree/master.svg?style=shield" alt="tested on CircleCI"></a>
   <a href="https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/maintainability" target="_blank"><img src="https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/maintainability" alt="technical debt assessed by CodeClimate"></a>
   <a href="https://codeclimate.com/github/DecipherNow/gm-fabric-dashboard/test_coverage" target="_blank"><img src="https://api.codeclimate.com/v1/badges/5897b230fb0a038b75d8/test_coverage" alt="test coverage assessed by CodeClimate"></a>

@@ -92,15 +92,13 @@ export class GMGrid extends Component {
         return (
           <GMBasicMetrics
             detailLines={chart.data.detailLines.map(
-              (
-                [
-                  heading,
-                  key,
-                  priority,
-                  sparklineKey = null,
-                  sparklineType = null
-                ]
-              ) => {
+              ([
+                heading,
+                key,
+                priority,
+                sparklineKey = null,
+                sparklineType = null
+              ]) => {
                 const results = [
                   heading,
                   getLatestAttribute(metrics, key),

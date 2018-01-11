@@ -12,8 +12,7 @@ import {
 } from "./index";
 import React from "react";
 import TableRow from "components/Main/components/TableRow";
-import { mount, shallow } from "enzyme";
-import renderer from "";
+import { mount } from "enzyme";
 import "jest-styled-components";
 
 describe("trimID", () => {

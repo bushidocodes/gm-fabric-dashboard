@@ -1,4 +1,3 @@
-import React from "react";
 import state from "../json/mockReduxState";
 import Tab from "components/AppHeader/components/Tab";
 

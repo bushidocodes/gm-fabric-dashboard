@@ -22,9 +22,7 @@ export const getRoutesTable = createSelector(
       routesTree[routePath].forEach(routeVerb => {
         const errorsCountKey = `route${routePath}/${routeVerb}/errors.count`;
         const inThroughputKey = `route${routePath}/${routeVerb}/in_throughput`;
-        const outThroughputKey = `route${routePath}/${
-          routeVerb
-        }/out_throughput`;
+        const outThroughputKey = `route${routePath}/${routeVerb}/out_throughput`;
         const latency50Key = `route${routePath}/${routeVerb}/latency_ms.p50`;
         const latency99Key = `route${routePath}/${routeVerb}/latency_ms.p99`;
         const requestsKey = `route${routePath}/${routeVerb}/requests`;

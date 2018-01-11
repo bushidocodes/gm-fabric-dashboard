@@ -11,7 +11,6 @@ const timeSeries = [
   ],
   { labels: ["time", "# of currently loaded JVM Classes"] }
 ];
-const detailLines = [];
 
 describe("DygraphWrapper", () => {
   it("matches default snapshot", () => {

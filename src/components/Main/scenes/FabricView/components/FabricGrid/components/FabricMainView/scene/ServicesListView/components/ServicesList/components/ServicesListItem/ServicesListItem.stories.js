@@ -2,7 +2,7 @@ import React from "react";
 
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, select, boolean } from "@storybook/addon-knobs/react";
 
 import GMServiceListItem from "./index.js";
 

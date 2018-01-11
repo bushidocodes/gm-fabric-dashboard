@@ -2,7 +2,7 @@ import React from "react";
 
 import StoryRouter from "storybook-router";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, number } from "@storybook/addon-knobs";
+import { withKnobs, number } from "@storybook/addon-knobs/react";
 
 import styled from "styled-components";
 

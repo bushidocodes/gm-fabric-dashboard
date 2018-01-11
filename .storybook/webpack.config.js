@@ -27,7 +27,7 @@ module.exports = {
       // When you `import` an asset, you get its (virtual) filename.
       // In production, they would get copied to the `build` folder.
       {
-        exclude: [/\.html$/, /\.(js|jsx)$/, /\.css$/, /\.json$/],
+        exclude: [/\.html$/, /\.(js|jsx)$/, /\.css$/, /\.json$/, /\.ejs$/],
         loader: require.resolve("file-loader"),
         options: {
           name: "static/media/[name].[hash:8].[ext]"

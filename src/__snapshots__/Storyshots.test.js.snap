@@ -18776,7 +18776,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
       className="c8"
     >
       <div
-        className="Select c9 Select--single is-searchable has-value"
+        className="Select c9 has-value is-searchable Select--single"
         style={undefined}
       >
         <input
@@ -18883,7 +18883,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
         </div>
       </div>
       <div
-        className="Select c9 Select--single is-searchable has-value"
+        className="Select c9 has-value is-searchable Select--single"
         style={undefined}
       >
         <input

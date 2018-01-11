@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import StoryRouter from "storybook-router";
-import { withKnobs, object, array } from "@storybook/addon-knobs";
+import { withKnobs, object } from "@storybook/addon-knobs/react";
 
 import Table from "./index.js";
 

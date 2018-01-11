@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { withKnobs, boolean, object } from "@storybook/addon-knobs";
+import { withKnobs, boolean, object } from "@storybook/addon-knobs/react";
 
 import ReadoutGroup from "../ReadoutGroup";
 import Readout from "./Readout";

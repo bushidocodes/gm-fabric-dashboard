@@ -247,7 +247,7 @@ Array [
       className="c4"
     >
       <div
-        className="Select c5 Select--single is-searchable has-value"
+        className="Select c5 has-value is-searchable Select--single"
         style={undefined}
       >
         <input
@@ -354,7 +354,7 @@ Array [
         </div>
       </div>
       <div
-        className="Select c5 Select--single is-searchable has-value"
+        className="Select c5 has-value is-searchable Select--single"
         style={undefined}
       >
         <input
