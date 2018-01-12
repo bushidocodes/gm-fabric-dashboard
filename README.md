@@ -67,6 +67,7 @@ If you are a systems administrator and wish to install this software with live m
 ## Related Projects
 
 * [Grey Matter Fabric JVM SDK](https://github.com/DecipherNow/gm-fabric-jvm)
+* [Grey Matter Fabric Go SDK](https://github.com/DecipherNow/gm-fabric-go)
 * [Grey Matter Fabric Passthrough Agent](https://github.com/DecipherNow/gm-fabric-jvmagent)
 
 ## License
