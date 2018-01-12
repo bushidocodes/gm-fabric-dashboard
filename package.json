@@ -137,45 +137,35 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "junit-merge": "junit-merge",
+    "build-docker":
+      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build-storybook": "build-storybook",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
-    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "docs":
+      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check":
+      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "format": "prettier --write 'src/**/*.{js,jsx}'",
+    "junit-merge": "junit-merge",
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
-    "format": "prettier --write 'src/**/*.{js,jsx}'",
-    "createRunningMarker": "node scripts/createRunningMarker.js",
-    "deleteRunningMarker": "node scripts/deleteRunningMarker.js",
-    "setFabricServerMetatag": "node scripts/setFabricServerMetatag.js",
-    "resetFabricServerMetatag": "node scripts/resetFabricServerMetatag.js",
-    "start-all": "npm-run-all --print-label setFabricServerMetatag createRunningMarker --parallel start-ui mock-sds",
-    "start": "npm run start-all",
-    "start-ui": "node scripts/start.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "update-deps": "npm-check . --skip-unused -u",
-    "mock-jvm": "node json-mock/jvm/gm-fabric-jvm.js",
-    "mock-go": "node json-mock/go/gm-fabric-go.js",
-    "mock-poa": "node json-mock/poa/gm-fabric-poa.js",
     "mock-sds": "node json-mock/discovery-service/sds.js",
-    "prestart": "npm run createRunningMarker",
-    "poststart": "npm-run-all --print-label deleteRunningMarker resetFabricServerMetatag",
     "publish": "node scripts/publish.js",
+    "start": "npm run start-all",
+    "start-all": "npm-run-all --print-label --parallel start-ui mock-sds",
+    "start-ui": "node scripts/start.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "node scripts/test.js --env=jsdom",
+    "update-deps": "npm-check . --skip-unused -u"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node scripts/resetFabricServerMetatag.js && git add public/index.html && lint-staged",
-      "post-commit": "npm run setFabricServerMetatag",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["prettier --write", "git add"]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -185,18 +175,15 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
       "<rootDir>/config/jest/jestSetup.js"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/jestTestFrameworkSetup.js",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupTestFrameworkScriptFile":
+      "<rootDir>/config/jest/jestTestFrameworkSetup.js",
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -208,28 +195,15 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx"
-    ]
+    "moduleDirectories": ["node_modules", "src"],
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "prettier": {
     "bracketSpacing": true,
@@ -242,9 +216,7 @@
     "useTabs": false
   },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-angular"
-    ]
+    "extends": ["@commitlint/config-angular"]
   },
   "browserslist": [
     "last 2 Chrome versions",
