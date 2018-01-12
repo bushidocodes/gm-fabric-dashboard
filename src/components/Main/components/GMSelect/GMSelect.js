@@ -7,9 +7,9 @@ import { ZINDEX_DROPDOWN } from "style/styleVariables";
 import "react-select/dist/react-select.css";
 
 const GMSelect = styled(Select)`
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "NunitoSans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   flex-grow: 1;
   font-size: 14px;
   font-weight: 600;
