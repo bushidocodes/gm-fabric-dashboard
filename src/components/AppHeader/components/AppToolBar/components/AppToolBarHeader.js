@@ -9,7 +9,7 @@ import {
 
 const APP_TOOLBAR_HEIGHT = spacingScale(4.25);
 const APP_TOOLBAR_FONT_SIZE = FONT_SIZE_BASE;
-const APP_TOOLBAR_BACKGROUND_COLOR = COLOR_ALT_BACKGROUND.string();
+const APP_TOOLBAR_BACKGROUND_COLOR = "transparent";
 const APP_TOOLBAR_TEXT_COLOR = contrastColor(COLOR_ALT_BACKGROUND).string();
 
 const AppToolBarHeader = styled.nav`
