@@ -27,21 +27,20 @@ DefaultInstanceRouter.propTypes = {
  * @returns JSX.Element
  */
 export default function DefaultInstanceRouter({ baseURL }) {
-  const prefix = baseURL || "";
   return (
     <Switch>
       {/* Root Redirect */}
       <Route
         exact
-        path={baseURL ? prefix : "/"}
-        render={() => <Redirect to={`${prefix}/explorer`} />}
+        path={baseURL}
+        render={() => <Redirect to={`${baseURL}/explorer`} />}
       />
       {/* General Routes shared by all runtimes */}
       {/* Only route to settings if this we aren't using FabricRouter */}
       {!baseURL && <Route component={SettingsGrid} exact path={`/settings`} />}
-      <Route component={Explorer} path={`${prefix}/explorer`} />
+      <Route component={Explorer} path={`${baseURL}/explorer`} />
       {/* Catch all route for dynamically generated dashboards */}
-      <Route component={GMGrid} path={`${prefix}/:dashboardName`} />
+      <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />
       {/* Should never match, but included just in case */}
       <Route component={NotFound} path="*" />
     </Switch>

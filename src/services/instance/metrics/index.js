@@ -71,7 +71,8 @@ export function startPollingInstanceMetricsEffect(
     endpoint = buildDiscoveryServiceInstanceMetricsEndpoint(),
     interval = getState().instance.instanceMetricsPollingInterval
   } = {
-    endpoint: buildDiscoveryServiceInstanceMetricsEndpoint()
+    endpoint: buildDiscoveryServiceInstanceMetricsEndpoint(),
+    interval: getState().instance.instanceMetricsPollingInterval
   }
 ) {
   // We need to make sure we clear any existing
