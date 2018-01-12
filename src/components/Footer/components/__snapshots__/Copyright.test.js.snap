@@ -2,28 +2,40 @@
 
 exports[`Copyright should render when screen is 800px or higher 1`] = `
 .c0 {
+  font-size: 9px;
   margin: 0;
-  text-transform: uppercase;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  -webkit-letter-spacing: 0.03em;
-  -moz-letter-spacing: 0.03em;
-  -ms-letter-spacing: 0.03em;
-  letter-spacing: 0.03em;
   text-align: center;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   cursor: default;
-  z-index: -1;
-  opacity: 1;
-  color: black;
+  color: model:rgb;
+  color: 31.875,31.875,31.875;
+  valpha: 1;
+  border-top: 1px solid rgb(230,230,230);
+  margin-top: 8px;
+  padding: 8px;
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
 }
 
 @media all and (min-width:800px) {
   .c0 {
-    opacity: 0.8;
-    z-index: 1;
+    -webkit-order: initial;
+    -ms-flex-order: initial;
+    order: initial;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
 }
 

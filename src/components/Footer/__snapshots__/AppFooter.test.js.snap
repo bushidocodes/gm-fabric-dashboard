@@ -14,7 +14,9 @@ exports[`A Footer container should render 1`] = `
     />
   </styled.a>
   <styled.p>
-    ©2017 Decipher Technology Studios
+    Copyright © 2018 Decipher Technology Studios. All rights reserved.
+    <br />
+    Copyright © 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.
   </styled.p>
   <styled.div>
     <styled.a

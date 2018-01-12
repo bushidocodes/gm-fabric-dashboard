@@ -24,7 +24,11 @@ export default function AppFooter() {
       >
         <img alt="Decipher Technology Studios" src={longLogo} />
       </LongLogo>
-      <Copyright>&copy;2017 Decipher Technology Studios</Copyright>
+      <Copyright>
+        Copyright &copy; 2018 Decipher Technology Studios. All rights reserved.<br />Copyright
+        &copy; 2018 Grey Matter, a Decipher Technology Studios product. All
+        rights reserved.
+      </Copyright>
       <Links>
         <Link
           href="http://github.com/DecipherNow"

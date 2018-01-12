@@ -17,16 +17,25 @@ const Footer = styled.footer`
   color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.8).string()};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   font-size: ${FONT_SIZE_SM};
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: ${APP_FOOTER_HEIGHT};
-  z-index: ${ZINDEX_STICKY};
+  height: auto;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: stretch;
 
-  & + * {
-    padding-bottom: ${spacingScale(4)};
+  @media all and (min-width: 800px) {
+    height: ${APP_FOOTER_HEIGHT};
+    flex-wrap: no-wrap;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: ${ZINDEX_STICKY};
+
+    & + * {
+      padding-bottom: ${spacingScale(4)};
+    }
   }
 `;
 
