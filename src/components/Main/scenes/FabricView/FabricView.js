@@ -51,18 +51,19 @@ function FabricView({ services }) {
         }) => {
           serviceName = decodeParameter(serviceName);
 
-          // baseURL is prefixed to route paths and link to attributes when running with Fabric Server
           const baseURL = url[url.length - 1] === "/" ? url.slice(0, -1) : url;
 
           const service =
-            services && serviceName && services[`${serviceName}|${version}`]
+            services &&
+            serviceName &&
+            version &&
+            services[`${serviceName}|${version}`]
               ? services[`${serviceName}|${version}`]
               : "";
 
           // Lookup the runtime of the microservice named serviceName
           // runtime informs the runtime-agnostic InstanceRouter which runtime router to render
-          const runtime =
-            services && serviceName && service ? service.runtime : "";
+          const runtime = service ? service.runtime : "";
 
           // Check if our services object has been passed to the router
           const servicesAreNotLoaded = !Object.keys(services).length;

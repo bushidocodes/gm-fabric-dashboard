@@ -39,25 +39,24 @@ JVMInstanceRouter.propTypes = {
  * @returns JSX.Element
  */
 export default function JVMInstanceRouter({ baseURL }) {
-  const prefix = baseURL || "";
   return (
     <Switch>
       {/* Root Redirect */}
       <Route
         exact
-        path={baseURL ? prefix : "/"}
-        render={() => <Redirect to={`${prefix}/summary`} />}
+        path={baseURL}
+        render={() => <Redirect to={`${baseURL}/summary`} />}
       />
       {/* Custom Runtime Specific Stuff */}
-      <Route component={SummaryGrid} path={`${prefix}/summary`} />
-      <Route component={ThreadsGrid} path={`${prefix}/threads`} />
-      <Route component={RoutesGrid} path={`${prefix}/routes`} />
+      <Route component={SummaryGrid} path={`${baseURL}/summary`} />
+      <Route component={ThreadsGrid} path={`${baseURL}/threads`} />
+      <Route component={RoutesGrid} path={`${baseURL}/routes`} />
       {/* General Routes shared by all runtimes */}
       {/* Only route to settings if this we aren't using FabricRouter */}
       {!baseURL && <Route component={SettingsGrid} exact path="/settings" />}
-      <Route component={Explorer} path={`${prefix}/explorer`} />
+      <Route component={Explorer} path={`${baseURL}/explorer`} />
       {/* Catch all route for dynamically generated dashboards */}
-      <Route component={GMGrid} path={`${prefix}/:dashboardName`} />
+      <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />
       {/* Should never match, but included just in case */}
       <Route component={NotFound} path="*" />
     </Switch>
