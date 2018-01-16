@@ -52,7 +52,7 @@ function GMServiceTableLineItem({
           }
         >
           <GMLink
-            disabled={serviceIsMetered ? null : true}
+            disabled={!serviceIsMetered}
             onClick={serviceIsMetered ? null : e => e.preventDefault()}
             to={encodeParameter(path)}
           >
