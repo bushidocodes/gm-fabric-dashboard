@@ -40,11 +40,13 @@ const TableRow = styled.li.attrs({
 
   > * {
     ${rowChildSpacing()};
+    ${props => (props.overflowVisible ? `overflow: visible;` : "")};
   }
 `;
 
 TableRow.propTypes = {
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  overflowVisible: PropTypes.bool // used for overriding rowChildSpacing in order to render a tooltip
 };
 
 export default TableRow;

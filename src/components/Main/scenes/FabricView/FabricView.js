@@ -94,6 +94,7 @@ function FabricView({ services }) {
             pathname = `/${serviceName}/${version}`;
           } else if (!serviceIsMetered) {
             message = `${serviceName} does not have metrics to display`;
+            pathname = `/${serviceName}/${version}`;
           }
 
           // If the services object has not been passed to the router yet,
@@ -170,19 +171,18 @@ function FabricView({ services }) {
             message = `${serviceName} ${version} is not a known microservice`;
           } else if (!userIsAuthorized) {
             message = `You are not authorized to view ${serviceName} ${version}`;
-          } else if (!serviceIsMetered) {
-            message = `${serviceName} does not have metrics to display`;
           }
 
           // If the services object has not been passed to the router yet,
           // or if the user is authorized and the service exists and is metered
           // then render the instance router, else redirect with error message
           return servicesAreNotLoaded ||
-            (userIsAuthorized && serviceIsMetered && serviceIsValid) ? (
+            (userIsAuthorized && serviceIsValid) ? (
             <GMServiceView
               {...props}
               serviceName={serviceName}
               serviceVersion={version}
+              serviceIsMetered={serviceIsMetered}
               instances={instances}
               status={status}
             />

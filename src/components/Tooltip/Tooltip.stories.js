@@ -1,6 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs, text, select } from "@storybook/addon-knobs/react";
+import {
+  withKnobs,
+  text,
+  select,
+  boolean,
+  object
+} from "@storybook/addon-knobs/react";
 
 import Tooltip from "./index.js";
 
@@ -23,7 +29,12 @@ storiesOf("Tooltip", module)
     );
     return (
       <div style={wrapperStyle}>
-        <Tooltip content={content} position={position}>
+        <Tooltip
+          content={content}
+          position={position}
+          disabled={boolean("disabled", false)}
+          containerStyle={object("containerStyle", {})}
+        >
           Hover over me
         </Tooltip>
       </div>

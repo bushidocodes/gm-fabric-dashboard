@@ -3,14 +3,18 @@ import { COLOR_BLACK, COLOR_WHITE, ZINDEX_TOOLTIP } from "style/styleVariables";
 
 const TooltipWrap = styled.div`
   border-bottom: 1px solid ${COLOR_BLACK.mix(COLOR_WHITE, 0.85).string()};
-  cursor: help;
+  cursor: ${props => (props.disabled ? "default" : "help")};
   display: inline-block;
   position: relative;
 
   :hover > :last-child {
-    opacity: 1;
+    ${props =>
+      props.disabled
+        ? ""
+        : `opacity: 1;
+      
     visibility: visible;
-    z-index: ${ZINDEX_TOOLTIP};
+    z-index: ${ZINDEX_TOOLTIP};`};
   }
 `;
 

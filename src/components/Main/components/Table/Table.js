@@ -32,6 +32,7 @@ export default function Table({
   type,
   serviceName,
   serviceVersion,
+  serviceIsMetered,
   status
 }) {
   // adds relativeReqPercent field to items for viz-fill-bar rendering to Route/Function table
@@ -76,6 +77,7 @@ export default function Table({
           items.map(instance => (
             <GMServiceTableLineItem
               name={instance.name}
+              serviceIsMetered={serviceIsMetered}
               uptime={
                 <UpTime
                   startTime={instance.start_time}

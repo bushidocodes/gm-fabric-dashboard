@@ -56,7 +56,7 @@ export default function GMServiceCard({
   let titleNameAttribute = name === titleName ? null : name;
 
   let isAccessible = true;
-  if (!metered || !authorized || status === "Down") {
+  if (!authorized || status === "Down") {
     isAccessible = false;
   }
 

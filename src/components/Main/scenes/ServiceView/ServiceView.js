@@ -71,7 +71,13 @@ class ServiceView extends Component {
   };
 
   render() {
-    const { instances, serviceName, serviceVersion, status } = this.props;
+    const {
+      instances,
+      serviceName,
+      serviceVersion,
+      status,
+      serviceIsMetered
+    } = this.props;
     const { filterString, sortByAttribute, ascending } = this.state;
     const sortOrder = ascending ? ["asc"] : ["desc"];
 
@@ -94,6 +100,7 @@ class ServiceView extends Component {
             type={"Instance"}
             serviceName={serviceName}
             serviceVersion={serviceVersion}
+            serviceIsMetered={serviceIsMetered}
             items={_.orderBy(
               instances.filter(
                 ({ name }) =>

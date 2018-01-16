@@ -52,7 +52,7 @@ export default class ServicesListItem extends Component {
     } = this.props;
 
     let isAccessible = true;
-    if (!authorized || !metered || status === "Down") {
+    if (!authorized || status === "Down") {
       isAccessible = false;
     }
 
