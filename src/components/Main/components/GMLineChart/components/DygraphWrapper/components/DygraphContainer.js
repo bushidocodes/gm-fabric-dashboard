@@ -4,7 +4,7 @@ import {
   BORDER_RADIUS_BASE,
   COLOR_CONTENT,
   FONT_STACK_DATA,
-  FONT_WEIGHT_BASE
+  FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 import { spacingScale } from "style/styleFunctions";
 
@@ -40,7 +40,7 @@ const DygraphContainer = styled.div`
 
     /* TODO: Fix this selector */
     & [style*="bold"] {
-      font-weight: ${FONT_WEIGHT_BASE} !important;
+      font-weight: ${FONT_WEIGHT_SEMIBOLD} !important;
     }
   }
 

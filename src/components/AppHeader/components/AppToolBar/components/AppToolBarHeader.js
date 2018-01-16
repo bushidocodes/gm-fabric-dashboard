@@ -21,7 +21,6 @@ const AppToolBarHeader = styled.nav`
   flex-direction: row;
   font-family: ${FONT_STACK_BASE};
   font-size: ${APP_TOOLBAR_FONT_SIZE};
-  font-weight: 600;
 `;
 
 export default AppToolBarHeader;

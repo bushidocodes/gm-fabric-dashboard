@@ -86,7 +86,7 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
 
 .c1 {
   background-color: rgb(45,45,45);
-  font-weight: 600;
+  font-weight: 400;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;

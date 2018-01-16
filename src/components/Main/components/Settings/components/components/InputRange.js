@@ -2,7 +2,7 @@ import {
   FONT_SIZE_H2,
   FONT_STACK_BASE,
   FONT_SIZE_BASE,
-  FONT_WEIGHT_BASE,
+  FONT_WEIGHT_REGULAR,
   COLOR_BRAND_PRIMARY,
   COLOR_WHITE
 } from "style/styleVariables";
@@ -14,7 +14,7 @@ const InputRange = `
     color: ${COLOR_BRAND_PRIMARY.toString()};
     font-family: ${FONT_STACK_BASE};
     font-size: ${FONT_SIZE_H2};
-    font-weight: ${FONT_WEIGHT_BASE} + 100;
+    font-weight: ${FONT_WEIGHT_REGULAR};
     line-height: 0;
     margin-left: -50%;
     transform: translateX(-50%) translateY(4px);

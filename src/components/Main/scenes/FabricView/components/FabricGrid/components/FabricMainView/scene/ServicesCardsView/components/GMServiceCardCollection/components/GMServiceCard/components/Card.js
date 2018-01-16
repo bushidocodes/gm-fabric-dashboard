@@ -94,7 +94,7 @@ CardContainer.propTypes = {
 export const CardFooter = styled.footer`
   display: flex;
   align-items: center;
-  font-weight: ${parseInt(props => props.cardFontWeight, 10) + 500};
+  font-weight: ${parseInt(props => props.cardFontWeight, 10)};
   justify-content: space-between;
   z-index: 10;
   position: relative;

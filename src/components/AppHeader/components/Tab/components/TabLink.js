@@ -5,7 +5,8 @@ import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
   COLOR_WHITE,
-  COLOR_HIGHLIGHT
+  COLOR_HIGHLIGHT,
+  FONT_WEIGHT_REGULAR
 } from "style/styleVariables";
 
 const TAB_WIDTH_BASE = "1%";
@@ -19,7 +20,7 @@ const TabLink = styled(NavLink).attrs({
   exact: true
 })`
   background-color: ${COLOR_TAB_BACKGROUND_BASE.string()};
-  font-weight: 600;
+  font-weight: ${FONT_WEIGHT_REGULAR};
   flex: 1 1 ${TAB_WIDTH_BASE};
   margin: 1px 1px 0 0;
   overflow: hidden;

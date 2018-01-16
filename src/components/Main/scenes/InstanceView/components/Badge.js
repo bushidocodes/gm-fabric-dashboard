@@ -2,7 +2,8 @@ import styled from "styled-components";
 import {
   FONT_SIZE_SM,
   COLOR_HIGHLIGHT,
-  BORDER_RADIUS_BASE
+  BORDER_RADIUS_BASE,
+  FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 
@@ -10,7 +11,7 @@ const BADGE_COLOR = COLOR_HIGHLIGHT;
 
 const Badge = styled.span`
   font-size: ${FONT_SIZE_SM};
-  font-weight: 500;
+  font-weight: ${FONT_WEIGHT_SEMIBOLD};
   text-align: center;
   letter-spacing: 0.06em;
   height: fit-content;

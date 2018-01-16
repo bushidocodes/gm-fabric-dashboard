@@ -26,7 +26,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -151,9 +151,8 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 14px;
-  font-weight: 600;
 }
 
 .c2 {
@@ -182,7 +181,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;
@@ -604,7 +603,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -729,9 +728,8 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 14px;
-  font-weight: 600;
 }
 
 .c3 {
@@ -760,7 +758,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;
@@ -953,7 +951,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
 
 .c17 {
   background-color: rgb(45,45,45);
-  font-weight: 600;
+  font-weight: 400;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;
@@ -1849,7 +1847,7 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
 
 .c1 {
   background-color: rgb(45,45,45);
-  font-weight: 600;
+  font-weight: 400;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;
@@ -2375,7 +2373,7 @@ exports[`Storyshots Button default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -2527,7 +2525,7 @@ exports[`Storyshots Button orientations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -2632,7 +2630,7 @@ exports[`Storyshots Button orientations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -2846,7 +2844,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -2945,7 +2943,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3050,7 +3048,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3155,7 +3153,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3254,7 +3252,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3466,7 +3464,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3571,7 +3569,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3677,7 +3675,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3783,7 +3781,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -3888,7 +3886,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -4103,7 +4101,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -4208,7 +4206,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -4313,7 +4311,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -4418,7 +4416,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -4523,7 +4521,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -6552,7 +6550,7 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -6588,7 +6586,7 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
@@ -6691,10 +6689,9 @@ exports[`Storyshots Layout Section default 1`] = `
 
 .c11 {
   font-size: 11px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 600;
   min-height: 1em;
 }
 
@@ -7082,7 +7079,7 @@ exports[`Storyshots Readout A Readout Group 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -7118,7 +7115,7 @@ exports[`Storyshots Readout A Readout Group 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
@@ -7221,10 +7218,9 @@ exports[`Storyshots Readout A Readout Group 1`] = `
 
 .c7 {
   font-size: 11px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 600;
   min-height: 1em;
 }
 
@@ -7585,7 +7581,7 @@ exports[`Storyshots Readout A Readout with Many Items  1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -7688,10 +7684,9 @@ exports[`Storyshots Readout A Readout with Many Items  1`] = `
 
 .c6 {
   font-size: 11px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 600;
   min-height: 1em;
 }
 
@@ -7990,7 +7985,7 @@ exports[`Storyshots Readout Readout 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -8093,10 +8088,9 @@ exports[`Storyshots Readout Readout 1`] = `
 
 .c6 {
   font-size: 11px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 600;
   min-height: 1em;
 }
 
@@ -12581,7 +12575,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -13657,7 +13651,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -15413,7 +15407,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -16159,7 +16153,7 @@ exports[`Storyshots Service List Item Service List Item 1`] = `
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -16656,7 +16650,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 500;
+  font-weight: 400;
   overflow: visible;
   width: 100%;
 }
@@ -16689,7 +16683,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;
@@ -17271,7 +17265,7 @@ exports[`Storyshots Table Instance Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 500;
+  font-weight: 400;
   overflow: visible;
   width: 100%;
 }
@@ -17568,7 +17562,7 @@ exports[`Storyshots Table Routes Table 1`] = `
 
 .c13 {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   -webkit-letter-spacing: 0.06em;
   -moz-letter-spacing: 0.06em;
@@ -17628,7 +17622,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 500;
+  font-weight: 400;
   overflow: visible;
   width: 100%;
 }
@@ -17661,7 +17655,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;
@@ -18225,7 +18219,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -18330,7 +18324,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   border-width: 1px;
   line-height: 1.4;
@@ -18441,7 +18435,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   display: -ms-flexbox;
   display: flex;
   color: black;
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
@@ -18518,10 +18512,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
 }
 
 .c9 {
-  font-family: "NunitoSans",-apple-system,BlinkMacSystemFont,"Segoe UI", "Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans", "Helvetica Neue",sans-serif;
-  -webkit-flex-grow: 1;
-  -ms-flex-grow: 1;
-  flex-grow: 1;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif flex-grow:1;
   font-size: 14px;
   font-weight: 600;
   height: 28px;
@@ -18999,7 +18990,7 @@ exports[`Storyshots Tooltip default 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: NunitoSans,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 11px;
   opacity: 0;
   padding: 10px;

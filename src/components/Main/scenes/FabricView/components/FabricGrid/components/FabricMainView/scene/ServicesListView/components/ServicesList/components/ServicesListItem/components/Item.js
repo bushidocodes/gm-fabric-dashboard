@@ -5,7 +5,8 @@ import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   FONT_SIZE_XS,
   COLOR_CONTENT_MUTED,
-  COLOR_CONTENT_BACKGROUND
+  COLOR_CONTENT_BACKGROUND,
+  FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 
 const LineItemStyle = styled.div`
@@ -16,7 +17,7 @@ const LineItemStyle = styled.div`
 
 const ItemName = LineItemStyle.extend`
   margin-right: ${spacingScale(1)};
-  font-weight: 600;
+  font-weight: ${FONT_WEIGHT_SEMIBOLD};
   flex: 0 1 auto;
 `;
 
@@ -34,7 +35,7 @@ const ItemRuntime = LineItemStyle.extend`
     color: ${COLOR_CONTENT_MUTED.string()};
     font-size: ${FONT_SIZE_XS};
     letter-spacing: 0.08em;
-    font-weight: bold;
+    font-weight: ${FONT_WEIGHT_SEMIBOLD};
     border-radius: 3px;
     padding: 2px ${spacingScale(0.65)};
     background-color: ${contrastColor(

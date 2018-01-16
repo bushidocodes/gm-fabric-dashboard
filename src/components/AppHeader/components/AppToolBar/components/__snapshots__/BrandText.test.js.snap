@@ -7,7 +7,7 @@ exports[`BrandText matches snapshot 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 600;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;

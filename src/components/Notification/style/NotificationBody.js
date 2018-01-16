@@ -1,7 +1,8 @@
 import { spacingScale } from "style/styleFunctions";
 import {
   NOTIFICATION_TRANSITION,
-  NOTIFICATION_BACKGROUND_COLOR
+  NOTIFICATION_BACKGROUND_COLOR,
+  FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 
 const NotificationBody = `
@@ -10,7 +11,7 @@ const NotificationBody = `
     overflow: hidden;
     border-radius: 2px;
     color: black;
-    font-weight: 600;
+    font-weight: ${FONT_WEIGHT_SEMIBOLD};
     display: block;
     font-size: 14px;
     margin: 0;

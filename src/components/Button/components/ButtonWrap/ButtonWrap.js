@@ -13,7 +13,8 @@ import {
   COLOR_DANGER,
   COLOR_INFO,
   COLOR_WARNING,
-  COLOR_CONTENT_BACKGROUND
+  COLOR_CONTENT_BACKGROUND,
+  FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 
 // Maps button types to a particular color
@@ -46,7 +47,7 @@ const ButtonWrap = styled.button`
   box-sizing: border-box;
   user-select: none;
   font-family: ${FONT_STACK_BASE};
-  font-weight: 600;
+  font-weight: ${FONT_WEIGHT_SEMIBOLD};
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;

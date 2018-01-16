@@ -33,7 +33,7 @@ exports[`DygraphContainer matches snapshot 1`] = `
 }
 
 .c0 .dygraph-legend [style*="bold"] {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
 .c0:hover .dygraph-legend {

@@ -2,8 +2,8 @@ import Color from "color";
 import { css } from "styled-components";
 import { contrastColor } from "./styleFunctions";
 import { injectGlobal } from "styled-components";
-import NunitoSans400 from "./fonts/Nunito_Sans/NunitoSans-Regular.ttf";
-import NunitoSans600 from "./fonts/Nunito_Sans/NunitoSans-SemiBold.ttf";
+import Metropolis400 from "./fonts/metropolis/Metropolis-Regular.otf";
+import Metropolis600 from "./fonts/metropolis/Metropolis-SemiBold.otf";
 import Rubik400 from "./fonts/Rubik/Rubik-Regular.ttf";
 import Rubik500 from "./fonts/Rubik/Rubik-Medium.ttf";
 import Rubik700 from "./fonts/Rubik/Rubik-Bold.ttf";
@@ -66,7 +66,7 @@ export const ICON_VIEWBOX_SIZE = 24;
 export const FONT_GROUP_SYSTEM = `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`;
 
 // Fonts for specific use
-export const FONT_GROUP_MAIN_TEXT = "NunitoSans";
+export const FONT_GROUP_MAIN_TEXT = "Metropolis";
 export const FONT_GROUP_DATA = "Rubik";
 export const FONT_GROUP_CODE = `"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`;
 export const FONT_GROUP_DATA_MONO = "Source Code Pro";
@@ -77,7 +77,8 @@ export const FONT_STACK_DATA_MONO = `${FONT_GROUP_DATA_MONO}, ${FONT_GROUP_DATA}
 export const FONT_STACK_CODE = FONT_GROUP_CODE;
 
 export const LINE_HEIGHT_BASE = 1.4;
-export const FONT_WEIGHT_BASE = 500;
+export const FONT_WEIGHT_REGULAR = 400;
+export const FONT_WEIGHT_SEMIBOLD = 600;
 export const FONT_SIZE_HERO = "32px";
 export const FONT_SIZE_H2 = "24px";
 export const FONT_SIZE_H3 = "22px";
@@ -115,16 +116,16 @@ export const media = {
 
 injectGlobal`
   @font-face {
-    font-family: "NunitoSans";
+    font-family: "Metropolis";
     font-style: normal;
     font-weight: 400;
-    src: url(${NunitoSans400});
+    src: url(${Metropolis400});
   }
   @font-face {
-    font-family: "NunitoSans";
+    font-family: "Metropolis";
     font-style: normal;
     font-weight: 600;
-    src: url(${NunitoSans600});
+    src: url(${Metropolis600});
   }
   @font-face {
     font-family: "Rubik";
@@ -177,7 +178,7 @@ injectGlobal`
   h2,
   h3 {
     font-family: ${FONT_STACK_BASE};
-    font-weight: ${FONT_WEIGHT_BASE};
+    font-weight: ${FONT_WEIGHT_REGULAR};
     color: inherit;
   }
 
