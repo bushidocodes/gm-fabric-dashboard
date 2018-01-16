@@ -8,9 +8,12 @@ const TooltipWrap = styled.div`
   position: relative;
 
   :hover > :last-child {
-    opacity: 1;
+    ${props =>
+      props.disabled
+        ? ""
+        : `opacity: 1;
     visibility: visible;
-    z-index: ${ZINDEX_TOOLTIP};
+    z-index: ${ZINDEX_TOOLTIP};`};
   }
 `;
 

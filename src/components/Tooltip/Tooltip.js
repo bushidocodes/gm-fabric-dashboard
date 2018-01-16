@@ -3,9 +3,15 @@ import PropTypes from "prop-types";
 import TooltipContent from "./components/TooltipContent";
 import TooltipWrap from "./components/TooltipWrap";
 
-export default function Tooltip({ children, content, position }) {
+export default function Tooltip({
+  children,
+  content,
+  position,
+  disabled,
+  containerStyle = {}
+}) {
   return (
-    <TooltipWrap>
+    <TooltipWrap style={containerStyle} disabled={disabled}>
       {children}
       <TooltipContent position={position}>{content}</TooltipContent>
     </TooltipWrap>

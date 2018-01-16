@@ -40,6 +40,7 @@ const TableRow = styled.li.attrs({
 
   > * {
     ${rowChildSpacing()};
+    ${props => (props.overflow ? `overflow: inherit;` : "")};
   }
 `;
 
