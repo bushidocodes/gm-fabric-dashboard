@@ -10,7 +10,7 @@ import { spacingScale, contrastColor } from "style/styleFunctions";
 const Copyright = styled.p`
   font-size: ${FONT_SIZE_XS};
   margin: 0;
-  flex: 1 1 100%;
+  flex: 0 0 100%;
   text-align: center;
   transition: opacity 0.2s ease;
   cursor: default;
@@ -21,7 +21,6 @@ const Copyright = styled.p`
   padding: ${spacingScale(1)};
 
   order: 3;
-  flex: 0 0 100%;
 
   @media all and (min-width: 800px) {
     order: initial;

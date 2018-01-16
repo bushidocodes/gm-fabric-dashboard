@@ -15,6 +15,7 @@ import { getTableHeaders, getItem } from "./utils";
 
 Table.propTypes = {
   items: PropTypes.array,
+  serviceIsMetered: PropTypes.bool,
   serviceName: PropTypes.string,
   serviceVersion: PropTypes.string,
   status: PropTypes.string,

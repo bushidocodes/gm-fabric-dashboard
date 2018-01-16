@@ -12,6 +12,7 @@ import NoMetrics from "components/Glyphs/NoMetrics";
 GMServiceTableLineItem.propTypes = {
   name: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
+  serviceIsMetered: PropTypes.bool,
   status: PropTypes.string.isRequired,
   uptime: PropTypes.object
 };

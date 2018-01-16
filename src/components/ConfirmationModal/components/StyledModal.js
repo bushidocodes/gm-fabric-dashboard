@@ -33,6 +33,15 @@ const StyledModal = styled(Modal)`
     transition: all 0.4s ease;
   }
 
+  [class*="after-close"] > & {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scale(0.5);
+
+    > [class*="Content"] > * {
+      top: 1em;
+    }
+  }
+
   [class*="after-open"] > & {
     opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
@@ -43,15 +52,6 @@ const StyledModal = styled(Modal)`
 
     > [class*="Content"] > * {
       top: 0;
-    }
-  }
-
-  [class*="after-close"] > & {
-    opacity: 0;
-    transform: translateX(-50%) translateY(0) scale(0.5);
-
-    > [class*="Content"] > * {
-      top: 1em;
     }
   }
 `;

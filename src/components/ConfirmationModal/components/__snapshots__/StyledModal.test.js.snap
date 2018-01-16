@@ -38,6 +38,17 @@ exports[`StyledModal matches snapshot 1`] = `
   transition: all 0.4s ease;
 }
 
+[class*="after-close"] > .c0 {
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(0) scale(0.5);
+  -ms-transform: translateX(-50%) translateY(0) scale(0.5);
+  transform: translateX(-50%) translateY(0) scale(0.5);
+}
+
+[class*="after-close"] > .c0 > [class*="Content"] > * {
+  top: 1em;
+}
+
 [class*="after-open"] > .c0 {
   opacity: 1;
   -webkit-transform: translateX(-50%) translateY(0) scale(1);
@@ -51,17 +62,6 @@ exports[`StyledModal matches snapshot 1`] = `
 
 [class*="after-open"] > .c0 > [class*="Content"] > * {
   top: 0;
-}
-
-[class*="after-close"] > .c0 {
-  opacity: 0;
-  -webkit-transform: translateX(-50%) translateY(0) scale(0.5);
-  -ms-transform: translateX(-50%) translateY(0) scale(0.5);
-  transform: translateX(-50%) translateY(0) scale(0.5);
-}
-
-[class*="after-close"] > .c0 > [class*="Content"] > * {
-  top: 1em;
 }
 
 <Modal

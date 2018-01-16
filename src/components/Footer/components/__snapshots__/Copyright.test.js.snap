@@ -4,9 +4,9 @@ exports[`Copyright should render when screen is 800px or higher 1`] = `
 .c0 {
   font-size: 9px;
   margin: 0;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   text-align: center;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
@@ -20,9 +20,6 @@ exports[`Copyright should render when screen is 800px or higher 1`] = `
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
 }
 
 @media all and (min-width:800px) {

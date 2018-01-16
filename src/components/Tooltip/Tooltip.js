@@ -25,7 +25,9 @@ Tooltip.propTypes = {
     PropTypes.string,
     PropTypes.number
   ]).isRequired,
+  containerStyle: PropTypes.object,
   content: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   position: PropTypes.oneOf(["top", "bottom", "left", "right"])
 };
 

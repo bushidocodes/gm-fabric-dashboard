@@ -13,12 +13,11 @@ const Footer = styled.footer`
   overflow: hidden;
   padding: ${spacingScale(0.5)};
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.8).string()};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   font-size: ${FONT_SIZE_SM};
   height: auto;
-  flex-wrap: wrap;
   align-items: stretch;
   justify-content: stretch;
 

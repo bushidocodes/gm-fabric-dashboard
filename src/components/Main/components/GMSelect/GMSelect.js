@@ -12,7 +12,7 @@ import {
 import "react-select/dist/react-select.css";
 
 const GMSelect = styled(Select)`
-  font-family: ${FONT_STACK_BASE}
+  font-family: ${FONT_STACK_BASE};
   flex-grow: 1;
   font-size: ${FONT_SIZE_BASE};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
