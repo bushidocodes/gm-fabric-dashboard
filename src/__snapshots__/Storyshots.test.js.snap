@@ -391,7 +391,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    1.0.3
+    1.0.4
   </a>
   <div
     className="c8"
@@ -1213,7 +1213,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      1.0.3
+      1.0.4
     </a>
     <div
       className="c9"

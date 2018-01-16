@@ -1,3 +1,31 @@
+<a name="1.0.4"></a>
+
+## [1.0.4](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.3...v1.0.4) (2018-01-16)
+
+### Bug Fixes 🐛🔨
+
+* added sort by latency to JVM routes table ([#1294](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1294)) ([e6a0339](https://github.com/DecipherNow/gm-fabric-dashboard/commit/e6a0339))
+* location.state defaults to object ([#1289](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1289)) ([1bf3b3d](https://github.com/DecipherNow/gm-fabric-dashboard/commit/1bf3b3d))
+* replace Nunito with Metropolis ([#1351](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1351)) ([9809ba4](https://github.com/DecipherNow/gm-fabric-dashboard/commit/9809ba4))
+* update mesh header ([#1346](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1346)) ([ee85a23](https://github.com/DecipherNow/gm-fabric-dashboard/commit/ee85a23))
+
+### Features 🚀🚀🚀
+
+* allow users to access service view for service with no metrics ([#1360](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1360)) ([57d9f1a](https://github.com/DecipherNow/gm-fabric-dashboard/commit/57d9f1a))
+* make react select searchable ([#645](https://github.com/DecipherNow/gm-fabric-dashboard/issues/645)) ([0ffcd22](https://github.com/DecipherNow/gm-fabric-dashboard/commit/0ffcd22))
+* add Storybook stories for Table([#1278](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1278)) ([e393fa1](https://github.com/DecipherNow/gm-fabric-dashboard/commit/e393fa1)), notfounderror([#645](https://github.com/DecipherNow/gm-fabric-dashboard/issues/645)) ([0ffcd22](https://github.com/DecipherNow/gm-fabric-dashboard/commit/0ffcd22)), and layoutsection ([#1288](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1288)) ([cff948b](https://github.com/DecipherNow/gm-fabric-dashboard/commit/cff948b))
+* add unit tests for AppHeader, Uptime, dygraph utils, Button, Notification, Selectors, Loading, Glyph, DygraphWrapper, Appheader, InstanceView
+* Add copyright text and update footer responsiveness behavior ([#1342](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1342)) ([1084a27](https://github.com/DecipherNow/gm-fabric-dashboard/commit/1084a27))
+* Deleted functionality to run without a `discovery-service` instance
+
+### Yak Shaving 🐃💇
+
+* Cleaned up our README and other docs
+* Updated dependencies
+* modify our CircleCI behavior to filter branches ([#1335](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1335)) ([cac5b21](https://github.com/DecipherNow/gm-fabric-dashboard/commit/cac5b21)) and run with Circle CI 2.0 workflows
+* lint commit msgs and automate changelog ([#1340](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1340)) ([85e2051](https://github.com/DecipherNow/gm-fabric-dashboard/commit/85e2051))
+* Simplify the dev workflow. Now just run `npm start` and get coding!
+
 <a name="1.0.3"></a>
 
 ## [1.0.3](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.2...v1.0.3) (2017-12-14)

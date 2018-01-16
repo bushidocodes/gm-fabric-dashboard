@@ -578,7 +578,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      1.0.3
+      1.0.4
     </a>
     <div
       class="c9"
@@ -1470,7 +1470,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      1.0.3
+      1.0.4
     </a>
     <div
       class="c9"
