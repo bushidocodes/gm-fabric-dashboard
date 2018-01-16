@@ -36,7 +36,7 @@ function GMServiceTableLineItem({
   };
 
   return (
-    <TableRow tabIndex="-1" onClick={evt => blurTableRow(evt)} overflow>
+    <TableRow tabIndex="-1" onClick={evt => blurTableRow(evt)} overflowVisible>
       <TableCol style={{ flex: "1 1 20%" }}>
         {!serviceIsMetered && (
           <Icon title="No Metrics">
