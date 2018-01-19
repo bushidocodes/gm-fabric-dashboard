@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="./docs/assets/gm-fabric.png" alt="Grey Matter Fabric Logo" width="50">
+  <img src="./docs/assets/decipher-logo.png" alt="Decipher Logo" width="50">
   <br>
   Grey Matter Fabric Dashboard
   <br>
