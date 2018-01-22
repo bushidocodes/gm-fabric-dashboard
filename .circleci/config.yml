@@ -39,6 +39,15 @@ jobs:
             - node_modules
             - cc-test-reporter
           key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+      - run:
+          name: Run linters
+          # Setting max warning to treat all eslint warning as errors that break
+          # the build. This matches the behavior of npm build and allows us to 
+          # fail builds that would otherwise later break. Stylelint only breaks
+          # the build on errors because we use verbose warnings to warn about
+          # CSS that is not fully supported by our browser support matrix.
+          command: | 
+            npm run lint-js -- --max-warnings=0 && npm run lint-css
 
   build:
     <<: *defaults
