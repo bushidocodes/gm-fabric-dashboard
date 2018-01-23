@@ -142,7 +142,6 @@ export default class Glyph extends Component {
 
     // if glyph name is not found, return empty glyph and console log an error message
     if (!glyphs[name]) {
-      console.log(`${name} is not found in glyph adapter`);
       return <g />;
     }
     // dynamically render glyph component by name
