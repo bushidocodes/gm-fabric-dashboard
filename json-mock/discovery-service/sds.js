@@ -2,6 +2,7 @@ const { services, instances } = require("./data");
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router();
+const cors = require("cors");
 const middlewares = jsonServer.defaults();
 const jvmMetrics = require("../jvm/metrics.json");
 const jvmThreads = require("../jvm/threads.json");
@@ -15,7 +16,7 @@ const { PORT } = require("../constants");
 //   metricsStore[instance] = Object.assign({}, jvmMetrics);
 // });
 
-server.use(middlewares);
+server.use([...middlewares, cors()]);
 
 const servicesObj = _.mapKeys(
   services,
@@ -74,9 +75,7 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
 server.use(router);
 server.listen(PORT, () => {
   console.log(
-    `JSON Server is running on port ${
-      PORT
-    } and mocking the Service Discovery Service`
+    `JSON Server is running on port ${PORT} and mocking the Service Discovery Service`
   );
 });
 

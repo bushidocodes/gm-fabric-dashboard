@@ -50,11 +50,11 @@ describe("convertMS", () => {
   test("takes milliseconds and returns an array of time units in [00d, 00h, 00m, 00s] format", () => {
     expect(convertMS(1510172807556)).toEqual(["17478d", "20h", "26m", "47s"]);
     expect(convertMS(72807556)).toEqual(["20h", "13m", "27s"]);
-    expect(convertMS(0)).toEqual(["00s"]);
+    expect(convertMS(0)).toEqual([]);
   });
   test("returns undefined when invalid prop is passed", () => {
-    expect(convertMS("not a number")).toEqual(undefined);
-    expect(convertMS("")).toEqual(undefined);
+    expect(convertMS("not a number")).toEqual([]);
+    expect(convertMS("")).toEqual([]);
   });
   test('works on string number such as "0.477112"', () => {
     expect(convertMS("342342451")).toEqual(["03d", "23h", "05m", "42s"]);

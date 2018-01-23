@@ -26,21 +26,16 @@ export function clearFabricIntervalIfNeeded() {
   }
 }
 /**
- * Takes milliseconds and returns a human readable string of time
- * 7620940771 => '88d 04h 55m 41s'
- * @param {number} ms
- * @returns {string}
+ * Takes milliseconds and returns a human readable string of time.
+ * The string values are split by space to allow the most significant
+ * unit to be styled differently
+ * 7620940771 => ['88d', '04h', '55m', '41s']
+ * @param {(number|string)} ms
+ * @returns {string[]}
  */
 export const convertMS = (ms = 0) => {
-  if (ms === "") {
-    console.log("convertMS received an empty string");
-    return;
-  }
   ms = _.toNumber(ms);
-  if (_.isNaN(ms) || typeof ms !== "number") {
-    console.log("convertMS received a wrong parameter");
-    return;
-  }
+  if (_.isNaN(ms) || typeof ms !== "number" || ms === 0) return [];
   let s = Math.floor(ms / 1000);
   let m = Math.floor(s / 60);
   s = s % 60;
@@ -67,22 +62,25 @@ export const convertMS = (ms = 0) => {
 };
 
 /**
- * Takes array of objects (example: array of routes objects) and key (number of requests) and returns a new object with the new field 'relativeReqPercent' added.
- * If Route A has 1000 requests per second, Route B has 500 requests per second, and Route C has 10 requests per second, Route A's bar is at 100%, Route B's bar is at 50%, and Route C's bar is at 1%.
- * The maximum value is value of the route with the highest number of requests.
- * 'relativeReqPercent' is percent representation of the percent difference without % symbol (50%)
- * @param {array, string}
- * @returns {array}
+ * Takes an array of objects, inspects the value of a particular key for each object, and then
+ * calculates the relative value of each object as a percentage of the object with the highest
+ * value of this particular key. Each object is appended with the key 'relativeReqPercent' containing a float value expressing a percentage between 0 and 1000.
+ *
+ * For example, if Route A has 1000 requests per second, Route B has 500 requests per second, and Route C has 10 requests per second, Route A's bar is at 100%, Route B's bar is at 50%, and Route C's bar is at 1%.
+ *
+ * While the algorithm is reusable, this utillity function currently hardcodes the 'relativeReqPercent'
+ * key, which refers to the original use of this function with request count metrics. This can be refactored
+ * to dynamically generate a key based on the source key passed into the function.
+ *
+ * @param {Object[]} arrObj - An array of Objects containing keys
+ * @param {string} key - The key that we want to use to compare the objects
+ * @returns {Object[]} - The array of objects, where each object now contains the relativeReqPercent key
  */
 export const relativeReqPercent = (arrObj = [], key = "") => {
   if (_.isEmpty(arrObj) || key === "") return arrObj;
   let max = _.max(_.map(arrObj, key));
-  if (!max) {
-    console.log(
-      "relativeReqPercent did not find the passed key in all objects"
-    );
-    return arrObj;
-  }
+  // If we can't find a max value, just return the original array of objects
+  if (!max) return arrObj;
   return _.map(arrObj, el =>
     _.extend({}, el, { relativeReqPercent: el[key] / max * 100 })
   );
@@ -101,16 +99,19 @@ export function calculateErrorPercent(requests, errors) {
   return formatAsDecimalString(errorPercent);
 }
 
+/**
+ * Utility function to turn a string or number into a number with a precise number of decimals
+ * The number is expressed as a localeString inferred from the browser environment to internationalize
+ * the result (e.g. 100,000.000 in US or 100.000,000 in Germany)
+ * @export
+ * @param {(number|string)} number
+ * @param {number} numberOfDecimals
+ * @returns string
+ */
 export function formatAsDecimalString(number, numberOfDecimals = 3) {
-  if (number === "") {
-    console.log("formatAsDecimalString received an empty string");
-    return;
-  }
+  if (number === "") return;
   number = _.toNumber(number);
-  if (_.isNaN(number) || typeof number !== "number") {
-    console.log("formatAsDecimalString received a wrong paramater");
-    return;
-  }
+  if (_.isNaN(number) || typeof number !== "number") return;
 
   return number.toLocaleString(undefined, {
     maximumFractionDigits: numberOfDecimals,

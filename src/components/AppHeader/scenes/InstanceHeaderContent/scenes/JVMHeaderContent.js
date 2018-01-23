@@ -1,16 +1,15 @@
 import _ from "lodash";
-
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import ThreadCounts from "components/ThreadCounts";
-import UpTime from "components/UpTime";
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
-import { getLatestAttribute } from "utils/latestAttribute";
-import { getSparkLineOfValue } from "utils/sparklines";
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
+import ThreadCounts from "components/ThreadCounts";
+import UpTime from "components/UpTime";
+import { getLatestAttribute } from "utils/latestAttribute";
+import { getSparkLineOfValue } from "utils/sparklines";
 
 JVMHeaderContent.propTypes = {
   basePath: PropTypes.string,
@@ -45,6 +44,7 @@ export default function JVMHeaderContent({ basePath, metrics, headerTabs }) {
             )
           }
         ]}
+        tabIndex={0}
         title="Summary"
       />
       <Tab
@@ -58,6 +58,7 @@ export default function JVMHeaderContent({ basePath, metrics, headerTabs }) {
               getLatestAttribute(metrics, "https/requests")
           }
         ]}
+        tabIndex={0}
         title="Routes"
       />
       <Tab
@@ -70,6 +71,7 @@ export default function JVMHeaderContent({ basePath, metrics, headerTabs }) {
             value: <ThreadCounts render={threadCounts => threadCounts.all} />
           }
         ]}
+        tabIndex={0}
         title="Threads"
       />
       {headerTabs}

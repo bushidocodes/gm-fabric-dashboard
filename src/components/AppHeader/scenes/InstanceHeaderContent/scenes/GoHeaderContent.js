@@ -2,13 +2,12 @@ import _ from "lodash";
 import React from "react";
 import { PropTypes } from "prop-types";
 
-import { getLatestAttribute } from "utils/latestAttribute";
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
-import UpTime from "components/UpTime";
-
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
+import UpTime from "components/UpTime";
+import { getLatestAttribute } from "utils/latestAttribute";
 
 GoHeaderContent.propTypes = {
   basePath: PropTypes.string,
