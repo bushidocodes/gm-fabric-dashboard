@@ -1,4 +1,3 @@
-import { createHashHistory } from "history";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
@@ -11,9 +10,7 @@ import Notification from "./components/Notification";
 import Main from "./components/Main";
 import store from "./store";
 import "./services";
-
-// Just use hash history because our dashboard will be hosted deeply
-export const history = createHashHistory();
+import history from "./AppHistory.js";
 
 ReactDOM.render(
   <Provider store={store}>

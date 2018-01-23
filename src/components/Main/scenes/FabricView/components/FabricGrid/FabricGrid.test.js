@@ -61,7 +61,7 @@ const mockServices = _.values({
 });
 
 // Wrap Fabric Grid in Memory Router to mock route props (history, match, location)
-const RouterWrap = (route, services = mockServices) => {
+const RouterWrap = (route = ["/"], services = mockServices) => {
   return (
     <MemoryRouter initialEntries={route}>
       <Route render={props => <FabricGrid {...props} services={services} />} />
@@ -81,23 +81,26 @@ const filterServicesByStatus = filter => {
   });
 };
 
-let FabricGridWrap;
+const urlStateDefaults = {
+  displayType: "Cards",
+  groupByAttribute: "Status",
+  searchQuery: "",
+  sortByAttribute: "Name"
+};
+
+let FabricGridWrap = mount(RouterWrap());
 
 describe("Fabric Grid Main View", () => {
-  beforeEach(() => {
-    FabricGridWrap = mount(RouterWrap(["/"]));
+  afterEach(() => {
+    // Reset the url bar state to defaults after every test
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState(urlStateDefaults);
   });
 
   test("renders all services in cards view", () => {
-    expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
-      3
-    );
-    expect(
-      FabricGridWrap.find(FabricGrid).find("GMServiceListItem").length
-    ).toBe(0);
-    expect(FabricGridWrap.find(FabricGrid).instance().state.displayType).toBe(
-      "Cards"
-    );
+    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(3);
+    expect(FabricGridWrap.find("GMServiceListItem")).toHaveLength(0);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
     expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
     expect(
@@ -106,18 +109,9 @@ describe("Fabric Grid Main View", () => {
   });
 
   test("renders all services in list view", () => {
-    // Remount with new search query
-    FabricGridWrap = mount(RouterWrap([{ search: "?viewType=List" }]));
-
-    let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
-
-    expect(
-      FabricGridWrap.find(FabricGrid).find("ServicesListItem").length
-    ).toBe(3);
-    expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
-      0
-    );
-    expect(FabricGridInstance.state.displayType).toBe("List");
+    FabricGridWrap.find("button[title='List']").simulate("click");
+    expect(FabricGridWrap.find("ServicesListItem")).toHaveLength(3);
+    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(0);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
     expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(true);
     expect(
@@ -126,52 +120,59 @@ describe("Fabric Grid Main View", () => {
   });
 
   test("groups services by Owner, Capability, Status, and None", () => {
-    let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
-
-    FabricGridInstance.setState({ groupByAttribute: "Owner" });
-    expect(FabricGridInstance.state.groupByAttribute).toBe("Owner");
-    expect(FabricGridWrap.html().includes("domain")).toBe(true);
-    expect(FabricGridWrap.html().includes("aac")).toBe(true);
-    expect(FabricGridWrap.html().includes("bootstrap")).toBe(true);
-
-    FabricGridInstance.setState({ groupByAttribute: "Capability" });
-    expect(FabricGridInstance.state.groupByAttribute).toBe("Capability");
-    expect(FabricGridWrap.html().includes("system of record")).toBe(true);
-    expect(FabricGridWrap.html().includes("crime fighting")).toBe(true);
-
-    FabricGridInstance.setState({ groupByAttribute: "Status" });
-    expect(FabricGridInstance.state.groupByAttribute).toBe("Status");
+    // Group by "Status" (groupByAttribute's default)
     expect(FabricGridWrap.html().includes("down")).toBe(true);
     expect(FabricGridWrap.html().includes("warning")).toBe(true);
     expect(FabricGridWrap.html().includes("stable")).toBe(true);
-
-    // If groupByAttribute is none, there should be no headers present
-    FabricGridInstance.setState({ groupByAttribute: "None" });
+    // Group by "Owner"
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ groupByAttribute: "Owner" });
+    expect(FabricGridWrap.html().includes("domain")).toBe(true);
+    expect(FabricGridWrap.html().includes("aac")).toBe(true);
+    expect(FabricGridWrap.html().includes("bootstrap")).toBe(true);
+    // Group by "Capability"
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ groupByAttribute: "Capability" });
+    expect(FabricGridWrap.html().includes("system of record")).toBe(true);
+    expect(FabricGridWrap.html().includes("crime fighting")).toBe(true);
+    // Group by "None" (there should be no headers present)
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ groupByAttribute: "None" });
     expect(FabricGridWrap.html().includes("GMServiceHeader")).toBe(false);
-    expect(FabricGridInstance.state.groupByAttribute).toBe("None");
   });
 
   test("sorts services by name and status", () => {
-    // Remount with new query
-    let FabricGridInstance = mount(RouterWrap([{ search: "?sortBy=Name" }]))
-      .find(FabricGrid)
-      .instance();
+    // Sort by "Name"
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ groupByAttribute: "None", sortByAttribute: "Name" });
+    // Find and compare indices to determine the sorting order
+    let first = FabricGridWrap.html().indexOf("AAC Remote Information");
+    let second = FabricGridWrap.html().indexOf("Entry Monitoring");
+    let third = FabricGridWrap.html().indexOf(
+      "Grace Hopper Battleship Control Program"
+    );
+    expect(first).toBeLessThan(second);
+    expect(second).toBeLessThan(third);
+    // Sort by "Status"
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ groupByAttribute: "None", sortByAttribute: "Status" });
+    // Sorting by status flips the order of Entry monitoring and AAC
+    first = FabricGridWrap.html().indexOf("Entry Monitoring");
+    second = FabricGridWrap.html().indexOf("AAC Remote Information");
 
-    expect(FabricGridInstance.state.sortByAttribute).toBe("Name");
-
-    FabricGridInstance = mount(RouterWrap([{ search: "?sortBy=Status" }]))
-      .find(FabricGrid)
-      .instance();
-
-    expect(FabricGridInstance.state.sortByAttribute).toBe("Status");
+    expect(first).toBeLessThan(second);
+    expect(second).toBeLessThan(third);
   });
 
   test("filters services based on searchQuery", () => {
-    let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
-
-    FabricGridInstance.setState({ searchQuery: "Grace" });
-
-    expect(FabricGridInstance.state.searchQuery).toBe("Grace");
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState({ searchQuery: "Grace" });
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
       false
     );
@@ -180,22 +181,15 @@ describe("Fabric Grid Main View", () => {
       FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
     ).toBe(true);
   });
-
-  test("has buttons that toggle cards and list view", () => {
-    let FabricGridInstance = FabricGridWrap.find(FabricGrid).instance();
-    const button = FabricGridWrap.find(FabricGrid).find("button");
-
-    button.at(1).simulate("click");
-
-    expect(FabricGridInstance.state.displayType).toBe("List");
-
-    button.at(0).simulate("click");
-
-    expect(FabricGridInstance.state.displayType).toBe("Cards");
-  });
 });
 
 describe("Fabric Grid Status Views", () => {
+  afterEach(() => {
+    FabricGridWrap.find("FabricGrid")
+      .props()
+      .setUrlState(urlStateDefaults);
+  });
+
   // In the following tests, we have to generate filtered services to pass down to the route,
   // to mock what we do in FabricGrid router
   test("render the correct services in stable view", () => {
@@ -203,9 +197,7 @@ describe("Fabric Grid Status Views", () => {
     FabricGridWrap = mount(RouterWrap(["/stable"], filteredServices));
 
     // Check that there is only one stable card rendered
-    expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
-      1
-    );
+    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
       false
     );
@@ -218,11 +210,8 @@ describe("Fabric Grid Status Views", () => {
   test("render the correct services in warning view", () => {
     const filteredServices = filterServicesByStatus("warning");
     FabricGridWrap = mount(RouterWrap(["/warning"], filteredServices));
-
     // Check that there is only one warning card rendered
-    expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
-      1
-    );
+    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
     expect(FabricGridWrap.html().includes("Entry Monitoring")).toBe(false);
     expect(
@@ -233,11 +222,8 @@ describe("Fabric Grid Status Views", () => {
   test("render the correct services in down view", () => {
     const filteredServices = filterServicesByStatus("down");
     FabricGridWrap = mount(RouterWrap(["/down"], filteredServices));
-
     // Check that there is only one down card rendered
-    expect(FabricGridWrap.find(FabricGrid).find("GMServiceCard").length).toBe(
-      1
-    );
+    expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(
       false
     );
@@ -246,70 +232,4 @@ describe("Fabric Grid Status Views", () => {
       FabricGridWrap.html().includes("Grace Hopper Battleship Control Program")
     ).toBe(false);
   });
-});
-
-describe("Fabric Grid Instance Method", () => {
-  let FabricGridInstance;
-
-  beforeEach(() => {
-    FabricGridInstance = mount(RouterWrap(["/"]))
-      .find(FabricGrid)
-      .instance();
-  });
-
-  test("_pushHistory sets state and pushes queryString to browser history", () => {
-    FabricGridInstance._pushHistory("AAC");
-
-    expect(FabricGridInstance.state.lastPushedQueryString).toBe("AAC");
-    expect(FabricGridInstance.props.history.location.search).not.toBe(null);
-    expect(FabricGridInstance.props.history.location.search).toBe("?AAC");
-    expect(FabricGridInstance.props.history.length).toBe(2);
-  });
-
-  test("popAndDecodeHistory parses the query string and sets local state", () => {
-    FabricGridInstance.popAndDecodeHistory(
-      "viewType=List&groupBy=Owner&searchQuery=aac"
-    );
-
-    expect(FabricGridInstance.state.searchQuery).not.toBe("Cards");
-    expect(FabricGridInstance.state.displayType).toBe("List");
-    expect(FabricGridInstance.state.searchQuery).not.toBe("Status");
-    expect(FabricGridInstance.state.groupByAttribute).toBe("Owner");
-    expect(FabricGridInstance.state.searchQuery).not.toBe(null);
-    expect(FabricGridInstance.state.searchQuery).toBe("aac");
-  });
-
-  // This test slowly begins to slow down running tests so commenting out for now - DTillery
-  // test("debouncedPushHistory debounces _pushHistory call 500ms", async done => {
-  //   // Call debounce with a query string
-  //   FabricGridInstance.debouncedPushHistory("sortBy=Name");
-  //
-  //   // We should not have pushed to state at this point
-  //   expect(FabricGridInstance.state.lastPushedQueryString).toBe("");
-  //   expect(FabricGridInstance.state.lastPushedQueryString).not.toBe(
-  //     "sortBy=Name"
-  //   );
-  //
-  //   // Wait 500ms
-  //   await setTimeout(async () => {
-  //     // Now our sortBy attribute should be in local state
-  //     expect(FabricGridInstance.state.lastPushedQueryString).not.toBe("");
-  //     expect(FabricGridInstance.state.lastPushedQueryString).toBe(
-  //       "sortBy=Name"
-  //     );
-  //     // Call debounce with another query
-  //     FabricGridInstance.debouncedPushHistory("groupBy=Owner");
-  //     //Wait another 500ms
-  //     await setTimeout(() => {
-  //       expect(FabricGridInstance.state.lastPushedQueryString).toBe(
-  //         "groupBy=Owner"
-  //       );
-  //       expect(FabricGridInstance.state.lastPushedQueryString).not.toBe(
-  //         "viewType=Table"
-  //       );
-  //       // Tell jest we're done
-  //       done();
-  //     }, 500);
-  //   }, 500);
-  // });
 });

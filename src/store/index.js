@@ -4,7 +4,7 @@ import { routerReducer, routerMiddleware } from "react-router-redux";
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
 
-import { history } from "../index.js";
+import history from "../AppHistory";
 
 import dashboards from "./states/dashboards";
 import fabric from "./states/fabric";
