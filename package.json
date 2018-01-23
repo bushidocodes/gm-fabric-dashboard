@@ -113,6 +113,7 @@
     "jest-styled-components": "^4.9.0",
     "json-server": "^0.12.1",
     "junit-merge": "^1.2.3",
+    "license-checker": "^16.0.0",
     "lint-staged": "^6.0.0",
     "lodash-webpack-plugin": "^0.11.4",
     "moxios": "^0.4.0",
@@ -137,20 +138,18 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker":
-      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "build-storybook": "build-storybook",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "docs":
-      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check":
-      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "junit-merge": "junit-merge",
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "mock-sds": "node json-mock/discovery-service/sds.js",
     "publish": "node scripts/publish.js",
+    "report-dep-licenses": "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
     "start": "npm run start-all",
     "start-all": "npm-run-all --print-label --parallel start-ui mock-sds",
     "start-ui": "node scripts/start.js",
@@ -165,7 +164,10 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -175,15 +177,18 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
       "<rootDir>/config/jest/jestSetup.js"
     ],
-    "setupTestFrameworkScriptFile":
-      "<rootDir>/config/jest/jestTestFrameworkSetup.js",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/jestTestFrameworkSetup.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -195,15 +200,28 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleDirectories": ["node_modules", "src"],
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx"
+    ]
   },
   "babel": {
-    "presets": ["react-app"]
+    "presets": [
+      "react-app"
+    ]
   },
   "prettier": {
     "bracketSpacing": true,
@@ -216,7 +234,9 @@
     "useTabs": false
   },
   "commitlint": {
-    "extends": ["@commitlint/config-angular"]
+    "extends": [
+      "@commitlint/config-angular"
+    ]
   },
   "browserslist": [
     "last 2 Chrome versions",

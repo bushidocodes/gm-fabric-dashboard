@@ -15,6 +15,10 @@
 # production
 /build
 
+# license reports
+/licenses/report.csv
+/licenses/summary.txt
+
 
 # Ignore build assets
 /build
