@@ -11,7 +11,7 @@ const babelPlugins = require("../config/babelPlugins");
 
 module.exports = {
   resolve: {
-    modules: ["src", "node_modules"],
+    modules: [path.resolve(__dirname, "../src"), "node_modules"],
     extensions: [".json", ".js"]
   },
   module: {
