@@ -5,10 +5,12 @@ import { connect } from "react-redux";
 import _ from "lodash";
 
 import ThreadsTable from "./components/ThreadsTable";
-import TableToolbar from "components/Main/components/TableToolbar";
+
 import ErrorBoundary from "components/ErrorBoundary";
-import { getVisibleThreads } from "utils/jvm/selectors";
+import TableToolbar from "components/Main/components/TableToolbar";
 import NotFoundError from "components/Main/components/NotFoundError";
+import withUrlState from "components/withUrlState";
+import { getVisibleThreads } from "utils/jvm/selectors";
 
 /**
  * Parent container of ThreadsTable and TableToolbar
@@ -21,46 +23,11 @@ class ThreadsGrid extends Component {
     selectedInstance: PropTypes.string,
     selectedService: PropTypes.string,
     selectedServiceVersion: PropTypes.string,
+    setUrlState: PropTypes.func.isRequired,
     threads: PropTypes.array,
-    threadsError: PropTypes.object
+    threadsError: PropTypes.object,
+    urlState: PropTypes.object.isRequired
   };
-
-  // Options for sort dropdown rendered in TableToolbar
-  static sortByOptions = [
-    {
-      value: "state",
-      label: "State"
-    },
-    {
-      value: "name",
-      label: "Name"
-    },
-    {
-      value: "id",
-      label: "ID"
-    }
-  ];
-
-  static groupByOptions = [
-    {
-      value: "state",
-      label: "State"
-    },
-    {
-      value: "none",
-      label: "None"
-    }
-  ];
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      filterString: "",
-      groupByAttribute: "none",
-      sortByAttribute: "id",
-      ascending: true
-    };
-  }
 
   componentDidMount() {
     const {
@@ -72,12 +39,29 @@ class ThreadsGrid extends Component {
 
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
     // so we need to dynamically build the endpoint for the threads API.
-    if (this.props.fabricServer) {
+    if (fabricServer) {
       Actions.fetchAndStoreInstanceThreads(
         `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
       );
     }
   }
+
+  setSortByAttribute = newSortByAttribute => {
+    const {
+      urlState: { ascending = "true", sortByAttribute = "id" },
+      setUrlState
+    } = this.props;
+    if (newSortByAttribute === sortByAttribute) {
+      setUrlState({
+        ascending: !JSON.parse(ascending)
+      });
+    } else {
+      setUrlState({
+        sortByAttribute: newSortByAttribute,
+        ascending: true
+      });
+    }
+  };
 
   /**
    * Helper function that takes the threads passed as props
@@ -85,9 +69,9 @@ class ThreadsGrid extends Component {
    * are set in the local state object.
    * @param {Array} threads
    */
-  sort = threads => {
-    const { sortByAttribute, ascending } = this.state;
-    const sortOrder = ascending ? ["asc"] : ["desc"];
+  sort(threads = []) {
+    const { ascending, sortByAttribute = "id" } = this.props.urlState;
+    let sortOrder = ascending === "true" ? ["asc"] : ["desc"];
     // thread["id"] is a string, so we need to convert to an int to sort properly
     const sortFunc = thread => {
       return sortByAttribute === "id"
@@ -95,27 +79,23 @@ class ThreadsGrid extends Component {
         : thread[sortByAttribute].toLowerCase();
     };
     return _.orderBy(threads, sortFunc, sortOrder);
-  };
-
-  setFilterString = filterString => this.setState({ filterString });
-
-  setSortByAttribute = sortByAttribute => {
-    if (sortByAttribute === this.state.sortByAttribute) {
-      this.setState({ ascending: !this.state.ascending });
-    } else {
-      this.setState({ sortByAttribute });
-    }
-  };
-
-  setGroupByAttribute = groupByAttribute => this.setState({ groupByAttribute });
+  }
 
   render() {
-    const { threads, threadsError } = this.props;
+    const {
+      setUrlState,
+      threads,
+      threadsError,
+      urlState: {
+        filterString = "",
+        groupByAttribute = "none",
+        sortByAttribute = "id"
+      }
+    } = this.props;
     const filteredThreads = threads.filter(
       thread =>
-        thread.name
-          .toLowerCase()
-          .indexOf(this.state.filterString.trim().toLowerCase()) !== -1
+        thread.name.toLowerCase().indexOf(filterString.trim().toLowerCase()) !==
+        -1
     );
 
     if (threads && threads.length > 0) {
@@ -123,23 +103,46 @@ class ThreadsGrid extends Component {
         <ErrorBoundary>
           <TableToolbar
             searchInputProps={{
-              filterString: this.state.filterString,
-              setFilterString: this.setFilterString,
+              filterString: filterString,
+              setFilterString: filterString => setUrlState({ filterString }),
               searchPlaceholder: "Search Threads"
             }}
             sortByProps={{
-              sortByOptions: ThreadsGrid.sortByOptions,
-              sortByAttribute: this.state.sortByAttribute,
+              sortByOptions: [
+                {
+                  value: "state",
+                  label: "State"
+                },
+                {
+                  value: "name",
+                  label: "Name"
+                },
+                {
+                  value: "id",
+                  label: "ID"
+                }
+              ],
+              sortByAttribute: sortByAttribute,
               setSortByAttribute: this.setSortByAttribute
             }}
             groupByProps={{
-              groupByOptions: ThreadsGrid.groupByOptions,
-              groupByAttribute: this.state.groupByAttribute,
-              setGroupByAttribute: this.setGroupByAttribute
+              groupByOptions: [
+                {
+                  value: "state",
+                  label: "State"
+                },
+                {
+                  value: "none",
+                  label: "None"
+                }
+              ],
+              groupByAttribute: groupByAttribute,
+              setGroupByAttribute: groupByAttribute =>
+                setUrlState({ groupByAttribute })
             }}
           />
           <ThreadsTable
-            groupByAttribute={this.state.groupByAttribute}
+            groupByAttribute={groupByAttribute}
             filteredThreadData={this.sort(filteredThreads)}
           />
         </ErrorBoundary>
@@ -163,4 +166,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ThreadsGrid);
+export default connect(mapStateToProps)(withUrlState()(ThreadsGrid));

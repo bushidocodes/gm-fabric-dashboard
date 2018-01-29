@@ -152,4 +152,4 @@ class FabricGrid extends Component {
   }
 }
 
-export default withUrlState(FabricGrid);
+export default withUrlState()(FabricGrid);

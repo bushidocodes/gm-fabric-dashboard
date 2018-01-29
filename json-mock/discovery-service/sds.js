@@ -1,14 +1,19 @@
-const { services, instances } = require("./data");
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router();
+const { services } = require("./data");
+const express = require("express");
 const cors = require("cors");
-const middlewares = jsonServer.defaults();
 const jvmMetrics = require("../jvm/metrics.json");
 const jvmThreads = require("../jvm/threads.json");
 const goMetrics = require("../go/metricsWithFunctions.json");
 const _ = require("lodash");
 const { PORT } = require("../constants");
+
+const app = express();
+app.use(cors());
+app.listen(PORT, () =>
+  console.log(
+    `Running on port ${PORT} and mocking the Service Discovery Service`
+  )
+);
 
 // Copy the metrics JSON into objects for each instance so they increment separately
 // const metricsStore = {};
@@ -16,15 +21,13 @@ const { PORT } = require("../constants");
 //   metricsStore[instance] = Object.assign({}, jvmMetrics);
 // });
 
-server.use([...middlewares, cors()]);
-
-const servicesObj = _.mapKeys(
-  services,
-  service => service.name + service.version
-);
+// const servicesObj = _.mapKeys(
+//   services,
+//   service => service.name + service.version
+// );
 
 // Takes a optional query string of group
-server.get("/services", (req, res) => {
+app.get("/services", cors(), (req, res, next) => {
   if (req.query.group) {
     return res.json(
       _.filter(services, service => service.group === req.query.group)
@@ -34,7 +37,7 @@ server.get("/services", (req, res) => {
   }
 });
 
-server.get("/metrics/:service/:version/:instance", (req, res) => {
+app.get("/metrics/:service/:version/:instance", cors(), (req, res, next) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
     serviceObj => serviceObj.name === service && serviceObj.version === version
@@ -54,7 +57,7 @@ server.get("/metrics/:service/:version/:instance", (req, res) => {
 });
 
 // Note: Just returning the same object for all of the instances.
-server.get("/threads/:service/:version/:instance", (req, res) => {
+app.get("/threads/:service/:version/:instance", cors(), (req, res, next) => {
   const { service, version, instance } = req.params;
   const selectedService = services.find(
     serviceObj => serviceObj.name === service && serviceObj.version === version
@@ -69,14 +72,6 @@ server.get("/threads/:service/:version/:instance", (req, res) => {
     }
   }
   return res.status(404).end();
-});
-
-// Use default router
-server.use(router);
-server.listen(PORT, () => {
-  console.log(
-    `JSON Server is running on port ${PORT} and mocking the Service Discovery Service`
-  );
 });
 
 /**

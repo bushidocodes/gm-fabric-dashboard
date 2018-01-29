@@ -64,23 +64,19 @@ describe("ThreadsGrid View", () => {
   });
 
   test("passes the correct props down to TableToolbar", () => {
-    const threadsGridInstance = wrapper.find("ThreadsGrid").instance();
     expect(wrapper.find("TableToolbar").props()).toMatchObject({
       groupByProps: {
         groupByAttribute: "none",
         groupByOptions: [
           { label: "State", value: "state" },
           { label: "None", value: "none" }
-        ],
-        setGroupByAttribute: threadsGridInstance.setGroupByAttribute
+        ]
       },
       searchInputProps: {
         filterString: "",
-        searchPlaceholder: "Search Threads",
-        setFilterString: threadsGridInstance.setFilterString
+        searchPlaceholder: "Search Threads"
       },
       sortByProps: {
-        setSortByAttribute: threadsGridInstance.setSortByAttribute,
         sortByAttribute: "id",
         sortByOptions: [
           { label: "State", value: "state" },
