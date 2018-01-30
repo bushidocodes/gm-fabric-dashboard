@@ -6,11 +6,13 @@ import { form_control } from "components/globalPatterns";
 const InspectorSearch = styled.input`
   ${form_control};
   appearance: none;
+  margin: 8px;
+
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
     0 0 0 rgba(0, 0, 0, 0);
   text-align: left;
   user-select: auto;
-  width: 100%;
+  width: calc(100% - 16px);
 
   &[type="text"],
   &[type="search"] {
