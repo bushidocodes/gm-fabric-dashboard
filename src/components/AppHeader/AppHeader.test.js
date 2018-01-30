@@ -10,8 +10,6 @@ import mockState from "json/mockReduxState";
 
 // components
 import AppHeader from "./AppHeader";
-import AppHeaderContent from "./scenes";
-import InstanceHeaderContent from "./scenes/InstanceHeaderContent";
 
 // styled-components
 import AppHeaderContainer from "./components/AppHeaderContainer";
@@ -52,19 +50,6 @@ describe("AppHeader component", () => {
     expect(AppHeaderWrapper.find(AppHeaderContainer)).toHaveLength(1);
     expect(AppHeaderWrapper.find("AppToolBar")).toHaveLength(1);
     expect(AppHeaderWrapper.find("Banner")).toHaveLength(1);
-  });
-
-  test("renders <UseSDS /> when using a fabric server", () => {
-    expect(AppHeaderWrapper.find(AppHeaderContent)).toHaveLength(1);
-    expect(AppHeaderWrapper.find(InstanceHeaderContent)).toHaveLength(0);
-  });
-
-  test("renders <NoSDS /> when there is no fabric server", () => {
-    // set a return value for getFabricServer() util func so that AppHeader renders <NoSDS /> and remount
-    getFabricServer.mockImplementation(() => {});
-    AppHeaderWrapper = mount(anAppHeader);
-    expect(AppHeaderWrapper.find(InstanceHeaderContent)).toHaveLength(1);
-    expect(AppHeaderWrapper.find(AppHeaderContent)).toHaveLength(0);
   });
 
   test("passes the correct title to Banner", () => {

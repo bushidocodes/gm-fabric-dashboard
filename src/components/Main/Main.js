@@ -24,9 +24,6 @@ class Main extends Component {
   static propTypes = {
     dashboards: PropTypes.objectOf(dashboardShape),
     fabricServer: PropTypes.string,
-    instanceMetricsPollingInterval: PropTypes.number.isRequired,
-    metricsEndpoint: PropTypes.string,
-    pathname: PropTypes.string,
     runtime: PropTypes.string
   };
 
@@ -61,17 +58,10 @@ class Main extends Component {
   }
 }
 
-// pathname is used to populate breadcrumbs
 function mapStateToProps(state) {
-  const {
-    dashboards,
-    instance: { instanceMetricsPollingInterval },
-    routing: { location: { pathname } }
-  } = state;
+  const { dashboards } = state;
   return {
-    dashboards,
-    instanceMetricsPollingInterval,
-    pathname
+    dashboards
   };
 }
 

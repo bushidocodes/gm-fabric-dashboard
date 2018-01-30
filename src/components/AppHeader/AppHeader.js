@@ -5,9 +5,7 @@ import AppHeaderContainer from "./components/AppHeaderContainer";
 import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";
 import AppHeaderContent from "./scenes";
-import InstanceHeaderContent from "./scenes/InstanceHeaderContent";
 
-import { getFabricServer } from "utils/head";
 import { decodeParameter, trimID } from "utils";
 import { routerLocationShape } from "components/PropTypes";
 
@@ -23,7 +21,7 @@ function AppHeader({ location: { pathname } }) {
     <AppHeaderContainer>
       <AppToolBar pathname={pathname} />
       <Banner title={getTitle(pathname)} hideBackground={false} />
-      {getFabricServer() ? <AppHeaderContent /> : <InstanceHeaderContent />}
+      <AppHeaderContent />
     </AppHeaderContainer>
   );
 }

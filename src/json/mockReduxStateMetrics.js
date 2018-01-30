@@ -384,13 +384,5 @@ export default {
     fabricServer: "http://localhost:1337",
     threadsFilter: "all"
   },
-  routing: {
-    location: {
-      pathname:
-        "/AAC·Transfer·Mail·Sequential·Message·Job·Up2·Information/4.8/39ok57zwt7o0000000000/functions",
-      search: "",
-      hash: ""
-    }
-  },
   threadsTable: []
 };
