@@ -147,8 +147,11 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
   height: 24px;
   color: rgb(213,213,213);
   margin: 0 2px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+}
+
+.c10 > * {
+  width: 100%;
+  height: 100%;
 }
 
 .c0 {
@@ -351,7 +354,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
       class="c10"
     >
       <svg
-        preserveAspectRatio="xMaxYMin"
+        preserveAspectRatio="none"
         viewBox="0 0 240 24"
       >
         <g>

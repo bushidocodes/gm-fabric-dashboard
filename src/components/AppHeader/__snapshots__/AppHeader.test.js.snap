@@ -1375,8 +1375,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   height: 24px;
   color: rgb(213,213,213);
   margin: 0 2px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+}
+
+.c22 > * {
+  width: 100%;
+  height: 100%;
 }
 
 .c15 {
@@ -1659,7 +1662,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         class="c22"
       >
         <svg
-          preserveAspectRatio="xMaxYMin"
+          preserveAspectRatio="none"
           viewBox="0 0 240 24"
         >
           <g>
