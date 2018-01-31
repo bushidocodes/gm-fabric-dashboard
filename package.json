@@ -45,7 +45,6 @@
     "postcss-loader": "^2.0.10",
     "promise": "^8.0.1",
     "prop-types": "^15.6.0",
-    "query-string": "^5.0.1",
     "react": "^16.2.0",
     "react-collapse": "^4.0.3",
     "react-dev-utils": "^4.2.1",
