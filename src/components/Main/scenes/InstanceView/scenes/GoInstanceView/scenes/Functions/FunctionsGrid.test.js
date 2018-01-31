@@ -20,7 +20,7 @@ noMetricsState.instance.metrics = _.omitBy(
   noFuncState.default.instance.metrics,
   (value, key) => key.substr(0, 8) === "function"
 );
-let wrapper, FunctionsGridInstance;
+let wrapper;
 
 const FunctionsGridWithMockStore = (
   <FunctionsGrid store={mockStore(mockState)} />
@@ -28,20 +28,7 @@ const FunctionsGridWithMockStore = (
 const FunctionsGridWithMissingMetricsStore = (
   <FunctionsGrid store={mockStore(noMetricsState)} />
 );
-let funcArr = [
-  {
-    func: "OrderItem",
-    requests: 45313
-  },
-  {
-    func: "ZZItem",
-    requests: 323
-  },
-  {
-    func: "AAStream",
-    requests: 13
-  }
-];
+
 const sortByOptions = [
   {
     value: "func",
@@ -74,7 +61,6 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   // FunctionsGridWithMissingMetricsStore does not contain any functions data
   test("returns NotFoundError if no functions are found ", () => {
     wrapper = mount(FunctionsGridWithMissingMetricsStore);
-
     expect(wrapper.find(NotFoundError).length).toBe(1);
   });
 
@@ -88,21 +74,17 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
 describe("FunctionsGrid Child Components", () => {
   beforeEach(() => {
     wrapper = mount(FunctionsGridWithMockStore);
-    FunctionsGridInstance = wrapper.find("FunctionsGrid").instance();
   });
 
-  test("passes props to FunctionsTableToolbar", () => {
-    FunctionsGridInstance = wrapper.find("FunctionsGrid").instance();
+  test("passes props to TableToolbar", () => {
     expect(wrapper.find("TableToolbar").props()).toMatchObject({
       searchInputProps: {
         filterString: "",
-        setFilterString: FunctionsGridInstance.setFilterString,
         searchPlaceholder: "Search Functions"
       },
       sortByProps: {
         sortByOptions,
-        sortByAttribute: "func",
-        setSortByAttribute: FunctionsGridInstance.setKeyToSortBy
+        sortByAttribute: "func"
       }
     });
   });
@@ -148,70 +130,5 @@ describe("FunctionsGrid Child Components", () => {
         }
       ]
     });
-  });
-});
-
-describe("FunctionsGrid Instance Methods", () => {
-  beforeEach(() => {
-    FunctionsGridInstance = wrapper.find("FunctionsGrid").instance();
-  });
-  test("`sort` takes functions and sorts by `funcs` in ascending order by default when `keyToSortBy` is not set and `ascending` is not yet toggled", () => {
-    expect(FunctionsGridInstance.sort(funcArr)).toEqual([
-      { func: "AAStream", requests: 13 },
-      { func: "OrderItem", requests: 45313 },
-      { func: "ZZItem", requests: 323 }
-    ]);
-  });
-
-  test("`sort` sorts by `keyToSortBy` and `ascending` values", () => {
-    FunctionsGridInstance.setState({
-      keyToSortBy: "requests",
-      ascending: false
-    });
-    expect(FunctionsGridInstance.sort(funcArr)).toEqual([
-      { func: "OrderItem", requests: 45313 },
-      { func: "ZZItem", requests: 323 },
-      { func: "AAStream", requests: 13 }
-    ]);
-  });
-
-  test("`setKeyToSortBy` sets keyToSortBy and toggles ascending order when key is already active ", () => {
-    FunctionsGridInstance.setState({
-      keyToSortBy: "requests",
-      ascending: false
-    });
-
-    expect(FunctionsGridInstance.sort(funcArr)).toEqual([
-      { func: "OrderItem", requests: 45313 },
-      { func: "ZZItem", requests: 323 },
-      { func: "AAStream", requests: 13 }
-    ]);
-
-    // same key is sent, which toggles ascending
-    FunctionsGridInstance.setKeyToSortBy("requests");
-
-    expect(FunctionsGridInstance.sort(funcArr)).toEqual([
-      { func: "AAStream", requests: 13 },
-      { func: "ZZItem", requests: 323 },
-      { func: "OrderItem", requests: 45313 }
-    ]);
-  });
-  test("`setKeyToSortBy` sorts by keyToSortBy ", () => {
-    FunctionsGridInstance.setState({
-      keyToSortBy: "func"
-    });
-
-    expect(FunctionsGridInstance.sort(funcArr)).toEqual([
-      { func: "AAStream", requests: 13 },
-      { func: "OrderItem", requests: 45313 },
-      { func: "ZZItem", requests: 323 }
-    ]);
-  });
-
-  test("`setFilterString` sets filterString ", () => {
-    FunctionsGridInstance.setFilterString("AA");
-    expect(FunctionsGridInstance.state.filterString).toEqual("AA");
-    FunctionsGridInstance.setFilterString("Cat");
-    expect(FunctionsGridInstance.state.filterString).toEqual("Cat");
   });
 });
