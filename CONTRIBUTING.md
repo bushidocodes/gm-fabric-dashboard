@@ -45,12 +45,40 @@ If you intend file a pull request with a bug fix or enhancement, we recommend fi
 
 ## Getting Started
 
+### Editor plugins
+
 Follow the steps outlined in the [README](https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/README.md) and install the following plugins for your editor:
 
 * Prettier
 * eslint
 * stylelint
 * styled-components syntax highlighting
+
+### Commit Messages
+
+We follow [conventional commit](https://conventionalcommits.org/) standards and enforce them with [commitlint](https://github.com/marionebl/commitlint). 
+
+#### Format
+Commit messages should consist of a type and a subject:
+`<type>: <subject>`
+
+#### Type
+Please use one of the following verbs as your type. Types should always be lowercase.
+
+  - build: changes that affect the build system or external dependencies
+  - ci: changes to circleci configuration
+  - chore: package manager configs, etc; no production code change
+  - docs: changes to documentation
+  - feat: a new feature
+  - fix: a bug fix
+  - perf: a change that improves performance
+  - refactor: a change that neither fixes a bug nor adds a feature
+  - revert: updating build tasks, package manager configs, etc; no production code change
+  - style: changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
+  - test: adding new tests or updating existing tests 
+
+#### Subject
+The subject of your commit should be less than 72 characters and should not begin with a capital letter or end with punctuation. Use present tense when writing your subject, e.g. update vs. updated.
 
 ## Style Guide
 
