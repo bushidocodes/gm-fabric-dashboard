@@ -14,7 +14,7 @@ const FunctionsGrid = LazyLoader({
 });
 
 const RoutesGrid = LazyLoader({
-  loader: () => import("./scenes/Routes")
+  loader: () => import("../../components/Routes")
 });
 
 const SettingsGrid = LazyLoader({

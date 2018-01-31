@@ -72,19 +72,6 @@ const routesTableProps = {
   type: "Route"
 };
 
-// Mock routes used to test instance methods
-const mockRoute1 = {
-  route: "/ping",
-  errorPercent: "0.000",
-  requests: 17754
-};
-
-const mockRoute2 = {
-  route: "/functionalroles",
-  errorPercent: "100.000",
-  requests: 1
-};
-
 let wrapper;
 
 describe("RoutesGrid View", () => {
@@ -95,49 +82,6 @@ describe("RoutesGrid View", () => {
   test("matches snapshot", () => {
     const tree = renderer.create(<RoutesGrid store={store} />).toJSON();
     expect(tree).toMatchSnapshot();
-  });
-
-  test("has a sort() method that sorts routes based on local state", () => {
-    let sort = wrapper.instance().sort;
-    // default: sort by route (alphabetical)
-    expect(sort([mockRoute1, mockRoute2])).toMatchObject([
-      mockRoute2,
-      mockRoute1
-    ]);
-    // sort by errorPercent
-    wrapper.instance().setKeyToSortBy("errorPercent");
-    expect(sort([mockRoute1, mockRoute2])).toMatchObject([
-      mockRoute2,
-      mockRoute1
-    ]);
-    // sort by requests
-    wrapper.instance().setKeyToSortBy("requests");
-    expect(sort([mockRoute1, mockRoute2])).toMatchObject([
-      mockRoute1,
-      mockRoute2
-    ]);
-  });
-
-  test("has a setKeyToSortBy() method that sets local state", () => {
-    let setKeyToSortBy = wrapper.instance().setKeyToSortBy;
-    // Setting the same key should toggle ascending in state (default is ascending: true)
-    setKeyToSortBy("route");
-    expect(wrapper.instance().state).toMatchObject({
-      ascending: false,
-      keyToSortBy: "route"
-    });
-    // Set a different key
-    setKeyToSortBy("requests");
-    expect(wrapper.instance().state).toMatchObject({
-      ascending: false,
-      keyToSortBy: "requests"
-    });
-  });
-
-  test("has a setFilterString() method that sets local state", () => {
-    let setFilterString = wrapper.instance().setFilterString;
-    setFilterString("ping");
-    expect(wrapper.instance().state).toMatchObject({ filterString: "ping" });
   });
 
   test("renders correct components", () => {
@@ -155,15 +99,12 @@ describe("RoutesGrid View", () => {
   });
 
   test("passes the correct props down to TableToolbar", () => {
-    const routesGridInstance = wrapper.instance();
     expect(wrapper.find("TableToolbar").props()).toMatchObject({
       searchInputProps: {
         filterString: "",
-        searchPlaceholder: "Search Routes",
-        setFilterString: routesGridInstance.setFilterString
+        searchPlaceholder: "Search Routes"
       },
       sortByProps: {
-        setSortByAttribute: routesGridInstance.setKeyToSortBy,
         sortByAttribute: "route",
         sortByOptions: [
           { label: "Route", value: "route" },
