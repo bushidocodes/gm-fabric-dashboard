@@ -13,6 +13,7 @@ import {
   routerLocationShape,
   serviceInstanceShape
 } from "components/PropTypes";
+import withUrlState from "components/withUrlState";
 
 // TODO: Make history and location a shape PropType
 class ServiceView extends Component {
@@ -23,29 +24,10 @@ class ServiceView extends Component {
     serviceIsMetered: PropTypes.bool,
     serviceName: PropTypes.string.isRequired,
     serviceVersion: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired
+    setUrlState: PropTypes.func.isRequired,
+    status: PropTypes.string.isRequired,
+    urlState: PropTypes.object.isRequired
   };
-
-  // Options for sort dropdown rendered in TableToolbar
-  static sortByOptions = [
-    {
-      value: "name",
-      label: "Name"
-    },
-    {
-      value: "start_time",
-      label: "Uptime"
-    }
-  ];
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      filterString: "",
-      sortByAttribute: "name", // name or start_time
-      ascending: true
-    };
-  }
 
   componentDidMount() {
     const { location: { state }, history } = this.props;
@@ -61,38 +43,55 @@ class ServiceView extends Component {
     }
   }
 
-  setFilterString = filterString => this.setState({ filterString });
-
-  setSortByAttribute = sortByAttribute => {
-    if (this.state.sortByAttribute === sortByAttribute) {
-      this.setState({ ascending: !this.state.ascending });
+  setSortByAttribute = newSortByAttribute => {
+    const {
+      urlState: { ascending = "true", sortByAttribute = "name" },
+      setUrlState
+    } = this.props;
+    if (sortByAttribute === newSortByAttribute) {
+      setUrlState({ ascending: !JSON.parse(ascending) });
     } else {
-      this.setState({ sortByAttribute });
+      setUrlState({ sortByAttribute: newSortByAttribute });
     }
   };
 
   render() {
     const {
-      instances,
+      setUrlState,
       serviceName,
       serviceVersion,
       status,
-      serviceIsMetered
+      instances,
+      serviceIsMetered,
+      urlState: {
+        filterString = "",
+        sortByAttribute = "name",
+        ascending = "true"
+      }
     } = this.props;
-    const { filterString, sortByAttribute, ascending } = this.state;
-    const sortOrder = ascending ? ["asc"] : ["desc"];
+
+    const sortOrder = JSON.parse(ascending) ? ["asc"] : ["desc"];
 
     return instances && instances.length ? (
       <div>
         <TableToolbar
           searchInputProps={{
             filterString,
-            setFilterString: this.setFilterString,
+            setFilterString: filterString => setUrlState({ filterString }),
             searchPlaceholder: "Search Instances"
           }}
           sortByProps={{
             sortByAttribute,
-            sortByOptions: ServiceView.sortByOptions,
+            sortByOptions: [
+              {
+                value: "name",
+                label: "Name"
+              },
+              {
+                value: "start_time",
+                label: "Uptime"
+              }
+            ],
             setSortByAttribute: this.setSortByAttribute
           }}
         />
@@ -120,4 +119,4 @@ class ServiceView extends Component {
   }
 }
 
-export default ServiceView;
+export default withUrlState()(ServiceView);
