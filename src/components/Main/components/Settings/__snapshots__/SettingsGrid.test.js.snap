@@ -21,7 +21,7 @@ Array [
   overflow: visible;
 }
 
-.c8 {
+.c9 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -63,24 +63,24 @@ Array [
   padding-top: 4px;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c8:focus,
-.c8:active {
+.c9:focus,
+.c9:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c8 > * {
+.c9 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c8:active {
+.c9:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -90,7 +90,7 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8:hover {
+.c9:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   border-top-color: hsl(0,0%,100%);
@@ -98,16 +98,16 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c8[disabled],
-.c8[disabled]:hover,
-.c8[disabled]:focus,
-.c8[disabled]:active {
+.c9[disabled],
+.c9[disabled]:hover,
+.c9[disabled]:focus,
+.c9[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -115,12 +115,12 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8 > svg {
+.c9 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c8 > :not(:first-child) {
+.c9 > :not(:first-child) {
   margin-top: 0.25px;
 }
 
@@ -197,7 +197,7 @@ Array [
   margin: 0;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -225,27 +225,27 @@ Array [
   width: 160px;
 }
 
-.c7 .label {
+.c8 .label {
   bottom: 10px;
   position: absolute;
   left: 0;
   width: 100%;
 }
 
-.c7 > svg {
+.c8 > svg {
   color: rgb(10,171,42);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   will-change: transform;
 }
 
-.c7 .btn-type-polling > svg {
+.c8 .btn-type-polling > svg {
   height: 100%;
 }
 
-.c7:hover svg,
-.c7:active svg,
-.c7:focus svg {
+.c8:hover svg,
+.c8:active svg,
+.c8:focus svg {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -253,7 +253,7 @@ Array [
   transition: all 0.1s ease;
 }
 
-.c7:active svg {
+.c8:active svg {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -261,7 +261,7 @@ Array [
   transition: all 0;
 }
 
-.c9 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -287,7 +287,7 @@ Array [
   position: relative;
 }
 
-.c9 .input-range__label.input-range__label--value {
+.c11 .input-range__label.input-range__label--value {
   color: rgb(10,171,42);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 24px;
@@ -301,11 +301,11 @@ Array [
   will-change: transform;
 }
 
-.c9 .input-range__label.input-range__label--value .input-range__label-container {
+.c11 .input-range__label.input-range__label--value .input-range__label-container {
   position: static;
 }
 
-.c9 .label {
+.c11 .label {
   bottom: 10px;
   font-size: 14px;
   left: 0px;
@@ -314,13 +314,13 @@ Array [
   width: 100%;
 }
 
-.c9 .input-range__slider-container {
+.c11 .input-range__slider-container {
   -webkit-transition: left 0;
   transition: left 0;
   will-change: transform;
 }
 
-.c9 .input-range__slider {
+.c11 .input-range__slider {
   background: rgb(10,171,42);
   border: none;
   border-radius: 0;
@@ -329,15 +329,15 @@ Array [
   transition: transform 0.3s ease;
 }
 
-.c9 .input-range__slider:hover,
-.c9 .input-range__slider:focus,
-.c9 .input-range__slider:active {
+.c11 .input-range__slider:hover,
+.c11 .input-range__slider:focus,
+.c11 .input-range__slider:active {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.c9 .input-range__slider:before {
+.c11 .input-range__slider:before {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid rgb(10,171,42);
@@ -349,9 +349,36 @@ Array [
   width: 0;
 }
 
-.c9 .input-range__track {
+.c11 .input-range__track {
   background-color: rgb(230,230,230);
   border-radius: 20px;
+}
+
+.c10 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
 }
 
 <section
@@ -404,73 +431,91 @@ Array [
     >
       <div
         className="c7"
-      >
-        <button
-          className="c8"
-          disabled={undefined}
-          onClick={[Function]}
-          orientation="vertical"
-          size="xl"
-          style={
-            Object {
-              "height": "100%",
-              "position": "relative",
-              "width": "100%",
-              "zIndex": 0,
-            }
+        disabled={true}
+        style={
+          Object {
+            "border": "none",
           }
-          tabIndex={0}
-          title="Pause Polling"
-          type="polling"
+        }
+      >
+        <div
+          className="c8"
         >
-          <svg
-            aria-labelledby="ariaLabelledby"
-            className="c3"
-            focusable="false"
-            version="1.1"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-          >
-            <g
-              className="c4"
-              fill="currentColor"
-              title=""
-            >
-              <title>
-                
-              </title>
-              <g
-                className="glyph"
-                fill="rgb(10, 171, 42)"
-                transform="translate(-24 -24) scale(3)"
-              >
-                <path
-                  d="M6,5 L10.6153846,5 L10.6153846,19 L6,19 L6,5 Z M13.3846154,5 L18,5 L18,19 L13.3846154,19 L13.3846154,5 Z"
-                  id="Combined-Shape"
-                />
-              </g>
-            </g>
-          </svg>
-          <span
+          <button
+            className="c9"
+            disabled={false}
+            onClick={[Function]}
+            orientation="vertical"
+            size="xl"
             style={
               Object {
-                "bottom": "10px",
-                "fontSize": "14px",
-                "left": "0px",
-                "position": "absolute",
+                "height": "100%",
+                "position": "relative",
                 "width": "100%",
+                "zIndex": 0,
               }
             }
+            tabIndex={0}
+            title="Pause Polling"
+            type="polling"
           >
-            
-            Pause Polling
-            
-          </span>
-        </button>
+            <svg
+              aria-labelledby="ariaLabelledby"
+              className="c3"
+              focusable="false"
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                className="c4"
+                fill="currentColor"
+                title=""
+              >
+                <title>
+                  
+                </title>
+                <g
+                  className="glyph"
+                  fill="rgb(10, 171, 42)"
+                  transform="translate(-24 -24) scale(3)"
+                >
+                  <path
+                    d="M6,5 L10.6153846,5 L10.6153846,19 L6,19 L6,5 Z M13.3846154,5 L18,5 L18,19 L13.3846154,19 L13.3846154,5 Z"
+                    id="Combined-Shape"
+                  />
+                </g>
+              </g>
+            </svg>
+            <span
+              style={
+                Object {
+                  "bottom": "10px",
+                  "fontSize": "14px",
+                  "left": "0px",
+                  "position": "absolute",
+                  "width": "100%",
+                }
+              }
+            >
+              
+              Pause Polling
+              
+            </span>
+          </button>
+        </div>
+        <div
+          className="c10"
+          style={
+            Object {
+              "top": "0px",
+            }
+          }
+        />
       </div>
       <div
-        className="c9"
+        className="c11"
         id="ctrl-slider-Fabric Polling"
       >
         <div
@@ -552,7 +597,7 @@ Array [
           className="label"
           id="interval-name-Fabric Polling"
         >
-          Polling Interval (s)
+          Polling Interval(s)
         </span>
       </div>
     </div>
@@ -576,7 +621,7 @@ Array [
   overflow: visible;
 }
 
-.c8 {
+.c9 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -618,24 +663,24 @@ Array [
   padding-top: 4px;
 }
 
-.c8:hover {
+.c9:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c8:focus,
-.c8:active {
+.c9:focus,
+.c9:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c8 > * {
+.c9 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c8:active {
+.c9:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -645,7 +690,7 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8:hover {
+.c9:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   border-top-color: hsl(0,0%,100%);
@@ -653,16 +698,16 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8:focus {
+.c9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c8[disabled],
-.c8[disabled]:hover,
-.c8[disabled]:focus,
-.c8[disabled]:active {
+.c9[disabled],
+.c9[disabled]:hover,
+.c9[disabled]:focus,
+.c9[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -670,12 +715,12 @@ Array [
   color: hsl(0,0%,0%);
 }
 
-.c8 > svg {
+.c9 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c8 > :not(:first-child) {
+.c9 > :not(:first-child) {
   margin-top: 0.25px;
 }
 
@@ -752,7 +797,7 @@ Array [
   margin: 0;
 }
 
-.c7 {
+.c8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -780,27 +825,27 @@ Array [
   width: 160px;
 }
 
-.c7 .label {
+.c8 .label {
   bottom: 10px;
   position: absolute;
   left: 0;
   width: 100%;
 }
 
-.c7 > svg {
+.c8 > svg {
   color: rgb(10,171,42);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   will-change: transform;
 }
 
-.c7 .btn-type-polling > svg {
+.c8 .btn-type-polling > svg {
   height: 100%;
 }
 
-.c7:hover svg,
-.c7:active svg,
-.c7:focus svg {
+.c8:hover svg,
+.c8:active svg,
+.c8:focus svg {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -808,7 +853,7 @@ Array [
   transition: all 0.1s ease;
 }
 
-.c7:active svg {
+.c8:active svg {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -816,7 +861,7 @@ Array [
   transition: all 0;
 }
 
-.c9 {
+.c11 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -842,7 +887,7 @@ Array [
   position: relative;
 }
 
-.c9 .input-range__label.input-range__label--value {
+.c11 .input-range__label.input-range__label--value {
   color: rgb(10,171,42);
   font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 24px;
@@ -856,11 +901,11 @@ Array [
   will-change: transform;
 }
 
-.c9 .input-range__label.input-range__label--value .input-range__label-container {
+.c11 .input-range__label.input-range__label--value .input-range__label-container {
   position: static;
 }
 
-.c9 .label {
+.c11 .label {
   bottom: 10px;
   font-size: 14px;
   left: 0px;
@@ -869,13 +914,13 @@ Array [
   width: 100%;
 }
 
-.c9 .input-range__slider-container {
+.c11 .input-range__slider-container {
   -webkit-transition: left 0;
   transition: left 0;
   will-change: transform;
 }
 
-.c9 .input-range__slider {
+.c11 .input-range__slider {
   background: rgb(10,171,42);
   border: none;
   border-radius: 0;
@@ -884,15 +929,15 @@ Array [
   transition: transform 0.3s ease;
 }
 
-.c9 .input-range__slider:hover,
-.c9 .input-range__slider:focus,
-.c9 .input-range__slider:active {
+.c11 .input-range__slider:hover,
+.c11 .input-range__slider:focus,
+.c11 .input-range__slider:active {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.c9 .input-range__slider:before {
+.c11 .input-range__slider:before {
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid rgb(10,171,42);
@@ -904,9 +949,36 @@ Array [
   width: 0;
 }
 
-.c9 .input-range__track {
+.c11 .input-range__track {
   background-color: rgb(230,230,230);
   border-radius: 20px;
+}
+
+.c10 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c7 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: default;
+  display: inline-block;
+  position: relative;
 }
 
 <section
@@ -959,73 +1031,93 @@ Array [
     >
       <div
         className="c7"
-      >
-        <button
-          className="c8"
-          disabled={undefined}
-          onClick={[Function]}
-          orientation="vertical"
-          size="xl"
-          style={
-            Object {
-              "height": "100%",
-              "position": "relative",
-              "width": "100%",
-              "zIndex": 0,
-            }
+        disabled={true}
+        style={
+          Object {
+            "border": "none",
           }
-          tabIndex={0}
-          title="Resume Polling"
-          type="polling"
+        }
+      >
+        <div
+          className="c8"
         >
-          <svg
-            aria-labelledby="ariaLabelledby"
-            className="c3"
-            focusable="false"
-            version="1.1"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-          >
-            <g
-              className="c4"
-              fill="currentColor"
-              title=""
-            >
-              <title>
-                
-              </title>
-              <g
-                className="glyph"
-                fill="rgb(10, 171, 42)"
-                transform="translate(-24 -24) scale(3)"
-              >
-                <polygon
-                  id="Triangle-6"
-                  points="19 12 7 20 7 4"
-                />
-              </g>
-            </g>
-          </svg>
-          <span
+          <button
+            className="c9"
+            disabled={false}
+            onClick={[Function]}
+            orientation="vertical"
+            size="xl"
             style={
               Object {
-                "bottom": "10px",
-                "fontSize": "14px",
-                "left": "0px",
-                "position": "absolute",
+                "height": "100%",
+                "position": "relative",
                 "width": "100%",
+                "zIndex": 0,
               }
             }
+            tabIndex={0}
+            title="Resume Polling"
+            type="polling"
           >
-            
-            Resume Polling
-            
-          </span>
-        </button>
+            <svg
+              aria-labelledby="ariaLabelledby"
+              className="c3"
+              focusable="false"
+              version="1.1"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+              <g
+                className="c4"
+                fill="currentColor"
+                title=""
+              >
+                <title>
+                  
+                </title>
+                <g
+                  className="glyph"
+                  fill="rgb(10, 171, 42)"
+                  transform="translate(-24 -24) scale(3)"
+                >
+                  <polygon
+                    id="Triangle-6"
+                    points="19 12 7 20 7 4"
+                  />
+                </g>
+              </g>
+            </svg>
+            <span
+              style={
+                Object {
+                  "bottom": "10px",
+                  "fontSize": "14px",
+                  "left": "0px",
+                  "position": "absolute",
+                  "width": "100%",
+                }
+              }
+            >
+              
+              Resume Polling
+              
+            </span>
+          </button>
+        </div>
+        <div
+          className="c10"
+          style={
+            Object {
+              "top": "0px",
+            }
+          }
+        >
+          Select an instance to turn on polling
+        </div>
       </div>
       <div
-        className="c9"
+        className="c11"
         id="ctrl-slider-Instance Polling"
       >
         <div
@@ -1107,7 +1199,7 @@ Array [
           className="label"
           id="interval-name-Instance Polling"
         >
-          Polling Interval (s)
+          Polling Interval(s)
         </span>
       </div>
     </div>

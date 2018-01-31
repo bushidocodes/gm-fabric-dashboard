@@ -3,12 +3,13 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
 
-import { COLOR_SUCCESS } from "style/styleVariables";
+import { contrastColor } from "style/styleFunctions";
+import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 import PollingBtnContainer from "./components/PollingBtnContainer";
 import PollingSliderContainer from "./components/PollingSliderContainer";
-
+import Tooltip from "components/Tooltip";
 /**
  * Control to start/stop polling and change the polling rate
  * Styled to resemble a Readout and intended to be a child of SettingsGrid
@@ -18,10 +19,12 @@ class PollingSettings extends Component {
     changePollingInterval: PropTypes.func.isRequired,
     glyph: PropTypes.string.isRequired,
     interval: PropTypes.number.isRequired,
+    isDisabled: PropTypes.bool,
     isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,
     stopPolling: PropTypes.func.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    tooltipContent: PropTypes.string
   };
 
   // Use local state to have a "loosely" controlled component whereby the slider
@@ -32,48 +35,74 @@ class PollingSettings extends Component {
   };
 
   render() {
-    const { isPolling, stopPolling, startPolling, title, glyph } = this.props;
+    const {
+      isPolling,
+      stopPolling,
+      startPolling,
+      title,
+      glyph,
+      tooltipContent,
+      isDisabled = false
+    } = this.props;
     const buttonGlyph = isPolling ? "Pause" : "Play";
     const buttonLabel = isPolling ? "Pause Polling" : "Resume Polling";
+
     return (
       <LayoutSection title={title} icon={glyph} flex>
-        <PollingBtnContainer>
-          <Button
-            clickAction={() => {
-              if (isPolling) {
-                stopPolling();
-              } else {
-                startPolling();
+        <Tooltip
+          content={tooltipContent}
+          position="left"
+          disabled={!isDisabled}
+          containerStyle={{ border: "none" }}
+          contentStyle={{ top: "0px" }}
+        >
+          <PollingBtnContainer isDisabled={isDisabled}>
+            <Button
+              clickAction={() => {
+                if (isPolling) {
+                  stopPolling();
+                } else {
+                  startPolling();
+                }
+              }}
+              glyph={buttonGlyph}
+              glyphRatio={3}
+              glyphColor={
+                isDisabled
+                  ? contrastColor(COLOR_WHITE, 0.7).toString()
+                  : COLOR_SUCCESS.string()
               }
-            }}
-            glyph={buttonGlyph}
-            glyphRatio={3}
-            glyphColor={COLOR_SUCCESS.string()}
-            label={buttonLabel}
-            orientation={"vertical"}
-            outline={"raised"}
-            size={"xl"}
-            tabIndex={0}
-            type={"polling"}
-            style={{
-              width: "100%",
-              height: "100%",
-              position: "relative",
-              zIndex: 0
-            }}
-            labelStyle={{
-              fontSize: "14px",
-              position: "absolute",
-              bottom: "10px",
-              width: "100%",
-              left: "0px"
-            }}
-          />
-        </PollingBtnContainer>
+              disabled={isDisabled}
+              label={buttonLabel}
+              orientation={"vertical"}
+              outline={"raised"}
+              size={"xl"}
+              tabIndex={0}
+              type={"polling"}
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "relative",
+                zIndex: 0
+              }}
+              labelStyle={{
+                fontSize: "14px",
+                position: "absolute",
+                bottom: "10px",
+                width: "100%",
+                left: "0px"
+              }}
+            />
+          </PollingBtnContainer>
+        </Tooltip>
 
-        <PollingSliderContainer id={`ctrl-slider-${title}`}>
+        <PollingSliderContainer
+          isDisabled={isDisabled}
+          id={`ctrl-slider-${title}`}
+        >
           <InputRange
             aria-labelledby="polling interval-name"
+            disabled={isDisabled}
             maxValue={120}
             minValue={5}
             onChange={value => {
@@ -83,7 +112,7 @@ class PollingSettings extends Component {
             value={this.state.localInterval}
           />
           <span className="label" id={`interval-name-${title}`}>
-            {"Polling Interval (s)"}
+            {"Polling Interval(s)"}
           </span>
         </PollingSliderContainer>
       </LayoutSection>

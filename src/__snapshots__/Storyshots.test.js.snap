@@ -17010,6 +17010,7 @@ exports[`Storyshots Table Functions Table 1`] = `
             Latency
             <div
               className="c6"
+              style={Object {}}
             >
               Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
             </div>
@@ -17622,6 +17623,7 @@ exports[`Storyshots Table Instance Table 1`] = `
             </a>
             <div
               className="c10"
+              style={Object {}}
             >
               This microservice instance does not have metrics to display.
             </div>
@@ -17690,6 +17692,7 @@ exports[`Storyshots Table Instance Table 1`] = `
             </a>
             <div
               className="c10"
+              style={Object {}}
             >
               This microservice instance does not have metrics to display.
             </div>
@@ -17758,6 +17761,7 @@ exports[`Storyshots Table Instance Table 1`] = `
             </a>
             <div
               className="c10"
+              style={Object {}}
             >
               This microservice instance does not have metrics to display.
             </div>
@@ -18157,6 +18161,7 @@ exports[`Storyshots Table Routes Table 1`] = `
             Latency
             <div
               className="c6"
+              style={Object {}}
             >
               Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
             </div>
@@ -19397,6 +19402,7 @@ exports[`Storyshots Tooltip default 1`] = `
     Hover over me
     <div
       className="c1"
+      style={Object {}}
     >
       This is a super cool tooltip!
     </div>

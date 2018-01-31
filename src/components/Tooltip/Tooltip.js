@@ -8,12 +8,15 @@ export default function Tooltip({
   content,
   position,
   disabled,
+  contentStyle = {},
   containerStyle = {}
 }) {
   return (
     <TooltipWrap style={containerStyle} disabled={disabled}>
       {children}
-      <TooltipContent position={position}>{content}</TooltipContent>
+      <TooltipContent style={contentStyle} position={position}>
+        {content}
+      </TooltipContent>
     </TooltipWrap>
   );
 }
@@ -26,7 +29,8 @@ Tooltip.propTypes = {
     PropTypes.number
   ]).isRequired,
   containerStyle: PropTypes.object,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  contentStyle: PropTypes.object,
   disabled: PropTypes.bool,
   position: PropTypes.oneOf(["top", "bottom", "left", "right"])
 };

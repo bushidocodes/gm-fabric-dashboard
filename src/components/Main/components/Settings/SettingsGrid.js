@@ -26,7 +26,8 @@ class SettingsGrid extends Component {
     instanceMetricsPollingInterval: PropTypes.number,
     isPollingFabric: PropTypes.bool,
     isPollingInstanceMetrics: PropTypes.bool,
-    metricsCacheSize: PropTypes.string
+    metricsCacheSize: PropTypes.string,
+    selectedInstance: PropTypes.string
   };
 
   state = {
@@ -43,8 +44,10 @@ class SettingsGrid extends Component {
       isPollingFabric,
       isPollingInstanceMetrics,
       metricsCacheSize,
-      instanceMetricsPollingInterval
+      instanceMetricsPollingInterval,
+      selectedInstance
     } = this.props;
+
     const button = (
       <Button
         clickAction={this.clearCacheClickAction}
@@ -85,8 +88,10 @@ class SettingsGrid extends Component {
             startPolling={Actions.startPollingInstanceMetrics}
             interval={instanceMetricsPollingInterval}
             isPolling={isPollingInstanceMetrics}
+            isDisabled={!selectedInstance}
             glyph="ServiceInstance"
             title={fabricServer ? "Instance Polling" : "Polling"}
+            tooltipContent="Select an instance to turn on polling"
           />
           <LayoutSection icon={"Tape"} title={"Metrics Cache"} flex>
             <Readout
@@ -109,7 +114,7 @@ class SettingsGrid extends Component {
 function mapStateToProps({
   settings: { fabricServer },
   dashboards,
-  fabric: { fabricPollingInterval, isPollingFabric },
+  fabric: { fabricPollingInterval, isPollingFabric, selectedInstance },
   instance: {
     metrics,
     instanceMetricsPollingInterval,
@@ -122,6 +127,7 @@ function mapStateToProps({
     instanceMetricsPollingInterval,
     isPollingFabric,
     isPollingInstanceMetrics,
+    selectedInstance,
     metricsCacheSize: filesize(objectSizeOf(metrics))
   };
 }

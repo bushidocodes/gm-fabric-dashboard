@@ -21,6 +21,7 @@ const PollingBtnContainer = styled.div`
     left: 0;
     width: 100%;
   }
+
   > svg {
     color: ${COLOR_BRAND_PRIMARY.toString()};
     transition: all 0.3s ease;
@@ -34,7 +35,7 @@ const PollingBtnContainer = styled.div`
   &:hover svg,
   &:active svg,
   &:focus svg {
-    transform: scale(1.1);
+    ${props => !props.isDisabled && `transform: scale(1.1)`};
     transition: all 0.1s ease;
   }
   &:active svg {

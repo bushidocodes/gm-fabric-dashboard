@@ -374,6 +374,7 @@ exports[`Table component matches snapshot 1`] = `
           Latency
           <div
             className="c6"
+            style={Object {}}
           >
             Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
           </div>
