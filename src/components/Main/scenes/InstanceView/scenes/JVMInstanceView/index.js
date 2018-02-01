@@ -17,10 +17,6 @@ const RoutesGrid = LazyLoader({
   loader: () => import("../../components/Routes")
 });
 
-const SettingsGrid = LazyLoader({
-  loader: () => import("components/Main/components/Settings")
-});
-
 const Explorer = LazyLoader({
   loader: () => import("components/Main/components/Explorer")
 });
@@ -52,8 +48,6 @@ export default function JVMInstanceRouter({ baseURL }) {
       <Route component={ThreadsGrid} path={`${baseURL}/threads`} />
       <Route component={RoutesGrid} path={`${baseURL}/routes`} />
       {/* General Routes shared by all runtimes */}
-      {/* Only route to settings if this we aren't using FabricRouter */}
-      {!baseURL && <Route component={SettingsGrid} exact path="/settings" />}
       <Route component={Explorer} path={`${baseURL}/explorer`} />
       {/* Catch all route for dynamically generated dashboards */}
       <Route component={GMGrid} path={`${baseURL}/:dashboardName`} />

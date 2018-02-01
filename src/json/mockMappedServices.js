@@ -1,3 +1,4 @@
+// Currently used in ServicesCardsView.test.js
 export default [
   {
     authorized: false,
@@ -13,7 +14,8 @@ export default [
         name: "ee0fa3669fea7e9a0adea649c46bca56",
         start_time: 1508854912461
       }
-    ]
+    ],
+    slug: "nachos-v1-0"
   },
   {
     authorized: true,
@@ -29,7 +31,8 @@ export default [
         name: "ee0fa3669fea7e9a0adea649c46bca56",
         start_time: 1508854912461
       }
-    ]
+    ],
+    slug: "grace-hopper-battleship-control-program-v1-0"
   },
   {
     authorized: true,
@@ -45,7 +48,8 @@ export default [
         name: "6py5vdiumck0000000000",
         start_time: 1050853464017
       }
-    ]
+    ],
+    slug: "bootstrap-internet-user-remote-export-application-v2-4"
   },
   {
     authorized: true,
@@ -56,7 +60,9 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "icpf-entry-statistics-team-mail-transmission-sequential-application-v3-8"
   },
   {
     authorized: true,
@@ -68,7 +74,9 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "mail-odrive-gateway-transfer-authentication-routing-internet-remote-domain-user-application-v3-9"
   },
   {
     authorized: true,
@@ -84,7 +92,8 @@ export default [
         name: "6o94v813sds0000000000",
         start_time: 1055458710339
       }
-    ]
+    ],
+    slug: "user-option-v2-7"
   },
   {
     authorized: true,
@@ -101,7 +110,9 @@ export default [
         name: "19qm4cm33ckg000000000",
         start_time: 1284267771165
       }
-    ]
+    ],
+    slug:
+      "domain-authentication-virtual-odrive-up2-entry-internet-bootstrap-user-sequential-end-v1-5"
   },
   {
     authorized: true,
@@ -118,7 +129,9 @@ export default [
         name: "2deaohxneev4000000000",
         start_time: 997068178924
       }
-    ]
+    ],
+    slug:
+      "routing-mail-file-entry-gateway-backroom-job-transmission-discovery-bootstrap-entry-v3-5"
   },
   {
     authorized: true,
@@ -151,7 +164,9 @@ export default [
         name: "3cx6ie1ltli0000000000",
         start_time: 839590131373
       }
-    ]
+    ],
+    slug:
+      "odrive-transmission-up2-statistics-job-internet-entry-team-aac-network-information-v1-3"
   },
   {
     authorized: true,
@@ -184,7 +199,9 @@ export default [
         name: "2poykg6e55a0000000000",
         start_time: 345446242181
       }
-    ]
+    ],
+    slug:
+      "network-transfer-routing-backroom-gateway-up2-resource-team-authentication-remote-editor-v2"
   },
   {
     authorized: true,
@@ -212,7 +229,8 @@ export default [
         name: "4fx9fkldt340000000000",
         start_time: 526953324037
       }
-    ]
+    ],
+    slug: "user-export-service-v2-8"
   },
   {
     authorized: true,
@@ -228,7 +246,8 @@ export default [
         name: "6sioh78vy6s0000000000",
         start_time: 10001585861
       }
-    ]
+    ],
+    slug: "bootstrap-team-up2-mail-resource-internet-protocol-v2-1"
   },
   {
     authorized: true,
@@ -239,7 +258,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "transfer-network-team-export-virtual-user-monitoring-v1-8"
   },
   {
     authorized: true,
@@ -255,7 +275,8 @@ export default [
         name: "4oz1rswvdbw0000000000",
         start_time: 1344831597270
       }
-    ]
+    ],
+    slug: "transmission-system-v3-2"
   },
   {
     authorized: true,
@@ -283,7 +304,8 @@ export default [
         name: "2nfjri4a9ge0000000000",
         start_time: 323790252595
       }
-    ]
+    ],
+    slug: "discovery-user-virtual-job-up2-gateway-bootstrap-routing-editor-v2-1"
   },
   {
     authorized: true,
@@ -315,7 +337,8 @@ export default [
         name: "5wbdhwj42ko0000000000",
         start_time: 121327682714
       }
-    ]
+    ],
+    slug: "remote-entry-export-mail-transfer-resource-message-device-v4-1"
   },
   {
     authorized: true,
@@ -336,7 +359,9 @@ export default [
         name: "78nrb9n8mzs0000000000",
         start_time: 1061793060778
       }
-    ]
+    ],
+    slug:
+      "job-transfer-export-aac-network-domain-authentication-discovery-application-v1-6"
   },
   {
     authorized: true,
@@ -360,7 +385,8 @@ export default [
         name: "32gqeou4lt40000000000",
         start_time: 231981180915
       }
-    ]
+    ],
+    slug: "file-job-transfer-gateway-icpf-statistics-editor-v1-1"
   },
   {
     authorized: true,
@@ -392,7 +418,8 @@ export default [
         name: "53n0hpb569k0000000000",
         start_time: 493478851083
       }
-    ]
+    ],
+    slug: "remote-transmission-system-v3-9"
   },
   {
     authorized: true,
@@ -412,7 +439,8 @@ export default [
         name: "3qaae720lq60000000000",
         start_time: 137466098280
       }
-    ]
+    ],
+    slug: "discovery-aac-job-internet-entry-file-mail-protocol-v4-3"
   },
   {
     authorized: true,
@@ -429,7 +457,9 @@ export default [
         name: "3naccjaorzm0000000000",
         start_time: 583604257504
       }
-    ]
+    ],
+    slug:
+      "transmission-entry-virtual-backroom-network-aac-job-structure-export-infrastructure-v2-3"
   },
   {
     authorized: true,
@@ -462,7 +492,9 @@ export default [
         name: "3sg81q2vnx60000000000",
         start_time: 1290991440768
       }
-    ]
+    ],
+    slug:
+      "routing-backroom-internet-team-network-authentication-job-export-service-v3-7"
   },
   {
     authorized: true,
@@ -482,7 +514,8 @@ export default [
         name: "6mded9hf1xo0000000000",
         start_time: 797678115156
       }
-    ]
+    ],
+    slug: "discovery-team-structure-message-authentication-odrive-analysis-v4-7"
   },
   {
     authorized: true,
@@ -507,7 +540,9 @@ export default [
         name: "3r3elyg647m0000000000",
         start_time: 210140259146
       }
-    ]
+    ],
+    slug:
+      "team-mail-authentication-job-odrive-icpf-structure-network-user-gateway-system-v1-9"
   },
   {
     authorized: true,
@@ -539,7 +574,8 @@ export default [
         name: "1ivlpybtgby8000000000",
         start_time: 126787661483
       }
-    ]
+    ],
+    slug: "remote-routing-mail-structure-bootstrap-editor-v1-5"
   },
   {
     authorized: true,
@@ -555,7 +591,8 @@ export default [
         name: "2l8v8ez7g040000000000",
         start_time: 173441412761
       }
-    ]
+    ],
+    slug: "team-statistics-resource-device-v5"
   },
   {
     authorized: true,
@@ -572,7 +609,9 @@ export default [
         name: "43ccyify8200000000000",
         start_time: 158708219588
       }
-    ]
+    ],
+    slug:
+      "backroom-domain-file-aac-authentication-internet-export-odrive-user-program-v2"
   },
   {
     authorized: true,
@@ -588,7 +627,8 @@ export default [
         name: "4h99675ak00000000000",
         start_time: 1135754028134
       }
-    ]
+    ],
+    slug: "gateway-up2-service-v3-8"
   },
   {
     authorized: true,
@@ -599,7 +639,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "user-bootstrap-virtual-transmission-up2-sequential-protocol-v3-2"
   },
   {
     authorized: true,
@@ -627,7 +668,8 @@ export default [
         name: "4nopf3mz6p60000000000",
         start_time: 458331898070
       }
-    ]
+    ],
+    slug: "gateway-message-discovery-version-v1-1"
   },
   {
     authorized: true,
@@ -656,7 +698,9 @@ export default [
         name: "3shfpl4jpm00000000000",
         start_time: 485712845135
       }
-    ]
+    ],
+    slug:
+      "backroom-resource-internet-structure-virtual-network-discovery-protocol-v4-7"
   },
   {
     authorized: true,
@@ -673,7 +717,9 @@ export default [
         name: "j062frcnk5k000000000",
         start_time: 661154245229
       }
-    ]
+    ],
+    slug:
+      "mail-gateway-internet-entry-export-file-transmission-virtual-management-authentication-service-v3-8"
   },
   {
     authorized: true,
@@ -693,7 +739,8 @@ export default [
         name: "54ubgj4j5rc0000000000",
         start_time: 350224265216
       }
-    ]
+    ],
+    slug: "statistics-export-job-up2-entry-news-v1-5"
   },
   {
     authorized: true,
@@ -713,7 +760,8 @@ export default [
         name: "3x8mszzdr2q0000000000",
         start_time: 1147338869844
       }
-    ]
+    ],
+    slug: "export-aac-management-resource-internet-mail-user-protocol-v2-5"
   },
   {
     authorized: true,
@@ -724,7 +772,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "sequential-network-discovery-structure-protocol-v5-1"
   },
   {
     authorized: true,
@@ -740,7 +789,9 @@ export default [
         name: "2xqzavxufvw0000000000",
         start_time: 71230174358
       }
-    ]
+    ],
+    slug:
+      "mail-internet-job-bootstrap-authentication-user-network-information-v4-9"
   },
   {
     authorized: true,
@@ -764,7 +815,8 @@ export default [
         name: "1xhfpdsxbe80000000000",
         start_time: 1329409795102
       }
-    ]
+    ],
+    slug: "backroom-odrive-system-v1-5"
   },
   {
     authorized: true,
@@ -775,7 +827,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "internet-export-authentication-application-v3-7"
   },
   {
     authorized: true,
@@ -795,7 +848,8 @@ export default [
         name: "hm4cm4nbkiw000000000",
         start_time: 730304676777
       }
-    ]
+    ],
+    slug: "team-transmission-entry-user-odrive-virtual-news-v4-2"
   },
   {
     authorized: true,
@@ -811,7 +865,8 @@ export default [
         name: "18hn4p7qw668000000000",
         start_time: 1035575530424
       }
-    ]
+    ],
+    slug: "user-application-v2-4"
   },
   {
     authorized: true,
@@ -839,7 +894,8 @@ export default [
         name: "4w9kd8z5je00000000000",
         start_time: 728082500101
       }
-    ]
+    ],
+    slug: "entry-export-network-statistics-remote-program-v1-2"
   },
   {
     authorized: true,
@@ -867,7 +923,8 @@ export default [
         name: "3oxwvdhrvru0000000000",
         start_time: 530022954316
       }
-    ]
+    ],
+    slug: "message-structure-remote-authentication-backroom-service-v2-6"
   },
   {
     authorized: true,
@@ -899,7 +956,8 @@ export default [
         name: "263goadf5ko0000000000",
         start_time: 1394329128041
       }
-    ]
+    ],
+    slug: "backroom-resource-job-remote-message-up2-discovery-entry-v2"
   },
   {
     authorized: true,
@@ -915,7 +973,9 @@ export default [
         name: "7a59a19nskw0000000000",
         start_time: 1429326961466
       }
-    ]
+    ],
+    slug:
+      "internet-export-bootstrap-virtual-structure-domain-infrastructure-v5-1"
   },
   {
     authorized: true,
@@ -947,7 +1007,9 @@ export default [
         name: "6wo4p74f89k0000000000",
         start_time: 47413273489
       }
-    ]
+    ],
+    slug:
+      "aac-transmission-virtual-message-up2-discovery-resource-debugger-v1-8"
   },
   {
     authorized: true,
@@ -980,7 +1042,9 @@ export default [
         name: "5713jcezqm00000000000",
         start_time: 757053925507
       }
-    ]
+    ],
+    slug:
+      "bootstrap-network-domain-up2-user-authentication-resource-job-statistics-editor-v2-7"
   },
   {
     authorized: true,
@@ -1004,7 +1068,8 @@ export default [
         name: "6l95gvgmvyg0000000000",
         start_time: 933945378556
       }
-    ]
+    ],
+    slug: "resource-discovery-file-backroom-internet-icpf-application-v2-3"
   },
   {
     authorized: true,
@@ -1020,7 +1085,8 @@ export default [
         name: "36kcpmk6gb80000000000",
         start_time: 736826735962
       }
-    ]
+    ],
+    slug: "routing-discovery-odrive-up2-management-debugger-v2-1"
   },
   {
     authorized: true,
@@ -1041,7 +1107,9 @@ export default [
         name: "10kdi6rq52ls000000000",
         start_time: 1429057988019
       }
-    ]
+    ],
+    slug:
+      "bootstrap-domain-backroom-user-up2-mail-icpf-transmission-application-v2-8"
   },
   {
     authorized: true,
@@ -1053,7 +1121,9 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "backroom-remote-domain-entry-transmission-aac-network-icpf-structure-up2-version-v4"
   },
   {
     authorized: true,
@@ -1069,7 +1139,8 @@ export default [
         name: "6n85o8svb4g0000000000",
         start_time: 1190827076630
       }
-    ]
+    ],
+    slug: "aac-remote-mail-domain-odrive-sequential-job-icpf-application-v5-1"
   },
   {
     authorized: true,
@@ -1094,7 +1165,9 @@ export default [
         name: "2nut4cx4l7e0000000000",
         start_time: 801548127801
       }
-    ]
+    ],
+    slug:
+      "file-network-message-backroom-internet-discovery-mail-transmission-entry-measurement-v1-5"
   },
   {
     authorized: true,
@@ -1118,7 +1191,8 @@ export default [
         name: "14nql1ug1dr4000000000",
         start_time: 490598726351
       }
-    ]
+    ],
+    slug: "resource-backroom-routing-icpf-team-news-v4-1"
   },
   {
     authorized: true,
@@ -1138,7 +1212,8 @@ export default [
         name: "4y4hyr7p4og0000000000",
         start_time: 1217972909761
       }
-    ]
+    ],
+    slug: "authentication-transfer-resource-discovery-debugger-v3-6"
   },
   {
     authorized: true,
@@ -1171,7 +1246,9 @@ export default [
         name: "6as828ea9ys0000000000",
         start_time: 623169687012
       }
-    ]
+    ],
+    slug:
+      "gateway-odrive-routing-remote-mail-transfer-internet-bootstrap-option-v4-3"
   },
   {
     authorized: true,
@@ -1183,7 +1260,9 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "domain-message-sequential-icpf-team-management-transfer-up2-virtual-routing-end-v1-9"
   },
   {
     authorized: true,
@@ -1200,7 +1279,9 @@ export default [
         name: "3z8ujlpk4wa0000000000",
         start_time: 1234293362242
       }
-    ]
+    ],
+    slug:
+      "backroom-statistics-gateway-team-transmission-management-routing-mail-sequential-monitoring-v1-5"
   },
   {
     authorized: true,
@@ -1216,7 +1297,8 @@ export default [
         name: "3p39kooy5p60000000000",
         start_time: 1462525732310
       }
-    ]
+    ],
+    slug: "structure-backroom-job-entry-up2-remote-aac-measurement-v3-8"
   },
   {
     authorized: true,
@@ -1236,7 +1318,8 @@ export default [
         name: "5zqkpwatdjo0000000000",
         start_time: 247478188955
       }
-    ]
+    ],
+    slug: "authentication-bootstrap-service-v2-9"
   },
   {
     authorized: true,
@@ -1260,7 +1343,8 @@ export default [
         name: "692z4fkugqs0000000000",
         start_time: 466159651629
       }
-    ]
+    ],
+    slug: "remote-bootstrap-management-mail-statistics-measurement-v3"
   },
   {
     authorized: true,
@@ -1276,7 +1360,8 @@ export default [
         name: "6bvg962plw40000000000",
         start_time: 989244260407
       }
-    ]
+    ],
+    slug: "remote-virtual-file-program-v5"
   },
   {
     authorized: true,
@@ -1304,7 +1389,8 @@ export default [
         name: "hkic8kd9suw000000000",
         start_time: 995351322953
       }
-    ]
+    ],
+    slug: "export-news-v4-5"
   },
   {
     authorized: true,
@@ -1333,7 +1419,9 @@ export default [
         name: "2cq93ga57o9w000000000",
         start_time: 935492221712
       }
-    ]
+    ],
+    slug:
+      "gateway-transmission-virtual-bootstrap-up2-message-statistics-job-authentication-remote-device-v4-7"
   },
   {
     authorized: true,
@@ -1349,7 +1437,8 @@ export default [
         name: "2yxt1i11hay000000000",
         start_time: 484718245182
       }
-    ]
+    ],
+    slug: "odrive-up2-bootstrap-statistics-file-message-device-v1-4"
   },
   {
     authorized: true,
@@ -1361,7 +1450,9 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "backroom-resource-management-message-transfer-sequential-export-team-mail-analysis-v3"
   },
   {
     authorized: true,
@@ -1381,7 +1472,8 @@ export default [
         name: "dof39qqauy8000000000",
         start_time: 1142989751118
       }
-    ]
+    ],
+    slug: "transfer-gateway-device-v3-8"
   },
   {
     authorized: true,
@@ -1397,7 +1489,8 @@ export default [
         name: "1sul4x7r4li8000000000",
         start_time: 509754107739
       }
-    ]
+    ],
+    slug: "internet-mail-sequential-analysis-v5"
   },
   {
     authorized: true,
@@ -1414,7 +1507,9 @@ export default [
         name: "5d46y4rknns0000000000",
         start_time: 101158420771
       }
-    ]
+    ],
+    slug:
+      "entry-transfer-structure-internet-gateway-backroom-message-icpf-resource-routing-application-v2-7"
   },
   {
     authorized: true,
@@ -1430,7 +1525,8 @@ export default [
         name: "5auxh7bvxec0000000000",
         start_time: 1465928410723
       }
-    ]
+    ],
+    slug: "statistics-domain-news-v4-1"
   },
   {
     authorized: true,
@@ -1441,7 +1537,9 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "odrive-discovery-transmission-structure-bootstrap-gateway-protocol-v2-4"
   },
   {
     authorized: true,
@@ -1469,7 +1567,8 @@ export default [
         name: "3twsujvpp5c0000000000",
         start_time: 1366274646566
       }
-    ]
+    ],
+    slug: "message-network-domain-monitoring-v5-1"
   },
   {
     authorized: true,
@@ -1493,7 +1592,8 @@ export default [
         name: "1fg248pdch4w000000000",
         start_time: 700993373157
       }
-    ]
+    ],
+    slug: "network-job-editor-v1-4"
   },
   {
     authorized: true,
@@ -1525,7 +1625,8 @@ export default [
         name: "48icj4e8vhy0000000000",
         start_time: 1431465235372
       }
-    ]
+    ],
+    slug: "virtual-internet-odrive-program-v4-2"
   },
   {
     authorized: true,
@@ -1546,7 +1647,9 @@ export default [
         name: "6fynht4n8jg0000000000",
         start_time: 1222454556060
       }
-    ]
+    ],
+    slug:
+      "backroom-entry-gateway-statistics-aac-resource-network-up2-measurement-v2"
   },
   {
     authorized: true,
@@ -1566,7 +1669,8 @@ export default [
         name: "3qohqpm445u0000000000",
         start_time: 1229338123165
       }
-    ]
+    ],
+    slug: "user-domain-discovery-authentication-infrastructure-v5-1"
   },
   {
     authorized: true,
@@ -1591,7 +1695,9 @@ export default [
         name: "3zpqji1ggiq0000000000",
         start_time: 855146814889
       }
-    ]
+    ],
+    slug:
+      "mail-resource-network-bootstrap-message-backroom-up2-export-discovery-channel-v3-2"
   },
   {
     authorized: true,
@@ -1615,7 +1721,8 @@ export default [
         name: "30izozjh6040000000000",
         start_time: 1212466057920
       }
-    ]
+    ],
+    slug: "routing-internet-authentication-application-v2-1"
   },
   {
     authorized: true,
@@ -1632,7 +1739,9 @@ export default [
         name: "5bapbtu7tek0000000000",
         start_time: 1216779167082
       }
-    ]
+    ],
+    slug:
+      "sequential-authentication-transfer-structure-resource-file-information-v3-3"
   },
   {
     authorized: true,
@@ -1643,7 +1752,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "authentication-entry-v1-1"
   },
   {
     authorized: true,
@@ -1668,7 +1778,9 @@ export default [
         name: "rocvfj7kq40000000000",
         start_time: 447958511875
       }
-    ]
+    ],
+    slug:
+      "bootstrap-job-management-sequential-virtual-odrive-transmission-statistics-system-v2-3"
   },
   {
     authorized: true,
@@ -1685,7 +1797,9 @@ export default [
         name: "51libiufk380000000000",
         start_time: 1125865259432
       }
-    ]
+    ],
+    slug:
+      "odrive-bootstrap-export-backroom-team-entry-transmission-resource-management-application-v2-7"
   },
   {
     authorized: true,
@@ -1717,7 +1831,8 @@ export default [
         name: "69cv0qldtj80000000000",
         start_time: 255998995273
       }
-    ]
+    ],
+    slug: "gateway-transfer-up2-device-v4-3"
   },
   {
     authorized: true,
@@ -1741,7 +1856,8 @@ export default [
         name: "63c250kqt1o0000000000",
         start_time: 934415645173
       }
-    ]
+    ],
+    slug: "mail-transfer-discovery-service-v4-9"
   },
   {
     authorized: true,
@@ -1770,7 +1886,9 @@ export default [
         name: "635vxkyd9ag0000000000",
         start_time: 865872586262
       }
-    ]
+    ],
+    slug:
+      "authentication-internet-backroom-virtual-discovery-management-remote-export-news-v1-9"
   },
   {
     authorized: true,
@@ -1803,7 +1921,9 @@ export default [
         name: "6to9gb3bppc0000000000",
         start_time: 84202518539
       }
-    ]
+    ],
+    slug:
+      "statistics-export-aac-team-message-transfer-up2-transmission-remote-service-v1-9"
   },
   {
     authorized: true,
@@ -1823,7 +1943,8 @@ export default [
         name: "45fx1fxcbes0000000000",
         start_time: 361038841005
       }
-    ]
+    ],
+    slug: "resource-virtual-statistics-internet-up2-network-monitoring-v3"
   },
   {
     authorized: true,
@@ -1839,7 +1960,8 @@ export default [
         name: "121yakkr5z34000000000",
         start_time: 866254290018
       }
-    ]
+    ],
+    slug: "virtual-management-network-user-odrive-discovery-measurement-v2-1"
   },
   {
     authorized: true,
@@ -1867,7 +1989,8 @@ export default [
         name: "4pevhl7ewmg0000000000",
         start_time: 193736277581
       }
-    ]
+    ],
+    slug: "resource-mail-odrive-backroom-aac-export-protocol-v3"
   },
   {
     authorized: true,
@@ -1883,7 +2006,8 @@ export default [
         name: "3xfm9545vly0000000000",
         start_time: 1211914185794
       }
-    ]
+    ],
+    slug: "user-routing-domain-sequential-version-v2-8"
   },
   {
     authorized: true,
@@ -1899,7 +2023,8 @@ export default [
         name: "6lofvq34br80000000000",
         start_time: 1355607753337
       }
-    ]
+    ],
+    slug: "job-up2-file-virtual-odrive-user-team-icpf-authentication-device-v2"
   },
   {
     authorized: true,
@@ -1919,7 +2044,8 @@ export default [
         name: "4bpt6odkh640000000000",
         start_time: 531041971217
       }
-    ]
+    ],
+    slug: "transmission-odrive-bootstrap-entry-resource-option-v1-3"
   },
   {
     authorized: true,
@@ -1947,7 +2073,8 @@ export default [
         name: "36po752zhg60000000000",
         start_time: 107365633718
       }
-    ]
+    ],
+    slug: "domain-sequential-message-remote-user-export-discovery-protocol-v4-6"
   },
   {
     authorized: true,
@@ -1964,7 +2091,9 @@ export default [
         name: "76tsvgfax3c0000000000",
         start_time: 889237045979
       }
-    ]
+    ],
+    slug:
+      "odrive-aac-sequential-gateway-transmission-routing-internet-mail-authentication-monitoring-v1-9"
   },
   {
     authorized: true,
@@ -1975,7 +2104,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "domain-aac-up2-gateway-version-v1-5"
   },
   {
     authorized: true,
@@ -1999,7 +2129,8 @@ export default [
         name: "5qkaaxdaivk0000000000",
         start_time: 731014189880
       }
-    ]
+    ],
+    slug: "internet-remote-sequential-icpf-aac-message-job-option-v4-1"
   },
   {
     authorized: true,
@@ -2010,7 +2141,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "up2-program-v2-5"
   },
   {
     authorized: true,
@@ -2042,7 +2174,9 @@ export default [
         name: "1tg28obfl41s000000000",
         start_time: 646246143110
       }
-    ]
+    ],
+    slug:
+      "structure-team-resource-job-file-mail-statistics-entry-application-v2-1"
   },
   {
     authorized: true,
@@ -2053,7 +2187,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "mail-file-discovery-backroom-export-device-v3-4"
   },
   {
     authorized: true,
@@ -2073,7 +2208,8 @@ export default [
         name: "g5vkjrqghug000000000",
         start_time: 863588119376
       }
-    ]
+    ],
+    slug: "statistics-entry-job-sequential-bootstrap-news-v3-9"
   },
   {
     authorized: true,
@@ -2084,7 +2220,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "discovery-transfer-export-icpf-application-v4-2"
   },
   {
     authorized: true,
@@ -2113,7 +2250,9 @@ export default [
         name: "50ph2qaf6dw0000000000",
         start_time: 1034511000003
       }
-    ]
+    ],
+    slug:
+      "mail-odrive-management-team-user-job-message-file-domain-bootstrap-channel-v4-3"
   },
   {
     authorized: true,
@@ -2145,7 +2284,8 @@ export default [
         name: "6ljvbuklpag0000000000",
         start_time: 1442074176437
       }
-    ]
+    ],
+    slug: "routing-odrive-virtual-version-v1-4"
   },
   {
     authorized: true,
@@ -2157,7 +2297,9 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "gateway-icpf-routing-internet-export-discovery-sequential-odrive-transmission-file-infrastructure-v3-9"
   },
   {
     authorized: true,
@@ -2177,7 +2319,8 @@ export default [
         name: "2entuttjwim8000000000",
         start_time: 124006123224
       }
-    ]
+    ],
+    slug: "transmission-version-v2-4"
   },
   {
     authorized: true,
@@ -2209,7 +2352,8 @@ export default [
         name: "1o67g18jzao0000000000",
         start_time: 571710746743
       }
-    ]
+    ],
+    slug: "internet-network-system-v4-9"
   },
   {
     authorized: true,
@@ -2229,7 +2373,8 @@ export default [
         name: "41rnypco9m00000000000",
         start_time: 64048043176
       }
-    ]
+    ],
+    slug: "remote-structure-team-aac-resource-icpf-program-v3-2"
   },
   {
     authorized: true,
@@ -2250,7 +2395,9 @@ export default [
         name: "9q5r2uwcrsg000000000",
         start_time: 826561076331
       }
-    ]
+    ],
+    slug:
+      "sequential-routing-mail-file-remote-domain-odrive-statistics-entry-network-news-v4-1"
   },
   {
     authorized: true,
@@ -2266,7 +2413,8 @@ export default [
         name: "71mhx3u4nhk0000000000",
         start_time: 320478466724
       }
-    ]
+    ],
+    slug: "file-icpf-measurement-v1-1"
   },
   {
     authorized: true,
@@ -2277,7 +2425,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "transfer-monitoring-v1-4"
   },
   {
     authorized: true,
@@ -2301,7 +2450,8 @@ export default [
         name: "1wdcbsrdqkxs000000000",
         start_time: 1010059000601
       }
-    ]
+    ],
+    slug: "domain-internet-service-v2-2"
   },
   {
     authorized: true,
@@ -2317,7 +2467,9 @@ export default [
         name: "5d76735tcds0000000000",
         start_time: 895631321663
       }
-    ]
+    ],
+    slug:
+      "structure-job-discovery-aac-bootstrap-internet-mail-odrive-program-v1-7"
   },
   {
     authorized: true,
@@ -2328,7 +2480,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "icpf-routing-aac-up2-editor-v2-8"
   },
   {
     authorized: true,
@@ -2356,7 +2509,8 @@ export default [
         name: "62q3s1zu4qs0000000000",
         start_time: 57256805461
       }
-    ]
+    ],
+    slug: "authentication-message-domain-export-sequential-structure-editor-v3"
   },
   {
     authorized: true,
@@ -2372,7 +2526,8 @@ export default [
         name: "3b2ow27uyqe0000000000",
         start_time: 8626889463
       }
-    ]
+    ],
+    slug: "aac-mail-infrastructure-v1-6"
   },
   {
     authorized: true,
@@ -2400,7 +2555,8 @@ export default [
         name: "r35xtrzcy28000000000",
         start_time: 927794974460
       }
-    ]
+    ],
+    slug: "message-odrive-icpf-aac-authentication-remote-program-v2-2"
   },
   {
     authorized: true,
@@ -2420,7 +2576,8 @@ export default [
         name: "45etzloowgm0000000000",
         start_time: 1060529702399
       }
-    ]
+    ],
+    slug: "user-debugger-v4-4"
   },
   {
     authorized: true,
@@ -2440,7 +2597,8 @@ export default [
         name: "79pqxwmdh800000000000",
         start_time: 143578815228
       }
-    ]
+    ],
+    slug: "sequential-routing-statistics-job-program-v3-1"
   },
   {
     authorized: true,
@@ -2460,7 +2618,8 @@ export default [
         name: "2imhsc4mpss0000000000",
         start_time: 1042206073290
       }
-    ]
+    ],
+    slug: "message-authentication-structure-entry-up2-gateway-mail-channel-v1-7"
   },
   {
     authorized: true,
@@ -2484,7 +2643,8 @@ export default [
         name: "1i9dub4p3la8000000000",
         start_time: 1454463880923
       }
-    ]
+    ],
+    slug: "up2-file-user-gateway-resource-management-statistics-debugger-v3-5"
   },
   {
     authorized: true,
@@ -2500,7 +2660,8 @@ export default [
         name: "4c1uuanyiya0000000000",
         start_time: 1319887856341
       }
-    ]
+    ],
+    slug: "bootstrap-user-up2-device-v4-9"
   },
   {
     authorized: true,
@@ -2516,7 +2677,8 @@ export default [
         name: "5c1ef3pgmwk0000000000",
         start_time: 647731691430
       }
-    ]
+    ],
+    slug: "backroom-resource-analysis-v4-8"
   },
   {
     authorized: true,
@@ -2548,7 +2710,8 @@ export default [
         name: "32d78fnf4o60000000000",
         start_time: 1421093276936
       }
-    ]
+    ],
+    slug: "user-aac-routing-team-domain-system-v3-8"
   },
   {
     authorized: true,
@@ -2572,7 +2735,8 @@ export default [
         name: "3ixgicwp1o80000000000",
         start_time: 180588692785
       }
-    ]
+    ],
+    slug: "file-transfer-management-icpf-transmission-device-v2-7"
   },
   {
     authorized: true,
@@ -2592,7 +2756,8 @@ export default [
         name: "56yczgca7is0000000000",
         start_time: 1108588588568
       }
-    ]
+    ],
+    slug: "export-icpf-backroom-structure-odrive-device-v2-1"
   },
   {
     authorized: true,
@@ -2603,7 +2768,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "sequential-transmission-mail-domain-job-odrive-editor-v3-9"
   },
   {
     authorized: true,
@@ -2620,7 +2786,9 @@ export default [
         name: "5q7nvly1ggs0000000000",
         start_time: 1206085160091
       }
-    ]
+    ],
+    slug:
+      "transfer-structure-entry-authentication-mail-aac-virtual-network-analysis-v1-7"
   },
   {
     authorized: true,
@@ -2648,7 +2816,8 @@ export default [
         name: "49wpc22v4600000000000",
         start_time: 941565903314
       }
-    ]
+    ],
+    slug: "message-job-entry-v2-2"
   },
   {
     authorized: true,
@@ -2669,7 +2838,9 @@ export default [
         name: "3aw2o18j17o0000000000",
         start_time: 459243406296
       }
-    ]
+    ],
+    slug:
+      "management-remote-resource-statistics-odrive-entry-discovery-routing-structure-message-service-v1-4"
   },
   {
     authorized: true,
@@ -2697,7 +2868,8 @@ export default [
         name: "bx9iu8t33yo000000000",
         start_time: 738942860454
       }
-    ]
+    ],
+    slug: "file-up2-transfer-analysis-v4"
   },
   {
     authorized: true,
@@ -2722,7 +2894,9 @@ export default [
         name: "4ht8y2j7qlc0000000000",
         start_time: 738386833024
       }
-    ]
+    ],
+    slug:
+      "statistics-odrive-up2-sequential-team-transfer-internet-routing-message-debugger-v2-6"
   },
   {
     authorized: true,
@@ -2738,7 +2912,8 @@ export default [
         name: "4v84c0a5fau0000000000",
         start_time: 245232052887
       }
-    ]
+    ],
+    slug: "resource-remote-sequential-version-v1-3"
   },
   {
     authorized: true,
@@ -2770,7 +2945,8 @@ export default [
         name: "gyf4h6b7ybk000000000",
         start_time: 1057243718891
       }
-    ]
+    ],
+    slug: "gateway-message-bootstrap-odrive-entry-mail-news-v3-6"
   },
   {
     authorized: true,
@@ -2799,7 +2975,9 @@ export default [
         name: "70qcdew5k400000000000",
         start_time: 1504971615725
       }
-    ]
+    ],
+    slug:
+      "export-up2-odrive-sequential-transfer-job-team-transmission-routing-domain-analysis-v4-4"
   },
   {
     authorized: true,
@@ -2810,7 +2988,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "virtual-version-v4-7"
   },
   {
     authorized: true,
@@ -2835,7 +3014,9 @@ export default [
         name: "6isqnivj93o0000000000",
         start_time: 787243311833
       }
-    ]
+    ],
+    slug:
+      "bootstrap-aac-mail-transmission-remote-message-user-authentication-monitoring-v2-2"
   },
   {
     authorized: true,
@@ -2851,7 +3032,8 @@ export default [
         name: "6olhmcvyrn80000000000",
         start_time: 962804670830
       }
-    ]
+    ],
+    slug: "transmission-aac-statistics-sequential-resource-entry-v2-6"
   },
   {
     authorized: true,
@@ -2871,7 +3053,8 @@ export default [
         name: "4n54qwyd7ek0000000000",
         start_time: 80158730332
       }
-    ]
+    ],
+    slug: "file-news-v4"
   },
   {
     authorized: true,
@@ -2882,7 +3065,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "bootstrap-team-version-v3-4"
   },
   {
     authorized: true,
@@ -2910,7 +3094,8 @@ export default [
         name: "2hljoq4g0aq0000000000",
         start_time: 691597670148
       }
-    ]
+    ],
+    slug: "file-team-message-version-v2-7"
   },
   {
     authorized: true,
@@ -2926,7 +3111,8 @@ export default [
         name: "3f6pysj8jn20000000000",
         start_time: 709695703259
       }
-    ]
+    ],
+    slug: "job-team-transfer-export-monitoring-v4-1"
   },
   {
     authorized: true,
@@ -2955,7 +3141,9 @@ export default [
         name: "1m7jnsl0zlc0000000000",
         start_time: 1101974881603
       }
-    ]
+    ],
+    slug:
+      "routing-sequential-mail-odrive-transmission-internet-bootstrap-statistics-gateway-analysis-v4-3"
   },
   {
     authorized: true,
@@ -2988,7 +3176,9 @@ export default [
         name: "1rl5pqjqm41s000000000",
         start_time: 800693344875
       }
-    ]
+    ],
+    slug:
+      "network-gateway-virtual-export-authentication-entry-resource-up2-mail-version-v3-4"
   },
   {
     authorized: true,
@@ -3008,7 +3198,8 @@ export default [
         name: "52rzmgjbuis0000000000",
         start_time: 1495293129342
       }
-    ]
+    ],
+    slug: "transfer-domain-gateway-entry-sequential-news-v1-6"
   },
   {
     authorized: true,
@@ -3036,7 +3227,8 @@ export default [
         name: "5xyli8yvamw0000000000",
         start_time: 1254979676625
       }
-    ]
+    ],
+    slug: "internet-file-structure-management-service-v4-1"
   },
   {
     authorized: true,
@@ -3064,7 +3256,8 @@ export default [
         name: "2v286blji520000000000",
         start_time: 18143641369
       }
-    ]
+    ],
+    slug: "virtual-management-discovery-team-authentication-monitoring-v4-3"
   },
   {
     authorized: true,
@@ -3075,7 +3268,9 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug:
+      "sequential-transfer-statistics-backroom-remote-team-icpf-analysis-v2-8"
   },
   {
     authorized: true,
@@ -3086,7 +3281,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "job-mail-message-export-resource-remote-infrastructure-v3-5"
   },
   {
     authorized: true,
@@ -3118,7 +3314,8 @@ export default [
         name: "gbxzve1ood4000000000",
         start_time: 499178496110
       }
-    ]
+    ],
+    slug: "odrive-user-team-authentication-up2-sequential-transfer-version-v2-5"
   },
   {
     authorized: true,
@@ -3146,7 +3343,8 @@ export default [
         name: "7bizsny3e7k0000000000",
         start_time: 732699912488
       }
-    ]
+    ],
+    slug: "mail-domain-internet-backroom-editor-v4-5"
   },
   {
     authorized: true,
@@ -3157,7 +3355,8 @@ export default [
     status: "Down",
     runtime: "JVM",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "resource-aac-discovery-gateway-device-v5"
   },
   {
     authorized: true,
@@ -3168,7 +3367,8 @@ export default [
     status: "Down",
     runtime: "GO",
     metered: true,
-    instances: []
+    instances: [],
+    slug: "authentication-up2-information-v4"
   },
   {
     authorized: true,
@@ -3184,6 +3384,7 @@ export default [
         name: "5g2wzx51tyk0000000000",
         start_time: 654137183313
       }
-    ]
+    ],
+    slug: "discovery-monitoring-v2-2"
   }
 ];

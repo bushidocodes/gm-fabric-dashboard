@@ -21,10 +21,11 @@ export default function ServicesList({ items, groupByAttribute }) {
         <ServicesListItem
           authorized={item.authorized}
           metered={item.metered}
-          key={`${item.name}${item.version}`}
+          key={item.slug}
           instances={item.instances}
           name={item.name}
           runtime={item.runtime}
+          slug={item.slug}
           status={item.status}
           version={item.version}
           docsLink={item.docsLink}

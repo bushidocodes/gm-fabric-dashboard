@@ -117,14 +117,16 @@ export default {
   fabric: {
     fabricPollingInterval: 5000,
     isPollingFabric: true,
-    selectedInstance: "39ok57zwt7o0000000000",
+    selectedInstanceID: "39ok57zwt7o0000000000",
     servicesPollingFailures: 0,
-    selectedService: "AAC Transfer Mail Sequential Message Job Up2 Information",
+    selectedServiceSlug:
+      "AAC Transfer Mail Sequential Message Job Up2 Information",
     selectedServiceVersion: "4.8",
     services: {
-      "Nachos|1.0": {
+      "nachos-v1-0": {
         name: "Nachos",
         version: "1.0",
+        slug: "nachos-v1-0",
         owner: "Team",
         capability: "Foods",
         minimum: 3,
@@ -141,9 +143,10 @@ export default {
           }
         ]
       },
-      "Grace Hopper Battleship Control Program|1.0": {
+      "grace-hopper-battleship-control-program-v1-0": {
         name: "Grace Hopper Battleship Control Program",
         version: "1.0",
+        slug: "grace-hopper-battleship-control-program-v1-0",
         owner: "Export",
         capability: "System of Record",
         minimum: 1,
@@ -160,10 +163,11 @@ export default {
           }
         ]
       },
-      "Odrive Message Discovery Routing System|3.5": {
+      "odrive-message-discovery-routing-system-v3-5": {
         name: "Odrive Message Discovery Routing System",
         version: "3.5",
         owner: "Remote",
+        slug: "odrive-message-discovery-routing-system-v3-5",
         capability: "Crime Fighting",
         minimum: 4,
         maximum: 2,

@@ -6,7 +6,7 @@ import AppToolBar from "./components/AppToolBar";
 import Banner from "./components/Banner";
 import AppHeaderContent from "./scenes";
 
-import { decodeParameter, trimID } from "utils";
+import { trimID } from "utils";
 import { routerLocationShape } from "components/PropTypes";
 
 AppHeader.propTypes = {
@@ -27,18 +27,17 @@ function AppHeader({ location: { pathname } }) {
 }
 
 function getTitle(pathname) {
-  const [root, version = "", instance = ""] = decodeParameter(pathname)
+  const [selectedServiceSlug = "", selectedInstanceID = ""] = pathname
     .replace(/^\/|\/$/g, "")
-    .replace("%2F", "/") // String out escaped slashes if found
     .split("/");
 
   // If there is an instance in the path, display root : version: instance
   // If not, then check if the root is truthy and display that
   // Else just display Fabric
-  if (instance) {
-    return `${root} : ${version} : ${trimID(instance)}`;
-  } else if (root) {
-    return root;
+  if (selectedInstanceID) {
+    return `${selectedServiceSlug} : ${trimID(selectedInstanceID)}`;
+  } else if (selectedServiceSlug) {
+    return selectedServiceSlug;
   } else {
     return "Fabric";
   }

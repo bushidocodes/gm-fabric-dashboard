@@ -63,9 +63,8 @@ let instancesProps = {
     { name: "5uws9t7wpac0000000000", start_time: 31280519413 }
   ],
   type: "Instance",
-  serviceName:
-    "Authentication Management Transfer Odrive Gateway Statistics Up2 Channel",
-  serviceVersion: "2.3",
+  selectedServiceSlug:
+    "authentication-management-transfer-odrive-gateway-statistics-up2-channel",
   status: "Warning"
 };
 
@@ -172,7 +171,7 @@ describe("Table component with instances prop", () => {
   test("passes correct props to <GMServiceTableLineItem />", () => {
     expect(firstGMServiceTableLineItem.props()).toHaveProperty(
       "path",
-      "/Authentication Management Transfer Odrive Gateway Statistics Up2 Channel/2.3/26d7cmoduw8w000000000"
+      "/authentication-management-transfer-odrive-gateway-statistics-up2-channel/26d7cmoduw8w000000000"
     );
   });
 });

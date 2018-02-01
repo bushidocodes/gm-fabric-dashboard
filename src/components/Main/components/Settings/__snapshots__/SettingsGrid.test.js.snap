@@ -846,9 +846,6 @@ Array [
 .c8:hover svg,
 .c8:active svg,
 .c8:focus svg {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -885,6 +882,7 @@ Array [
   margin-left: 16px;
   padding: 32px;
   position: relative;
+  background: #f3f3f3;
 }
 
 .c11 .input-range__label.input-range__label--value {
@@ -954,6 +952,33 @@ Array [
   border-radius: 20px;
 }
 
+.c11 .input-range__label.input-range__label--value {
+  color: rgb(102,102,102);
+}
+
+.c11 .input-range--disabled .input-range__slider {
+  background: rgb(102,102,102);
+  cursor: default;
+  border: none;
+}
+
+.c11 .input-range--disabled .input-range__slider:hover,
+.c11 .input-range--disabled .input-range__slider:focus,
+.c11 .input-range--disabled .input-range__slider:active {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.c11 .input-range__track {
+  cursor: default;
+}
+
+.c11 .input-range__slider:before {
+  border-top: 7px solid rgb(102,102,102);
+  color: rgb(102,102,102);
+}
+
 .c10 {
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
@@ -976,9 +1001,15 @@ Array [
 
 .c7 {
   border-bottom: 1px solid rgb(217,217,217);
-  cursor: default;
+  cursor: help;
   display: inline-block;
   position: relative;
+}
+
+.c7:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
 }
 
 <section
@@ -1031,7 +1062,7 @@ Array [
     >
       <div
         className="c7"
-        disabled={true}
+        disabled={false}
         style={
           Object {
             "border": "none",
@@ -1043,7 +1074,7 @@ Array [
         >
           <button
             className="c9"
-            disabled={false}
+            disabled={true}
             onClick={[Function]}
             orientation="vertical"
             size="xl"
@@ -1078,7 +1109,7 @@ Array [
                 </title>
                 <g
                   className="glyph"
-                  fill="rgb(10, 171, 42)"
+                  fill="rgb(77, 77, 77)"
                   transform="translate(-24 -24) scale(3)"
                 >
                   <polygon
@@ -1121,8 +1152,8 @@ Array [
         id="ctrl-slider-Instance Polling"
       >
         <div
-          aria-disabled={false}
-          className="input-range"
+          aria-disabled={true}
+          className="input-range input-range--disabled"
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           onMouseDown={[Function]}

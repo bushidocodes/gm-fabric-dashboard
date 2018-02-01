@@ -107,9 +107,8 @@ Effect("stopPollingInstanceMetrics", stopPollingInstanceMetricsEffect);
 function stopPollingAndPurgeInstanceMetricsEffect() {
   console.log("Polling stopped and metrics cache cleared");
   // Reset selected service, version, and instance
-  Actions.setSelectedService(null);
-  Actions.setSelectedServiceVersion(null);
-  Actions.setSelectedInstance(null);
+  Actions.setSelectedServiceSlug(null);
+  Actions.setSelectedInstanceID(null);
   // Stop polling
   Actions.stopPollingInstanceMetrics();
   Actions.setMetricsPollingFailures(0);

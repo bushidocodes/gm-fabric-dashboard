@@ -15,11 +15,11 @@ function AppHeaderContent() {
       />
       <Route
         exact
-        path="/:serviceName/:serviceVersion"
+        path="/:selectedServiceSlug"
         component={ServiceHeaderContent}
       />
       <Route
-        path="/:serviceName/:serviceVersion/:instanceID"
+        path="/:selectedServiceSlug/:selectedInstanceID"
         component={InstanceHeaderContent}
       />
     </Switch>

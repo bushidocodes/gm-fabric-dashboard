@@ -4,7 +4,6 @@ import { createSelector } from "reselect";
 
 import { parseJSONString } from "./latestAttribute";
 import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
-import { encodeParameter } from "utils";
 import { microserviceStatuses } from "utils/constants";
 
 // TODO: Revisit architecture here
@@ -18,30 +17,18 @@ export const getDashboards = state => state.dashboards;
 export const getServices = state => state.fabric.services;
 
 export const getFabricServer = state => state.settings.fabricServer;
-export const getSelectedInstance = state => state.fabric.selectedInstance;
-export const getSelectedServiceName = state => state.fabric.selectedService;
-export const getSelectedServiceVersion = state =>
-  state.fabric.selectedServiceVersion;
-
-/**
- * Reselect selector that generates the key used in the Redux store for services
- * composed of a service name and a service version delimited by `|`
- */
-export const getSelectedServiceKey = createSelector(
-  [getSelectedServiceName, getSelectedServiceVersion],
-  (selectedService, selectedServiceVersion) =>
-    `${selectedService}|${selectedServiceVersion}`
-);
+export const getSelectedInstanceID = state => state.fabric.selectedInstanceID;
+export const getSelectedServiceSlug = state => state.fabric.selectedServiceSlug;
 
 /**
  * Reselect selector that returns the current selected service from the Redux store
  * if it is found and null if not found
  */
 export const getSelectedService = createSelector(
-  [getSelectedServiceKey, getServices],
-  (key, services) => {
-    if (Object.keys(services).indexOf(key) !== -1) {
-      return services[key];
+  [getSelectedServiceSlug, getServices],
+  (slug, services) => {
+    if (Object.keys(services).indexOf(slug) !== -1) {
+      return services[slug];
     } else {
       return null;
     }
@@ -66,18 +53,12 @@ export const getRuntime = createSelector(
  * Reselect selector that generates Tab components from JSON
  */
 export const generateHeaderTabs = createSelector(
-  [
-    getDashboards,
-    getMetrics,
-    getSelectedServiceName,
-    getSelectedServiceVersion,
-    getSelectedInstance
-  ],
-  (dashboards, metrics, service, version, instance) => {
+  [getDashboards, getMetrics, getSelectedServiceSlug, getSelectedInstanceID],
+  (dashboards, metrics, selectedServiceSlug, selectedInstanceID) => {
     if (Object.keys(dashboards).length > 0) {
       const prefix =
-        service && version && instance
-          ? `/${encodeParameter(service)}/${version}/${instance}`
+        selectedServiceSlug && selectedInstanceID
+          ? `/${selectedServiceSlug}/${selectedInstanceID}`
           : "";
       return _.toPairs(dashboards).map(([key, value]) => {
         let chartData, lines;

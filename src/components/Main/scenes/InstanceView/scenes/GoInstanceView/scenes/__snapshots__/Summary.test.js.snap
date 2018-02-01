@@ -567,9 +567,8 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
       ],
     }
   }
-  selectedInstance="2smao7xwboy0000000000"
-  selectedService="Authentication Statistics File Resource Network Export ICPF Mail Domain End"
-  selectedServiceVersion="4.3"
+  selectedInstanceID="2smao7xwboy0000000000"
+  selectedServiceSlug="authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3"
   store={
     Object {
       "clearActions": [Function],

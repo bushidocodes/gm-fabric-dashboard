@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
 import _ from "lodash";
+import { withRouter } from "react-router-dom";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
@@ -21,9 +22,8 @@ class ServiceView extends Component {
     history: routerHistoryShape.isRequired,
     instances: PropTypes.arrayOf(serviceInstanceShape).isRequired,
     location: routerLocationShape.isRequired,
+    selectedServiceSlug: PropTypes.string.isRequired,
     serviceIsMetered: PropTypes.bool,
-    serviceName: PropTypes.string.isRequired,
-    serviceVersion: PropTypes.string.isRequired,
     setUrlState: PropTypes.func.isRequired,
     status: PropTypes.string.isRequired,
     urlState: PropTypes.object.isRequired
@@ -57,9 +57,8 @@ class ServiceView extends Component {
 
   render() {
     const {
+      selectedServiceSlug,
       setUrlState,
-      serviceName,
-      serviceVersion,
       status,
       instances,
       serviceIsMetered,
@@ -98,8 +97,7 @@ class ServiceView extends Component {
         <ErrorBoundary>
           <Table
             type={"Instance"}
-            serviceName={serviceName}
-            serviceVersion={serviceVersion}
+            selectedServiceSlug={selectedServiceSlug}
             serviceIsMetered={serviceIsMetered}
             items={_.orderBy(
               instances.filter(
@@ -119,4 +117,5 @@ class ServiceView extends Component {
   }
 }
 
-export default withUrlState()(ServiceView);
+
+export default withRouter(withUrlState()(ServiceView));

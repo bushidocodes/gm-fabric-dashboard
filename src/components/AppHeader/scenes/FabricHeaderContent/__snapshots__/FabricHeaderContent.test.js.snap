@@ -213,7 +213,7 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
       <dd
         class="c8"
       >
-        1
+        3
       </dd>
     </dl>
   </a>
@@ -339,7 +339,7 @@ exports[`FabricHeaderContent matches snapshot 1`] = `
       <dd
         class="c8"
       >
-        1
+        3
       </dd>
     </dl>
   </a>

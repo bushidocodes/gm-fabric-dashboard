@@ -15,9 +15,8 @@ import { getTableHeaders, getItem } from "./utils";
 
 Table.propTypes = {
   items: PropTypes.array,
+  selectedServiceSlug: PropTypes.string,
   serviceIsMetered: PropTypes.bool,
-  serviceName: PropTypes.string,
-  serviceVersion: PropTypes.string,
   status: PropTypes.string,
   type: PropTypes.string
 };
@@ -31,8 +30,7 @@ Table.propTypes = {
 export default function Table({
   items,
   type,
-  serviceName,
-  serviceVersion,
+  selectedServiceSlug,
   serviceIsMetered,
   status
 }) {
@@ -89,9 +87,9 @@ export default function Table({
                   )}
                 />
               }
-              path={`/${serviceName}/${serviceVersion}/${instance.name}`}
+              path={`/${selectedServiceSlug}/${instance.name}`}
               status={status}
-              key={`${serviceName}/${serviceVersion}/${instance.name}`}
+              key={`${selectedServiceSlug}/${instance.name}`}
             />
           ))}
       </TableBody>

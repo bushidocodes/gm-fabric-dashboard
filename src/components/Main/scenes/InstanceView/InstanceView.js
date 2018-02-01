@@ -31,8 +31,7 @@ class InstanceView extends Component {
     instanceID: PropTypes.string.isRequired, // Route param passed from Fabric Router
     runtime: PropTypes.string.isRequired,
     selectedInstanceID: PropTypes.string,
-    selectedService: PropTypes.string,
-    selectedServiceVersion: PropTypes.string,
+    selectedServiceSlug: PropTypes.string,
     serviceName: PropTypes.string, // Route param passed from Fabric Router
     serviceVersion: PropTypes.string // Route param passed from Fabric Router
   };
@@ -51,35 +50,27 @@ class InstanceView extends Component {
    * selectInstance JumpState action if required
    *
    * @param {any} {
-   *     selectedService,
-   *     selectedServiceVersion,
+   *     selectedServiceSlug,
    *     selectedInstanceID,
-   *     serviceName,
-   *     serviceVersion,
+   *     serviceSlug,
    *     instanceID
    *   }
    * @memberof InstanceView
    */
   selectInstanceIfNeeded({
-    selectedService,
-    selectedServiceVersion,
+    selectedServiceSlug,
     selectedInstanceID,
-    serviceName,
-    serviceVersion,
+    serviceSlug,
     instanceID
   }) {
     if (
-      serviceName &&
-      serviceVersion &&
+      serviceSlug &&
       instanceID &&
-      (serviceName !== selectedService ||
-        serviceVersion !== selectedServiceVersion ||
-        instanceID !== selectedInstanceID)
+      (serviceSlug !== selectedServiceSlug || instanceID !== selectedInstanceID)
     ) {
       Actions.selectInstance({
         instanceID,
-        serviceName,
-        serviceVersion
+        serviceSlug
       });
     }
   }
@@ -99,9 +90,8 @@ class InstanceView extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedService: state.fabric.selectedService,
-    selectedServiceVersion: state.fabric.selectedServiceVersion,
-    selectedInstanceID: state.fabric.selectedInstance
+    selectedServiceSlug: state.fabric.selectedServiceSlug,
+    selectedInstanceID: state.fabric.selectedInstanceID
   };
 }
 

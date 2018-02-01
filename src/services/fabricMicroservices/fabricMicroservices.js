@@ -1,9 +1,12 @@
 import axios from "axios";
 import { Actions, getState } from "jumpstate";
 
-import { clearFabricIntervalIfNeeded } from "utils";
+import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { getFabricServer } from "utils/head";
 import { reportError } from "services/notification";
+import _ from "lodash";
+
+const memoizedSlugifyMicroservice = _.memoize(slugifyMicroservice);
 
 export function fetchFabricMicroservices(fabricServer) {
   if (fabricServer) {
@@ -11,8 +14,14 @@ export function fetchFabricMicroservices(fabricServer) {
       .get(`${fabricServer}/services`, { responseType: "json" })
       .then(response => response.data)
       .then(arrayOfServices =>
+        arrayOfServices.map(service => ({
+          ...service,
+          slug: memoizedSlugifyMicroservice(service.name, service.version)
+        }))
+      )
+      .then(arrayOfServices =>
         arrayOfServices.reduce((result, service) => {
-          result[`${service.name}|${service.version}`] = service;
+          result[service.slug] = service;
           return result;
         }, {})
       );
@@ -135,24 +144,17 @@ export function stopPollingFabricMicroservicesEffect() {
  * this clears the resets the polling interval and metrics cache each time a new microservice instance is selected
  * @param {Object} jumpstateObject
  * @param {string} jumpstateObject.instanceID
- * @param {string} jumpstateObject.serviceName
+ * @param {string} jumpstateObject.serviceSlug
  */
 
-export function selectInstanceEffect({
-  instanceID,
-  serviceName,
-  serviceVersion
-}) {
+export function selectInstanceEffect({ instanceID, serviceSlug }) {
   const { fabric } = getState();
-  if (instanceID !== fabric.selectedInstance) {
+  if (instanceID !== fabric.selectedInstanceID) {
     // Check if the new instance is a different microservice and update as needed
-    if (serviceName && serviceName !== fabric.selectedService) {
-      Actions.setSelectedService(serviceName);
+    if (serviceSlug && serviceSlug !== fabric.selectedServiceSlug) {
+      Actions.setSelectedServiceSlug(serviceSlug);
     }
-    if (serviceVersion && serviceVersion !== fabric.selectedServiceVersion) {
-      Actions.setSelectedServiceVersion(serviceVersion);
-    }
-    Actions.setSelectedInstance(instanceID);
+    Actions.setSelectedInstanceID(instanceID);
     // Stop Polling
     Actions.stopPollingInstanceMetrics();
     // Clear Metrics when we change instances
@@ -161,10 +163,8 @@ export function selectInstanceEffect({
     Actions.startPollingInstanceMetrics();
     // and then load dashboards
     const runtime =
-      fabric &&
-      fabric.services &&
-      fabric.services[`${serviceName}|${serviceVersion}`]
-        ? fabric.services[`${serviceName}|${serviceVersion}`].runtime
+      fabric && fabric.services && fabric.services[serviceSlug]
+        ? fabric.services[serviceSlug].runtime
         : "";
     // Note: If we don't know the runtime we ran this function before getting a response from the Fabric server
     // so we don't know what type of runtime the microservice is

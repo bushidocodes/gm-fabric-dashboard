@@ -3,13 +3,13 @@ import {
   calculateErrorPercent,
   clearFabricIntervalIfNeeded,
   convertMS,
-  decodeParameter,
-  encodeParameter,
   formatAsDecimalString,
   relativeReqPercent,
   blurTableRow,
+  slugify,
   trimID
 } from "./index";
+import { slugifyMicroservice } from "utils";
 import React from "react";
 import TableRow from "components/Main/components/TableRow";
 import { mount } from "enzyme";
@@ -123,22 +123,6 @@ describe("formatAsDecimalString", () => {
   });
 });
 
-describe("encodeParameter", () => {
-  test("returns a string with spaces replaced with middle dots", () => {
-    expect(encodeParameter("Decipher Tech Studios")).toEqual(
-      "Decipher·Tech·Studios"
-    );
-  });
-});
-
-describe("decodeParameter", () => {
-  test("returns a string with middle dots replaced with spaces", () => {
-    expect(decodeParameter("Decipher·Tech·Studios")).toEqual(
-      "Decipher Tech Studios"
-    );
-  });
-});
-
 describe("blurTableRow", () => {
   test("traverses up the DOM until it finds TableRow and removes focus", () => {
     const spy = jest.fn();
@@ -156,5 +140,36 @@ describe("blurTableRow", () => {
     wrapper.find("span").simulate("click");
     expect(spy).toHaveBeenCalled();
     expect(focusedElement !== element).toBe(true);
+  });
+});
+
+describe("slugify", () => {
+  test("replaces spaces with dashes", () => {
+    expect(slugify("a b c")).toEqual("a-b-c");
+  });
+  test("strips out unsafe characters", () => {
+    expect(slugify("[()=:.,!#$@\"'/|?*+&]")).toEqual("");
+  });
+  test("strips out leading and trailing dashes characters", () => {
+    expect(slugify("-m-")).toEqual("m");
+  });
+  test("replaces multiple dashes with a single dash", () => {
+    expect(slugify("thug-------life")).toEqual("thug-life");
+  });
+  test("coverts strings to lower case", () => {
+    expect(slugify("USAUSAUSA")).toEqual("usausausa");
+  });
+});
+
+describe("slugifyMicroservice", () => {
+  test("combines a service name and version into a param passed to slugify", () => {
+    const slugify = jest.fn();
+    slugifyMicroservice("Awesome Service", "1.0", slugify);
+    expect(slugify.mock.calls[0]).toEqual(["Awesome Service-v1-0"]);
+  });
+  test("produces a valid slug", () => {
+    expect(slugifyMicroservice("Awesome Service", "1.0")).toEqual(
+      "awesome-service-v1-0"
+    );
   });
 });

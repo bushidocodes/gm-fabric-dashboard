@@ -27,6 +27,7 @@ export default class ServicesListItem extends Component {
     metered: PropTypes.bool,
     name: PropTypes.string.isRequired,
     runtime: PropTypes.string,
+    slug: PropTypes.string,
     status: PropTypes.string,
     version: PropTypes.string
   };
@@ -45,6 +46,7 @@ export default class ServicesListItem extends Component {
       metered,
       name,
       runtime,
+      slug,
       status,
       version,
       docsLink,
@@ -71,7 +73,7 @@ export default class ServicesListItem extends Component {
             tabIndex="0"
             onClick={isAccessible ? null : e => this.manageFocus(e.target, e)}
             title={title}
-            to={`/${name}/${version}`}
+            to={slug}
           >
             <IconWrapper>
               {groupByAttribute.toLowerCase() !== "status" && (

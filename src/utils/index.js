@@ -120,29 +120,6 @@ export function formatAsDecimalString(number, numberOfDecimals = 3) {
 }
 
 /**
- * Utility function to generate a URL safe string by replacing spaces with underscores.
- * Since we are using underscores we must first replace any existing ones with a `~` character.
- * @export
- * @param {string} param
- * @returns string
- */
-export function encodeParameter(param) {
-  return param.replace(/\s/gi, "·");
-}
-
-/**
- * Utility function to generate a human readable string by replacing underscores with spaces.
- * This is the anti-function of `encodeParameter` so we first replace underscores with a space
- * and if there is a `~` then we replace it with it's original undescore.
- * @export
- * @param {string} param
- * @returns string
- */
-export function decodeParameter(param) {
-  return param.replace(/·/gi, " ");
-}
-
-/**
  * Utility function used in table rows to manage focus state. This is accomplished
  * by searching up the DOM tree to find table row and take away its focus to prevent outline
  * on click while preserving tabbing outline
@@ -158,4 +135,37 @@ export function blurTableRow(e) {
     node = node.parentNode;
   }
   node.blur();
+}
+
+/**
+ * Takes a string and generates a basic slug, ignoring unicode characters and emojis
+ * @export
+ * @param {any} string
+ * @returns string
+ */
+export function slugify(string) {
+  return string
+    .replace(/\s/g, "-")
+    .replace(/[()=:.,!#$@"'/|?*+&[\]]/g, "")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-+/g, "-")
+    .toLowerCase();
+}
+
+/**
+ * Takes a service name and version and combines them together
+ * prior to passing the result to a slugify function
+ *
+ * @export
+ * @param {any} serviceName
+ * @param {any} serviceVersion
+ * @param {any} [slugifyFunc=slugify] - slugify function override intended for testing
+ * @returns
+ */
+export function slugifyMicroservice(
+  serviceName,
+  serviceVersion,
+  slugifyFunc = slugify
+) {
+  return slugifyFunc(`${serviceName}-v${serviceVersion.replace(".", "-")}`);
 }

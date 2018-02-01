@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
-import { decodeParameter } from "utils";
 
 ServiceHeaderContent.propTypes = {
   instanceCount: PropTypes.number,
@@ -33,16 +32,15 @@ function ServiceHeaderContent({ instanceCount, pathname }) {
 function mapStateToProps(state, ownProps) {
   const { fabric: { services } } = state;
   const {
-    match: { params: { serviceName, serviceVersion } },
+    match: { params: { selectedServiceSlug } },
     location: { pathname }
   } = ownProps;
   return {
     instanceCount:
       services &&
-      services[`${decodeParameter(serviceName)}|${serviceVersion}`] &&
-      services[`${decodeParameter(serviceName)}|${serviceVersion}`].instances &&
-      services[`${decodeParameter(serviceName)}|${serviceVersion}`].instances
-        .length,
+      services[selectedServiceSlug] &&
+      services[selectedServiceSlug].instances &&
+      services[selectedServiceSlug].instances.length,
     pathname
   };
 }

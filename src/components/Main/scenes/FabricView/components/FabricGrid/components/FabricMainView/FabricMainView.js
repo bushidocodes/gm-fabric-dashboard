@@ -26,19 +26,15 @@ export default function FabricMainView({
   // Do data transformation stuff
   const mappedServices = services.map(service => {
     return {
+      ...service,
       authorized: service.authorized,
       headerTitle: computeHeaderTitle(groupByAttribute, service),
-      name: service.name,
-      version: service.version,
       docsLink: service.documentation,
       status: computeStatus(
         service.instances.length,
         service.minimum,
         service.maximum
-      ),
-      runtime: service.runtime,
-      metered: service.metered,
-      instances: service.instances
+      )
     };
   });
 

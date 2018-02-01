@@ -1,14 +1,12 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 
 import JVMHeaderContent from "./scenes/JVMHeaderContent";
 import GoHeaderContent from "./scenes/GoHeaderContent";
 import DefaultHeaderContent from "./scenes/DefaultHeaderContent";
 
 import { generateHeaderTabs } from "utils/selectors";
-import { decodeParameter } from "utils";
 import {
   routerHistoryShape,
   routerLocationShape,
@@ -64,27 +62,22 @@ class InstanceHeaderContent extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  const { instance: { metrics }, settings: { runtime } } = state;
   const {
-    match: { params: { serviceName, serviceVersion, instanceID } }
-  } = ownProps;
+    instance: { metrics },
+    fabric: { services, selectedServiceSlug, selectedInstanceID }
+  } = state;
   return {
     metrics,
     basePath:
-      serviceName && serviceVersion && instanceID
-        ? `/${serviceName}/${serviceVersion}/${instanceID}`
+      selectedServiceSlug && selectedInstanceID
+        ? `/${selectedServiceSlug}/${selectedInstanceID}`
         : "",
     runtime:
-      state.fabric.services &&
-      serviceName &&
-      serviceVersion &&
-      state.fabric.services[`${decodeParameter(serviceName)}|${serviceVersion}`]
-        ? state.fabric.services[
-            `${decodeParameter(serviceName)}|${serviceVersion}`
-          ].runtime
-        : runtime,
+      services && selectedServiceSlug && services[selectedServiceSlug]
+        ? state.fabric.services[selectedServiceSlug].runtime
+        : "",
     headerTabs: generateHeaderTabs(state)
   };
 }
 
-export default withRouter(connect(mapStateToProps)(InstanceHeaderContent));
+export default connect(mapStateToProps)(InstanceHeaderContent);

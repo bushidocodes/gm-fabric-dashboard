@@ -1,10 +1,9 @@
 import React from "react";
 import { Actions } from "jumpstate";
 import { mount } from "enzyme";
-import { MemoryRouter, Route } from "react-router";
-import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import renderer from "react-test-renderer";
+import { CreateJumpstateMiddleware } from "jumpstate";
 
 // Utilities
 import mockState from "json/mockReduxState";
@@ -16,7 +15,7 @@ import ThreadsGrid from "./index";
 Actions.fetchAndStoreInstanceThreads = jest.fn();
 
 // Create a mock store and initialize with mock data
-const store = configureMockStore()(mockState);
+const store = configureMockStore([CreateJumpstateMiddleware()])(mockState);
 
 const threadsTableProps = {
   filteredThreadData: [
@@ -37,13 +36,7 @@ const threadsTableProps = {
 };
 
 // Wrap ThreadsGrid in Memory Router
-const RouterWrap = (
-  <Provider store={store}>
-    <MemoryRouter>
-      <Route render={props => <ThreadsGrid {...props} />} />
-    </MemoryRouter>
-  </Provider>
-);
+const RouterWrap = <ThreadsGrid store={store} />;
 
 let wrapper;
 

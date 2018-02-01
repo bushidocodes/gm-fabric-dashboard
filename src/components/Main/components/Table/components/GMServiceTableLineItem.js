@@ -4,7 +4,6 @@ import TableCol from "components/Main/components/TableCol";
 import TableColArray from "components/Main/components/TableColArray";
 import TableRow from "components/Main/components/TableRow";
 import GMLink from "components/Main/scenes/FabricView/components/GMLink";
-import { encodeParameter } from "utils";
 import Tooltip from "components/Tooltip";
 import Icon from "components/Icon";
 import NoMetrics from "components/Glyphs/NoMetrics";
@@ -55,7 +54,7 @@ function GMServiceTableLineItem({
           <GMLink
             disabled={!serviceIsMetered}
             onClick={serviceIsMetered ? null : e => e.preventDefault()}
-            to={encodeParameter(path)}
+            to={path}
           >
             {name}
           </GMLink>

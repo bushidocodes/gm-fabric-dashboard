@@ -1,4 +1,4 @@
-import { Actions } from "jumpstate";
+import { Actions, getState } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -20,9 +20,8 @@ import { getVisibleThreads } from "utils/jvm/selectors";
 class ThreadsGrid extends Component {
   static propTypes = {
     fabricServer: PropTypes.string,
-    selectedInstance: PropTypes.string,
-    selectedService: PropTypes.string,
-    selectedServiceVersion: PropTypes.string,
+    selectedInstanceID: PropTypes.string,
+    selectedServiceSlug: PropTypes.string,
     setUrlState: PropTypes.func.isRequired,
     threads: PropTypes.array,
     threadsError: PropTypes.object,
@@ -32,16 +31,17 @@ class ThreadsGrid extends Component {
   componentDidMount() {
     const {
       fabricServer,
-      selectedService,
-      selectedServiceVersion,
-      selectedInstance
+      selectedServiceSlug,
+      selectedInstanceID
     } = this.props;
 
     // If fabricServer is truthy, we are running with a "Fabric Server" discovery service,
     // so we need to dynamically build the endpoint for the threads API.
     if (fabricServer) {
+      const services = getState().fabric.services;
+      const { name, version } = services[selectedServiceSlug];
       Actions.fetchAndStoreInstanceThreads(
-        `${fabricServer}/threads/${selectedService}/${selectedServiceVersion}/${selectedInstance}`
+        `${fabricServer}/threads/${name}/${version}/${selectedInstanceID}`
       );
     }
   }
@@ -156,13 +156,17 @@ class ThreadsGrid extends Component {
 }
 
 function mapStateToProps(state) {
+  const {
+    fabric: { selectedServiceSlug, selectedInstanceID },
+    instance: { threadsError },
+    settings: { fabricServer }
+  } = state;
   return {
-    fabricServer: state.settings.fabricServer,
+    fabricServer,
     threads: getVisibleThreads(state),
-    threadsError: state.instance.threadsError,
-    selectedService: state.fabric.selectedService,
-    selectedServiceVersion: state.fabric.selectedServiceVersion,
-    selectedInstance: state.fabric.selectedInstance
+    threadsError,
+    selectedServiceSlug,
+    selectedInstanceID
   };
 }
 

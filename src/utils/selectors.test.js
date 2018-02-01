@@ -9,12 +9,10 @@ const {
   getMetrics,
   getServices,
   getFabricServer,
-  getSelectedInstance,
+  getSelectedInstanceID,
   getSelectedService,
-  getSelectedServiceName,
-  getSelectedServiceVersion,
+  getSelectedServiceSlug,
   generateHeaderTabs,
-  getSelectedServiceKey,
   getStatusCount,
   getRuntime
 } = require.requireActual("./selectors");
@@ -56,30 +54,18 @@ describe("getFabricServer", () => {
   });
 });
 
-describe("getSelectedInstance", () => {
-  test("takes a state object and returns state.fabric.selectedInstance", () => {
-    expect(getSelectedInstance(state)).toEqual(state.fabric.selectedInstance);
-  });
-});
-
-describe("getSelectedServiceName", () => {
-  test("takes a state object and returns state.fabric.selectedService", () => {
-    expect(getSelectedServiceName(state)).toEqual(state.fabric.selectedService);
-  });
-});
-
-describe("getSelectedServiceVersion", () => {
-  test("takes a state object and returns state.fabric.selectedServiceVersion", () => {
-    expect(getSelectedServiceVersion(state)).toEqual(
-      state.fabric.selectedServiceVersion
+describe("getSelectedInstanceID", () => {
+  test("takes a state object and returns state.fabric.selectedInstanceID", () => {
+    expect(getSelectedInstanceID(state)).toEqual(
+      state.fabric.selectedInstanceID
     );
   });
 });
 
-describe("getSelectedServiceKey", () => {
-  test("generates the key used in the Redux store for services composed of a service name and a service version delimited by `|`", () => {
-    expect(getSelectedServiceKey(state)).toEqual(
-      "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3"
+describe("getSelectedServiceSlug", () => {
+  test("takes a state object and returns state.fabric.selectedService", () => {
+    expect(getSelectedServiceSlug(state)).toEqual(
+      state.fabric.selectedServiceSlug
     );
   });
 });
@@ -88,11 +74,11 @@ describe("getSelectedService", () => {
   test("returns the current selected service from the Redux store if it is found and null if not found", () => {
     expect(getSelectedService(state)).toMatchObject(
       state.fabric.services[
-        "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3"
+        "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3"
       ]
     );
     // create a modified state where fabric.selectedService, fabric.selectedServiceVersion,
-    // and fabric.selectedInstance are not defined
+    // and fabric.selectedInstanceID are not defined
     let modState = Object.assign({}, state, {
       fabric: {
         fabricPollingInterval: 10000,
@@ -111,7 +97,7 @@ describe("getRuntime", () => {
 
   test("returns null if  there is no selected service", () => {
     // create a modified state where fabric.selectedService, fabric.selectedServiceVersion,
-    // and fabric.selectedInstance are not defined
+    // and fabric.selectedInstanceID are not defined
     let modState = Object.assign({}, state, {
       fabric: {
         fabricPollingInterval: 10000,
@@ -150,14 +136,13 @@ describe("generateHeaderTabs", () => {
 
   test("passes href prop to <Tab/>", () => {
     const keys = ["http", "jvm", "finagle"];
-    const mockService =
-      "Authentication·Statistics·File·Resource·Network·Export·ICPF·Mail·Domain·End";
-    const mockVersion = "4.3";
+    const mockServiceSlug =
+      "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3";
     const mockInstance = "2smao7xwboy0000000000";
 
     tabs.forEach((tab, idx) => {
       expect(tab.props.href).toBe(
-        `/${mockService}/${mockVersion}/${mockInstance}/${keys[idx]}`
+        `/${mockServiceSlug}/${mockInstance}/${keys[idx]}`
       );
     });
   });
@@ -470,6 +455,6 @@ describe("getRoutesTree", () =>
 
 describe("getStatusCount", () => {
   test("takes an array of service objects and returns an object with a count for each status", () => {
-    expect(getStatusCount(state)).toMatchObject({ Warning: 1, total: 1 });
+    expect(getStatusCount(state)).toMatchObject({ Warning: 3, total: 3 });
   });
 });

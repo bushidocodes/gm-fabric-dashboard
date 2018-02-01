@@ -122,6 +122,25 @@ const getRandomService = (quantity = 150) => {
       }
     ]
   });
+  arr.push({
+    name: "Crashy McCrashface (USA USA)",
+    version: "1.0",
+    owner: _.sample(serviceNamePrefix),
+    capability: "Foods",
+    minimum: _.random(1, 5),
+    maximum: _.random(() => this.minimum, 7),
+    documentation: "https://www.google.com",
+    authorized: true,
+    metered: true,
+    threaded: true,
+    runtime: _.sample(["JVM", "GO"]),
+    instances: [
+      {
+        name: "ee0fa3669fea7e9a0adea649c46bca56",
+        start_time: 1508854912461
+      }
+    ]
+  });
   for (let i = 0; i < quantity; i++) {
     arr.push({
       name: generateRandomServiceName(),

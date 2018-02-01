@@ -213,7 +213,7 @@ exports[`ServiceHeaderContent matches snapshot 1`] = `
       <dd
         class="c8"
       >
-        1
+        0
       </dd>
     </dl>
   </a>

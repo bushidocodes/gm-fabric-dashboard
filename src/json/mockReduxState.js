@@ -2,20 +2,55 @@ export default {
   fabric: {
     fabricPollingInterval: 10000,
     isPollingFabric: true,
-    selectedService:
-      "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
-    selectedServiceVersion: "4.3",
-    selectedInstance: "2smao7xwboy0000000000",
+    selectedServiceSlug:
+      "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3",
+    selectedInstanceID: "2smao7xwboy0000000000",
     services: {
-      "Authentication Statistics File Resource Network Export ICPF Mail Domain End|4.3": {
+      "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3": {
         authorized: false,
         headerTitle: "Warning",
         name:
           "Authentication Statistics File Resource Network Export ICPF Mail Domain End",
         version: "4.3",
+        slug:
+          "authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3",
         docsLink: "https://www.google.com",
         status: "Warning",
         runtime: "GO",
+        metered: true,
+        instances: [
+          {
+            name: "2smao7xwboy0000000000",
+            start_time: 1508854912461
+          }
+        ]
+      },
+      "go-exemplar-v1-0": {
+        authorized: false,
+        headerTitle: "Warning",
+        name: "Go Exemplar",
+        version: "1.0",
+        slug: "go-exemplar-v1-0",
+        docsLink: "https://www.google.com",
+        status: "Warning",
+        runtime: "GO",
+        metered: true,
+        instances: [
+          {
+            name: "2smao7xwboy0000000000",
+            start_time: 1508854912461
+          }
+        ]
+      },
+      "jvm-exemplar-v1-0": {
+        authorized: false,
+        headerTitle: "Warning",
+        name: "JVM Exemplar",
+        version: "1.0",
+        slug: "jvm-exemplar-v1-0",
+        docsLink: "https://www.google.com",
+        status: "Warning",
+        runtime: "JVM",
         metered: true,
         instances: [
           {

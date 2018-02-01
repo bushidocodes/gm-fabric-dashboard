@@ -34,6 +34,8 @@ const groupingByHeadingListViewMockData = [
       }
     ],
     version: "1.1",
+    slug: "awesome-service-1-v1-1",
+    key: "awesome-service-1-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",
@@ -57,6 +59,8 @@ const groupingByHeadingListViewMockData = [
       }
     ],
     version: "1.5",
+    slug: "awesome-service-2-v1-5",
+    key: "awesome-service-2-v1-5",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",
@@ -71,6 +75,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.7",
+    slug: "awesome-service-3-v1-7",
+    key: "awesome-service-3-v1-7",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "JVM",
@@ -85,6 +91,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.2",
+    slug: "awesome-service-4-v1-2",
+    key: "awesome-service-4-v1-2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",
@@ -99,6 +107,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.2",
+    slug: "awesome-service-5-v1-2",
+    key: "awesome-service-5-v1-2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "JVM",
@@ -113,6 +123,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.2",
+    slug: "awesome-service-6-v1-2",
+    key: "awesome-service-6-v1-2",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "JVM",
@@ -127,6 +139,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.1",
+    slug: "awesome-service-7-v1-1",
+    key: "awesome-service-7-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",
@@ -141,6 +155,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.1",
+    slug: "awesome-service-8-v1-1",
+    key: "awesome-service-8-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "JVM",
@@ -155,6 +171,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.1",
+    slug: "awesome-service-9-v1-1",
+    key: "awesome-service-9-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "JVM",
@@ -169,6 +187,8 @@ const groupingByHeadingListViewMockData = [
       { name: "d9de3a9c26c6c84daaf1ceb40559d659", start_time: 1508170483156 }
     ],
     version: "1.1",
+    slug: "awesome-service-10-v1-1",
+    key: "awesome-service-10-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",
@@ -183,6 +203,8 @@ const groupingByHeadingListViewMockData = [
     ],
     name: "Awesome Service 11",
     version: "1.1",
+    slug: "awesome-service-11-v1-1",
+    key: "awesome-service-11-v1-1",
     docsLink: "http://www.deciphernow.com",
     authorized: true,
     runtime: "GO",

@@ -6,14 +6,14 @@ import renderer from "react-test-renderer";
 import ServiceView from "./ServiceView";
 
 const mockData = {
-  serviceName: "Cool Service",
-  serviceVersion: "1.0",
-  status: "stable",
   instances: [
     { name: "serviceID1", start_time: 600000000000 },
     { name: "serviceID2", start_time: 300000000000 },
     { name: "serviceID3", start_time: 400000000000 }
-  ]
+  ],
+  selectedServiceSlug: "cool-service-v1-0",
+  serviceIsMetered: true,
+  status: "stable"
 };
 
 // Wrap Service View in Memory Router to mock route props (history, match, location)
@@ -24,15 +24,24 @@ const RouterWrap = (
 );
 
 const tableProps = {
-  serviceName: "Cool Service",
-  serviceVersion: "1.0",
-  status: "stable",
-  type: "Instance",
   items: [
-    { name: "serviceID1", start_time: 600000000000 },
-    { name: "serviceID2", start_time: 300000000000 },
-    { name: "serviceID3", start_time: 400000000000 }
-  ]
+    {
+      name: "serviceID1",
+      start_time: 600000000000
+    },
+    {
+      name: "serviceID2",
+      start_time: 300000000000
+    },
+    {
+      name: "serviceID3",
+      start_time: 400000000000
+    }
+  ],
+  selectedServiceSlug: "cool-service-v1-0",
+  serviceIsMetered: true,
+  status: "stable",
+  type: "Instance"
 };
 
 describe("Service View", () => {

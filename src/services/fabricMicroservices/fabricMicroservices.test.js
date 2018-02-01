@@ -22,7 +22,7 @@ describe("Fabric Microservices Module ", () => {
     fetchFabricMicroservices("server")
       .then(result =>
         expect(result).toMatchObject({
-          "Export Team Gateway Up2 Management Message Resource Measurement|1": {
+          "export-team-gateway-up2-management-message-resource-measurement-v1": {
             authorized: true,
             capability: "Crime Fighting",
             documentation: "https://www.google.com",
@@ -47,10 +47,12 @@ describe("Fabric Microservices Module ", () => {
               "Export Team Gateway Up2 Management Message Resource Measurement",
             owner: "Virtual",
             runtime: "GO",
+            slug:
+              "export-team-gateway-up2-management-message-resource-measurement-v1",
             threaded: true,
             version: "1"
           },
-          "Internet Option|3.6": {
+          "internet-option-v3-6": {
             authorized: true,
             capability: "Crime Fighting",
             documentation: "https://www.google.com",
@@ -74,10 +76,11 @@ describe("Fabric Microservices Module ", () => {
             name: "Internet Option",
             owner: "Sequential",
             runtime: "GO",
+            slug: "internet-option-v3-6",
             threaded: true,
             version: "3.6"
           },
-          "Up2 Message Network Team Entry Job Transmission End|4.7": {
+          "up2-message-network-team-entry-job-transmission-end-v4-7": {
             authorized: true,
             capability: "Crime Fighting",
             documentation: "https://www.google.com",
@@ -101,6 +104,7 @@ describe("Fabric Microservices Module ", () => {
             name: "Up2 Message Network Team Entry Job Transmission End",
             owner: "Internet",
             runtime: "GO",
+            slug: "up2-message-network-team-entry-job-transmission-end-v4-7",
             threaded: true,
             version: "4.7"
           }

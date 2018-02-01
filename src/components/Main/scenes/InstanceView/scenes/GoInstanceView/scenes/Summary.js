@@ -20,12 +20,7 @@ import { metricsShape } from "components/PropTypes";
  * Static Summary page for GO runtime
  * @function SummaryGrid
  */
-function SummaryGrid({
-  metrics,
-  selectedInstance,
-  selectedService,
-  selectedServiceVersion
-}) {
+function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
   const allRequests = getLatestAttribute(metrics, "all/requests");
   const allErrors = getLatestAttribute(metrics, "all/errors.count");
   const startTime = getLatestAttribute(metrics, "system/start_time");
@@ -131,17 +126,15 @@ function SummaryGrid({
 
 SummaryGrid.propTypes = {
   metrics: metricsShape,
-  selectedInstance: PropTypes.string,
-  selectedService: PropTypes.string,
-  selectedServiceVersion: PropTypes.string
+  selectedInstanceID: PropTypes.string,
+  selectedServiceSlug: PropTypes.string
 };
 
 function mapStateToProps(state) {
   return {
     metrics: state.instance.metrics,
-    selectedService: state.fabric.selectedService,
-    selectedServiceVersion: state.fabric.selectedServiceVersion,
-    selectedInstance: state.fabric.selectedInstance
+    selectedServiceSlug: state.fabric.selectedServiceSlug,
+    selectedInstanceID: state.fabric.selectedInstanceID
   };
 }
 

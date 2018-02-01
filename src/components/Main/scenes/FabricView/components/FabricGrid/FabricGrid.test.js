@@ -14,7 +14,7 @@ import FabricGrid from "./FabricGrid";
 Actions.fetchAndStoreFabricMicroservices = jest.fn();
 
 const mockServices = _.values({
-  "AAC Remote Information|1": {
+  "aac-remote-information-v1-0": {
     authorized: true,
     capability: "Crime Fighting",
     documentation: "https://www.google.com",
@@ -26,9 +26,10 @@ const mockServices = _.values({
     owner: "Domain",
     runtime: "GO",
     threaded: true,
-    version: "1"
+    version: "1.0",
+    slug: "aac-remote-information-v1-0"
   },
-  "Entry Monitoring|4.2": {
+  "entry-monitoring-v4-2": {
     authorized: true,
     capability: "Crime Fighting",
     documentation: "https://www.google.com",
@@ -40,9 +41,10 @@ const mockServices = _.values({
     owner: "AAC",
     runtime: "JVM",
     threaded: true,
-    version: "4.2"
+    version: "4.2",
+    slug: "entry-monitoring-v4-2"
   },
-  "Grace Hopper Battleship Control Program|1.0": {
+  "grace-hopper-battleship-control-program-v4-6": {
     authorized: true,
     capability: "System of Record",
     documentation: "https://www.google.com",
@@ -52,7 +54,8 @@ const mockServices = _.values({
     maximum: 7,
     metered: false,
     minimum: 1,
-    name: "Grace Hopper Battleship Control Program|1.0",
+    name: "Grace Hopper Battleship Control Program",
+    slug: "grace-hopper-battleship-control-program-v4-6",
     owner: "Bootstrap",
     runtime: "COBOL",
     threaded: false,
