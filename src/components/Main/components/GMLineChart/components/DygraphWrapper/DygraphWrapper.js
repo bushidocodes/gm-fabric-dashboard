@@ -75,6 +75,7 @@ export default class DygraphWrapper extends React.Component {
     options.labelsKMB = _.has(options, "labelsKMB") ? options.labelsKMB : true; // Abbreviate with KMB
     options.strokeWidth = options.strokeWidth || 2.0;
     options.legend = options.legend || "always";
+    options.fillGraph = options.fillGraph || "true";
     options.axisLineColor = options.axisLineColor || "rgb(200, 200, 200)";
     options.gridLineColor = options.gridLineColor || "rgb(200, 200, 200)";
     options.colors = options.colors || ["#0aab2a", "#002e6e", "#FF5733"];
