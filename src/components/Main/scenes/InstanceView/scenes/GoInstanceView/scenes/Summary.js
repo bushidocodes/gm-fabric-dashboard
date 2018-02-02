@@ -1,4 +1,3 @@
-import dateFormat from "dateformat";
 import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
@@ -15,12 +14,18 @@ import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
+import { injectIntl } from "react-intl";
 
 /**
  * Static Summary page for GO runtime
  * @function SummaryGrid
  */
-function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
+function SummaryGrid({
+  metrics,
+  selectedInstanceID,
+  selectedServiceSlug,
+  intl
+}) {
   const allRequests = getLatestAttribute(metrics, "all/requests");
   const allErrors = getLatestAttribute(metrics, "all/errors.count");
   const startTime = getLatestAttribute(metrics, "system/start_time");
@@ -35,6 +40,7 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
     "B",
     "MB"
   );
+
   const hostMemoryAvail = getLatestAttribute(
     metrics,
     "system/memory/available",
@@ -42,16 +48,35 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
     "B",
     "GB"
   );
+
   return (
     <ErrorBoundary>
-      <LayoutSection title="Vitals" icon="EKG">
+      <LayoutSection
+        title={intl.formatMessage({
+          id: "summary.vitals",
+          defaultMessage: "Vitals",
+          description: "Vitals header text"
+        })}
+        icon="EKG"
+      >
         <ReadoutGroup>
           <Readout
             readoutItems={[
               {
-                detail: dateFormat(startTime),
+                detail: intl.formatTime(startTime, {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric"
+                }),
                 icon: "Summary",
-                title: "Uptime",
+                title: intl.formatMessage({
+                  id: "summary.uptime",
+                  defaultMessage: "Uptime",
+                  description: "Uptime detail text"
+                }),
                 value: (
                   <UpTime
                     startTime={startTime}
@@ -70,7 +95,11 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
             readoutItems={[
               {
                 icon: "Timer",
-                title: "Avg. Response Time",
+                title: intl.formatMessage({
+                  id: "summary.responseTime",
+                  defaultMessage: "Response Time",
+                  description: "Response time title text"
+                }),
                 value: `${_.round(
                   getLatestAttribute(metrics, "all/latency_ms.avg")
                 )}ms`
@@ -79,7 +108,11 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
                 icon: "Exclamation",
                 iconBorderStyle: "BorderTriangleSmall",
                 iconBorderWidth: 2,
-                title: "Error Rate",
+                title: intl.formatMessage({
+                  id: "summary.errorRate",
+                  defaultMessage: "Error Rate",
+                  description: "Error rate title text"
+                }),
                 value: `${errorPercent}%`
               }
             ]}
@@ -87,25 +120,54 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
           <Readout
             readoutItems={[
               {
-                detail: `${getLatestAttribute(
-                  metrics,
-                  "system/cpu_cores"
-                )} Cores on Host`,
+                title: intl.formatMessage({
+                  id: "summary.hostCPUUsage",
+                  defaultMessage: "Host CPU Utilized",
+                  description: "Host CPU Usage title text"
+                }),
+                detail: intl.formatMessage(
+                  {
+                    id: "summary.hostCPUUsageDetail",
+                    defaultMessage:
+                      "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
+                    description: "Host CPU Usage detail text"
+                  },
+                  {
+                    count: getLatestAttribute(metrics, "system/cpu_cores")
+                  }
+                ),
                 icon: "CPU",
-                title: "Host CPU Utilized",
                 value: `${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`
               },
               {
-                detail: `${hostMemoryAvail} GB Free on Host`,
                 icon: "Memory",
-                title: "Memory Utilized",
+                title: intl.formatMessage({
+                  id: "summary.memoryUsage",
+                  defaultMessage: "Memory Utilized",
+                  description: "Memory usage title text"
+                }),
+                detail: intl.formatMessage(
+                  {
+                    id: "summary.memoryUsageDetail",
+                    defaultMessage: "{hostMemoryAvail} GB Free on Host",
+                    description: "Memory usage detail text"
+                  },
+                  { hostMemoryAvail }
+                ),
                 value: `${processMemoryUsed} MB`
               }
             ]}
           />
         </ReadoutGroup>
       </LayoutSection>
-      <LayoutSection title="Statistics" icon="Scatterplot">
+      <LayoutSection
+        title={intl.formatMessage({
+          id: "summary.statistics",
+          defaultMessage: "Statistics",
+          description: "Statistics header text"
+        })}
+        icon="Scatterplot"
+      >
         <div style={{ height: "250px" }}>
           <GMLineChart
             timeSeries={mapDygraphKeysToNetChange(
@@ -116,7 +178,11 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
               ),
               ["HTTPS", "HTTP", "RPC"]
             )}
-            title="Requests Per Second"
+            title={intl.formatMessage({
+              id: "summary.requestsPerSecond",
+              defaultMessage: "Requests Per Second",
+              description: "Requests Per Second title text"
+            })}
           />
         </div>
       </LayoutSection>
@@ -125,6 +191,7 @@ function SummaryGrid({ metrics, selectedInstanceID, selectedServiceSlug }) {
 }
 
 SummaryGrid.propTypes = {
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape,
   selectedInstanceID: PropTypes.string,
   selectedServiceSlug: PropTypes.string
@@ -138,4 +205,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SummaryGrid);
+export default connect(mapStateToProps)(injectIntl(SummaryGrid));
