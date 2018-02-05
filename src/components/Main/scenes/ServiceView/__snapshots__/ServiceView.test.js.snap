@@ -390,18 +390,15 @@ exports[`Service View matches snapshot 1`] = `
 
 <div>
   <div
-    className="c0"
+    class="c0"
   >
     <div
-      className="c1"
+      class="c1"
     >
-      <form
-        onSubmit={[Function]}
-      >
+      <form>
         <input
           aria-label="Search Instances"
-          className="c2"
-          onChange={[Function]}
+          class="c2"
           placeholder="Search Instances"
           type="search"
           value=""
@@ -409,52 +406,41 @@ exports[`Service View matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="c3"
+      class="c3"
     />
     <div
-      className="c4"
+      class="c4"
     >
       <div
-        className="Select c5 has-value is-searchable Select--single"
-        style={undefined}
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
-          disabled={false}
           name="form-field-sort-by"
           type="hidden"
           value="name"
         />
         <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={undefined}
+          class="Select-control"
         >
           <span
-            className="Select-multi-value-wrapper"
+            class="Select-multi-value-wrapper"
             id="react-select-3--value"
           >
             <div
-              className="Select-value"
-              style={undefined}
-              title={undefined}
+              class="Select-value"
             >
               <span
                 aria-selected="true"
-                className="Select-value-label"
+                class="Select-value-label"
                 id="react-select-3--value-item"
                 role="option"
               >
                 <span>
                   <span>
-                    Sort
-                     
+                    Sort 
                   </span>
                   <span
-                    className="c6"
+                    class="c6"
                   >
                     Name
                   </span>
@@ -462,61 +448,28 @@ exports[`Service View matches snapshot 1`] = `
               </span>
             </div>
             <div
-              className="Select-input"
-              style={
-                Object {
-                  "display": "inline-block",
-                }
-              }
+              class="Select-input"
+              style="display:inline-block"
             >
               <input
                 aria-activedescendant="react-select-3--value"
-                aria-describedby={undefined}
                 aria-expanded="false"
                 aria-haspopup="false"
-                aria-label={undefined}
-                aria-labelledby={undefined}
                 aria-owns=""
-                className={undefined}
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                required={false}
                 role="combobox"
-                style={
-                  Object {
-                    "boxSizing": "content-box",
-                    "width": "5px",
-                  }
-                }
-                tabIndex={undefined}
+                style="box-sizing:content-box;width:5px"
                 value=""
               />
               <div
-                style={
-                  Object {
-                    "height": 0,
-                    "left": 0,
-                    "overflow": "scroll",
-                    "position": "absolute",
-                    "top": 0,
-                    "visibility": "hidden",
-                    "whiteSpace": "pre",
-                  }
-                }
-              >
-                
-              </div>
+                style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+              />
             </div>
           </span>
           <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
+            class="Select-arrow-zone"
           >
             <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
+              class="Select-arrow"
             />
           </span>
         </div>
@@ -524,170 +477,126 @@ exports[`Service View matches snapshot 1`] = `
     </div>
   </div>
   <div
-    className="c7"
+    class="c7"
   >
     <div
-      className="c8"
+      class="c8"
     >
       <div
-        className="c9"
-        style={
-          Object {
-            "flex": "1 1 20%",
-          }
-        }
+        class="c9"
+        style="flex:1 1 20%"
       >
         Instance
       </div>
       <div
-        className="c9"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+        class="c9"
+        style="text-align:right"
       >
         Uptime
       </div>
     </div>
     <ol
-      className="c10"
+      class="c10"
     >
       <li
-        className="c11"
-        onClick={[Function]}
-        tabIndex="-1"
+        class="c11"
+        tabindex="-1"
       >
         <div
-          className="c12"
-          style={
-            Object {
-              "flex": "1 1 20%",
-            }
-          }
+          class="c12"
+          style="flex:1 1 20%"
         >
           <div
-            className="c13"
-            disabled={true}
-            style={
-              Object {
-                "border": "none",
-              }
-            }
+            class="c13"
+            disabled=""
+            style="border:none"
           >
             <a
-              className="c14"
-              disabled={false}
+              class="c14"
               href="/cool-service-v1-0/serviceID1"
-              onClick={[Function]}
             >
               serviceID1
             </a>
             <div
-              className="c15"
-              style={Object {}}
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           <div
-            className="c17"
+            class="c17"
           />
         </div>
       </li>
       <li
-        className="c11"
-        onClick={[Function]}
-        tabIndex="-1"
+        class="c11"
+        tabindex="-1"
       >
         <div
-          className="c12"
-          style={
-            Object {
-              "flex": "1 1 20%",
-            }
-          }
+          class="c12"
+          style="flex:1 1 20%"
         >
           <div
-            className="c13"
-            disabled={true}
-            style={
-              Object {
-                "border": "none",
-              }
-            }
+            class="c13"
+            disabled=""
+            style="border:none"
           >
             <a
-              className="c14"
-              disabled={false}
+              class="c14"
               href="/cool-service-v1-0/serviceID2"
-              onClick={[Function]}
             >
               serviceID2
             </a>
             <div
-              className="c15"
-              style={Object {}}
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           <div
-            className="c17"
+            class="c17"
           />
         </div>
       </li>
       <li
-        className="c11"
-        onClick={[Function]}
-        tabIndex="-1"
+        class="c11"
+        tabindex="-1"
       >
         <div
-          className="c12"
-          style={
-            Object {
-              "flex": "1 1 20%",
-            }
-          }
+          class="c12"
+          style="flex:1 1 20%"
         >
           <div
-            className="c13"
-            disabled={true}
-            style={
-              Object {
-                "border": "none",
-              }
-            }
+            class="c13"
+            disabled=""
+            style="border:none"
           >
             <a
-              className="c14"
-              disabled={false}
+              class="c14"
               href="/cool-service-v1-0/serviceID3"
-              onClick={[Function]}
             >
               serviceID3
             </a>
             <div
-              className="c15"
-              style={Object {}}
+              class="c15"
             >
               This microservice instance does not have metrics to display.
             </div>
           </div>
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           <div
-            className="c17"
+            class="c17"
           />
         </div>
       </li>

@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "enzyme";
+import { renderWithIntl } from "utils/i18nTesting";
 import { MemoryRouter, Route } from "react-router";
 
 import state from "json/mockReduxState";
@@ -24,7 +24,7 @@ const RouterWrap = (
 
 describe("ServiceHeaderContent", () => {
   test("matches snapshot", () => {
-    const tree = render(RouterWrap);
+    const tree = renderWithIntl(RouterWrap);
     expect(tree).toMatchSnapshot();
   });
 });

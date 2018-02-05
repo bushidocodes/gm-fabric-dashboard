@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
+import { injectIntl } from "react-intl";
 
 import LayoutSection from "components/LayoutSection";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -14,7 +15,6 @@ import { getDygraphOfValue, mapDygraphKeysToNetChange } from "utils/dygraphs";
 import { getLatestAttribute } from "utils/latestAttribute";
 import ArrayValue from "components/ArrayValue";
 import { metricsShape } from "components/PropTypes";
-import { injectIntl } from "react-intl";
 
 /**
  * Static Summary page for GO runtime

@@ -1,5 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { injectIntl } from "react-intl";
+
 import TableCol from "components/Main/components/TableCol";
 import TableColArray from "components/Main/components/TableColArray";
 import TableRow from "components/Main/components/TableRow";
@@ -9,6 +11,7 @@ import Icon from "components/Icon";
 import NoMetrics from "components/Glyphs/NoMetrics";
 
 GMServiceTableLineItem.propTypes = {
+  intl: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   serviceIsMetered: PropTypes.bool,
@@ -21,7 +24,8 @@ function GMServiceTableLineItem({
   name,
   uptime,
   path,
-  serviceIsMetered
+  serviceIsMetered,
+  intl
 }) {
   // this is done to search up the DOM tree to find table row and take away its focus to prevent outline on click while preserving tabbing outline
   const blurTableRow = e => {
@@ -47,9 +51,12 @@ function GMServiceTableLineItem({
           position="left"
           disabled={serviceIsMetered}
           containerStyle={{ border: "none" }}
-          content={
-            "This microservice instance does not have metrics to display."
-          }
+          content={intl.formatMessage({
+            id: "GMServiceTableLineItem.tooltip",
+            defaultMessage:
+              "This microservice instance does not have metrics to display.",
+            description: "Tooltip content"
+          })}
         >
           <GMLink
             disabled={!serviceIsMetered}
@@ -65,4 +72,4 @@ function GMServiceTableLineItem({
   );
 }
 
-export default GMServiceTableLineItem;
+export default injectIntl(GMServiceTableLineItem);

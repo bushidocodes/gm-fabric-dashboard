@@ -17,6 +17,18 @@ export default {
       warning: "Warning",
       down: "Down"
     },
+    GMServiceTableLineItem: {
+      tooltip: "This microservice instance does not have metrics to display."
+    },
+    serviceView: {
+      error: "No Instances Found",
+      name: "Name",
+      searchPlaceholder: "Search Instances",
+      uptime: "Uptime"
+    },
+    serviceHeaderContent: {
+      instances: "Instances"
+    },
     summary: {
       uptime: "Uptime",
       responseTime: "Avg. Response Time",

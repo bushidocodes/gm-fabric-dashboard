@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 import { withRouter } from "react-router-dom";
+import { injectIntl } from "react-intl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
@@ -16,11 +17,11 @@ import {
 } from "components/PropTypes";
 import withUrlState from "components/withUrlState";
 
-// TODO: Make history and location a shape PropType
 class ServiceView extends Component {
   static propTypes = {
     history: routerHistoryShape.isRequired,
     instances: PropTypes.arrayOf(serviceInstanceShape).isRequired,
+    intl: PropTypes.object.isRequired,
     location: routerLocationShape.isRequired,
     selectedServiceSlug: PropTypes.string.isRequired,
     serviceIsMetered: PropTypes.bool,
@@ -66,7 +67,8 @@ class ServiceView extends Component {
         filterString = "",
         sortByAttribute = "name",
         ascending = "true"
-      }
+      },
+      intl
     } = this.props;
 
     const sortOrder = JSON.parse(ascending) ? ["asc"] : ["desc"];
@@ -77,18 +79,30 @@ class ServiceView extends Component {
           searchInputProps={{
             filterString,
             setFilterString: filterString => setUrlState({ filterString }),
-            searchPlaceholder: "Search Instances"
+            searchPlaceholder: intl.formatMessage({
+              id: "serviceView.searchPlaceholder",
+              defaultMessage: "Search Instances",
+              description: "Service view search placeholder"
+            })
           }}
           sortByProps={{
             sortByAttribute,
             sortByOptions: [
               {
                 value: "name",
-                label: "Name"
+                label: intl.formatMessage({
+                  id: "serviceView.name",
+                  defaultMessage: "Name",
+                  description: "Option for sort by dropdown"
+                })
               },
               {
                 value: "start_time",
-                label: "Uptime"
+                label: intl.formatMessage({
+                  id: "serviceView.uptime",
+                  defaultMessage: "Uptime",
+                  description: "Option for sort by dropdown"
+                })
               }
             ],
             setSortByAttribute: this.setSortByAttribute
@@ -112,10 +126,15 @@ class ServiceView extends Component {
         </ErrorBoundary>
       </div>
     ) : (
-      <NotFoundError errorMsg={"No Instances Found"} />
+      <NotFoundError
+        errorMsg={intl.formatMessage({
+          id: "serviceView.error",
+          defaultMessage: "No Instances Found",
+          description: "Option for sort by dropdown"
+        })}
+      />
     );
   }
 }
 
-
-export default withRouter(withUrlState()(ServiceView));
+export default withRouter(withUrlState()(injectIntl(ServiceView)));

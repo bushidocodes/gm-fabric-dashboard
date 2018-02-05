@@ -1,7 +1,7 @@
 import React from "react";
-import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
-import renderer from "react-test-renderer";
+
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import ServiceView from "./ServiceView";
 
@@ -45,10 +45,10 @@ const tableProps = {
 };
 
 describe("Service View", () => {
-  let wrapper = mount(RouterWrap);
+  let wrapper = mountWithIntl(RouterWrap);
 
   test("matches snapshot", () => {
-    const tree = renderer.create(RouterWrap).toJSON();
+    const tree = renderWithIntl(RouterWrap);
     expect(tree).toMatchSnapshot();
   });
 
