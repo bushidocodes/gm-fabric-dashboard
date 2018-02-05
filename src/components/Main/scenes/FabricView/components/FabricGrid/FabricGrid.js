@@ -1,7 +1,6 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { withRouter } from "react-router";
 
 import withUrlState from "components/withUrlState";
 import { reportError } from "services/notification";
@@ -153,4 +152,4 @@ class FabricGrid extends Component {
   }
 }
 
-export default withRouter(withUrlState()(FabricGrid));
+export default withUrlState()(FabricGrid);
