@@ -1,7 +1,6 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
-import { withRouter } from "react-router";
 
 import withUrlState from "components/withUrlState";
 import { reportError } from "services/notification";
@@ -14,10 +13,12 @@ import {
 import NotFoundError from "components/Main/components/NotFoundError";
 import TableToolbar from "components/Main/components/TableToolbar";
 import FabricMainView from "./components/FabricMainView";
+import { injectIntl } from "react-intl";
 
 class FabricGrid extends Component {
   static propTypes = {
     history: routerHistoryShape,
+    intl: PropTypes.object.isRequired,
     location: routerLocationShape,
     match: routerMatchShape,
     services: PropTypes.arrayOf(serviceShape),
@@ -70,7 +71,8 @@ class FabricGrid extends Component {
         sortByAttribute = "Name",
         groupByAttribute = "Status",
         displayType = "Cards"
-      }
+      },
+      intl
     } = this.props;
     const filteredServices = services.filter(service => {
       return (
@@ -88,11 +90,19 @@ class FabricGrid extends Component {
           sortByOptions: [
             {
               value: "Name",
-              label: "Name"
+              label: intl.formatMessage({
+                id: "fabric.name",
+                defaultMessage: "Name",
+                description: "Option for sort by dropdown"
+              })
             },
             {
               value: "Status",
-              label: "Status"
+              label: intl.formatMessage({
+                id: "fabric.status",
+                defaultMessage: "Status",
+                description: "Option for sort by dropdown"
+              })
             }
           ],
           sortByAttribute: sortByAttribute,
@@ -110,25 +120,45 @@ class FabricGrid extends Component {
             searchInputProps={{
               filterString: searchQuery,
               setFilterString: searchQuery => setUrlState({ searchQuery }),
-              searchPlaceholder: "Search Services"
+              searchPlaceholder: intl.formatMessage({
+                id: "fabric.searchPlaceholder",
+                defaultMessage: "Search Services",
+                description: "Search placeholder"
+              })
             }}
             groupByProps={{
               groupByOptions: [
                 {
                   value: "Owner",
-                  label: "Owner"
+                  label: intl.formatMessage({
+                    id: "fabric.owner",
+                    defaultMessage: "Owner",
+                    description: "Option for group by dropdown"
+                  })
                 },
                 {
                   value: "Capability",
-                  label: "Capability"
+                  label: intl.formatMessage({
+                    id: "fabric.capability",
+                    defaultMessage: "Capability",
+                    description: "Option for group by dropdown"
+                  })
                 },
                 {
                   value: "Status",
-                  label: "Status"
+                  label: intl.formatMessage({
+                    id: "fabric.status",
+                    defaultMessage: "Status",
+                    description: "Option for group by dropdown"
+                  })
                 },
                 {
                   value: "None",
-                  label: "None"
+                  label: intl.formatMessage({
+                    id: "fabric.none",
+                    defaultMessage: "None",
+                    description: "Option for group by dropdown"
+                  })
                 }
               ],
               groupByAttribute: groupByAttribute,
@@ -148,9 +178,17 @@ class FabricGrid extends Component {
         </div>
       );
     } else {
-      return <NotFoundError errorMsg={"No Services Found"} />;
+      return (
+        <NotFoundError
+          errorMsg={intl.formatMessage({
+            id: "fabric.error",
+            defaultMessage: "No Services Found",
+            description: "Not found error"
+          })}
+        />
+      );
     }
   }
 }
 
-export default withRouter(withUrlState()(FabricGrid));
+export default withUrlState()(injectIntl(FabricGrid));

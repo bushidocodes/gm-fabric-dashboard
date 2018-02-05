@@ -1,6 +1,6 @@
 import React from "react";
 import { IntlProvider, intlShape } from "react-intl";
-import { mount, shallow } from "enzyme";
+import { mount, shallow, render } from "enzyme";
 
 import { flattenMessages } from "utils/i18n";
 import messages from "messages";
@@ -42,6 +42,13 @@ export function shallowWithIntl(node) {
 
 export function mountWithIntl(node) {
   return mount(nodeWithIntlProp(node), {
+    context: { intl },
+    childContextTypes: { intl: intlShape }
+  });
+}
+
+export function renderWithIntl(node) {
+  return render(nodeWithIntlProp(node), {
     context: { intl },
     childContextTypes: { intl: intlShape }
   });

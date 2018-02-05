@@ -1,10 +1,10 @@
 import React from "react";
-import { render } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
+import configureMockStore from "redux-mock-store";
 
+import { renderWithIntl } from "utils/i18nTesting";
 import state from "json/mockReduxState";
 import FabricHeaderContent from "./FabricHeaderContent";
-import configureMockStore from "redux-mock-store";
 
 // Router is necessary because of the <Tab />'s which need a router context
 const RouterWrap = (
@@ -19,7 +19,7 @@ const RouterWrap = (
 
 describe("FabricHeaderContent", () => {
   test("matches snapshot", () => {
-    const tree = render(RouterWrap);
+    const tree = renderWithIntl(RouterWrap);
     expect(tree).toMatchSnapshot();
   });
 });

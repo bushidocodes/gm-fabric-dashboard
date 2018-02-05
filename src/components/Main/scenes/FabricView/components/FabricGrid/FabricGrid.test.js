@@ -1,12 +1,11 @@
 import React from "react";
-import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 
 // Utilities
 import { computeStatus } from "utils/selectors";
-
+import { mountWithIntl } from "utils/i18nTesting";
 // Components
 import FabricGrid from "./FabricGrid";
 
@@ -91,7 +90,7 @@ const urlStateDefaults = {
   sortByAttribute: "Name"
 };
 
-let FabricGridWrap = mount(RouterWrap());
+let FabricGridWrap = mountWithIntl(RouterWrap());
 
 describe("Fabric Grid Main View", () => {
   afterEach(() => {
@@ -197,7 +196,7 @@ describe("Fabric Grid Status Views", () => {
   // to mock what we do in FabricGrid router
   test("render the correct services in stable view", () => {
     const filteredServices = filterServicesByStatus("stable");
-    FabricGridWrap = mount(RouterWrap(["/stable"], filteredServices));
+    FabricGridWrap = mountWithIntl(RouterWrap(["/stable"], filteredServices));
 
     // Check that there is only one stable card rendered
     expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
@@ -212,7 +211,7 @@ describe("Fabric Grid Status Views", () => {
 
   test("render the correct services in warning view", () => {
     const filteredServices = filterServicesByStatus("warning");
-    FabricGridWrap = mount(RouterWrap(["/warning"], filteredServices));
+    FabricGridWrap = mountWithIntl(RouterWrap(["/warning"], filteredServices));
     // Check that there is only one warning card rendered
     expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
@@ -224,7 +223,7 @@ describe("Fabric Grid Status Views", () => {
 
   test("render the correct services in down view", () => {
     const filteredServices = filterServicesByStatus("down");
-    FabricGridWrap = mount(RouterWrap(["/down"], filteredServices));
+    FabricGridWrap = mountWithIntl(RouterWrap(["/down"], filteredServices));
     // Check that there is only one down card rendered
     expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(1);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(

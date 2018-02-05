@@ -1,5 +1,4 @@
 import React from "react";
-import { mount, render } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
@@ -7,6 +6,7 @@ import configureMockStore from "redux-mock-store";
 // utils
 import { getFabricServer } from "../../utils/head";
 import mockState from "json/mockReduxState";
+import { renderWithIntl, mountWithIntl } from "utils/i18nTesting";
 
 // components
 import AppHeader from "./AppHeader";
@@ -31,18 +31,18 @@ describe("AppHeader component", () => {
   let AppHeaderWrapper;
 
   beforeEach(() => {
-    AppHeaderWrapper = mount(anAppHeader);
+    AppHeaderWrapper = mountWithIntl(anAppHeader);
   });
 
   test("matches snapshot with instance view tabs", () => {
-    AppHeaderWrapper = render(anAppHeader);
+    AppHeaderWrapper = renderWithIntl(anAppHeader);
     expect(AppHeaderWrapper).toMatchSnapshot();
   });
 
   test("matches snapshot with fabric view tabs", () => {
     // set a return value for getFabricServer() util func so that AppHeader renders <UseSDS /> and remount
     getFabricServer.mockImplementation(() => "http://localhost:1337");
-    AppHeaderWrapper = render(anAppHeader);
+    AppHeaderWrapper = renderWithIntl(anAppHeader);
     expect(AppHeaderWrapper).toMatchSnapshot();
   });
 
