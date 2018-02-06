@@ -4,9 +4,9 @@ import objectSizeOf from "object-sizeof";
 import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { injectIntl } from "react-intl";
 
 import PollingSettings from "./components/PollingSettings";
-
 import Button from "components/Button";
 import LayoutSection from "components/LayoutSection";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -24,6 +24,7 @@ class SettingsGrid extends Component {
     fabricPollingInterval: PropTypes.number,
     fabricServer: PropTypes.string,
     instanceMetricsPollingInterval: PropTypes.number,
+    intl: PropTypes.object.isRequired,
     isPollingFabric: PropTypes.bool,
     isPollingInstanceMetrics: PropTypes.bool,
     metricsCacheSize: PropTypes.string,
@@ -33,6 +34,7 @@ class SettingsGrid extends Component {
   state = {
     isClearCacheModelOpen: false
   };
+
   clearCacheClickAction = () => {
     this.setState({ isClearCacheModelOpen: true });
   };
@@ -41,6 +43,7 @@ class SettingsGrid extends Component {
     const {
       fabricPollingInterval,
       fabricServer,
+      intl,
       isPollingFabric,
       isPollingInstanceMetrics,
       metricsCacheSize,
@@ -52,10 +55,15 @@ class SettingsGrid extends Component {
       <Button
         clickAction={this.clearCacheClickAction}
         glyph="Close"
-        label="Clear Cache"
+        label={intl.formatMessage({
+          id: "settingsGrid.clearCache",
+          defaultMessage: "Clear Cache",
+          description: "Metrics cache readout button label"
+        })}
         tabIndex={0}
       />
     );
+
     return (
       <Fragment>
         <ConfirmationModal
@@ -65,8 +73,17 @@ class SettingsGrid extends Component {
             Actions.clearMetrics();
             this.setState({ isClearCacheModelOpen: false });
           }}
-          question="Are you sure that you want to clear the cached metrics data?"
-          secondary="This action cannot be undone."
+          question={intl.formatMessage({
+            id: "settingsGrid.modal.question",
+            defaultMessage:
+              "Are you sure that you want to clear the cached metrics data?",
+            description: "Modal prompt"
+          })}
+          secondary={intl.formatMessage({
+            id: "settingsGrid.modal.secondary",
+            defaultMessage: "This action cannot be undone.",
+            description: "Modal prompt warning"
+          })}
         />
         <ErrorBoundary>
           {fabricServer && (
@@ -79,7 +96,11 @@ class SettingsGrid extends Component {
               interval={fabricPollingInterval}
               isPolling={isPollingFabric}
               glyph="Fabric"
-              title="Fabric Polling"
+              title={intl.formatMessage({
+                id: "settingsGrid.fabricPolling",
+                defaultMessage: "Fabric Polling",
+                description: "Polling settings section title"
+              })}
             />
           )}
           <PollingSettings
@@ -90,15 +111,43 @@ class SettingsGrid extends Component {
             isPolling={isPollingInstanceMetrics}
             isDisabled={!selectedInstance}
             glyph="ServiceInstance"
-            title={fabricServer ? "Instance Polling" : "Polling"}
-            tooltipContent="Select an instance to turn on polling"
+            title={
+              fabricServer
+                ? intl.formatMessage({
+                    id: "settingsGrid.instancePolling",
+                    defaultMessage: "Instance Polling",
+                    description: "Polling settings section title"
+                  })
+                : intl.formatMessage({
+                    id: "settingsGrid.polling",
+                    defaultMessage: "Polling",
+                    description: "Polling settings section title"
+                  })
+            }
+            tooltipContent={intl.formatMessage({
+              id: "settingsGrid.tooltip",
+              defaultMessage: "Select an instance to turn on polling",
+              description: "Polling settings section title"
+            })}
           />
-          <LayoutSection icon={"Tape"} title={"Metrics Cache"} flex>
+          <LayoutSection
+            icon={"Tape"}
+            title={intl.formatMessage({
+              id: "settingsGrid.metricsCache",
+              defaultMessage: "Metrics Cache",
+              description: "Metrics cache readout title"
+            })}
+            flex
+          >
             <Readout
               cacheCard={true}
               readoutItems={[
                 {
-                  title: "Cache Size",
+                  title: intl.formatMessage({
+                    id: "settingsGrid.cacheSize",
+                    defaultMessage: "Cache Size",
+                    description: "Metrics cache readout text"
+                  }),
                   value: `${metricsCacheSize}`,
                   children: button
                 }
@@ -132,4 +181,4 @@ function mapStateToProps({
   };
 }
 
-export default connect(mapStateToProps)(SettingsGrid);
+export default connect(mapStateToProps)(injectIntl(SettingsGrid));

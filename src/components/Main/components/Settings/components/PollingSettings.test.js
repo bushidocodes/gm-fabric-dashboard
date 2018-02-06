@@ -1,6 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
-import renderer from "react-test-renderer";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 import PollingSettings from "./PollingSettings";
 
 let wrapper;
@@ -24,13 +23,13 @@ describe("PollingSettings component", () => {
   beforeEach(function() {
     mockStartPolling.mockClear();
     mockStopPolling.mockClear();
-    wrapper = mount(<PollingSettings {...mockProps} />);
+    wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
   });
 
   test("Matches the snapshot", () => {
-    const PollingSettingsComponent = renderer
-      .create(<PollingSettings {...mockProps} />)
-      .toJSON();
+    const PollingSettingsComponent = renderWithIntl(
+      <PollingSettings {...mockProps} />
+    );
     expect(PollingSettingsComponent).toMatchSnapshot();
   });
 
@@ -80,7 +79,7 @@ describe("PollingSettings component", () => {
 
   test("InputRange value depends on the initial state of the Polling Settings component", () => {
     mockProps.interval = 99000;
-    const wrapper = mount(<PollingSettings {...mockProps} />);
+    const wrapper = mountWithIntl(<PollingSettings {...mockProps} />);
     expect(wrapper.find("InputRange").props().value).toBe(99);
   });
 });

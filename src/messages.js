@@ -20,6 +20,13 @@ export default {
     GMServiceTableLineItem: {
       tooltip: "This microservice instance does not have metrics to display."
     },
+    pollingSettings: {
+      button: {
+        pause: "Pause Polling",
+        resume: "Resume Polling"
+      },
+      pollingIntervals: "Polling Interval(s)"
+    },
     serviceView: {
       error: "No Instances Found",
       name: "Name",
@@ -28,6 +35,20 @@ export default {
     },
     serviceHeaderContent: {
       instances: "Instances"
+    },
+    settingsGrid: {
+      cacheSize: "Cache Size",
+      clearCache: "Clear Cache",
+      fabricPolling: "Fabric Polling",
+      instancePolling: "Instance Polling",
+      metricsCache: "Metrics Cache",
+      modal: {
+        question:
+          "Are you sure that you want to clear the cached metrics data?",
+        secondary: "This action cannot be undone."
+      },
+      polling: "Polling",
+      tooltip: "Select an instance to turn on polling"
     },
     summary: {
       uptime: "Uptime",

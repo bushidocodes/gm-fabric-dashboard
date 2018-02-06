@@ -2,6 +2,7 @@ import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import InputRange from "react-input-range";
+import { injectIntl } from "react-intl";
 
 import { contrastColor } from "style/styleFunctions";
 import { COLOR_SUCCESS, COLOR_WHITE } from "style/styleVariables";
@@ -19,6 +20,7 @@ class PollingSettings extends Component {
     changePollingInterval: PropTypes.func.isRequired,
     glyph: PropTypes.string.isRequired,
     interval: PropTypes.number.isRequired,
+    intl: PropTypes.object.isRequired,
     isDisabled: PropTypes.bool,
     isPolling: PropTypes.bool.isRequired,
     startPolling: PropTypes.func.isRequired,
@@ -42,10 +44,21 @@ class PollingSettings extends Component {
       title,
       glyph,
       tooltipContent,
-      isDisabled = false
+      isDisabled = false,
+      intl
     } = this.props;
     const buttonGlyph = isPolling ? "Pause" : "Play";
-    const buttonLabel = isPolling ? "Pause Polling" : "Resume Polling";
+    const buttonLabel = isPolling
+      ? intl.formatMessage({
+          id: "pollingSettings.button.pause",
+          defaultMessage: "Pause Polling",
+          description: "Button label"
+        })
+      : intl.formatMessage({
+          id: "pollingSettings.button.resume",
+          defaultMessage: "Resume Polling",
+          description: "Button label"
+        });
 
     return (
       <LayoutSection title={title} icon={glyph} flex>
@@ -112,7 +125,11 @@ class PollingSettings extends Component {
             value={this.state.localInterval}
           />
           <span className="label" id={`interval-name-${title}`}>
-            {"Polling Interval(s)"}
+            {intl.formatMessage({
+              id: "pollingSettings.pollingIntervals",
+              defaultMessage: "Polling Interval(s)",
+              description: "Input Range label"
+            })}
           </span>
         </PollingSliderContainer>
       </LayoutSection>
@@ -120,4 +137,4 @@ class PollingSettings extends Component {
   }
 }
 
-export default PollingSettings;
+export default injectIntl(PollingSettings);

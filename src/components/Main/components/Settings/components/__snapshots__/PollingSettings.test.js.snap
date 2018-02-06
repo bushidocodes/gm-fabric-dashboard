@@ -381,33 +381,31 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 <section
-  className="c0"
+  class="c0"
 >
   <header
-    className="c1"
+    class="c1"
   >
     <span
-      className="c2"
+      class="c2"
     >
       <svg
         aria-labelledby="ariaLabelledby"
-        className="c3"
+        class="c3"
         focusable="false"
         version="1.1"
         viewBox="0 0 24 24"
+        xlink="http://www.w3.org/1999/xlink"
         xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g
-          className="c4"
+          class="c4"
           fill="currentColor"
           title=""
         >
-          <title>
-            
-          </title>
+          <title />
           <g
-            className="glyph"
+            class="glyph"
             fill="currentColor"
             transform="translate(0 0) scale(1)"
           >
@@ -420,63 +418,47 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
       </svg>
     </span>
     <h3
-      className="c5"
+      class="c5"
     >
       Instance Polling
     </h3>
   </header>
   <div
-    className="c6"
+    class="c6"
   >
     <div
-      className="c7"
-      disabled={true}
-      style={
-        Object {
-          "border": "none",
-        }
-      }
+      class="c7"
+      disabled=""
+      style="border:none"
     >
       <div
-        className="c8"
+        class="c8"
       >
         <button
-          className="c9"
-          disabled={false}
-          onClick={[Function]}
+          class="c9"
           orientation="vertical"
-          size="xl"
-          style={
-            Object {
-              "height": "100%",
-              "position": "relative",
-              "width": "100%",
-              "zIndex": 0,
-            }
-          }
-          tabIndex={0}
+          style="width:100%;height:100%;position:relative;z-index:0"
+          tabindex="0"
           title="Pause Polling"
           type="polling"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            className="c3"
+            class="c3"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
           >
             <g
-              className="c4"
+              class="c4"
               fill="currentColor"
               title=""
             >
-              <title>
-                
-              </title>
+              <title />
               <g
-                className="glyph"
+                class="glyph"
                 fill="rgb(10, 171, 42)"
                 transform="translate(-24 -24) scale(3)"
               >
@@ -488,112 +470,77 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
             </g>
           </svg>
           <span
-            style={
-              Object {
-                "bottom": "10px",
-                "fontSize": "14px",
-                "left": "0px",
-                "position": "absolute",
-                "width": "100%",
-              }
-            }
+            style="font-size:14px;position:absolute;bottom:10px;width:100%;left:0px"
           >
-            
             Pause Polling
-            
           </span>
         </button>
       </div>
       <div
-        className="c10"
-        style={
-          Object {
-            "top": "0px",
-          }
-        }
+        class="c10"
+        style="top:0px"
       />
     </div>
     <div
-      className="c11"
+      class="c11"
       id="ctrl-slider-Instance Polling"
     >
       <div
-        aria-disabled={false}
-        className="input-range"
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onTouchStart={[Function]}
+        aria-disabled="false"
+        class="input-range"
       >
         <span
-          className="input-range__label input-range__label--min"
+          class="input-range__label input-range__label--min"
         >
           <span
-            className="input-range__label-container"
+            class="input-range__label-container"
           >
             5
           </span>
         </span>
         <div
-          className="input-range__track input-range__track--background"
-          onMouseDown={[Function]}
-          onTouchStart={[Function]}
+          class="input-range__track input-range__track--background"
         >
           <div
-            className="input-range__track input-range__track--active"
-            style={
-              Object {
-                "left": "0%",
-                "width": "0%",
-              }
-            }
+            class="input-range__track input-range__track--active"
+            style="left:0%;width:0%"
           />
           <span
-            className="input-range__slider-container"
-            style={
-              Object {
-                "left": "0%",
-                "position": "absolute",
-              }
-            }
+            class="input-range__slider-container"
+            style="position:absolute;left:0%"
           >
             <span
-              className="input-range__label input-range__label--value"
+              class="input-range__label input-range__label--value"
             >
               <span
-                className="input-range__label-container"
+                class="input-range__label-container"
               >
                 5
               </span>
             </span>
             <div
-              aria-controls={undefined}
-              aria-labelledby={undefined}
-              aria-valuemax={120}
-              aria-valuemin={5}
-              aria-valuenow={5}
-              className="input-range__slider"
+              aria-valuemax="120"
+              aria-valuemin="5"
+              aria-valuenow="5"
+              class="input-range__slider"
               draggable="false"
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              onTouchStart={[Function]}
               role="slider"
-              tabIndex="0"
+              tabindex="0"
             />
           </span>
         </div>
         <span
-          className="input-range__label input-range__label--max"
+          class="input-range__label input-range__label--max"
         >
           <span
-            className="input-range__label-container"
+            class="input-range__label-container"
           >
             120
           </span>
         </span>
       </div>
       <span
-        className="label"
+        class="label"
         id="interval-name-Instance Polling"
       >
         Polling Interval(s)
