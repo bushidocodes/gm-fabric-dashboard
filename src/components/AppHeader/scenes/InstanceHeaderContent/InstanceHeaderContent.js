@@ -66,6 +66,7 @@ function mapStateToProps(state, ownProps) {
     instance: { metrics },
     fabric: { services, selectedServiceSlug, selectedInstanceID }
   } = state;
+
   return {
     metrics,
     basePath:

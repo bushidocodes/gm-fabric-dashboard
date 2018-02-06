@@ -2,6 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
+import { injectIntl } from "react-intl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
@@ -21,6 +22,7 @@ import withUrlState from "components/withUrlState";
 class FunctionsGrid extends Component {
   static propTypes = {
     funcs: PropTypes.array,
+    intl: PropTypes.object.isRequired,
     setUrlState: PropTypes.func.isRequired,
     urlState: PropTypes.object.isRequired
   };
@@ -74,7 +76,8 @@ class FunctionsGrid extends Component {
     const {
       setUrlState,
       urlState: { filterString = "", sortByAttribute = "func" },
-      funcs
+      funcs,
+      intl
     } = this.props;
 
     if (funcs && funcs.length > 0) {
@@ -84,29 +87,53 @@ class FunctionsGrid extends Component {
             searchInputProps={{
               filterString,
               setFilterString: filterString => setUrlState({ filterString }),
-              searchPlaceholder: "Search Functions"
+              searchPlaceholder: intl.formatMessage({
+                id: "functionsGrid.searchPlaceholder",
+                defaultMessage: "Search Functions",
+                description: "Search placeholder"
+              })
             }}
             sortByProps={{
               sortByOptions: [
                 {
                   value: "func",
-                  label: "Function"
+                  label: intl.formatMessage({
+                    id: "functionsGrid.function",
+                    defaultMessage: "Function",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "requests",
-                  label: "Requests"
+                  label: intl.formatMessage({
+                    id: "functionsGrid.requests",
+                    defaultMessage: "Requests",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "errorCount",
-                  label: "Error %"
+                  label: intl.formatMessage({
+                    id: "functionsGrid.errorPercent",
+                    defaultMessage: "Error %",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "latency50",
-                  label: "Latency 50%"
+                  label: intl.formatMessage({
+                    id: "functionsGrid.latency50",
+                    defaultMessage: "Latency 50%",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "latency99",
-                  label: "Latency 99%"
+                  label: intl.formatMessage({
+                    id: "functionsGrid.latency99",
+                    defaultMessage: "Latency 99%",
+                    description: "Sort by dropdown option"
+                  })
                 }
               ],
               sortByAttribute,
@@ -129,7 +156,15 @@ class FunctionsGrid extends Component {
         </Fragment>
       );
     } else {
-      return <NotFoundError errorMsg={"No Functions Found"} />;
+      return (
+        <NotFoundError
+          errorMsg={intl.formatMessage({
+            id: "functionsGrid.error",
+            defaultMessage: "No Functions Found",
+            description: "Error message for Functions Grid"
+          })}
+        />
+      );
     }
   }
 }
@@ -140,4 +175,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(withUrlState()(FunctionsGrid));
+export default connect(mapStateToProps)(
+  withUrlState()(injectIntl(FunctionsGrid))
+);

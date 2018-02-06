@@ -1,9 +1,8 @@
 import React from "react";
-import { mount } from "enzyme";
 import { MemoryRouter, Route } from "react-router";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
-import renderer from "react-test-renderer";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 // Utilities
 import mockState from "json/mockReduxState";
@@ -30,11 +29,11 @@ let wrapper;
 
 describe("Explorer View", () => {
   beforeEach(() => {
-    wrapper = mount(RouterWrap);
+    wrapper = mountWithIntl(RouterWrap);
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(RouterWrap).toJSON();
+    const tree = renderWithIntl(RouterWrap);
     expect(tree).toMatchSnapshot();
   });
 

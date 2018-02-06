@@ -222,18 +222,15 @@ Array [
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <div
-      className="c1"
+      class="c1"
     >
-      <form
-        onSubmit={[Function]}
-      >
+      <form>
         <input
           aria-label="Search Threads"
-          className="c2"
-          onChange={[Function]}
+          class="c2"
           placeholder="Search Threads"
           type="search"
           value=""
@@ -241,52 +238,41 @@ Array [
       </form>
     </div>
     <div
-      className="c3"
+      class="c3"
     />
     <div
-      className="c4"
+      class="c4"
     >
       <div
-        className="Select c5 has-value is-searchable Select--single"
-        style={undefined}
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
-          disabled={false}
           name="form-field-group-by"
           type="hidden"
           value="none"
         />
         <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={undefined}
+          class="Select-control"
         >
           <span
-            className="Select-multi-value-wrapper"
+            class="Select-multi-value-wrapper"
             id="react-select-4--value"
           >
             <div
-              className="Select-value"
-              style={undefined}
-              title={undefined}
+              class="Select-value"
             >
               <span
                 aria-selected="true"
-                className="Select-value-label"
+                class="Select-value-label"
                 id="react-select-4--value-item"
                 role="option"
               >
                 <span>
                   <span>
-                    Group
-                     
+                    Group 
                   </span>
                   <span
-                    className="c6"
+                    class="c6"
                   >
                     None
                   </span>
@@ -294,106 +280,62 @@ Array [
               </span>
             </div>
             <div
-              className="Select-input"
-              style={
-                Object {
-                  "display": "inline-block",
-                }
-              }
+              class="Select-input"
+              style="display:inline-block"
             >
               <input
                 aria-activedescendant="react-select-4--value"
-                aria-describedby={undefined}
                 aria-expanded="false"
                 aria-haspopup="false"
-                aria-label={undefined}
-                aria-labelledby={undefined}
                 aria-owns=""
-                className={undefined}
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                required={false}
                 role="combobox"
-                style={
-                  Object {
-                    "boxSizing": "content-box",
-                    "width": "5px",
-                  }
-                }
-                tabIndex={undefined}
+                style="box-sizing:content-box;width:5px"
                 value=""
               />
               <div
-                style={
-                  Object {
-                    "height": 0,
-                    "left": 0,
-                    "overflow": "scroll",
-                    "position": "absolute",
-                    "top": 0,
-                    "visibility": "hidden",
-                    "whiteSpace": "pre",
-                  }
-                }
-              >
-                
-              </div>
+                style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+              />
             </div>
           </span>
           <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
+            class="Select-arrow-zone"
           >
             <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
+              class="Select-arrow"
             />
           </span>
         </div>
       </div>
       <div
-        className="Select c5 has-value is-searchable Select--single"
-        style={undefined}
+        class="Select c5 has-value is-searchable Select--single"
       >
         <input
-          disabled={false}
           name="form-field-sort-by"
           type="hidden"
           value="id"
         />
         <div
-          className="Select-control"
-          onKeyDown={[Function]}
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          style={undefined}
+          class="Select-control"
         >
           <span
-            className="Select-multi-value-wrapper"
+            class="Select-multi-value-wrapper"
             id="react-select-5--value"
           >
             <div
-              className="Select-value"
-              style={undefined}
-              title={undefined}
+              class="Select-value"
             >
               <span
                 aria-selected="true"
-                className="Select-value-label"
+                class="Select-value-label"
                 id="react-select-5--value-item"
                 role="option"
               >
                 <span>
                   <span>
-                    Sort
-                     
+                    Sort 
                   </span>
                   <span
-                    className="c6"
+                    class="c6"
                   >
                     ID
                   </span>
@@ -401,61 +343,28 @@ Array [
               </span>
             </div>
             <div
-              className="Select-input"
-              style={
-                Object {
-                  "display": "inline-block",
-                }
-              }
+              class="Select-input"
+              style="display:inline-block"
             >
               <input
                 aria-activedescendant="react-select-5--value"
-                aria-describedby={undefined}
                 aria-expanded="false"
                 aria-haspopup="false"
-                aria-label={undefined}
-                aria-labelledby={undefined}
                 aria-owns=""
-                className={undefined}
-                id={undefined}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                required={false}
                 role="combobox"
-                style={
-                  Object {
-                    "boxSizing": "content-box",
-                    "width": "5px",
-                  }
-                }
-                tabIndex={undefined}
+                style="box-sizing:content-box;width:5px"
                 value=""
               />
               <div
-                style={
-                  Object {
-                    "height": 0,
-                    "left": 0,
-                    "overflow": "scroll",
-                    "position": "absolute",
-                    "top": 0,
-                    "visibility": "hidden",
-                    "whiteSpace": "pre",
-                  }
-                }
-              >
-                
-              </div>
+                style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+              />
             </div>
           </span>
           <span
-            className="Select-arrow-zone"
-            onMouseDown={[Function]}
+            class="Select-arrow-zone"
           >
             <span
-              className="Select-arrow"
-              onMouseDown={[Function]}
+              class="Select-arrow"
             />
           </span>
         </div>
@@ -651,89 +560,79 @@ Array [
 }
 
 <div
-    className="c0"
+    class="c0"
   >
     <div
-      className="c1"
+      class="c1"
     >
       <div
-        className="c2"
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
+        class="c2"
+        style="text-align:center"
       >
-        State
+        <span>
+          State
+        </span>
       </div>
       <div
-        className="c2"
-        style={
-          Object {
-            "textAlign": "center",
-          }
-        }
+        class="c2"
+        style="text-align:center"
       >
-        ID
+        <span>
+          ID
+        </span>
       </div>
       <div
-        className="c3"
+        class="c3"
       >
-        Name
+        <span>
+          Name
+        </span>
       </div>
       <div
-        className="c2"
-        style={
-          Object {
-            "flex": "0 1 7em",
-            "textAlign": "right",
-          }
-        }
+        class="c2"
+        style="text-align:right;flex:0 1 7em"
       >
-        Daemon
+        <span>
+          Daemon
+        </span>
       </div>
       <div
-        className="c2"
-        style={
-          Object {
-            "flex": "0 1 7em",
-            "textAlign": "right",
-          }
-        }
+        class="c2"
+        style="text-align:right;flex:0 1 7em"
       >
-        Priority
+        <span>
+          Priority
+        </span>
       </div>
       <div
-        className="c2"
+        class="c2"
       />
     </div>
     <ol
-      className="c4"
+      class="c4"
     >
       <li
-        className="c5"
-        onClick={[Function]}
-        onKeyDown={[Function]}
+        class="c5"
         role="link"
-        tabIndex={0}
+        tabindex="0"
       >
         <div
-          className="c6"
+          class="c6"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            className="c7"
+            class="c7"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
           >
             <g
-              className="iconBackground"
+              class="iconBackground"
               fill="rgb(10, 171, 42)"
-              fillOpacity=".3"
-              fillRule="evenodd"
+              fill-opacity=".3"
+              fill-rule="evenodd"
               id="Square"
             >
               <path
@@ -742,13 +641,11 @@ Array [
               />
             </g>
             <g
-              className="c8"
+              class="c8"
               fill="currentColor"
               title=""
             >
-              <title>
-                
-              </title>
+              <title />
               <path
                 d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
                 id="GlyphRunningSmall"
@@ -757,47 +654,45 @@ Array [
           </svg>
         </div>
         <div
-          className="c6"
+          class="c6"
         >
           2
         </div>
         <div
-          className="c9"
+          class="c9"
         >
           Test Runnable
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           Yes
         </div>
         <div
-          className="c10"
+          class="c10"
         >
           8
         </div>
         <div
-          className="c6"
+          class="c6"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            className="c11"
+            class="c11"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
           >
             <g
-              className="c8"
+              class="c8"
               fill="currentColor"
               title=""
             >
-              <title>
-                
-              </title>
+              <title />
               <g
-                className="glyph"
+                class="glyph"
                 fill="currentColor"
                 transform="translate(0 0) scale(1)"
               >

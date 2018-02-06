@@ -1,12 +1,11 @@
 import React from "react";
 import { Actions } from "jumpstate";
-import { mount } from "enzyme";
 import configureMockStore from "redux-mock-store";
-import renderer from "react-test-renderer";
 import { CreateJumpstateMiddleware } from "jumpstate";
 
 // Utilities
 import mockState from "json/mockReduxState";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import ThreadsGrid from "./index";
@@ -42,11 +41,11 @@ let wrapper;
 
 describe("ThreadsGrid View", () => {
   beforeEach(() => {
-    wrapper = mount(RouterWrap);
+    wrapper = mountWithIntl(RouterWrap);
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(RouterWrap).toJSON();
+    const tree = renderWithIntl(RouterWrap);
     expect(tree).toMatchSnapshot();
   });
 

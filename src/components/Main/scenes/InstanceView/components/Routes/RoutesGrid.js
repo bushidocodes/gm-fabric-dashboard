@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-
+import { injectIntl } from "react-intl";
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -21,6 +21,7 @@ import withUrlState from "components/withUrlState";
 
 class RoutesGrid extends Component {
   static propTypes = {
+    intl: PropTypes.object.isRequired,
     routes: PropTypes.array,
     setUrlState: PropTypes.func.isRequired,
     urlState: PropTypes.object.isRequired
@@ -76,7 +77,8 @@ class RoutesGrid extends Component {
     const {
       setUrlState,
       urlState: { filterString = "", sortByAttribute = "route" },
-      routes
+      routes,
+      intl
     } = this.props;
 
     if (routes && routes.length > 0) {
@@ -86,29 +88,53 @@ class RoutesGrid extends Component {
             searchInputProps={{
               filterString,
               setFilterString: filterString => setUrlState({ filterString }),
-              searchPlaceholder: "Search Routes"
+              searchPlaceholder: intl.formatMessage({
+                id: "routesGrid.searchPlaceholder",
+                defaultMessage: "Search Routes",
+                description: "Search placeholder"
+              })
             }}
             sortByProps={{
               sortByOptions: [
                 {
                   value: "route",
-                  label: "Route"
+                  label: intl.formatMessage({
+                    id: "routesGrid.route",
+                    defaultMessage: "Route",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "requests",
-                  label: "Requests"
+                  label: intl.formatMessage({
+                    id: "routesGrid.requests",
+                    defaultMessage: "Requests",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "errorPercent",
-                  label: "Error %"
+                  label: intl.formatMessage({
+                    id: "routesGrid.errorPercent",
+                    defaultMessage: "Error %",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "latency50",
-                  label: "Latency 50%"
+                  label: intl.formatMessage({
+                    id: "routesGrid.latency50",
+                    defaultMessage: "Latency 50%",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "latency99",
-                  label: "Latency 99%"
+                  label: intl.formatMessage({
+                    id: "routesGrid.latency99",
+                    defaultMessage: "Latency 99%",
+                    description: "Sort by dropdown option"
+                  })
                 }
               ],
               sortByAttribute,
@@ -131,7 +157,15 @@ class RoutesGrid extends Component {
         </Fragment>
       );
     } else {
-      return <NotFoundError errorMsg={"No Routes Found"} />;
+      return (
+        <NotFoundError
+          errorMsg={intl.formatMessage({
+            id: "routesGrid.error",
+            defaultMessage: "No Routes Found",
+            description: "Error message for RoutesGrid"
+          })}
+        />
+      );
     }
   }
 }
@@ -142,4 +176,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(withUrlState()(RoutesGrid));
+export default connect(mapStateToProps)(withUrlState()(injectIntl(RoutesGrid)));

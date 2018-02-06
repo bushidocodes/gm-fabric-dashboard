@@ -1,155 +1,847 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Go Instance Functions View: <FunctionsGrid/> Matches snapshot 1`] = `
-<WithUrlStateWrapper
-  dispatch={[Function]}
-  funcs={
-    Array [
-      Object {
-        "errorPercent": "0.000",
-        "errorsCount": 0,
-        "func": "CatalogStream",
-        "inThroughput": 227,
-        "latency50": 1956,
-        "latency90": 3469,
-        "latency95": 3484,
-        "latency99": 3484,
-        "latency9990": 3484,
-        "latency9999": 3484,
-        "latencyAvg": 1942.692308,
-        "latencyCount": 13,
-        "latencyMax": 3484,
-        "latencyMin": 600,
-        "outThroughput": 2889,
-        "requests": 13,
-        "requestsPerSecond_dygraph": Array [
-          Array [
-            Array [
-              2017-11-14T22:48:14.557Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:19.598Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:24.508Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:29.508Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:34.507Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:39.507Z,
-              0,
-            ],
-          ],
-          Object {
-            "labels": Array [
-              "time",
-              "Requests",
-            ],
-          },
-        ],
-        "requestsPerSecond_sparkline": Array [
-          0,
-          0,
-          0,
-          0,
-          0,
-        ],
-      },
-      Object {
-        "errorPercent": "0.000",
-        "errorsCount": 0,
-        "func": "OrderItem",
-        "inThroughput": 225,
-        "latency50": 2339,
-        "latency90": 3476,
-        "latency95": 3565,
-        "latency99": 3565,
-        "latency9990": 3565,
-        "latency9999": 3565,
-        "latencyAvg": 2398.615385,
-        "latencyCount": 13,
-        "latencyMax": 3565,
-        "latencyMin": 1345,
-        "outThroughput": 143,
-        "requests": 13,
-        "requestsPerSecond_dygraph": Array [
-          Array [
-            Array [
-              2017-11-14T22:48:14.557Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:19.598Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:24.508Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:29.508Z,
-              0,
-            ],
-            Array [
-              2017-11-14T22:48:34.507Z,
-              0,
-            ],
-          ],
-          Object {
-            "labels": Array [
-              "time",
-              "Requests",
-            ],
-          },
-        ],
-        "requestsPerSecond_sparkline": Array [
-          0,
-          0,
-          0,
-          0,
-        ],
-      },
-    ]
+Array [
+  .c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c5 {
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: 1020;
+}
+
+.c5 .Select-control {
+  height: 28px !important;
+}
+
+.c5 .Select-control .Select-placeholder {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-value {
+  line-height: 28px !important;
+}
+
+.c5 .Select-control .Select-value .Select-value-label {
+  line-height: 28px;
+}
+
+.c5 .Select-control .Select-input {
+  height: 28px;
+}
+
+.c6 {
+  margin-left: 4px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
   }
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
   }
-  storeSubscription={
-    Subscription {
-      "listeners": Object {
-        "clear": [Function],
-        "get": [Function],
-        "notify": [Function],
-        "subscribe": [Function],
-      },
-      "onStateChange": [Function],
-      "parentSub": undefined,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "unsubscribe": [Function],
-    }
-  }
-/>
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <form>
+        <input
+          aria-label="Search Functions"
+          class="c2"
+          placeholder="Search Functions"
+          type="search"
+          value=""
+        />
+      </form>
+    </div>
+    <div
+      class="c3"
+    />
+    <div
+      class="c4"
+    >
+      <div
+        class="Select c5 has-value is-searchable Select--single"
+      >
+        <input
+          name="form-field-sort-by"
+          type="hidden"
+          value="func"
+        />
+        <div
+          class="Select-control"
+        >
+          <span
+            class="Select-multi-value-wrapper"
+            id="react-select-2--value"
+          >
+            <div
+              class="Select-value"
+            >
+              <span
+                aria-selected="true"
+                class="Select-value-label"
+                id="react-select-2--value-item"
+                role="option"
+              >
+                <span>
+                  <span>
+                    Sort 
+                  </span>
+                  <span
+                    class="c6"
+                  >
+                    Function
+                  </span>
+                </span>
+              </span>
+            </div>
+            <div
+              class="Select-input"
+              style="display:inline-block"
+            >
+              <input
+                aria-activedescendant="react-select-2--value"
+                aria-expanded="false"
+                aria-haspopup="false"
+                aria-owns=""
+                role="combobox"
+                style="box-sizing:content-box;width:5px"
+                value=""
+              />
+              <div
+                style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+              />
+            </div>
+          </span>
+          <span
+            class="Select-arrow-zone"
+          >
+            <span
+              class="Select-arrow"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+  .c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 36px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.c10:hover {
+  background-color: hsl(0,0%,98%);
+}
+
+.c10:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.c10:focus:active:hover {
+  outline: 0;
+}
+
+.c10 > * {
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 > *:first-child {
+  padding-left: 16px;
+}
+
+.c16 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c17 {
+  color: rgb(10,171,42);
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+}
+
+.c11 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  -webkit-flex: 1 1 20%;
+  -ms-flex: 1 1 20%;
+  flex: 1 1 20%;
+  position: relative;
+}
+
+.c15 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.c15 svg {
+  height: 24px;
+}
+
+.c13 {
+  background-color: rgb(230,230,230);
+  border-radius: 1px 4px 4px 1px;
+  bottom: 0;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+}
+
+.c14 {
+  background-color: currentColor;
+  border-radius: inherit;
+  bottom: 0;
+  color: currentColor;
+  left: 0;
+  min-width: 2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c12 > div {
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.c6 {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 6px;
+  color: rgb(255,255,255);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 160px;
+  z-index: 1070;
+  right: 120%;
+  top: -5px;
+}
+
+.c5 {
+  border-bottom: 1px solid rgb(217,217,217);
+  cursor: help;
+  display: inline-block;
+  position: relative;
+}
+
+.c5:hover > :last-child {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1070;
+}
+
+.c0 {
+  display: block;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px;
+  width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgb(255,255,255);
+  box-shadow: inset 0 -1px hsl(0,0%,92%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-weight: 400;
+  overflow: visible;
+  width: 100%;
+}
+
+.c9 {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c2:first-child {
+  padding-left: 16px;
+}
+
+.c3 {
+  -webkit-flex: 1 1 12%;
+  -ms-flex: 1 1 12%;
+  flex: 1 1 12%;
+  text-align: left;
+  padding-right: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.c3:first-child {
+  padding-left: 16px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
+  font-size: 11px;
+  color: rgb(77,77,77);
+}
+
+.c4 {
+  padding: 8px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+        style="flex:1 1 20%"
+      >
+        Function
+      </div>
+      <div
+        class="c2"
+      >
+        Requests/sec
+      </div>
+      <div
+        class="c2"
+        style="text-align:right"
+      >
+        Requests
+      </div>
+      <div
+        class="c2"
+        style="text-align:right"
+      >
+        Error %
+      </div>
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            Latency
+            <div
+              class="c6"
+            >
+              Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
+            </div>
+          </div>
+        </div>
+        <div
+          class="c7"
+        >
+          <div
+            class="c8"
+          >
+            50%
+          </div>
+          <div
+            class="c8"
+          >
+            99%
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol
+      class="c9"
+    >
+      <li
+        class="c10"
+        role="link"
+        tabindex="0"
+      >
+        <div
+          class="c11"
+        >
+          <div
+            class="c12"
+          >
+            <div>
+              CatalogStream
+            </div>
+          </div>
+          <div
+            class="c13"
+          >
+            <div
+              class="c14"
+              width="100"
+            />
+          </div>
+        </div>
+        <div
+          class="c15"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="61"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="120"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="179"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <polyline
+                points="2 16 61 16 120 16 179 16 238 16 238 30 2 30 2 16"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <polyline
+                points="2 16 61 16 120 16 179 16 238 16"
+                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+              />
+            </g>
+            <line
+              style="stroke:grey;opacity:0.4"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+        <div
+          class="c16"
+          style="text-align:right"
+        >
+          13
+        </div>
+        <div
+          class="c17"
+          style="text-align:right"
+        >
+          0.000%
+        </div>
+        <div
+          class="c16"
+          style="text-align:right;display:flex;flex-direction:column"
+        >
+          <div>
+            1956ms
+          </div>
+          <div>
+            3484ms
+          </div>
+        </div>
+      </li>
+      <li
+        class="c10"
+        role="link"
+        tabindex="0"
+      >
+        <div
+          class="c11"
+        >
+          <div
+            class="c12"
+          >
+            <div>
+              OrderItem
+            </div>
+          </div>
+          <div
+            class="c13"
+          >
+            <div
+              class="c14"
+              width="100"
+            />
+          </div>
+        </div>
+        <div
+          class="c15"
+        >
+          <svg
+            preserveAspectRatio="xMaxYMin"
+            viewBox="0 0 240 32"
+          >
+            <g>
+              <circle
+                cx="2"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="80.66666666666667"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="159.33333333333334"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <circle
+                cx="238"
+                cy="16"
+                r="2"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <polyline
+                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16 238 30 2 30 2 16"
+                style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
+              />
+              <polyline
+                points="2 16 80.66666666666667 16 159.33333333333334 16 238 16"
+                style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
+              />
+            </g>
+            <line
+              style="stroke:grey;opacity:0.4"
+              x1="2"
+              x2="238"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+        <div
+          class="c16"
+          style="text-align:right"
+        >
+          13
+        </div>
+        <div
+          class="c17"
+          style="text-align:right"
+        >
+          0.000%
+        </div>
+        <div
+          class="c16"
+          style="text-align:right;display:flex;flex-direction:column"
+        >
+          <div>
+            2339ms
+          </div>
+          <div>
+            3565ms
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>,
+]
 `;

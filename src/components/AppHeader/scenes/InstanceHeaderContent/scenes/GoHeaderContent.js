@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React from "react";
 import { PropTypes } from "prop-types";
+import { injectIntl } from "react-intl";
 
 import Tab from "components/AppHeader/components/Tab";
 import TabNav from "components/AppHeader/components/TabNav";
@@ -12,6 +13,7 @@ import { getLatestAttribute } from "utils/latestAttribute";
 GoHeaderContent.propTypes = {
   basePath: PropTypes.string,
   headerTabs: PropTypes.arrayOf(PropTypes.element),
+  intl: PropTypes.object.isRequired,
   metrics: metricsShape.isRequired
 };
 
@@ -21,7 +23,7 @@ GoHeaderContent.propTypes = {
  * @param {Object} props - See propTypes
  * @returns JSX.Element
  */
-export default function GoHeaderContent({ basePath, metrics, headerTabs }) {
+function GoHeaderContent({ basePath, metrics, headerTabs, intl }) {
   return (
     <TabNav>
       <Tab
@@ -29,7 +31,11 @@ export default function GoHeaderContent({ basePath, metrics, headerTabs }) {
         icon="Summary"
         lines={[
           {
-            name: "Uptime",
+            name: intl.formatMessage({
+              id: "goHeaderContent.uptime",
+              defaultMessage: "Uptime",
+              description: "Tab detail"
+            }),
             value: (
               <UpTime
                 startTime={getLatestAttribute(metrics, "system/start_time")}
@@ -43,33 +49,53 @@ export default function GoHeaderContent({ basePath, metrics, headerTabs }) {
           }
         ]}
         tabIndex={0}
-        title="Summary"
+        title={intl.formatMessage({
+          id: "goHeaderContent.summary",
+          defaultMessage: "Summary",
+          description: "Tab title"
+        })}
       />
       <Tab
         href={`${basePath}/routes`}
         icon="Functions"
         lines={[
           {
-            name: "Requests",
+            name: intl.formatMessage({
+              id: "goHeaderContent.requests",
+              defaultMessage: "Requests",
+              description: "Tab detail"
+            }),
             value:
               getLatestAttribute(metrics, "HTTP/requests") +
               getLatestAttribute(metrics, "HTTPS/requests")
           }
         ]}
         tabIndex={0}
-        title="Routes"
+        title={intl.formatMessage({
+          id: "goHeaderContent.routes",
+          defaultMessage: "Routes",
+          description: "Tab title"
+        })}
       />
       <Tab
         href={`${basePath}/functions`}
         icon="Functions"
         lines={[
           {
-            name: "Requests",
+            name: intl.formatMessage({
+              id: "goHeaderContent.requests",
+              defaultMessage: "Requests",
+              description: "Tab detail"
+            }),
             value: getLatestAttribute(metrics, "RPC/requests")
           }
         ]}
         tabIndex={0}
-        title="Functions"
+        title={intl.formatMessage({
+          id: "goHeaderContent.functions",
+          defaultMessage: "Functions",
+          description: "Tab title"
+        })}
       />
       {headerTabs}
       {/* Holding off on the configuration tab until we have something to configure */}
@@ -78,15 +104,14 @@ export default function GoHeaderContent({ basePath, metrics, headerTabs }) {
         href={`${basePath}/explorer`}
         icon="Explorer"
         tabIndex={0}
-        title="Explorer"
+        title={intl.formatMessage({
+          id: "goHeaderContent.explorer",
+          defaultMessage: "Explorer",
+          description: "Tab title"
+        })}
       />
-      {/* <Tab
-          href={`${basePath}/configuration`}
-          icon="search"
-          tabIndex={0}
-          title="Configuration"
-        />
-      </TabGroup> */}
     </TabNav>
   );
 }
+
+export default injectIntl(GoHeaderContent);

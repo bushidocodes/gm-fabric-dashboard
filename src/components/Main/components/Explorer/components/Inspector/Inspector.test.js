@@ -1,6 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
-import renderer from "react-test-renderer";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import Inspector from "./Inspector";
 import InspectorItem from "./components/InspectorItem";
@@ -34,11 +33,11 @@ const mockProps = {
 describe("Inspector", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = mount(<Inspector {...mockProps} />);
+    wrapper = mountWithIntl(<Inspector {...mockProps} />);
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(<Inspector {...mockProps} />).toJSON();
+    const tree = renderWithIntl(<Inspector {...mockProps} />);
     expect(tree).toMatchSnapshot();
   });
 

@@ -1,24 +1,58 @@
 export default {
   "en-US": {
+    explorer: {
+      selectMetric: "Select a metric to display"
+    },
     fabric: {
-      status: "Status",
-      name: "Name",
-      owner: "Owner",
       capability: "Capability",
-      none: "None",
       error: "No Services Found",
-      searchPlaceholder: "Search Services"
+      name: "Name",
+      none: "None",
+      owner: "Owner",
+      searchPlaceholder: "Search Services",
+      status: "Status"
     },
     fabricHeaderContent: {
-      summary: "Summary",
       allServices: "All Services",
+      down: "Down",
       services: "Services",
       stable: "Stable",
-      warning: "Warning",
-      down: "Down"
+      summary: "Summary",
+      warning: "Warning"
+    },
+    functionsGrid: {
+      error: "No Functions Found",
+      errorPercent: "Error %",
+      function: "Function",
+      latency50: "Latency 50%",
+      latency99: "Latency 99%",
+      requests: "Requests",
+      searchPlaceholder: "Search Functions"
     },
     GMServiceTableLineItem: {
       tooltip: "This microservice instance does not have metrics to display."
+    },
+    goHeaderContent: {
+      explorer: "Explorer",
+      functions: "Functions",
+      requests: "Requests",
+      routes: "Routes",
+      summary: "Summary",
+      uptime: "Uptime"
+    },
+    inspector: {
+      hideStaticMetric: "Hide all static metrics",
+      hideZeroMetric: "Hide all metrics with only zero values",
+      searchAriaLabel: "Search All Metrics",
+      searchPlaceholder: "Search"
+    },
+    jvmHeaderContent: {
+      uptime: "Uptime",
+      summary: "Summary",
+      requests: "Requests",
+      routes: "Routes",
+      threads: "Threads",
+      explorer: "Explorer"
     },
     pollingSettings: {
       button: {
@@ -26,6 +60,15 @@ export default {
         resume: "Resume Polling"
       },
       pollingIntervals: "Polling Interval(s)"
+    },
+    routesGrid: {
+      error: "No Routes Found",
+      errorPercent: "Error %",
+      latency50: "Latency 50%",
+      latency99: "Latency 99%",
+      route: "Route",
+      requests: "Requests",
+      searchPlaceholder: "Search Routes"
     },
     serviceView: {
       error: "No Instances Found",
@@ -51,23 +94,39 @@ export default {
       tooltip: "Select an instance to turn on polling"
     },
     summary: {
-      uptime: "Uptime",
-      responseTime: "Avg. Response Time",
-      requestsPerSecond: "Requests Per Second",
       errorRate: "Error Rate",
       hostCPUUsage: "Host CPU Utilized",
       hostCPUUsageDetail:
         "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
       memoryUsage: "Memory Utilized",
       memoryUsageDetail: "{hostMemoryAvail} GB Free on Host",
-      vitals: "Vitals",
-      statistics: "Statistics"
+      requestsPerSecond: "Requests Per Second",
+      responseTime: "Avg. Response Time",
+      statistics: "Statistics",
+      uptime: "Uptime",
+      vitals: "Vitals"
+    },
+    threadsGrid: {
+      errorFetchFail: "Failed to Fetch Threads",
+      errorNotFound: "No Threads Found",
+      id: "ID",
+      name: "Name",
+      none: "None",
+      searchPlaceholder: "Search Threads",
+      state: "State"
+    },
+    threadsTableHeader: {
+      daemon: "Daemon",
+      id: "ID",
+      name: "Name",
+      priority: "Priority",
+      state: "State"
     }
   },
   "es-ES": {
     summary: {
-      uptime: "Tiempo de Actividad",
-      responseTime: "Tiempo de respuesta promedio"
+      responseTime: "Tiempo de respuesta promedio",
+      uptime: "Tiempo de Actividad"
     }
   }
 };

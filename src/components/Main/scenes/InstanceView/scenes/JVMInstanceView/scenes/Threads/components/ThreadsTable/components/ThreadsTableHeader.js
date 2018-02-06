@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 import TableHeader from "components/Main/components/TableHeader";
 import TableColHeaderThread from "components/Main/components/TableColHeaderThread";
@@ -14,17 +15,39 @@ export default function ThreadsTableHeader() {
   return (
     <TableHeader>
       <TableColHeaderThread style={{ textAlign: "center" }}>
-        State
+        <FormattedMessage
+          id="threadsTableHeader.state"
+          defaultMessage="State"
+          description="Header title"
+        />
       </TableColHeaderThread>
       <TableColHeaderThread style={{ textAlign: "center" }}>
-        ID
+        <FormattedMessage
+          id="threadsTableHeader.id"
+          defaultMessage="ID"
+          description="Header title"
+        />
       </TableColHeaderThread>
-      <TableColHeader>Name</TableColHeader>
+      <TableColHeader>
+        <FormattedMessage
+          id="threadsTableHeader.name"
+          defaultMessage="Name"
+          description="Header title"
+        />
+      </TableColHeader>
       <TableColHeaderThread style={{ textAlign: "right", flex: "0 1 7em" }}>
-        Daemon
+        <FormattedMessage
+          id="threadsTableHeader.daemon"
+          defaultMessage="Daemon"
+          description="Header title"
+        />
       </TableColHeaderThread>
       <TableColHeaderThread style={{ textAlign: "right", flex: "0 1 7em" }}>
-        Priority
+        <FormattedMessage
+          id="threadsTableHeader.priority"
+          defaultMessage="Priority"
+          description="Header title"
+        />
       </TableColHeaderThread>
       <TableColHeaderThread />
     </TableHeader>

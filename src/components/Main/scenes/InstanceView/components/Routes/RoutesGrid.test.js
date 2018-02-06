@@ -1,14 +1,13 @@
 import React from "react";
-import { mount } from "enzyme";
 import configureMockStore from "redux-mock-store";
-import renderer from "react-test-renderer";
-import NotFoundError from "components/Main/components/NotFoundError";
 
 // Utilities
 import mockState from "json/mockReduxState";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 // Components
 import RoutesGrid from "./index";
+import NotFoundError from "components/Main/components/NotFoundError";
 
 // Create a mock store and initialize with mock data
 const store = configureMockStore()(mockState);
@@ -76,11 +75,11 @@ let wrapper;
 
 describe("RoutesGrid View", () => {
   beforeEach(() => {
-    wrapper = mount(<RoutesGrid store={store} />).find("RoutesGrid");
+    wrapper = mountWithIntl(<RoutesGrid store={store} />).find("RoutesGrid");
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(<RoutesGrid store={store} />).toJSON();
+    const tree = renderWithIntl(<RoutesGrid store={store} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -94,7 +93,7 @@ describe("RoutesGrid View", () => {
     // create state with no metrics and reconfigure mock store with new state
     const state = Object.assign({}, mockState, { instance: { metrics: {} } });
     const store = configureMockStore()(state);
-    wrapper = mount(<RoutesGrid store={store} />);
+    wrapper = mountWithIntl(<RoutesGrid store={store} />);
     expect(wrapper.find(NotFoundError)).toHaveLength(1);
   });
 

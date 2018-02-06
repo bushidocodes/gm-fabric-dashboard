@@ -2,6 +2,8 @@ import _ from "lodash";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
+
 import GMLineChart from "../GMLineChart";
 import { getDygraphOfValue } from "utils/dygraphs";
 
@@ -143,7 +145,11 @@ class Explorer extends Component {
                 title={selectedMetric}
               />
             ) : (
-              <p>Select a metric to display</p>
+              <FormattedMessage
+                id="explorer.selectMetric"
+                defaultMessage="Select a metric to display"
+                description="Placeholder for GMLineChart"
+              />
             )}
           </MetricsGraphDisplay>
         </ViewExplorer>

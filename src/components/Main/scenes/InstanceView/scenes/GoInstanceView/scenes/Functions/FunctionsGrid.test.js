@@ -1,5 +1,4 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
 import configureStore from "redux-mock-store";
 import _ from "lodash";
 
@@ -7,6 +6,8 @@ import * as noFuncState from "json/mockReduxState";
 import * as state from "json/mockReduxStateMetrics";
 import FunctionsGrid from "./index";
 import NotFoundError from "components/Main/components/NotFoundError";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
+
 //import Action effects
 import "services";
 import Table from "components/Main/components/Table";
@@ -54,18 +55,18 @@ const sortByOptions = [
 
 describe("Go Instance Functions View: <FunctionsGrid/>", () => {
   test("Matches snapshot", () => {
-    const tree = shallow(FunctionsGridWithMockStore);
+    const tree = renderWithIntl(FunctionsGridWithMockStore);
     expect(tree).toMatchSnapshot();
   });
 
   // FunctionsGridWithMissingMetricsStore does not contain any functions data
   test("returns NotFoundError if no functions are found ", () => {
-    wrapper = mount(FunctionsGridWithMissingMetricsStore);
+    wrapper = mountWithIntl(FunctionsGridWithMissingMetricsStore);
     expect(wrapper.find(NotFoundError).length).toBe(1);
   });
 
   test("returns correct number of <Table> and does not render <NotFoundError> when functions are found ", () => {
-    wrapper = mount(FunctionsGridWithMockStore);
+    wrapper = mountWithIntl(FunctionsGridWithMockStore);
     expect(wrapper.find(Table).length).toBe(1);
     expect(wrapper.find(NotFoundError).length).toBe(0);
   });
@@ -73,7 +74,7 @@ describe("Go Instance Functions View: <FunctionsGrid/>", () => {
 
 describe("FunctionsGrid Child Components", () => {
   beforeEach(() => {
-    wrapper = mount(FunctionsGridWithMockStore);
+    wrapper = mountWithIntl(FunctionsGridWithMockStore);
   });
 
   test("passes props to TableToolbar", () => {

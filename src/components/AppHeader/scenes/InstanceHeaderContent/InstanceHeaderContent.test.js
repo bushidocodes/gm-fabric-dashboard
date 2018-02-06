@@ -1,21 +1,16 @@
 import React from "react";
-import { shallow } from "enzyme";
-import { Provider } from "react-redux";
-import PropTypes from "prop-types";
+
 import configureMockStore from "redux-mock-store";
 
 import state from "json/mockReduxState";
 import { generateHeaderTabs } from "utils/selectors";
+import { shallowWithIntl } from "utils/i18nTesting";
 import InstanceHeaderContent from "./index";
 
 const store = configureMockStore()(state);
 
 // Wrap in Memory Router to mock route props (history, match, location)
-const ConnectedInstanceHeaderContent = (
-  <Provider store={store}>
-    <InstanceHeaderContent />
-  </Provider>
-);
+const ConnectedInstanceHeaderContent = <InstanceHeaderContent store={store} />;
 
 describe("InstanceHeaderContent", () => {
   let wrapper;
@@ -23,10 +18,7 @@ describe("InstanceHeaderContent", () => {
   beforeEach(() => {
     // mount with context and childContextTypes, which prevents our test from
     // choking on a connect()'ed child component that requires context
-    wrapper = shallow(ConnectedInstanceHeaderContent, {
-      context: { store },
-      childContextTypes: { store: PropTypes.object.isRequired }
-    });
+    wrapper = shallowWithIntl(ConnectedInstanceHeaderContent);
   });
 
   test("returns JVMHeaderContent when runtime prop is JVM", () => {
@@ -37,17 +29,15 @@ describe("InstanceHeaderContent", () => {
         selectedServiceSlug: "jvm-exemplar-v1-0"
       }
     });
+
     // remount with modified store state
-    wrapper = shallow(ConnectedInstanceHeaderContent, {
-      context: { store: configureMockStore()(modState) },
-      childContextTypes: { store: PropTypes.object.isRequired }
-    });
-    expect(
-      wrapper
-        .dive()
-        .dive()
-        .find("JVMHeaderContent")
-    ).toHaveLength(1);
+    wrapper = shallowWithIntl(
+      <InstanceHeaderContent store={configureMockStore()(modState)} />
+    )
+      .dive()
+      .dive();
+
+    expect(wrapper.find("JVMHeaderContent")).toHaveLength(1);
     expect(wrapper.find("GoHeaderContent")).toHaveLength(0);
     expect(wrapper.find("DefaultHeaderContent")).toHaveLength(0);
   });
@@ -60,11 +50,11 @@ describe("InstanceHeaderContent", () => {
         selectedServiceSlug: "go-exemplar-v1-0"
       }
     });
+
     // remount with modified store state
-    wrapper = shallow(ConnectedInstanceHeaderContent, {
-      context: { store: configureMockStore()(modState) },
-      childContextTypes: { store: PropTypes.object.isRequired }
-    })
+    wrapper = shallowWithIntl(
+      <InstanceHeaderContent store={configureMockStore()(modState)} />
+    )
       .dive()
       .dive();
     expect(wrapper.find("GoHeaderContent")).toHaveLength(1);
@@ -80,12 +70,12 @@ describe("InstanceHeaderContent", () => {
         selectedServiceSlug: "go-exemplar-v1-0"
       }
     });
-    wrapper = shallow(ConnectedInstanceHeaderContent, {
-      context: { store: configureMockStore()(modState) },
-      childContextTypes: { store: PropTypes.object.isRequired }
-    })
+    wrapper = shallowWithIntl(
+      <InstanceHeaderContent store={configureMockStore()(modState)} />
+    )
       .dive()
       .dive();
+
     expect(wrapper.find("GoHeaderContent").props()).toMatchObject({
       basePath: "/go-exemplar-v1-0/2smao7xwboy0000000000",
       metrics: state.instance.metrics,

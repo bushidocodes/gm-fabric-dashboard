@@ -1,479 +1,2210 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVMHeaderContent matches snapshot 1`] = `
-.c2 {
-  color: rgb(255,255,255);
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 4px 0 0;
-}
-
-.c2 h1 {
-  font-size: 18px;
-  -webkit-flex: 1 1 100%;
-  -ms-flex: 1 1 100%;
-  flex: 1 1 100%;
-  line-height: 1;
-  margin: 0;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-.c6 {
-  margin: 0 0 4px 24px;
-  font-size: 11px;
-  color: rgb(255,255,255);
-}
-
-.c7 {
-  color: rgb(213,213,213);
-  padding-right: 4px;
-  display: inline-block;
-}
-
-.c8 {
-  margin: 0;
-  display: inline-block;
-}
-
-.c5 {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.c4 {
-  z-index: 1;
-  height: 24px;
-  width: 24px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c4:not(:root) {
-  overflow: visible;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 25px;
-}
-
-.c1 {
-  background-color: rgb(45,45,45);
-  font-weight: 400;
-  -webkit-flex: 1 1 1%;
-  -ms-flex: 1 1 1%;
-  flex: 1 1 1%;
-  margin: 1px 1px 0 0;
-  overflow: hidden;
-  padding: 4px 8px 8px;
-  position: relative;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
-
-.c1::after {
-  border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
-  color: inherit;
-  content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.c1:hover {
-  background-color: rgb(54,54,54);
-}
-
-.c1:hover:after {
-  opacity: 0.5;
-}
-
-.c1.active {
-  background-color: rgb(77,77,77);
-}
-
-.c1.active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:focus {
-  outline: rgb(10,171,42) auto 3px;
-}
-
-.c10 {
-  height: 24px;
-  color: rgb(213,213,213);
-  margin: 0 2px;
-}
-
-.c10 > * {
-  width: 100%;
-  height: 100%;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
-  padding: 0 1px 1px 1px;
-}
-
-.c9 span + span {
-  font-size: 80%;
-  opacity: 0.8;
-}
-
-<div
-  class="c0"
->
-  <a
-    aria-current="false"
-    class="c1"
-    href="undefined/summary"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        <svg
-          aria-labelledby="ariaLabelledby"
-          class="c4"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            class="c5"
-            fill="currentColor"
-            title=""
-          >
-            <title />
-            <g
-              class="glyph"
-              fill="currentColor"
-              transform="translate(0 0) scale(1)"
-            >
-              <path
-                d="M18.1298429,7.20118168 L15.5060804,9.82494414 C15.1191719,10.2118526 14.4809862,10.2122484 14.0876093,9.81887154 L14.1811285,9.91239066 C13.7910605,9.52232275 13.7850328,8.88394267 14.1750559,8.49391961 L16.7988183,5.87015715 C16.9812688,5.6877067 17.2767026,5.68732987 17.4650478,5.87567507 L18.1243249,6.53495222 C18.3098228,6.72045014 18.3096724,7.02135216 18.1298429,7.20118168 Z M19.5328064,12.9411765 L15.7652035,12.9411765 C15.2414463,12.9411765 14.8235294,12.5197974 14.8235294,12 C14.8235294,11.4765787 15.2451313,11.0588235 15.7652035,11.0588235 L19.5328064,11.0588235 C19.7908303,11.0588235 20,11.2674603 20,11.5338207 L20,12.4661793 C20,12.728513 19.7871237,12.9411765 19.5328064,12.9411765 Z M16.7988183,18.1298429 L14.1750559,15.5060804 C13.7881474,15.1191719 13.7877516,14.4809862 14.1811285,14.0876093 L14.0876093,14.1811285 C14.4776773,13.7910605 15.1160573,13.7850328 15.5060804,14.1750559 L18.1298429,16.7988183 C18.3122933,16.9812688 18.3126701,17.2767026 18.1243249,17.4650478 L17.4650478,18.1243249 C17.2795499,18.3098228 16.9786478,18.3096724 16.7988183,18.1298429 Z M11.0588235,19.5328064 L11.0588235,15.7652035 C11.0588235,15.2414463 11.4802026,14.8235294 12,14.8235294 C12.5234213,14.8235294 12.9411765,15.2451313 12.9411765,15.7652035 L12.9411765,19.5328064 C12.9411765,19.7908303 12.7325397,20 12.4661793,20 L11.5338207,20 C11.271487,20 11.0588235,19.7871237 11.0588235,19.5328064 Z M5.87015715,16.7988183 L8.49391961,14.1750559 C8.88082811,13.7881474 9.5190138,13.7877516 9.91239066,14.1811285 L9.81887154,14.0876093 C10.2089395,14.4776773 10.2149672,15.1160573 9.82494414,15.5060804 L7.20118168,18.1298429 C7.01873123,18.3122933 6.72329742,18.3126701 6.53495222,18.1243249 L5.87567507,17.4650478 C5.69017716,17.2795499 5.69032763,16.9786478 5.87015715,16.7988183 Z M4.4671936,11.0588235 L8.23479651,11.0588235 C8.75855367,11.0588235 9.17647059,11.4802026 9.17647059,12 C9.17647059,12.5234213 8.75486874,12.9411765 8.23479651,12.9411765 L4.4671936,12.9411765 C4.2091697,12.9411765 4,12.7325397 4,12.4661793 L4,11.5338207 C4,11.271487 4.21287626,11.0588235 4.4671936,11.0588235 Z M7.20118168,5.87015715 L9.82494414,8.49391961 C10.2118526,8.88082811 10.2122484,9.5190138 9.81887154,9.91239066 L9.91239066,9.81887154 C9.52232275,10.2089395 8.88394267,10.2149672 8.49391961,9.82494414 L5.87015715,7.20118168 C5.6877067,7.01873123 5.68732987,6.72329742 5.87567507,6.53495222 L6.53495222,5.87567507 C6.72045014,5.69017716 7.02135216,5.69032763 7.20118168,5.87015715 Z M12.9411765,4.4671936 L12.9411765,8.23479651 C12.9411765,8.75855367 12.5197974,9.17647059 12,9.17647059 C11.4765787,9.17647059 11.0588235,8.75486874 11.0588235,8.23479651 L11.0588235,4.4671936 C11.0588235,4.2091697 11.2674603,4 11.5338207,4 L12.4661793,4 C12.728513,4 12.9411765,4.21287626 12.9411765,4.4671936 Z"
-                id="Combined-Shape"
-              />
-            </g>
-          </g>
-        </svg>
-      </span>
-      <h1>
-        Summary
-      </h1>
-    </div>
-    <dl
-      class="c6"
-    >
-      <dt
-        class="c7"
-      >
-        Uptime
-      </dt>
-      <dd
-        class="c8"
-      >
-        <div
-          class="c9"
-        />
-      </dd>
-    </dl>
-  </a>
-  <a
-    aria-current="false"
-    class="c1"
-    href="undefined/routes"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        <svg
-          aria-labelledby="ariaLabelledby"
-          class="c4"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            class="c5"
-            fill="currentColor"
-            title=""
-          >
-            <title />
-            <g
-              class="glyph"
-              fill="currentColor"
-              transform="translate(0 0) scale(1)"
-            >
-              <path
-                d="M5.5,14 L15,14 L15,15.5 L5,15.5 L7,17.5 L7,19 L3,15 L7,11 L7,12.5 L5.5,14 Z M19.5,10 L18,8.5 L18,7 L22,11 L18,15 L18,13.5 L20,11.5 L10,11.5 L10,10 L19.5,10 Z"
-                id="Functions"
-              />
-            </g>
-          </g>
-        </svg>
-      </span>
-      <h1>
-        Routes
-      </h1>
-    </div>
-    <dl
-      class="c6"
-    >
-      <dt
-        class="c7"
-      >
-        Requests
-      </dt>
-      <dd
-        class="c8"
-      >
-        2
-      </dd>
-    </dl>
-  </a>
-  <a
-    aria-current="false"
-    class="c1"
-    href="undefined/threads"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        <svg
-          aria-labelledby="ariaLabelledby"
-          class="c4"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            class="c5"
-            fill="currentColor"
-            title=""
-          >
-            <title />
-            <g
-              class="glyph"
-              fill="currentColor"
-              transform="translate(0 0) scale(1)"
-            >
-              <path
-                d="M7,7 L19,7 L19,9 L7,9 L7,7 Z M6,11 L18,11 L18,13 L6,13 L6,11 Z M5,15 L17,15 L17,17 L5,17 L5,15 Z"
-                id="shape"
-              />
-            </g>
-          </g>
-        </svg>
-      </span>
-      <h1>
-        Threads
-      </h1>
-    </div>
-    <dl
-      class="c6"
-    >
-      <dt
-        class="c7"
-      >
-        Threads
-      </dt>
-      <dd
-        class="c8"
-      >
-        6
-      </dd>
-    </dl>
-    <div
-      class="c10"
-    >
-      <svg
-        preserveAspectRatio="none"
-        viewBox="0 0 240 24"
-      >
-        <g>
-          <circle
-            cx="2"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="31.5"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="61"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="90.5"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="120"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="149.5"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="179"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="208.5"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <circle
-            cx="238"
-            cy="12"
-            r="2"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <polyline
-            points="2 12 31.5 12 61 12 90.5 12 120 12 149.5 12 179 12 208.5 12 238 12 238 22 2 22 2 12"
-            style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
-          />
-          <polyline
-            points="2 12 31.5 12 61 12 90.5 12 120 12 149.5 12 179 12 208.5 12 238 12"
-            style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
-          />
-        </g>
-        <line
-          style="stroke:currentColor;opacity:0.5"
-          x1="2"
-          x2="238"
-          y1="14"
-          y2="14"
-        />
-      </svg>
-    </div>
-  </a>
-  <a
-    aria-current="false"
-    class="c1"
-    href="undefined/explorer"
-  >
-    <div
-      class="c2"
-    >
-      <span
-        class="c3"
-      >
-        <svg
-          aria-labelledby="ariaLabelledby"
-          class="c4"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            class="c5"
-            fill="currentColor"
-            title=""
-          >
-            <title />
-            <g
-              class="glyph"
-              fill="currentColor"
-              transform="translate(0 0) scale(1)"
-            >
-              <path
-                d="M8.33638483,18.307209 L6.08293365,20.5606602 L5.02227348,19.5 L7.27572466,17.2465488 C7.59309719,17.6343799 7.94855377,17.9898365 8.33638483,18.307209 Z M6.03114366,15.0598605 L5.88504845,15.3004879 L4,12.9718987 L5.16586731,12.0281013 L5.58305689,12.5434532 C5.5880682,13.4267812 5.74578359,14.2739368 6.03114366,15.0598605 Z M20.5625715,13.0568881 L20.5987088,13.1759286 L20.941843,12.6107664 L22.2240243,13.3892336 L20.138587,16.8240714 L19.8246809,15.7900275 C20.2332591,14.9543591 20.4910375,14.0314977 20.5625715,13.0568881 Z M13.0829337,19 C9.49308278,19 6.58293365,16.0898509 6.58293365,12.5 C6.58293365,8.91014913 9.49308278,6 13.0829337,6 C16.6727845,6 19.5829337,8.91014913 19.5829337,12.5 C19.5829337,16.0898509 16.6727845,19 13.0829337,19 Z M13.0829337,17.5 C15.8443574,17.5 18.0829337,15.2614237 18.0829337,12.5 C18.0829337,9.73857625 15.8443574,7.5 13.0829337,7.5 C10.3215099,7.5 8.08293365,9.73857625 8.08293365,12.5 C8.08293365,15.2614237 10.3215099,17.5 13.0829337,17.5 Z M10.075255,14.9118853 L9.60957463,14.0850721 L9.53044999,12.5423736 L10.9691705,9.47727349 L12.7069714,12.0839749 L11.3865761,12.221457 L13.2013677,7.68447803 L14.5149693,12.2820834 L15.6543782,11.4844971 L16.6379617,12.6995121 L16.472534,14.8791465 L15.368632,13.5155029 L13.650898,14.7179166 L12.9644996,12.315522 L12.2497724,14.1023399 L10.4588959,11.4160251 L11.7618614,11.3186804 L10.075255,14.9118853 Z"
-                id="Explorer"
-              />
-            </g>
-          </g>
-        </svg>
-      </span>
-      <h1>
-        Explorer
-      </h1>
-    </div>
-  </a>
-</div>
+<JVMHeaderContent
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en-US",
+      "messages": Object {
+        "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
+        "explorer.selectMetric": "Select a metric to display",
+        "fabric.capability": "Capability",
+        "fabric.error": "No Services Found",
+        "fabric.name": "Name",
+        "fabric.none": "None",
+        "fabric.owner": "Owner",
+        "fabric.searchPlaceholder": "Search Services",
+        "fabric.status": "Status",
+        "fabricHeaderContent.allServices": "All Services",
+        "fabricHeaderContent.down": "Down",
+        "fabricHeaderContent.services": "Services",
+        "fabricHeaderContent.stable": "Stable",
+        "fabricHeaderContent.summary": "Summary",
+        "fabricHeaderContent.warning": "Warning",
+        "functionsGrid.error": "No Functions Found",
+        "functionsGrid.errorPercent": "Error %",
+        "functionsGrid.function": "Function",
+        "functionsGrid.latency50": "Latency 50%",
+        "functionsGrid.latency99": "Latency 99%",
+        "functionsGrid.requests": "Requests",
+        "functionsGrid.searchPlaceholder": "Search Functions",
+        "goHeaderContent.explorer": "Explorer",
+        "goHeaderContent.functions": "Functions",
+        "goHeaderContent.requests": "Requests",
+        "goHeaderContent.routes": "Routes",
+        "goHeaderContent.summary": "Summary",
+        "goHeaderContent.uptime": "Uptime",
+        "inspector.hideStaticMetric": "Hide all static metrics",
+        "inspector.hideZeroMetric": "Hide all metrics with only zero values",
+        "inspector.searchAriaLabel": "Search All Metrics",
+        "inspector.searchPlaceholder": "Search",
+        "jvmHeaderContent.explorer": "Explorer",
+        "jvmHeaderContent.requests": "Requests",
+        "jvmHeaderContent.routes": "Routes",
+        "jvmHeaderContent.summary": "Summary",
+        "jvmHeaderContent.threads": "Threads",
+        "jvmHeaderContent.uptime": "Uptime",
+        "pollingSettings.button.pause": "Pause Polling",
+        "pollingSettings.button.resume": "Resume Polling",
+        "pollingSettings.pollingIntervals": "Polling Interval(s)",
+        "routesGrid.error": "No Routes Found",
+        "routesGrid.errorPercent": "Error %",
+        "routesGrid.latency50": "Latency 50%",
+        "routesGrid.latency99": "Latency 99%",
+        "routesGrid.requests": "Requests",
+        "routesGrid.route": "Route",
+        "routesGrid.searchPlaceholder": "Search Routes",
+        "serviceHeaderContent.instances": "Instances",
+        "serviceView.error": "No Instances Found",
+        "serviceView.name": "Name",
+        "serviceView.searchPlaceholder": "Search Instances",
+        "serviceView.uptime": "Uptime",
+        "settingsGrid.cacheSize": "Cache Size",
+        "settingsGrid.clearCache": "Clear Cache",
+        "settingsGrid.fabricPolling": "Fabric Polling",
+        "settingsGrid.instancePolling": "Instance Polling",
+        "settingsGrid.metricsCache": "Metrics Cache",
+        "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
+        "settingsGrid.modal.secondary": "This action cannot be undone.",
+        "settingsGrid.polling": "Polling",
+        "settingsGrid.tooltip": "Select an instance to turn on polling",
+        "summary.errorRate": "Error Rate",
+        "summary.hostCPUUsage": "Host CPU Utilized",
+        "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
+        "summary.memoryUsage": "Memory Utilized",
+        "summary.memoryUsageDetail": "{hostMemoryAvail} GB Free on Host",
+        "summary.requestsPerSecond": "Requests Per Second",
+        "summary.responseTime": "Avg. Response Time",
+        "summary.statistics": "Statistics",
+        "summary.uptime": "Uptime",
+        "summary.vitals": "Vitals",
+        "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
+        "threadsGrid.errorNotFound": "No Threads Found",
+        "threadsGrid.id": "ID",
+        "threadsGrid.name": "Name",
+        "threadsGrid.none": "None",
+        "threadsGrid.searchPlaceholder": "Search Threads",
+        "threadsGrid.state": "State",
+        "threadsTableHeader.daemon": "Daemon",
+        "threadsTableHeader.id": "ID",
+        "threadsTableHeader.name": "Name",
+        "threadsTableHeader.priority": "Priority",
+        "threadsTableHeader.state": "State",
+      },
+      "now": [Function],
+      "textComponent": "span",
+    }
+  }
+  metrics={
+    Object {
+      "finagle/build/revision": Object {
+        "1500416014314": 1050205552640,
+        "1500416029215": 1050205552640,
+        "1500416044215": 1050205552640,
+        "1500416059217": 1050205552640,
+        "1500416074215": 1050205552640,
+        "1500416089215": 1050205552640,
+        "1500416104216": 1050205552640,
+        "1500416119215": 1050205552640,
+        "1500416134216": 1050205552640,
+      },
+      "finagle/clientregistry/initialresolution_ms": Object {
+        "1500416014314": 4,
+        "1500416029215": 4,
+        "1500416044215": 4,
+        "1500416059217": 4,
+        "1500416074215": 4,
+        "1500416089215": 4,
+        "1500416104216": 4,
+        "1500416119215": 4,
+        "1500416134216": 4,
+      },
+      "finagle/clientregistry/size": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "finagle/future_pool/active_tasks": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "finagle/future_pool/completed_tasks": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "finagle/future_pool/pool_size": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "finagle/timer/deviation_ms.avg": Object {
+        "1500416014314": 10,
+        "1500416029215": 10,
+        "1500416044215": 10,
+        "1500416059217": 10,
+        "1500416074215": 10,
+        "1500416089215": 10,
+        "1500416104216": 10.000333333333334,
+        "1500416119215": 10.000333333333334,
+        "1500416134216": 10.000333333333334,
+      },
+      "finagle/timer/deviation_ms.count": Object {
+        "1500416014314": 2838,
+        "1500416029215": 2838,
+        "1500416044215": 2782,
+        "1500416059217": 2782,
+        "1500416074215": 2782,
+        "1500416089215": 2782,
+        "1500416104216": 3000,
+        "1500416119215": 3000,
+        "1500416134216": 3000,
+      },
+      "finagle/timer/deviation_ms.max": Object {
+        "1500416014314": 14,
+        "1500416029215": 14,
+        "1500416044215": 14,
+        "1500416059217": 14,
+        "1500416074215": 14,
+        "1500416089215": 14,
+        "1500416104216": 14,
+        "1500416119215": 14,
+        "1500416134216": 14,
+      },
+      "finagle/timer/deviation_ms.min": Object {
+        "1500416014314": 6,
+        "1500416029215": 6,
+        "1500416044215": 6,
+        "1500416059217": 6,
+        "1500416074215": 6,
+        "1500416089215": 6,
+        "1500416104216": 6,
+        "1500416119215": 6,
+        "1500416134216": 6,
+      },
+      "finagle/timer/deviation_ms.p50": Object {
+        "1500416014314": 10,
+        "1500416029215": 10,
+        "1500416044215": 10,
+        "1500416059217": 10,
+        "1500416074215": 10,
+        "1500416089215": 10,
+        "1500416104216": 10,
+        "1500416119215": 10,
+        "1500416134216": 10,
+      },
+      "finagle/timer/deviation_ms.p90": Object {
+        "1500416014314": 12,
+        "1500416029215": 12,
+        "1500416044215": 12,
+        "1500416059217": 12,
+        "1500416074215": 12,
+        "1500416089215": 12,
+        "1500416104216": 12,
+        "1500416119215": 12,
+        "1500416134216": 12,
+      },
+      "finagle/timer/deviation_ms.p95": Object {
+        "1500416014314": 12,
+        "1500416029215": 12,
+        "1500416044215": 12,
+        "1500416059217": 12,
+        "1500416074215": 12,
+        "1500416089215": 12,
+        "1500416104216": 12,
+        "1500416119215": 12,
+        "1500416134216": 12,
+      },
+      "finagle/timer/deviation_ms.p99": Object {
+        "1500416014314": 13,
+        "1500416029215": 13,
+        "1500416044215": 13,
+        "1500416059217": 13,
+        "1500416074215": 13,
+        "1500416089215": 13,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "finagle/timer/deviation_ms.p9990": Object {
+        "1500416014314": 14,
+        "1500416029215": 14,
+        "1500416044215": 14,
+        "1500416059217": 14,
+        "1500416074215": 14,
+        "1500416089215": 14,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "finagle/timer/deviation_ms.p9999": Object {
+        "1500416014314": 14,
+        "1500416029215": 14,
+        "1500416044215": 14,
+        "1500416059217": 14,
+        "1500416074215": 14,
+        "1500416089215": 14,
+        "1500416104216": 14,
+        "1500416119215": 14,
+        "1500416134216": 14,
+      },
+      "finagle/timer/deviation_ms.sum": Object {
+        "1500416014314": 28380,
+        "1500416029215": 28380,
+        "1500416044215": 27820,
+        "1500416059217": 27820,
+        "1500416074215": 27820,
+        "1500416089215": 27820,
+        "1500416104216": 30001,
+        "1500416119215": 30001,
+        "1500416134216": 30001,
+      },
+      "finagle/timer/pending_tasks.avg": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.count": Object {
+        "1500416014314": 5,
+        "1500416029215": 5,
+        "1500416044215": 6,
+        "1500416059217": 6,
+        "1500416074215": 6,
+        "1500416089215": 6,
+        "1500416104216": 6,
+        "1500416119215": 6,
+        "1500416134216": 6,
+      },
+      "finagle/timer/pending_tasks.max": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.min": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p50": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p90": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p95": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p99": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p9990": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.p9999": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "finagle/timer/pending_tasks.sum": Object {
+        "1500416014314": 10,
+        "1500416029215": 10,
+        "1500416044215": 12,
+        "1500416059217": 12,
+        "1500416074215": 12,
+        "1500416089215": 12,
+        "1500416104216": 12,
+        "1500416119215": 12,
+        "1500416134216": 12,
+      },
+      "function/CatalogStream/errors.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "function/CatalogStream/in_throughput": Object {
+        "1500416014314": 227,
+        "1500416029215": 227,
+        "1500416044215": 227,
+        "1500416059217": 227,
+        "1500416074215": 227,
+        "1500416089215": 227,
+        "1500416104216": 227,
+        "1500416119215": 227,
+        "1500416134216": 227,
+      },
+      "function/CatalogStream/latency_ms.avg": Object {
+        "1500416014314": 1942.692308,
+        "1500416029215": 1942.692308,
+        "1500416044215": 1942.692308,
+        "1500416059217": 1942.692308,
+        "1500416074215": 1942.692308,
+        "1500416089215": 1942.692308,
+        "1500416104216": 1942.692308,
+        "1500416119215": 1942.692308,
+        "1500416134216": 1942.692308,
+      },
+      "function/CatalogStream/latency_ms.count": Object {
+        "1500416014314": 13,
+        "1500416029215": 13,
+        "1500416044215": 13,
+        "1500416059217": 13,
+        "1500416074215": 13,
+        "1500416089215": 13,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "function/CatalogStream/latency_ms.max": Object {
+        "1500416014314": 3484,
+        "1500416029215": 3484,
+        "1500416044215": 3484,
+        "1500416059217": 3484,
+        "1500416074215": 3484,
+        "1500416089215": 3484,
+        "1500416104216": 3484,
+        "1500416119215": 3484,
+        "1500416134216": 3484,
+      },
+      "function/CatalogStream/latency_ms.min": Object {
+        "1500416014314": 600,
+        "1500416029215": 600,
+        "1500416044215": 600,
+        "1500416059217": 600,
+        "1500416074215": 600,
+        "1500416089215": 600,
+        "1500416104216": 600,
+        "1500416119215": 600,
+        "1500416134216": 600,
+      },
+      "function/CatalogStream/latency_ms.p50": Object {
+        "1500416014314": 1956,
+        "1500416029215": 1956,
+        "1500416044215": 1956,
+        "1500416059217": 1956,
+        "1500416074215": 1956,
+        "1500416089215": 1956,
+        "1500416104216": 1956,
+        "1500416119215": 1956,
+        "1500416134216": 1956,
+      },
+      "function/CatalogStream/latency_ms.p90": Object {
+        "1500416014314": 3469,
+        "1500416029215": 3469,
+        "1500416044215": 3469,
+        "1500416059217": 3469,
+        "1500416074215": 3469,
+        "1500416089215": 3469,
+        "1500416104216": 3469,
+        "1500416119215": 3469,
+        "1500416134216": 3469,
+      },
+      "function/CatalogStream/latency_ms.p95": Object {
+        "1500416014314": 3489,
+        "1500416029215": 3489,
+        "1500416044215": 3489,
+        "1500416059217": 3489,
+        "1500416074215": 3489,
+        "1500416089215": 3489,
+        "1500416104216": 3489,
+        "1500416119215": 3489,
+        "1500416134216": 3489,
+      },
+      "function/CatalogStream/latency_ms.p99": Object {
+        "1500416014314": 3484,
+        "1500416029215": 3484,
+        "1500416044215": 3484,
+        "1500416059217": 3484,
+        "1500416074215": 3484,
+        "1500416089215": 3484,
+        "1500416104216": 3484,
+        "1500416119215": 3484,
+        "1500416134216": 3484,
+      },
+      "function/CatalogStream/latency_ms.p9990": Object {
+        "1500416014314": 3484,
+        "1500416029215": 3484,
+        "1500416044215": 3484,
+        "1500416059217": 3484,
+        "1500416074215": 3484,
+        "1500416089215": 3484,
+        "1500416104216": 3484,
+        "1500416119215": 3484,
+        "1500416134216": 3484,
+      },
+      "function/CatalogStream/latency_ms.p9999": Object {
+        "1500416014314": 3484,
+        "1500416029215": 3484,
+        "1500416044215": 3484,
+        "1500416059217": 3484,
+        "1500416074215": 3484,
+        "1500416089215": 3484,
+        "1500416104216": 3484,
+        "1500416119215": 3484,
+        "1500416134216": 3484,
+      },
+      "function/CatalogStream/latency_ms.sum": Object {
+        "1500416014314": 25255,
+        "1500416029215": 25255,
+        "1500416044215": 25255,
+        "1500416059217": 25255,
+        "1500416074215": 25255,
+        "1500416089215": 25255,
+        "1500416104216": 25255,
+        "1500416119215": 25255,
+        "1500416134216": 25255,
+      },
+      "function/CatalogStream/out_throughput": Object {
+        "1500416014314": 2889,
+        "1500416029215": 2889,
+        "1500416044215": 2889,
+        "1500416059217": 2889,
+        "1500416074215": 2889,
+        "1500416089215": 2889,
+        "1500416104216": 2889,
+        "1500416119215": 2889,
+        "1500416134216": 2889,
+      },
+      "function/CatalogStream/requests": Object {
+        "1500416014314": 13,
+        "1500416029215": 13,
+        "1500416044215": 13,
+        "1500416059217": 13,
+        "1500416074215": 13,
+        "1500416089215": 13,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "function/OrderItem/errors.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "function/OrderItem/in_throughput": Object {
+        "1500416014314": 225,
+        "1500416029215": 225,
+        "1500416044215": 225,
+        "1500416059217": 225,
+        "1500416074215": 225,
+        "1500416089215": 225,
+        "1500416104216": 225,
+        "1500416119215": 225,
+        "1500416134216": 225,
+      },
+      "function/OrderItem/latency_ms.avg": Object {
+        "1500416014314": 2398.615385,
+        "1500416029215": 2398.615385,
+        "1500416044215": 2398.615385,
+        "1500416059217": 2398.615385,
+        "1500416074215": 2398.615385,
+        "1500416089215": 2398.615385,
+        "1500416104216": 2398.615385,
+        "1500416119215": 2398.615385,
+        "1500416134216": 2398.615385,
+      },
+      "function/OrderItem/latency_ms.count": Object {
+        "1500416014314": 13,
+        "1500416029215": 13,
+        "1500416044215": 13,
+        "1500416059217": 13,
+        "1500416074215": 13,
+        "1500416089215": 13,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "function/OrderItem/latency_ms.max": Object {
+        "1500416014314": 3565,
+        "1500416029215": 3565,
+        "1500416044215": 3565,
+        "1500416059217": 3565,
+        "1500416074215": 3565,
+        "1500416089215": 3565,
+        "1500416104216": 3565,
+        "1500416119215": 3565,
+        "1500416134216": 3565,
+      },
+      "function/OrderItem/latency_ms.min": Object {
+        "1500416014314": 1345,
+        "1500416029215": 1345,
+        "1500416044215": 1345,
+        "1500416059217": 1345,
+        "1500416074215": 1345,
+        "1500416089215": 1345,
+        "1500416104216": 1345,
+        "1500416119215": 1345,
+        "1500416134216": 1345,
+      },
+      "function/OrderItem/latency_ms.p50": Object {
+        "1500416014314": 2339,
+        "1500416029215": 2339,
+        "1500416044215": 2339,
+        "1500416059217": 2339,
+        "1500416074215": 2339,
+        "1500416089215": 2339,
+        "1500416104216": 2339,
+        "1500416119215": 2339,
+        "1500416134216": 2339,
+      },
+      "function/OrderItem/latency_ms.p90": Object {
+        "1500416014314": 3479,
+        "1500416029215": 3479,
+        "1500416044215": 3479,
+        "1500416059217": 3479,
+        "1500416074215": 3479,
+        "1500416089215": 3479,
+        "1500416104216": 3479,
+        "1500416119215": 3479,
+        "1500416134216": 3479,
+      },
+      "function/OrderItem/latency_ms.p95": Object {
+        "1500416014314": 3565,
+        "1500416029215": 3565,
+        "1500416044215": 3565,
+        "1500416059217": 3565,
+        "1500416074215": 3565,
+        "1500416089215": 3565,
+        "1500416104216": 3565,
+        "1500416119215": 3565,
+        "1500416134216": 3565,
+      },
+      "function/OrderItem/latency_ms.p99": Object {
+        "1500416014314": 3565,
+        "1500416029215": 3565,
+        "1500416044215": 3565,
+        "1500416059217": 3565,
+        "1500416074215": 3565,
+        "1500416089215": 3565,
+        "1500416104216": 3565,
+        "1500416119215": 3565,
+        "1500416134216": 3565,
+      },
+      "function/OrderItem/latency_ms.p9990": Object {
+        "1500416014314": 3565,
+        "1500416029215": 3565,
+        "1500416044215": 3565,
+        "1500416059217": 3565,
+        "1500416074215": 3565,
+        "1500416089215": 3565,
+        "1500416104216": 3565,
+        "1500416119215": 3565,
+        "1500416134216": 3565,
+      },
+      "function/OrderItem/latency_ms.p9999": Object {
+        "1500416014314": 3565,
+        "1500416029215": 3565,
+        "1500416044215": 3565,
+        "1500416059217": 3565,
+        "1500416074215": 3565,
+        "1500416089215": 3565,
+        "1500416104216": 3565,
+        "1500416119215": 3565,
+        "1500416134216": 3565,
+      },
+      "function/OrderItem/latency_ms.sum": Object {
+        "1500416014314": 31182,
+        "1500416029215": 31182,
+        "1500416044215": 31182,
+        "1500416059217": 31182,
+        "1500416074215": 31182,
+        "1500416089215": 31182,
+        "1500416104216": 31182,
+        "1500416119215": 31182,
+        "1500416134216": 31182,
+      },
+      "function/OrderItem/out_throughput": Object {
+        "1500416014314": 143,
+        "1500416029215": 143,
+        "1500416044215": 143,
+        "1500416059217": 143,
+        "1500416074215": 143,
+        "1500416089215": 143,
+        "1500416104216": 143,
+        "1500416119215": 143,
+        "1500416134216": 143,
+      },
+      "function/OrderItem/requests": Object {
+        "1500416014314": 13,
+        "1500416029215": 13,
+        "1500416044215": 13,
+        "1500416059217": 13,
+        "1500416074215": 13,
+        "1500416089215": 13,
+        "1500416104216": 13,
+        "1500416119215": 13,
+        "1500416134216": 13,
+      },
+      "http/closes": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connection_duration.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connection_received_bytes.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connection_requests.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connection_sent_bytes.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connections": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/connects": Object {
+        "1500416014314": 3,
+        "1500416029215": 3,
+        "1500416044215": 3,
+        "1500416059217": 3,
+        "1500416074215": 3,
+        "1500416089215": 3,
+        "1500416104216": 3,
+        "1500416119215": 3,
+        "1500416134216": 3,
+      },
+      "http/dtab/size.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/handletime_us.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/nacks": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/nonretryable_nacks": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/pending": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/read_timeout": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/received_bytes": Object {
+        "1500416014314": 778,
+        "1500416029215": 778,
+        "1500416044215": 778,
+        "1500416059217": 778,
+        "1500416074215": 778,
+        "1500416089215": 778,
+        "1500416104216": 778,
+        "1500416119215": 778,
+        "1500416134216": 778,
+      },
+      "http/request_latency_ms.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/request_payload_bytes.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/requests": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "http/response_payload_bytes.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/sent_bytes": Object {
+        "1500416014314": 87,
+        "1500416029215": 87,
+        "1500416044215": 87,
+        "1500416059217": 87,
+        "1500416074215": 87,
+        "1500416089215": 87,
+        "1500416104216": 87,
+        "1500416119215": 87,
+        "1500416134216": 87,
+      },
+      "http/socket_unwritable_ms": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/socket_writable_ms": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/success": Object {
+        "1500416014314": 2,
+        "1500416029215": 2,
+        "1500416044215": 2,
+        "1500416059217": 2,
+        "1500416074215": 2,
+        "1500416089215": 2,
+        "1500416104216": 2,
+        "1500416119215": 2,
+        "1500416134216": 2,
+      },
+      "http/transit_latency_ms.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "http/write_timeout": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/application_time_millis": Object {
+        "1500416014314": 19210172,
+        "1500416029215": 19225134,
+        "1500416044215": 19240132,
+        "1500416059217": 19255134,
+        "1500416074215": 19270132,
+        "1500416089215": 19285130,
+        "1500416104216": 19300132,
+        "1500416119215": 19315130,
+        "1500416134216": 19330130,
+      },
+      "jvm/classes/current_loaded": Object {
+        "1500416014314": 7728,
+        "1500416029215": 7728,
+        "1500416044215": 7728,
+        "1500416059217": 7728,
+        "1500416074215": 7728,
+        "1500416089215": 7728,
+        "1500416104216": 7728,
+        "1500416119215": 7728,
+        "1500416134216": 7728,
+      },
+      "jvm/classes/total_loaded": Object {
+        "1500416014314": 7728,
+        "1500416029215": 7728,
+        "1500416044215": 7728,
+        "1500416059217": 7728,
+        "1500416074215": 7728,
+        "1500416089215": 7728,
+        "1500416104216": 7728,
+        "1500416119215": 7728,
+        "1500416134216": 7728,
+      },
+      "jvm/classes/total_unloaded": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/compilation/time_msec": Object {
+        "1500416014314": 8471,
+        "1500416029215": 8474,
+        "1500416044215": 8609,
+        "1500416059217": 8624,
+        "1500416074215": 8625,
+        "1500416089215": 8628,
+        "1500416104216": 8636,
+        "1500416119215": 8642,
+        "1500416134216": 8644,
+      },
+      "jvm/fd_count": Object {
+        "1500416014314": 259,
+        "1500416029215": 259,
+        "1500416044215": 259,
+        "1500416059217": 259,
+        "1500416074215": 259,
+        "1500416089215": 259,
+        "1500416104216": 259,
+        "1500416119215": 259,
+        "1500416134216": 259,
+      },
+      "jvm/fd_limit": Object {
+        "1500416014314": 10240,
+        "1500416029215": 10240,
+        "1500416044215": 10240,
+        "1500416059217": 10240,
+        "1500416074215": 10240,
+        "1500416089215": 10240,
+        "1500416104216": 10240,
+        "1500416119215": 10240,
+        "1500416134216": 10240,
+      },
+      "jvm/gc/PS_MarkSweep/cycles": Object {
+        "1500416014314": 3,
+        "1500416029215": 3,
+        "1500416044215": 3,
+        "1500416059217": 3,
+        "1500416074215": 3,
+        "1500416089215": 3,
+        "1500416104216": 3,
+        "1500416119215": 3,
+        "1500416134216": 3,
+      },
+      "jvm/gc/PS_MarkSweep/msec": Object {
+        "1500416014314": 94,
+        "1500416029215": 94,
+        "1500416044215": 94,
+        "1500416059217": 94,
+        "1500416074215": 94,
+        "1500416089215": 94,
+        "1500416104216": 94,
+        "1500416119215": 94,
+        "1500416134216": 94,
+      },
+      "jvm/gc/PS_Scavenge/cycles": Object {
+        "1500416014314": 20,
+        "1500416029215": 20,
+        "1500416044215": 20,
+        "1500416059217": 20,
+        "1500416074215": 20,
+        "1500416089215": 20,
+        "1500416104216": 20,
+        "1500416119215": 20,
+        "1500416134216": 20,
+      },
+      "jvm/gc/PS_Scavenge/msec": Object {
+        "1500416014314": 69,
+        "1500416029215": 69,
+        "1500416044215": 69,
+        "1500416059217": 69,
+        "1500416074215": 69,
+        "1500416089215": 69,
+        "1500416104216": 69,
+        "1500416119215": 69,
+        "1500416134216": 69,
+      },
+      "jvm/gc/cycles": Object {
+        "1500416014314": 23,
+        "1500416029215": 23,
+        "1500416044215": 23,
+        "1500416059217": 23,
+        "1500416074215": 23,
+        "1500416089215": 23,
+        "1500416104216": 23,
+        "1500416119215": 23,
+        "1500416134216": 23,
+      },
+      "jvm/gc/eden/pause_msec.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/gc/msec": Object {
+        "1500416014314": 163,
+        "1500416029215": 163,
+        "1500416044215": 163,
+        "1500416059217": 163,
+        "1500416074215": 163,
+        "1500416089215": 163,
+        "1500416104216": 163,
+        "1500416119215": 163,
+        "1500416134216": 163,
+      },
+      "jvm/heap/committed": Object {
+        "1500416014314": 256376832,
+        "1500416029215": 256376832,
+        "1500416044215": 256376832,
+        "1500416059217": 256376832,
+        "1500416074215": 256376832,
+        "1500416089215": 256376832,
+        "1500416104216": 256376832,
+        "1500416119215": 256376832,
+        "1500416134216": 256376832,
+      },
+      "jvm/heap/max": Object {
+        "1500416014314": 3817865216,
+        "1500416029215": 3817865216,
+        "1500416044215": 3817865216,
+        "1500416059217": 3817865216,
+        "1500416074215": 3817865216,
+        "1500416089215": 3817865216,
+        "1500416104216": 3817865216,
+        "1500416119215": 3817865216,
+        "1500416134216": 3817865216,
+      },
+      "jvm/heap/used": Object {
+        "1500416014314": 118628728,
+        "1500416029215": 121573960,
+        "1500416044215": 124627072,
+        "1500416059217": 124797408,
+        "1500416074215": 127874696,
+        "1500416089215": 131095152,
+        "1500416104216": 131095152,
+        "1500416119215": 134341856,
+        "1500416134216": 134517760,
+      },
+      "jvm/mem/allocations/eden/bytes": Object {
+        "1500416014314": 2410952448,
+        "1500416029215": 2413897728,
+        "1500416044215": 2416950784,
+        "1500416059217": 2417121280,
+        "1500416074215": 2420198400,
+        "1500416089215": 2423418880,
+        "1500416104216": 2423418880,
+        "1500416119215": 2426665728,
+        "1500416134216": 2426672384,
+      },
+      "jvm/mem/buffer/direct/count": Object {
+        "1500416014314": 139,
+        "1500416029215": 140,
+        "1500416044215": 141,
+        "1500416059217": 142,
+        "1500416074215": 143,
+        "1500416089215": 144,
+        "1500416104216": 145,
+        "1500416119215": 146,
+        "1500416134216": 147,
+      },
+      "jvm/mem/buffer/direct/max": Object {
+        "1500416014314": 1182464,
+        "1500416029215": 1182720,
+        "1500416044215": 1182976,
+        "1500416059217": 1183232,
+        "1500416074215": 1183488,
+        "1500416089215": 1183744,
+        "1500416104216": 1184000,
+        "1500416119215": 1184256,
+        "1500416134216": 1184512,
+      },
+      "jvm/mem/buffer/direct/used": Object {
+        "1500416014314": 1182465,
+        "1500416029215": 1182721,
+        "1500416044215": 1182977,
+        "1500416059217": 1183233,
+        "1500416074215": 1183489,
+        "1500416089215": 1183745,
+        "1500416104216": 1184001,
+        "1500416119215": 1184257,
+        "1500416134216": 1184513,
+      },
+      "jvm/mem/buffer/mapped/count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/mem/buffer/mapped/max": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/mem/buffer/mapped/used": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/mem/current/Code_Cache/max": Object {
+        "1500416014314": 251658240,
+        "1500416029215": 251658240,
+        "1500416044215": 251658240,
+        "1500416059217": 251658240,
+        "1500416074215": 251658240,
+        "1500416089215": 251658240,
+        "1500416104216": 251658240,
+        "1500416119215": 251658240,
+        "1500416134216": 251658240,
+      },
+      "jvm/mem/current/Code_Cache/used": Object {
+        "1500416014314": 12494656,
+        "1500416029215": 12495424,
+        "1500416044215": 12565120,
+        "1500416059217": 12576384,
+        "1500416074215": 12582656,
+        "1500416089215": 12604224,
+        "1500416104216": 12664896,
+        "1500416119215": 12688192,
+        "1500416134216": 12702592,
+      },
+      "jvm/mem/current/Compressed_Class_Space/max": Object {
+        "1500416014314": 1073741824,
+        "1500416029215": 1073741824,
+        "1500416044215": 1073741824,
+        "1500416059217": 1073741824,
+        "1500416074215": 1073741824,
+        "1500416089215": 1073741824,
+        "1500416104216": 1073741824,
+        "1500416119215": 1073741824,
+        "1500416134216": 1073741824,
+      },
+      "jvm/mem/current/Compressed_Class_Space/used": Object {
+        "1500416014314": 6858664,
+        "1500416029215": 6858664,
+        "1500416044215": 6858664,
+        "1500416059217": 6858664,
+        "1500416074215": 6858664,
+        "1500416089215": 6858664,
+        "1500416104216": 6858664,
+        "1500416119215": 6858664,
+        "1500416134216": 6858664,
+      },
+      "jvm/mem/current/Metaspace/max": Object {
+        "1500416014314": -1,
+        "1500416029215": -1,
+        "1500416044215": -1,
+        "1500416059217": -1,
+        "1500416074215": -1,
+        "1500416089215": -1,
+        "1500416104216": -1,
+        "1500416119215": -1,
+        "1500416134216": -1,
+      },
+      "jvm/mem/current/Metaspace/used": Object {
+        "1500416014314": 42349680,
+        "1500416029215": 42349680,
+        "1500416044215": 42349680,
+        "1500416059217": 42350760,
+        "1500416074215": 42353104,
+        "1500416089215": 42356336,
+        "1500416104216": 42367032,
+        "1500416119215": 42377656,
+        "1500416134216": 42381432,
+      },
+      "jvm/mem/current/PS_Eden_Space/max": Object {
+        "1500416014314": 1419247616,
+        "1500416029215": 1419247616,
+        "1500416044215": 1419247616,
+        "1500416059217": 1419247616,
+        "1500416074215": 1419247616,
+        "1500416089215": 1419247616,
+        "1500416104216": 1419247616,
+        "1500416119215": 1419247616,
+        "1500416134216": 1419247616,
+      },
+      "jvm/mem/current/PS_Eden_Space/used": Object {
+        "1500416014314": 106612552,
+        "1500416029215": 109557784,
+        "1500416044215": 112610896,
+        "1500416059217": 112781232,
+        "1500416074215": 115858520,
+        "1500416089215": 119078976,
+        "1500416104216": 119078976,
+        "1500416119215": 122325680,
+        "1500416134216": 122501592,
+      },
+      "jvm/mem/current/PS_Old_Gen/max": Object {
+        "1500416014314": 2863661056,
+        "1500416029215": 2863661056,
+        "1500416044215": 2863661056,
+        "1500416059217": 2863661056,
+        "1500416074215": 2863661056,
+        "1500416089215": 2863661056,
+        "1500416104216": 2863661056,
+        "1500416119215": 2863661056,
+        "1500416134216": 2863661056,
+      },
+      "jvm/mem/current/PS_Old_Gen/used": Object {
+        "1500416014314": 11852336,
+        "1500416029215": 11852336,
+        "1500416044215": 11852336,
+        "1500416059217": 11852336,
+        "1500416074215": 11852336,
+        "1500416089215": 11852336,
+        "1500416104216": 11852336,
+        "1500416119215": 11852336,
+        "1500416134216": 11852336,
+      },
+      "jvm/mem/current/PS_Survivor_Space/max": Object {
+        "1500416014314": 1572864,
+        "1500416029215": 1572864,
+        "1500416044215": 1572864,
+        "1500416059217": 1572864,
+        "1500416074215": 1572864,
+        "1500416089215": 1572864,
+        "1500416104216": 1572864,
+        "1500416119215": 1572864,
+        "1500416134216": 1572864,
+      },
+      "jvm/mem/current/PS_Survivor_Space/used": Object {
+        "1500416014314": 163840,
+        "1500416029215": 163840,
+        "1500416044215": 163840,
+        "1500416059217": 163840,
+        "1500416074215": 163840,
+        "1500416089215": 163840,
+        "1500416104216": 163840,
+        "1500416119215": 163840,
+        "1500416134216": 163840,
+      },
+      "jvm/mem/current/used": Object {
+        "1500416014314": 180331728,
+        "1500416029215": 183277728,
+        "1500416044215": 186400544,
+        "1500416059217": 186585008,
+        "1500416074215": 189669440,
+        "1500416089215": 192920032,
+        "1500416104216": 192987520,
+        "1500416119215": 196266368,
+        "1500416134216": 196463136,
+      },
+      "jvm/mem/metaspace/max_capacity": Object {
+        "1500416014314": 1096810496,
+        "1500416029215": 1096810496,
+        "1500416044215": 1096810496,
+        "1500416059217": 1096810496,
+        "1500416074215": 1096810496,
+        "1500416089215": 1096810496,
+        "1500416104216": 1096810496,
+        "1500416119215": 1096810496,
+        "1500416134216": 1096810496,
+      },
+      "jvm/mem/postGC/PS_Eden_Space/max": Object {
+        "1500416014314": 1419247616,
+        "1500416029215": 1419247616,
+        "1500416044215": 1419247616,
+        "1500416059217": 1419247616,
+        "1500416074215": 1419247616,
+        "1500416089215": 1419247616,
+        "1500416104216": 1419247616,
+        "1500416119215": 1419247616,
+        "1500416134216": 1419247616,
+      },
+      "jvm/mem/postGC/PS_Eden_Space/used": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/mem/postGC/PS_Old_Gen/max": Object {
+        "1500416014314": 2863661056,
+        "1500416029215": 2863661056,
+        "1500416044215": 2863661056,
+        "1500416059217": 2863661056,
+        "1500416074215": 2863661056,
+        "1500416089215": 2863661056,
+        "1500416104216": 2863661056,
+        "1500416119215": 2863661056,
+        "1500416134216": 2863661056,
+      },
+      "jvm/mem/postGC/PS_Old_Gen/used": Object {
+        "1500416014314": 9492080,
+        "1500416029215": 9492080,
+        "1500416044215": 9492080,
+        "1500416059217": 9492080,
+        "1500416074215": 9492080,
+        "1500416089215": 9492080,
+        "1500416104216": 9492080,
+        "1500416119215": 9492080,
+        "1500416134216": 9492080,
+      },
+      "jvm/mem/postGC/PS_Survivor_Space/max": Object {
+        "1500416014314": 1572864,
+        "1500416029215": 1572864,
+        "1500416044215": 1572864,
+        "1500416059217": 1572864,
+        "1500416074215": 1572864,
+        "1500416089215": 1572864,
+        "1500416104216": 1572864,
+        "1500416119215": 1572864,
+        "1500416134216": 1572864,
+      },
+      "jvm/mem/postGC/PS_Survivor_Space/used": Object {
+        "1500416014314": 163840,
+        "1500416029215": 163840,
+        "1500416044215": 163840,
+        "1500416059217": 163840,
+        "1500416074215": 163840,
+        "1500416089215": 163840,
+        "1500416104216": 163840,
+        "1500416119215": 163840,
+        "1500416134216": 163840,
+      },
+      "jvm/mem/postGC/used": Object {
+        "1500416014314": 9655920,
+        "1500416029215": 9655920,
+        "1500416044215": 9655920,
+        "1500416059217": 9655920,
+        "1500416074215": 9655920,
+        "1500416089215": 9655920,
+        "1500416104216": 9655920,
+        "1500416119215": 9655920,
+        "1500416134216": 9655920,
+      },
+      "jvm/nonheap/committed": Object {
+        "1500416014314": 62611456,
+        "1500416029215": 62611456,
+        "1500416044215": 62676992,
+        "1500416059217": 62676992,
+        "1500416074215": 62676992,
+        "1500416089215": 62676992,
+        "1500416104216": 62676992,
+        "1500416119215": 62676992,
+        "1500416134216": 62676992,
+      },
+      "jvm/nonheap/max": Object {
+        "1500416014314": -1,
+        "1500416029215": -1,
+        "1500416044215": -1,
+        "1500416059217": -1,
+        "1500416074215": -1,
+        "1500416089215": -1,
+        "1500416104216": -1,
+        "1500416119215": -1,
+        "1500416134216": -1,
+      },
+      "jvm/nonheap/used": Object {
+        "1500416014314": 61703000,
+        "1500416029215": 61703768,
+        "1500416044215": 61773464,
+        "1500416059217": 61787600,
+        "1500416074215": 61794736,
+        "1500416089215": 61824888,
+        "1500416104216": 61893000,
+        "1500416119215": 61924512,
+        "1500416134216": 61945376,
+      },
+      "jvm/num_cpus": Object {
+        "1500416014314": 8,
+        "1500416029215": 8,
+        "1500416044215": 8,
+        "1500416059217": 8,
+        "1500416074215": 8,
+        "1500416089215": 8,
+        "1500416104216": 8,
+        "1500416119215": 8,
+        "1500416134216": 8,
+      },
+      "jvm/postGC/PS_Eden_Space/max": Object {
+        "1500416014314": 1419247616,
+        "1500416029215": 1419247616,
+        "1500416044215": 1419247616,
+        "1500416059217": 1419247616,
+        "1500416074215": 1419247616,
+        "1500416089215": 1419247616,
+        "1500416104216": 1419247616,
+        "1500416119215": 1419247616,
+        "1500416134216": 1419247616,
+      },
+      "jvm/postGC/PS_Eden_Space/used": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "jvm/postGC/PS_Old_Gen/max": Object {
+        "1500416014314": 2863661056,
+        "1500416029215": 2863661056,
+        "1500416044215": 2863661056,
+        "1500416059217": 2863661056,
+        "1500416074215": 2863661056,
+        "1500416089215": 2863661056,
+        "1500416104216": 2863661056,
+        "1500416119215": 2863661056,
+        "1500416134216": 2863661056,
+      },
+      "jvm/postGC/PS_Old_Gen/used": Object {
+        "1500416014314": 9492080,
+        "1500416029215": 9492080,
+        "1500416044215": 9492080,
+        "1500416059217": 9492080,
+        "1500416074215": 9492080,
+        "1500416089215": 9492080,
+        "1500416104216": 9492080,
+        "1500416119215": 9492080,
+        "1500416134216": 9492080,
+      },
+      "jvm/postGC/PS_Survivor_Space/max": Object {
+        "1500416014314": 1572864,
+        "1500416029215": 1572864,
+        "1500416044215": 1572864,
+        "1500416059217": 1572864,
+        "1500416074215": 1572864,
+        "1500416089215": 1572864,
+        "1500416104216": 1572864,
+        "1500416119215": 1572864,
+        "1500416134216": 1572864,
+      },
+      "jvm/postGC/PS_Survivor_Space/used": Object {
+        "1500416014314": 163840,
+        "1500416029215": 163840,
+        "1500416044215": 163840,
+        "1500416059217": 163840,
+        "1500416074215": 163840,
+        "1500416089215": 163840,
+        "1500416104216": 163840,
+        "1500416119215": 163840,
+        "1500416134216": 163840,
+      },
+      "jvm/postGC/used": Object {
+        "1500416014314": 9655920,
+        "1500416029215": 9655920,
+        "1500416044215": 9655920,
+        "1500416059217": 9655920,
+        "1500416074215": 9655920,
+        "1500416089215": 9655920,
+        "1500416104216": 9655920,
+        "1500416119215": 9655920,
+        "1500416134216": 9655920,
+      },
+      "jvm/safepoint/count": Object {
+        "1500416014314": 937,
+        "1500416029215": 939,
+        "1500416044215": 941,
+        "1500416059217": 944,
+        "1500416074215": 947,
+        "1500416089215": 950,
+        "1500416104216": 953,
+        "1500416119215": 956,
+        "1500416134216": 959,
+      },
+      "jvm/safepoint/sync_time_millis": Object {
+        "1500416014314": 29,
+        "1500416029215": 29,
+        "1500416044215": 29,
+        "1500416059217": 29,
+        "1500416074215": 29,
+        "1500416089215": 29,
+        "1500416104216": 29,
+        "1500416119215": 29,
+        "1500416134216": 29,
+      },
+      "jvm/safepoint/total_time_millis": Object {
+        "1500416014314": 295,
+        "1500416029215": 295,
+        "1500416044215": 295,
+        "1500416059217": 296,
+        "1500416074215": 296,
+        "1500416089215": 297,
+        "1500416104216": 297,
+        "1500416119215": 297,
+        "1500416134216": 298,
+      },
+      "jvm/start_time": Object {
+        "1500416014314": 1500396781568,
+        "1500416029215": 1500396781568,
+        "1500416044215": 1500396781568,
+        "1500416059217": 1500396781568,
+        "1500416074215": 1500396781568,
+        "1500416089215": 1500396781568,
+        "1500416104216": 1500396781568,
+        "1500416119215": 1500396781568,
+        "1500416134216": 1500396781568,
+      },
+      "jvm/tenuring_threshold": Object {
+        "1500416014314": 9,
+        "1500416029215": 9,
+        "1500416044215": 9,
+        "1500416059217": 9,
+        "1500416074215": 9,
+        "1500416089215": 9,
+        "1500416104216": 9,
+        "1500416119215": 9,
+        "1500416134216": 9,
+      },
+      "jvm/thread/count": Object {
+        "1500416014314": 45,
+        "1500416029215": 45,
+        "1500416044215": 45,
+        "1500416059217": 45,
+        "1500416074215": 45,
+        "1500416089215": 45,
+        "1500416104216": 45,
+        "1500416119215": 45,
+        "1500416134216": 45,
+      },
+      "jvm/thread/daemon_count": Object {
+        "1500416014314": 43,
+        "1500416029215": 43,
+        "1500416044215": 43,
+        "1500416059217": 43,
+        "1500416074215": 43,
+        "1500416089215": 43,
+        "1500416104216": 43,
+        "1500416119215": 43,
+        "1500416134216": 43,
+      },
+      "jvm/thread/peak_count": Object {
+        "1500416014314": 46,
+        "1500416029215": 46,
+        "1500416044215": 46,
+        "1500416059217": 46,
+        "1500416074215": 46,
+        "1500416089215": 46,
+        "1500416104216": 46,
+        "1500416119215": 46,
+        "1500416134216": 46,
+      },
+      "jvm/uptime": Object {
+        "1500416014314": 19210758,
+        "1500416029215": 19225720,
+        "1500416044215": 19240720,
+        "1500416059217": 19255720,
+        "1500416074215": 19270720,
+        "1500416089215": 19285720,
+        "1500416104216": 19300720,
+        "1500416119215": 19315720,
+        "1500416134216": 19330720,
+      },
+      "larger_than_threadlocal_out_buffer": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "response_size.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/functionalroles/GET/errors.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/functionalroles/GET/in_throughput": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/functionalroles/GET/latency_ms.avg": Object {
+        "1500416014314": 1.205696,
+        "1500416029215": 1.205696,
+        "1500416044215": 1.205696,
+        "1500416059217": 1.205696,
+        "1500416074215": 1.205696,
+        "1500416089215": 1.205696,
+        "1500416104216": 1.205696,
+        "1500416119215": 1.205696,
+        "1500416134216": 1.205696,
+      },
+      "route/functionalroles/GET/latency_ms.count": Object {
+        "1500416014314": 316,
+        "1500416029215": 316,
+        "1500416044215": 316,
+        "1500416059217": 316,
+        "1500416074215": 316,
+        "1500416089215": 316,
+        "1500416104216": 316,
+        "1500416119215": 316,
+        "1500416134216": 316,
+      },
+      "route/functionalroles/GET/latency_ms.max": Object {
+        "1500416014314": 17,
+        "1500416029215": 17,
+        "1500416044215": 17,
+        "1500416059217": 17,
+        "1500416074215": 17,
+        "1500416089215": 17,
+        "1500416104216": 17,
+        "1500416119215": 17,
+        "1500416134216": 17,
+      },
+      "route/functionalroles/GET/latency_ms.min": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/functionalroles/GET/latency_ms.p50": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/functionalroles/GET/latency_ms.p90": Object {
+        "1500416014314": 3,
+        "1500416029215": 3,
+        "1500416044215": 3,
+        "1500416059217": 3,
+        "1500416074215": 3,
+        "1500416089215": 3,
+        "1500416104216": 3,
+        "1500416119215": 3,
+        "1500416134216": 3,
+      },
+      "route/functionalroles/GET/latency_ms.p95": Object {
+        "1500416014314": 5,
+        "1500416029215": 5,
+        "1500416044215": 5,
+        "1500416059217": 5,
+        "1500416074215": 5,
+        "1500416089215": 5,
+        "1500416104216": 5,
+        "1500416119215": 5,
+        "1500416134216": 5,
+      },
+      "route/functionalroles/GET/latency_ms.p99": Object {
+        "1500416014314": 9,
+        "1500416029215": 9,
+        "1500416044215": 9,
+        "1500416059217": 9,
+        "1500416074215": 9,
+        "1500416089215": 9,
+        "1500416104216": 9,
+        "1500416119215": 9,
+        "1500416134216": 9,
+      },
+      "route/functionalroles/GET/latency_ms.p9990": Object {
+        "1500416014314": 17,
+        "1500416029215": 17,
+        "1500416044215": 17,
+        "1500416059217": 17,
+        "1500416074215": 17,
+        "1500416089215": 17,
+        "1500416104216": 17,
+        "1500416119215": 17,
+        "1500416134216": 17,
+      },
+      "route/functionalroles/GET/latency_ms.p9999": Object {
+        "1500416014314": 17,
+        "1500416029215": 17,
+        "1500416044215": 17,
+        "1500416059217": 17,
+        "1500416074215": 17,
+        "1500416089215": 17,
+        "1500416104216": 17,
+        "1500416119215": 17,
+        "1500416134216": 17,
+      },
+      "route/functionalroles/GET/latency_ms.sum": Object {
+        "1500416014314": 381,
+        "1500416029215": 381,
+        "1500416044215": 381,
+        "1500416059217": 381,
+        "1500416074215": 381,
+        "1500416089215": 381,
+        "1500416104216": 381,
+        "1500416119215": 381,
+        "1500416134216": 381,
+      },
+      "route/functionalroles/GET/out_throughput": Object {
+        "1500416014314": 1580,
+        "1500416029215": 1580,
+        "1500416044215": 1580,
+        "1500416059217": 1580,
+        "1500416074215": 1580,
+        "1500416089215": 1580,
+        "1500416104216": 1580,
+        "1500416119215": 1580,
+        "1500416134216": 1580,
+      },
+      "route/functionalroles/GET/requests": Object {
+        "1500416014314": 17725,
+        "1500416029215": 17725,
+        "1500416044215": 17725,
+        "1500416059217": 17725,
+        "1500416074215": 17725,
+        "1500416089215": 17725,
+        "1500416104216": 17725,
+        "1500416119215": 17725,
+        "1500416134216": 17725,
+      },
+      "route/ping/GET/requests": Object {
+        "1500416014314": 1,
+        "1500416029215": 1,
+        "1500416044215": 1,
+        "1500416059217": 1,
+        "1500416074215": 1,
+        "1500416089215": 1,
+        "1500416104216": 1,
+        "1500416119215": 1,
+        "1500416134216": 1,
+      },
+      "route/ping/GET/response_size.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/ping/GET/status/200": Object {
+        "1500416014314": 1,
+        "1500416029215": 1,
+        "1500416044215": 1,
+        "1500416059217": 1,
+        "1500416074215": 1,
+        "1500416089215": 1,
+        "1500416104216": 1,
+        "1500416119215": 1,
+        "1500416134216": 1,
+      },
+      "route/ping/GET/status/2XX": Object {
+        "1500416014314": 1,
+        "1500416029215": 1,
+        "1500416044215": 1,
+        "1500416059217": 1,
+        "1500416074215": 1,
+        "1500416089215": 1,
+        "1500416104216": 1,
+        "1500416119215": 1,
+        "1500416134216": 1,
+      },
+      "route/ping/GET/time.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/ping/GET/time/200.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "route/ping/GET/time/2XX.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "scheduler/blocking_ms": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "scheduler/dispatches": Object {
+        "1500416014314": 2073,
+        "1500416029215": 2084,
+        "1500416044215": 2095,
+        "1500416059217": 2106,
+        "1500416074215": 2117,
+        "1500416089215": 2128,
+        "1500416104216": 2139,
+        "1500416119215": 2150,
+        "1500416134216": 2161,
+      },
+      "service/failure": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/dtab/size.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/handletime_us.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/pending": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/request_latency_ms.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/requests": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/success": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "srv/thrift::non-ssl/transit_latency_ms.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "status/200": Object {
+        "1500416014314": 1,
+        "1500416029215": 1,
+        "1500416044215": 1,
+        "1500416059217": 1,
+        "1500416074215": 1,
+        "1500416089215": 1,
+        "1500416104216": 1,
+        "1500416119215": 1,
+        "1500416134216": 1,
+      },
+      "status/2XX": Object {
+        "1500416014314": 1,
+        "1500416029215": 1,
+        "1500416044215": 1,
+        "1500416059217": 1,
+        "1500416074215": 1,
+        "1500416089215": 1,
+        "1500416104216": 1,
+        "1500416119215": 1,
+        "1500416134216": 1,
+      },
+      "time/200.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "time/2XX.count": Object {
+        "1500416014314": 0,
+        "1500416029215": 0,
+        "1500416044215": 0,
+        "1500416059217": 0,
+        "1500416074215": 0,
+        "1500416089215": 0,
+        "1500416104216": 0,
+        "1500416119215": 0,
+        "1500416134216": 0,
+      },
+      "toggles/com.twitter.finagle.core/checksum": Object {
+        "1500416014314": 142077616,
+        "1500416029215": 142077616,
+        "1500416044215": 142077616,
+        "1500416059217": 142077616,
+        "1500416074215": 142077616,
+        "1500416089215": 142077616,
+        "1500416104216": 142077616,
+        "1500416119215": 142077616,
+        "1500416134216": 142077616,
+      },
+      "toggles/com.twitter.finagle.http/checksum": Object {
+        "1500416014314": 245193648,
+        "1500416029215": 245193648,
+        "1500416044215": 245193648,
+        "1500416059217": 245193648,
+        "1500416074215": 245193648,
+        "1500416089215": 245193648,
+        "1500416104216": 245193648,
+        "1500416119215": 245193648,
+        "1500416134216": 245193648,
+      },
+      "toggles/com.twitter.finagle.netty4/checksum": Object {
+        "1500416014314": 2180319744,
+        "1500416029215": 2180319744,
+        "1500416044215": 2180319744,
+        "1500416059217": 2180319744,
+        "1500416074215": 2180319744,
+        "1500416089215": 2180319744,
+        "1500416104216": 2180319744,
+        "1500416119215": 2180319744,
+        "1500416134216": 2180319744,
+      },
+      "toggles/com.twitter.finagle.stats/checksum": Object {
+        "1500416014314": 3227311872,
+        "1500416029215": 3227311872,
+        "1500416044215": 3227311872,
+        "1500416059217": 3227311872,
+        "1500416074215": 3227311872,
+        "1500416089215": 3227311872,
+        "1500416104216": 3227311872,
+        "1500416119215": 3227311872,
+        "1500416134216": 3227311872,
+      },
+      "toggles/com.twitter.finagle.thrift/checksum": Object {
+        "1500416014314": 1149507712,
+        "1500416029215": 1149507712,
+        "1500416044215": 1149507712,
+        "1500416059217": 1149507712,
+        "1500416074215": 1149507712,
+        "1500416089215": 1149507712,
+        "1500416104216": 1149507712,
+        "1500416119215": 1149507712,
+        "1500416134216": 1149507712,
+      },
+    }
+  }
+/>
 `;

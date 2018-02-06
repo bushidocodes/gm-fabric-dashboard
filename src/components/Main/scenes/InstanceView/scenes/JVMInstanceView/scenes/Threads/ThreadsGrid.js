@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
+import { injectIntl } from "react-intl";
 
 import ThreadsTable from "./components/ThreadsTable";
-
 import ErrorBoundary from "components/ErrorBoundary";
 import TableToolbar from "components/Main/components/TableToolbar";
 import NotFoundError from "components/Main/components/NotFoundError";
@@ -20,6 +20,7 @@ import { getVisibleThreads } from "utils/jvm/selectors";
 class ThreadsGrid extends Component {
   static propTypes = {
     fabricServer: PropTypes.string,
+    intl: PropTypes.object.isRequired,
     selectedInstanceID: PropTypes.string,
     selectedServiceSlug: PropTypes.string,
     setUrlState: PropTypes.func.isRequired,
@@ -90,7 +91,8 @@ class ThreadsGrid extends Component {
         filterString = "",
         groupByAttribute = "none",
         sortByAttribute = "id"
-      }
+      },
+      intl
     } = this.props;
     const filteredThreads = threads.filter(
       thread =>
@@ -105,21 +107,37 @@ class ThreadsGrid extends Component {
             searchInputProps={{
               filterString: filterString,
               setFilterString: filterString => setUrlState({ filterString }),
-              searchPlaceholder: "Search Threads"
+              searchPlaceholder: intl.formatMessage({
+                id: "threadsGrid.searchPlaceholder",
+                defaultMessage: "Search Threads",
+                description: "Search placeholder"
+              })
             }}
             sortByProps={{
               sortByOptions: [
                 {
                   value: "state",
-                  label: "State"
+                  label: intl.formatMessage({
+                    id: "threadsGrid.state",
+                    defaultMessage: "State",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "name",
-                  label: "Name"
+                  label: intl.formatMessage({
+                    id: "threadsGrid.name",
+                    defaultMessage: "Name",
+                    description: "Sort by dropdown option"
+                  })
                 },
                 {
                   value: "id",
-                  label: "ID"
+                  label: intl.formatMessage({
+                    id: "threadsGrid.id",
+                    defaultMessage: "ID",
+                    description: "Sort by dropdown option"
+                  })
                 }
               ],
               sortByAttribute: sortByAttribute,
@@ -129,11 +147,19 @@ class ThreadsGrid extends Component {
               groupByOptions: [
                 {
                   value: "state",
-                  label: "State"
+                  label: intl.formatMessage({
+                    id: "threadsGrid.state",
+                    defaultMessage: "State",
+                    description: "Group by dropdown option"
+                  })
                 },
                 {
                   value: "none",
-                  label: "None"
+                  label: intl.formatMessage({
+                    id: "threadsGrid.none",
+                    defaultMessage: "None",
+                    description: "Group by dropdown option"
+                  })
                 }
               ],
               groupByAttribute: groupByAttribute,
@@ -148,9 +174,25 @@ class ThreadsGrid extends Component {
         </ErrorBoundary>
       );
     } else if (_.isEmpty(threadsError)) {
-      return <NotFoundError errorMsg="No Threads Found" />;
+      return (
+        <NotFoundError
+          errorMsg={intl.formatMessage({
+            id: "threadsGrid.errorNotFound",
+            defaultMessage: "No Threads Found",
+            description: "Error message"
+          })}
+        />
+      );
     } else {
-      return <NotFoundError errorMsg="Failed to Fetch Threads" />;
+      return (
+        <NotFoundError
+          errorMsg={intl.formatMessage({
+            id: "threadsGrid.errorFetchFail",
+            defaultMessage: "Failed to Fetch Threads",
+            description: "Error message"
+          })}
+        />
+      );
     }
   }
 }
@@ -170,4 +212,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(withUrlState()(ThreadsGrid));
+export default connect(mapStateToProps)(
+  withUrlState()(injectIntl(ThreadsGrid))
+);

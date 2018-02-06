@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import { FormattedMessage, injectIntl } from "react-intl";
 
 import InspectorWrap from "./components/InspectorWrap";
 import InspectorToolbar from "./components/InspectorToolbar";
@@ -10,11 +11,12 @@ import InspectorHideZero from "./components/InspectorHideZero";
 import InspectorHideStatic from "./components/InspectorHideStatic";
 
 /** Filterable list of selectable string */
-export default class Inspector extends Component {
+class Inspector extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     hideStaticMetric: PropTypes.bool,
     hideZeroMetric: PropTypes.bool,
+    intl: PropTypes.object.isRequired,
     onChange: PropTypes.func,
     onClick: PropTypes.func.isRequired,
     onSearch: PropTypes.func,
@@ -29,7 +31,8 @@ export default class Inspector extends Component {
       onSearch,
       onChange,
       searchQuery,
-      selectedMetric
+      selectedMetric,
+      intl
     } = this.props;
     let { hideZeroMetric, hideStaticMetric } = this.props;
     // Filter out keys that don't match the searchQuery
@@ -48,8 +51,16 @@ export default class Inspector extends Component {
         <InspectorToolbar>
           <InspectorSearch
             onChange={evt => onSearch(evt.target.value)}
-            placeholder="Search"
-            aria-label="Search All Metrics"
+            placeholder={intl.formatMessage({
+              id: "inspector.searchPlaceholder",
+              defaultMessage: "Search",
+              description: "Search placeholder"
+            })}
+            aria-label={intl.formatMessage({
+              id: "inspector.searchAriaLabel",
+              defaultMessage: "Search All Metrics",
+              description: "Aria label for search input"
+            })}
             type="search"
             value={searchQuery}
           />
@@ -59,14 +70,22 @@ export default class Inspector extends Component {
               checked={hideZeroMetric}
               disabled={hideStaticMetric}
             />
-            Hide all metrics with only zero values
+            <FormattedMessage
+              id="inspector.hideZeroMetric"
+              defaultMessage="Hide all metrics with only zero values"
+              description="Label for checkbox"
+            />
           </label>
           <label>
             <InspectorHideStatic
               onChange={evt => onChange(evt.target.checked, evt.target.name)}
               checked={hideStaticMetric}
             />
-            Hide all static metrics
+            <FormattedMessage
+              id="inspector.hideStaticMetric"
+              defaultMessage="Hide all static metrics"
+              description="Label for checkbox"
+            />
           </label>
         </InspectorToolbar>
         {data.length > 0 && (
@@ -95,3 +114,5 @@ export default class Inspector extends Component {
     );
   }
 }
+
+export default injectIntl(Inspector);

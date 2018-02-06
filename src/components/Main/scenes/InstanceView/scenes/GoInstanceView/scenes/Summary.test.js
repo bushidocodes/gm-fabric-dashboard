@@ -17,11 +17,6 @@ const SummaryGridWrap = shallowWithIntl(<SummaryGrid store={mockStore} />)
   .dive();
 
 describe("GO > SummaryGrid component", () => {
-  test("Matched the snapshot", () => {
-    let tree = shallowWithIntl(<SummaryGrid store={mockStore} />).dive();
-    expect(tree).toMatchSnapshot();
-  });
-
   test("Has an error boundary", () => {
     expect(SummaryGridWrap.find(ErrorBoundary).length).toBe(1);
   });
