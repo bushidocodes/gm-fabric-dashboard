@@ -22,9 +22,16 @@ export default class DygraphWrapper extends React.Component {
     timeSeries: PropTypes.array.isRequired
   };
 
+  state = {
+    options: {}
+  };
+
   componentDidMount() {
     const [data, options] = this.props.timeSeries;
-    this.drawChart(this.div, data, options);
+    // eslint-disable-next-line react/no-did-mount-set-state
+    this.setState({ options: _.cloneDeep(options) }, () => {
+      this.drawChart(this.div, data, this.state.options);
+    });
   }
 
   /**
@@ -35,17 +42,14 @@ export default class DygraphWrapper extends React.Component {
    * @memberof DygraphWrapper
    */
   componentWillReceiveProps(nextProps) {
-    const [oldData, oldOptions] = this.props.timeSeries;
     const [newData, newOptions] = nextProps.timeSeries;
-    if (!isEqual(oldOptions.labels, newOptions.labels)) {
-      this.graph.updateOptions({
-        labels: newOptions.labels,
-        file: newData
+    if (!isEqual(this.state.options, newOptions)) {
+      this.setState({ options: _.cloneDeep(newOptions) }, () => {
+        this.graph.updateOptions(this.state.options);
       });
     }
-    if (!isEqual(oldData, newData)) {
-      this.graph.updateOptions({ file: newData });
-    }
+    // Just pass the data each time because most renders are due to polling
+    this.graph.updateOptions({ file: newData });
     // This is getting called when not needed. Need to determine if Dygraph
     // handles this sufficiently or if we need to call this selectively
     this.graph.resize();
