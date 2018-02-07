@@ -124,6 +124,9 @@ export default {
     }
   },
   "es-ES": {
+    GMServiceTableLineItem: {
+      tooltip: "Esta instancia de microservicio no tiene métricas para mostrar."
+    },
     summary: {
       responseTime: "Tiempo de respuesta promedio",
       uptime: "Tiempo de Actividad"

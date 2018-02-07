@@ -1,7 +1,13 @@
 import * as storybook from "@storybook/react";
-import { configure } from "@storybook/react";
+import { configure, addDecorator } from "@storybook/react";
 import { setDefaults } from "@storybook/addon-info";
 import { setOptions } from "@storybook/addon-options";
+import { setIntlConfig, withIntl } from "storybook-addon-intl";
+import messages from "messages";
+import { flattenMessages } from "utils/i18n";
+import { addLocaleData } from "react-intl";
+import enLocaleData from "react-intl/locale-data/en";
+import esLocaleData from "react-intl/locale-data/es";
 
 const req = require.context("../src", true, /\.stories\.js$/);
 
@@ -9,6 +15,21 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
   // require("../stories");
 }
+
+addLocaleData(enLocaleData);
+addLocaleData(esLocaleData);
+
+const getMessages = locale => flattenMessages(messages[locale]);
+
+// Set intl configuration
+setIntlConfig({
+  locales: ["en-US", "es-ES"],
+  defaultLocale: "en-US",
+  getMessages
+});
+
+// Register decorator
+addDecorator(withIntl);
 
 // addon-info
 setDefaults({
