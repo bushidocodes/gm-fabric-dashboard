@@ -20,6 +20,20 @@ export default {
       summary: "Summary",
       warning: "Warning"
     },
+    fabricMicroservices: {
+      disableFetchError:
+        "Automatically disabling the fetching of Fabric microservices after three attempts.",
+      fetchError: "Fetching Fabric Microservices failed"
+    },
+    fabricRouter: {
+      noInstance:
+        "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
+      noMetrics:
+        "{serviceName} {serviceVersion} does not have metrics to display",
+      noService: "{serviceSlug} is not a known microservice",
+      notAuthorized:
+        "You are not authorized to view {serviceName} {serviceVersion}"
+    },
     footer: {
       copyright:
         "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
@@ -59,13 +73,18 @@ export default {
       searchAriaLabel: "Search All Metrics",
       searchPlaceholder: "Search"
     },
+    instanceMetricsUtils: {
+      disableFetchError:
+        "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
+      fetchError: "Fetching Metrics failed"
+    },
     jvmHeaderContent: {
-      uptime: "Uptime",
-      summary: "Summary",
+      explorer: "Explorer",
       requests: "Requests",
       routes: "Routes",
+      summary: "Summary",
       threads: "Threads",
-      explorer: "Explorer"
+      uptime: "Uptime"
     },
     pollingSettings: {
       button: {
@@ -185,6 +204,20 @@ export default {
       summary: "Resumen",
       warning: "Advertencia"
     },
+    fabricMicroservices: {
+      disableFetchError:
+        "Deshabilitar automáticamente la obtención de microservicios Fabric después de tres intentos.",
+      fetchError: "Ir a buscar los microservicios de Fabric fallaron"
+    },
+    fabricRouter: {
+      noInstance:
+        "{instanceID} no es una instancia conocida de {serviceName} {serviceVersion}",
+      noMetrics:
+        "{serviceName} {serviceVersion} no tiene métricas para mostrar",
+      noService: "{serviceSlug} no es un microservicio conocido",
+      notAuthorized:
+        "No tienes autorización para ver {serviceName} {serviceVersion}"
+    },
     footer: {
       copyright:
         "Copyright &copy; 2018 Decipher Technology Studios. Todos los derechos reservados. <br /> Copyright &copy; 2018 Gray Matter, un producto de Decipher Technology Studios. Todos los derechos reservados."
@@ -223,6 +256,11 @@ export default {
       hideZeroMetric: "Ocultar todas las métricas con solo valores cero",
       searchAriaLabel: "Buscar todas las métricas",
       searchPlaceholder: "Buscar"
+    },
+    instanceMetricsUtils: {
+      disableFetchError:
+        "Deshabilitar automáticamente la obtención de métricas después de tres intentos. Puede volver a activar el sondeo en Configuración.",
+      fetchError: "Falló la obtención de métricas"
     },
     jvmHeaderContent: {
       uptime: "Tiempo de Actividad",

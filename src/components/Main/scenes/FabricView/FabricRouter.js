@@ -2,6 +2,7 @@ import _ from "lodash";
 import React from "react";
 import { connect } from "react-redux";
 import { Switch, Redirect, Route, withRouter } from "react-router";
+import { FormattedMessage } from "react-intl";
 
 import FabricGrid from "./components/FabricGrid";
 import ServiceView from "components/Main/scenes/ServiceView";
@@ -66,15 +67,30 @@ function FabricRouter({ services }) {
           // Check if the services are loaded, but the service slug didn't match
           if (!servicesAreNotLoaded) {
             if (!service) {
-              message = `${serviceSlug} is not a known microservice`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.noService"
+                  defaultMessage="{serviceSlug} is not a known microservice"
+                  description="Error notification"
+                  values={{ serviceSlug }}
+                />
+              );
             } else if (
               // Check if the user is authorized to view the service
               service &&
               !service.authorized
             ) {
-              message = `You are not authorized to view ${service.name} ${
-                service.version
-              }`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.notAuthorized"
+                  defaultMessage="You are not authorized to view {serviceName} {serviceVersion}"
+                  description="Error notification"
+                  values={{
+                    serviceName: service.name,
+                    serviceVersion: service.version
+                  }}
+                />
+              );
             } else if (
               // Check our instanceID against this services' instances
               service &&
@@ -83,14 +99,31 @@ function FabricRouter({ services }) {
               })
             ) {
               // If isValidInstance is false, also set a pathname that will redirect to the service view
-              message = `${instanceID} is not a known instance of ${
-                service.name
-              } ${service.version}`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.noInstance"
+                  defaultMessage="{instanceID} is not a known instance of {serviceName} {serviceVersion}"
+                  description="Error notification"
+                  values={{
+                    serviceName: service.name,
+                    serviceVersion: service.version,
+                    instanceID
+                  }}
+                />
+              );
               pathname = `/${serviceSlug}`;
             } else if (!service.metered) {
-              message = `${service.name} ${
-                service.version
-              } does not have metrics to display`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.noMetrics"
+                  defaultMessage="{serviceName} {serviceVersion} does not have metrics to display"
+                  description="Error notification"
+                  values={{
+                    serviceName: service.name,
+                    serviceVersion: service.version
+                  }}
+                />
+              );
               pathname = `/${serviceSlug}`;
             }
           }
@@ -157,11 +190,26 @@ function FabricRouter({ services }) {
             let message;
             // Checks are ordered by priority of the message
             if (!serviceIsValid) {
-              message = `${selectedServiceSlug} is not a known microservice`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.noService"
+                  defaultMessage="{serviceSlug} is not a known microservice"
+                  description="Error notification"
+                  values={{ serviceSlug: selectedServiceSlug }}
+                />
+              );
             } else if (!userIsAuthorized) {
-              message = `You are not authorized to view ${service.name} ${
-                service.version
-              }`;
+              message = (
+                <FormattedMessage
+                  id="fabricRouter.notAuthorized"
+                  defaultMessage="You are not authorized to view {serviceName} {serviceVersion}"
+                  description="Error notification"
+                  values={{
+                    serviceName: service.name,
+                    serviceVersion: service.version
+                  }}
+                />
+              );
             }
 
             // If the services object has not been passed to the router yet,

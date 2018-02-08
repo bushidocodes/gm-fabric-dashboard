@@ -1,5 +1,7 @@
+import React from "react";
 import axios from "axios";
 import { Actions, getState } from "jumpstate";
+import { FormattedMessage } from "react-intl";
 
 import { clearFabricIntervalIfNeeded, slugifyMicroservice } from "utils";
 import { getFabricServer } from "utils/head";
@@ -76,17 +78,28 @@ export function fetchFabricMicroservicesFailureEffect(err) {
   console.log("Failed: ", servicesPollingFailures);
   // If there have already been four failures (0, 1, 2, 3, 4), this is the third failure,
   // so notify the user and stop polling
+  let errorMsg;
   if (servicesPollingFailures > 3) {
-    reportError(
-      "Automatically disabling the fetching of Fabric microservices after three attempts.",
-      false,
-      err
+    errorMsg = (
+      <FormattedMessage
+        id="fabricMicroservices.disableFetchError"
+        defaultMessage="Automatically disabling the fetching of Fabric microservices after three attempts."
+        description="Error notification"
+      />
     );
+    reportError(errorMsg, false, err);
     Actions.setServicesPollingFailures(0);
     Actions.stopPollingFabricMicroservices();
     // Otherwise just increment the counter and warn the user;
   } else {
-    reportError("Fetching Fabric Microservices failed", true, err);
+    errorMsg = (
+      <FormattedMessage
+        id="fabricMicroservices.fetchError"
+        defaultMessage="Fetching Fabric Microservices failed"
+        description="Error notification"
+      />
+    );
+    reportError(errorMsg, true, err);
     Actions.setServicesPollingFailures(servicesPollingFailures + 1);
   }
 }

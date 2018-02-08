@@ -1,4 +1,7 @@
+import React from "react";
 import { Effect, Actions, getState } from "jumpstate";
+import { FormattedMessage } from "react-intl";
+
 import { reportError } from "../../notification";
 import { fetchInstanceMetrics } from "./apis";
 import {
@@ -45,15 +48,27 @@ Effect("fetchMetricsSuccess", fetchMetricsSuccessEffect);
  */
 function fetchMetricsFailureEffect(err) {
   const metricsPollingFailures = getState().instance.metricsPollingFailures;
+  let errorMsg;
   if (metricsPollingFailures > 3) {
-    reportError(
-      "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-      false
+    errorMsg = (
+      <FormattedMessage
+        id="instanceMetricsUtils.disableFetchError"
+        defaultMessage="Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings."
+        description="Error notification"
+      />
     );
+    reportError(errorMsg, false);
     Actions.setMetricsPollingFailures(0);
     Actions.stopPollingInstanceMetrics();
   } else {
-    reportError("Fetching Metrics failed", true, err);
+    errorMsg = (
+      <FormattedMessage
+        id="instanceMetricsUtils.fetchError"
+        defaultMessage="Fetching Metrics failed"
+        description="Error notification"
+      />
+    );
+    reportError(errorMsg, true, err);
     Actions.setMetricsPollingFailures(metricsPollingFailures + 1);
   }
 }
