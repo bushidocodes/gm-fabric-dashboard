@@ -86,6 +86,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
         "settingsGrid.polling": "Polling",
         "settingsGrid.tooltip": "Select an instance to turn on polling",
         "summary.errorRate": "Error Rate",
+        "summary.hostCPUCores": "Host CPU Cores",
         "summary.hostCPUUsage": "Host CPU Utilized",
         "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
         "summary.memoryUsage": "Memory Utilized",

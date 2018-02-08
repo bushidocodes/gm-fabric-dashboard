@@ -95,6 +95,7 @@ export default {
     },
     summary: {
       errorRate: "Error Rate",
+      hostCPUCores: "Host CPU Cores",
       hostCPUUsage: "Host CPU Utilized",
       hostCPUUsageDetail:
         "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
@@ -245,6 +246,7 @@ export default {
     },
     summary: {
       errorRate: "Tasa de error",
+      hostCPUCores: "Núcleos de CPU de Host",
       hostCPUUsage: "CPU de host utilizada",
       hostCPUUsageDetail:
         "{count, plural, uno {# Núcleo en el host} other {#  Núcleos en el host}}",

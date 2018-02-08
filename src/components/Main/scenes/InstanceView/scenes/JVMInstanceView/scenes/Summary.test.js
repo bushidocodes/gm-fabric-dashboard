@@ -1,7 +1,7 @@
 import React from "react";
-import { shallow } from "enzyme";
 import mockState from "json/mockReduxState";
 import configureStore from "redux-mock-store";
+import { shallowWithIntl } from "utils/i18nTesting";
 
 import LayoutSection from "components/LayoutSection";
 import GMLineChart from "components/Main/components/GMLineChart";
@@ -11,36 +11,48 @@ import ErrorBoundary from "components/ErrorBoundary";
 import SummaryGrid from "./Summary";
 
 const mockStore = configureStore()(mockState);
+
 let SummaryGridWrap;
 
 describe("JVM > SummaryGrid component", () => {
   beforeEach(() => {
-    SummaryGridWrap = shallow(<SummaryGrid store={mockStore} />);
+    SummaryGridWrap = shallowWithIntl(<SummaryGrid store={mockStore} />);
   });
 
   test("Matched the snapshot", () => {
-    expect(SummaryGridWrap).toMatchSnapshot();
+    const tree = shallowWithIntl(<SummaryGrid store={mockStore} />);
+    expect(tree).toMatchSnapshot();
   });
 
   test("Has an error boundary", () => {
-    expect(SummaryGridWrap.dive().find(ErrorBoundary).length).toBe(1);
+    expect(
+      SummaryGridWrap.dive()
+        .dive()
+        .find(ErrorBoundary).length
+    ).toBe(1);
   });
 
   test("Has a layout section that contains 'vital' dashboards", () => {
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(LayoutSection)
         .find({ title: "Vitals" })
     ).toHaveLength(1);
   });
 
   test("Has a read out group that contains three readout dashboards", () => {
-    expect(SummaryGridWrap.dive().find(Readout)).toHaveLength(3);
+    expect(
+      SummaryGridWrap.dive()
+        .dive()
+        .find(Readout)
+    ).toHaveLength(3);
   });
 
   test("Has an 'uptime' dashboard in first position", () => {
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(Readout)
         .at(0)
         .html()
@@ -51,6 +63,7 @@ describe("JVM > SummaryGrid component", () => {
   test("Has an 'average response time' dashboard in second position", () => {
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(Readout)
         .at(1)
         .html()
@@ -58,6 +71,7 @@ describe("JVM > SummaryGrid component", () => {
     ).toBe(true);
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(Readout)
         .at(1)
         .html()
@@ -68,6 +82,7 @@ describe("JVM > SummaryGrid component", () => {
   test("Has a 'host CPU utilized' dashboard in third position", () => {
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(Readout)
         .at(2)
         .html()
@@ -76,16 +91,22 @@ describe("JVM > SummaryGrid component", () => {
   });
 
   test("Has a chart with correct props passed down", () => {
-    expect(SummaryGridWrap.dive().find(GMLineChart).length).toBe(1);
+    expect(
+      SummaryGridWrap.dive()
+        .dive()
+        .find(GMLineChart).length
+    ).toBe(1);
     expect(
       Object.keys(
         SummaryGridWrap.dive()
+          .dive()
           .find(GMLineChart)
           .props()
       ).includes("timeSeries")
     ).toBe(true);
     expect(
       SummaryGridWrap.dive()
+        .dive()
         .find(GMLineChart)
         .props()
         .timeSeries[1].labels.includes("time")

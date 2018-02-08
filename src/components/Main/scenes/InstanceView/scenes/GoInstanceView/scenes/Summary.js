@@ -97,7 +97,7 @@ function SummaryGrid({
                 icon: "Timer",
                 title: intl.formatMessage({
                   id: "summary.responseTime",
-                  defaultMessage: "Response Time",
+                  defaultMessage: "Avg. Response Time",
                   description: "Response time title text"
                 }),
                 value: `${_.round(
