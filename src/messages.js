@@ -29,6 +29,10 @@ export default {
       requests: "Requests",
       searchPlaceholder: "Search Functions"
     },
+    footer: {
+      copyright:
+        "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
+    },
     GMServiceTableLineItem: {
       tooltip: "This microservice instance does not have metrics to display."
     },
@@ -170,6 +174,10 @@ export default {
       stable: "Estable",
       summary: "Resumen",
       warning: "Advertencia"
+    },
+    footer: {
+      copyright:
+        "Copyright &copy; 2018 Decipher Technology Studios. Todos los derechos reservados. <br /> Copyright &copy; 2018 Gray Matter, un producto de Decipher Technology Studios. Todos los derechos reservados."
     },
     functionsGrid: {
       error: "No se encontraron funciones",

@@ -39,6 +39,7 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
         "fabricHeaderContent.stable": "Stable",
         "fabricHeaderContent.summary": "Summary",
         "fabricHeaderContent.warning": "Warning",
+        "footer.copyright": "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
         "functionsGrid.error": "No Functions Found",
         "functionsGrid.errorPercent": "Error %",
         "functionsGrid.function": "Function",
