@@ -1,6 +1,9 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
-import renderer from "react-test-renderer";
+import {
+  mountWithIntl,
+  shallowWithIntl,
+  renderWithIntl
+} from "utils/i18nTesting";
 
 import Table from "./index.js";
 import TableLineItem from "./components/TableLineItem";
@@ -70,11 +73,11 @@ let instancesProps = {
 
 describe("Table component", () => {
   beforeEach(() => {
-    wrapper = mount(<Table {...routesProps} />);
+    wrapper = mountWithIntl(<Table {...routesProps} />);
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(<Table {...routesProps} />).toJSON();
+    const tree = renderWithIntl(<Table {...routesProps} />);
     expect(tree).toMatchSnapshot();
   });
 
@@ -156,7 +159,7 @@ describe("Table component", () => {
 describe("Table component with instances prop", () => {
   let firstGMServiceTableLineItem;
   beforeEach(() => {
-    wrapper = shallow(<Table {...instancesProps} />);
+    wrapper = shallowWithIntl(<Table {...instancesProps} />);
     firstGMServiceTableLineItem = wrapper
       .dive()
       .find(GMServiceTableLineItem)

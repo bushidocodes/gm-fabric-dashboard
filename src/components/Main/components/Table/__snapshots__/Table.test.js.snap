@@ -319,77 +319,71 @@ exports[`Table component matches snapshot 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     <div
-      className="c2"
-      style={
-        Object {
-          "flex": "1 1 20%",
-        }
-      }
+      class="c2"
+      style="flex:1 1 20%"
     >
-      Route
+      <span>
+        Route
+      </span>
     </div>
     <div
-      className="c2"
-      style={Object {}}
+      class="c2"
     >
-      Requests/sec
+      <span>
+        Requests/sec
+      </span>
     </div>
     <div
-      className="c2"
-      style={
-        Object {
-          "textAlign": "right",
-        }
-      }
+      class="c2"
+      style="text-align:right"
     >
-      Requests
+      <span>
+        Requests
+      </span>
     </div>
     <div
-      className="c2"
-      style={
-        Object {
-          "textAlign": "right",
-        }
-      }
+      class="c2"
+      style="text-align:right"
     >
-      Error %
+      <span>
+        Error %
+      </span>
     </div>
     <div
-      className="c3"
+      class="c3"
     >
       <div
-        className="c4"
+        class="c4"
       >
         <div
-          className="c5"
-          disabled={undefined}
-          style={Object {}}
+          class="c5"
         >
-          Latency
+          <span>
+            Latency
+          </span>
           <div
-            className="c6"
-            style={Object {}}
+            class="c6"
           >
             Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.
           </div>
         </div>
       </div>
       <div
-        className="c7"
+        class="c7"
       >
         <div
-          className="c8"
+          class="c8"
         >
           50%
         </div>
         <div
-          className="c8"
+          class="c8"
         >
           99%
         </div>
@@ -397,43 +391,39 @@ exports[`Table component matches snapshot 1`] = `
     </div>
   </div>
   <ol
-    className="c9"
+    class="c9"
   >
     <li
-      className="c10"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="c10"
       role="link"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="c11"
+        class="c11"
       >
         <div
-          className="c12"
+          class="c12"
         >
           <span
-            className="c13"
+            class="c13"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c14"
+              class="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
+              xlink="http://www.w3.org/1999/xlink"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c15"
+                class="c15"
                 fill="currentColor"
                 title=""
               >
-                <title>
-                  
-                </title>
+                <title />
                 <g
-                  className="glyph"
+                  class="glyph"
                   fill="currentColor"
                   transform="translate(0 0) scale(1)"
                 >
@@ -451,202 +441,119 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           <div
-            className="c17"
-            width={100}
+            class="c17"
+            width="100"
           />
         </div>
       </div>
       <div
-        className="c18"
+        class="c18"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
-          style={undefined}
           viewBox="0 0 240 32"
         >
           <g>
             <circle
-              cx={2}
-              cy={29.999999999999996}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="2"
+              cy="29.999999999999996"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={80.66666666666667}
-              cy={29.442675159235666}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="80.66666666666667"
+              cy="29.442675159235666"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={159.33333333333334}
-              cy={20.4140127388535}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="159.33333333333334"
+              cy="20.4140127388535"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={238}
-              cy={2}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="238"
+              cy="2"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <polyline
               points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <polyline
               points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "currentColor",
-                  "strokeLinecap": "round",
-                  "strokeLinejoin": "round",
-                  "strokeWidth": 1,
-                }
-              }
+              style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
             />
           </g>
           <line
-            style={
-              Object {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            x1={2}
-            x2={238}
-            y1={22.46417197452229}
-            y2={22.46417197452229}
+            style="stroke:grey;opacity:0.4"
+            x1="2"
+            x2="238"
+            y1="22.46417197452229"
+            y2="22.46417197452229"
           />
         </svg>
       </div>
       <div
-        className="c19"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+        class="c19"
+        style="text-align:right"
       >
         399,334
       </div>
       <div
-        className="c20"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+        class="c20"
+        style="text-align:right"
       >
-        0.000
-        %
+        0.000%
       </div>
       <div
-        className="c19"
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "textAlign": "right",
-          }
-        }
+        class="c19"
+        style="text-align:right;display:flex;flex-direction:column"
       >
         <div>
-          0
-          ms
+          0ms
         </div>
         <div>
-          3
-          ms
+          3ms
         </div>
       </div>
     </li>
     <li
-      className="c10"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="c10"
       role="link"
-      tabIndex={0}
+      tabindex="0"
     >
       <div
-        className="c11"
+        class="c11"
       >
         <div
-          className="c12"
+          class="c12"
         >
           <span
-            className="c13"
+            class="c13"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              className="c14"
+              class="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
+              xlink="http://www.w3.org/1999/xlink"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
             >
               <g
-                className="c15"
+                class="c15"
                 fill="currentColor"
                 title=""
               >
-                <title>
-                  
-                </title>
+                <title />
                 <g
-                  className="glyph"
+                  class="glyph"
                   fill="currentColor"
                   transform="translate(0 0) scale(1)"
                 >
@@ -664,164 +571,85 @@ exports[`Table component matches snapshot 1`] = `
           </div>
         </div>
         <div
-          className="c16"
+          class="c16"
         >
           <div
-            className="c21"
-            width={0}
+            class="c21"
+            width="0"
           />
         </div>
       </div>
       <div
-        className="c18"
+        class="c18"
       >
         <svg
           preserveAspectRatio="xMaxYMin"
-          style={undefined}
           viewBox="0 0 240 32"
         >
           <g>
             <circle
-              cx={2}
-              cy={29.999999999999996}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="2"
+              cy="29.999999999999996"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={80.66666666666667}
-              cy={29.442675159235666}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="80.66666666666667"
+              cy="29.442675159235666"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={159.33333333333334}
-              cy={20.4140127388535}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="159.33333333333334"
+              cy="20.4140127388535"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <circle
-              cx={238}
-              cy={2}
-              onClick={[Function]}
-              onMouseEnter={[Function]}
-              r={2}
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              cx="238"
+              cy="2"
+              r="2"
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <polyline
               points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2 238 30 2 30 2 29.999999999999996"
-              style={
-                Object {
-                  "fill": "none",
-                  "fillOpacity": ".1",
-                  "pointerEvents": "auto",
-                  "stroke": "currentColor",
-                  "strokeWidth": "0",
-                }
-              }
+              style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
             />
             <polyline
               points="2 29.999999999999996 80.66666666666667 29.442675159235666 159.33333333333334 20.4140127388535 238 2"
-              style={
-                Object {
-                  "fill": "none",
-                  "stroke": "currentColor",
-                  "strokeLinecap": "round",
-                  "strokeLinejoin": "round",
-                  "strokeWidth": 1,
-                }
-              }
+              style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
             />
           </g>
           <line
-            style={
-              Object {
-                "opacity": "0.4",
-                "stroke": "grey",
-              }
-            }
-            x1={2}
-            x2={238}
-            y1={22.46417197452229}
-            y2={22.46417197452229}
+            style="stroke:grey;opacity:0.4"
+            x1="2"
+            x2="238"
+            y1="22.46417197452229"
+            y2="22.46417197452229"
           />
         </svg>
       </div>
       <div
-        className="c19"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+        class="c19"
+        style="text-align:right"
       >
         0
       </div>
       <div
-        className="c20"
-        style={
-          Object {
-            "textAlign": "right",
-          }
-        }
+        class="c20"
+        style="text-align:right"
       >
-        0.000
-        %
+        0.000%
       </div>
       <div
-        className="c19"
-        style={
-          Object {
-            "display": "flex",
-            "flexDirection": "column",
-            "textAlign": "right",
-          }
-        }
+        class="c19"
+        style="text-align:right;display:flex;flex-direction:column"
       >
         <div>
-          0
-          ms
+          0ms
         </div>
         <div>
-          0
-          ms
+          0ms
         </div>
       </div>
     </li>

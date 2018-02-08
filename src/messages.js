@@ -106,6 +106,32 @@ export default {
       uptime: "Uptime",
       vitals: "Vitals"
     },
+    table: {
+      errorPercent: "Error %",
+      function: "Function",
+      instance: "Instance",
+      latency: "Latency",
+      requests: "Requests",
+      requestsSec: "Requests/sec",
+      route: "Route",
+      uptime: "Uptime"
+    },
+    tableColLatencyHeader: {
+      latency: "Latency",
+      latency50: "50%",
+      latency99: "99%",
+      tooltip:
+        "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency."
+    },
+    tableLineItem: {
+      requests: "Requests over Time for {item}"
+    },
+    tableToolbar: {
+      cards: "Cards",
+      group: "Group",
+      list: "List",
+      sort: "Sort"
+    },
     threadsGrid: {
       errorFetchFail: "Failed to Fetch Threads",
       errorNotFound: "No Threads Found",
@@ -124,12 +150,151 @@ export default {
     }
   },
   "es-ES": {
+    explorer: {
+      selectMetric: "Seleccione una métrica para mostrar"
+    },
+    fabric: {
+      capability: "Capacidad",
+      error: "No se encontraron servicios",
+      name: "Nombre",
+      none: "Ninguna",
+      owner: "Propietario",
+      searchPlaceholder: "Servicios de búsqueda",
+      status: "Estado"
+    },
+    fabricHeaderContent: {
+      allServices: "Todos los servicios",
+      down: "Abajo",
+      services: "Servicios",
+      stable: "Estable",
+      summary: "Resumen",
+      warning: "Advertencia"
+    },
+    functionsGrid: {
+      error: "No se encontraron funciones",
+      errorPercent: "Error %",
+      function: "Función",
+      latency50: "Latencia 50%",
+      latency99: "Latencia 99%",
+      requests: "Peticiones",
+      searchPlaceholder: "Funciones de búsqueda"
+    },
     GMServiceTableLineItem: {
       tooltip: "Esta instancia de microservicio no tiene métricas para mostrar."
     },
-    summary: {
-      responseTime: "Tiempo de respuesta promedio",
+    goHeaderContent: {
+      explorer: "Explorador",
+      functions: "Funciones",
+      requests: "Peticiones",
+      routes: "Rutas",
+      summary: "Resumen",
       uptime: "Tiempo de Actividad"
+    },
+    inspector: {
+      hideStaticMetric: "Ocultar todas las métricas estáticas",
+      hideZeroMetric: "Ocultar todas las métricas con solo valores cero",
+      searchAriaLabel: "Buscar todas las métricas",
+      searchPlaceholder: "Buscar"
+    },
+    jvmHeaderContent: {
+      uptime: "Tiempo de Actividad",
+      summary: "Resumen",
+      requests: "Peticiones",
+      routes: "Rutas",
+      threads: "Trapos",
+      explorer: "Explorador"
+    },
+    pollingSettings: {
+      button: {
+        pause: "Pausa de Votación",
+        resume: "Reanudar de Votación"
+      },
+      pollingIntervals: "Intervalos de Votación"
+    },
+    routesGrid: {
+      error: "No se encontraron rutas",
+      errorPercent: "Error %",
+      latency50: "Latencia 50%",
+      latency99: "Latencia 99%",
+      route: "Ruta",
+      requests: "Peticiones",
+      searchPlaceholder: "Rutas de búsqueda"
+    },
+    serviceView: {
+      error: "No se encontraron instancias",
+      name: "Nombre",
+      searchPlaceholder: "Instancias de búsqueda",
+      uptime: "Tiempo de Actividad"
+    },
+    serviceHeaderContent: {
+      instances: "Instancias"
+    },
+    settingsGrid: {
+      cacheSize: "Tamaño del caché",
+      clearCache: "Limpiar caché",
+      fabricPolling: "Sondeo de tela",
+      instancePolling: "Sondeo de instancia",
+      metricsCache: "Caché de métricas",
+      modal: {
+        question:
+          "¿Estás seguro de que deseas borrar los datos de métricas en caché?",
+        secondary: "Esta acción no se puede deshacer."
+      },
+      polling: "Votación",
+      tooltip: "Seleccione una instancia para activar el sondeo"
+    },
+    summary: {
+      errorRate: "Tasa de error",
+      hostCPUUsage: "CPU de host utilizada",
+      hostCPUUsageDetail:
+        "{count, plural, uno {# Núcleo en el host} other {#  Núcleos en el host}}",
+      memoryUsage: "Memoria utilizada",
+      memoryUsageDetail: "{hostMemoryAvail} GB gratuito en el host",
+      requestsPerSecond: "Solicitudes por segundo",
+      responseTime: "Tiempo de respuesta promedio",
+      uptime: "Tiempo de Actividad",
+      statistics: "Estadística",
+      vitals: "Partes vitales"
+    },
+    table: {
+      errorPercent: "Error %",
+      function: "Función",
+      instance: "Ejemplo",
+      latency: "Latencia",
+      requests: "Peticiones",
+      requestsSec: "Solicitudes/seg",
+      route: "Ruta",
+      uptime: "Tiempo de Actividad"
+    },
+    tableColLatencyHeader: {
+      latency: "Latencia",
+      tooltip:
+        "Latencia 50% se refiere a la latencia promedio del percentil 50%, mientras que latencia 99% es la latencia promedio para el 1% de respuestas más lento, también conocido como latencia de cola"
+    },
+    tableLineItem: {
+      requests: "Solicitudes a lo largo del tiempo para {item}"
+    },
+    tableToolbar: {
+      cards: "Tarjetas",
+      group: "Grupo",
+      list: "Lista",
+      sort: "Ordenar"
+    },
+    threadsGrid: {
+      errorFetchFail: "Error al recuperar hilos",
+      errorNotFound: "No se encontraron hilos",
+      id: "ID",
+      name: "Nombre",
+      none: "Ninguna",
+      searchPlaceholder: "Buscar hilos",
+      state: "Estado"
+    },
+    threadsTableHeader: {
+      daemon: "Demonio",
+      id: "ID",
+      name: "Nombre",
+      priority: "Prioridad",
+      state: "Estado"
     }
   }
 };

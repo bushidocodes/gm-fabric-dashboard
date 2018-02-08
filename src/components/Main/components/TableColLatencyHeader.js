@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
 import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
+import { injectIntl, FormattedMessage } from "react-intl";
 
 const LatencyHeaderWrap = TableColHeader.extend`
   display: flex;
@@ -31,12 +33,23 @@ const Latency = styled.div`
 const tooltipContent =
   "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.";
 
-function TableColLatencyHeader() {
+function TableColLatencyHeader({ intl }) {
   return (
     <LatencyHeaderWrap>
       <Latency>
-        <Tooltip content={tooltipContent} position="left">
-          Latency
+        <Tooltip
+          content={intl.formatMessage({
+            id: "tableColLatencyHeader.tooltip",
+            defaultMessage: tooltipContent,
+            description: "Latency header explanation"
+          })}
+          position="left"
+        >
+          <FormattedMessage
+            id="tableColLatencyHeader.latency"
+            defaultMessage="Latency"
+            description="Latency header"
+          />
         </Tooltip>
       </Latency>
       <PercentileHeader>
@@ -46,4 +59,9 @@ function TableColLatencyHeader() {
     </LatencyHeaderWrap>
   );
 }
-export default TableColLatencyHeader;
+
+TableColLatencyHeader.propTypes = {
+  intl: PropTypes.object.isRequired
+};
+
+export default injectIntl(TableColLatencyHeader);

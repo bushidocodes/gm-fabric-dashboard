@@ -7,6 +7,7 @@ import {
   SparklinesReferenceLine
 } from "react-sparklines";
 import styled from "styled-components";
+import { injectIntl } from "react-intl";
 
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
@@ -41,9 +42,10 @@ const FlexParent = styled.div`
  * @class TableLineItem
  * @extends {Component}
  */
-export default class TableLineItem extends Component {
+class TableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
+    intl: PropTypes.object.isRequired,
     item: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
@@ -158,10 +160,19 @@ export default class TableLineItem extends Component {
         >
           <GMLineChart
             timeSeries={this.props.requestsPerSecond_dygraph}
-            title={"Requests over Time for " + this.props.item}
+            title={this.props.intl.formatMessage(
+              {
+                id: "tableLineItem.requests",
+                defaultMessage: "Requests over Time for {item}",
+                description: "Line chart title"
+              },
+              { item: this.props.item }
+            )}
           />
         </TableDrawerCollapse>
       </TableRow>
     );
   }
 }
+
+export default injectIntl(TableLineItem);

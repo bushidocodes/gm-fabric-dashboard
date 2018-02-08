@@ -584,24 +584,32 @@ Array [
         class="c2"
         style="flex:1 1 20%"
       >
-        Function
+        <span>
+          Function
+        </span>
       </div>
       <div
         class="c2"
       >
-        Requests/sec
+        <span>
+          Requests/sec
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Requests
+        <span>
+          Requests
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Error %
+        <span>
+          Error %
+        </span>
       </div>
       <div
         class="c3"
@@ -612,7 +620,9 @@ Array [
           <div
             class="c5"
           >
-            Latency
+            <span>
+              Latency
+            </span>
             <div
               class="c6"
             >

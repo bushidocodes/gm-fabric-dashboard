@@ -27,13 +27,7 @@ Table.propTypes = {
  * @param {any}
  * @returns
  */
-export default function Table({
-  items,
-  type,
-  selectedServiceSlug,
-  serviceIsMetered,
-  status
-}) {
+function Table({ items, type, selectedServiceSlug, serviceIsMetered, status }) {
   // adds relativeReqPercent field to items for viz-fill-bar rendering to Route/Function table
   if (type === "Route" || type === "Function")
     items = relativeReqPercent(items, "requests");
@@ -96,3 +90,5 @@ export default function Table({
     </TableDisplay>
   );
 }
+
+export default Table;

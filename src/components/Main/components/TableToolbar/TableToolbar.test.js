@@ -1,5 +1,5 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import TableToolbar from "./index.js";
 import Button from "../../../Button";
@@ -52,11 +52,11 @@ describe("Table Toolbar", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(<TableToolbar {...mockFabricViewProps} />);
+    wrapper = mountWithIntl(<TableToolbar {...mockFabricViewProps} />);
   });
 
   test("matches snapshot", () => {
-    const tree = shallow(<TableToolbar {...mockFabricViewProps} />);
+    const tree = renderWithIntl(<TableToolbar {...mockFabricViewProps} />);
     expect(tree).toMatchSnapshot();
   });
 

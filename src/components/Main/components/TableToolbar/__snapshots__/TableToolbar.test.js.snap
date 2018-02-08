@@ -1,76 +1,671 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table Toolbar matches snapshot 1`] = `
-<styled.div>
-  <styled.div>
-    <Form>
-      <styled.input
+.c2 {
+  background-image: url(magnifier.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  text-indent: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+  padding: 1.4px 4px;
+  background-color: rgb(255,255,255);
+  border-radius: 3px;
+  border: 1px solid rgb(242,242,242);
+  border-bottom-color: rgb(230,230,230);
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.c2::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.c2:hover {
+  background-color: rgb(250,250,250);
+  border-color: rgb(237,237,237);
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  border-bottom-color: rgb(217,217,217);
+  color: black;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(10,171,42);
+  z-index: 1;
+}
+
+.c2::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::placeholder {
+  color: currentColor;
+  opacity: 1;
+  text-align: center;
+}
+
+.c2::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.c6 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c5 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c5:not(:root) {
+  overflow: visible;
+}
+
+.c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c4:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c4:focus,
+.c4:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c4 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c4:active {
+  background-color: rgb(10,171,42);
+  border-color: rgb(5,165,37);
+  border-top-color: rgb(13,174,45);
+  border-bottom-color: rgb(0,152,27);
+  color: rgb(255,255,255);
+}
+
+.c4:hover {
+  background-color: rgb(10,171,42);
+  border-color: rgb(0,147,23);
+  border-top-color: rgb(2,154,30);
+  border-bottom-color: rgb(0,136,15);
+  color: rgb(255,255,255);
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c4[disabled],
+.c4[disabled]:hover,
+.c4[disabled]:focus,
+.c4[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c4 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c4 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c7 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 600;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: rgb(255,255,255);
+  border-color: hsl(0,0%,94%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,82%);
+  color: rgb(0,0,0);
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1.4px 4px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c7:hover {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.c7:focus,
+.c7:active {
+  -webkit-transition: all 0 ease;
+  transition: all 0 ease;
+}
+
+.c7 > * {
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+
+.c7:active {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  background-color: hsl(0,0%,92.5%);
+  border-color: hsl(0,0%,87%);
+  border-top-color: hsl(0,0%,95.3%);
+  border-bottom-color: hsl(0,0%,75.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c7:hover {
+  background-color: hsl(0,0%,98.5%);
+  border-color: hsl(0,0%,92.6%);
+  border-top-color: hsl(0,0%,100%);
+  border-bottom-color: hsl(0,0%,80.8%);
+  color: hsl(0,0%,0%);
+}
+
+.c7:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0aab2a;
+  z-index: 1;
+}
+
+.c7[disabled],
+.c7[disabled]:hover,
+.c7[disabled]:focus,
+.c7[disabled]:active {
+  cursor: default;
+  opacity: 0.8;
+  background-color: hsl(0,0%,94%);
+  border-color: hsl(0,0%,94%);
+  color: hsl(0,0%,0%);
+}
+
+.c7 > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.c7 > :not(:first-child) {
+  margin-left: 4px;
+  -webkit-flex-basis: auto;
+  -ms-flex-basis: auto;
+  flex-basis: auto;
+}
+
+.c9 {
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 600;
+  height: 28px;
+  max-width: 125px;
+  position: relative;
+  width: 100%;
+  z-index: 1020;
+}
+
+.c9 .Select-control {
+  height: 28px !important;
+}
+
+.c9 .Select-control .Select-placeholder {
+  line-height: 28px;
+}
+
+.c9 .Select-control .Select-value {
+  line-height: 28px !important;
+}
+
+.c9 .Select-control .Select-value .Select-value-label {
+  line-height: 28px;
+}
+
+.c9 .Select-control .Select-input {
+  height: 28px;
+}
+
+.c10 {
+  margin-left: 4px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: hsl(0,0%,96%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2px 16px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 33%;
+  -ms-flex: 1 1 33%;
+  flex: 1 1 33%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media all and (min-width:1300px) {
+  .c0:after {
+    background-color: inherit;
+    content: "";
+    height: inherit;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .c0 > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <form>
+      <input
         aria-label="Search Services"
-        onChange={[Function]}
+        class="c2"
         placeholder="Search Services"
+        type="search"
         value=""
       />
-    </Form>
-  </styled.div>
-  <styled.div>
-    <Button
-      active={true}
-      clickAction={[Function]}
-      glyph="Card"
-      key="Cards"
-      label="Cards"
-    />
-    <Button
-      active={false}
-      clickAction={[Function]}
-      glyph="List"
-      key="List"
-      label="List"
-    />
-  </styled.div>
-  <styled.div>
-    <Styled(Select)
-      clearable={false}
-      matchPos="start"
-      name="form-field-group-by"
-      onChange={[Function]}
-      options={
-        Array [
-          Object {
-            "label": "Owner",
-            "value": "Owner",
-          },
-          Object {
-            "label": "Status",
-            "value": "Status",
-          },
-        ]
-      }
-      searchable={true}
-      value="Status"
-      valueRenderer={[Function]}
-    />
-    <Styled(Select)
-      clearable={false}
-      matchPos="start"
-      name="form-field-sort-by"
-      onChange={[Function]}
-      options={
-        Array [
-          Object {
-            "label": "Name",
-            "value": "Name",
-          },
-          Object {
-            "label": "Status",
-            "value": "Status",
-          },
-        ]
-      }
-      searchable={true}
-      value="Name"
-      valueRenderer={[Function]}
-    />
-  </styled.div>
-</styled.div>
+    </form>
+  </div>
+  <div
+    class="c3"
+  >
+    <button
+      class="c4"
+      title="Cards"
+    >
+      <svg
+        aria-labelledby="ariaLabelledby"
+        class="c5"
+        focusable="false"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          class="c6"
+          fill="currentColor"
+          title=""
+        >
+          <title />
+          <g
+            class="glyph"
+            fill="currentColor"
+            transform="translate(0 0) scale(1)"
+          >
+            <path
+              d="M7,4 L17,4 C18.1045695,4 19,4.8954305 19,6 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L7,19 L7,19 C5.8954305,19 5,18.1045695 5,17 L5,6 L5,6 C5,4.8954305 5.8954305,4 7,4 L7,4 Z M10.5,16 L16.5,16 C16.7761424,16 17,16.2238576 17,16.5 C17,16.7761424 16.7761424,17 16.5,17 L10.5,17 C10.2238576,17 10,16.7761424 10,16.5 C10,16.2238576 10.2238576,16 10.5,16 Z M7.5,10 L14.5,10 C14.7761424,10 15,10.2238576 15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L7.5,11 C7.22385763,11 7,10.7761424 7,10.5 C7,10.2238576 7.22385763,10 7.5,10 Z M7.5,12 L10.5,12 C10.7761424,12 11,12.2238576 11,12.5 C11,12.7761424 10.7761424,13 10.5,13 L7.5,13 C7.22385763,13 7,12.7761424 7,12.5 C7,12.2238576 7.22385763,12 7.5,12 Z M8,6 L16,6 C16.5522847,6 17,6.44771525 17,7 L17,8 C17,8.55228475 16.5522847,9 16,9 L8,9 C7.44771525,9 7,8.55228475 7,8 L7,7 C7,6.44771525 7.44771525,6 8,6 Z M7,5 L7,5 C6.44771525,5 6,5.44771525 6,6 L6,17 C6,17.5522847 6.44771525,18 7,18 L17,18 C17.5522847,18 18,17.5522847 18,17 L18,6 C18,5.44771525 17.5522847,5 17,5 L7,5 Z"
+              id="path-1"
+            />
+          </g>
+        </g>
+      </svg>
+      <span>
+        Cards
+      </span>
+    </button>
+    <button
+      class="c7"
+      title="List"
+    >
+      <svg
+        aria-labelledby="ariaLabelledby"
+        class="c5"
+        focusable="false"
+        version="1.1"
+        viewBox="0 0 24 24"
+        xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          class="c6"
+          fill="currentColor"
+          title=""
+        >
+          <title />
+          <g
+            class="glyph"
+            fill="currentColor"
+            transform="translate(0 0) scale(1)"
+          >
+            <path
+              d="M5.5,8 C4.67157288,8 4,7.32842712 4,6.5 C4,5.67157288 4.67157288,5 5.5,5 C6.32842712,5 7,5.67157288 7,6.5 C7,7.32842712 6.32842712,8 5.5,8 Z M5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 C6.32842712,10 7,10.6715729 7,11.5 C7,12.3284271 6.32842712,13 5.5,13 Z M5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 C6.32842712,15 7,15.6715729 7,16.5 C7,17.3284271 6.32842712,18 5.5,18 Z M9,5.5 L19,5.5 C19.5522847,5.5 20,5.94771525 20,6.5 L20,6.5 C20,7.05228475 19.5522847,7.5 19,7.5 L9,7.5 C8.44771525,7.5 8,7.05228475 8,6.5 L8,6.5 L8,6.5 C8,5.94771525 8.44771525,5.5 9,5.5 Z M9,10.5 L19,10.5 C19.5522847,10.5 20,10.9477153 20,11.5 C20,12.0522847 19.5522847,12.5 19,12.5 L9,12.5 C8.44771525,12.5 8,12.0522847 8,11.5 C8,10.9477153 8.44771525,10.5 9,10.5 Z M9,15.5 L19,15.5 C19.5522847,15.5 20,15.9477153 20,16.5 C20,17.0522847 19.5522847,17.5 19,17.5 L9,17.5 C8.44771525,17.5 8,17.0522847 8,16.5 C8,15.9477153 8.44771525,15.5 9,15.5 Z"
+              id="Combined-Shape"
+            />
+          </g>
+        </g>
+      </svg>
+      <span>
+        List
+      </span>
+    </button>
+  </div>
+  <div
+    class="c8"
+  >
+    <div
+      class="Select c9 has-value is-searchable Select--single"
+    >
+      <input
+        name="form-field-group-by"
+        type="hidden"
+        value="Status"
+      />
+      <div
+        class="Select-control"
+      >
+        <span
+          class="Select-multi-value-wrapper"
+          id="react-select-4--value"
+        >
+          <div
+            class="Select-value"
+          >
+            <span
+              aria-selected="true"
+              class="Select-value-label"
+              id="react-select-4--value-item"
+              role="option"
+            >
+              <span>
+                <span>
+                  Group 
+                </span>
+                <span
+                  class="c10"
+                >
+                  Status
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="Select-input"
+            style="display:inline-block"
+          >
+            <input
+              aria-activedescendant="react-select-4--value"
+              aria-expanded="false"
+              aria-haspopup="false"
+              aria-owns=""
+              role="combobox"
+              style="box-sizing:content-box;width:5px"
+              value=""
+            />
+            <div
+              style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+            />
+          </div>
+        </span>
+        <span
+          class="Select-arrow-zone"
+        >
+          <span
+            class="Select-arrow"
+          />
+        </span>
+      </div>
+    </div>
+    <div
+      class="Select c9 has-value is-searchable Select--single"
+    >
+      <input
+        name="form-field-sort-by"
+        type="hidden"
+        value="Name"
+      />
+      <div
+        class="Select-control"
+      >
+        <span
+          class="Select-multi-value-wrapper"
+          id="react-select-5--value"
+        >
+          <div
+            class="Select-value"
+          >
+            <span
+              aria-selected="true"
+              class="Select-value-label"
+              id="react-select-5--value-item"
+              role="option"
+            >
+              <span>
+                <span>
+                  Sort 
+                </span>
+                <span
+                  class="c10"
+                >
+                  Name
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="Select-input"
+            style="display:inline-block"
+          >
+            <input
+              aria-activedescendant="react-select-5--value"
+              aria-expanded="false"
+              aria-haspopup="false"
+              aria-owns=""
+              role="combobox"
+              style="box-sizing:content-box;width:5px"
+              value=""
+            />
+            <div
+              style="position:absolute;top:0;left:0;visibility:hidden;height:0;overflow:scroll;white-space:pre"
+            />
+          </div>
+        </span>
+        <span
+          class="Select-arrow-zone"
+        >
+          <span
+            class="Select-arrow"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 `;

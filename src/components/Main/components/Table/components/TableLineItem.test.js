@@ -1,6 +1,9 @@
 import React from "react";
-import { mount, shallow } from "enzyme";
-import renderer from "react-test-renderer";
+import {
+  mountWithIntl,
+  shallowWithIntl,
+  renderWithIntl
+} from "utils/i18nTesting";
 
 import TableLineItem from "./TableLineItem";
 import TableRow from "components/Main/components/TableRow";
@@ -33,11 +36,8 @@ const TableLineItemWithProps = (
 );
 
 describe("<TableLineItem/>", () => {
-  beforeEach(() => {
-    wrapper = mount(TableLineItemWithProps);
-  });
-
   test("renders styled-components", () => {
+    wrapper = mountWithIntl(TableLineItemWithProps);
     expect(wrapper.find(TableRow).length).toBe(1);
     expect(wrapper.find(TableColVizBar).length).toBe(1);
     expect(wrapper.find(SparklineCol).length).toBe(1);
@@ -47,9 +47,10 @@ describe("<TableLineItem/>", () => {
 
   // use 'shallow' instead of mount for instance tests
   test("should toggle row's open/closed state when row is clicked", () => {
-    wrapper = shallow(TableLineItemWithProps);
+    wrapper = shallowWithIntl(TableLineItemWithProps).dive();
 
     const row = wrapper.find(TableRow);
+
     row.simulate("click", mockedEvent);
     expect(wrapper.state().isOpen).toEqual(true);
 
@@ -58,10 +59,9 @@ describe("<TableLineItem/>", () => {
   });
 
   test("should toggle drawer's open/closed state when row is clicked", () => {
-    wrapper = shallow(TableLineItemWithProps);
+    wrapper = shallowWithIntl(TableLineItemWithProps).dive();
 
-    const row = wrapper.find(TableRow);
-    row.simulate("click", mockedEvent);
+    wrapper.simulate("click", mockedEvent);
     const drawer = wrapper.find(TableDrawerCollapse);
 
     expect(wrapper.state().isOpen).toEqual(true);
@@ -69,7 +69,7 @@ describe("<TableLineItem/>", () => {
   });
 
   test("matches snapshot", () => {
-    const tree = renderer.create(TableLineItemWithProps).toJSON();
+    const tree = renderWithIntl(TableLineItemWithProps);
     expect(tree).toMatchSnapshot();
   });
 });

@@ -16562,24 +16562,32 @@ exports[`Storyshots Table Functions Table 1`] = `
         class="c2"
         style="flex:1 1 20%"
       >
-        Function
+        <span>
+          Function
+        </span>
       </div>
       <div
         class="c2"
       >
-        Requests/sec
+        <span>
+          Requests/sec
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Requests
+        <span>
+          Requests
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Error %
+        <span>
+          Error %
+        </span>
       </div>
       <div
         class="c3"
@@ -16590,7 +16598,9 @@ exports[`Storyshots Table Functions Table 1`] = `
           <div
             class="c5"
           >
-            Latency
+            <span>
+              Latency
+            </span>
             <div
               class="c6"
             >
@@ -17004,13 +17014,17 @@ exports[`Storyshots Table Instance Table 1`] = `
         class="c2"
         style="flex:1 1 20%"
       >
-        Instance
+        <span>
+          Instance
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Uptime
+        <span>
+          Uptime
+        </span>
       </div>
     </div>
     <ol
@@ -17523,24 +17537,32 @@ exports[`Storyshots Table Routes Table 1`] = `
         class="c2"
         style="flex:1 1 20%"
       >
-        Route
+        <span>
+          Route
+        </span>
       </div>
       <div
         class="c2"
       >
-        Requests/sec
+        <span>
+          Requests/sec
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Requests
+        <span>
+          Requests
+        </span>
       </div>
       <div
         class="c2"
         style="text-align:right"
       >
-        Error %
+        <span>
+          Error %
+        </span>
       </div>
       <div
         class="c3"
@@ -17551,7 +17573,9 @@ exports[`Storyshots Table Routes Table 1`] = `
           <div
             class="c5"
           >
-            Latency
+            <span>
+              Latency
+            </span>
             <div
               class="c6"
             >

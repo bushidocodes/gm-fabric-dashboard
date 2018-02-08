@@ -486,13 +486,17 @@ exports[`Service View matches snapshot 1`] = `
         class="c9"
         style="flex:1 1 20%"
       >
-        Instance
+        <span>
+          Instance
+        </span>
       </div>
       <div
         class="c9"
         style="text-align:right"
       >
-        Uptime
+        <span>
+          Uptime
+        </span>
       </div>
     </div>
     <ol

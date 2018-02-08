@@ -1,6 +1,7 @@
 // NPM Modules
 import React from "react";
 import { PropTypes } from "prop-types";
+import { injectIntl } from "react-intl";
 
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
@@ -29,6 +30,7 @@ TableToolbar.propTypes = {
     groupByOptions: PropTypes.array.isRequired, // array of option objects for the GMSelect Group By dropdown
     setGroupByAttribute: PropTypes.func.isRequired // onChange handler for GMSelect Group By dropdown
   }),
+  intl: PropTypes.object.isRequired,
   searchInputProps: PropTypes.shape({
     filterString: PropTypes.string.isRequired, // value for controlled SearchInput input
     setFilterString: PropTypes.func.isRequired, // onChange handler for search input
@@ -48,14 +50,15 @@ TableToolbar.propTypes = {
   toolbarRightChildren: PropTypes.oneOfType([PropTypes.element, PropTypes.node])
 };
 
-export default function TableToolbar({
+function TableToolbar({
   displayTypeProps,
   searchInputProps,
   groupByProps,
   sortByProps,
   toolbarLeftChildren,
   toolbarCenterChildren,
-  toolbarRightChildren
+  toolbarRightChildren,
+  intl
 }) {
   return (
     <Toolbar>
@@ -80,14 +83,22 @@ export default function TableToolbar({
             active={displayTypeProps.displayType === "Cards"}
             clickAction={() => displayTypeProps.setDisplayType("Cards")}
             glyph="Card"
-            label="Cards"
+            label={intl.formatMessage({
+              id: "tableToolbar.cards",
+              defaultMessage: "Cards",
+              description: "Display type button"
+            })}
             key="Cards"
           />,
           <Button
             active={displayTypeProps.displayType === "List"}
             clickAction={() => displayTypeProps.setDisplayType("List")}
             glyph="List"
-            label="List"
+            label={intl.formatMessage({
+              id: "tableToolbar.list",
+              defaultMessage: "List",
+              description: "Display type button"
+            })}
             key="List"
           />
         ]}
@@ -106,7 +117,14 @@ export default function TableToolbar({
             clearable={false}
             searchable={true}
             valueRenderer={val => (
-              <GMSelectValueRenderer title="Group" val={val} />
+              <GMSelectValueRenderer
+                title={intl.formatMessage({
+                  id: "tableToolbar.group",
+                  defaultMessage: "Group",
+                  description: "Group by dropdown title"
+                })}
+                val={val}
+              />
             )}
           />
         )}
@@ -122,7 +140,14 @@ export default function TableToolbar({
             clearable={false}
             searchable={true}
             valueRenderer={val => (
-              <GMSelectValueRenderer title="Sort" val={val} />
+              <GMSelectValueRenderer
+                title={intl.formatMessage({
+                  id: "tableToolbar.sort",
+                  defaultMessage: "Sort",
+                  description: "Sort by dropdown title"
+                })}
+                val={val}
+              />
             )}
           />
         )}
@@ -131,3 +156,5 @@ export default function TableToolbar({
     </Toolbar>
   );
 }
+
+export default injectIntl(TableToolbar);
