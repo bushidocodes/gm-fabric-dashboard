@@ -24,6 +24,10 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
       },
       "locale": "en-US",
       "messages": Object {
+        "GMLineChart.noChartableData": "No Chartable Data",
+        "GMLineChart.noMetricsFound": "Could not find the following metrics:",
+        "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
+        "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
         "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
         "explorer.selectMetric": "Select a metric to display",
         "fabric.capability": "Capability",

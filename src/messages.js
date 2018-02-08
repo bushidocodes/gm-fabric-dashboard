@@ -20,6 +20,10 @@ export default {
       summary: "Summary",
       warning: "Warning"
     },
+    footer: {
+      copyright:
+        "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
+    },
     functionsGrid: {
       error: "No Functions Found",
       errorPercent: "Error %",
@@ -29,9 +33,14 @@ export default {
       requests: "Requests",
       searchPlaceholder: "Search Functions"
     },
-    footer: {
-      copyright:
-        "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved."
+    GMLineChart: {
+      noChartableData: "No Chartable Data",
+      noMetricsFound: "Could not find the following metrics:",
+      screenReaderGraphDescription: {
+        withData:
+          "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
+        noData: "The average for currently displayed data is equal to 0."
+      }
     },
     GMServiceTableLineItem: {
       tooltip: "This microservice instance does not have metrics to display."
@@ -158,6 +167,7 @@ export default {
     explorer: {
       selectMetric: "Seleccione una métrica para mostrar"
     },
+
     fabric: {
       capability: "Capacidad",
       error: "No se encontraron servicios",
@@ -187,6 +197,15 @@ export default {
       latency99: "Latencia 99%",
       requests: "Peticiones",
       searchPlaceholder: "Funciones de búsqueda"
+    },
+    GMLineChart: {
+      noChartableData: "Sin datos de chartable",
+      noMetricsFound: "No se pudieron encontrar las siguientes métricas:",
+      screenReaderGraphDescription: {
+        withData:
+          "Una representación tabular de los datos del gráfico {title}: mediano {median} promedio {average} modo {mode} máximo {max} mínimo {min} número de observaciones {dataPoints} series de datos completas seguidas {timeSeries}",
+        noData: "El promedio de los datos mostrados actualmente es igual a 0."
+      }
     },
     GMServiceTableLineItem: {
       tooltip: "Esta instancia de microservicio no tiene métricas para mostrar."

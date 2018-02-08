@@ -4519,14 +4519,7 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
 }
 
 <div
-  aria-label="A tabular representation of the Awesomeness Factor chart data:
-      median 6181.00
-      average 8514.33
-      mode Mode has frequency of 2 and values of 9181,10181
-      maximum 9181
-      minimum 10181
-      number of observations 6
-      complete data time series follows 10181,10181,5181,7181,9181,9181"
+  aria-label="A tabular representation of the Awesomeness Factor chart data: median 6181.00 average 8514.33 mode Mode has frequency of 2 and values of 9181,10181 maximum 9181 minimum 10181 number of observations 6 complete data time series follows 10181,10181,5181,7181,9181,9181"
   class="c0"
   height="normal"
   role="presentation"

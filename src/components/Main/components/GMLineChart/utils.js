@@ -105,7 +105,7 @@ export function modes(array) {
  * @param {string} title chart title
  * @returns {string}     returns a string with summary chart statistics
  */
-export function screenReaderGraphDescription(timeSeries, title) {
+export function screenReaderGraphDescription(timeSeries, title, intl) {
   const numericalTimeSeries = numericalTimeSeriesFunc(timeSeries);
 
   // We don't have negative values in our charts, thus average of 0 means that all values are 0, aka no meaningful data
@@ -117,26 +117,35 @@ export function screenReaderGraphDescription(timeSeries, title) {
       max: numericalTimeSeries.sort()[numericalTimeSeries.length - 1],
       min: numericalTimeSeries.sort()[0],
       dataPoints: numericalTimeSeries.length,
-      timeSeries: numericalTimeSeries
+      timeSeries: numericalTimeSeries,
+      title
     };
 
-    return `A tabular representation of the ${title} chart data:
-      median ${screenReaderGraphData.median}
-      average ${screenReaderGraphData.average}
-      mode ${
-        typeof screenReaderGraphData.mode !== "string" &&
-        screenReaderGraphData.mode.length > 1
-          ? "Mode has frequency of " +
-            screenReaderGraphData.mode.pop().frequency +
-            " and values of " +
-            screenReaderGraphData.mode
-          : screenReaderGraphData.mode
-      }
-      maximum ${screenReaderGraphData.max}
-      minimum ${screenReaderGraphData.min}
-      number of observations ${screenReaderGraphData.dataPoints}
-      complete data time series follows ${screenReaderGraphData.timeSeries}`;
+    if (
+      typeof screenReaderGraphData.mode !== "string" &&
+      screenReaderGraphData.mode.length > 1
+    ) {
+      screenReaderGraphData = Object.assign({}, screenReaderGraphData, {
+        mode: `Mode has frequency of ${
+          screenReaderGraphData.mode.pop().frequency
+        } and values of ${screenReaderGraphData.mode}`
+      });
+    }
+
+    return intl.formatMessage(
+      {
+        id: "GMLineChart.screenReaderGraphDescription.withData",
+        defaultMessage:
+          "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
+        description: "Screen reader description for GMLineChart"
+      },
+      screenReaderGraphData
+    );
   } else {
-    return `The average for currently displayed data is equal to 0.`;
+    return intl.formatMessage({
+      id: "GMLineChart.screenReaderGraphDescription.noData",
+      defaultMessage: `The average for currently displayed data is equal to 0.`,
+      description: "Screen reader description for GMLineChart"
+    });
   }
 }

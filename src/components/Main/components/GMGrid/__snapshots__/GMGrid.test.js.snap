@@ -206,7 +206,7 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
         }
       }
     >
-      <GMLineChart
+      <InjectIntl(GMLineChart)
         detailLines={
           Array [
             "Garbage Collection Runs: 0",
@@ -238,7 +238,7 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
         }
       }
     >
-      <GMLineChart
+      <InjectIntl(GMLineChart)
         expectedAttributes={
           Array [
             "go_metrics/runtime/num_goroutines",

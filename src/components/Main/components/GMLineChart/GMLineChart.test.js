@@ -1,8 +1,8 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { renderWithIntl } from "utils/i18nTesting";
+
 import GMLineChart from "./GMLineChart";
 
-let wrapper;
 const props = {
   title: "Classes",
   detailLines: ["Total Loaded: 10,200", "Total Unloaded: 19"],
@@ -16,12 +16,9 @@ const props = {
   expectedAttributes: ["jvm/classes/current_loaded"],
   height: "xs"
 };
-describe("<GMLineChart> stateless child component", () => {
-  beforeEach(() => {
-    wrapper = shallow(<GMLineChart {...props} />);
-  });
 
+describe("<GMLineChart> stateless child component", () => {
   test("matches snapshot", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(renderWithIntl(<GMLineChart {...props} />)).toMatchSnapshot();
   });
 });

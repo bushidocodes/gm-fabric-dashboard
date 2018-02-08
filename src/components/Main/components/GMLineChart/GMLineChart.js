@@ -1,5 +1,6 @@
 import { PropTypes } from "prop-types";
 import React, { Fragment } from "react";
+import { injectIntl, FormattedMessage } from "react-intl";
 
 import DygraphContainer from "./components/DygraphWrapper";
 import LineChartDisplay from "./components/LineChartDisplay";
@@ -24,6 +25,7 @@ GMLineChart.propTypes = {
   detailLines: PropTypes.array,
   expectedAttributes: PropTypes.array,
   height: PropTypes.oneOf(["xs", "sm", "normal", "lg", "xl", "max"]),
+  intl: PropTypes.object.isRequired,
   timeSeries: PropTypes.array,
   title: PropTypes.string.isRequired
 };
@@ -37,12 +39,13 @@ GMLineChart.defaultProps = {
  * Validates timeseries data and displays error messages if a chart cannot be displayed.
  * @param {Object} props
  */
-export default function GMLineChart({
+function GMLineChart({
   detailLines,
   expectedAttributes,
   height,
   timeSeries,
-  title
+  title,
+  intl
 }) {
   return (
     <LineChartDisplay
@@ -50,8 +53,15 @@ export default function GMLineChart({
       role="presentation"
       aria-label={
         timeSeries
-          ? screenReaderGraphDescription(timeSeries, title)
-          : `no ${title} chart data available`
+          ? screenReaderGraphDescription(timeSeries, title, intl)
+          : intl.formatMessage(
+              {
+                id: "GMLineChart.noChartableData",
+                defaultMessage: "No Chartable Data",
+                description: "Screen reader description for GMLineChart"
+              },
+              { title }
+            )
       }
     >
       {title && <LineChartTitle aria-hidden={true}>{title}</LineChartTitle>}
@@ -64,12 +74,20 @@ export default function GMLineChart({
                   <Glyph name={"Exclamation"} />
                 </Icon>
               </Span>
-              <Span>No Chartable Data</Span>
+              <FormattedMessage
+                id="GMLineChart.noChartableData"
+                defaultMessage="No chartable data"
+                description="Empty line chart message"
+              />
             </h1>
             {expectedAttributes &&
               expectedAttributes.length > 0 && (
                 <Fragment>
-                  <p>Could not find the following metrics:</p>
+                  <FormattedMessage
+                    id="GMLineChart.noMetricsFound"
+                    defaultMessage="Could not find the following metrics:"
+                    description="Empty line chart message"
+                  />
                   <ul>
                     {expectedAttributes.map(attribute => (
                       <li key={attribute}>{attribute}</li>
@@ -91,3 +109,5 @@ export default function GMLineChart({
     </LineChartDisplay>
   );
 }
+
+export default injectIntl(GMLineChart);
