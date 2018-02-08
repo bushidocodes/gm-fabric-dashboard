@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
 import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
-import { injectIntl, FormattedMessage } from "react-intl";
+import { injectIntl, intlShape, FormattedMessage } from "react-intl";
 
 const LatencyHeaderWrap = TableColHeader.extend`
   display: flex;
@@ -61,7 +60,7 @@ function TableColLatencyHeader({ intl }) {
 }
 
 TableColLatencyHeader.propTypes = {
-  intl: PropTypes.object.isRequired
+  intl: intlShape.isRequired
 };
 
 export default injectIntl(TableColLatencyHeader);

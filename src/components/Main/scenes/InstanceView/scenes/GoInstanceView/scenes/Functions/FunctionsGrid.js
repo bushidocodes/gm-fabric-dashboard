@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
@@ -22,7 +22,7 @@ import withUrlState from "components/withUrlState";
 class FunctionsGrid extends Component {
   static propTypes = {
     funcs: PropTypes.array,
-    intl: PropTypes.object.isRequired,
+    intl: intlShape.isRequired,
     setUrlState: PropTypes.func.isRequired,
     urlState: PropTypes.object.isRequired
   };

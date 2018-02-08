@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { Actions } from "jumpstate";
 import _ from "lodash";
 import { withRouter } from "react-router-dom";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
@@ -21,7 +21,7 @@ class ServiceView extends Component {
   static propTypes = {
     history: routerHistoryShape.isRequired,
     instances: PropTypes.arrayOf(serviceInstanceShape).isRequired,
-    intl: PropTypes.object.isRequired,
+    intl: intlShape.isRequired,
     location: routerLocationShape.isRequired,
     selectedServiceSlug: PropTypes.string.isRequired,
     serviceIsMetered: PropTypes.bool,

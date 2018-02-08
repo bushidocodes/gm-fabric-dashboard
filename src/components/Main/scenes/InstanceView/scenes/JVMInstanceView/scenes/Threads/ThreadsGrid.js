@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import ThreadsTable from "./components/ThreadsTable";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -20,7 +20,7 @@ import { getVisibleThreads } from "utils/jvm/selectors";
 class ThreadsGrid extends Component {
   static propTypes = {
     fabricServer: PropTypes.string,
-    intl: PropTypes.object.isRequired,
+    intl: intlShape.isRequired,
     selectedInstanceID: PropTypes.string,
     selectedServiceSlug: PropTypes.string,
     setUrlState: PropTypes.func.isRequired,

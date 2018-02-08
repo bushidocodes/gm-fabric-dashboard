@@ -1,6 +1,7 @@
 import { Actions } from "jumpstate";
 import { PropTypes } from "prop-types";
 import React, { Component } from "react";
+import { injectIntl, intlShape } from "react-intl";
 
 import withUrlState from "components/withUrlState";
 import { reportError } from "services/notification";
@@ -13,12 +14,11 @@ import {
 import NotFoundError from "components/Main/components/NotFoundError";
 import TableToolbar from "components/Main/components/TableToolbar";
 import FabricMainView from "./components/FabricMainView";
-import { injectIntl } from "react-intl";
 
 class FabricGrid extends Component {
   static propTypes = {
     history: routerHistoryShape,
-    intl: PropTypes.object.isRequired,
+    intl: intlShape.isRequired,
     location: routerLocationShape,
     match: routerMatchShape,
     services: PropTypes.arrayOf(serviceShape),

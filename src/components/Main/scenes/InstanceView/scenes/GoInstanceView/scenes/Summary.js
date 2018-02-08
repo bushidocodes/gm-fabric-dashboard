@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import LayoutSection from "components/LayoutSection";
 import ErrorBoundary from "components/ErrorBoundary";
@@ -191,7 +191,7 @@ function SummaryGrid({
 }
 
 SummaryGrid.propTypes = {
-  intl: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
   metrics: metricsShape,
   selectedInstanceID: PropTypes.string,
   selectedServiceSlug: PropTypes.string

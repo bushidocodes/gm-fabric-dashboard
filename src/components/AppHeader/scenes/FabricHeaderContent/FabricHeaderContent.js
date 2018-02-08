@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import { microserviceStatuses } from "utils/constants";
 import { getStatusCount } from "utils/selectors";
@@ -71,6 +71,7 @@ function FabricAppHeaderContent({ statusCount, intl }) {
 
 function mapStateToProps(state) {
   return {
+    intl: intlShape.isRequired,
     statusCount: getStatusCount(state)
   };
 }

@@ -7,7 +7,7 @@ import {
   SparklinesReferenceLine
 } from "react-sparklines";
 import styled from "styled-components";
-import { injectIntl } from "react-intl";
+import { injectIntl, intlShape } from "react-intl";
 
 import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
@@ -45,7 +45,7 @@ const FlexParent = styled.div`
 class TableLineItem extends Component {
   static propTypes = {
     errorPercent: PropTypes.string.isRequired,
-    intl: PropTypes.object.isRequired,
+    intl: intlShape.isRequired,
     item: PropTypes.string.isRequired,
     latency50: PropTypes.number.isRequired,
     latency99: PropTypes.number.isRequired,
