@@ -17,6 +17,7 @@ import Breadcrumb from "./components/Breadcrumb";
 AppToolBar.propTypes = {
   hideRoot: PropTypes.bool,
   pathname: PropTypes.string.isRequired,
+  serviceNameLookup: PropTypes.object,
   toolbarButtons: PropTypes.array
 };
 
@@ -36,7 +37,8 @@ const defaultToolbarButtons = [
 function AppToolBar({
   pathname,
   hideRoot,
-  toolbarButtons = defaultToolbarButtons
+  toolbarButtons = defaultToolbarButtons,
+  serviceNameLookup = {}
 }) {
   return (
     <AppToolBarHeader>
@@ -67,10 +69,19 @@ function AppToolBar({
           .replace("%2F", "/") // String out escaped slashes if found
           .split("/")
           .map((val, idx) => {
+            let breadcrumbName;
+
+            if (serviceNameLookup[val]) {
+              // if the current value is a service name we need to look up the actual name from the slug
+              breadcrumbName = serviceNameLookup[val].name;
+            } else breadcrumbName = val;
+
             return val ? (
               <Breadcrumb key={`${val}|${idx}`}>
                 <Link to={`${pathname.substr(0, pathname.indexOf(val))}${val}`}>
-                  {val.length < 30 ? val : `${val.substr(0, 30)}...`}
+                  {breadcrumbName.length < 30
+                    ? breadcrumbName
+                    : `${breadcrumbName.substr(0, 30)}...`}
                 </Link>
               </Breadcrumb>
             ) : null;
