@@ -13,6 +13,7 @@ import AppVersionLink from "./components/AppVersionLink";
 import SkipNav from "./components/SkipNav";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Breadcrumb from "./components/Breadcrumb";
+import LanguageSelector from "./components/LanguageSelector";
 
 AppToolBar.propTypes = {
   hideRoot: PropTypes.bool,
@@ -87,7 +88,7 @@ function AppToolBar({
             ) : null;
           })}
       </Breadcrumbs>
-
+      <LanguageSelector />
       <AppVersionLink
         href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
         rel="noopener noreferrer"
@@ -96,6 +97,7 @@ function AppToolBar({
         {/*REACT_APP_VERSION is generated from package.json via dotenv*/}
         {process.env.REACT_APP_VERSION}
       </AppVersionLink>
+
       <ButtonGroup toolbar>
         {toolbarButtons.map(button => (
           <NavButton

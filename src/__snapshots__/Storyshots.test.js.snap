@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots App Header AppToolbar 1`] = `
-.c11 {
+.c14 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c10 {
+.c13 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -16,11 +16,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   vertical-align: middle;
 }
 
-.c10:not(:root) {
+.c13:not(:root) {
   overflow: visible;
 }
 
-.c9 {
+.c12 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -59,24 +59,24 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   flex-direction: row;
 }
 
-.c9:hover {
+.c12:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c9:focus,
-.c9:active {
+.c12:focus,
+.c12:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c9 > * {
+.c12 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c9:active {
+.c12:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -84,22 +84,22 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c9:hover {
+.c12:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   color: hsl(0,0%,0%);
 }
 
-.c9:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c9[disabled],
-.c9[disabled]:hover,
-.c9[disabled]:focus,
-.c9[disabled]:active {
+.c12[disabled],
+.c12[disabled]:hover,
+.c12[disabled]:focus,
+.c12[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -107,19 +107,19 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c9 > svg {
+.c12 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c9 > :not(:first-child) {
+.c12 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
   flex-basis: auto;
 }
 
-.c8 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -130,7 +130,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   padding: 0px 8px;
 }
 
-.c8 * + * {
+.c11 * + * {
   margin-left: 4px;
 }
 
@@ -196,7 +196,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   color: rgb(255,255,255);
 }
 
-.c7 {
+.c10 {
   color: white;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -207,7 +207,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   padding: 0 8px;
 }
 
-.c7:hover {
+.c10:hover {
   color: white;
   opacity: 1;
 }
@@ -308,6 +308,55 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   padding-left: 16px;
 }
 
+.c7 {
+  color: rgb(255,255,255);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c7 > :first-child {
+  opacity: 0.8;
+}
+
+.c7 > :first-child:hover {
+  opacity: 1;
+}
+
+.c8 {
+  position: absolute;
+  background-color: rgb(255,255,255);
+  border-radius: 6px;
+  color: rgb(0,0,0);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: right;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 120px;
+  z-index: 1070;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  padding: 5px 0;
+  list-style-type: none;
+}
+
+.c9:hover {
+  color: rgb(10,171,42);
+}
+
 @media (max-width:800px) {
   .c6 {
     max-width: calc(100vw/4);
@@ -380,8 +429,29 @@ exports[`Storyshots App Header AppToolbar 1`] = `
       </a>
     </li>
   </ol>
-  <a
+  <div
     class="c7"
+  >
+    <span>
+      Languages
+    </span>
+    <ul
+      class="c8"
+    >
+      <li
+        class="c9"
+      >
+        English (en)
+      </li>
+      <li
+        class="c9"
+      >
+        Español (es)
+      </li>
+    </ul>
+  </div>
+  <a
+    class="c10"
     href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
     rel="noopener noreferrer"
     target="_blank"
@@ -389,7 +459,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
     1.0.4
   </a>
   <div
-    class="c8"
+    class="c11"
   >
     <a
       aria-current="false"
@@ -397,11 +467,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
       title="Settings"
     >
       <button
-        class="c9"
+        class="c12"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c10"
+          class="c13"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -409,7 +479,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c11"
+            class="c14"
             fill="currentColor"
             title=""
           >
@@ -434,11 +504,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
       title="Alerts"
     >
       <button
-        class="c9"
+        class="c12"
       >
         <svg
           aria-labelledby="ariaLabelledby"
-          class="c10"
+          class="c13"
           focusable="false"
           version="1.1"
           viewBox="0 0 24 24"
@@ -446,7 +516,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
-            class="c11"
+            class="c14"
             fill="currentColor"
             title=""
           >
@@ -555,13 +625,13 @@ exports[`Storyshots App Header Banner 1`] = `
 `;
 
 exports[`Storyshots App Header Default App Header 1`] = `
-.c12 {
+.c15 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c11 {
+.c14 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -570,11 +640,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c14:not(:root) {
   overflow: visible;
 }
 
-.c10 {
+.c13 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -613,24 +683,24 @@ exports[`Storyshots App Header Default App Header 1`] = `
   flex-direction: row;
 }
 
-.c10:hover {
+.c13:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c10:focus,
-.c10:active {
+.c13:focus,
+.c13:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c10 > * {
+.c13 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c10:active {
+.c13:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -638,22 +708,22 @@ exports[`Storyshots App Header Default App Header 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10:hover {
+.c13:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   color: hsl(0,0%,0%);
 }
 
-.c10:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c10[disabled],
-.c10[disabled]:hover,
-.c10[disabled]:focus,
-.c10[disabled]:active {
+.c13[disabled],
+.c13[disabled]:hover,
+.c13[disabled]:focus,
+.c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -661,19 +731,19 @@ exports[`Storyshots App Header Default App Header 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10 > svg {
+.c13 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c10 > :not(:first-child) {
+.c13 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
   flex-basis: auto;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -684,7 +754,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   padding: 0px 8px;
 }
 
-.c9 * + * {
+.c12 * + * {
   margin-left: 4px;
 }
 
@@ -750,7 +820,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   color: rgb(255,255,255);
 }
 
-.c8 {
+.c11 {
   color: white;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -761,7 +831,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   padding: 0 8px;
 }
 
-.c8:hover {
+.c11:hover {
   color: white;
   opacity: 1;
 }
@@ -862,7 +932,56 @@ exports[`Storyshots App Header Default App Header 1`] = `
   padding-left: 16px;
 }
 
-.c18 {
+.c8 {
+  color: rgb(255,255,255);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c8 > :first-child {
+  opacity: 0.8;
+}
+
+.c8 > :first-child:hover {
+  opacity: 1;
+}
+
+.c9 {
+  position: absolute;
+  background-color: rgb(255,255,255);
+  border-radius: 6px;
+  color: rgb(0,0,0);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: right;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 120px;
+  z-index: 1070;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  padding: 5px 0;
+  list-style-type: none;
+}
+
+.c10:hover {
+  color: rgb(10,171,42);
+}
+
+.c21 {
   color: rgb(255,255,255);
   white-space: nowrap;
   max-width: 100%;
@@ -886,7 +1005,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   margin: 4px 0 0;
 }
 
-.c18 h1 {
+.c21 h1 {
   font-size: 18px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
@@ -897,24 +1016,24 @@ exports[`Storyshots App Header Default App Header 1`] = `
   text-transform: capitalize;
 }
 
-.c20 {
+.c23 {
   margin: 0 0 4px 24px;
   font-size: 11px;
   color: rgb(255,255,255);
 }
 
-.c21 {
+.c24 {
   color: rgb(213,213,213);
   padding-right: 4px;
   display: inline-block;
 }
 
-.c22 {
+.c25 {
   margin: 0;
   display: inline-block;
 }
 
-.c19 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -926,7 +1045,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   width: 25px;
 }
 
-.c17 {
+.c20 {
   background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
@@ -940,7 +1059,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   transition: all 0.15s ease;
 }
 
-.c17::after {
+.c20::after {
   border-radius: 1px;
   box-shadow: 0 0 1em 1px rgb(10,171,42);
   color: inherit;
@@ -955,37 +1074,37 @@ exports[`Storyshots App Header Default App Header 1`] = `
   z-index: 100;
 }
 
-.c17:hover {
+.c20:hover {
   background-color: rgb(54,54,54);
 }
 
-.c17:hover:after {
+.c20:hover:after {
   opacity: 0.5;
 }
 
-.c17.active {
+.c20.active {
   background-color: rgb(77,77,77);
 }
 
-.c17.active:after {
+.c20.active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c17:active:after {
+.c20:active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c17:focus {
+.c20:focus {
   outline: rgb(10,171,42) auto 3px;
 }
 
-.c16 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -998,7 +1117,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   padding: 0 1px 1px 1px;
 }
 
-.c23 {
+.c26 {
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;
@@ -1037,7 +1156,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   background-color: rgb(0,0,0);
 }
 
-.c13 {
+.c16 {
   background: transparent;
   color: rgb(255,255,255);
   padding: 12px 16px 12px;
@@ -1045,7 +1164,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   transition: all 0.1s ease;
 }
 
-.c14 {
+.c17 {
   font-size: 32px;
   margin: 0;
   position: relative;
@@ -1058,7 +1177,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   text-transform: capitalize;
 }
 
-.c14:after {
+.c17:after {
   background-color: rgba(0,0,0,0.5);
   bottom: 0.25em;
   content: "";
@@ -1071,7 +1190,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   z-index: -1;
 }
 
-.c15 {
+.c18 {
   background-color: rgb(51,51,51);
   border-radius: 3px;
   color: rgb(230,230,230);
@@ -1084,16 +1203,16 @@ exports[`Storyshots App Header Default App Header 1`] = `
   z-index: 2;
 }
 
-.c15:not(:last-child) {
+.c18:not(:last-child) {
   margin-right: 8px;
 }
 
-.c15:hover {
+.c18:hover {
   background-color: rgb(64,64,64);
   color: rgb(255,255,255);
 }
 
-.c15:active {
+.c18:active {
   background-color: rgb(0,0,0);
   color: rgb(255,255,255);
 }
@@ -1113,7 +1232,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 @media all and (min-width:1000px) {
-  .c13 {
+  .c16 {
     padding: 16px 32px 24px;
   }
 }
@@ -1179,8 +1298,29 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </a>
       </li>
     </ol>
-    <a
+    <div
       class="c8"
+    >
+      <span>
+        Languages
+      </span>
+      <ul
+        class="c9"
+      >
+        <li
+          class="c10"
+        >
+          English (en)
+        </li>
+        <li
+          class="c10"
+        >
+          Español (es)
+        </li>
+      </ul>
+    </div>
+    <a
+      class="c11"
       href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -1188,7 +1328,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
       1.0.4
     </a>
     <div
-      class="c9"
+      class="c12"
     >
       <a
         aria-current="false"
@@ -1196,11 +1336,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
         title="Settings"
       >
         <button
-          class="c10"
+          class="c13"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1208,7 +1348,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1233,11 +1373,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
         title="Alerts"
       >
         <button
-          class="c10"
+          class="c13"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1245,7 +1385,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1268,37 +1408,37 @@ exports[`Storyshots App Header Default App Header 1`] = `
   </nav>
    
   <div
-    class="c13"
+    class="c16"
   >
     <h1
-      class="c14"
+      class="c17"
     >
       Security Service: 00ab2a
     </h1>
     <a
-      class="c15"
+      class="c18"
       href="/settings"
     >
       Extra, Extra, Read all about it
     </a>
   </div>
   <div
-    class="c16"
+    class="c19"
   >
     <a
       aria-current="true"
-      class="c17 active"
+      class="c20 active"
       href="/"
     >
       <div
-        class="c18"
+        class="c21"
       >
         <span
-          class="c19"
+          class="c22"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1306,7 +1446,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1329,15 +1469,15 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </h1>
       </div>
       <dl
-        class="c20"
+        class="c23"
       >
         <dt
-          class="c21"
+          class="c24"
         >
           Uptime
         </dt>
         <dd
-          class="c22"
+          class="c25"
         >
           15 Days
         </dd>
@@ -1345,18 +1485,18 @@ exports[`Storyshots App Header Default App Header 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c17"
+      class="c20"
       href="go"
     >
       <div
-        class="c18"
+        class="c21"
       >
         <span
-          class="c19"
+          class="c22"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1364,7 +1504,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1387,15 +1527,15 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </h1>
       </div>
       <dl
-        class="c20"
+        class="c23"
       >
         <dt
-          class="c21"
+          class="c24"
         >
           Functions
         </dt>
         <dd
-          class="c22"
+          class="c25"
         >
           24
         </dd>
@@ -1403,18 +1543,18 @@ exports[`Storyshots App Header Default App Header 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c17"
+      class="c20"
       href="go"
     >
       <div
-        class="c18"
+        class="c21"
       >
         <span
-          class="c19"
+          class="c22"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1422,7 +1562,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1445,15 +1585,15 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </h1>
       </div>
       <dl
-        class="c20"
+        class="c23"
       >
         <dt
-          class="c21"
+          class="c24"
         >
           Threads
         </dt>
         <dd
-          class="c22"
+          class="c25"
         >
           26
         </dd>
@@ -1461,18 +1601,18 @@ exports[`Storyshots App Header Default App Header 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c17"
+      class="c20"
       href="go"
     >
       <div
-        class="c18"
+        class="c21"
       >
         <span
-          class="c19"
+          class="c22"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1480,7 +1620,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1503,15 +1643,15 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </h1>
       </div>
       <dl
-        class="c20"
+        class="c23"
       >
         <dt
-          class="c21"
+          class="c24"
         >
           Error Rate
         </dt>
         <dd
-          class="c22"
+          class="c25"
         >
           0.121%
         </dd>
@@ -1519,18 +1659,18 @@ exports[`Storyshots App Header Default App Header 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c17"
+      class="c20"
       href="go"
     >
       <div
-        class="c18"
+        class="c21"
       >
         <span
-          class="c19"
+          class="c22"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1538,7 +1678,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1561,37 +1701,37 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </h1>
       </div>
       <dl
-        class="c20"
+        class="c23"
       >
         <dt
-          class="c21"
+          class="c24"
         >
           Memory Used
         </dt>
         <dd
-          class="c22"
+          class="c25"
         >
           116 MB
         </dd>
       </dl>
     </a>
     <div
-      class="c23"
+      class="c26"
     >
       <a
         aria-current="true"
-        class="c17 active"
+        class="c20 active"
         href="/"
       >
         <div
-          class="c18"
+          class="c21"
         >
           <span
-            class="c19"
+            class="c22"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              class="c11"
+              class="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -1599,7 +1739,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <g
-                class="c12"
+                class="c15"
                 fill="currentColor"
                 title=""
               >
@@ -1624,18 +1764,18 @@ exports[`Storyshots App Header Default App Header 1`] = `
       </a>
       <a
         aria-current="false"
-        class="c17"
+        class="c20"
         href="go"
       >
         <div
-          class="c18"
+          class="c21"
         >
           <span
-            class="c19"
+            class="c22"
           >
             <svg
               aria-labelledby="ariaLabelledby"
-              class="c11"
+              class="c14"
               focusable="false"
               version="1.1"
               viewBox="0 0 24 24"
@@ -1643,7 +1783,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
               xmlns="http://www.w3.org/2000/svg"
             >
               <g
-                class="c12"
+                class="c15"
                 fill="currentColor"
                 title=""
               >

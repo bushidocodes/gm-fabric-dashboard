@@ -23,13 +23,13 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   background-color: rgb(0,0,0);
 }
 
-.c12 {
+.c15 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c11 {
+.c14 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -38,11 +38,11 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c14:not(:root) {
   overflow: visible;
 }
 
-.c10 {
+.c13 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -81,24 +81,24 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   flex-direction: row;
 }
 
-.c10:hover {
+.c13:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c10:focus,
-.c10:active {
+.c13:focus,
+.c13:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c10 > * {
+.c13 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c10:active {
+.c13:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -106,22 +106,22 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10:hover {
+.c13:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   color: hsl(0,0%,0%);
 }
 
-.c10:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c10[disabled],
-.c10[disabled]:hover,
-.c10[disabled]:focus,
-.c10[disabled]:active {
+.c13[disabled],
+.c13[disabled]:hover,
+.c13[disabled]:focus,
+.c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -129,19 +129,19 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10 > svg {
+.c13 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c10 > :not(:first-child) {
+.c13 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
   flex-basis: auto;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -152,7 +152,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   padding: 0px 8px;
 }
 
-.c9 * + * {
+.c12 * + * {
   margin-left: 4px;
 }
 
@@ -218,7 +218,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   color: rgb(255,255,255);
 }
 
-.c8 {
+.c11 {
   color: white;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -229,7 +229,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   padding: 0 8px;
 }
 
-.c8:hover {
+.c11:hover {
   color: white;
   opacity: 1;
 }
@@ -330,7 +330,56 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   padding-left: 16px;
 }
 
-.c13 {
+.c8 {
+  color: rgb(255,255,255);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c8 > :first-child {
+  opacity: 0.8;
+}
+
+.c8 > :first-child:hover {
+  opacity: 1;
+}
+
+.c9 {
+  position: absolute;
+  background-color: rgb(255,255,255);
+  border-radius: 6px;
+  color: rgb(0,0,0);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: right;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 120px;
+  z-index: 1070;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  padding: 5px 0;
+  list-style-type: none;
+}
+
+.c10:hover {
+  color: rgb(10,171,42);
+}
+
+.c16 {
   background: transparent;
   color: rgb(255,255,255);
   padding: 12px 16px 12px;
@@ -338,7 +387,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   transition: all 0.1s ease;
 }
 
-.c14 {
+.c17 {
   font-size: 32px;
   margin: 0;
   position: relative;
@@ -351,7 +400,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   text-transform: capitalize;
 }
 
-.c14:after {
+.c17:after {
   background-color: rgba(0,0,0,0.5);
   bottom: 0.25em;
   content: "";
@@ -364,7 +413,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   z-index: -1;
 }
 
-.c17 {
+.c20 {
   color: rgb(255,255,255);
   white-space: nowrap;
   max-width: 100%;
@@ -388,7 +437,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   margin: 4px 0 0;
 }
 
-.c17 h1 {
+.c20 h1 {
   font-size: 18px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
@@ -399,24 +448,24 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   text-transform: capitalize;
 }
 
-.c19 {
+.c22 {
   margin: 0 0 4px 24px;
   font-size: 11px;
   color: rgb(255,255,255);
 }
 
-.c20 {
+.c23 {
   color: rgb(213,213,213);
   padding-right: 4px;
   display: inline-block;
 }
 
-.c21 {
+.c24 {
   margin: 0;
   display: inline-block;
 }
 
-.c18 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -428,7 +477,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   width: 25px;
 }
 
-.c16 {
+.c19 {
   background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
@@ -442,7 +491,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   transition: all 0.15s ease;
 }
 
-.c16::after {
+.c19::after {
   border-radius: 1px;
   box-shadow: 0 0 1em 1px rgb(10,171,42);
   color: inherit;
@@ -457,37 +506,37 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   z-index: 100;
 }
 
-.c16:hover {
+.c19:hover {
   background-color: rgb(54,54,54);
 }
 
-.c16:hover:after {
+.c19:hover:after {
   opacity: 0.5;
 }
 
-.c16.active {
+.c19.active {
   background-color: rgb(77,77,77);
 }
 
-.c16.active:after {
+.c19.active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c16:active:after {
+.c19:active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c16:focus {
+.c19:focus {
   outline: rgb(10,171,42) auto 3px;
 }
 
-.c15 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -515,7 +564,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 }
 
 @media all and (min-width:1000px) {
-  .c13 {
+  .c16 {
     padding: 16px 32px 24px;
   }
 }
@@ -572,8 +621,29 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         </a>
       </li>
     </ol>
-    <a
+    <div
       class="c8"
+    >
+      <span>
+        Languages
+      </span>
+      <ul
+        class="c9"
+      >
+        <li
+          class="c10"
+        >
+          English (en)
+        </li>
+        <li
+          class="c10"
+        >
+          Español (es)
+        </li>
+      </ul>
+    </div>
+    <a
+      class="c11"
       href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -581,7 +651,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
       1.0.4
     </a>
     <div
-      class="c9"
+      class="c12"
     >
       <a
         aria-current="false"
@@ -589,11 +659,11 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         title="Settings"
       >
         <button
-          class="c10"
+          class="c13"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -601,7 +671,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -623,31 +693,31 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
     </div>
   </nav>
   <div
-    class="c13"
+    class="c16"
   >
     <h1
-      class="c14"
+      class="c17"
     >
       Down
     </h1>
   </div>
   <div
-    class="c15"
+    class="c18"
   >
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -655,7 +725,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -678,15 +748,15 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         >
           3
         </dd>
@@ -694,18 +764,18 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
     </a>
     <a
       aria-current="true"
-      class="c16 active"
+      class="c19 active"
       href="/Down"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -725,7 +795,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -742,32 +812,32 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         />
       </dl>
     </a>
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/Warning"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -787,7 +857,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -804,15 +874,15 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         >
           3
         </dd>
@@ -820,18 +890,18 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/Stable"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -851,7 +921,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -868,15 +938,15 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         />
       </dl>
     </a>
@@ -907,13 +977,13 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   background-color: rgb(0,0,0);
 }
 
-.c12 {
+.c15 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c11 {
+.c14 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -922,11 +992,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c14:not(:root) {
   overflow: visible;
 }
 
-.c10 {
+.c13 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -965,24 +1035,24 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   flex-direction: row;
 }
 
-.c10:hover {
+.c13:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c10:focus,
-.c10:active {
+.c13:focus,
+.c13:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c10 > * {
+.c13 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c10:active {
+.c13:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -990,22 +1060,22 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10:hover {
+.c13:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,98.5%);
   color: hsl(0,0%,0%);
 }
 
-.c10:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c10[disabled],
-.c10[disabled]:hover,
-.c10[disabled]:focus,
-.c10[disabled]:active {
+.c13[disabled],
+.c13[disabled]:hover,
+.c13[disabled]:focus,
+.c13[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -1013,19 +1083,19 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c10 > svg {
+.c13 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c10 > :not(:first-child) {
+.c13 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
   flex-basis: auto;
 }
 
-.c9 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1036,7 +1106,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   padding: 0px 8px;
 }
 
-.c9 * + * {
+.c12 * + * {
   margin-left: 4px;
 }
 
@@ -1102,7 +1172,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   color: rgb(255,255,255);
 }
 
-.c8 {
+.c11 {
   color: white;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1113,7 +1183,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   padding: 0 8px;
 }
 
-.c8:hover {
+.c11:hover {
   color: white;
   opacity: 1;
 }
@@ -1214,7 +1284,56 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   padding-left: 16px;
 }
 
-.c13 {
+.c8 {
+  color: rgb(255,255,255);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.c8 > :first-child {
+  opacity: 0.8;
+}
+
+.c8 > :first-child:hover {
+  opacity: 1;
+}
+
+.c9 {
+  position: absolute;
+  background-color: rgb(255,255,255);
+  border-radius: 6px;
+  color: rgb(0,0,0);
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 700;
+  opacity: 0;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: right;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  visibility: hidden;
+  white-space: normal;
+  width: 120px;
+  z-index: 1070;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c10 {
+  padding: 5px 0;
+  list-style-type: none;
+}
+
+.c10:hover {
+  color: rgb(10,171,42);
+}
+
+.c16 {
   background: transparent;
   color: rgb(255,255,255);
   padding: 12px 16px 12px;
@@ -1222,7 +1341,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   transition: all 0.1s ease;
 }
 
-.c14 {
+.c17 {
   font-size: 32px;
   margin: 0;
   position: relative;
@@ -1235,7 +1354,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   text-transform: capitalize;
 }
 
-.c14:after {
+.c17:after {
   background-color: rgba(0,0,0,0.5);
   bottom: 0.25em;
   content: "";
@@ -1248,7 +1367,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   z-index: -1;
 }
 
-.c17 {
+.c20 {
   color: rgb(255,255,255);
   white-space: nowrap;
   max-width: 100%;
@@ -1272,7 +1391,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   margin: 4px 0 0;
 }
 
-.c17 h1 {
+.c20 h1 {
   font-size: 18px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
@@ -1283,24 +1402,24 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   text-transform: capitalize;
 }
 
-.c19 {
+.c22 {
   margin: 0 0 4px 24px;
   font-size: 11px;
   color: rgb(255,255,255);
 }
 
-.c20 {
+.c23 {
   color: rgb(213,213,213);
   padding-right: 4px;
   display: inline-block;
 }
 
-.c21 {
+.c24 {
   margin: 0;
   display: inline-block;
 }
 
-.c18 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1312,7 +1431,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   width: 25px;
 }
 
-.c16 {
+.c19 {
   background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
@@ -1326,7 +1445,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   transition: all 0.15s ease;
 }
 
-.c16::after {
+.c19::after {
   border-radius: 1px;
   box-shadow: 0 0 1em 1px rgb(10,171,42);
   color: inherit;
@@ -1341,37 +1460,37 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   z-index: 100;
 }
 
-.c16:hover {
+.c19:hover {
   background-color: rgb(54,54,54);
 }
 
-.c16:hover:after {
+.c19:hover:after {
   opacity: 0.5;
 }
 
-.c16.active {
+.c19.active {
   background-color: rgb(77,77,77);
 }
 
-.c16.active:after {
+.c19.active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c16:active:after {
+.c19:active:after {
   background-color: rgb(84,196,106);
   opacity: 1;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
-.c16:focus {
+.c19:focus {
   outline: rgb(10,171,42) auto 3px;
 }
 
-.c15 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1399,7 +1518,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 }
 
 @media all and (min-width:1000px) {
-  .c13 {
+  .c16 {
     padding: 16px 32px 24px;
   }
 }
@@ -1456,8 +1575,29 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         </a>
       </li>
     </ol>
-    <a
+    <div
       class="c8"
+    >
+      <span>
+        Languages
+      </span>
+      <ul
+        class="c9"
+      >
+        <li
+          class="c10"
+        >
+          English (en)
+        </li>
+        <li
+          class="c10"
+        >
+          Español (es)
+        </li>
+      </ul>
+    </div>
+    <a
+      class="c11"
       href="https://github.com/DecipherNow/gm-fabric-dashboard/blob/master/CHANGELOG.md"
       rel="noopener noreferrer"
       target="_blank"
@@ -1465,7 +1605,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
       1.0.4
     </a>
     <div
-      class="c9"
+      class="c12"
     >
       <a
         aria-current="false"
@@ -1473,11 +1613,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         title="Settings"
       >
         <button
-          class="c10"
+          class="c13"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1485,7 +1625,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1507,31 +1647,31 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
     </div>
   </nav>
   <div
-    class="c13"
+    class="c16"
   >
     <h1
-      class="c14"
+      class="c17"
     >
       Down
     </h1>
   </div>
   <div
-    class="c15"
+    class="c18"
   >
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1539,7 +1679,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1562,15 +1702,15 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         >
           3
         </dd>
@@ -1578,18 +1718,18 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
     </a>
     <a
       aria-current="true"
-      class="c16 active"
+      class="c19 active"
       href="/Down"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1609,7 +1749,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1626,32 +1766,32 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         />
       </dl>
     </a>
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/Warning"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1671,7 +1811,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1688,15 +1828,15 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         >
           3
         </dd>
@@ -1704,18 +1844,18 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
     </a>
     <a
       aria-current="false"
-      class="c16"
+      class="c19"
       href="/Stable"
     >
       <div
-        class="c17"
+        class="c20"
       >
         <span
-          class="c18"
+          class="c21"
         >
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c14"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -1735,7 +1875,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
               />
             </g>
             <g
-              class="c12"
+              class="c15"
               fill="currentColor"
               title=""
             >
@@ -1752,15 +1892,15 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
         </h1>
       </div>
       <dl
-        class="c19"
+        class="c22"
       >
         <dt
-          class="c20"
+          class="c23"
         >
           Services
         </dt>
         <dd
-          class="c21"
+          class="c24"
         />
       </dl>
     </a>

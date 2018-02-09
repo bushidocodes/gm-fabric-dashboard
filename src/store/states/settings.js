@@ -1,6 +1,7 @@
 import { State } from "jumpstate";
 
 import { getFabricServer } from "utils/head";
+import { getLocale } from "utils/i18n";
 
 // Initial state is determined by whether a fabric server has been configured or
 // not. If the server has been configured, then metricsEndpoint, threadsEndpoint,
@@ -10,11 +11,15 @@ import { getFabricServer } from "utils/head";
 const settings = State({
   initial: {
     fabricServer: getFabricServer(),
-    threadsFilter: "all"
+    threadsFilter: "all",
+    locale: getLocale()
   },
 
   setThreadsFilter(state, payload) {
     return { ...state, threadsFilter: payload };
+  },
+  setUserLocale(state, payload) {
+    return { ...state, locale: payload };
   }
 });
 

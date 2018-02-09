@@ -74,6 +74,7 @@ exports[`JVMHeaderContent matches snapshot 1`] = `
         "jvmHeaderContent.summary": "Summary",
         "jvmHeaderContent.threads": "Threads",
         "jvmHeaderContent.uptime": "Uptime",
+        "languageSelector.languages": "Languages",
         "pollingSettings.button.pause": "Pause Polling",
         "pollingSettings.button.resume": "Resume Polling",
         "pollingSettings.pollingIntervals": "Polling Interval(s)",

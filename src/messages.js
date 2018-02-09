@@ -86,6 +86,7 @@ export default {
       threads: "Threads",
       uptime: "Uptime"
     },
+    languageSelector: { languages: "Languages" },
     pollingSettings: {
       button: {
         pause: "Pause Polling",
@@ -270,6 +271,7 @@ export default {
       threads: "Trapos",
       explorer: "Explorador"
     },
+    languageSelector: { languages: "Idiomas" },
     pollingSettings: {
       button: {
         pause: "Pausa de Votación",
