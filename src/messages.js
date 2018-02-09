@@ -132,7 +132,7 @@ export default {
       hostCPUUsageDetail:
         "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
       memoryUsage: "Memory Utilized",
-      memoryUsageDetail: "{hostMemoryAvail} GB Free on Host",
+      memoryUsageDetail: "{hostMemoryAvail} Free on Host",
       requestsPerSecond: "Requests Per Second",
       responseTime: "Avg. Response Time",
       statistics: "Statistics",

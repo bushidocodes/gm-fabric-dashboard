@@ -65,9 +65,10 @@ function GoHeaderContent({ basePath, metrics, headerTabs, intl }) {
               defaultMessage: "Requests",
               description: "Tab detail"
             }),
-            value:
+            value: Number(
               getLatestAttribute(metrics, "HTTP/requests") +
-              getLatestAttribute(metrics, "HTTPS/requests")
+                getLatestAttribute(metrics, "HTTPS/requests")
+            ).toLocaleString()
           }
         ]}
         tabIndex={0}
@@ -87,7 +88,7 @@ function GoHeaderContent({ basePath, metrics, headerTabs, intl }) {
               defaultMessage: "Requests",
               description: "Tab detail"
             }),
-            value: getLatestAttribute(metrics, "RPC/requests")
+            value: getLatestAttribute(metrics, "RPC/requests", 0)
           }
         ]}
         tabIndex={0}

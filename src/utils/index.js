@@ -1,4 +1,5 @@
 import _ from "lodash";
+import Qty from "js-quantities";
 
 export const INSTANCE_ID_LENGTH = 8;
 
@@ -108,15 +109,63 @@ export function calculateErrorPercent(requests, errors) {
  * @param {number} numberOfDecimals
  * @returns string
  */
-export function formatAsDecimalString(number, numberOfDecimals = 3) {
-  if (number === "") return;
-  number = _.toNumber(number);
-  if (_.isNaN(number) || typeof number !== "number") return;
+export function formatAsDecimalString(source, numberOfDecimals = 3) {
+  if (source === "") return source;
+  const sourceAsNumber = _.toNumber(source);
+  if (_.isNaN(sourceAsNumber) || typeof sourceAsNumber !== "number")
+    return source;
 
-  return number.toLocaleString(undefined, {
+  return sourceAsNumber.toLocaleString(undefined, {
     maximumFractionDigits: numberOfDecimals,
-    minimumFractionDigits: numberOfDecimals
+    minimumFractionDigits: 0
   });
+}
+
+/**
+ * Functionally similar to formatAsDecimalString, but refactored to be a function
+ * factor that we can pass into the js-quantities format function
+ * @param {number} [maxDecimals=3]
+ * @returns
+ */
+function formatAsDecimalStringFormatter(maxDecimals = 3) {
+  return function(scalar, units) {
+    if (scalar === "") return;
+    const scalarAsNumber = _.toNumber(scalar);
+    return `${scalarAsNumber.toLocaleString(undefined, {
+      maximumFractionDigits: maxDecimals,
+      minimumFractionDigits: 0
+    })} ${units}`;
+  };
+}
+
+/**
+ * function that wraps js-quantities and allows for conversion between units
+ * and rounding to a desired unit of precision
+ * @export
+ * @param {number} rawValue
+ * @param {string} baseUnit
+ * @param {string} resultUnit
+ * @param {number} precision
+ * @returns string
+ */
+export function formatMetricString(rawValue, baseUnit, resultUnit, precision) {
+  if (baseUnit && resultUnit && (precision || precision === 0)) {
+    const qty = Qty(rawValue, baseUnit);
+    const result = qty
+      .to(resultUnit)
+      .format(formatAsDecimalStringFormatter(precision))
+      .toString();
+    return result;
+  } else if (precision || precision === 0) {
+    const result = Qty(rawValue)
+      .format(formatAsDecimalStringFormatter(precision))
+      .toString();
+    return result;
+  } else {
+    return Qty(rawValue)
+      .format(formatAsDecimalStringFormatter())
+      .toString();
+  }
 }
 
 /**

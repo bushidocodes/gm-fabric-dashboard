@@ -213,20 +213,23 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
             "Total GC Pause: 0 ms",
           ]
         }
-        expectedAttributes={
-          Array [
-            "go_metrics/runtime/alloc_bytes",
-          ]
+        dygraph={
+          Object {
+            "attributes": Array [],
+            "data": Array [],
+          }
+        }
+        dygraphMetadata={
+          Object {
+            "go_metrics/runtime/alloc_bytes": Object {
+              "baseUnit": "B",
+              "label": "Go Heap Used (MB)",
+              "precision": 0,
+              "resultUnit": "MB",
+            },
+          }
         }
         height="max"
-        timeSeries={
-          Array [
-            Array [],
-            Object {
-              "labels": Array [],
-            },
-          ]
-        }
         title="Heap"
       />
     </div>
@@ -239,20 +242,23 @@ exports[`Service Instance View: JVM/GO/HTTP <GMGrid> matches snapshot 1`] = `
       }
     >
       <InjectIntl(GMLineChart)
-        expectedAttributes={
-          Array [
-            "go_metrics/runtime/num_goroutines",
-          ]
+        dygraph={
+          Object {
+            "attributes": Array [],
+            "data": Array [],
+          }
+        }
+        dygraphMetadata={
+          Object {
+            "go_metrics/runtime/num_goroutines": Object {
+              "baseUnit": undefined,
+              "label": "# of allocated goroutines",
+              "precision": undefined,
+              "resultUnit": undefined,
+            },
+          }
         }
         height="max"
-        timeSeries={
-          Array [
-            Array [],
-            Object {
-              "labels": Array [],
-            },
-          ]
-        }
         title="Goroutines"
       />
     </div>

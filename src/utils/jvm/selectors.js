@@ -74,12 +74,7 @@ export const getRoutesTable = createSelector(
             requestsKey
           ),
           requestsPerSecond_dygraph: mapDygraphKeysToNetChange(
-            getDygraphOfValue(
-              routesMetrics,
-              [requestsKey],
-              ["Requests Per Second"]
-            ),
-            ["Requests Per Second"]
+            getDygraphOfValue(routesMetrics, [requestsKey])
           )
         });
       });

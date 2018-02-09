@@ -104,7 +104,7 @@ exports[`GO > SummaryGrid component Matched the snapshot 1`] = `
         "summary.hostCPUUsage": "Host CPU Utilized",
         "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
         "summary.memoryUsage": "Memory Utilized",
-        "summary.memoryUsageDetail": "{hostMemoryAvail} GB Free on Host",
+        "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
         "summary.requestsPerSecond": "Requests Per Second",
         "summary.responseTime": "Avg. Response Time",
         "summary.statistics": "Statistics",

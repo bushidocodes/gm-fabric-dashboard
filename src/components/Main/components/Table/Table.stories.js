@@ -14,13 +14,13 @@ const mockRoutesTableItems = [
     latency99: 9,
     outThroughput: 1580,
     requests: 17725,
-    requestsPerSecond_dygraph: [
-      [
+    requestsPerSecond_dygraph: {
+      data: [
         [new Date("2017-07-18T22:13:34.314Z"), 0],
         [new Date("2017-07-18T22:13:49.215Z"), 0]
       ],
-      { labels: ["time", "Requests"] }
-    ],
+      attributes: ["time", "Requests"]
+    },
     requestsPerSecond_sparkline: [0, 0],
     route: "/functionalroles",
     verb: "GET"
@@ -33,13 +33,13 @@ const mockRoutesTableItems = [
     latency99: 0,
     outThroughput: 0,
     requests: 1,
-    requestsPerSecond_dygraph: [
-      [
+    requestsPerSecond_dygraph: {
+      data: [
         [new Date("2017-07-18T22:13:34.314Z"), 0],
         [new Date("2017-07-18T22:13:49.215Z"), 0]
       ],
-      { labels: ["time", "Requests"] }
-    ],
+      attributes: ["time", "Requests"]
+    },
     requestsPerSecond_sparkline: [0, 0],
     route: "/ping",
     verb: "GET"
@@ -64,13 +64,13 @@ const mockFuncsTableItems = [
     latencyMin: 600,
     outThroughput: 2889,
     requests: 18,
-    requestsPerSecond_dygraph: [
-      [
+    requestsPerSecond_dygraph: {
+      data: [
         [new Date("2017-07-18T22:13:34.314Z"), 0],
         [new Date("2017-07-18T22:13:49.215Z"), 0]
       ],
-      { labels: ["time", "Requests"] }
-    ],
+      attributes: ["time", "Requests"]
+    },
     requestsPerSecond_sparkline: [0, 0]
   },
   {
@@ -90,13 +90,13 @@ const mockFuncsTableItems = [
     latencyMin: 1345,
     outThroughput: 143,
     requests: 13,
-    requestsPerSecond_dygraph: [
-      [
+    requestsPerSecond_dygraph: {
+      data: [
         [new Date("2017-07-18T22:13:34.314Z"), 0],
         [new Date("2017-07-18T22:13:49.215Z"), 0]
       ],
-      { labels: ["time", "Requests"] }
-    ],
+      attributes: ["time", "Requests"]
+    },
     requestsPerSecond_sparkline: [0, 0]
   }
 ];

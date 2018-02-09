@@ -10,8 +10,9 @@ import { IntlProvider } from "react-intl";
 describe("GMLineChart utils functions", () => {
   test("numericalTimeSeriesFunc produces an array of number", () => {
     const mockTimeSeriesArray = [
-      [["timestamp1", 1], ["timestamp1", 2], ["timestamp1", 3]],
-      1
+      ["timestamp1", 1],
+      ["timestamp1", 2],
+      ["timestamp1", 3]
     ];
     const expectedOutput = [1, 2, 3];
 
@@ -45,8 +46,9 @@ describe("GMLineChart utils functions", () => {
 
   test("screenReaderGraphDescription provides correct output ", () => {
     const mockTimeSeriesArray = [
-      [["timestamp1", 1], ["timestamp1", 2], ["timestamp1", 3]],
-      1
+      ["timestamp1", 1],
+      ["timestamp1", 2],
+      ["timestamp1", 3]
     ];
     const mockOutputIfData =
       "A tabular representation of the Chart chart data: median 2.00 average 2.00 mode no value occurs more than once maximum 3 minimum 1 number of observations 3 complete data time series follows 1,2,3";

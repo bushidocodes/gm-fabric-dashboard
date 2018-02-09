@@ -216,10 +216,10 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
     style="text-align:right;display:flex;flex-direction:column"
   >
     <div>
-      445ms
+      445 ms
     </div>
     <div>
-      35ms
+      35 ms
     </div>
   </div>
 </li>

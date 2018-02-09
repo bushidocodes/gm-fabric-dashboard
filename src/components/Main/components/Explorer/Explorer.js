@@ -141,7 +141,7 @@ class Explorer extends Component {
             this.props.keys.indexOf(selectedMetric) !== -1 ? (
               <GMLineChart
                 height={"normal"}
-                timeSeries={getDygraphOfValue(metrics, [selectedMetric])}
+                dygraph={getDygraphOfValue(metrics, [selectedMetric])}
                 title={selectedMetric}
               />
             ) : (

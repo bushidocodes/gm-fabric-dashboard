@@ -39,8 +39,7 @@ export const getRoutesTable = createSelector(
         const latency50 = getLatestAttribute(routesMetrics, latency50Key);
         const latency99 = getLatestAttribute(routesMetrics, latency99Key);
         const requestsPerSecond_dygraph = mapDygraphKeysToNetChange(
-          getDygraphOfValue(routesMetrics, [requestsKey], ["Requests"]),
-          ["Requests"]
+          getDygraphOfValue(routesMetrics, [requestsKey])
         );
         const requestsPerSecond_sparkline = getSparkLineOfNetChange(
           routesMetrics,
@@ -129,12 +128,7 @@ function _getFunctionsTable(funcs, funcMetrics) {
       res[label] = getLatestAttribute(funcMetrics, `function/${func}/${key}`);
     });
     res["requestsPerSecond_dygraph"] = mapDygraphKeysToNetChange(
-      getDygraphOfValue(
-        funcMetrics,
-        [`function/${func}/requests`],
-        ["Requests"]
-      ),
-      ["Requests"]
+      getDygraphOfValue(funcMetrics, [`function/${func}/requests`])
     );
     res["requestsPerSecond_sparkline"] = getSparkLineOfNetChange(
       funcMetrics,

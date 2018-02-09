@@ -94,7 +94,7 @@ describe("FunctionsGrid Child Components", () => {
     expect(wrapper.find(Table).props()).toMatchObject({
       items: [
         {
-          errorPercent: "0.000",
+          errorPercent: "0",
           errorsCount: 0,
           func: "CatalogStream",
           inThroughput: 227,
@@ -112,7 +112,7 @@ describe("FunctionsGrid Child Components", () => {
           requests: 13
         },
         {
-          errorPercent: "0.000",
+          errorPercent: "0",
           errorsCount: 0,
           func: "OrderItem",
           inThroughput: 225,

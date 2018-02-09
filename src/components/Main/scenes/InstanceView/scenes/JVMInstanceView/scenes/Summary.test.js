@@ -102,14 +102,14 @@ describe("JVM > SummaryGrid component", () => {
           .dive()
           .find(GMLineChart)
           .props()
-      ).includes("timeSeries")
+      ).includes("dygraph")
     ).toBe(true);
     expect(
       SummaryGridWrap.dive()
         .dive()
         .find(GMLineChart)
         .props()
-        .timeSeries[1].labels.includes("time")
+        .dygraph.attributes.includes("Time")
     ).toBe(true);
   });
 });

@@ -1,5 +1,5 @@
 import _ from "lodash";
-import Qty from "js-quantities";
+import { formatMetricString } from "./index.js";
 
 // Dashboard Utility Functions
 
@@ -18,6 +18,9 @@ import Qty from "js-quantities";
  * Returns the most recent value of a particular attribute as a number or string
  * @param {Object} metrics - An arbitrary nested object passed from Redux via component props
  * @param {String} key - A string representation of the path to the desired key
+ * @param {number} precision - A int representing the number of decimal places
+ * @param {String} baseUnit - A string representation of base unit of the metric
+ * @param {String} resultUnit - A string representation of unit you would like to convert to
  * @returns {Number|String}
  */
 
@@ -29,30 +32,18 @@ export function getLatestAttribute(
   resultUnit
 ) {
   if (!metrics || !key) return 0;
-  const roundingFormatter = function(maxDecimals) {
-    return function(scalar) {
-      var pow = Math.pow(10, maxDecimals);
-      var rounded = Math.round(scalar * pow) / pow;
-      return rounded;
-    };
-  };
   // _.has is not suitable because some object become arrays and auto insert
   // keys from 0...n with values of undefined.
   const fullPath = _.get(metrics, key);
-  if (fullPath) {
-    const latestAttribute =
-      fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))];
-    if (baseUnit && resultUnit && precision) {
-      const qty = Qty(latestAttribute, baseUnit);
-      return qty.to(resultUnit).format(roundingFormatter(precision));
-    } else if (precision) {
-      const qty = Qty(latestAttribute);
-      return qty.format(roundingFormatter(precision));
-    } else {
-      return latestAttribute;
-    }
+  if (!fullPath) return 0;
+  const latestAttribute =
+    fullPath[_.last(_.keys(fullPath).sort((a, b) => a - b))];
+  // if baseUnit, resultUnit, and precision and falsy, we pass the value back as a
+  // number and leave i18n up to the component calling this function
+  if (!baseUnit && !resultUnit && !precision && typeof precision !== "number") {
+    return latestAttribute;
   } else {
-    return 0;
+    return formatMetricString(latestAttribute, baseUnit, resultUnit, precision);
   }
 }
 
@@ -82,7 +73,7 @@ export function parseJSONString(line, metrics) {
             element.resultUnit
           );
         } else {
-          return getLatestAttribute(metrics, element.value).toLocaleString();
+          return getLatestAttribute(metrics, element.value, 3).toLocaleString();
         }
       })
       .join(" ");

@@ -14,10 +14,6 @@
               "baseUnit": "B",
               "resultUnit": "GB",
               "precision": 3
-            },
-            {
-              "type": "string",
-              "value": "GB"
             }
           ]
         },
@@ -30,10 +26,6 @@
               "baseUnit": "B",
               "resultUnit": "GB",
               "precision": 3
-            },
-            {
-              "type": "string",
-              "value": "GB"
             }
           ]
         }
@@ -195,33 +187,33 @@
             {
               "type": "netChange",
               "attribute": "http/sent_bytes",
-              "label": "HTTP Sent Bytes (kBps)",
-              "baseUnit": "B",
-              "resultUnit": "kB",
+              "label": "HTTP Sent",
+              "baseUnit": "B/s",
+              "resultUnit": "kB/s",
               "precision": 3
             },
             {
               "type": "netChange",
               "attribute": "https/sent_bytes",
-              "label": "HTTPS Sent Bytes (kBps)",
-              "baseUnit": "B",
-              "resultUnit": "kB",
+              "label": "HTTPS Sent",
+              "baseUnit": "B/s",
+              "resultUnit": "kB/s",
               "precision": 3
             },
             {
               "type": "netChange",
               "attribute": "http/received_bytes",
-              "label": "HTTP Received (kBps)",
-              "baseUnit": "B",
-              "resultUnit": "kB",
+              "label": "HTTP Received",
+              "baseUnit": "B/s",
+              "resultUnit": "kB/s",
               "precision": 3
             },
             {
               "type": "netChange",
               "attribute": "https/received_bytes",
-              "label": "HTTPS Received (kBps)",
-              "baseUnit": "B",
-              "resultUnit": "kB",
+              "label": "HTTPS Received",
+              "baseUnit": "B/s",
+              "resultUnit": "kB/s",
               "precision": 3
             }
           ]
@@ -274,10 +266,6 @@
               "baseUnit": "B",
               "resultUnit": "MB",
               "precision": 3
-            },
-            {
-              "type": "string",
-              "value": "MB"
             }
           ]
         }
@@ -351,10 +339,6 @@
                 "baseUnit": "B",
                 "resultUnit": "GB",
                 "precision": 3
-              },
-              {
-                "type": "string",
-                "value": "GB"
               }
             ]
           ],
@@ -362,7 +346,7 @@
             {
               "type": "value",
               "attribute": "jvm/heap/committed",
-              "label": "JVM Heap Committed (MB)",
+              "label": "JVM Heap Committed",
               "baseUnit": "B",
               "resultUnit": "MB",
               "precision": 3
@@ -370,7 +354,7 @@
             {
               "type": "value",
               "attribute": "jvm/heap/used",
-              "label": "JVM Heap Used (MB)",
+              "label": "JVM Heap Used",
               "baseUnit": "B",
               "resultUnit": "MB",
               "precision": 3
@@ -408,7 +392,7 @@
             {
               "type": "value",
               "attribute": "jvm/classes/current_loaded",
-              "label": "# of currently loaded JVM Classes"
+              "label": "Total Loaded JVM Classes"
             }
           ]
         }

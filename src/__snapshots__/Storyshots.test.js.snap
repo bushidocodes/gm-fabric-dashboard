@@ -16699,10 +16699,10 @@ exports[`Storyshots Table Functions Table 1`] = `
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            1956ms
+            1,956 ms
           </div>
           <div>
-            3484ms
+            3,484 ms
           </div>
         </div>
       </li>
@@ -16785,10 +16785,10 @@ exports[`Storyshots Table Functions Table 1`] = `
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            2339ms
+            2,339 ms
           </div>
           <div>
-            3565ms
+            3,565 ms
           </div>
         </div>
       </li>
@@ -17706,10 +17706,10 @@ exports[`Storyshots Table Routes Table 1`] = `
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            0ms
+            0 ms
           </div>
           <div>
-            9ms
+            9 ms
           </div>
         </div>
       </li>
@@ -17824,10 +17824,10 @@ exports[`Storyshots Table Routes Table 1`] = `
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            0ms
+            0 ms
           </div>
           <div>
-            0ms
+            0 ms
           </div>
         </div>
       </li>

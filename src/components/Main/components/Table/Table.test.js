@@ -23,14 +23,14 @@ let routesProps = {
       latency99: 3,
       outThroughput: 29945110,
       requests: 399334,
-      requestsPerSecond_dygraph: [
-        [
+      requestsPerSecond_dygraph: {
+        data: [
           ["Mon Nov 13 2017 17:22:58 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:03 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:08 GMT-0500 (EST)", 0]
         ],
-        { labels: ["time", "Requests"] }
-      ],
+        attributes: ["Time", "Requests"]
+      },
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       route: "/categories",
       verb: "GET"
@@ -43,14 +43,14 @@ let routesProps = {
       latency99: 0,
       outThroughput: 29945110,
       requests: 0,
-      requestsPerSecond_dygraph: [
-        [
+      requestsPerSecond_dygraph: {
+        data: [
           ["Mon Nov 13 2017 17:22:58 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:03 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:08 GMT-0500 (EST)", 0]
         ],
-        { labels: ["time", "Requests"] }
-      ],
+        attributes: ["Time", "Requests"]
+      },
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       route: "/topics",
       verb: "GET"
@@ -124,14 +124,14 @@ describe("Table component", () => {
       latency99: 3,
       relativeReqPercent: 100,
       requests: 399334,
-      requestsPerSecond_dygraph: [
-        [
+      requestsPerSecond_dygraph: {
+        data: [
           ["Mon Nov 13 2017 17:22:58 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:03 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:08 GMT-0500 (EST)", 0]
         ],
-        { labels: ["time", "Requests"] }
-      ],
+        attributes: ["Time", "Requests"]
+      },
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });
@@ -142,14 +142,14 @@ describe("Table component", () => {
       latency99: 0,
       relativeReqPercent: 0,
       requests: 0,
-      requestsPerSecond_dygraph: [
-        [
+      requestsPerSecond_dygraph: {
+        data: [
           ["Mon Nov 13 2017 17:22:58 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:03 GMT-0500 (EST)", 0],
           ["Mon Nov 13 2017 17:23:08 GMT-0500 (EST)", 0]
         ],
-        { labels: ["time", "Requests"] }
-      ],
+        attributes: ["Time", "Requests"]
+      },
       requestsPerSecond_sparkline: [0, 25, 430, 1256],
       verb: "GET"
     });

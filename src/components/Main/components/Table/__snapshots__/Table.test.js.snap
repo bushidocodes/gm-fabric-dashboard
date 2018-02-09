@@ -516,10 +516,10 @@ exports[`Table component matches snapshot 1`] = `
         style="text-align:right;display:flex;flex-direction:column"
       >
         <div>
-          0ms
+          0 ms
         </div>
         <div>
-          3ms
+          3 ms
         </div>
       </div>
     </li>
@@ -646,10 +646,10 @@ exports[`Table component matches snapshot 1`] = `
         style="text-align:right;display:flex;flex-direction:column"
       >
         <div>
-          0ms
+          0 ms
         </div>
         <div>
-          0ms
+          0 ms
         </div>
       </div>
     </li>

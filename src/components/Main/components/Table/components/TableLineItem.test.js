@@ -30,7 +30,14 @@ const TableLineItemWithProps = (
     latency99={35}
     relativeReqPercent={20}
     requests={14333}
-    requestsPerSecond_dygraph={[0, 1, 5, 30, 56]}
+    requestsPerSecond_dygraph={{
+      data: [
+        [1193388, 1518054619229],
+        [1193388, 1518054624225],
+        [1193388, 1518054629230]
+      ],
+      attributes: ["http/requests"]
+    }}
     requestsPerSecond_sparkline={[0, 25, 430, 1256]}
   />
 );

@@ -67,9 +67,10 @@ function JVMHeaderContent({ basePath, metrics, headerTabs, intl }) {
               defaultMessage: "Requests",
               description: "Tab detail"
             }),
-            value:
+            value: Number(
               getLatestAttribute(metrics, "http/requests") +
-              getLatestAttribute(metrics, "https/requests")
+                getLatestAttribute(metrics, "https/requests")
+            ).toLocaleString()
           }
         ]}
         tabIndex={0}

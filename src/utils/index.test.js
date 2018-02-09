@@ -99,27 +99,26 @@ describe("calculateErrorPercent", () => {
     expect(calculateErrorPercent(23425, 4134)).toEqual("17.648");
   });
   test("returns 0.000 if request is zero", () => {
-    expect(calculateErrorPercent(0, 4134)).toEqual("0.000");
+    expect(calculateErrorPercent(0, 4134)).toEqual("0");
   });
   test("returns 0.000 if error is zero", () => {
-    expect(calculateErrorPercent(54435, 0)).toEqual("0.000");
+    expect(calculateErrorPercent(54435, 0)).toEqual("0");
   });
 });
 describe("formatAsDecimalString", () => {
-  test("returns a number string with three decimal places", () => {
+  test("trims decimals after three places", () => {
     expect(formatAsDecimalString(0.4254134)).toEqual("0.425");
-    expect(formatAsDecimalString(0.8)).toEqual("0.800");
+    expect(formatAsDecimalString(0.8)).toEqual("0.8");
   });
 
   test('works on number string such as "0.477112" ', () => {
     expect(formatAsDecimalString("0.477112")).toEqual("0.477");
   });
 
-  test("returns undefined when provided an empty string", () => {
-    expect(formatAsDecimalString("")).toEqual(undefined);
-  });
-  test("returns undefined when provided an invalid parameter", () => {
-    expect(formatAsDecimalString("I am not a valid number")).toEqual(undefined);
+  test("returns the parameter when it is invalid", () => {
+    expect(formatAsDecimalString("I am not a valid number")).toEqual(
+      "I am not a valid number"
+    );
   });
 });
 

@@ -83,9 +83,13 @@ function SummaryGrid({
                   defaultMessage: "Avg. Response Time",
                   description: "Response time title text"
                 }),
-                value: `${_.round(
-                  getLatestAttribute(metrics, "time/2XX.avg")
-                )}ms`
+                value: getLatestAttribute(
+                  metrics,
+                  "time/2XX.avg",
+                  3,
+                  "ms",
+                  "ms"
+                )
               },
               {
                 icon: "Exclamation",
@@ -127,14 +131,17 @@ function SummaryGrid({
       >
         <div style={{ height: "250px" }}>
           <GMLineChart
-            timeSeries={mapDygraphKeysToNetChange(
-              getDygraphOfValue(
-                metrics,
-                ["https/requests", "http/requests"],
-                ["HTTPS", "HTTP"]
-              ),
-              ["HTTPS", "HTTP"]
+            dygraph={mapDygraphKeysToNetChange(
+              getDygraphOfValue(metrics, ["https/requests", "http/requests"])
             )}
+            dygraphMetadata={{
+              "https/requests": {
+                label: "HTTPS"
+              },
+              "http/requests": {
+                label: "HTTP"
+              }
+            }}
             title={intl.formatMessage({
               id: "summary.requestsPerSecond",
               defaultMessage: "Requests Per Second",

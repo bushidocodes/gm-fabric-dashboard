@@ -51,7 +51,7 @@ class TableLineItem extends Component {
     latency99: PropTypes.number.isRequired,
     relativeReqPercent: PropTypes.number,
     requests: PropTypes.number,
-    requestsPerSecond_dygraph: PropTypes.array.isRequired,
+    requestsPerSecond_dygraph: PropTypes.object.isRequired,
     requestsPerSecond_sparkline: PropTypes.array.isRequired,
     verb: PropTypes.string
   };
@@ -148,8 +148,8 @@ class TableLineItem extends Component {
             flexDirection: "column"
           }}
         >
-          <div>{this.props.latency50}ms</div>
-          <div>{this.props.latency99}ms</div>
+          <div>{this.props.latency50.toLocaleString()} ms</div>
+          <div>{this.props.latency99.toLocaleString()} ms</div>
         </TableCol>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
@@ -159,7 +159,7 @@ class TableLineItem extends Component {
           }}
         >
           <GMLineChart
-            timeSeries={this.props.requestsPerSecond_dygraph}
+            dygraph={this.props.requestsPerSecond_dygraph}
             title={this.props.intl.formatMessage(
               {
                 id: "tableLineItem.requests",

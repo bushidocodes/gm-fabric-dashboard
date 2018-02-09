@@ -100,9 +100,13 @@ function SummaryGrid({
                   defaultMessage: "Avg. Response Time",
                   description: "Response time title text"
                 }),
-                value: `${_.round(
-                  getLatestAttribute(metrics, "all/latency_ms.avg")
-                )}ms`
+                value: getLatestAttribute(
+                  metrics,
+                  "all/latency_ms.avg",
+                  3,
+                  "ms",
+                  "ms"
+                )
               },
               {
                 icon: "Exclamation",
@@ -154,7 +158,7 @@ function SummaryGrid({
                   },
                   { hostMemoryAvail }
                 ),
-                value: `${processMemoryUsed} MB`
+                value: processMemoryUsed
               }
             ]}
           />
@@ -170,14 +174,24 @@ function SummaryGrid({
       >
         <div style={{ height: "250px" }}>
           <GMLineChart
-            timeSeries={mapDygraphKeysToNetChange(
-              getDygraphOfValue(
-                metrics,
-                ["HTTPS/requests", "HTTP/requests", "RPC/requests"],
-                ["HTTPS", "HTTP", "RPC"]
-              ),
-              ["HTTPS", "HTTP", "RPC"]
+            dygraph={mapDygraphKeysToNetChange(
+              getDygraphOfValue(metrics, [
+                "HTTPS/requests",
+                "HTTP/requests",
+                "RPC/requests"
+              ])
             )}
+            dygraphMetadata={{
+              "HTTPS/requests": {
+                label: "HTTPS"
+              },
+              "HTTP/requests": {
+                label: "HTTP"
+              },
+              "RPC/requests": {
+                label: "RPC"
+              }
+            }}
             title={intl.formatMessage({
               id: "summary.requestsPerSecond",
               defaultMessage: "Requests Per Second",

@@ -44,7 +44,8 @@ export class GMGrid extends Component {
   };
 
   /**
-   * Mapper function that takes a chart object and renders the appropriate component with the appropriate state
+   * Mapper function that renders dashboards based on JSON state
+   *
    * @param {Object} chart
    * @param {string} chart.type - String representing the chart type (GMLineChart, GMTable, GMBasicMetrics)
    * @param {Object} chart.data
@@ -55,25 +56,37 @@ export class GMGrid extends Component {
     const { metrics } = this.props;
     switch (chart.type) {
       case "GMLineChart":
+        // Build out a metadata object keys by attribute
+        const dygraphMetadata = {};
+        chart.data.timeseries.forEach(
+          ({ attribute, label, precision, baseUnit, resultUnit }) => {
+            dygraphMetadata[attribute] = {
+              label,
+              precision,
+              baseUnit,
+              resultUnit
+            };
+          }
+        );
+        const dygraph = mapDygraphKeysToNetChange(
+          getDygraphOfValue(
+            metrics,
+            chart.data.timeseries.map(ts => ts.attribute)
+          ),
+          chart.data.timeseries
+            .filter(ts => ts.type === "netChange")
+            .map(ts => ts.attribute)
+        );
         return (
           <GMLineChart
             detailLines={
               chart.data.detailLines &&
               chart.data.detailLines.map(line => parseJSONString(line, metrics))
             }
-            expectedAttributes={chart.data.timeseries.map(ts => ts.attribute)}
             height="max"
-            timeSeries={mapDygraphKeysToNetChange(
-              getDygraphOfValue(
-                metrics,
-                chart.data.timeseries.map(ts => ts.attribute),
-                chart.data.timeseries.map(ts => ts.label)
-              ),
-              chart.data.timeseries
-                .filter(ts => ts.type === "netChange")
-                .map(ts => ts.label)
-            )}
+            dygraph={dygraph}
             title={chart.title}
+            dygraphMetadata={dygraphMetadata}
           />
         );
       case "GMTable":

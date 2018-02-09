@@ -2,40 +2,36 @@ import { cloneDeep, uniq } from "lodash";
 
 /**
  * Returns time series data of one or more in Dygraph format
+ * Because this format uses nested arrays, this function also returns an
+ * array of keys in the position of the associated values
  * Note that this requires all metrics to occur at the same timestamp
  * See http://dygraphs.com/data.html#array
  *
  * @param {Object} metrics - metric
  * @param {String[]} keys - keys that we want to pluck from metrics
- * @param {String[]} labels - label to apply to key at same index
  * @returns {Array}
  */
-export function getDygraphOfValue(metrics, keys, labels = []) {
-  let results = [];
-  const options = { labels: [] };
-  if (!metrics || !keys) return [results, options];
-  // Fallback to using keys directly if labels not present for every key
-  let resLabels = labels.length === keys.length ? labels : keys;
+export function getDygraphOfValue(metrics, keys) {
+  const results = {
+    data: [],
+    attributes: []
+  };
+  if (!metrics || !keys) return results;
   // Not all keys will be present at all times in the metrics object
   const validKeys = keys.filter(key => Object.keys(metrics).includes(key));
-  // Match up labels to keys to maintain matching indices
-  const validLabels = [];
-  validKeys.forEach(key => {
-    const idx = keys.indexOf(key);
-    validLabels.push(resLabels[idx]);
-  });
   // Exit with dummy output if none of the keys were in the metrics object
-  if (validKeys.length === 0) return [results, options];
+  if (validKeys.length === 0) return results;
+  // Or set as the keys of the results object
   // Accumulate all unique timestamps and sort
   const timestamps = validKeys.reduce((acc, key) => {
     return uniq([...acc, ...Object.keys(metrics[key])]).sort((a, b) => a - b);
   }, []);
   // Map over the timestamps and generate the dygraph format
-  results = timestamps.map(ts => {
+  results.data = timestamps.map(ts => {
     return [new Date(Number(ts)), ...validKeys.map(key => metrics[key][ts])];
   });
-  options.labels = ["time", ...validLabels];
-  return [results, options];
+  results.attributes = ["Time", ...validKeys];
+  return results;
 }
 
 /**
@@ -44,28 +40,37 @@ export function getDygraphOfValue(metrics, keys, labels = []) {
  * See http://dygraphs.com/data.html#array
  *
  * @param {Object[]} dygraphData - valid dygraph data object returned by getDygraphOfValue
- * @param {String[]} labelsToMap - keys that we want to map over and change from value to net change
+ * @param {String[]} keysToMap - keys that we want to map over and change from value to net change
  * @returns {Object[]}
  */
-export function mapDygraphKeysToNetChange(dygraphData, labelsToMap) {
-  return _mapOverDygraphKeys(dygraphData, labelsToMap, _netChangeMapper);
+export function mapDygraphKeysToNetChange(
+  dygraph,
+  attributesToMap = dygraph.attributes.filter(
+    arr => arr !== "Time" && arr !== "time"
+  )
+) {
+  return _mapOverDygraphKeys(dygraph, attributesToMap, _netChangeMapper);
 }
 
-function _mapOverDygraphKeys(dygraphData, labelsToMap, mapperFunc) {
-  if (!labelsToMap || labelsToMap.length === 0) {
-    return dygraphData;
+function _mapOverDygraphKeys(
+  outputOfDygraphByValue,
+  attributesToMap,
+  mapperFunc
+) {
+  if (!attributesToMap || attributesToMap.length === 0) {
+    return outputOfDygraphByValue;
   } else {
-    let data = cloneDeep(dygraphData);
-    const [, { labels }] = data;
-    labelsToMap.forEach((labelToMap, idx, arr) => {
-      const positionOfLabelToMap = labels.indexOf(labelToMap);
-      if (positionOfLabelToMap !== -1) {
-        data[0] = data[0].map((val, i, a) =>
-          mapperFunc(val, i, a, positionOfLabelToMap)
+    let dygraph = cloneDeep(outputOfDygraphByValue);
+    let { data, attributes } = dygraph;
+    attributesToMap.forEach((attributeToMap, idx, arr) => {
+      const positionOfAttributeToMap = attributes.indexOf(attributeToMap);
+      if (positionOfAttributeToMap !== -1) {
+        data = data.map((val, i, a) =>
+          mapperFunc(val, i, a, positionOfAttributeToMap)
         );
       }
     });
-    return data;
+    return { data, attributes };
   }
 }
 

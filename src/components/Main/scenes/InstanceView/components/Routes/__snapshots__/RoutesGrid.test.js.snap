@@ -840,17 +840,17 @@ Array [
           class="c20"
           style="text-align:right"
         >
-          0.000%
+          0%
         </div>
         <div
           class="c19"
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            0ms
+            0 ms
           </div>
           <div>
-            9ms
+            9 ms
           </div>
         </div>
       </li>
@@ -994,17 +994,17 @@ Array [
           class="c20"
           style="text-align:right"
         >
-          0.000%
+          0%
         </div>
         <div
           class="c19"
           style="text-align:right;display:flex;flex-direction:column"
         >
           <div>
-            0ms
+            0 ms
           </div>
           <div>
-            0ms
+            0 ms
           </div>
         </div>
       </li>

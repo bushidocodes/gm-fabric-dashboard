@@ -72,14 +72,12 @@ describe("GO > SummaryGrid component", () => {
   test("Has a chart with correct props passed down", () => {
     expect(SummaryGridWrap.find(GMLineChart).length).toBe(1);
     expect(
-      Object.keys(SummaryGridWrap.find(GMLineChart).props()).includes(
-        "timeSeries"
-      )
+      Object.keys(SummaryGridWrap.find(GMLineChart).props()).includes("dygraph")
     ).toBe(true);
     expect(
       SummaryGridWrap.find(GMLineChart)
         .props()
-        .timeSeries[1].labels.includes("time")
+        .dygraph.attributes.includes("Time")
     ).toBe(true);
   });
 });

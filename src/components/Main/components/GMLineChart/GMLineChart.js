@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import React, { Fragment } from "react";
 import { injectIntl, FormattedMessage } from "react-intl";
 
-import DygraphContainer from "./components/DygraphWrapper";
+import DygraphWrapper from "./components/DygraphWrapper";
 import LineChartDisplay from "./components/LineChartDisplay";
 import LineChartTitle from "./components/LineChartTitle";
 import LineChartContent from "./components/LineChartContent";
@@ -23,6 +23,9 @@ import Glyph from "components/Glyphs/index";
 
 GMLineChart.propTypes = {
   detailLines: PropTypes.array,
+  dygraph: PropTypes.object.isRequired,
+  dygraphMetadata: PropTypes.object,
+  dygraphOptions: PropTypes.object,
   expectedAttributes: PropTypes.array,
   height: PropTypes.oneOf(["xs", "sm", "normal", "lg", "xl", "max"]),
   intl: PropTypes.object.isRequired,
@@ -40,20 +43,25 @@ GMLineChart.defaultProps = {
  * @param {Object} props
  */
 function GMLineChart({
-  detailLines,
-  expectedAttributes,
+  detailLines = [],
+  dygraph,
+  dygraph: { data, attributes },
+  dygraphMetadata,
+  dygraphOptions,
   height,
-  timeSeries,
-  title,
-  intl
+  intl,
+  title
 }) {
+  const expectedAttributes = dygraphMetadata
+    ? Object.keys(dygraphMetadata)
+    : [];
   return (
     <LineChartDisplay
       height={height}
       role="presentation"
       aria-label={
-        timeSeries
-          ? screenReaderGraphDescription(timeSeries, title, intl)
+        data
+          ? screenReaderGraphDescription(data, title, intl)
           : intl.formatMessage(
               {
                 id: "GMLineChart.noChartableData",
@@ -66,7 +74,7 @@ function GMLineChart({
     >
       {title && <LineChartTitle aria-hidden={true}>{title}</LineChartTitle>}
       <LineChartContent aria-hidden={true}>
-        {timeSeries[0].length === 0 ? (
+        {attributes.length === 0 ? (
           <LineChartEmpty>
             <h1>
               <Span>
@@ -97,7 +105,11 @@ function GMLineChart({
               )}
           </LineChartEmpty>
         ) : (
-          <DygraphContainer timeSeries={timeSeries} />
+          <DygraphWrapper
+            dygraph={dygraph}
+            dygraphOptions={dygraphOptions}
+            dygraphMetadata={dygraphMetadata}
+          />
         )}
       </LineChartContent>
       <LineChartDetails>

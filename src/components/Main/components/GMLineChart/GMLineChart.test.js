@@ -6,13 +6,13 @@ import GMLineChart from "./GMLineChart";
 const props = {
   title: "Classes",
   detailLines: ["Total Loaded: 10,200", "Total Unloaded: 19"],
-  timeSeries: [
-    [
+  dygraph: {
+    data: [
       ["Wed Nov 29 2017 18:46:51 GMT-0500 (EST)", 10181],
       ["Wed Nov 29 2017 18:46:51 GMT-0500 (EST)", 10181]
     ],
-    { labels: ["time", "# of currently loaded JVM Classes"] }
-  ],
+    attributes: ["time", "jvm/classes/current_loaded"]
+  },
   expectedAttributes: ["jvm/classes/current_loaded"],
   height: "xs"
 };
