@@ -2244,13 +2244,22 @@ export default {
   },
   dashboards: {
     http: {
-      name: "HTTP",
       runtime: "JVM",
       summaryCard: {
         icon: "Http",
+        name: {
+          id: "jvmInstance.http.summaryCard.name",
+          defaultMessage: "HTTP",
+          description: "Acronym HTTP for the Hypertext Transfer Protocol"
+        },
         lines: [
           {
-            name: "Received",
+            name: {
+              id: "jvmInstance.http.summaryCard.lines.httpReceived",
+              defaultMessage: "Received",
+              description:
+                "Prefix Label for the gigabytes of data received over HTTPS"
+            },
             value: [
               {
                 type: "latest",
@@ -2258,15 +2267,16 @@ export default {
                 baseUnit: "B",
                 resultUnit: "GB",
                 precision: 3
-              },
-              {
-                type: "string",
-                value: "GB"
               }
             ]
           },
           {
-            name: "Sent",
+            name: {
+              id: "jvmInstance.http.summaryCard.lines.httpSent",
+              defaultMessage: "Sent",
+              description:
+                "Prefix Label for the gigabytes of data received over HTTPS"
+            },
             value: [
               {
                 type: "latest",
@@ -2274,10 +2284,6 @@ export default {
                 baseUnit: "B",
                 resultUnit: "GB",
                 precision: 3
-              },
-              {
-                type: "string",
-                value: "GB"
               }
             ]
           }
@@ -2414,103 +2420,279 @@ export default {
       },
       charts: [
         {
-          title: "Connections",
+          key: "Connections",
+          title: {
+            id: "jvmInstance.http.chart.connections.title",
+            defaultMessage: "Connections",
+            description:
+              "the title of a chart a graph depicting the number of HTTP and HTTPS connections over time"
+          },
           type: "GMLineChart",
           data: {
             timeseries: [
               {
                 type: "value",
                 attribute: "http/connections",
-                label: "HTTP Connections"
+                label: {
+                  id:
+                    "jvmInstance.http.chart.connections.timeseries.httpConnectionsLabel",
+                  defaultMessage: "# of active HTTP connections",
+                  description:
+                    "a chart legend accompanying a line depicting the number of active HTTP connections"
+                }
               },
               {
                 type: "value",
                 attribute: "https/connections",
-                label: "HTTPS Connections"
+                label: {
+                  id:
+                    "jvmInstance.http.chart.connections.timeseries.httpsConnectionsLabel",
+                  defaultMessage: "# of active HTTPS connections",
+                  description:
+                    "a chart legend accompanying a line depicting the number of active HTTPS connections"
+                }
               }
             ]
           }
         },
         {
-          title: "Data Transfer Rates",
+          key: "Data Transfer Rates",
+          title: {
+            id: "jvmInstance.http.chart.dataTransferRates.title",
+            defaultMessage: "Data Transfer Rates",
+            description:
+              "the title of a chart a graph depicting rates of inbound and outbound network traffic running over HTTP and HTTPS"
+          },
           type: "GMLineChart",
           data: {
             timeseries: [
               {
                 type: "netChange",
                 attribute: "http/sent_bytes",
-                label: "HTTP Sent Bytes (kBps)",
-                baseUnit: "B",
-                resultUnit: "kB",
+                label: {
+                  id:
+                    "jvmInstance.http.chart.dataTransferRates.timeseries.httpSentLabel",
+                  defaultMessage: "HTTP Sent",
+                  description:
+                    "a label for timeseries data of rates of outbound traffic over http"
+                },
+                baseUnit: "B/s",
+                resultUnit: "kB/s",
                 precision: 3
               },
               {
                 type: "netChange",
                 attribute: "https/sent_bytes",
-                label: "HTTPS Sent Bytes (kBps)",
-                baseUnit: "B",
-                resultUnit: "kB",
+                label: {
+                  id:
+                    "jvmInstance.http.chart.dataTransferRates.timeseries.httpsSentLabel",
+                  defaultMessage: "HTTPS Sent",
+                  description:
+                    "a label for timeseries data of rates of outbound traffic over https"
+                },
+                baseUnit: "B/s",
+                resultUnit: "kB/s",
                 precision: 3
               },
               {
                 type: "netChange",
                 attribute: "http/received_bytes",
-                label: "HTTP Received (kBps)",
-                baseUnit: "B",
-                resultUnit: "kB",
+                label: {
+                  id:
+                    "jvmInstance.http.chart.dataTransferRates.timeseries.httpReceivedLabel",
+                  defaultMessage: "HTTP Received",
+                  description:
+                    "a label for timeseries data of rates of inbound traffic over http"
+                },
+                baseUnit: "B/s",
+                resultUnit: "kB/s",
                 precision: 3
               },
               {
                 type: "netChange",
                 attribute: "https/received_bytes",
-                label: "HTTPS Received (kBps)",
-                baseUnit: "B",
-                resultUnit: "kB",
+                label: {
+                  id:
+                    "jvmInstance.http.chart.dataTransferRates.timeseries.httpsReceivedLabel",
+                  defaultMessage: "HTTPS Received",
+                  description:
+                    "a label for timeseries data of rates of inbound traffic over https"
+                },
+                baseUnit: "B/s",
+                resultUnit: "kB/s",
                 precision: 3
               }
             ]
           }
         },
         {
-          title: "Requests",
+          key: "Requests",
+          title: {
+            id: "jvmInstance.http.chart.requests.title",
+            defaultMessage: "Requests",
+            description:
+              "The title of a table with rollup data on HTTP requests"
+          },
           type: "GMTable",
           data: {
-            headers: ["Requests", "Success"],
+            headers: [
+              {
+                id: "jvmInstance.http.chart.requests.headers.requests",
+                defaultMessage: "Requests",
+                description:
+                  "Table Header for counts of various types of requests"
+              },
+              {
+                id: "jvmInstance.http.chart.requests.headers.successes",
+                defaultMessage: "Successes",
+                description:
+                  "Table Header for various types of successful responses"
+              }
+            ],
             rows: [
-              ["http", "http/requests", "http/success"],
-              ["https", "https/requests", "https/success"]
+              [
+                {
+                  id: "jvmInstance.http.chart.requests.rowHeaders.http",
+                  defaultMessage: "HTTP",
+                  description:
+                    "Label for a row of HTTP requests and successful responses"
+                },
+                "http/requests",
+                "http/success"
+              ],
+              [
+                {
+                  id: "jvmInstance.http.chart.requests.rowHeaders.https",
+                  defaultMessage: "HTTPS",
+                  description:
+                    "Label for a row of HTTPS requests and successful responses"
+                },
+                "https/requests",
+                "https/success"
+              ]
             ]
           }
         },
         {
-          title: "Response Status Codes",
+          key: "Response Status Codes",
+          title: {
+            id: "jvmInstance.http.chart.responseStatusCodes.title",
+            defaultMessage: "Response Status Codes",
+            description:
+              "The title of a table with rollup data on HTTP response codes"
+          },
           type: "GMBasicMetrics",
           data: {
             detailLines: [
-              ["2XX", "status/2XX", "primary", "status/2XX", "value"],
-              ["200", "status/200", "primary", "status/200", "value"],
-              ["4XX", "status/4XX", "normal", "status/4XX", "value"],
-              ["400", "status/400", "normal", "status/400", "value"],
-              ["499", "status/499", "normal", "status/499", "value"],
-              ["5XX", "status/5XX", "normal", "status/5XX", "value"],
-              ["500", "status/500", "normal", "status/500", "value"]
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc2XX",
+                  defaultMessage: "2XX",
+                  description: "2XX, meaning all return codes in the 200s"
+                },
+                "status/2XX",
+                "primary",
+                "status/2XX",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc200",
+                  defaultMessage: "200",
+                  description: "return code 200"
+                },
+                "status/200",
+                "primary",
+                "status/200",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc4XX",
+                  defaultMessage: "4XX",
+                  description: "4XX, meaning all return codes in the 400s"
+                },
+                "status/4XX",
+                "normal",
+                "status/4XX",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc400",
+                  defaultMessage: "400",
+                  description: "return code 400"
+                },
+                "status/400",
+                "normal",
+                "status/400",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc499",
+                  defaultMessage: "499",
+                  description: "return code 499"
+                },
+                "status/499",
+                "normal",
+                "status/499",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc5XX",
+                  defaultMessage: "5XX",
+                  description: "5XX, meaning all return codes in the 500s"
+                },
+                "status/5XX",
+                "normal",
+                "status/5XX",
+                "value"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.http.chart.responseStatusCodes.detailLines.rc500",
+                  defaultMessage: "500",
+                  description: "return code 500"
+                },
+                "status/500",
+                "normal",
+                "status/500",
+                "value"
+              ]
             ]
           }
         }
       ]
     },
     jvm: {
-      name: "JVM",
       runtime: "JVM",
       summaryCard: {
         icon: "JVM",
+        name: {
+          id: "jvmInstance.jvm.summaryCard.name",
+          defaultMessage: "JVM",
+          description: "title for the Java Virtual Machine Dashboard"
+        },
         chart: {
           type: "value",
           dataAttribute: "jvm/mem/current/used"
         },
         lines: [
           {
-            name: "Mem. Used",
+            name: {
+              id: "jvmInstance.jvm.summaryCard.lines.memoryUsed",
+              defaultMessage: "Mem. Used",
+              description: "Label for the memory used by the JVM in MB"
+            },
             value: [
               {
                 type: "latest",
@@ -2518,10 +2700,6 @@ export default {
                 baseUnit: "B",
                 resultUnit: "MB",
                 precision: 3
-              },
-              {
-                type: "string",
-                value: "MB"
               }
             ]
           }
@@ -2540,7 +2718,15 @@ export default {
         },
         layouts: {
           lg: [
-            { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Heap",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 9,
+              minW: 4,
+              minH: 5
+            },
             {
               i: "Classes",
               x: 6,
@@ -2552,7 +2738,15 @@ export default {
             }
           ],
           md: [
-            { i: "Heap", x: 0, y: 0, w: 8, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Heap",
+              x: 0,
+              y: 0,
+              w: 8,
+              h: 9,
+              minW: 4,
+              minH: 5
+            },
             {
               i: "Classes",
               x: 0,
@@ -2564,7 +2758,15 @@ export default {
             }
           ],
           sm: [
-            { i: "Heap", x: 0, y: 0, w: 6, h: 9, minW: 4, minH: 5 },
+            {
+              i: "Heap",
+              x: 0,
+              y: 0,
+              w: 6,
+              h: 9,
+              minW: 4,
+              minH: 5
+            },
             {
               i: "Classes",
               x: 6,
@@ -2580,14 +2782,24 @@ export default {
       },
       charts: [
         {
-          title: "Heap",
+          key: "Heap",
+          title: {
+            id: "jvmInstance.jvm.chart.heapChart.title",
+            defaultMessage: "Heap",
+            description: "Title of a chart containing JVM Heap data"
+          },
           type: "GMLineChart",
           data: {
             detailLines: [
               [
                 {
                   type: "string",
-                  value: "Max Heap:"
+                  value: {
+                    id: "jvmInstance.jvm.chart.heapChart.detailLines.maxHeap",
+                    defaultMessage: "Max Heap:",
+                    description:
+                      "Label preceding the max size of the JVM Heap in GB"
+                  }
                 },
                 {
                   type: "latest",
@@ -2595,10 +2807,6 @@ export default {
                   baseUnit: "B",
                   resultUnit: "GB",
                   precision: 3
-                },
-                {
-                  type: "string",
-                  value: "GB"
                 }
               ]
             ],
@@ -2606,7 +2814,13 @@ export default {
               {
                 type: "value",
                 attribute: "jvm/heap/committed",
-                label: "JVM Heap Committed (MB)",
+                label: {
+                  id:
+                    "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapCommittedLabel",
+                  defaultMessage: "JVM Heap Committed:",
+                  description:
+                    "Label preceding the committed size of the JVM Heap in MB"
+                },
                 baseUnit: "B",
                 resultUnit: "MB",
                 precision: 3
@@ -2614,7 +2828,13 @@ export default {
               {
                 type: "value",
                 attribute: "jvm/heap/used",
-                label: "JVM Heap Used (MB)",
+                label: {
+                  id:
+                    "jvmInstance.jvm.chart.heapChart.timeseries.jvmHeapUsedLabel",
+                  defaultMessage: "JVM Heap Used:",
+                  description:
+                    "Label preceding the used size of the JVM Heap in MB"
+                },
                 baseUnit: "B",
                 resultUnit: "MB",
                 precision: 3
@@ -2623,14 +2843,25 @@ export default {
           }
         },
         {
-          title: "Classes",
+          key: "Classes",
+          title: {
+            id: "jvmInstance.jvm.chart.classesChart.title",
+            defaultMessage: "Classes",
+            description: "Title of a chart containing JVM Classes data"
+          },
           type: "GMLineChart",
           data: {
             detailLines: [
               [
                 {
                   type: "string",
-                  value: "Total Loaded:"
+                  value: {
+                    id:
+                      "jvmInstance.jvm.chart.classesChart.detailLines.totalLoadedClassesLabel",
+                    defaultMessage: "Total Loaded:",
+                    description:
+                      "Label preceeding the total count of JVM classes loaded into memory"
+                  }
                 },
                 {
                   type: "latest",
@@ -2640,7 +2871,13 @@ export default {
               [
                 {
                   type: "string",
-                  value: "Total Unloaded:"
+                  value: {
+                    id:
+                      "jvmInstance.jvm.chart.classesChart.detailLines.totalUnloadedClassesLabel",
+                    defaultMessage: "Total Unloaded:",
+                    description:
+                      "Label preceeding the total count of JVM classes unloaded from memory. I'm assuming this means garbage collection, not classes that have not yet been loaded"
+                  }
                 },
                 {
                   type: "latest",
@@ -2652,7 +2889,13 @@ export default {
               {
                 type: "value",
                 attribute: "jvm/classes/current_loaded",
-                label: "# of currently loaded JVM Classes"
+                label: {
+                  id:
+                    "jvmInstance.jvm.chart.classesChart.timeseries.currentLoadedClassesLabel",
+                  defaultMessage: "Current Loaded JVM Classes",
+                  description:
+                    "Label of timeseries data showing the number of classes loaded into memory."
+                }
               }
             ]
           }
@@ -2660,13 +2903,21 @@ export default {
       ]
     },
     finagle: {
-      name: "Finagle",
       runtime: "JVM",
       summaryCard: {
         icon: "Finagle",
+        name: {
+          id: "jvmInstance.finagle.summaryCard.name",
+          defaultMessage: "Finagle",
+          description: "title for the Finagle Dashboard"
+        },
         lines: [
           {
-            name: "Active Tasks",
+            name: {
+              id: "jvmInstance.finagle.summaryCard.lines.activeTasks",
+              defaultMessage: "Active Tasks",
+              description: "label for the count of active Finagle tasks"
+            },
             value: [
               {
                 type: "latest",
@@ -2675,7 +2926,11 @@ export default {
             ]
           },
           {
-            name: "Pend. Tasks",
+            name: {
+              id: "jvmInstance.finagle.summaryCard.lines.pendingTasks",
+              defaultMessage: "Pend. Tasks",
+              description: "label for the count of pending Finagle tasks"
+            },
             value: [
               {
                 type: "latest",
@@ -2816,86 +3071,231 @@ export default {
       },
       charts: [
         {
-          title: "Timer Deviation",
+          key: "Timer Deviation",
+          title: {
+            id: "jvmInstance.finagle.chart.timerDeviationChart.title",
+            defaultMessage: "Timer Deviation",
+            description:
+              "Title of a chart containing Finagle Timer Deviation data"
+          },
           type: "GMBasicMetrics",
           data: {
             detailLines: [
               [
-                "Count",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.timerDeviationChart.detailLines.count",
+                  defaultMessage: "Count",
+                  description:
+                    "a label for the total deviation count of the finagle timer"
+                },
                 "finagle/timer/deviation_ms.count",
                 "primary",
                 "finagle/timer/deviation_ms.count",
                 "value"
               ],
               [
-                "Average",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.timerDeviationChart.detailLines.average",
+                  defaultMessage: "Average",
+                  description:
+                    "a label for the average deviation of the finagle timer"
+                },
                 "finagle/timer/deviation_ms.avg",
                 "secondary",
                 "finagle/timer/deviation_ms.avg",
                 "value"
               ],
-              ["Max", "finagle/timer/deviation_ms.max", "normal"],
-              ["Min", "finagle/timer/deviation_ms.min", "normal"],
-              ["Sum", "finagle/timer/deviation_ms.sum", "normal"]
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.timerDeviationChart.detailLines.maximum",
+                  defaultMessage: "Maximum",
+                  description:
+                    "a label for the highest known deviation of the finagle timer"
+                },
+                "finagle/timer/deviation_ms.max",
+                "normal"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.timerDeviationChart.detailLines.minimum",
+                  defaultMessage: "Minimum",
+                  description:
+                    "a label for the lowest known deviation of the finagle timer"
+                },
+                "finagle/timer/deviation_ms.min",
+                "normal"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.timerDeviationChart.detailLines.sum",
+                  defaultMessage: "Total",
+                  description:
+                    "a label for the sum of all deviations of the finagle timer"
+                },
+                "finagle/timer/deviation_ms.sum",
+                "normal"
+              ]
             ]
           }
         },
         {
-          title: "Pending Timer Tasks",
+          key: "Pending Timer Tasks",
+          title: {
+            id: "jvmInstance.finagle.chart.pendingTimerTasksChart.title",
+            defaultMessage: "Pending Timer Tasks",
+            description:
+              "Title of a chart containing Finagle Pending Timer Tasks data"
+          },
           type: "GMBasicMetrics",
           data: {
             detailLines: [
               [
-                "Count",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.count",
+                  defaultMessage: "Count",
+                  description:
+                    "a label for the total deviation count of the finagle timer"
+                },
                 "finagle/timer/pending_tasks.count",
                 "primary",
                 "finagle/timer/pending_tasks.count",
                 "value"
               ],
               [
-                "Average",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.average",
+                  defaultMessage: "Average",
+                  description:
+                    "a label for the average deviation of the finagle timer"
+                },
                 "finagle/timer/pending_tasks.avg",
                 "secondary",
                 "finagle/timer/pending_tasks.avg",
                 "value"
               ],
-              ["Max", "finagle/timer/pending_tasks.max", "normal"],
-              ["Min", "finagle/timer/pending_tasks.min", "normal"],
-              ["Sum", "finagle/timer/pending_tasks.sum", "normal"]
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.maximum",
+                  defaultMessage: "Maximum",
+                  description:
+                    "a label for the highest known deviation of the finagle timer"
+                },
+                "finagle/timer/pending_tasks.max",
+                "normal"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.minimum",
+                  defaultMessage: "Minimum",
+                  description:
+                    "a label for the lowest known deviation of the finagle timer"
+                },
+                "finagle/timer/pending_tasks.min",
+                "normal"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.pendingTimerTasksChart.detailLines.sum",
+                  defaultMessage: "Total",
+                  description:
+                    "a label for the sum of all deviations of the finagle timer"
+                },
+                "finagle/timer/pending_tasks.sum",
+                "normal"
+              ]
             ]
           }
         },
         {
-          title: "Future Pool",
+          key: "Future Pool",
+          title: {
+            id: "jvmInstance.finagle.chart.futurePoolTasksChart.title",
+            defaultMessage: "Future Pool",
+            description:
+              "Title of a chart containing Finagle Future Pool Active Tasks data"
+          },
           type: "GMBasicMetrics",
           data: {
             detailLines: [
               [
-                "Active Tasks",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.activeTasks",
+                  defaultMessage: "Active Tasks",
+                  description:
+                    "Label for the total number of active tasks in the Finagle Future Pool"
+                },
                 "finagle/future_pool/active_tasks",
                 "primary",
                 "finagle/future_pool/active_tasks",
                 "value"
               ],
               [
-                "Completed Tasks",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.completedTasks",
+                  defaultMessage: "Completed Tasks",
+                  description:
+                    "Label for the total number of completed tasks in the Finagle Future Pool"
+                },
                 "finagle/futurePool/completed_tasks",
                 "secondary",
                 "finagle/futurePool/completed_tasks",
                 "value"
               ],
-              ["Pool Size", "finagle/timer/pool_size", "normal"]
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.futurePoolTasksChart.detailLines.poolSize",
+                  defaultMessage: "Pool Size",
+                  description: "Label for the size of the Finagle Future Pool"
+                },
+                "finagle/timer/pool_size",
+                "normal"
+              ]
             ]
           }
         },
         {
-          title: "Client Registry",
+          key: "Client Registry",
+          title: {
+            id: "jvmInstance.finagle.chart.clientRegistryChart.title",
+            defaultMessage: "Client Registry",
+            description:
+              "Title of a chart containing Finagle Client Registry Tasks data"
+          },
           type: "GMBasicMetrics",
           data: {
             detailLines: [
-              ["Size", "finagle/clientregistry/size", "primary"],
               [
-                "Initial Resolution",
+                {
+                  id:
+                    "jvmInstance.finagle.chart.clientRegistryChart.detailLines.size",
+                  defaultMessage: "Size",
+                  description:
+                    "Label for the size of the Finagle client registry"
+                },
+                "finagle/clientregistry/size",
+                "primary"
+              ],
+              [
+                {
+                  id:
+                    "jvmInstance.finagle.chart.clientRegistryChart.detailLines.initialResolution",
+                  defaultMessage: "Initial Resolution",
+                  description:
+                    "Label for the initial resolution of the Finagle client registry"
+                },
                 "finagle/clientregistry/initialresolution_ms",
                 "secondary"
               ]

@@ -140,6 +140,165 @@ export default {
       uptime: "Uptime",
       vitals: "Vitals"
     },
+    goInstance: {
+      go: {
+        summaryCard: {
+          name: "Go",
+          lines: {
+            heapUsed: "Heap Used"
+          }
+        },
+        chart: {
+          heapChart: {
+            detailLines: {
+              garbageCollectionRuns: "Garbage Collection Runs:",
+              totalGarbageCollectionPause: "Total GC Pause:"
+            },
+            timeseries: {
+              heapUsedChartLabel: "Go Heap Used",
+              heapSizeChartLabel: "Go Heap Size",
+              processMemoryUsedChartLabel: "Process Memory Used"
+            },
+            title: "Head"
+          },
+          goroutines: {
+            timeseries: {
+              goroutinesChartLabel: "# of allocated goroutines"
+            },
+            title: "Goroutines"
+          }
+        }
+      }
+    },
+    jvmInstance: {
+      http: {
+        summaryCard: {
+          name: "HTTP",
+          lines: {
+            httpReceived: "Received",
+            httpSent: "Sent"
+          }
+        },
+        chart: {
+          connections: {
+            title: "Connections",
+            timeseries: {
+              httpConnectionsLabel: "# of active HTTP connections",
+              httpsConnectionsLabel: "# of active HTTPS connections"
+            }
+          },
+          dataTransferRates: {
+            title: "Data Transfer Rates",
+            timeseries: {
+              httpSentLabel: "HTTP Sent",
+              httpsSentLabel: "HTTPS Sent",
+              httpReceivedLabel: "HTTP Received",
+              httpsReceivedLabel: "HTTPS Received"
+            }
+          },
+          requests: {
+            title: "Requests",
+            headers: {
+              requests: "Requests",
+              successes: "Successes"
+            },
+            rowHeaders: {
+              http: "HTTP",
+              https: "HTTPS"
+            }
+            // TODO: headers and rows
+          },
+          responseStatusCodes: {
+            title: "Response Status Codes",
+            detailLines: {
+              rc2XX: "2XX",
+              rc200: "200",
+              rc4XX: "4XX",
+              rc400: "400",
+              rc499: "499",
+              rc5XX: "5XX",
+              rc500: "500"
+            }
+          }
+        }
+      },
+      jvm: {
+        summaryCard: {
+          name: "JVM",
+          lines: {
+            memoryUsed: "Mem. Used"
+          }
+        },
+        chart: {
+          heapChart: {
+            title: "Heap",
+            detailLines: {
+              maxHeap: "Max Heap:"
+            },
+            timeseries: {
+              jvmHeapCommittedLabel: "JVM Heap Committed",
+              jvmHeapUsedLabel: "JVM Heap Used"
+            }
+          },
+          classesChart: {
+            title: "Classes",
+            detailLines: {
+              totalLoadedClassesLabel: "Total Loaded:",
+              totalUnloadedClassesLabel: "Total Unloaded:"
+            },
+            timeseries: {
+              currentLoadedClassesLabel: "Current Loaded JVM Classes"
+            }
+          }
+        }
+      }, // jvm dashboard
+      finagle: {
+        summaryCard: {
+          name: "Finagle",
+          lines: {
+            activeTasks: "Active Tasks",
+            pendingTasks: "Pend. Tasks"
+          }
+        },
+        chart: {
+          timerDeviationChart: {
+            title: "Timer Deviation",
+            detailLines: {
+              count: "Count",
+              average: "Average",
+              maximum: "Maximum",
+              minimum: "Minimum",
+              sum: "Total"
+            }
+          },
+          pendingTimerTasksChart: {
+            title: "Pending Timer Tasks",
+            detailLines: {
+              count: "Count",
+              average: "Average",
+              maximum: "Maximum",
+              minimum: "Minimum",
+              sum: "Total"
+            }
+          },
+          futurePoolTasksChart: {
+            title: "Future Pool",
+            detailLines: {
+              activeTasks: "Active Tasks",
+              completedTasks: "Completed Tasks",
+              poolSize: "Pool Size"
+            }
+          },
+          clientRegistryChart: {
+            title: "Client Registry",
+            detailLines: {
+              size: "Size",
+              initialResolution: "Initial Resolution"
+            }
+          }
+        }
+      } // finagle dashboard
+    },
     table: {
       errorPercent: "Error %",
       function: "Function",
@@ -325,12 +484,171 @@ export default {
       statistics: "Estadística",
       vitals: "Partes vitales"
     },
+    goInstance: {
+      go: {
+        summaryCard: {
+          name: "Go",
+          lines: {
+            heapUsed: "Pila Usado"
+          }
+        },
+        chart: {
+          heapChart: {
+            detailLines: {
+              garbageCollectionRuns: "iteraciones de recolección de basura:",
+              totalGarbageCollectionPause: "pausa de recolección de basura:"
+            },
+            timeseries: {
+              heapUsedChartLabel: "capacidad del pila usada",
+              heapSizeChartLabel: "capacidad total del",
+              processMemoryUsedChartLabel: "Memoria de proceso usada"
+            },
+            title: "Pila"
+          },
+          goroutines: {
+            timeseries: {
+              goroutinesChartLabel: "goroutines asignados"
+            },
+            title: "Goroutines"
+          }
+        }
+      }
+    },
+    jvmInstance: {
+      http: {
+        summaryCard: {
+          name: "HTTP",
+          lines: {
+            httpReceived: "Aceptado",
+            httpSent: "Emitir"
+          }
+        },
+        chart: {
+          connections: {
+            title: "Conexiones",
+            timeseries: {
+              httpConnectionsLabel: "conexiones http activas",
+              httpsConnectionsLabel: "conexiones https activas"
+            }
+          },
+          dataTransferRates: {
+            title: "Tasas de transferencia de datos",
+            timeseries: {
+              httpSentLabel: "HTTP Emitir",
+              httpsSentLabel: "HTTPS Emitir",
+              httpReceivedLabel: "HTTP Aceptado",
+              httpsReceivedLabel: "HTTPS Aceptado"
+            }
+          },
+          requests: {
+            title: "Solicitudes",
+            headers: {
+              requests: "Solicitudes",
+              successes: "Éxitos"
+            },
+            rowHeaders: {
+              http: "HTTP",
+              https: "HTTPS"
+            }
+          },
+          responseStatusCodes: {
+            title: "Códigos de estado de respuesta",
+            detailLines: {
+              rc2XX: "2XX",
+              rc200: "200",
+              rc4XX: "4XX",
+              rc400: "400",
+              rc499: "499",
+              rc5XX: "5XX",
+              rc500: "500"
+            }
+          }
+        }
+      },
+      jvm: {
+        summaryCard: {
+          name: "JVM",
+          lines: {
+            memoryUsed: "Memoria utilizada"
+          }
+        },
+        chart: {
+          heapChart: {
+            title: "Pila",
+            detailLines: {
+              maxHeap: "pila máximo:"
+            },
+            timeseries: {
+              jvmHeapCommittedLabel: "Pila JVM comprometido",
+              jvmHeapUsedLabel: "Pila JVM utilizado"
+            }
+          },
+          classesChart: {
+            title: "Clase",
+            detailLines: {
+              totalLoadedClassesLabel: "Total cargado:",
+              totalUnloadedClassesLabel: "Total descargado:"
+            },
+            timeseries: {
+              currentLoadedClassesLabel: "Clases actuales de JVM cargadas"
+            }
+          }
+        }
+      }, // jvm dashboard
+      finagle: {
+        summaryCard: {
+          name: "Finagle",
+          lines: {
+            activeTasks: "Tareas activas",
+            pendingTasks: "Tareas pendientes"
+          }
+        },
+        chart: {
+          timerDeviationChart: {
+            title: "Desviación del temporizador",
+            detailLines: {
+              count: "Cuenta",
+              average: "Media",
+              maximum: "Maximo",
+              minimum: "Mínimo",
+              sum: "Suma"
+            }
+          },
+          pendingTimerTasksChart: {
+            title: "Tareas pendientes del temporizador",
+            detailLines: {
+              count: "Cuenta",
+              average: "Media",
+              maximum: "Maximo",
+              minimum: "Mínimo",
+              sum: "Suma"
+            }
+          },
+          futurePoolTasksChart: {
+            title: "Grupo futuro de tareas",
+            detailLines: {
+              activeTasks: "Tareas activas",
+              completedTasks: "Tareas completadas",
+              poolSize: "Tamaño"
+            }
+          },
+          clientRegistryChart: {
+            title: "Registro de clientes",
+            detailLines: {
+              size: "Tamaño",
+              initialResolution: "Resolución inicial"
+            }
+            // TODO: GMBasicMetrics
+          }
+        }
+      } // finagle dashboard
+    },
     table: {
       errorPercent: "Error %",
       function: "Función",
       instance: "Ejemplo",
       latency: "Latencia",
-      requests: "Peticiones",
+      requests: "Solicitudes",
       requestsSec: "Solicitudes/seg",
       route: "Ruta",
       uptime: "Tiempo de Actividad"

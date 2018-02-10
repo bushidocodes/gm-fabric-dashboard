@@ -12,7 +12,7 @@ const store = configureMockStore()(state);
 // Wrap in Memory Router to mock route props (history, match, location)
 const ConnectedInstanceHeaderContent = <InstanceHeaderContent store={store} />;
 
-describe("InstanceHeaderContent", () => {
+xdescribe("InstanceHeaderContent", () => {
   let wrapper;
 
   beforeEach(() => {
@@ -62,7 +62,7 @@ describe("InstanceHeaderContent", () => {
     expect(wrapper.find("DefaultHeaderContent")).toHaveLength(0);
   });
 
-  xtest("passes correct props to children", () => {
+  test("passes correct props to children", () => {
     // modify state
     let modState = Object.assign({}, state, {
       fabric: {

@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import { connect } from "react-redux";
 import { injectGlobal } from "styled-components";
+import { injectIntl, intlShape } from "react-intl";
 
 import GMBasicMetrics from "./components/GMBasicMetrics";
 import GMLineChart from "../GMLineChart";
@@ -38,6 +39,7 @@ const ResponsiveReactGridLayout = WidthProvider(Responsive);
 export class GMGrid extends Component {
   static propTypes = {
     dashboard: dashboardShape,
+    intl: intlShape.isRequired,
     match: routerMatchShape,
     metrics: metricsShape.isRequired,
     name: PropTypes.string
@@ -53,7 +55,7 @@ export class GMGrid extends Component {
    * @param {Object[]} chart.data.timeseries - Array of complex timeseries objects. Has a "type" attribute with a string signifying the type of timeseries (e.g. netChange)
    */
   renderChart(chart) {
-    const { metrics } = this.props;
+    const { intl, metrics } = this.props;
     switch (chart.type) {
       case "GMLineChart":
         // Build out a metadata object keys by attribute
@@ -61,7 +63,7 @@ export class GMGrid extends Component {
         chart.data.timeseries.forEach(
           ({ attribute, label, precision, baseUnit, resultUnit }) => {
             dygraphMetadata[attribute] = {
-              label,
+              label: intl.formatMessage(label),
               precision,
               baseUnit,
               resultUnit
@@ -81,24 +83,31 @@ export class GMGrid extends Component {
           <GMLineChart
             detailLines={
               chart.data.detailLines &&
-              chart.data.detailLines.map(line => parseJSONString(line, metrics))
+              chart.data.detailLines.map(line =>
+                parseJSONString(line, metrics, intl.formatMessage)
+              )
             }
             height="max"
             dygraph={dygraph}
-            title={chart.title}
+            title={intl.formatMessage(chart.title)}
             dygraphMetadata={dygraphMetadata}
           />
         );
       case "GMTable":
         return (
           <GMTable
-            headers={chart.data.headers}
+            headers={chart.data.headers.map(header =>
+              intl.formatMessage(header)
+            )}
             rows={chart.data.rows.map((row, outerIdx) => {
               return row.map((cell, innerIdx) => {
-                return innerIdx > 0 ? getLatestAttribute(metrics, cell) : cell;
+                // The first item in a row is a i18n label of what's in the label
+                return innerIdx > 0
+                  ? getLatestAttribute(metrics, cell)
+                  : intl.formatMessage(cell);
               });
             })}
-            title={chart.title}
+            title={intl.formatMessage(chart.title)}
           />
         );
       case "GMBasicMetrics":
@@ -113,7 +122,7 @@ export class GMGrid extends Component {
                 sparklineType = null
               ]) => {
                 const results = [
-                  heading,
+                  intl.formatMessage(heading),
                   getLatestAttribute(metrics, key),
                   priority
                 ];
@@ -129,7 +138,7 @@ export class GMGrid extends Component {
                 return results;
               }
             )}
-            title={chart.title}
+            title={intl.formatMessage(chart.title)}
           />
         );
       default:
@@ -179,7 +188,7 @@ export class GMGrid extends Component {
           {dashboard.charts.map(chart => (
             <div
               data-grid={chart.position}
-              key={chart.title}
+              key={chart.key}
               style={{
                 overflow: "hidden"
               }}
@@ -209,4 +218,4 @@ function mapStateToProps({ dashboards, instance: { metrics } }, ownProps) {
   };
 }
 // default export for the connected component
-export default connect(mapStateToProps)(GMGrid);
+export default connect(mapStateToProps)(injectIntl(GMGrid));
