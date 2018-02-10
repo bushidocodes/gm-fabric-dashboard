@@ -1,3 +1,51 @@
+<a name="1.0.5"></a>
+
+## [1.0.5](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.4...v1.0.5) (2018-02-10)
+
+### Bug 🐛 Fixes 🔨
+
+* add margin to prevent lapping ([#1438](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1438)) ([ae7a394](https://github.com/DecipherNow/gm-fabric-dashboard/commit/ae7a394))
+* instance polling error ([#1442](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1442)) ([62fa6e0](https://github.com/DecipherNow/gm-fabric-dashboard/commit/62fa6e0))
+* remove console log from Glyph ([#1430](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1430)) ([04eb16b](https://github.com/DecipherNow/gm-fabric-dashboard/commit/04eb16b))
+* run linters in circleci ([#1368](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1368)) ([bb0bcbe](https://github.com/DecipherNow/gm-fabric-dashboard/commit/bb0bcbe))
+* sparklines overflow tabs ([#1433](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1433)) ([f1ab903](https://github.com/DecipherNow/gm-fabric-dashboard/commit/f1ab903))
+* storybook now imports css as expected ([#1474](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1474)) ([07feb8c](https://github.com/DecipherNow/gm-fabric-dashboard/commit/07feb8c))
+* upgraded storybook dependencies ([#1432](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1432)) ([e1ed88f](https://github.com/DecipherNow/gm-fabric-dashboard/commit/e1ed88f))
+
+### Features
+
+#### Internationalization 🌐 🗣️ 👂
+
+* notification i18n ([#1493](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1493)) ([76fb5ba](https://github.com/DecipherNow/gm-fabric-dashboard/commit/76fb5ba))
+* add intl shape ([#1494](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1494)) ([0e43dcc](https://github.com/DecipherNow/gm-fabric-dashboard/commit/0e43dcc))
+* add react-intl ([#1460](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1460)) ([6a81219](https://github.com/DecipherNow/gm-fabric-dashboard/commit/6a81219))
+* add storybook-intl ([#1479](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1479)) ([14bc81c](https://github.com/DecipherNow/gm-fabric-dashboard/commit/14bc81c))
+
+- fabric view i18n ([#1464](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1464)) ([c0dbe19](https://github.com/DecipherNow/gm-fabric-dashboard/commit/c0dbe19))
+- footer i18n ([#1486](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1486)) ([b92aa03](https://github.com/DecipherNow/gm-fabric-dashboard/commit/b92aa03))
+- GMLineChart i18n ([#1487](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1487)) ([f411199](https://github.com/DecipherNow/gm-fabric-dashboard/commit/f411199))
+- implement internationalization for dynamically generated dashboards ([#1497](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1497)) ([4cb4056](https://github.com/DecipherNow/gm-fabric-dashboard/commit/4cb4056))
+- instance view i18n ([#1476](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1476)) ([c5985c3](https://github.com/DecipherNow/gm-fabric-dashboard/commit/c5985c3))
+- jvm/summary i18n ([#1482](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1482)) ([17bcbbb](https://github.com/DecipherNow/gm-fabric-dashboard/commit/17bcbbb))
+- language widget ([#1496](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1496)) ([be23b60](https://github.com/DecipherNow/gm-fabric-dashboard/commit/be23b60))
+- service view i18n ([#1468](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1468)) ([07d5a97](https://github.com/DecipherNow/gm-fabric-dashboard/commit/07d5a97))
+- settings view i18n ([#1470](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1470)) ([068f4e9](https://github.com/DecipherNow/gm-fabric-dashboard/commit/068f4e9))
+- table i18n ([#1480](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1480)) ([6f5dc12](https://github.com/DecipherNow/gm-fabric-dashboard/commit/6f5dc12))
+
+#### Persist UI control state to the URL 🚦
+
+* Explorer withUrlState ([#1449](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1449)) ([769b59e](https://github.com/DecipherNow/gm-fabric-dashboard/commit/769b59e))
+* implement with-url-state for FabricGrid ([#1373](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1373)) ([dfb7bc6](https://github.com/DecipherNow/gm-fabric-dashboard/commit/dfb7bc6))
+* implemented withurlstate in FunctionsGrid ([#1446](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1446)) ([a14f3b8](https://github.com/DecipherNow/gm-fabric-dashboard/commit/a14f3b8))
+* RoutesGrid withUrlState ([#1443](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1443)) ([a1dda11](https://github.com/DecipherNow/gm-fabric-dashboard/commit/a1dda11))
+* ServiceView withUrlState ([#1444](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1444)) ([500ca09](https://github.com/DecipherNow/gm-fabric-dashboard/commit/500ca09))
+
+#### Other small enhancements 📈
+
+* add tool to audit dependency licenses ([#1380](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1380)) ([f07316b](https://github.com/DecipherNow/gm-fabric-dashboard/commit/f07316b))
+* graph areas now filled by default ([#1452](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1452)) ([6e8ced3](https://github.com/DecipherNow/gm-fabric-dashboard/commit/6e8ced3))
+* Client side routing now uses a slug representing a microservice name and version
+
 <a name="1.0.4"></a>
 
 ## [1.0.4](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.3...v1.0.4) (2018-01-16)
