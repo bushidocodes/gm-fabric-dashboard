@@ -123,7 +123,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin-top: 0.25px;
 }
 
-.c21 {
+.c18 {
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -164,24 +164,24 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   flex-direction: row;
 }
 
-.c21:hover {
+.c18:hover {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-.c21:focus,
-.c21:active {
+.c18:focus,
+.c18:active {
   -webkit-transition: all 0 ease;
   transition: all 0 ease;
 }
 
-.c21 > * {
+.c18 > * {
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
 }
 
-.c21:active {
+.c18:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
   background-color: hsl(0,0%,92.5%);
@@ -191,7 +191,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21:hover {
+.c18:hover {
   background-color: hsl(0,0%,98.5%);
   border-color: hsl(0,0%,92.6%);
   border-top-color: hsl(0,0%,100%);
@@ -199,16 +199,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21:focus {
+.c18:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
-.c21[disabled],
-.c21[disabled]:hover,
-.c21[disabled]:focus,
-.c21[disabled]:active {
+.c18[disabled],
+.c18[disabled]:hover,
+.c18[disabled]:focus,
+.c18[disabled]:active {
   cursor: default;
   opacity: 0.8;
   background-color: hsl(0,0%,94%);
@@ -216,12 +216,12 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   color: hsl(0,0%,0%);
 }
 
-.c21 > svg {
+.c18 > svg {
   width: 24px;
   height: 24px;
 }
 
-.c21 > :not(:first-child) {
+.c18 > :not(:first-child) {
   margin-left: 4px;
   -webkit-flex-basis: auto;
   -ms-flex-basis: auto;
@@ -365,67 +365,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   transition: all 0;
 }
 
-.c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  border: 1px solid rgb(230,230,230);
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 0 160px;
-  -ms-flex: 0 0 160px;
-  flex: 0 0 160px;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 140px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 160px;
-}
-
-.c14 .label {
-  bottom: 10px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-
-.c14 > svg {
-  color: rgb(10,171,42);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  will-change: transform;
-}
-
-.c14 .btn-type-polling > svg {
-  height: 100%;
-}
-
-.c14:hover svg,
-.c14:active svg,
-.c14:focus svg {
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-
-.c14:active svg {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: all 0;
-  transition: all 0;
-}
-
 .c12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -519,127 +458,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   border-radius: 20px;
 }
 
-.c15 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: 1px solid rgb(230,230,230);
-  border-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 1 50%;
-  -ms-flex: 0 1 50%;
-  flex: 0 1 50%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-left: 16px;
-  padding: 32px;
-  position: relative;
-  background: #f3f3f3;
-}
-
-.c15 .input-range__label.input-range__label--value {
-  color: rgb(10,171,42);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 0;
-  margin-left: -50%;
-  -webkit-transform: translateX(-50%) translateY(4px);
-  -ms-transform: translateX(-50%) translateY(4px);
-  transform: translateX(-50%) translateY(4px);
-  text-align: center;
-  will-change: transform;
-}
-
-.c15 .input-range__label.input-range__label--value .input-range__label-container {
-  position: static;
-}
-
-.c15 .label {
-  bottom: 10px;
-  font-size: 14px;
-  left: 0px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-
-.c15 .input-range__slider-container {
-  -webkit-transition: left 0;
-  transition: left 0;
-  will-change: transform;
-}
-
-.c15 .input-range__slider {
-  background: rgb(10,171,42);
-  border: none;
-  border-radius: 0;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
-.c15 .input-range__slider:hover,
-.c15 .input-range__slider:focus,
-.c15 .input-range__slider:active {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.c15 .input-range__slider:before {
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid rgb(10,171,42);
-  color: rgb(10,171,42);
-  content: "";
-  height: 0;
-  position: absolute;
-  top: 100%;
-  width: 0;
-}
-
-.c15 .input-range__track {
-  background-color: rgb(230,230,230);
-  border-radius: 20px;
-}
-
-.c15 .input-range__label.input-range__label--value {
-  color: rgb(102,102,102);
-}
-
-.c15 .input-range--disabled .input-range__slider {
-  background: rgb(102,102,102);
-  cursor: default;
-  border: none;
-}
-
-.c15 .input-range--disabled .input-range__slider:hover,
-.c15 .input-range--disabled .input-range__slider:focus,
-.c15 .input-range--disabled .input-range__slider:active {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
-.c15 .input-range__track {
-  cursor: default;
-}
-
-.c15 .input-range__slider:before {
-  border-top: 7px solid rgb(102,102,102);
-  color: rgb(102,102,102);
-}
-
 .c11 {
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
@@ -665,19 +483,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   cursor: default;
   display: inline-block;
   position: relative;
-}
-
-.c13 {
-  border-bottom: 1px solid rgb(217,217,217);
-  cursor: help;
-  display: inline-block;
-  position: relative;
-}
-
-.c13:hover > :last-child {
-  opacity: 1;
-  visibility: visible;
-  z-index: 1070;
 }
 
 .c0 {
@@ -743,7 +548,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c16 {
+.c13 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -765,21 +570,21 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   margin: 4px;
 }
 
-.c16:first-child:last-child {
+.c13:first-child:last-child {
   -webkit-flex-grow: 0;
   -ms-flex-grow: 0;
   flex-grow: 0;
 }
 
-.c16:first-child:last-child > * {
+.c13:first-child:last-child > * {
   text-align: center;
 }
 
-.c16:first-child:last-child > * > :first-child {
+.c13:first-child:last-child > * > :first-child {
   padding-left: 0;
 }
 
-.c17 {
+.c14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -804,7 +609,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   position: relative;
 }
 
-.c17 + .c17:before {
+.c14 + .c14:before {
   border-top: 1px solid currentColor;
   content: "";
   left: 0;
@@ -814,14 +619,14 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   top: 0;
 }
 
-.c17 button {
+.c14 button {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   margin: 8px 0;
 }
 
-.c18 {
+.c15 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -839,11 +644,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   padding: 8px 0;
 }
 
-.c18:first-child {
+.c15:first-child {
   padding-left: 16px;
 }
 
-.c19 {
+.c16 {
   font-size: 11px;
   margin: 0;
   padding: 0;
@@ -851,7 +656,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   min-height: 1em;
 }
 
-.c20 {
+.c17 {
   font-size: 32px;
   word-break: break-all;
   margin: 0;
@@ -860,7 +665,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 @media all and (max-width:1000px) {
-  .c16 {
+  .c13 {
     -webkit-flex: 0 0 300px;
     -ms-flex: 0 0 300px;
     flex: 0 0 300px;
@@ -1306,6 +1111,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
     isPollingFabric={true}
     isPollingInstanceMetrics={false}
     metricsCacheSize="67.48 KB"
+    selectedInstanceID="2smao7xwboy0000000000"
     store={
       Object {
         "clearActions": [Function],
@@ -1554,6 +1360,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
       isPollingFabric={true}
       isPollingInstanceMetrics={false}
       metricsCacheSize="67.48 KB"
+      selectedInstanceID="2smao7xwboy0000000000"
       store={
         Object {
           "clearActions": [Function],
@@ -2408,7 +2215,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           changePollingInterval={[Function]}
           glyph="ServiceInstance"
           interval={10000}
-          isDisabled={true}
+          isDisabled={false}
           isPolling={false}
           startPolling={[Function]}
           stopPolling={[Function]}
@@ -2627,7 +2434,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                 "textComponent": "span",
               }
             }
-            isDisabled={true}
+            isDisabled={false}
             isPolling={false}
             startPolling={[Function]}
             stopPolling={[Function]}
@@ -2729,11 +2536,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             "top": "0px",
                           }
                         }
-                        disabled={false}
+                        disabled={true}
                         position="left"
                       >
                         <styled.div
-                          disabled={false}
+                          disabled={true}
                           style={
                             Object {
                               "border": "none",
@@ -2741,8 +2548,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                           }
                         >
                           <div
-                            className="c13"
-                            disabled={false}
+                            className="c8"
+                            disabled={true}
                             style={
                               Object {
                                 "border": "none",
@@ -2750,16 +2557,16 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             }
                           >
                             <styled.div
-                              isDisabled={true}
+                              isDisabled={false}
                             >
                               <div
-                                className="c14"
+                                className="c9"
                               >
                                 <Button
                                   clickAction={[Function]}
-                                  disabled={true}
+                                  disabled={false}
                                   glyph="Play"
-                                  glyphColor="rgb(77, 77, 77)"
+                                  glyphColor="rgb(10, 171, 42)"
                                   glyphRatio={3}
                                   label="Resume Polling"
                                   labelStyle={
@@ -2786,7 +2593,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   type="polling"
                                 >
                                   <styled.button
-                                    disabled={true}
+                                    disabled={false}
                                     onClick={[Function]}
                                     orientation="vertical"
                                     outline="raised"
@@ -2805,7 +2612,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                   >
                                     <button
                                       className="c10"
-                                      disabled={true}
+                                      disabled={false}
                                       onClick={[Function]}
                                       orientation="vertical"
                                       size="xl"
@@ -2848,13 +2655,13 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                               >
                                                 <title />
                                                 <Glyph
-                                                  glyphColor="rgb(77, 77, 77)"
+                                                  glyphColor="rgb(10, 171, 42)"
                                                   name="Play"
                                                   ratio={3}
                                                 >
                                                   <g
                                                     className="glyph"
-                                                    fill="rgb(77, 77, 77)"
+                                                    fill="rgb(10, 171, 42)"
                                                     transform="translate(-24 -24) scale(3)"
                                                   >
                                                     <Play>
@@ -2912,10 +2719,10 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       </Tooltip>
                       <styled.div
                         id="ctrl-slider-Instance Polling"
-                        isDisabled={true}
+                        isDisabled={false}
                       >
                         <div
-                          className="c15"
+                          className="c12"
                           id="ctrl-slider-Instance Polling"
                         >
                           <InputRange
@@ -2935,7 +2742,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                 "valueLabel": "input-range__label input-range__label--value",
                               }
                             }
-                            disabled={true}
+                            disabled={false}
                             maxValue={120}
                             minValue={5}
                             onChange={[Function]}
@@ -2943,8 +2750,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             value={10}
                           >
                             <div
-                              aria-disabled={true}
-                              className="input-range input-range--disabled"
+                              aria-disabled={false}
+                              className="input-range"
                               onKeyDown={[Function]}
                               onKeyUp={[Function]}
                               onMouseDown={[Function]}
@@ -3239,7 +3046,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                       cacheCard={true}
                     >
                       <div
-                        className="c16"
+                        className="c13"
                       >
                         <ReadoutItem
                           cacheCard={true}
@@ -3251,22 +3058,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                             cacheCard={true}
                           >
                             <div
-                              className="c17"
+                              className="c14"
                             >
                               <styled.div>
                                 <div
-                                  className="c18"
+                                  className="c15"
                                 >
                                   <styled.h2>
                                     <h2
-                                      className="c19"
+                                      className="c16"
                                     >
                                       Cache Size
                                     </h2>
                                   </styled.h2>
                                   <styled.span>
                                     <span
-                                      className="c20"
+                                      className="c17"
                                     >
                                       67.48 KB
                                     </span>
@@ -3283,7 +3090,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                                       title="Clear Cache"
                                     >
                                       <button
-                                        className="c21"
+                                        className="c18"
                                         onClick={[Function]}
                                         tabIndex={0}
                                         title="Clear Cache"
