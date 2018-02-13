@@ -160,7 +160,8 @@
     "start-all": "npm-run-all --print-label --parallel start-ui mock-sds",
     "start-ui": "node scripts/start.js",
     "storybook": "start-storybook -p 6006",
-    "test": "node scripts/test.js --env=jsdom",
+    "test":
+      "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
     "update-deps": "npm-check . --skip-unused -u"
   },
   "husky": {

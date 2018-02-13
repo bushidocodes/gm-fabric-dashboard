@@ -1,7 +1,7 @@
 import React from "react";
 import mockState from "json/mockReduxState";
 import configureStore from "redux-mock-store";
-import { shallowWithIntl } from "utils/i18nTesting";
+import { renderWithIntl, shallowWithIntl } from "utils/i18nTesting";
 
 import LayoutSection from "components/LayoutSection";
 import GMLineChart from "components/Main/components/GMLineChart";
@@ -20,7 +20,7 @@ describe("JVM > SummaryGrid component", () => {
   });
 
   test("Matched the snapshot", () => {
-    const tree = shallowWithIntl(<SummaryGrid store={mockStore} />);
+    const tree = renderWithIntl(<SummaryGrid store={mockStore} />);
     expect(tree).toMatchSnapshot();
   });
 

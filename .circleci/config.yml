@@ -8,6 +8,7 @@ defaults: &defaults
   working_directory: ~/repo
   environment:
     CC_TEST_REPORTER_ID: 8d6b13736e5671bfae1278c53eae2dc43fe937f0deb7215ec76b2b684bea0682
+    TZ: /usr/share/zoneinfo/America/New_York
   docker:
     - image: circleci/node:carbon
 
@@ -90,6 +91,9 @@ jobs:
           - cache-
       # CircleCI 2.0 no longer allows interpolation of env variables. This is the workaround: 
       # https://discuss.circleci.com/t/using-environment-variables-in-config-yml-not-working/14237
+      - run:
+          name: Prove valid timezone
+          command: date
       - run: 
           command: | 
             mkdir results
