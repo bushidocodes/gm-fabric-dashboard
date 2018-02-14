@@ -153,6 +153,7 @@
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
     "lint-js": "node ./node_modules/eslint/bin/eslint 'src'",
     "mock-sds": "node json-mock/discovery-service/sds.js",
+    "generateGitHubDraft": "node scripts/generateGitHubDraft.js",
     "publish": "node scripts/publish.js",
     "report-dep-licenses":
       "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
