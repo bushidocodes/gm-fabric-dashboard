@@ -67,6 +67,7 @@
     "reselect": "~3.0.1",
     "style-loader": "^0.19.1",
     "styled-components": "^2.4.0",
+    "testcafe-reporter-xunit": "^2.1.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.1",
@@ -135,19 +136,19 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-no-unsupported-browser-features": "^2.0.0",
     "stylelint-processor-styled-components": "^1.2.2",
+    "testcafe": "^0.18.6",
+    "testcafe-browser-provider-browserstack": "^1.2.0",
+    "testcafe-react-selectors": "^1.0.5",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack-bundle-analyzer": "^2.9.2"
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "build-docker":
-      "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
+    "build-docker": "docker build -t deciphernow/gm-fabric-dashboard -f docker-prod/Dockerfile .",
     "build-storybook": "build-storybook",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "docs":
-      "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
-    "eslint-prettier-check":
-      "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "docs": "cross-env NODE_ENV=production node ./node_modules/documentation/bin/documentation.js build src/index.js -f md -o docs.md",
+    "eslint-prettier-check": "node ./node_modules/eslint/bin/eslint --print-config .eslintrc | eslint-config-prettier-check",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "junit-merge": "junit-merge",
     "lint-css": "stylelint --formatter string 'src/**/*.{js,jsx}'",
@@ -155,14 +156,13 @@
     "mock-sds": "node json-mock/discovery-service/sds.js",
     "generateGitHubDraft": "node scripts/generateGitHubDraft.js",
     "publish": "node scripts/publish.js",
-    "report-dep-licenses":
-      "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
+    "report-dep-licenses": "license-checker --summary --out licenses/summary.txt && license-checker --csv --customPath licenses/licenseReportFormat.json --out licenses/report.csv",
     "start": "npm run start-all",
     "start-all": "npm-run-all --print-label --parallel start-ui mock-sds",
     "start-ui": "node scripts/start.js",
     "storybook": "start-storybook -p 6006",
-    "test":
-      "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
+    "test": "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
+    "test:e2e": "./scripts/testcafe.sh",
     "update-deps": "npm-check . --skip-unused -u"
   },
   "husky": {
@@ -172,7 +172,10 @@
     }
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest-junit": {
     "suiteName": "GM Fabric",
@@ -182,15 +185,18 @@
     "usePathForSuiteName": "true"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
       "<rootDir>/config/jest/jestSetup.js"
     ],
-    "setupTestFrameworkScriptFile":
-      "<rootDir>/config/jest/jestTestFrameworkSetup.js",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/jestTestFrameworkSetup.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -202,15 +208,28 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleDirectories": ["node_modules", "<rootDir>/src"],
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx"
+    ]
   },
   "babel": {
-    "presets": ["react-app"]
+    "presets": [
+      "react-app"
+    ]
   },
   "prettier": {
     "bracketSpacing": true,
@@ -223,7 +242,9 @@
     "useTabs": false
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "browserslist": [
     "last 2 Chrome versions",
