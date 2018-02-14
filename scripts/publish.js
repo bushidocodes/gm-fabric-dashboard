@@ -5,6 +5,15 @@ const prompt = require("prompt");
 prompt.start();
 const promptGet = util.promisify(prompt.get);
 
+function execWrapper(...args) {
+  if (dryRun) {
+    console.log(...args);
+    return { stdout: "", stderr: "" };
+  } else {
+    return exec(...args);
+  }
+}
+
 function _generateSemVerStrings(major, minor, patch, releaseCandidate = null) {
   // If there is a releaseCandidate value, don't tag with the major and
   // major.minor tags
@@ -41,7 +50,39 @@ async function _confirm(question, alreadyConfirmed = false) {
     initialConfirm.toLowerCase() !== "y" &&
     initialConfirm.toLowerCase() !== "yes"
   ) {
-    console.log("Aborting");
+    process.exit();
+  }
+}
+
+/**
+ * async function that confirms that the local branch is master, that it is up to date with
+ * origin/master, and that it doesn't have any uncommitted local changes. This was developed
+ * against the output from git version 2.13.6 (Apple Git-96), so this might erroneously fail
+ * on other platforms
+ */
+async function validateReadyToPublish() {
+  try {
+    await execWrapper(`git fetch`);
+    let { stdout: gitStatus } = await execWrapper(`git status`);
+    let [, branchName] = gitStatus.match(/On branch ([\w-./]+)/);
+    const isUpToDate =
+      gitStatus.search(/Your branch is up-to-date with 'origin\/master'./) > -1;
+    const isClean =
+      gitStatus.search(/nothing to commit, working tree clean/) > -1;
+    if (branchName !== "master") {
+      console.log(
+        `Current Branch is ${branchName}. You must publish from master`
+      );
+      process.exit();
+    } else if (!isUpToDate) {
+      console.log("local is not up to date with origin/master");
+      process.exit();
+    } else if (!isClean) {
+      console.log("Uncommitted local changes detected.");
+      process.exit();
+    }
+  } catch (err) {
+    console.log(`Failed with:\n ${err}`);
     process.exit();
   }
 }
@@ -56,14 +97,8 @@ async function publish({
   dryRun = false
 }) {
   try {
-    function execWrapper(...args) {
-      if (dryRun) {
-        console.log(...args);
-        return { stdout: "", stderr: "" };
-      } else {
-        return exec(...args);
-      }
-    }
+    if (!dryRun) await validateReadyToPublish();
+
     // Clean old gm-fabric-dashboard images and dangling images
     // Because rmi errors if docker images doesn't return anything, we check to
     // see if the docker images commands actually return valid IDs first
@@ -213,4 +248,12 @@ const { major, minor, patch, releaseCandidate, tag, dryRun, confirm } = program
   )
   .parse(process.argv);
 
-publish({ major, minor, patch, releaseCandidate, tags: tag, dryRun, confirm });
+publish({
+  major,
+  minor,
+  patch,
+  releaseCandidate,
+  tags: tag,
+  dryRun,
+  confirm
+});
