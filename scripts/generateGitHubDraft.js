@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-// const axios = require("axios");
+const axios = require("axios");
 
 // Scrape the tag from package JSON
 const version = process.env.npm_package_version;
@@ -14,8 +14,8 @@ const version = process.env.npm_package_version;
 // View and troubleshoot the RexExp at https://regexr.com/3kof2
 
 const changelogPath = path.resolve(__dirname, "..", "CHANGELOG.md");
-const changelogContent = fs.readFileSync(changelogPath, { encoding: "ascii" });
-const semverAnchorRegEx = /<a name="[0-9.]+"><\/a>\n\n## \[[0-9.]+\]\([\w://.-]+\) \(\d{4}-\d{2}-\d{2}\)\n\n/g;
+const changelogContent = fs.readFileSync(changelogPath, { encoding: "utf8" });
+const semverAnchorRegEx = /<a name="[0-9.]+"><\/a>\n+## \[[0-9.]+\]\([\w://.-]+\) \(\d\d\d\d-\d\d-\d\d\)\n\n/g;
 const bodyOfLatestGeneratedChangeLogEntry = changelogContent.split(
   semverAnchorRegEx
 )[1];
@@ -28,13 +28,12 @@ const payload = {
   draft: true,
   prerelease: false
 };
-console.log(payload);
 
-// We need to authenticate a post request with the payload to generate releases
-// axios
-//   .post(
-//     "https://github.com/repos/DecipherNow/gm-fabric-dashboard/releases",
-//     payload
-//   )
-//   .then(data => console.log(data))
-//   .catch(err => console.log(`ERR: ${err}`));
+axios
+  .post(
+    `https://api.github.com/repos/DecipherNow/gm-fabric-dashboard/releases`,
+    payload,
+    { headers: { Authorization: `token ${process.env.GITHUB_ACCESS_KEY}` } }
+  )
+  .then(data => console.log(data))
+  .catch(err => console.log(`ERR: ${err}`));
