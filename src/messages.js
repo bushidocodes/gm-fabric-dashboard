@@ -159,7 +159,7 @@ export default {
               heapSizeChartLabel: "Go Heap Size",
               processMemoryUsedChartLabel: "Process Memory Used"
             },
-            title: "Head"
+            title: "Heap"
           },
           goroutines: {
             timeseries: {
