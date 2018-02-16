@@ -1,8 +1,8 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
-import BaseInstanceView from "./base-instance-model";
+import BaseInstanceViewModel from "./base-instance-view-model";
 
-export default class InstanceViewGo extends BaseInstanceView {
+export default class InstanceGoViewModel extends BaseInstanceViewModel {
   constructor() {
     super();
 

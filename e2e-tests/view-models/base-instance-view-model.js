@@ -1,8 +1,8 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
-import BasePage from "./base-model";
+import BaseViewModel from "./base-view-model";
 
-export default class BaseInstanceView extends BasePage {
+export default class BaseInstanceViewModel extends BaseViewModel {
   constructor() {
     super();
     // The following selectors are common to both JVM and GO instance views

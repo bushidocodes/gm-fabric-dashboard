@@ -1,9 +1,9 @@
 import ReactSelector from "testcafe-react-selectors";
-import BaseInstanceView from "../page-models/base-instance-model";
+import BaseInstanceViewModel from "../view-models/base-instance-view-model";
 
 fixture`Getting Started`.page`http://localhost:3000`;
 
-let instanceView = new BaseInstanceView();
+let instanceView = new BaseInstanceViewModel();
 
 test("My first test", async t => {
   await t.click(ReactSelector("GMServiceCard").withText("Crashy"));

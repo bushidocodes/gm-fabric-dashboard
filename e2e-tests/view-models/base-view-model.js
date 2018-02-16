@@ -1,7 +1,7 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 
-export default class BasePage {
+export default class BaseViewModel {
   constructor() {
     // Top bar
     this.linkFabric = ReactSelector("BrandText");
