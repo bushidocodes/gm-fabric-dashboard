@@ -6,9 +6,13 @@ export default class BaseViewModel {
     // Top bar
     this.linkFabric = ReactSelector("BrandText");
     this.linkBreadcrumbs = ReactSelector("Breadcrumb"); // returns all Breadcrumb instances
-    this.linkLanguages = ReactSelector("LanguageSelectorWrap");
     this.linkVersion = ReactSelector("AppVersionLink");
     this.linkSettings = Selector("a").withAttribute("title", "Settings");
+
+    // Internationalization
+    this.linkLanguages = ReactSelector("LanguageSelectorWrap");
+    this.linkLanguagesEn = Selector("ul li").withText("English (en)");
+    this.linkLanguagesEs = Selector("ul li").withText("Español (es)");
 
     // Banner
     this.pageTitle = ReactSelector("Header");
