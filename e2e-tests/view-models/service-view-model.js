@@ -1,7 +1,7 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 
-import BasePage from "./base-model";
+import BasePage from "./base-view-model";
 
 export default class ServiceViewModel extends BasePage {
   constructor() {
