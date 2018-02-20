@@ -640,6 +640,11 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
         >
           Español (es)
         </li>
+        <li
+          class="c10"
+        >
+          Deutsch (de)
+        </li>
       </ul>
     </div>
     <a
@@ -1593,6 +1598,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
           class="c10"
         >
           Español (es)
+        </li>
+        <li
+          class="c10"
+        >
+          Deutsch (de)
         </li>
       </ul>
     </div>

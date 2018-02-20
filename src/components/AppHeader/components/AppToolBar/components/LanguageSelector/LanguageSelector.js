@@ -38,6 +38,11 @@ class LanguageSelector extends React.Component {
           >
             Español (es)
           </LanguageSelectorOption>
+          <LanguageSelectorOption
+            onClick={() => this.onSelectLanguage("de-DE")}
+          >
+            Deutsch (de)
+          </LanguageSelectorOption>
         </LanguageSelectorContent>
       </LanguageSelectorWrap>
     );

@@ -1,13 +1,14 @@
 import _ from "lodash";
 
-const SUPPORTED_LOCALES = ["en-US", "es-ES"];
+const SUPPORTED_LOCALES = ["de-DE", "en-US", "es-ES"];
 
 const DEFAULT_LOCALE = "en-US";
 
 const LOCALE_ALIASES = {
   en: "en-US",
   "en-GB": "en-US",
-  es: "es-ES"
+  es: "es-ES",
+  de: "de-DE"
 };
 
 /**

@@ -683,5 +683,350 @@ export default {
       priority: "Prioridad",
       state: "Estado"
     }
+  },
+  "de-DE": {
+    explorer: {
+      selectMetric: "Wählen Sie eine Metrik aus"
+    },
+
+    fabric: {
+      capability: "Fähigkeit",
+      error: "Keine Dienste gefunden",
+      name: "Name",
+      none: "Keine",
+      owner: "Inhaber",
+      searchPlaceholder: "Suce nach Dienste",
+      status: "Status"
+    },
+    fabricHeaderContent: {
+      allServices: "Alle Dieste",
+      down: "außer Betrieb",
+      services: "Dienste",
+      stable: "in Betrieb",
+      summary: "Zusammenfassung",
+      warning: "Warnung"
+    },
+    fabricMicroservices: {
+      disableFetchError:
+        "Automatisches Deaktivieren des Abrufs von Fabric-Microservices nach drei Versuchen.",
+      fetchError: "Das Abrufen von Fabric Microservices ist fehlgeschlagen"
+    },
+    fabricRouter: {
+      noInstance:
+        "{instanceID} ist kein Fall von {serviceName} {serviceVersion}",
+      noMetrics:
+        "{serviceName} {serviceVersion} hat keine anzuzeigenden Metriken",
+      noService: "{serviceSlug} ist kein bekannter Microservice",
+      notAuthorized:
+        "Sie sind nicht berechtigt, {serviceName} {serviceVersion} zu betrachten"
+    },
+    footer: {
+      copyright:
+        "Urheberrecht &copy; 2018 Decipher Technologie Studios. Alle Rechte vorbehalten. <br /> Urheberrecht &copy; 2018 Grey Matter, ein Produkt der Decipher Technology Studios. Alle Rechte vorbehalten."
+    },
+    functionsGrid: {
+      error: "Keine Funktionen gefunden",
+      errorPercent: "Error %",
+      function: "Funktion",
+      latency50: "Latenz 50%",
+      latency99: "Latenz 99%",
+      requests: "Anforderungen",
+      searchPlaceholder: "Suche nach Funktionen"
+    },
+    GMLineChart: {
+      noChartableData: "Keine Daten",
+      noMetricsFound: "Die folgenden Metriken konnten nicht gefunden werden:",
+      screenReaderGraphDescription: {
+        withData:
+          "Eine tabellarische Darstellung der {title} Chart-Daten: Median {median} Durchschnitt {average} Modus {mode} Maximum {max} Minimum {min} Anzahl der Beobachtungen {dataPoints} Komplette Daten Zeitreihen folgen {timeSeries}",
+        noData:
+          "Der Durchschnitt für die aktuell angezeigten Daten ist gleich 0."
+      }
+    },
+    GMServiceTableLineItem: {
+      tooltip:
+        "Diese Microservice-Instanz verfügt nicht über anzuzeigende Metriken."
+    },
+    goHeaderContent: {
+      explorer: "Forscher",
+      functions: "Funktionen",
+      requests: "Anforderungen",
+      routes: "Routen",
+      summary: "Zusammenfassung",
+      uptime: "Betriebszeit"
+    },
+    inspector: {
+      hideStaticMetric: "Alle statischen Metriken ausblenden",
+      hideZeroMetric: "Blenden Sie alle Metriken mit nur Nullwerten aus",
+      searchAriaLabel: "Alle Metriken durchsuchen",
+      searchPlaceholder: "Suche"
+    },
+    instanceMetricsUtils: {
+      disableFetchError:
+        "Das Abrufen von Messwerten nach drei Versuchen wird automatisch deaktiviert. Sie können die Abfrage in den Einstellungen wieder aktivieren.",
+      fetchError: "Das Abrufen von Metriken ist fehlgeschlagen"
+    },
+    jvmHeaderContent: {
+      explorer: "Forscher",
+      requests: "Anfragen",
+      routes: "Routen",
+      summary: "Zusammenfassung",
+      threads: "Threads",
+      uptime: "Betriebszeit"
+    },
+    languageSelector: { languages: "Sprachen" },
+    pollingSettings: {
+      button: {
+        pause: "Polling anhalten",
+        resume: "Polling fortsetzen"
+      },
+      pollingIntervals: "Abrufintervall"
+    },
+    routesGrid: {
+      error: "Keine Routen gefunden",
+      errorPercent: "Fehler %",
+      latency50: "Latenz 50%",
+      latency99: "Latenz 99%",
+      route: "Route",
+      requests: "Anfragen",
+      searchPlaceholder: "Routen suchen"
+    },
+    serviceView: {
+      error: "Keine Instanzen gefunden",
+      name: "Name",
+      searchPlaceholder: "Instanzen suchen",
+      uptime: "Betriebszeit"
+    },
+    serviceHeaderContent: {
+      instances: "Instanzen"
+    },
+    settingsGrid: {
+      cacheSize: "Cache-Größe",
+      clearCache: "Cache leeren",
+      fabricPolling: "Stoffabfrage",
+      instancePolling: "Instanzabruf",
+      metricsCache: "Kennzahlen-Cache",
+      modal: {
+        question:
+          "Sind Sie sicher, dass Sie die zwischengespeicherten Metrikdaten löschen möchten?",
+        secondary: "Diese Aktion kann nicht rückgängig gemacht werden."
+      },
+      polling: "Abfragen",
+      tooltip: "Wählen Sie eine Instanz aus, um die Abfrage zu aktivieren"
+    },
+    summary: {
+      errorRate: "Fehlerrate",
+      hostCPUCores: "Host-CPU-Kerne",
+      hostCPUUsage: "Host-CPU-Nutzung",
+      hostCPUUsageDetail:
+        "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
+      memoryUsage: "Speicher verwendet",
+      memoryUsageDetail: "{hostMemoryAvail} frei auf Host",
+      requestsPerSecond: "Anfragen pro Sekunde",
+      responseTime: "Durchschn. Reaktionszeit",
+      statistics: "Statistiken",
+      uptime: "Betriebszeit",
+      vitals: "Vitale"
+    },
+    goInstance: {
+      go: {
+        summaryCard: {
+          name: "Go",
+          lines: {
+            heapUsed: "Heap verwendet"
+          }
+        },
+        chart: {
+          heapChart: {
+            detailLines: {
+              garbageCollectionRuns: "GC Anzahl:",
+              totalGarbageCollectionPause: "gesamte GC Pause:"
+            },
+            timeseries: {
+              heapUsedChartLabel: "Go Heap verwendet",
+              heapSizeChartLabel: "Go Heap Größe",
+              processMemoryUsedChartLabel: "Verwendeter Prozessspeicher"
+            },
+            title: "Heap"
+          },
+          goroutines: {
+            timeseries: {
+              goroutinesChartLabel: "Anzahl der zugewiesenen Goroutines"
+            },
+            title: "Goroutines"
+          }
+        }
+      }
+    },
+    jvmInstance: {
+      http: {
+        summaryCard: {
+          name: "HTTP",
+          lines: {
+            httpReceived: "Erhalten",
+            httpSent: "Gesendet"
+          }
+        },
+        chart: {
+          connections: {
+            title: "Verbindungen",
+            timeseries: {
+              httpConnectionsLabel: "Anzahl aktiver HTTP-Verbindungen",
+              httpsConnectionsLabel: "Anzahl aktiver HTTPS-Verbindungen"
+            }
+          },
+          dataTransferRates: {
+            title: "Datenübertragungsraten",
+            timeseries: {
+              httpSentLabel: "HTTP gesendet",
+              httpsSentLabel: "HTTPS gesendet",
+              httpReceivedLabel: "HTTP empfangen",
+              httpsReceivedLabel: "HTTPS empfangen"
+            }
+          },
+          requests: {
+            title: "Anfragen",
+            headers: {
+              requests: "Anfragen",
+              successes: "Erfolge"
+            },
+            rowHeaders: {
+              http: "HTTP",
+              https: "HTTPS"
+            }
+          },
+          responseStatusCodes: {
+            title: "Antwortstatuscodes",
+            detailLines: {
+              rc2XX: "2XX",
+              rc200: "200",
+              rc4XX: "4XX",
+              rc400: "400",
+              rc499: "499",
+              rc5XX: "5XX",
+              rc500: "500"
+            }
+          }
+        }
+      },
+      jvm: {
+        summaryCard: {
+          name: "JVM",
+          lines: {
+            memoryUsed: "Speicher verwendet"
+          }
+        },
+        chart: {
+          heapChart: {
+            title: "Heap",
+            detailLines: {
+              maxHeap: "Max Heap:"
+            },
+            timeseries: {
+              jvmHeapCommittedLabel: "JVM Heap verpflichtet",
+              jvmHeapUsedLabel: "JVM-Heap verwendet"
+            }
+          },
+          classesChart: {
+            title: "Klassen",
+            detailLines: {
+              totalLoadedClassesLabel: "Insgesamt geladen:",
+              totalUnloadedClassesLabel: "Insgesamt entladen:"
+            },
+            timeseries: {
+              currentLoadedClassesLabel: "Aktuell geladene JVM-Klassen"
+            }
+          }
+        }
+      },
+      finagle: {
+        summaryCard: {
+          name: "Finagle",
+          lines: {
+            activeTasks: "Aktive Aufgaben",
+            pendingTasks: "Ausstehende Aufgaben"
+          }
+        },
+        chart: {
+          timerDeviationChart: {
+            title: "Timer-Abweichung",
+            detailLines: {
+              count: "Count",
+              average: "Durchschnitt",
+              maximum: "Maximum",
+              minimum: "Minimum",
+              sum: "Gesamt"
+            }
+          },
+          pendingTimerTasksChart: {
+            title: "Ausstehende Timer-Aufgaben",
+            detailLines: {
+              count: "Anzahl",
+              average: "Durchschnitt",
+              maximum: "Maximum",
+              minimum: "Minimum",
+              sum: "Gesamt"
+            }
+          },
+          futurePoolTasksChart: {
+            title: "Zukünftiger Pool",
+            detailLines: {
+              activeTasks: "Aktive Aufgaben",
+              completedTasks: "Abgeschlossene Aufgaben",
+              poolSize: "Pool Größe"
+            }
+          },
+          clientRegistryChart: {
+            title: "Kundenregistrierung",
+            detailLines: {
+              size: "Größe",
+              initialResolution: "Anfangsauflösung"
+            }
+          }
+        }
+      }
+    },
+    table: {
+      errorPercent: "Error %",
+      function: "Funktion",
+      instance: "Fall",
+      latency: "Latenz",
+      requests: "Anfragen",
+      requestsSec: "Anfragen / Sek",
+      route: "Route",
+      uptime: "Betriebszeit"
+    },
+    tableColLatencyHeader: {
+      latency: "Latenz",
+      latency50: "50%",
+      latency99: "99%",
+      tooltip:
+        "Latenz 50% bezieht sich auf die durchschnittliche Latenz des 50% Perzentils, während Latenz 99% ist die durchschnittliche Latenz für die langsamste 1% der Antworten, auch bekannt als Tail-Latenz."
+    },
+    tableLineItem: {
+      requests: "Anfragen über Zeit für  {item}"
+    },
+    tableToolbar: {
+      cards: "Karten",
+      group: "Gruppen",
+      list: "Liste",
+      sort: "Sortieren"
+    },
+    threadsGrid: {
+      errorFetchFail: "Fehler beim Abrufen von Threads",
+      errorNotFound: "Keine Threads gefunden",
+      id: "ID",
+      name: "Name",
+      none: "Keiner",
+      searchPlaceholder: "Suche nach Threads",
+      state: "Zustand"
+    },
+    threadsTableHeader: {
+      daemon: "Dämon",
+      id: "ID",
+      name: "Name",
+      priority: "Priorität",
+      state: "Zustand"
+    }
   }
 };

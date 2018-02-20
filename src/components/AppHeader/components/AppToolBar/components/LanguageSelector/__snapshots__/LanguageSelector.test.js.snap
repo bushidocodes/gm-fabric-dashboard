@@ -69,6 +69,11 @@ exports[`LanguageSelector matches snapshot 1`] = `
     >
       Español (es)
     </li>
+    <li
+      class="c2"
+    >
+      Deutsch (de)
+    </li>
   </ul>
 </div>
 `;

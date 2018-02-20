@@ -448,6 +448,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
       >
         Español (es)
       </li>
+      <li
+        class="c9"
+      >
+        Deutsch (de)
+      </li>
     </ul>
   </div>
   <a
@@ -1316,6 +1321,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
           class="c10"
         >
           Español (es)
+        </li>
+        <li
+          class="c10"
+        >
+          Deutsch (de)
         </li>
       </ul>
     </div>
