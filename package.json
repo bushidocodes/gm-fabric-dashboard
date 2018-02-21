@@ -169,7 +169,8 @@
     "storybook": "start-storybook -p 6006",
     "test":
       "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
-    "test:e2e:local": "testcafe chrome ./e2e-tests/tests/*.js -a 'npm start'",
+    "test:e2e:local":
+      "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'npm start' --app-init-delay 5000",
     "test:e2e": "./scripts/testcafe.sh",
     "update-deps": "npm-check . --skip-unused -u",
     "update-snapshots": "CI=true npm run test -- --updateSnapshot",

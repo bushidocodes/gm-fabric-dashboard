@@ -19,9 +19,12 @@ export default class BaseInstanceViewModel extends BaseViewModel {
     this.linkExplorer = ReactSelector("TabLink").withText("Explorer");
 
     // Summary view
-    this.summaryUptimeReadout = ReactSelector("ReadoutDisplay").withText(
-      "Uptime"
+    this.summaryVitalsSection = ReactSelector("Header").withText("Vitals");
+    this.summaryStatisticsSection = ReactSelector("Header").withText(
+      "Statistics"
     );
+    this.summaryAllReadouts = ReactSelector("Readout");
+    this.summaryUptimeReadout = ReactSelector("ArrayValue").nth(1);
     this.summaryRequestPerSecChart = ReactSelector("LineChartDisplay").withText(
       "Requests Per Second"
     );
@@ -35,12 +38,29 @@ export default class BaseInstanceViewModel extends BaseViewModel {
     // Routes View
     this.inputSearchRoutes = ReactSelector("ToolbarLeft").find("input");
     this.routesTableRows = ReactSelector("TableRow");
+    this.routesTableColsRequests = ReactSelector("TableCol").withAttribute(
+      "name",
+      "requests"
+    );
+    this.routesTableColsError = ReactSelector("TableCol").withAttribute(
+      "name",
+      "error"
+    );
+    this.routesTableColsLatency50 = ReactSelector("TableCol").withAttribute(
+      "name",
+      "latency50"
+    );
+    this.routesTableColsLatency99 = ReactSelector("TableCol").withAttribute(
+      "name",
+      "latency99"
+    );
     this.routesChart = ReactSelector("LineChartDisplay");
+    this.routesChartTitle = ReactSelector("LineChartTitle");
     this.selectSortRoutes = Selector(".Select-control").withText("Sort");
     // this.selectSort needs to be selected first
     // so that the following options are created in the DOM
     this.optionSortRoutesRoute = Selector(".Select-option").withText("Route");
-    this.optionSortRoutesStatus = Selector(".Select-option").withText(
+    this.optionSortRoutesRequests = Selector(".Select-option").withText(
       "Requests"
     );
     this.optionSortRoutesError = Selector(".Select-option").withText("Error %");
@@ -53,10 +73,10 @@ export default class BaseInstanceViewModel extends BaseViewModel {
 
     // Explorer View
     this.inputSearchMetrics = ReactSelector("InspectorSearch input");
-    this.checkboxHideStatic = ReactSelector("InspectorHideStatic");
     this.checkboxHideZero = ReactSelector("InspectorHideZero");
+    this.checkboxHideStatic = ReactSelector("InspectorHideStatic");
     this.inspectorItems = ReactSelector("InspectorItem");
-    this.inspectorGraph = ReactSelector("MetricsGraphDisplay");
+    this.inspectorGraph = ReactSelector("LineChartDisplay");
     this.inspectorGraphTitleText = ReactSelector("LineChartTitle");
   }
 }
