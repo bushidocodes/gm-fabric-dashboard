@@ -188,13 +188,13 @@ workflows:
   build_and_test:
     jobs:
       - setup
-      - test:e2e:
-          requires:
-            - setup
-          filters:
-            branches:
-              only:
-                - master
+      # - test:e2e:
+      #     requires:
+      #       - setup
+      #     filters:
+      #       branches:
+      #         only:
+      #           - master
       - test:unit:
           requires:
             - setup
