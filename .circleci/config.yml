@@ -90,6 +90,7 @@ jobs:
       - run:
           name: Run end to end tests
           command: npm run test:e2e
+          no_output_timeout: 20m
       - store_test_results:
           path: browserstack-results
 
