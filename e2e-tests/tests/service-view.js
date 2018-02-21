@@ -1,6 +1,5 @@
 import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
-import sleep from "../helpers/sleeper";
 import parseUptimeSeconds from "../helpers/uptime-parser";
 
 fixture`Service View`.page`http://localhost:3000`;
@@ -21,7 +20,7 @@ test("Service View Sorting and Filtering", async t => {
 
   while (stableServicesCardsCount === 0 && attempts < defaultTimeout) {
     stableServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 

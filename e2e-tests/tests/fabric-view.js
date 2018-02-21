@@ -1,7 +1,6 @@
 import _ from "lodash";
 
 import FabricViewModel from "../view-models/fabric-view-model";
-import sleep from "../helpers/sleeper";
 
 fixture`Fabric View`.page`http://localhost:3000`;
 
@@ -16,7 +15,7 @@ test("Validate Service Counts", async t => {
 
   while (allServicesCardsCount === 0 && attempts < defaultTimeout) {
     allServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -24,7 +23,7 @@ test("Validate Service Counts", async t => {
 
   while (allServicesListCount === 0 && attempts < defaultTimeout) {
     allServicesListCount = await fabricView.servicesList.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -40,7 +39,7 @@ test("Validate Service Counts", async t => {
 
   while (allServicesCardsCount === 0 && attempts < defaultTimeout) {
     allServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -62,7 +61,7 @@ test("Validate Service Counts", async t => {
 
   while (downServicesCardsCount === 0 && attempts < defaultTimeout) {
     downServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -84,7 +83,7 @@ test("Validate Service Counts", async t => {
 
   while (warningServicesCardsCount === 0 && attempts < defaultTimeout) {
     warningServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -106,7 +105,7 @@ test("Validate Service Counts", async t => {
 
   while (stableServicesCardsCount === 0 && attempts < defaultTimeout) {
     stableServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -128,7 +127,7 @@ test("Validate Filtering: Search", async t => {
   // Get the initial count so that we can test against it later
   while (initialServiceCardCount === 0 && attempts < defaultTimeout) {
     initialServiceCardCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -150,7 +149,7 @@ test("Validate Filtering: Search", async t => {
 
   while (allServicesCardsCount === 0 && attempts < defaultTimeout) {
     allServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -175,7 +174,7 @@ test("Validate Filtering: Search", async t => {
   // Service card count should equal 0, so just wait 5 sec
   while (attempts < 5) {
     allServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
@@ -191,7 +190,7 @@ test("Validate Filtering: Search", async t => {
 
   while (allServicesCardsCount === 0 && attempts < defaultTimeout) {
     allServicesCardsCount = await fabricView.servicesCards.count;
-    sleep(1000);
+    await t.wait(1000);
     attempts++;
   }
 
