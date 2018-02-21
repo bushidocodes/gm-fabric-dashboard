@@ -8361,6 +8361,7 @@ exports[`Storyshots Service Card Service Card 1`] = `
 <div
   class="c0"
   height="112px"
+  name="Stable"
   width="160px"
 >
   <a
@@ -8874,6 +8875,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9007,6 +9009,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9140,6 +9143,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -9272,6 +9276,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -9404,6 +9409,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9537,6 +9543,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9670,6 +9677,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -9802,6 +9810,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10220,6 +10229,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   <div
     class="c1"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10345,6 +10355,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   <div
     class="c1"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10969,6 +10980,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11095,6 +11107,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11221,6 +11234,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -11346,6 +11360,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11472,6 +11487,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11598,6 +11614,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11724,6 +11741,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11850,6 +11868,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11976,6 +11995,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -12102,6 +12122,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -12228,6 +12249,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a

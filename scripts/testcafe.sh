@@ -3,5 +3,5 @@ browsers=("browserstack:chrome@64.0:OS X High Sierra,browserstack:chrome@63.0:OS
 
 for i in "${browsers[@]}"
 do
-  ./node_modules/.bin/testcafe "${i}" tests/*.js -r xunit:browserstack-results/res.xml --app 'npm start'
+  ./node_modules/.bin/testcafe "${i}" e2e-tests/tests/*.js -r xunit:browserstack-results/res.xml --app 'npm start'
 done
