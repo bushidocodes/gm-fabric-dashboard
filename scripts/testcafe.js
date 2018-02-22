@@ -36,10 +36,7 @@ async function createTestCafeInstance(browser) {
       console.log("Tests failed: " + failedCount);
       testcafe.close();
     })
-    .catch(err => {
-      console.error(err);
-      testcafe.close();
-    });
+    .catch(err => testcafe.close());
 }
 
 async function startTests(browsers, createTestCafeInstance) {
