@@ -88,6 +88,9 @@ jobs:
           - cache-{{ .Branch }}-
           - cache-
       - run:
+          name: Ping GitHub API
+          command: ping -c 3 https://api.github.com
+      - run:
           name: Draft GitHub Release
           command: npm run draft-github-release
           
