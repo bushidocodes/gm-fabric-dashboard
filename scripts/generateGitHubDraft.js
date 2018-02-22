@@ -30,11 +30,10 @@ const payload = {
 };
 
 axios
-  .get(
-    // .post(
-    `https://api.github.com/repos/DecipherNow/gm-fabric-dashboard/releases`
-    // payload,
-    // { headers: { Authorization: `token ${process.env.GITHUB_ACCESS_KEY}` } }
+  .post(
+    `https://api.github.com/repos/DecipherNow/gm-fabric-dashboard/releases`,
+    payload,
+    { headers: { Authorization: `token ${process.env.GITHUB_ACCESS_KEY}` } }
   )
   .then(data => console.log(data))
   .catch(error => {
