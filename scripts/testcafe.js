@@ -6,23 +6,23 @@ const createTestCafe = require("testcafe");
 // into 2 batches that run will run consecutively.
 const SUPPORTED_BROWSERS = [
   [
-    "browserstack:chrome@64.0:OS X High Sierra",
-    "browserstack:chrome@63.0:OS X High Sierra",
-    "browserstack:firefox@58.0:OS X High Sierra",
-    "browserstack:firefox@57.0:OS X High Sierra"
-  ],
-  [
     "browserstack:safari@11.0:OS X High Sierra",
     "browserstack:safari@10.1:OS X Sierra",
     "browserstack:edge@16.0:Windows 10",
     "browserstack:edge@15.0:Windows 10",
     "browserstack:ie@11.0:Windows 10"
+  ],
+  [
+    "browserstack:chrome@64.0:OS X High Sierra",
+    "browserstack:chrome@63.0:OS X High Sierra",
+    "browserstack:firefox@58.0:OS X High Sierra",
+    "browserstack:firefox@57.0:OS X High Sierra"
   ]
 ];
 
 async function createTestCafeInstance(browser) {
   let testcafe;
-  await createTestCafe("localhost")
+  await createTestCafe()
     .then(tc => {
       testcafe = tc;
       return tc
@@ -36,7 +36,10 @@ async function createTestCafeInstance(browser) {
       console.log("Tests failed: " + failedCount);
       testcafe.close();
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+      console.error(err);
+      testcafe.close();
+    });
 }
 
 async function startTests(browsers, createTestCafeInstance) {
