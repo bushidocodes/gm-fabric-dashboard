@@ -17,6 +17,7 @@ export default class InstanceGoViewModel extends BaseInstanceViewModel {
       .find("dd");
 
     // Go
+    this.allGrids = Selector(".react-grid-item");
     this.goGrid1 = Selector(".react-grid-item").nth(0);
     this.goGrid2 = Selector(".react-grid-item").nth(1);
   }
