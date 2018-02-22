@@ -54,7 +54,12 @@ async function createTestCafeInstance(browser, files) {
         .startApp("npm start")
         .src(files)
         .browsers(browser)
-        .run();
+        .run({
+          selectorTimeout: 500000,
+          assertionTimeout: 10000,
+          pageLoadTimeout: 10000,
+          skipJsErrors: true
+        });
     })
     .then(failedCount => {
       console.log("Tests failed: " + failedCount);

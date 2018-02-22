@@ -10,13 +10,12 @@ const serviceViewModel = new ServiceViewModel();
 const defaultTimeout = 30;
 
 // The following test all views common to both JVM and GO instance views
-fixture`Instance View`.page`http://localhost:3000`.beforeEach(
-  async t =>
-    await t
-      .click(fabricViewModel.linkStable)
-      .click(fabricViewModel.servicesCards.nth(0))
-      .click(serviceViewModel.instanceIDs.nth(0))
-);
+fixture`Instance View`.page`http://localhost:3000`.beforeEach(async t => {
+  await t
+    .click(fabricViewModel.linkStable)
+    .click(fabricViewModel.servicesCards.nth(0))
+    .click(serviceViewModel.instanceIDs.nth(0));
+});
 
 test("Verify Summary View Layout", async t => {
   //  Expect the 2 layout sections to be present
@@ -38,8 +37,15 @@ test("Verify Summary View Layout", async t => {
   // Expect that there are 3 readout cards
   await t.expect(allReadoutsCount).eql(3);
 
-  let summaryUptimeReadoutText = await instanceViewModel.summaryUptimeReadout
-    .innerText;
+  attempts = 0;
+  let summaryUptimeReadoutText = "";
+
+  while (summaryUptimeReadoutText === "" && attempts < defaultTimeout) {
+    summaryUptimeReadoutText = await instanceViewModel.summaryUptimeReadout
+      .innerText;
+    await t.wait(1000);
+    attempts++;
+  }
 
   await t
     .expect(summaryUptimeReadoutText)
@@ -82,8 +88,16 @@ test("Verify Routes/Functions Table Functionality", async t => {
   // Navigate to Routes
   await t.click(instanceViewModel.linkRoutes);
 
+  let attempts = 0,
+    routesTableRowsCount = 0;
+
+  while (routesTableRowsCount === 0 && attempts < defaultTimeout) {
+    routesTableRowsCount = await instanceViewModel.routesTableRows.count;
+    await t.wait(1000);
+    attempts++;
+  }
+
   //  Expect that there is at least 1 row rendered
-  let routesTableRowsCount = await instanceViewModel.routesTableRows.count;
   await t.expect(routesTableRowsCount).gt(0);
 
   // There should be no charts in the DOM before a row has been clicked
@@ -181,8 +195,10 @@ test("Verify Explorer View Functionality", async t => {
 
   await t.click(instanceViewModel.linkExplorer);
 
-  // Expect that no graph is rendered yet
+  attempts = 0;
   let inspectorGraphCount = await instanceViewModel.inspectorGraph.count;
+
+  // Expect that no graph is rendered yet
   await t.expect(inspectorGraphCount).eql(0);
 
   // Click the first inspector item
