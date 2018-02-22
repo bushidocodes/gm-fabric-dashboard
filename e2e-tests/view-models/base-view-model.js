@@ -9,6 +9,9 @@ export default class BaseViewModel {
     this.linkVersion = ReactSelector("AppVersionLink");
     this.linkSettings = Selector("a").withAttribute("title", "Settings");
 
+    // Navigation
+    this.linkAllTabs = ReactSelector("TabLink");
+
     // Internationalization
     this.linkLanguages = ReactSelector("LanguageSelectorWrap");
     this.linkLanguagesEn = Selector("ul li").withText("English (en)");
