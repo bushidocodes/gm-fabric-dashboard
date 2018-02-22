@@ -28,7 +28,7 @@ async function createTestCafeInstance(browser) {
       return tc
         .createRunner()
         .startApp("npm start")
-        .src("e2e-tests/tests/service-view.js")
+        .src("e2e-tests/tests/*.js")
         .browsers(browser)
         .run();
     })
@@ -40,8 +40,8 @@ async function createTestCafeInstance(browser) {
 }
 
 async function startTests(browsers, createTestCafeInstance) {
-  for (let index = 0; index < browsers.length; index++) {
-    await createTestCafeInstance(browsers[index]);
+  for (let i = 0; i < browsers.length; i++) {
+    await createTestCafeInstance(browsers[i]);
   }
 }
 
