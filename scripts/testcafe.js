@@ -1,6 +1,4 @@
 const createTestCafe = require("testcafe");
-const BrowserStack = require("browserstack");
-const util = require("util");
 const glob = require("glob-promise");
 
 // Each sub array defines a batch of browserstack workers.
@@ -49,8 +47,8 @@ async function startTests(browsers, createTestCafeInstance) {
   }
 }
 
-async function getFiles(glob) {
-  const files = await glob(glob)
+async function getFiles(globPattern) {
+  const files = await glob(globPattern)
     .then(files => files)
     .catch(e => console.error(e));
   return files;
