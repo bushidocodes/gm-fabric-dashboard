@@ -1,6 +1,6 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
-import BaseInstanceViewModel from "./base-instance-view-model";
+import BaseInstanceView from "./base-instance-view-model";
 
 export default class InstanceJvmViewModel extends BaseInstanceView {
   constructor() {
@@ -48,16 +48,21 @@ export default class InstanceJvmViewModel extends BaseInstanceView {
     this.threadsStackTraces = ReactSelector("StackTrace");
 
     // HTTP
+    this.allHttpGrid = Selector(".react-grid-item");
+    this.httpCharts = ReactSelector("LineChartDisplay");
     this.httpGrid1 = Selector(".react-grid-item").nth(0);
     this.httpGrid2 = Selector(".react-grid-item").nth(1);
     this.httpGrid3 = Selector(".react-grid-item").nth(2);
     this.httpGrid4 = Selector(".react-grid-item").nth(3);
 
     // JVM
+    this.allJvmGrid = Selector(".react-grid-item");
+    this.jvmCharts = ReactSelector("LineChartDisplay");
     this.jvmGrid1 = Selector(".react-grid-item").nth(0);
     this.jvmGrid2 = Selector(".react-grid-item").nth(1);
 
     // Finagle
+    this.allFinagleGrid = Selector(".react-grid-item");
     this.finagleGrid1 = Selector(".react-grid-item").nth(0);
     this.finagleGrid2 = Selector(".react-grid-item").nth(1);
     this.finagleGrid3 = Selector(".react-grid-item").nth(2);
