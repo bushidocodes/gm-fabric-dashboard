@@ -203,12 +203,21 @@ workflows:
   all-but-release:
     jobs:
       - setup
+          filters:
+            tags:
+              ignore: /^v.*/
       - test:unit:
           requires:
             - setup
+          filters:
+            tags:
+              ignore: /^v.*/
       - coverage:
           requires:
             - test:unit
+          filters:
+            tags:
+              ignore: /^v.*/
 
 
   tagged-release: 
@@ -238,7 +247,6 @@ workflows:
               only: /^v.*/
       - draft-github-release:
           requires:
-            - setup
             # - test:e2e
             - build
           filters:
