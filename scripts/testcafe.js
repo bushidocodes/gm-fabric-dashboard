@@ -1,4 +1,7 @@
 const createTestCafe = require("testcafe");
+const BrowserStack = require("browserstack");
+const util = require("util");
+const glob = require("glob-promise");
 
 // Each sub array defines a batch of browserstack workers.
 // Our current plan allows for a max of 5 workers at a time,
@@ -20,7 +23,7 @@ const SUPPORTED_BROWSERS = [
   ]
 ];
 
-async function createTestCafeInstance(browser) {
+async function createTestCafeInstance(browser, files) {
   let testcafe;
   await createTestCafe()
     .then(tc => {
@@ -28,7 +31,7 @@ async function createTestCafeInstance(browser) {
       return tc
         .createRunner()
         .startApp("npm start")
-        .src("e2e-tests/tests/*.js")
+        .src(files)
         .browsers(browser)
         .run();
     })
@@ -36,13 +39,21 @@ async function createTestCafeInstance(browser) {
       console.log("Tests failed: " + failedCount);
       testcafe.close();
     })
-    .catch(err => testcafe.close());
+    .catch(err => console.error(err));
 }
 
 async function startTests(browsers, createTestCafeInstance) {
+  let files = await getFiles("e2e-tests/tests/*.js");
   for (let i = 0; i < browsers.length; i++) {
-    await createTestCafeInstance(browsers[i]);
+    await createTestCafeInstance(browsers[i], files);
   }
+}
+
+async function getFiles(glob) {
+  const files = await glob(glob)
+    .then(files => files)
+    .catch(e => console.error(e));
+  return files;
 }
 
 startTests(SUPPORTED_BROWSERS, createTestCafeInstance);
