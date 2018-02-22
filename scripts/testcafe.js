@@ -52,7 +52,7 @@ async function createTestCafeInstance(browser, files) {
       return tc
         .createRunner()
         .startApp("npm start")
-        .src("e2e-tests/tests/service-view.js")
+        .src(files)
         .browsers(browser)
         .run();
     })
