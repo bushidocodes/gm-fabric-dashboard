@@ -214,6 +214,11 @@ workflows:
   tagged-release: 
     jobs:
       - setup
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
       # - test:e2e:
       #     requires:
       #       - setup
