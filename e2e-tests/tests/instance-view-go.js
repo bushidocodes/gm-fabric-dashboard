@@ -30,7 +30,7 @@ test("Validate Basic Instance View (Go) Layout", async t => {
   await t.expect(allTabCount).eql(5);
 });
 
-test("Summary View", async t => {
+test.skip("Summary View", async t => {
   /*/ Summary view (Go specific items)
       Tests for other summary view items can be found in ./base-instance-view.js
   /*/

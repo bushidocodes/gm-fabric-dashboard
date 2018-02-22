@@ -1,3 +1,18 @@
+<a name="1.0.6"></a>
+
+## [1.0.6](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.5...v1.0.6) (2018-02-22)
+
+### Bug Fixes
+
+* ⚙️ &nbsp; fix instance polling in settings ([#1505](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1505)) ([3cef656](https://github.com/DecipherNow/gm-fabric-dashboard/commit/3cef656))
+
+### Features
+
+* 🇩🇪 &nbsp; German translations ([#1524](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1524)) ([89c3c3f](https://github.com/DecipherNow/gm-fabric-dashboard/commit/89c3c3f))
+* 🤖 &nbsp; automate end to end testing with testcafe ([#1511](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1511)) ([a1fa4bb](https://github.com/DecipherNow/gm-fabric-dashboard/commit/a1fa4bb))
+* 📊 &nbsp; color code legend ([#1512](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1512)) ([26cfdcd](https://github.com/DecipherNow/gm-fabric-dashboard/commit/26cfdcd))
+* 🏹 &nbsp; generate GitHub release ([#1510](https://github.com/DecipherNow/gm-fabric-dashboard/issues/1510)) ([2b6a771](https://github.com/DecipherNow/gm-fabric-dashboard/commit/2b6a771))
+
 <a name="1.0.5"></a>
 
 ## [1.0.5](https://github.com/DecipherNow/gm-fabric-dashboard/compare/v1.0.4...v1.0.5) (2018-02-10)
