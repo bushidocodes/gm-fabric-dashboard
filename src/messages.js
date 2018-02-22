@@ -13,7 +13,6 @@ export default {
       status: "Status"
     },
     fabricHeaderContent: {
-      allServices: "All Services",
       down: "Down",
       services: "Services",
       stable: "Stable",
