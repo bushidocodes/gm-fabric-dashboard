@@ -171,7 +171,7 @@
       "TZ=/usr/share/zoneinfo/America/New_York node scripts/test.js --env=jsdom",
     "test:e2e:local":
       "testcafe chrome:headless ./e2e-tests/tests/*.js -a 'npm start' --app-init-delay 5000",
-    "test:e2e": "./scripts/testcafe.sh",
+    "test:e2e": "node scripts/testcafe.js",
     "update-deps": "npm-check . --skip-unused -u",
     "update-snapshots": "CI=true npm run test -- --updateSnapshot",
     "version":
