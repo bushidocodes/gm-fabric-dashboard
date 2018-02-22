@@ -76,6 +76,21 @@ jobs:
       - store_artifacts:
           path: build.tar.gz
   
+  draft-github-release: 
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore node_modules
+          keys:
+          - cache-{{ .Branch }}-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - cache-{{ .Branch }}-
+          - cache-
+      - run:
+          name: Draft GitHub Release
+          command: npm run draft-github-release
+          
   test:e2e: 
     <<: *defaults
     steps:
@@ -192,19 +207,30 @@ workflows:
           requires:
             - setup
           filters:
+            tags:
+              only: /.*/
             branches:
               only:
                 - master
       - test:unit:
           requires:
             - setup
+      - coverage:
+          requires:
+            - test:unit
+
       - build:
           requires: 
             - setup
           filters:
-            branches:
-              only:
-                - master
-      - coverage:
+            tags:
+              only: /^v.*/
+
+      - draft-github-release:
           requires:
-            - test:unit
+            - setup
+            - test:e2e
+            - build
+          filters:
+            tags:
+              only: /^v.*/
