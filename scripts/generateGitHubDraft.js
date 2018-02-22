@@ -36,4 +36,7 @@ axios
     { headers: { Authorization: `token ${process.env.GITHUB_ACCESS_KEY}` } }
   )
   .then(data => console.log(data))
-  .catch(err => console.log(`ERR: ${err}`));
+  .catch(err => {
+    console.log(`Exiting with : ${err}`);
+    process.exit(1);
+  });
