@@ -2,27 +2,30 @@ import styled from "styled-components";
 import {
   FONT_SIZE_SM,
   COLOR_HIGHLIGHT,
-  BORDER_RADIUS_BASE,
-  FONT_WEIGHT_SEMIBOLD
+  BORDER_RADIUS_BASE
 } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 const BADGE_COLOR = COLOR_HIGHLIGHT;
 
 const Badge = styled.span`
-  font-size: ${FONT_SIZE_SM};
-  font-weight: ${FONT_WEIGHT_SEMIBOLD};
+  font-size: ${FONT_SIZE_SM}; // SM
+  font-weight: 700;
   text-align: center;
+  line-height: 0.9;
   letter-spacing: 0.06em;
   height: fit-content;
-  padding: ${spacingScale(0.25)} ${spacingScale(0.5)};
-  background-color: ${BADGE_COLOR.string()};
+  padding: ${spacingScale(0.5)} ${spacingScale(0.5)};
+  background-color: ${BADGE_COLOR.fade(0.85).string()};
   border-radius: ${BORDER_RADIUS_BASE};
-  color: ${contrastColor(BADGE_COLOR, 1).string()};
+  color: ${BADGE_COLOR.string()};
   margin-right: ${spacingScale(0.5)};
 
   svg:first-child {
-    margin: -8px -4px -8px -6px;
+    margin-top: -100%;
+    margin-bottom: -100%;
+    margin-left: -${spacingScale(0.5)};
+    margin-right: -${spacingScale(0.5)};
   }
 `;
 

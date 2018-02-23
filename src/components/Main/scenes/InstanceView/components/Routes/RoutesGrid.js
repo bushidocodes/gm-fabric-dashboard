@@ -6,7 +6,12 @@ import { injectIntl, intlShape } from "react-intl";
 import Table from "components/Main/components/Table";
 import TableToolbar from "components/Main/components/TableToolbar";
 import ErrorBoundary from "components/ErrorBoundary";
+import LayoutSection from "components/LayoutSection";
+import Readout from "components/Main/components/Readout";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
 import NotFoundError from "components/Main/components/NotFoundError";
+
+import { COLOR_DANGER } from "style/styleVariables";
 
 import { getRoutesTable } from "utils/go/selectors";
 import withUrlState from "components/withUrlState";
@@ -84,6 +89,39 @@ class RoutesGrid extends Component {
     if (routes && routes.length > 0) {
       return (
         <Fragment>
+          <LayoutSection title={"Performance"}>
+            <ReadoutGroup>
+              <Readout
+                readoutItems={[
+                  {
+                    detail: "0.001% Errors",
+                    title: "Best Performing",
+                    value: "/"
+                  }
+                ]}
+              />
+              <Readout
+                readoutItems={[
+                  {
+                    detail: "1,774,281 Requests",
+                    title: "Most Used",
+                    value: "/odrive__search"
+                  }
+                ]}
+              />
+              <Readout
+                overallColor={COLOR_DANGER}
+                readoutItems={[
+                  {
+                    detail: "100% Errors",
+                    title: "Worst Performing",
+                    value: "/index__search"
+                  }
+                ]}
+              />
+            </ReadoutGroup>
+          </LayoutSection>
+
           <TableToolbar
             searchInputProps={{
               filterString,

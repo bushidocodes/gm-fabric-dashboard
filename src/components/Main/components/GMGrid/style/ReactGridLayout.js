@@ -1,22 +1,21 @@
 const ReactGridLayout = `
   .react-grid-layout {
     position: relative;
-    transition: height 200ms ease;
-    max-width: 1300px;
-    margin-left: auto;
     width: 100%;
-    margin-right: auto;
   }
   .react-grid-item {
     transition: all 200ms ease;
     transition-property: left, top;
+    transition: none;
   }
   .react-grid-item.cssTransforms {
     transition-property: transform;
+    transition: none;
   }
   .react-grid-item.resizing {
     z-index: 1;
     will-change: width, height;
+    transition: none;
   }
 
   .react-grid-item.react-draggable-dragging {
@@ -35,6 +34,7 @@ const ReactGridLayout = `
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    transition: none;
   }
 
   .react-grid-item > .react-resizable-handle {
@@ -50,6 +50,10 @@ const ReactGridLayout = `
     background-origin: content-box;
     box-sizing: border-box;
     cursor: se-resize;
+  }
+
+  .react-grid-item {
+    transition-duration: 0;
   }
 `;
 

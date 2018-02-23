@@ -25,7 +25,7 @@ export default function ReadoutItemIcon({
   return (
     <ReadoutItemIconStyle>
       <Icon
-        iconRatio="2"
+        iconRatio="1"
         borderStyle={iconBorderStyle}
         borderWidth={iconBorderWidth}
         backgroundOpacity=".2"

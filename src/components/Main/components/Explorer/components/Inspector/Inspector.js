@@ -7,6 +7,7 @@ import InspectorToolbar from "./components/InspectorToolbar";
 import InspectorData from "./components/InspectorData";
 import InspectorItem from "./components/InspectorItem";
 import InspectorSearch from "./components/InspectorSearch";
+import InspectorLabel from "./components/InspectorLabel";
 import InspectorHideZero from "./components/InspectorHideZero";
 import InspectorHideStatic from "./components/InspectorHideStatic";
 
@@ -53,7 +54,7 @@ class Inspector extends Component {
             onChange={evt => onSearch(evt.target.value)}
             placeholder={intl.formatMessage({
               id: "inspector.searchPlaceholder",
-              defaultMessage: "Search",
+              defaultMessage: "Search Metrics",
               description: "Search placeholder"
             })}
             aria-label={intl.formatMessage({
@@ -64,7 +65,7 @@ class Inspector extends Component {
             type="search"
             value={searchQuery}
           />
-          <label>
+          <InspectorLabel>
             <InspectorHideZero
               onChange={evt => onChange(evt.target.checked, evt.target.name)}
               checked={hideZeroMetric}
@@ -75,8 +76,8 @@ class Inspector extends Component {
               defaultMessage="Hide all metrics with only zero values"
               description="Label for checkbox"
             />
-          </label>
-          <label>
+          </InspectorLabel>
+          <InspectorLabel>
             <InspectorHideStatic
               onChange={evt => onChange(evt.target.checked, evt.target.name)}
               checked={hideStaticMetric}
@@ -86,7 +87,7 @@ class Inspector extends Component {
               defaultMessage="Hide all static metrics"
               description="Label for checkbox"
             />
-          </label>
+          </InspectorLabel>
         </InspectorToolbar>
         {data.length > 0 && (
           <InspectorData>

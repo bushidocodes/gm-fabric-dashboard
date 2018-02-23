@@ -90,7 +90,13 @@ function SummaryGrid({
                   "ms",
                   "ms"
                 )
-              },
+              }
+            ]}
+          />
+
+          <Readout
+            primary={true}
+            readoutItems={[
               {
                 icon: "Exclamation",
                 iconBorderStyle: "BorderTriangleSmall",
@@ -128,27 +134,26 @@ function SummaryGrid({
           description: "Statistics header text"
         })}
         icon="Scatterplot"
+        stretch={true}
       >
-        <div style={{ height: "250px" }}>
-          <GMLineChart
-            dygraph={mapDygraphKeysToNetChange(
-              getDygraphOfValue(metrics, ["https/requests", "http/requests"])
-            )}
-            dygraphMetadata={{
-              "https/requests": {
-                label: "HTTPS"
-              },
-              "http/requests": {
-                label: "HTTP"
-              }
-            }}
-            title={intl.formatMessage({
-              id: "summary.requestsPerSecond",
-              defaultMessage: "Requests Per Second",
-              description: "Requests Per Second title text"
-            })}
-          />
-        </div>
+        <GMLineChart
+          dygraph={mapDygraphKeysToNetChange(
+            getDygraphOfValue(metrics, ["https/requests", "http/requests"])
+          )}
+          dygraphMetadata={{
+            "https/requests": {
+              label: "HTTPS"
+            },
+            "http/requests": {
+              label: "HTTP"
+            }
+          }}
+          title={intl.formatMessage({
+            id: "summary.requestsPerSecond",
+            defaultMessage: "Requests Per Second",
+            description: "Requests Per Second title text"
+          })}
+        />
       </LayoutSection>
     </ErrorBoundary>
   );

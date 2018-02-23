@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
-  FONT_SIZE_SM,
+  FONT_SIZE_BASE,
   APP_FOOTER_HEIGHT,
   ZINDEX_STICKY
 } from "style/styleVariables";
@@ -16,7 +16,7 @@ const Footer = styled.footer`
   flex-flow: row wrap;
   color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.8).string()};
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
-  font-size: ${FONT_SIZE_SM};
+  font-size: ${FONT_SIZE_BASE}; // SM
   height: auto;
   align-items: stretch;
   justify-content: stretch;

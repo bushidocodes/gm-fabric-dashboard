@@ -1,14 +1,14 @@
 import styled from "styled-components";
-
-import { FONT_STACK_DATA, CONTENT_MAX_WIDTH } from "style/styleVariables";
+import { contrastColor } from "style/styleFunctions";
+import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 
 const TableDisplay = styled.div`
   display: block;
-  font-family: ${FONT_STACK_DATA};
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${CONTENT_MAX_WIDTH};
   width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 export default TableDisplay;

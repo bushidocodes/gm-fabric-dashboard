@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
-  FONT_SIZE_LG,
+  FONT_SIZE_BASE,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 
@@ -14,15 +14,15 @@ const TabTitle = styled.div`
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
+  align-items: center;
   text-overflow: ellipsis;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin: ${spacingScale(0.5)} 0 0;
+  margin: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(0.5)};
 
   h1 {
-    font-size: ${FONT_SIZE_LG};
+    font-size: ${FONT_SIZE_BASE}; // LG
     flex: 1 1 100%;
     line-height: 1;
     margin: 0;

@@ -77,11 +77,9 @@ function GMLineChart({
         {attributes.length === 0 ? (
           <LineChartEmpty>
             <h1>
-              <Span>
-                <Icon borderStyle="BorderTriangleSmall">
-                  <Glyph name={"Exclamation"} />
-                </Icon>
-              </Span>
+              <Icon borderStyle="BorderTriangleSmall" iconRatio="3">
+                <Glyph name={"Exclamation"} />
+              </Icon>
               <FormattedMessage
                 id="GMLineChart.noChartableData"
                 defaultMessage="No chartable data"

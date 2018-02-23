@@ -1,19 +1,12 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
-import {
-  FONT_STACK_DATA,
-  FONT_SIZE_LG,
-  COLOR_CONTENT_BACKGROUND,
-  BORDER_RADIUS_BASE
-} from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import { FONT_SIZE_BASE, BORDER_RADIUS_BASE } from "style/styleVariables";
+import { spacingScale } from "style/styleFunctions";
 
 const DataDisplay = styled.div`
-  background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()};
   border-radius: ${BORDER_RADIUS_BASE};
-  font-family: ${FONT_STACK_DATA};
-  font-size: ${FONT_SIZE_LG};
+  font-size: ${FONT_SIZE_BASE}; // LG
   height: 100%;
   padding: ${spacingScale(1)};
   padding-top: ${spacingScale(6)};

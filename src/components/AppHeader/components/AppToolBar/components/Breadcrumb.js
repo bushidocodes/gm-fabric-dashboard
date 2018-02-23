@@ -11,6 +11,7 @@ const Breadcrumb = styled.li`
   color: black;
   display: flex;
   flex: 0 0 auto;
+  text-transform: capitalize;
   ${media.breadcrumbsBreakpoint200`
     max-width: calc(100vw/4);
     overflow: hidden;
@@ -25,14 +26,14 @@ const Breadcrumb = styled.li`
     transform: scaleX(0.5);
   }
   a {
-    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
+    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 1).string()};
     display: flex;
     max-width: auto;
     padding: ${spacingScale(1)} 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     &:hover {
-      color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 1).string()};
+      color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.8).string()};
     }
   }
 

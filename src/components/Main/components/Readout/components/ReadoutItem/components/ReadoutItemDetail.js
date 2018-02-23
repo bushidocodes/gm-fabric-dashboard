@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-import { FONT_SIZE_SM, FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
+import { FONT_SIZE_BASE, FONT_WEIGHT_SEMIBOLD } from "style/styleVariables";
 
 const ReadoutItemDetail = styled.p`
-  font-size: ${FONT_SIZE_SM};
-  font-weight: ${FONT_WEIGHT_SEMIBOLD};
+  font-size: ${FONT_SIZE_BASE}; // SM
   margin: 0;
+  font-weight: ${FONT_WEIGHT_SEMIBOLD};
   min-height: 1em;
-  opacity: 0.85;
 `;
 
 export default ReadoutItemDetail;

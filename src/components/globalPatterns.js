@@ -1,5 +1,4 @@
 import {
-  FONT_STACK_BASE,
   FONT_WEIGHT_SEMIBOLD,
   COLOR_BRAND_PRIMARY,
   COLOR_WHITE,
@@ -18,7 +17,6 @@ export const form_control = `
   appearance: none;
   display: flex;
   color: black;
-  font-family: ${FONT_STACK_BASE};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   font-size:  ${FONT_SIZE_BASE};
   line-height:  ${LINE_HEIGHT_BASE};

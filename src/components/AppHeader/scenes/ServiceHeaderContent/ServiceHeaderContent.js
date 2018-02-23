@@ -15,27 +15,28 @@ ServiceHeaderContent.propTypes = {
 
 function ServiceHeaderContent({ instanceCount, pathname, intl }) {
   return (
-    <TabNav>
-      <Tab
-        title={intl.formatMessage({
-          id: "serviceHeaderContent.instances",
-          defaultMessage: "Instances",
-          description: "Service view tab title"
-        })}
-        href={pathname}
-        icon="Summary"
-        lines={[
-          {
-            name: intl.formatMessage({
-              id: "serviceHeaderContent.instances",
-              defaultMessage: "Instances",
-              description: "Service view tab detail"
-            }),
-            value: instanceCount || 0
-          }
-        ]}
-      />
-    </TabNav>
+    // <TabNav>
+    //   <Tab
+    //     title={intl.formatMessage({
+    //       id: "serviceHeaderContent.instances",
+    //       defaultMessage: "Instances",
+    //       description: "Service view tab title"
+    //     })}
+    //     href={pathname}
+    //     icon="Summary"
+    //     lines={[
+    //       {
+    //         name: intl.formatMessage({
+    //           id: "serviceHeaderContent.instances",
+    //           defaultMessage: "Instances",
+    //           description: "Service view tab detail"
+    //         }),
+    //         value: instanceCount || 0
+    //       }
+    //     ]}
+    //   />
+    // </TabNav>
+    null
   );
 }
 

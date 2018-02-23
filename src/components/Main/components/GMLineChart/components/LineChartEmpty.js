@@ -2,15 +2,24 @@ import styled from "styled-components";
 
 import {
   CHART_BACKGROUND_COLOR,
-  FONT_SIZE_LG,
+  FONT_SIZE_BASE,
   COLOR_WARNING,
   COLOR_CONTENT_MUTED
 } from "style/styleVariables";
 import { spacingScale, edgeColor, contrastColor } from "style/styleFunctions";
 
 const LineChartEmpty = styled.div`
-  flex: 1 0 auto;
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: ${spacingScale(1)};
+  text-align: center;
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
 
   h1,
   p,
@@ -22,8 +31,7 @@ const LineChartEmpty = styled.div`
   h1 {
     border-bottom: 1px solid ${edgeColor(CHART_BACKGROUND_COLOR)};
     color: ${contrastColor(CHART_BACKGROUND_COLOR, "100%", COLOR_WARNING)};
-    font-weight: bold;
-    font-size: ${FONT_SIZE_LG};
+    font-size: ${FONT_SIZE_BASE}; // LG
     margin-bottom: ${spacingScale(2)};
     padding-bottom: ${spacingScale(2)};
   }

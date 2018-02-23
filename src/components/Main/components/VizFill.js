@@ -10,7 +10,7 @@ const VizFill = styled.div`
   color: ${props =>
     props.colorDegree
       ? `${COLOR_SUCCESS.mix(COLOR_DANGER, props.colorDegree / 100)}`
-      : "currentColor"};
+      : COLOR_SUCCESS};
   left: 0;
   min-width: 2px;
   position: absolute;

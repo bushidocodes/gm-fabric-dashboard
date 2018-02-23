@@ -1,6 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 
+import { COLOR_SUCCESS } from "style/styleVariables";
 import ReadoutDisplay from "./components/ReadoutDisplay";
 import ReadoutItem, { ReadoutItemShape } from "./components/ReadoutItem";
 
@@ -8,10 +9,15 @@ export default function Readout({
   cacheCard,
   children,
   primary,
+  overallColor,
   readoutItems = []
 }) {
   return (
-    <ReadoutDisplay primary={primary} cacheCard={cacheCard}>
+    <ReadoutDisplay
+      primary={primary}
+      overallColor={overallColor || COLOR_SUCCESS}
+      cacheCard={cacheCard}
+    >
       {readoutItems.map(item => (
         <ReadoutItem
           key={`${item.title}|${item.value}|${item.detail}`}
@@ -26,6 +32,7 @@ export default function Readout({
 Readout.propTypes = {
   cacheCard: PropTypes.bool,
   children: PropTypes.element,
+  overallColor: PropTypes.color,
   primary: PropTypes.bool,
   readoutItems: PropTypes.oneOfType([
     PropTypes.arrayOf(ReadoutItemShape),

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import GMLink from "components/Main/scenes/FabricView/components/GMLink";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
-  FONT_SIZE_XS,
+  FONT_SIZE_BASE,
   COLOR_CONTENT_MUTED,
   COLOR_CONTENT_BACKGROUND,
   FONT_WEIGHT_SEMIBOLD
@@ -33,7 +33,7 @@ const ItemRuntime = LineItemStyle.extend`
 
   > span {
     color: ${COLOR_CONTENT_MUTED.string()};
-    font-size: ${FONT_SIZE_XS};
+    font-size: ${FONT_SIZE_BASE}; // XS
     letter-spacing: 0.08em;
     font-weight: ${FONT_WEIGHT_SEMIBOLD};
     border-radius: 3px;

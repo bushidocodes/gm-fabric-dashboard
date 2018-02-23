@@ -12,18 +12,16 @@ import SourceCodePro400 from "./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf"
 export const COLOR_BRAND_PRIMARY = Color("#0aab2a");
 export const COLOR_BRAND_SECONDARY = Color("#002e6e");
 
-export const COLOR_RED = Color("#E4251A");
+export const COLOR_RED = Color("#eb001a");
 export const COLOR_BLACK = Color("#000");
 export const COLOR_GREEN = Color("#0aab2a");
 export const COLOR_WHITE = Color("#fff");
 
 export const COLOR_HIGHLIGHT = COLOR_BRAND_PRIMARY;
-export const COLOR_SUCCESS = Color("#0aab2a");
-export const COLOR_DANGER = Color("red")
-  .darken(0.15)
-  .saturate(0.1);
-export const COLOR_WARNING = Color("#FAC60F");
-export const COLOR_INFO = Color("blue");
+export const COLOR_SUCCESS = COLOR_BRAND_PRIMARY;
+export const COLOR_DANGER = COLOR_RED;
+export const COLOR_WARNING = Color("#f8b400");
+export const COLOR_INFO = Color("#094dff");
 
 export const COLOR_STOP_1 = COLOR_SUCCESS;
 export const COLOR_STOP_2 = COLOR_WARNING.mix(COLOR_DANGER, 0.3).darken(0.1);
@@ -71,21 +69,22 @@ export const FONT_GROUP_DATA = "Rubik";
 export const FONT_GROUP_CODE = `"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`;
 export const FONT_GROUP_DATA_MONO = "Source Code Pro";
 
-export const FONT_STACK_BASE = `${FONT_GROUP_MAIN_TEXT}, ${FONT_GROUP_SYSTEM}`;
+export const FONT_STACK_BASE = `${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_DATA = `${FONT_GROUP_DATA}, ${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_DATA_MONO = `${FONT_GROUP_DATA_MONO}, ${FONT_GROUP_DATA}, ${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_CODE = FONT_GROUP_CODE;
 
 export const LINE_HEIGHT_BASE = 1.4;
 export const FONT_WEIGHT_REGULAR = 400;
-export const FONT_WEIGHT_SEMIBOLD = 600;
-export const FONT_SIZE_HERO = "32px";
-export const FONT_SIZE_H2 = "24px";
-export const FONT_SIZE_H3 = "22px";
+export const FONT_WEIGHT_SEMIBOLD = 500;
+export const FONT_SIZE_TITLE = "36px";
+export const FONT_SIZE_HERO = "40px";
+export const FONT_SIZE_H2 = "28px";
+export const FONT_SIZE_H3 = "24px";
 export const FONT_SIZE_LG = "18px";
 export const FONT_SIZE_BASE = "14px";
-export const FONT_SIZE_SM = "11px";
-export const FONT_SIZE_XS = "9px";
+export const FONT_SIZE_SM = "12px";
+export const FONT_SIZE_XS = "10px";
 
 // Line chart
 
@@ -93,7 +92,6 @@ export const CHART_BACKGROUND_COLOR = "transparent";
 export const CHART_HEIGHT_BASE = "250px";
 
 export const TABLE_BORDER = COLOR_CONTENT_BACKGROUND.darken(0.08).string();
-
 export const TABLE_HOVER = COLOR_CONTENT_BACKGROUND.darken(0.02).string();
 
 // Notifications
@@ -207,6 +205,14 @@ injectGlobal`
     top: 0;
     bottom: 0;
     width: 100%;
+  }
+
+  :focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: ${COLOR_HIGHLIGHT.toString()};
+    outline-color: -webkit-invert;
+    outline-offset: 3px;
   }
 
 `;

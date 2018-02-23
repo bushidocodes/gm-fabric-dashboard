@@ -11,6 +11,11 @@ import TableToolbar from "components/Main/components/TableToolbar";
 import NotFoundError from "components/Main/components/NotFoundError";
 import withUrlState from "components/withUrlState";
 import { getVisibleThreads } from "utils/jvm/selectors";
+import LayoutSection from "components/LayoutSection";
+import Readout from "components/Main/components/Readout";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
+
+import { COLOR_WARNING } from "style/styleVariables";
 
 /**
  * Parent container of ThreadsTable and TableToolbar
@@ -103,6 +108,28 @@ class ThreadsGrid extends Component {
     if (threads && threads.length > 0) {
       return (
         <ErrorBoundary>
+          <LayoutSection title={"Summary"}>
+            <ReadoutGroup>
+              <Readout
+                readoutItems={[
+                  {
+                    title: "Active",
+                    value: "30"
+                  }
+                ]}
+              />
+              <Readout
+                overallColor={COLOR_WARNING}
+                readoutItems={[
+                  {
+                    title: "Idle",
+                    value: "25"
+                  }
+                ]}
+              />
+            </ReadoutGroup>
+          </LayoutSection>
+
           <TableToolbar
             searchInputProps={{
               filterString: filterString,

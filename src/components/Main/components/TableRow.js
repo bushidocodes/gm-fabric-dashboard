@@ -8,6 +8,7 @@ import {
 } from "style/styleFunctions";
 import {
   COLOR_CONTENT_BACKGROUND,
+  BORDER_RADIUS_BASE,
   TABLE_HOVER,
   TABLE_BORDER
 } from "style/styleVariables";
@@ -16,20 +17,17 @@ const TableRow = styled.li.attrs({
   tabIndex: 0
 })`
   align-items: center;
-  background-color: ${props =>
-    props.isOpen
-      ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.04).string()
-      : contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()};
-  box-shadow: inset 0 -1px ${TABLE_BORDER};
   display: flex;
   flex-wrap: wrap;
   min-height: ${spacingScale(4.5)};
-  width: 100%;
+  flex: 0 0 100%;
   cursor: ${props => (props.selectable ? `pointer` : `default`)};
+  transition: all 0.2s ease;
+  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
+  margin: ${spacingScale(1)} 0 0;
+  border-radius: ${BORDER_RADIUS_BASE};
+  box-shadow: 0 0 0 1px ${TABLE_BORDER};
 
-  &:hover {
-    ${props => props.selectable && `background-color: ${TABLE_HOVER}; `};
-  }
   &:focus {
     outline: -webkit-focus-ring-color auto 5px;
   }

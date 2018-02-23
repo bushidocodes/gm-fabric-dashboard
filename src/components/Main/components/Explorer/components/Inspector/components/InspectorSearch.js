@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
-import { COLOR_WHITE, COLOR_HIGHLIGHT } from "style/styleVariables";
+import {
+  COLOR_WHITE,
+  COLOR_HIGHLIGHT,
+  FONT_SIZE_BASE,
+  BORDER_RADIUS_BASE,
+  COLOR_CONTENT_BACKGROUND
+} from "style/styleVariables";
+import { spacingScale, contrastColor } from "style/styleFunctions";
 import { form_control } from "components/globalPatterns";
 
 const InspectorSearch = styled.input`
-  ${form_control};
   appearance: none;
-  margin: 8px;
-
-  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
-    0 0 0 rgba(0, 0, 0, 0);
+  margin: ${spacingScale(1)};
+  border: 1px solid ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.2).string()};
+  border-radius: ${BORDER_RADIUS_BASE};
+  font-size: ${FONT_SIZE_BASE};
   text-align: left;
   user-select: auto;
-  width: calc(100% - 16px);
+  width: calc(100% - ${spacingScale(2)});
 
   &[type="text"],
   &[type="search"] {
@@ -37,9 +43,6 @@ const InspectorSearch = styled.input`
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.5),
-      0 0 0 1px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.25).string()},
-      0 0 0 4px ${COLOR_HIGHLIGHT.mix(COLOR_WHITE, 0.75).string()};
     outline: none;
   }
 `;

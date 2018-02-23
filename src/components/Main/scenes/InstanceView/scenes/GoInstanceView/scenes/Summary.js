@@ -171,34 +171,33 @@ function SummaryGrid({
           description: "Statistics header text"
         })}
         icon="Scatterplot"
+        stretch={true}
       >
-        <div style={{ height: "250px" }}>
-          <GMLineChart
-            dygraph={mapDygraphKeysToNetChange(
-              getDygraphOfValue(metrics, [
-                "HTTPS/requests",
-                "HTTP/requests",
-                "RPC/requests"
-              ])
-            )}
-            dygraphMetadata={{
-              "HTTPS/requests": {
-                label: "HTTPS"
-              },
-              "HTTP/requests": {
-                label: "HTTP"
-              },
-              "RPC/requests": {
-                label: "RPC"
-              }
-            }}
-            title={intl.formatMessage({
-              id: "summary.requestsPerSecond",
-              defaultMessage: "Requests Per Second",
-              description: "Requests Per Second title text"
-            })}
-          />
-        </div>
+        <GMLineChart
+          dygraph={mapDygraphKeysToNetChange(
+            getDygraphOfValue(metrics, [
+              "HTTPS/requests",
+              "HTTP/requests",
+              "RPC/requests"
+            ])
+          )}
+          dygraphMetadata={{
+            "HTTPS/requests": {
+              label: "HTTPS"
+            },
+            "HTTP/requests": {
+              label: "HTTP"
+            },
+            "RPC/requests": {
+              label: "RPC"
+            }
+          }}
+          title={intl.formatMessage({
+            id: "summary.requestsPerSecond",
+            defaultMessage: "Requests Per Second",
+            description: "Requests Per Second title text"
+          })}
+        />
       </LayoutSection>
     </ErrorBoundary>
   );

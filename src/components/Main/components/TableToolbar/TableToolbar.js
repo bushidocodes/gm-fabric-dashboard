@@ -4,7 +4,7 @@ import { PropTypes } from "prop-types";
 import { injectIntl, intlShape } from "react-intl";
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
-import Button from "components/Button";
+import NavTab from "components/NavTab";
 import Form from "./components/Form";
 import GMSelect from "components/Main/components/GMSelect";
 import { GMSelectValueRenderer } from "components/Main/components/GMSelect";
@@ -78,7 +78,7 @@ function TableToolbar({
       </ToolbarLeft>
       <ToolbarCenter>
         {displayTypeProps && [
-          <Button
+          <NavTab
             active={displayTypeProps.displayType === "Cards"}
             clickAction={() => displayTypeProps.setDisplayType("Cards")}
             glyph="Card"
@@ -89,7 +89,7 @@ function TableToolbar({
             })}
             key="Cards"
           />,
-          <Button
+          <NavTab
             active={displayTypeProps.displayType === "List"}
             clickAction={() => displayTypeProps.setDisplayType("List")}
             glyph="List"
