@@ -14,11 +14,12 @@ import Main from "./components/Main";
 import store from "./store";
 import "./services";
 
+import de from "react-intl/locale-data/de";
 import en from "react-intl/locale-data/en";
 import es from "react-intl/locale-data/es";
 
 // Add locale data for our supported locales
-addLocaleData([...en, ...es]);
+addLocaleData([...de, ...en, ...es]);
 
 ReactDOM.render(
   <Provider store={store}>

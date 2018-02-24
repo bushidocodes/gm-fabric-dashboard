@@ -1,14 +1,7 @@
 import _ from "lodash";
-import React from "react";
 import { createSelector } from "reselect";
 
-import { parseJSONString } from "./latestAttribute";
-import { getSparkLineOfValue, getSparkLineOfNetChange } from "./sparklines";
 import { microserviceStatuses } from "utils/constants";
-
-// TODO: Revisit architecture here
-// This import makes me feel like generateHeaderTabs should not be a selector
-import Tab from "components/AppHeader/components/Tab";
 
 // Reselect Input Selectors
 
@@ -49,52 +42,13 @@ export const getRuntime = createSelector(
     }
   }
 );
-/**
- * Reselect selector that generates Tab components from JSON
- */
-export const generateHeaderTabs = createSelector(
+
+export const getBaseInstanceRoute = createSelector(
   [getDashboards, getMetrics, getSelectedServiceSlug, getSelectedInstanceID],
   (dashboards, metrics, selectedServiceSlug, selectedInstanceID) => {
-    if (Object.keys(dashboards).length > 0) {
-      const prefix =
-        selectedServiceSlug && selectedInstanceID
-          ? `/${selectedServiceSlug}/${selectedInstanceID}`
-          : "";
-      return _.toPairs(dashboards).map(([key, value]) => {
-        let chartData, lines;
-        // Render lines of text if present
-        if (_.has(value, "summaryCard.lines")) {
-          lines = value.summaryCard.lines.map(line => ({
-            name: line.name,
-            value: parseJSONString(line.value, metrics)
-          }));
-        }
-        // Render a chart if present
-        if (_.has(value, "summaryCard.chart")) {
-          if (value.summaryCard.chart.type === "value") {
-            chartData = getSparkLineOfValue(
-              metrics,
-              value.summaryCard.chart.dataAttribute
-            );
-          } else if (value.summaryCard.chart.type === "netChange") {
-            chartData = getSparkLineOfNetChange(
-              metrics,
-              value.summaryCard.chart.dataAttribute
-            );
-          }
-        }
-        return (
-          <Tab
-            chartData={chartData}
-            href={`${prefix}/${key}`}
-            icon={value.summaryCard.icon}
-            key={`/${key}`}
-            lines={lines}
-            title={value.name}
-          />
-        );
-      });
-    }
+    return selectedServiceSlug && selectedInstanceID
+      ? `/${selectedServiceSlug}/${selectedInstanceID}`
+      : "";
   }
 );
 

@@ -53,12 +53,14 @@ export function getLatestAttribute(
  * @param {String[]|String} line
  * @param {Object} metrics
  */
-export function parseJSONString(line, metrics) {
+export function parseJSONString(line, metrics, formatMessage) {
   if (Array.isArray(line)) {
     return line
       .map(element => {
         if (element.type === "string") {
-          return element.value;
+          return formatMessage
+            ? formatMessage(element.value)
+            : element.value.defaultMessage;
         } else if (
           element.type === "latest" &&
           element.baseUnit &&

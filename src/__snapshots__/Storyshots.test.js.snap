@@ -448,6 +448,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
       >
         Español (es)
       </li>
+      <li
+        class="c9"
+      >
+        Deutsch (de)
+      </li>
     </ul>
   </div>
   <a
@@ -456,7 +461,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
     rel="noopener noreferrer"
     target="_blank"
   >
-    1.0.4
+    1.0.6
   </a>
   <div
     class="c11"
@@ -1317,6 +1322,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
         >
           Español (es)
         </li>
+        <li
+          class="c10"
+        >
+          Deutsch (de)
+        </li>
       </ul>
     </div>
     <a
@@ -1325,7 +1335,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      1.0.4
+      1.0.6
     </a>
     <div
       class="c12"
@@ -8351,6 +8361,7 @@ exports[`Storyshots Service Card Service Card 1`] = `
 <div
   class="c0"
   height="112px"
+  name="Stable"
   width="160px"
 >
   <a
@@ -8864,6 +8875,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -8997,6 +9009,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9130,6 +9143,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -9262,6 +9276,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -9394,6 +9409,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9527,6 +9543,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c0"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -9660,6 +9677,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -9792,6 +9810,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10210,6 +10229,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   <div
     class="c1"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10335,6 +10355,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   <div
     class="c1"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -10959,6 +10980,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11085,6 +11107,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11211,6 +11234,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a
@@ -11336,6 +11360,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11462,6 +11487,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11588,6 +11614,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11714,6 +11741,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -11840,6 +11868,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -11966,6 +11995,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c1"
     height="112px"
+    name="Stable"
     width="160px"
   >
     <a
@@ -12092,6 +12122,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c10"
     height="112px"
+    name="Down"
     width="160px"
   >
     <a
@@ -12218,6 +12249,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   <div
     class="c13"
     height="112px"
+    name="Warning"
     width="160px"
   >
     <a

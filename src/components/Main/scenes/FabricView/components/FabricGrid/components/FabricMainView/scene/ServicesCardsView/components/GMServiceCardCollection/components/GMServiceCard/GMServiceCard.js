@@ -104,6 +104,7 @@ export default function GMServiceCard({
       cardBorderAltColor={cardBorderAltColor}
       width={width}
       height={height}
+      name={status}
     >
       <ServiceLink
         disabled={isAccessible ? null : true}

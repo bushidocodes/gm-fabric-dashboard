@@ -145,7 +145,8 @@ function generateOptions({ baseOptions = {}, attributes, dygraphMetadata }) {
   }
   options.legendFormatter = generatelegendFormatter(
     dygraphMetadata,
-    options.labels
+    options.labels,
+    options.colors
   );
   // If a chart all uses the same units, label the Y axis with the
   // appropriate labels
@@ -207,7 +208,7 @@ function generateLabels(rawAttributes, dygraphMetadata) {
  * @param {any} labels
  * @returns
  */
-function generatelegendFormatter(dygraphMetadata = {}, labels) {
+function generatelegendFormatter(dygraphMetadata = {}, labels, colors) {
   return function legendFormatter(data) {
     if (data.x == null) {
       // This happens when there's no selection and {legend: 'always'} is set.
@@ -218,19 +219,16 @@ function generatelegendFormatter(dygraphMetadata = {}, labels) {
     const xAxisValue = data.xHTML;
     var html = `${xAxisLabel}: ${xAxisValue}<br>`;
     html += data.series
-      .map(ts => {
+      .map((ts, idx) => {
         const match =
           _.find(_.values(dygraphMetadata), ["label", ts.label]) ||
           DEFAULT_LEGEND_FORMATTING;
         const baseUnit = match.baseUnit;
         const resultUnit = match.resultUnit;
         const precision = match.precision;
-        return `${ts.label}: ${formatMetricString(
-          ts.y,
-          baseUnit,
-          resultUnit,
-          precision
-        )}`;
+        return `<span style="color:${colors[idx]}">${
+          ts.label
+        }: ${formatMetricString(ts.y, baseUnit, resultUnit, precision)}</span>`;
       })
       .join("<br>");
     return html;
@@ -238,6 +236,7 @@ function generatelegendFormatter(dygraphMetadata = {}, labels) {
 }
 
 const DEFAULT_DYGRAPH_OPTIONS = {
+  colors: ["#3cb44b", "#e6194b", "#ffe119", "#0082c8", "#f58231", "#911eb4"],
   labelsKMB: true,
   strokeWidth: 2.0,
   legend: "always",

@@ -1,2277 +1,870 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`JVM > SummaryGrid component Matched the snapshot 1`] = `
-<InjectIntl(SummaryGrid)
-  dispatch={[Function]}
-  errorPercent="0"
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en-US",
-      "messages": Object {
-        "GMLineChart.noChartableData": "No Chartable Data",
-        "GMLineChart.noMetricsFound": "Could not find the following metrics:",
-        "GMLineChart.screenReaderGraphDescription.noData": "The average for currently displayed data is equal to 0.",
-        "GMLineChart.screenReaderGraphDescription.withData": "A tabular representation of the {title} chart data: median {median} average {average} mode {mode} maximum {max} minimum {min} number of observations {dataPoints} complete data time series follows {timeSeries}",
-        "GMServiceTableLineItem.tooltip": "This microservice instance does not have metrics to display.",
-        "explorer.selectMetric": "Select a metric to display",
-        "fabric.capability": "Capability",
-        "fabric.error": "No Services Found",
-        "fabric.name": "Name",
-        "fabric.none": "None",
-        "fabric.owner": "Owner",
-        "fabric.searchPlaceholder": "Search Services",
-        "fabric.status": "Status",
-        "fabricHeaderContent.allServices": "All Services",
-        "fabricHeaderContent.down": "Down",
-        "fabricHeaderContent.services": "Services",
-        "fabricHeaderContent.stable": "Stable",
-        "fabricHeaderContent.summary": "Summary",
-        "fabricHeaderContent.warning": "Warning",
-        "fabricMicroservices.disableFetchError": "Automatically disabling the fetching of Fabric microservices after three attempts.",
-        "fabricMicroservices.fetchError": "Fetching Fabric Microservices failed",
-        "fabricRouter.noInstance": "{instanceID} is not a known instance of {serviceName} {serviceVersion}",
-        "fabricRouter.noMetrics": "{serviceName} {serviceVersion} does not have metrics to display",
-        "fabricRouter.noService": "{serviceSlug} is not a known microservice",
-        "fabricRouter.notAuthorized": "You are not authorized to view {serviceName} {serviceVersion}",
-        "footer.copyright": "Copyright &copy; 2018 Decipher Technology Studios. All rights reserved. <br /> Copyright &copy; 2018 Grey Matter, a Decipher Technology Studios product. All rights reserved.",
-        "functionsGrid.error": "No Functions Found",
-        "functionsGrid.errorPercent": "Error %",
-        "functionsGrid.function": "Function",
-        "functionsGrid.latency50": "Latency 50%",
-        "functionsGrid.latency99": "Latency 99%",
-        "functionsGrid.requests": "Requests",
-        "functionsGrid.searchPlaceholder": "Search Functions",
-        "goHeaderContent.explorer": "Explorer",
-        "goHeaderContent.functions": "Functions",
-        "goHeaderContent.requests": "Requests",
-        "goHeaderContent.routes": "Routes",
-        "goHeaderContent.summary": "Summary",
-        "goHeaderContent.uptime": "Uptime",
-        "inspector.hideStaticMetric": "Hide all static metrics",
-        "inspector.hideZeroMetric": "Hide all metrics with only zero values",
-        "inspector.searchAriaLabel": "Search All Metrics",
-        "inspector.searchPlaceholder": "Search",
-        "instanceMetricsUtils.disableFetchError": "Automatically disabling the fetching of metrics after three attempts. You can turn polling back on in Settings.",
-        "instanceMetricsUtils.fetchError": "Fetching Metrics failed",
-        "jvmHeaderContent.explorer": "Explorer",
-        "jvmHeaderContent.requests": "Requests",
-        "jvmHeaderContent.routes": "Routes",
-        "jvmHeaderContent.summary": "Summary",
-        "jvmHeaderContent.threads": "Threads",
-        "jvmHeaderContent.uptime": "Uptime",
-        "languageSelector.languages": "Languages",
-        "pollingSettings.button.pause": "Pause Polling",
-        "pollingSettings.button.resume": "Resume Polling",
-        "pollingSettings.pollingIntervals": "Polling Interval(s)",
-        "routesGrid.error": "No Routes Found",
-        "routesGrid.errorPercent": "Error %",
-        "routesGrid.latency50": "Latency 50%",
-        "routesGrid.latency99": "Latency 99%",
-        "routesGrid.requests": "Requests",
-        "routesGrid.route": "Route",
-        "routesGrid.searchPlaceholder": "Search Routes",
-        "serviceHeaderContent.instances": "Instances",
-        "serviceView.error": "No Instances Found",
-        "serviceView.name": "Name",
-        "serviceView.searchPlaceholder": "Search Instances",
-        "serviceView.uptime": "Uptime",
-        "settingsGrid.cacheSize": "Cache Size",
-        "settingsGrid.clearCache": "Clear Cache",
-        "settingsGrid.fabricPolling": "Fabric Polling",
-        "settingsGrid.instancePolling": "Instance Polling",
-        "settingsGrid.metricsCache": "Metrics Cache",
-        "settingsGrid.modal.question": "Are you sure that you want to clear the cached metrics data?",
-        "settingsGrid.modal.secondary": "This action cannot be undone.",
-        "settingsGrid.polling": "Polling",
-        "settingsGrid.tooltip": "Select an instance to turn on polling",
-        "summary.errorRate": "Error Rate",
-        "summary.hostCPUCores": "Host CPU Cores",
-        "summary.hostCPUUsage": "Host CPU Utilized",
-        "summary.hostCPUUsageDetail": "{count, plural, one {# Core on Host} other {#  Cores on Host}}",
-        "summary.memoryUsage": "Memory Utilized",
-        "summary.memoryUsageDetail": "{hostMemoryAvail} Free on Host",
-        "summary.requestsPerSecond": "Requests Per Second",
-        "summary.responseTime": "Avg. Response Time",
-        "summary.statistics": "Statistics",
-        "summary.uptime": "Uptime",
-        "summary.vitals": "Vitals",
-        "table.errorPercent": "Error %",
-        "table.function": "Function",
-        "table.instance": "Instance",
-        "table.latency": "Latency",
-        "table.requests": "Requests",
-        "table.requestsSec": "Requests/sec",
-        "table.route": "Route",
-        "table.uptime": "Uptime",
-        "tableColLatencyHeader.latency": "Latency",
-        "tableColLatencyHeader.latency50": "50%",
-        "tableColLatencyHeader.latency99": "99%",
-        "tableColLatencyHeader.tooltip": "Latency 50% refers to the average latency of the 50% percentile, while Latency 99% is the average latency for the slowest 1% of responses, also known as tail latency.",
-        "tableLineItem.requests": "Requests over Time for {item}",
-        "tableToolbar.cards": "Cards",
-        "tableToolbar.group": "Group",
-        "tableToolbar.list": "List",
-        "tableToolbar.sort": "Sort",
-        "threadsGrid.errorFetchFail": "Failed to Fetch Threads",
-        "threadsGrid.errorNotFound": "No Threads Found",
-        "threadsGrid.id": "ID",
-        "threadsGrid.name": "Name",
-        "threadsGrid.none": "None",
-        "threadsGrid.searchPlaceholder": "Search Threads",
-        "threadsGrid.state": "State",
-        "threadsTableHeader.daemon": "Daemon",
-        "threadsTableHeader.id": "ID",
-        "threadsTableHeader.name": "Name",
-        "threadsTableHeader.priority": "Priority",
-        "threadsTableHeader.state": "State",
-      },
-      "now": [Function],
-      "textComponent": "span",
-    }
+Array [
+  .c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type > * {
+  border-top: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
+.c5 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
+}
+
+.c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c11 {
+  z-index: 1;
+  height: 48px;
+  width: 48px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c11:not(:root) {
+  overflow: visible;
+}
+
+.c8 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: rgb(230,230,230);
+  border-radius: 3px;
+  color: rgb(0,0,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 300px;
+  -ms-flex: 1 1 300px;
+  flex: 1 1 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin: 4px;
+}
+
+.c8:first-child:last-child {
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+}
+
+.c8:first-child:last-child > * {
+  text-align: center;
+}
+
+.c8:first-child:last-child > * > :first-child {
+  padding-left: 0;
+}
+
+.c17 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: rgb(51,51,51);
+  border-radius: 3px;
+  color: rgb(255,255,255);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 300px;
+  -ms-flex: 1 1 300px;
+  flex: 1 1 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  margin: 0;
+}
+
+.c17:first-child:last-child {
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+}
+
+.c17:first-child:last-child > * {
+  text-align: center;
+}
+
+.c17:first-child:last-child > * > :first-child {
+  padding-left: 0;
+}
+
+.c9 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  -webkit-flex: 1 1 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 75px;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.c9 + .c9:before {
+  border-top: 1px solid currentColor;
+  content: "";
+  left: 0;
+  opacity: 0.125;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c9 button {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 8px 0;
+}
+
+.c12 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.c12:first-child {
+  padding-left: 16px;
+}
+
+.c10 {
+  -webkit-flex: 0 0 80px;
+  -ms-flex: 0 0 80px;
+  flex: 0 0 80px;
+  height: 48px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.c13 {
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  min-height: 1em;
+}
+
+.c14 {
+  font-size: 32px;
+  word-break: break-all;
+  margin: 0;
+  line-height: 1.1;
+  min-height: 1em;
+}
+
+.c16 {
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0;
+  min-height: 1em;
+  opacity: 0.85;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  orphans: 2;
+  width: 100%;
+}
+
+.c15 span + span {
+  font-size: 80%;
+  opacity: 0.8;
+}
+
+@media all and (max-width:1000px) {
+  .c8 {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
   }
-  metrics={
-    Object {
-      "finagle/build/revision": Object {
-        "1500416014314": 1050205552640,
-        "1500416029215": 1050205552640,
-        "1500416044215": 1050205552640,
-        "1500416059217": 1050205552640,
-        "1500416074215": 1050205552640,
-        "1500416089215": 1050205552640,
-        "1500416104216": 1050205552640,
-        "1500416119215": 1050205552640,
-        "1500416134216": 1050205552640,
-      },
-      "finagle/clientregistry/initialresolution_ms": Object {
-        "1500416014314": 4,
-        "1500416029215": 4,
-        "1500416044215": 4,
-        "1500416059217": 4,
-        "1500416074215": 4,
-        "1500416089215": 4,
-        "1500416104216": 4,
-        "1500416119215": 4,
-        "1500416134216": 4,
-      },
-      "finagle/clientregistry/size": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "finagle/future_pool/active_tasks": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "finagle/future_pool/completed_tasks": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "finagle/future_pool/pool_size": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "finagle/timer/deviation_ms.avg": Object {
-        "1500416014314": 10,
-        "1500416029215": 10,
-        "1500416044215": 10,
-        "1500416059217": 10,
-        "1500416074215": 10,
-        "1500416089215": 10,
-        "1500416104216": 10.000333333333334,
-        "1500416119215": 10.000333333333334,
-        "1500416134216": 10.000333333333334,
-      },
-      "finagle/timer/deviation_ms.count": Object {
-        "1500416014314": 2838,
-        "1500416029215": 2838,
-        "1500416044215": 2782,
-        "1500416059217": 2782,
-        "1500416074215": 2782,
-        "1500416089215": 2782,
-        "1500416104216": 3000,
-        "1500416119215": 3000,
-        "1500416134216": 3000,
-      },
-      "finagle/timer/deviation_ms.max": Object {
-        "1500416014314": 14,
-        "1500416029215": 14,
-        "1500416044215": 14,
-        "1500416059217": 14,
-        "1500416074215": 14,
-        "1500416089215": 14,
-        "1500416104216": 14,
-        "1500416119215": 14,
-        "1500416134216": 14,
-      },
-      "finagle/timer/deviation_ms.min": Object {
-        "1500416014314": 6,
-        "1500416029215": 6,
-        "1500416044215": 6,
-        "1500416059217": 6,
-        "1500416074215": 6,
-        "1500416089215": 6,
-        "1500416104216": 6,
-        "1500416119215": 6,
-        "1500416134216": 6,
-      },
-      "finagle/timer/deviation_ms.p50": Object {
-        "1500416014314": 10,
-        "1500416029215": 10,
-        "1500416044215": 10,
-        "1500416059217": 10,
-        "1500416074215": 10,
-        "1500416089215": 10,
-        "1500416104216": 10,
-        "1500416119215": 10,
-        "1500416134216": 10,
-      },
-      "finagle/timer/deviation_ms.p90": Object {
-        "1500416014314": 12,
-        "1500416029215": 12,
-        "1500416044215": 12,
-        "1500416059217": 12,
-        "1500416074215": 12,
-        "1500416089215": 12,
-        "1500416104216": 12,
-        "1500416119215": 12,
-        "1500416134216": 12,
-      },
-      "finagle/timer/deviation_ms.p95": Object {
-        "1500416014314": 12,
-        "1500416029215": 12,
-        "1500416044215": 12,
-        "1500416059217": 12,
-        "1500416074215": 12,
-        "1500416089215": 12,
-        "1500416104216": 12,
-        "1500416119215": 12,
-        "1500416134216": 12,
-      },
-      "finagle/timer/deviation_ms.p99": Object {
-        "1500416014314": 13,
-        "1500416029215": 13,
-        "1500416044215": 13,
-        "1500416059217": 13,
-        "1500416074215": 13,
-        "1500416089215": 13,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "finagle/timer/deviation_ms.p9990": Object {
-        "1500416014314": 14,
-        "1500416029215": 14,
-        "1500416044215": 14,
-        "1500416059217": 14,
-        "1500416074215": 14,
-        "1500416089215": 14,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "finagle/timer/deviation_ms.p9999": Object {
-        "1500416014314": 14,
-        "1500416029215": 14,
-        "1500416044215": 14,
-        "1500416059217": 14,
-        "1500416074215": 14,
-        "1500416089215": 14,
-        "1500416104216": 14,
-        "1500416119215": 14,
-        "1500416134216": 14,
-      },
-      "finagle/timer/deviation_ms.sum": Object {
-        "1500416014314": 28380,
-        "1500416029215": 28380,
-        "1500416044215": 27820,
-        "1500416059217": 27820,
-        "1500416074215": 27820,
-        "1500416089215": 27820,
-        "1500416104216": 30001,
-        "1500416119215": 30001,
-        "1500416134216": 30001,
-      },
-      "finagle/timer/pending_tasks.avg": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.count": Object {
-        "1500416014314": 5,
-        "1500416029215": 5,
-        "1500416044215": 6,
-        "1500416059217": 6,
-        "1500416074215": 6,
-        "1500416089215": 6,
-        "1500416104216": 6,
-        "1500416119215": 6,
-        "1500416134216": 6,
-      },
-      "finagle/timer/pending_tasks.max": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.min": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p50": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p90": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p95": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p99": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p9990": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.p9999": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "finagle/timer/pending_tasks.sum": Object {
-        "1500416014314": 10,
-        "1500416029215": 10,
-        "1500416044215": 12,
-        "1500416059217": 12,
-        "1500416074215": 12,
-        "1500416089215": 12,
-        "1500416104216": 12,
-        "1500416119215": 12,
-        "1500416134216": 12,
-      },
-      "function/CatalogStream/errors.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "function/CatalogStream/in_throughput": Object {
-        "1500416014314": 227,
-        "1500416029215": 227,
-        "1500416044215": 227,
-        "1500416059217": 227,
-        "1500416074215": 227,
-        "1500416089215": 227,
-        "1500416104216": 227,
-        "1500416119215": 227,
-        "1500416134216": 227,
-      },
-      "function/CatalogStream/latency_ms.avg": Object {
-        "1500416014314": 1942.692308,
-        "1500416029215": 1942.692308,
-        "1500416044215": 1942.692308,
-        "1500416059217": 1942.692308,
-        "1500416074215": 1942.692308,
-        "1500416089215": 1942.692308,
-        "1500416104216": 1942.692308,
-        "1500416119215": 1942.692308,
-        "1500416134216": 1942.692308,
-      },
-      "function/CatalogStream/latency_ms.count": Object {
-        "1500416014314": 13,
-        "1500416029215": 13,
-        "1500416044215": 13,
-        "1500416059217": 13,
-        "1500416074215": 13,
-        "1500416089215": 13,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "function/CatalogStream/latency_ms.max": Object {
-        "1500416014314": 3484,
-        "1500416029215": 3484,
-        "1500416044215": 3484,
-        "1500416059217": 3484,
-        "1500416074215": 3484,
-        "1500416089215": 3484,
-        "1500416104216": 3484,
-        "1500416119215": 3484,
-        "1500416134216": 3484,
-      },
-      "function/CatalogStream/latency_ms.min": Object {
-        "1500416014314": 600,
-        "1500416029215": 600,
-        "1500416044215": 600,
-        "1500416059217": 600,
-        "1500416074215": 600,
-        "1500416089215": 600,
-        "1500416104216": 600,
-        "1500416119215": 600,
-        "1500416134216": 600,
-      },
-      "function/CatalogStream/latency_ms.p50": Object {
-        "1500416014314": 1956,
-        "1500416029215": 1956,
-        "1500416044215": 1956,
-        "1500416059217": 1956,
-        "1500416074215": 1956,
-        "1500416089215": 1956,
-        "1500416104216": 1956,
-        "1500416119215": 1956,
-        "1500416134216": 1956,
-      },
-      "function/CatalogStream/latency_ms.p90": Object {
-        "1500416014314": 3469,
-        "1500416029215": 3469,
-        "1500416044215": 3469,
-        "1500416059217": 3469,
-        "1500416074215": 3469,
-        "1500416089215": 3469,
-        "1500416104216": 3469,
-        "1500416119215": 3469,
-        "1500416134216": 3469,
-      },
-      "function/CatalogStream/latency_ms.p95": Object {
-        "1500416014314": 3489,
-        "1500416029215": 3489,
-        "1500416044215": 3489,
-        "1500416059217": 3489,
-        "1500416074215": 3489,
-        "1500416089215": 3489,
-        "1500416104216": 3489,
-        "1500416119215": 3489,
-        "1500416134216": 3489,
-      },
-      "function/CatalogStream/latency_ms.p99": Object {
-        "1500416014314": 3484,
-        "1500416029215": 3484,
-        "1500416044215": 3484,
-        "1500416059217": 3484,
-        "1500416074215": 3484,
-        "1500416089215": 3484,
-        "1500416104216": 3484,
-        "1500416119215": 3484,
-        "1500416134216": 3484,
-      },
-      "function/CatalogStream/latency_ms.p9990": Object {
-        "1500416014314": 3484,
-        "1500416029215": 3484,
-        "1500416044215": 3484,
-        "1500416059217": 3484,
-        "1500416074215": 3484,
-        "1500416089215": 3484,
-        "1500416104216": 3484,
-        "1500416119215": 3484,
-        "1500416134216": 3484,
-      },
-      "function/CatalogStream/latency_ms.p9999": Object {
-        "1500416014314": 3484,
-        "1500416029215": 3484,
-        "1500416044215": 3484,
-        "1500416059217": 3484,
-        "1500416074215": 3484,
-        "1500416089215": 3484,
-        "1500416104216": 3484,
-        "1500416119215": 3484,
-        "1500416134216": 3484,
-      },
-      "function/CatalogStream/latency_ms.sum": Object {
-        "1500416014314": 25255,
-        "1500416029215": 25255,
-        "1500416044215": 25255,
-        "1500416059217": 25255,
-        "1500416074215": 25255,
-        "1500416089215": 25255,
-        "1500416104216": 25255,
-        "1500416119215": 25255,
-        "1500416134216": 25255,
-      },
-      "function/CatalogStream/out_throughput": Object {
-        "1500416014314": 2889,
-        "1500416029215": 2889,
-        "1500416044215": 2889,
-        "1500416059217": 2889,
-        "1500416074215": 2889,
-        "1500416089215": 2889,
-        "1500416104216": 2889,
-        "1500416119215": 2889,
-        "1500416134216": 2889,
-      },
-      "function/CatalogStream/requests": Object {
-        "1500416014314": 13,
-        "1500416029215": 13,
-        "1500416044215": 13,
-        "1500416059217": 13,
-        "1500416074215": 13,
-        "1500416089215": 13,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "function/OrderItem/errors.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "function/OrderItem/in_throughput": Object {
-        "1500416014314": 225,
-        "1500416029215": 225,
-        "1500416044215": 225,
-        "1500416059217": 225,
-        "1500416074215": 225,
-        "1500416089215": 225,
-        "1500416104216": 225,
-        "1500416119215": 225,
-        "1500416134216": 225,
-      },
-      "function/OrderItem/latency_ms.avg": Object {
-        "1500416014314": 2398.615385,
-        "1500416029215": 2398.615385,
-        "1500416044215": 2398.615385,
-        "1500416059217": 2398.615385,
-        "1500416074215": 2398.615385,
-        "1500416089215": 2398.615385,
-        "1500416104216": 2398.615385,
-        "1500416119215": 2398.615385,
-        "1500416134216": 2398.615385,
-      },
-      "function/OrderItem/latency_ms.count": Object {
-        "1500416014314": 13,
-        "1500416029215": 13,
-        "1500416044215": 13,
-        "1500416059217": 13,
-        "1500416074215": 13,
-        "1500416089215": 13,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "function/OrderItem/latency_ms.max": Object {
-        "1500416014314": 3565,
-        "1500416029215": 3565,
-        "1500416044215": 3565,
-        "1500416059217": 3565,
-        "1500416074215": 3565,
-        "1500416089215": 3565,
-        "1500416104216": 3565,
-        "1500416119215": 3565,
-        "1500416134216": 3565,
-      },
-      "function/OrderItem/latency_ms.min": Object {
-        "1500416014314": 1345,
-        "1500416029215": 1345,
-        "1500416044215": 1345,
-        "1500416059217": 1345,
-        "1500416074215": 1345,
-        "1500416089215": 1345,
-        "1500416104216": 1345,
-        "1500416119215": 1345,
-        "1500416134216": 1345,
-      },
-      "function/OrderItem/latency_ms.p50": Object {
-        "1500416014314": 2339,
-        "1500416029215": 2339,
-        "1500416044215": 2339,
-        "1500416059217": 2339,
-        "1500416074215": 2339,
-        "1500416089215": 2339,
-        "1500416104216": 2339,
-        "1500416119215": 2339,
-        "1500416134216": 2339,
-      },
-      "function/OrderItem/latency_ms.p90": Object {
-        "1500416014314": 3479,
-        "1500416029215": 3479,
-        "1500416044215": 3479,
-        "1500416059217": 3479,
-        "1500416074215": 3479,
-        "1500416089215": 3479,
-        "1500416104216": 3479,
-        "1500416119215": 3479,
-        "1500416134216": 3479,
-      },
-      "function/OrderItem/latency_ms.p95": Object {
-        "1500416014314": 3565,
-        "1500416029215": 3565,
-        "1500416044215": 3565,
-        "1500416059217": 3565,
-        "1500416074215": 3565,
-        "1500416089215": 3565,
-        "1500416104216": 3565,
-        "1500416119215": 3565,
-        "1500416134216": 3565,
-      },
-      "function/OrderItem/latency_ms.p99": Object {
-        "1500416014314": 3565,
-        "1500416029215": 3565,
-        "1500416044215": 3565,
-        "1500416059217": 3565,
-        "1500416074215": 3565,
-        "1500416089215": 3565,
-        "1500416104216": 3565,
-        "1500416119215": 3565,
-        "1500416134216": 3565,
-      },
-      "function/OrderItem/latency_ms.p9990": Object {
-        "1500416014314": 3565,
-        "1500416029215": 3565,
-        "1500416044215": 3565,
-        "1500416059217": 3565,
-        "1500416074215": 3565,
-        "1500416089215": 3565,
-        "1500416104216": 3565,
-        "1500416119215": 3565,
-        "1500416134216": 3565,
-      },
-      "function/OrderItem/latency_ms.p9999": Object {
-        "1500416014314": 3565,
-        "1500416029215": 3565,
-        "1500416044215": 3565,
-        "1500416059217": 3565,
-        "1500416074215": 3565,
-        "1500416089215": 3565,
-        "1500416104216": 3565,
-        "1500416119215": 3565,
-        "1500416134216": 3565,
-      },
-      "function/OrderItem/latency_ms.sum": Object {
-        "1500416014314": 31182,
-        "1500416029215": 31182,
-        "1500416044215": 31182,
-        "1500416059217": 31182,
-        "1500416074215": 31182,
-        "1500416089215": 31182,
-        "1500416104216": 31182,
-        "1500416119215": 31182,
-        "1500416134216": 31182,
-      },
-      "function/OrderItem/out_throughput": Object {
-        "1500416014314": 143,
-        "1500416029215": 143,
-        "1500416044215": 143,
-        "1500416059217": 143,
-        "1500416074215": 143,
-        "1500416089215": 143,
-        "1500416104216": 143,
-        "1500416119215": 143,
-        "1500416134216": 143,
-      },
-      "function/OrderItem/requests": Object {
-        "1500416014314": 13,
-        "1500416029215": 13,
-        "1500416044215": 13,
-        "1500416059217": 13,
-        "1500416074215": 13,
-        "1500416089215": 13,
-        "1500416104216": 13,
-        "1500416119215": 13,
-        "1500416134216": 13,
-      },
-      "http/closes": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connection_duration.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connection_received_bytes.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connection_requests.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connection_sent_bytes.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connections": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/connects": Object {
-        "1500416014314": 3,
-        "1500416029215": 3,
-        "1500416044215": 3,
-        "1500416059217": 3,
-        "1500416074215": 3,
-        "1500416089215": 3,
-        "1500416104216": 3,
-        "1500416119215": 3,
-        "1500416134216": 3,
-      },
-      "http/dtab/size.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/handletime_us.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/nacks": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/nonretryable_nacks": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/pending": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/read_timeout": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/received_bytes": Object {
-        "1500416014314": 778,
-        "1500416029215": 778,
-        "1500416044215": 778,
-        "1500416059217": 778,
-        "1500416074215": 778,
-        "1500416089215": 778,
-        "1500416104216": 778,
-        "1500416119215": 778,
-        "1500416134216": 778,
-      },
-      "http/request_latency_ms.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/request_payload_bytes.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/requests": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "http/response_payload_bytes.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/sent_bytes": Object {
-        "1500416014314": 87,
-        "1500416029215": 87,
-        "1500416044215": 87,
-        "1500416059217": 87,
-        "1500416074215": 87,
-        "1500416089215": 87,
-        "1500416104216": 87,
-        "1500416119215": 87,
-        "1500416134216": 87,
-      },
-      "http/socket_unwritable_ms": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/socket_writable_ms": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/success": Object {
-        "1500416014314": 2,
-        "1500416029215": 2,
-        "1500416044215": 2,
-        "1500416059217": 2,
-        "1500416074215": 2,
-        "1500416089215": 2,
-        "1500416104216": 2,
-        "1500416119215": 2,
-        "1500416134216": 2,
-      },
-      "http/transit_latency_ms.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "http/write_timeout": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/application_time_millis": Object {
-        "1500416014314": 19210172,
-        "1500416029215": 19225134,
-        "1500416044215": 19240132,
-        "1500416059217": 19255134,
-        "1500416074215": 19270132,
-        "1500416089215": 19285130,
-        "1500416104216": 19300132,
-        "1500416119215": 19315130,
-        "1500416134216": 19330130,
-      },
-      "jvm/classes/current_loaded": Object {
-        "1500416014314": 7728,
-        "1500416029215": 7728,
-        "1500416044215": 7728,
-        "1500416059217": 7728,
-        "1500416074215": 7728,
-        "1500416089215": 7728,
-        "1500416104216": 7728,
-        "1500416119215": 7728,
-        "1500416134216": 7728,
-      },
-      "jvm/classes/total_loaded": Object {
-        "1500416014314": 7728,
-        "1500416029215": 7728,
-        "1500416044215": 7728,
-        "1500416059217": 7728,
-        "1500416074215": 7728,
-        "1500416089215": 7728,
-        "1500416104216": 7728,
-        "1500416119215": 7728,
-        "1500416134216": 7728,
-      },
-      "jvm/classes/total_unloaded": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/compilation/time_msec": Object {
-        "1500416014314": 8471,
-        "1500416029215": 8474,
-        "1500416044215": 8609,
-        "1500416059217": 8624,
-        "1500416074215": 8625,
-        "1500416089215": 8628,
-        "1500416104216": 8636,
-        "1500416119215": 8642,
-        "1500416134216": 8644,
-      },
-      "jvm/fd_count": Object {
-        "1500416014314": 259,
-        "1500416029215": 259,
-        "1500416044215": 259,
-        "1500416059217": 259,
-        "1500416074215": 259,
-        "1500416089215": 259,
-        "1500416104216": 259,
-        "1500416119215": 259,
-        "1500416134216": 259,
-      },
-      "jvm/fd_limit": Object {
-        "1500416014314": 10240,
-        "1500416029215": 10240,
-        "1500416044215": 10240,
-        "1500416059217": 10240,
-        "1500416074215": 10240,
-        "1500416089215": 10240,
-        "1500416104216": 10240,
-        "1500416119215": 10240,
-        "1500416134216": 10240,
-      },
-      "jvm/gc/PS_MarkSweep/cycles": Object {
-        "1500416014314": 3,
-        "1500416029215": 3,
-        "1500416044215": 3,
-        "1500416059217": 3,
-        "1500416074215": 3,
-        "1500416089215": 3,
-        "1500416104216": 3,
-        "1500416119215": 3,
-        "1500416134216": 3,
-      },
-      "jvm/gc/PS_MarkSweep/msec": Object {
-        "1500416014314": 94,
-        "1500416029215": 94,
-        "1500416044215": 94,
-        "1500416059217": 94,
-        "1500416074215": 94,
-        "1500416089215": 94,
-        "1500416104216": 94,
-        "1500416119215": 94,
-        "1500416134216": 94,
-      },
-      "jvm/gc/PS_Scavenge/cycles": Object {
-        "1500416014314": 20,
-        "1500416029215": 20,
-        "1500416044215": 20,
-        "1500416059217": 20,
-        "1500416074215": 20,
-        "1500416089215": 20,
-        "1500416104216": 20,
-        "1500416119215": 20,
-        "1500416134216": 20,
-      },
-      "jvm/gc/PS_Scavenge/msec": Object {
-        "1500416014314": 69,
-        "1500416029215": 69,
-        "1500416044215": 69,
-        "1500416059217": 69,
-        "1500416074215": 69,
-        "1500416089215": 69,
-        "1500416104216": 69,
-        "1500416119215": 69,
-        "1500416134216": 69,
-      },
-      "jvm/gc/cycles": Object {
-        "1500416014314": 23,
-        "1500416029215": 23,
-        "1500416044215": 23,
-        "1500416059217": 23,
-        "1500416074215": 23,
-        "1500416089215": 23,
-        "1500416104216": 23,
-        "1500416119215": 23,
-        "1500416134216": 23,
-      },
-      "jvm/gc/eden/pause_msec.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/gc/msec": Object {
-        "1500416014314": 163,
-        "1500416029215": 163,
-        "1500416044215": 163,
-        "1500416059217": 163,
-        "1500416074215": 163,
-        "1500416089215": 163,
-        "1500416104216": 163,
-        "1500416119215": 163,
-        "1500416134216": 163,
-      },
-      "jvm/heap/committed": Object {
-        "1500416014314": 256376832,
-        "1500416029215": 256376832,
-        "1500416044215": 256376832,
-        "1500416059217": 256376832,
-        "1500416074215": 256376832,
-        "1500416089215": 256376832,
-        "1500416104216": 256376832,
-        "1500416119215": 256376832,
-        "1500416134216": 256376832,
-      },
-      "jvm/heap/max": Object {
-        "1500416014314": 3817865216,
-        "1500416029215": 3817865216,
-        "1500416044215": 3817865216,
-        "1500416059217": 3817865216,
-        "1500416074215": 3817865216,
-        "1500416089215": 3817865216,
-        "1500416104216": 3817865216,
-        "1500416119215": 3817865216,
-        "1500416134216": 3817865216,
-      },
-      "jvm/heap/used": Object {
-        "1500416014314": 118628728,
-        "1500416029215": 121573960,
-        "1500416044215": 124627072,
-        "1500416059217": 124797408,
-        "1500416074215": 127874696,
-        "1500416089215": 131095152,
-        "1500416104216": 131095152,
-        "1500416119215": 134341856,
-        "1500416134216": 134517760,
-      },
-      "jvm/mem/allocations/eden/bytes": Object {
-        "1500416014314": 2410952448,
-        "1500416029215": 2413897728,
-        "1500416044215": 2416950784,
-        "1500416059217": 2417121280,
-        "1500416074215": 2420198400,
-        "1500416089215": 2423418880,
-        "1500416104216": 2423418880,
-        "1500416119215": 2426665728,
-        "1500416134216": 2426672384,
-      },
-      "jvm/mem/buffer/direct/count": Object {
-        "1500416014314": 139,
-        "1500416029215": 140,
-        "1500416044215": 141,
-        "1500416059217": 142,
-        "1500416074215": 143,
-        "1500416089215": 144,
-        "1500416104216": 145,
-        "1500416119215": 146,
-        "1500416134216": 147,
-      },
-      "jvm/mem/buffer/direct/max": Object {
-        "1500416014314": 1182464,
-        "1500416029215": 1182720,
-        "1500416044215": 1182976,
-        "1500416059217": 1183232,
-        "1500416074215": 1183488,
-        "1500416089215": 1183744,
-        "1500416104216": 1184000,
-        "1500416119215": 1184256,
-        "1500416134216": 1184512,
-      },
-      "jvm/mem/buffer/direct/used": Object {
-        "1500416014314": 1182465,
-        "1500416029215": 1182721,
-        "1500416044215": 1182977,
-        "1500416059217": 1183233,
-        "1500416074215": 1183489,
-        "1500416089215": 1183745,
-        "1500416104216": 1184001,
-        "1500416119215": 1184257,
-        "1500416134216": 1184513,
-      },
-      "jvm/mem/buffer/mapped/count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/mem/buffer/mapped/max": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/mem/buffer/mapped/used": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/mem/current/Code_Cache/max": Object {
-        "1500416014314": 251658240,
-        "1500416029215": 251658240,
-        "1500416044215": 251658240,
-        "1500416059217": 251658240,
-        "1500416074215": 251658240,
-        "1500416089215": 251658240,
-        "1500416104216": 251658240,
-        "1500416119215": 251658240,
-        "1500416134216": 251658240,
-      },
-      "jvm/mem/current/Code_Cache/used": Object {
-        "1500416014314": 12494656,
-        "1500416029215": 12495424,
-        "1500416044215": 12565120,
-        "1500416059217": 12576384,
-        "1500416074215": 12582656,
-        "1500416089215": 12604224,
-        "1500416104216": 12664896,
-        "1500416119215": 12688192,
-        "1500416134216": 12702592,
-      },
-      "jvm/mem/current/Compressed_Class_Space/max": Object {
-        "1500416014314": 1073741824,
-        "1500416029215": 1073741824,
-        "1500416044215": 1073741824,
-        "1500416059217": 1073741824,
-        "1500416074215": 1073741824,
-        "1500416089215": 1073741824,
-        "1500416104216": 1073741824,
-        "1500416119215": 1073741824,
-        "1500416134216": 1073741824,
-      },
-      "jvm/mem/current/Compressed_Class_Space/used": Object {
-        "1500416014314": 6858664,
-        "1500416029215": 6858664,
-        "1500416044215": 6858664,
-        "1500416059217": 6858664,
-        "1500416074215": 6858664,
-        "1500416089215": 6858664,
-        "1500416104216": 6858664,
-        "1500416119215": 6858664,
-        "1500416134216": 6858664,
-      },
-      "jvm/mem/current/Metaspace/max": Object {
-        "1500416014314": -1,
-        "1500416029215": -1,
-        "1500416044215": -1,
-        "1500416059217": -1,
-        "1500416074215": -1,
-        "1500416089215": -1,
-        "1500416104216": -1,
-        "1500416119215": -1,
-        "1500416134216": -1,
-      },
-      "jvm/mem/current/Metaspace/used": Object {
-        "1500416014314": 42349680,
-        "1500416029215": 42349680,
-        "1500416044215": 42349680,
-        "1500416059217": 42350760,
-        "1500416074215": 42353104,
-        "1500416089215": 42356336,
-        "1500416104216": 42367032,
-        "1500416119215": 42377656,
-        "1500416134216": 42381432,
-      },
-      "jvm/mem/current/PS_Eden_Space/max": Object {
-        "1500416014314": 1419247616,
-        "1500416029215": 1419247616,
-        "1500416044215": 1419247616,
-        "1500416059217": 1419247616,
-        "1500416074215": 1419247616,
-        "1500416089215": 1419247616,
-        "1500416104216": 1419247616,
-        "1500416119215": 1419247616,
-        "1500416134216": 1419247616,
-      },
-      "jvm/mem/current/PS_Eden_Space/used": Object {
-        "1500416014314": 106612552,
-        "1500416029215": 109557784,
-        "1500416044215": 112610896,
-        "1500416059217": 112781232,
-        "1500416074215": 115858520,
-        "1500416089215": 119078976,
-        "1500416104216": 119078976,
-        "1500416119215": 122325680,
-        "1500416134216": 122501592,
-      },
-      "jvm/mem/current/PS_Old_Gen/max": Object {
-        "1500416014314": 2863661056,
-        "1500416029215": 2863661056,
-        "1500416044215": 2863661056,
-        "1500416059217": 2863661056,
-        "1500416074215": 2863661056,
-        "1500416089215": 2863661056,
-        "1500416104216": 2863661056,
-        "1500416119215": 2863661056,
-        "1500416134216": 2863661056,
-      },
-      "jvm/mem/current/PS_Old_Gen/used": Object {
-        "1500416014314": 11852336,
-        "1500416029215": 11852336,
-        "1500416044215": 11852336,
-        "1500416059217": 11852336,
-        "1500416074215": 11852336,
-        "1500416089215": 11852336,
-        "1500416104216": 11852336,
-        "1500416119215": 11852336,
-        "1500416134216": 11852336,
-      },
-      "jvm/mem/current/PS_Survivor_Space/max": Object {
-        "1500416014314": 1572864,
-        "1500416029215": 1572864,
-        "1500416044215": 1572864,
-        "1500416059217": 1572864,
-        "1500416074215": 1572864,
-        "1500416089215": 1572864,
-        "1500416104216": 1572864,
-        "1500416119215": 1572864,
-        "1500416134216": 1572864,
-      },
-      "jvm/mem/current/PS_Survivor_Space/used": Object {
-        "1500416014314": 163840,
-        "1500416029215": 163840,
-        "1500416044215": 163840,
-        "1500416059217": 163840,
-        "1500416074215": 163840,
-        "1500416089215": 163840,
-        "1500416104216": 163840,
-        "1500416119215": 163840,
-        "1500416134216": 163840,
-      },
-      "jvm/mem/current/used": Object {
-        "1500416014314": 180331728,
-        "1500416029215": 183277728,
-        "1500416044215": 186400544,
-        "1500416059217": 186585008,
-        "1500416074215": 189669440,
-        "1500416089215": 192920032,
-        "1500416104216": 192987520,
-        "1500416119215": 196266368,
-        "1500416134216": 196463136,
-      },
-      "jvm/mem/metaspace/max_capacity": Object {
-        "1500416014314": 1096810496,
-        "1500416029215": 1096810496,
-        "1500416044215": 1096810496,
-        "1500416059217": 1096810496,
-        "1500416074215": 1096810496,
-        "1500416089215": 1096810496,
-        "1500416104216": 1096810496,
-        "1500416119215": 1096810496,
-        "1500416134216": 1096810496,
-      },
-      "jvm/mem/postGC/PS_Eden_Space/max": Object {
-        "1500416014314": 1419247616,
-        "1500416029215": 1419247616,
-        "1500416044215": 1419247616,
-        "1500416059217": 1419247616,
-        "1500416074215": 1419247616,
-        "1500416089215": 1419247616,
-        "1500416104216": 1419247616,
-        "1500416119215": 1419247616,
-        "1500416134216": 1419247616,
-      },
-      "jvm/mem/postGC/PS_Eden_Space/used": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/mem/postGC/PS_Old_Gen/max": Object {
-        "1500416014314": 2863661056,
-        "1500416029215": 2863661056,
-        "1500416044215": 2863661056,
-        "1500416059217": 2863661056,
-        "1500416074215": 2863661056,
-        "1500416089215": 2863661056,
-        "1500416104216": 2863661056,
-        "1500416119215": 2863661056,
-        "1500416134216": 2863661056,
-      },
-      "jvm/mem/postGC/PS_Old_Gen/used": Object {
-        "1500416014314": 9492080,
-        "1500416029215": 9492080,
-        "1500416044215": 9492080,
-        "1500416059217": 9492080,
-        "1500416074215": 9492080,
-        "1500416089215": 9492080,
-        "1500416104216": 9492080,
-        "1500416119215": 9492080,
-        "1500416134216": 9492080,
-      },
-      "jvm/mem/postGC/PS_Survivor_Space/max": Object {
-        "1500416014314": 1572864,
-        "1500416029215": 1572864,
-        "1500416044215": 1572864,
-        "1500416059217": 1572864,
-        "1500416074215": 1572864,
-        "1500416089215": 1572864,
-        "1500416104216": 1572864,
-        "1500416119215": 1572864,
-        "1500416134216": 1572864,
-      },
-      "jvm/mem/postGC/PS_Survivor_Space/used": Object {
-        "1500416014314": 163840,
-        "1500416029215": 163840,
-        "1500416044215": 163840,
-        "1500416059217": 163840,
-        "1500416074215": 163840,
-        "1500416089215": 163840,
-        "1500416104216": 163840,
-        "1500416119215": 163840,
-        "1500416134216": 163840,
-      },
-      "jvm/mem/postGC/used": Object {
-        "1500416014314": 9655920,
-        "1500416029215": 9655920,
-        "1500416044215": 9655920,
-        "1500416059217": 9655920,
-        "1500416074215": 9655920,
-        "1500416089215": 9655920,
-        "1500416104216": 9655920,
-        "1500416119215": 9655920,
-        "1500416134216": 9655920,
-      },
-      "jvm/nonheap/committed": Object {
-        "1500416014314": 62611456,
-        "1500416029215": 62611456,
-        "1500416044215": 62676992,
-        "1500416059217": 62676992,
-        "1500416074215": 62676992,
-        "1500416089215": 62676992,
-        "1500416104216": 62676992,
-        "1500416119215": 62676992,
-        "1500416134216": 62676992,
-      },
-      "jvm/nonheap/max": Object {
-        "1500416014314": -1,
-        "1500416029215": -1,
-        "1500416044215": -1,
-        "1500416059217": -1,
-        "1500416074215": -1,
-        "1500416089215": -1,
-        "1500416104216": -1,
-        "1500416119215": -1,
-        "1500416134216": -1,
-      },
-      "jvm/nonheap/used": Object {
-        "1500416014314": 61703000,
-        "1500416029215": 61703768,
-        "1500416044215": 61773464,
-        "1500416059217": 61787600,
-        "1500416074215": 61794736,
-        "1500416089215": 61824888,
-        "1500416104216": 61893000,
-        "1500416119215": 61924512,
-        "1500416134216": 61945376,
-      },
-      "jvm/num_cpus": Object {
-        "1500416014314": 8,
-        "1500416029215": 8,
-        "1500416044215": 8,
-        "1500416059217": 8,
-        "1500416074215": 8,
-        "1500416089215": 8,
-        "1500416104216": 8,
-        "1500416119215": 8,
-        "1500416134216": 8,
-      },
-      "jvm/postGC/PS_Eden_Space/max": Object {
-        "1500416014314": 1419247616,
-        "1500416029215": 1419247616,
-        "1500416044215": 1419247616,
-        "1500416059217": 1419247616,
-        "1500416074215": 1419247616,
-        "1500416089215": 1419247616,
-        "1500416104216": 1419247616,
-        "1500416119215": 1419247616,
-        "1500416134216": 1419247616,
-      },
-      "jvm/postGC/PS_Eden_Space/used": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "jvm/postGC/PS_Old_Gen/max": Object {
-        "1500416014314": 2863661056,
-        "1500416029215": 2863661056,
-        "1500416044215": 2863661056,
-        "1500416059217": 2863661056,
-        "1500416074215": 2863661056,
-        "1500416089215": 2863661056,
-        "1500416104216": 2863661056,
-        "1500416119215": 2863661056,
-        "1500416134216": 2863661056,
-      },
-      "jvm/postGC/PS_Old_Gen/used": Object {
-        "1500416014314": 9492080,
-        "1500416029215": 9492080,
-        "1500416044215": 9492080,
-        "1500416059217": 9492080,
-        "1500416074215": 9492080,
-        "1500416089215": 9492080,
-        "1500416104216": 9492080,
-        "1500416119215": 9492080,
-        "1500416134216": 9492080,
-      },
-      "jvm/postGC/PS_Survivor_Space/max": Object {
-        "1500416014314": 1572864,
-        "1500416029215": 1572864,
-        "1500416044215": 1572864,
-        "1500416059217": 1572864,
-        "1500416074215": 1572864,
-        "1500416089215": 1572864,
-        "1500416104216": 1572864,
-        "1500416119215": 1572864,
-        "1500416134216": 1572864,
-      },
-      "jvm/postGC/PS_Survivor_Space/used": Object {
-        "1500416014314": 163840,
-        "1500416029215": 163840,
-        "1500416044215": 163840,
-        "1500416059217": 163840,
-        "1500416074215": 163840,
-        "1500416089215": 163840,
-        "1500416104216": 163840,
-        "1500416119215": 163840,
-        "1500416134216": 163840,
-      },
-      "jvm/postGC/used": Object {
-        "1500416014314": 9655920,
-        "1500416029215": 9655920,
-        "1500416044215": 9655920,
-        "1500416059217": 9655920,
-        "1500416074215": 9655920,
-        "1500416089215": 9655920,
-        "1500416104216": 9655920,
-        "1500416119215": 9655920,
-        "1500416134216": 9655920,
-      },
-      "jvm/safepoint/count": Object {
-        "1500416014314": 937,
-        "1500416029215": 939,
-        "1500416044215": 941,
-        "1500416059217": 944,
-        "1500416074215": 947,
-        "1500416089215": 950,
-        "1500416104216": 953,
-        "1500416119215": 956,
-        "1500416134216": 959,
-      },
-      "jvm/safepoint/sync_time_millis": Object {
-        "1500416014314": 29,
-        "1500416029215": 29,
-        "1500416044215": 29,
-        "1500416059217": 29,
-        "1500416074215": 29,
-        "1500416089215": 29,
-        "1500416104216": 29,
-        "1500416119215": 29,
-        "1500416134216": 29,
-      },
-      "jvm/safepoint/total_time_millis": Object {
-        "1500416014314": 295,
-        "1500416029215": 295,
-        "1500416044215": 295,
-        "1500416059217": 296,
-        "1500416074215": 296,
-        "1500416089215": 297,
-        "1500416104216": 297,
-        "1500416119215": 297,
-        "1500416134216": 298,
-      },
-      "jvm/start_time": Object {
-        "1500416014314": 1500396781568,
-        "1500416029215": 1500396781568,
-        "1500416044215": 1500396781568,
-        "1500416059217": 1500396781568,
-        "1500416074215": 1500396781568,
-        "1500416089215": 1500396781568,
-        "1500416104216": 1500396781568,
-        "1500416119215": 1500396781568,
-        "1500416134216": 1500396781568,
-      },
-      "jvm/tenuring_threshold": Object {
-        "1500416014314": 9,
-        "1500416029215": 9,
-        "1500416044215": 9,
-        "1500416059217": 9,
-        "1500416074215": 9,
-        "1500416089215": 9,
-        "1500416104216": 9,
-        "1500416119215": 9,
-        "1500416134216": 9,
-      },
-      "jvm/thread/count": Object {
-        "1500416014314": 45,
-        "1500416029215": 45,
-        "1500416044215": 45,
-        "1500416059217": 45,
-        "1500416074215": 45,
-        "1500416089215": 45,
-        "1500416104216": 45,
-        "1500416119215": 45,
-        "1500416134216": 45,
-      },
-      "jvm/thread/daemon_count": Object {
-        "1500416014314": 43,
-        "1500416029215": 43,
-        "1500416044215": 43,
-        "1500416059217": 43,
-        "1500416074215": 43,
-        "1500416089215": 43,
-        "1500416104216": 43,
-        "1500416119215": 43,
-        "1500416134216": 43,
-      },
-      "jvm/thread/peak_count": Object {
-        "1500416014314": 46,
-        "1500416029215": 46,
-        "1500416044215": 46,
-        "1500416059217": 46,
-        "1500416074215": 46,
-        "1500416089215": 46,
-        "1500416104216": 46,
-        "1500416119215": 46,
-        "1500416134216": 46,
-      },
-      "jvm/uptime": Object {
-        "1500416014314": 19210758,
-        "1500416029215": 19225720,
-        "1500416044215": 19240720,
-        "1500416059217": 19255720,
-        "1500416074215": 19270720,
-        "1500416089215": 19285720,
-        "1500416104216": 19300720,
-        "1500416119215": 19315720,
-        "1500416134216": 19330720,
-      },
-      "larger_than_threadlocal_out_buffer": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "response_size.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/functionalroles/GET/errors.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/functionalroles/GET/in_throughput": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/functionalroles/GET/latency_ms.avg": Object {
-        "1500416014314": 1.205696,
-        "1500416029215": 1.205696,
-        "1500416044215": 1.205696,
-        "1500416059217": 1.205696,
-        "1500416074215": 1.205696,
-        "1500416089215": 1.205696,
-        "1500416104216": 1.205696,
-        "1500416119215": 1.205696,
-        "1500416134216": 1.205696,
-      },
-      "route/functionalroles/GET/latency_ms.count": Object {
-        "1500416014314": 316,
-        "1500416029215": 316,
-        "1500416044215": 316,
-        "1500416059217": 316,
-        "1500416074215": 316,
-        "1500416089215": 316,
-        "1500416104216": 316,
-        "1500416119215": 316,
-        "1500416134216": 316,
-      },
-      "route/functionalroles/GET/latency_ms.max": Object {
-        "1500416014314": 17,
-        "1500416029215": 17,
-        "1500416044215": 17,
-        "1500416059217": 17,
-        "1500416074215": 17,
-        "1500416089215": 17,
-        "1500416104216": 17,
-        "1500416119215": 17,
-        "1500416134216": 17,
-      },
-      "route/functionalroles/GET/latency_ms.min": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/functionalroles/GET/latency_ms.p50": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/functionalroles/GET/latency_ms.p90": Object {
-        "1500416014314": 3,
-        "1500416029215": 3,
-        "1500416044215": 3,
-        "1500416059217": 3,
-        "1500416074215": 3,
-        "1500416089215": 3,
-        "1500416104216": 3,
-        "1500416119215": 3,
-        "1500416134216": 3,
-      },
-      "route/functionalroles/GET/latency_ms.p95": Object {
-        "1500416014314": 5,
-        "1500416029215": 5,
-        "1500416044215": 5,
-        "1500416059217": 5,
-        "1500416074215": 5,
-        "1500416089215": 5,
-        "1500416104216": 5,
-        "1500416119215": 5,
-        "1500416134216": 5,
-      },
-      "route/functionalroles/GET/latency_ms.p99": Object {
-        "1500416014314": 9,
-        "1500416029215": 9,
-        "1500416044215": 9,
-        "1500416059217": 9,
-        "1500416074215": 9,
-        "1500416089215": 9,
-        "1500416104216": 9,
-        "1500416119215": 9,
-        "1500416134216": 9,
-      },
-      "route/functionalroles/GET/latency_ms.p9990": Object {
-        "1500416014314": 17,
-        "1500416029215": 17,
-        "1500416044215": 17,
-        "1500416059217": 17,
-        "1500416074215": 17,
-        "1500416089215": 17,
-        "1500416104216": 17,
-        "1500416119215": 17,
-        "1500416134216": 17,
-      },
-      "route/functionalroles/GET/latency_ms.p9999": Object {
-        "1500416014314": 17,
-        "1500416029215": 17,
-        "1500416044215": 17,
-        "1500416059217": 17,
-        "1500416074215": 17,
-        "1500416089215": 17,
-        "1500416104216": 17,
-        "1500416119215": 17,
-        "1500416134216": 17,
-      },
-      "route/functionalroles/GET/latency_ms.sum": Object {
-        "1500416014314": 381,
-        "1500416029215": 381,
-        "1500416044215": 381,
-        "1500416059217": 381,
-        "1500416074215": 381,
-        "1500416089215": 381,
-        "1500416104216": 381,
-        "1500416119215": 381,
-        "1500416134216": 381,
-      },
-      "route/functionalroles/GET/out_throughput": Object {
-        "1500416014314": 1580,
-        "1500416029215": 1580,
-        "1500416044215": 1580,
-        "1500416059217": 1580,
-        "1500416074215": 1580,
-        "1500416089215": 1580,
-        "1500416104216": 1580,
-        "1500416119215": 1580,
-        "1500416134216": 1580,
-      },
-      "route/functionalroles/GET/requests": Object {
-        "1500416014314": 17725,
-        "1500416029215": 17725,
-        "1500416044215": 17725,
-        "1500416059217": 17725,
-        "1500416074215": 17725,
-        "1500416089215": 17725,
-        "1500416104216": 17725,
-        "1500416119215": 17725,
-        "1500416134216": 17725,
-      },
-      "route/ping/GET/requests": Object {
-        "1500416014314": 1,
-        "1500416029215": 1,
-        "1500416044215": 1,
-        "1500416059217": 1,
-        "1500416074215": 1,
-        "1500416089215": 1,
-        "1500416104216": 1,
-        "1500416119215": 1,
-        "1500416134216": 1,
-      },
-      "route/ping/GET/response_size.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/ping/GET/status/200": Object {
-        "1500416014314": 1,
-        "1500416029215": 1,
-        "1500416044215": 1,
-        "1500416059217": 1,
-        "1500416074215": 1,
-        "1500416089215": 1,
-        "1500416104216": 1,
-        "1500416119215": 1,
-        "1500416134216": 1,
-      },
-      "route/ping/GET/status/2XX": Object {
-        "1500416014314": 1,
-        "1500416029215": 1,
-        "1500416044215": 1,
-        "1500416059217": 1,
-        "1500416074215": 1,
-        "1500416089215": 1,
-        "1500416104216": 1,
-        "1500416119215": 1,
-        "1500416134216": 1,
-      },
-      "route/ping/GET/time.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/ping/GET/time/200.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "route/ping/GET/time/2XX.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "scheduler/blocking_ms": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "scheduler/dispatches": Object {
-        "1500416014314": 2073,
-        "1500416029215": 2084,
-        "1500416044215": 2095,
-        "1500416059217": 2106,
-        "1500416074215": 2117,
-        "1500416089215": 2128,
-        "1500416104216": 2139,
-        "1500416119215": 2150,
-        "1500416134216": 2161,
-      },
-      "service/failure": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/dtab/size.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/handletime_us.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/pending": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/request_latency_ms.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/requests": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/success": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "srv/thrift::non-ssl/transit_latency_ms.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "status/200": Object {
-        "1500416014314": 1,
-        "1500416029215": 1,
-        "1500416044215": 1,
-        "1500416059217": 1,
-        "1500416074215": 1,
-        "1500416089215": 1,
-        "1500416104216": 1,
-        "1500416119215": 1,
-        "1500416134216": 1,
-      },
-      "status/2XX": Object {
-        "1500416014314": 1,
-        "1500416029215": 1,
-        "1500416044215": 1,
-        "1500416059217": 1,
-        "1500416074215": 1,
-        "1500416089215": 1,
-        "1500416104216": 1,
-        "1500416119215": 1,
-        "1500416134216": 1,
-      },
-      "time/200.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "time/2XX.count": Object {
-        "1500416014314": 0,
-        "1500416029215": 0,
-        "1500416044215": 0,
-        "1500416059217": 0,
-        "1500416074215": 0,
-        "1500416089215": 0,
-        "1500416104216": 0,
-        "1500416119215": 0,
-        "1500416134216": 0,
-      },
-      "toggles/com.twitter.finagle.core/checksum": Object {
-        "1500416014314": 142077616,
-        "1500416029215": 142077616,
-        "1500416044215": 142077616,
-        "1500416059217": 142077616,
-        "1500416074215": 142077616,
-        "1500416089215": 142077616,
-        "1500416104216": 142077616,
-        "1500416119215": 142077616,
-        "1500416134216": 142077616,
-      },
-      "toggles/com.twitter.finagle.http/checksum": Object {
-        "1500416014314": 245193648,
-        "1500416029215": 245193648,
-        "1500416044215": 245193648,
-        "1500416059217": 245193648,
-        "1500416074215": 245193648,
-        "1500416089215": 245193648,
-        "1500416104216": 245193648,
-        "1500416119215": 245193648,
-        "1500416134216": 245193648,
-      },
-      "toggles/com.twitter.finagle.netty4/checksum": Object {
-        "1500416014314": 2180319744,
-        "1500416029215": 2180319744,
-        "1500416044215": 2180319744,
-        "1500416059217": 2180319744,
-        "1500416074215": 2180319744,
-        "1500416089215": 2180319744,
-        "1500416104216": 2180319744,
-        "1500416119215": 2180319744,
-        "1500416134216": 2180319744,
-      },
-      "toggles/com.twitter.finagle.stats/checksum": Object {
-        "1500416014314": 3227311872,
-        "1500416029215": 3227311872,
-        "1500416044215": 3227311872,
-        "1500416059217": 3227311872,
-        "1500416074215": 3227311872,
-        "1500416089215": 3227311872,
-        "1500416104216": 3227311872,
-        "1500416119215": 3227311872,
-        "1500416134216": 3227311872,
-      },
-      "toggles/com.twitter.finagle.thrift/checksum": Object {
-        "1500416014314": 1149507712,
-        "1500416029215": 1149507712,
-        "1500416044215": 1149507712,
-        "1500416059217": 1149507712,
-        "1500416074215": 1149507712,
-        "1500416089215": 1149507712,
-        "1500416104216": 1149507712,
-        "1500416119215": 1149507712,
-        "1500416134216": 1149507712,
-      },
-    }
+}
+
+@media all and (max-width:1000px) {
+  .c17 {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
   }
-  selectedInstanceID="2smao7xwboy0000000000"
-  selectedServiceSlug="authentication-statistics-file-resource-network-export-icpf-mail-domain-end-v4-3"
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
-  storeSubscription={
-    Subscription {
-      "listeners": Object {
-        "clear": [Function],
-        "get": [Function],
-        "notify": [Function],
-        "subscribe": [Function],
-      },
-      "onStateChange": [Function],
-      "parentSub": undefined,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "unsubscribe": [Function],
-    }
-  }
-/>
+}
+
+<section
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          class="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xlink="http://www.w3.org/1999/xlink"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            class="c4"
+            fill="currentColor"
+            title=""
+          >
+            <title />
+            <g
+              class="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <path
+                d="M7.74550327,13.1528573 L9.48503218,19.3304022 C9.74286301,20.2460303 11.0699309,20.2140393 11.2821161,19.2870807 L13.6147159,9.09681136 L14.570851,13.3411845 C14.6650864,13.7595041 15.0412061,14.057133 15.4756098,14.057133 C18.8739837,13.7523714 20.5731707,13.5999906 20.5731707,13.5999906 C20.5731707,13.5999906 20.8821138,13.4476098 21.5,13.1428482 L20.5731707,12.6857058 L16.2190859,12.2285634 L14.52671,4.71594867 C14.3120421,3.76301815 12.9358475,3.76070149 12.7178839,4.71290373 L10.2852613,15.3401358 L8.95399221,10.6124335 C8.73608671,9.8385912 7.68510903,9.69805144 7.26622607,10.3867405 L6.14596989,12.2285634 C4.33320948,12.533325 3.42682927,12.6857058 3.42682927,12.6857058 C3.42682927,12.6857058 3.11788618,12.8380866 2.5,13.1428482 L3.42682927,13.5999906 L6.67073171,14.057133 C6.9962924,14.057133 7.29798165,13.8886314 7.46548125,13.6132439 L7.74550327,13.1528573 Z"
+                id="Path-7"
+              />
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        class="c5"
+      >
+        Vitals
+      </h3>
+    </header>
+    <div
+      class="c6"
+    >
+      <div
+        class="c7"
+      >
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                class="c11"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  class="c4"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title />
+                  <g
+                    class="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M18.1298429,7.20118168 L15.5060804,9.82494414 C15.1191719,10.2118526 14.4809862,10.2122484 14.0876093,9.81887154 L14.1811285,9.91239066 C13.7910605,9.52232275 13.7850328,8.88394267 14.1750559,8.49391961 L16.7988183,5.87015715 C16.9812688,5.6877067 17.2767026,5.68732987 17.4650478,5.87567507 L18.1243249,6.53495222 C18.3098228,6.72045014 18.3096724,7.02135216 18.1298429,7.20118168 Z M19.5328064,12.9411765 L15.7652035,12.9411765 C15.2414463,12.9411765 14.8235294,12.5197974 14.8235294,12 C14.8235294,11.4765787 15.2451313,11.0588235 15.7652035,11.0588235 L19.5328064,11.0588235 C19.7908303,11.0588235 20,11.2674603 20,11.5338207 L20,12.4661793 C20,12.728513 19.7871237,12.9411765 19.5328064,12.9411765 Z M16.7988183,18.1298429 L14.1750559,15.5060804 C13.7881474,15.1191719 13.7877516,14.4809862 14.1811285,14.0876093 L14.0876093,14.1811285 C14.4776773,13.7910605 15.1160573,13.7850328 15.5060804,14.1750559 L18.1298429,16.7988183 C18.3122933,16.9812688 18.3126701,17.2767026 18.1243249,17.4650478 L17.4650478,18.1243249 C17.2795499,18.3098228 16.9786478,18.3096724 16.7988183,18.1298429 Z M11.0588235,19.5328064 L11.0588235,15.7652035 C11.0588235,15.2414463 11.4802026,14.8235294 12,14.8235294 C12.5234213,14.8235294 12.9411765,15.2451313 12.9411765,15.7652035 L12.9411765,19.5328064 C12.9411765,19.7908303 12.7325397,20 12.4661793,20 L11.5338207,20 C11.271487,20 11.0588235,19.7871237 11.0588235,19.5328064 Z M5.87015715,16.7988183 L8.49391961,14.1750559 C8.88082811,13.7881474 9.5190138,13.7877516 9.91239066,14.1811285 L9.81887154,14.0876093 C10.2089395,14.4776773 10.2149672,15.1160573 9.82494414,15.5060804 L7.20118168,18.1298429 C7.01873123,18.3122933 6.72329742,18.3126701 6.53495222,18.1243249 L5.87567507,17.4650478 C5.69017716,17.2795499 5.69032763,16.9786478 5.87015715,16.7988183 Z M4.4671936,11.0588235 L8.23479651,11.0588235 C8.75855367,11.0588235 9.17647059,11.4802026 9.17647059,12 C9.17647059,12.5234213 8.75486874,12.9411765 8.23479651,12.9411765 L4.4671936,12.9411765 C4.2091697,12.9411765 4,12.7325397 4,12.4661793 L4,11.5338207 C4,11.271487 4.21287626,11.0588235 4.4671936,11.0588235 Z M7.20118168,5.87015715 L9.82494414,8.49391961 C10.2118526,8.88082811 10.2122484,9.5190138 9.81887154,9.91239066 L9.91239066,9.81887154 C9.52232275,10.2089395 8.88394267,10.2149672 8.49391961,9.82494414 L5.87015715,7.20118168 C5.6877067,7.01873123 5.68732987,6.72329742 5.87567507,6.53495222 L6.53495222,5.87567507 C6.72045014,5.69017716 7.02135216,5.69032763 7.20118168,5.87015715 Z M12.9411765,4.4671936 L12.9411765,8.23479651 C12.9411765,8.75855367 12.5197974,9.17647059 12,9.17647059 C11.4765787,9.17647059 11.0588235,8.75486874 11.0588235,8.23479651 L11.0588235,4.4671936 C11.0588235,4.2091697 11.2674603,4 11.5338207,4 L12.4661793,4 C12.728513,4 12.9411765,4.21287626 12.9411765,4.4671936 Z"
+                      id="Combined-Shape"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="c12"
+            >
+              <h2
+                class="c13"
+              >
+                Uptime
+              </h2>
+              <span
+                class="c14"
+              >
+                <div
+                  class="c15"
+                />
+              </span>
+              <p
+                class="c16"
+              >
+                Jul 18, 2017, 11:53:01 AM
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c17"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                class="c11"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  class="c4"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title />
+                  <g
+                    class="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z M12,19 C15.8659932,19 19,15.8659932 19,12 C19,8.13400675 15.8659932,5 12,5 C8.13400675,5 5,8.13400675 5,12 C5,15.8659932 8.13400675,19 12,19 Z M16.240877,7.75912299 L12,12 L12,6.00249421 C13.6561655,6.00249421 15.1555419,6.67378791 16.240877,7.75912299 Z M14,3.27103069 L14,3.27103069 C13.3569385,3.12430119 12.6875191,3.04680732 12,3.04680732 C11.3124809,3.04680732 10.6430615,3.12430119 10,3.27103069 L10,3 C10,2.44771525 10.4477153,2 11,2 L13,2 C13.5522847,2 14,2.44771525 14,3 L14,3.27103069 Z"
+                      id="Combined-Shape"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="c12"
+            >
+              <h2
+                class="c13"
+              >
+                Avg. Response Time
+              </h2>
+              <span
+                class="c14"
+              >
+                —
+              </span>
+            </div>
+          </div>
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                class="c11"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  class="iconBorder"
+                  fill="transparent"
+                  id="BorderTriangleSmall"
+                  stroke="currentColor"
+                  stroke-opacity="1"
+                  stroke-width="1"
+                >
+                  <path
+                    d="M12.8582232,4.46378268 L20.8520757,17.3321581 C21.1381526,17.7926802 20.9967369,18.3979184 20.5362148,18.6839954 C20.3807105,18.7805948 20.2012922,18.8317858 20.0182266,18.8317858 L3.98163949,18.8317858 C3.43949497,18.8317858 3,18.3922908 3,17.8501463 C3,17.6661677 3.05170241,17.4858919 3.14921087,17.3298784 L11.1919455,4.461503 C11.4792815,4.00176536 12.0849044,3.86200624 12.544642,4.14934226 C12.671816,4.22882603 12.7790877,4.33639165 12.8582232,4.46378268 Z"
+                  />
+                </g>
+                <g
+                  class="c4"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title />
+                  <g
+                    class="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+                      id="Exclamation"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="c12"
+            >
+              <h2
+                class="c13"
+              >
+                Error Rate
+              </h2>
+              <span
+                class="c14"
+              >
+                0%
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-labelledby="ariaLabelledby"
+                class="c11"
+                focusable="false"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  class="c4"
+                  fill="currentColor"
+                  title=""
+                >
+                  <title />
+                  <g
+                    class="glyph"
+                    fill="currentColor"
+                    transform="translate(0 0) scale(1)"
+                  >
+                    <path
+                      d="M19,14 L19,15 L20,15 L20,16 L19,16 L19,18 C19,18.5522847 18.5522847,19 18,19 L16,19 L16,20 L15,20 L15,19 L14,19 L14,20 L13,20 L13,19 L11,19 L11,20 L10,20 L10,19 L9,19 L9,20 L8,20 L8,19 L6,19 C5.44771525,19 5,18.5522847 5,18 L5,16 L4,16 L4,15 L5,15 L5,14 L4,14 L4,13 L5,13 L5,11 L4,11 L4,10 L5,10 L5,9 L4,9 L4,8 L5,8 L5,6 C5,5.44771525 5.44771525,5 6,5 L8,5 L8,4 L9,4 L9,5 L10,5 L10,4 L11,4 L11,5 L13,5 L13,4 L14,4 L14,5 L15,5 L15,4 L16,4 L16,5 L18,5 C18.5522847,5 19,5.44771525 19,6 L19,8 L20,8 L20,9 L19,9 L19,10 L20,10 L20,11 L19,11 L19,13 L20,13 L20,14 L19,14 Z M6,6 L6,18 L18,18 L18,6 L6,6 Z"
+                      id="Combined-Shape"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="c12"
+            >
+              <h2
+                class="c13"
+              >
+                Host CPU Cores
+              </h2>
+              <span
+                class="c14"
+              >
+                8
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
+  .c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.c0:first-of-type > * {
+  border-top: 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid rgb(217,217,217);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 16px;
+  width: 100%;
+}
+
+.c6 {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 8px;
+  width: 100%;
+}
+
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-right: 8px !important;
+}
+
+.c5 {
+  color: inherit;
+  font-size: 18px;
+  margin: 0;
+}
+
+.c4 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c3 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c3:not(:root) {
+  overflow: visible;
+}
+
+.c10 {
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: inherit;
+}
+
+.c10 > * {
+  background-color: inherit;
+}
+
+.c10 .dygraph-legend {
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 3px;
+  color: hsl(0,0%,12.5%);
+  display: inline-block;
+  left: auto !important;
+  min-width: 18em;
+  opacity: 0;
+  padding: 8px 16px 8px;
+  position: absolute;
+  right: 0 !important;
+  text-align: right;
+  -webkit-transition: all 0.2s ease,color 0.2s ease;
+  transition: all 0.2s ease,color 0.2s ease;
+  z-index: 10000;
+}
+
+.c10 .dygraph-legend [style*="bold"] {
+  font-weight: 600 !important;
+}
+
+.c10:hover .dygraph-legend {
+  color: hsl(0,0%,12.5%);
+  opacity: 1;
+  -webkit-transition: all 0.2s ease,color 1s ease;
+  transition: all 0.2s ease,color 1s ease;
+}
+
+.c10 .dygraph-label {
+  color: model:rgb;
+  color: 31.875,31.875,31.875;
+  valpha: 1;
+  opacity: 0.8;
+}
+
+.c7 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  height: auto;
+  width: 100%;
+}
+
+.c8 {
+  font-size: 18px;
+  margin: 0;
+  padding: 8px 16px;
+  -webkit-flex: 1 0 40px;
+  -ms-flex: 1 0 40px;
+  flex: 1 0 40px;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c9 {
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  position: relative;
+  min-height: 250px;
+}
+
+.c9 > * {
+  margin: 8px;
+}
+
+.c11 {
+  padding: 0 8px;
+}
+
+<section
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-labelledby="ariaLabelledby"
+          class="c3"
+          focusable="false"
+          version="1.1"
+          viewBox="0 0 24 24"
+          xlink="http://www.w3.org/1999/xlink"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            class="c4"
+            fill="currentColor"
+            title=""
+          >
+            <title />
+            <g
+              class="glyph"
+              fill="currentColor"
+              transform="translate(0 0) scale(1)"
+            >
+              <g>
+                <g
+                  class="primary"
+                >
+                  <path
+                    d="M13,11 L13,5 C13,4.44771525 12.5522847,4 12,4 C11.4477153,4 11,4.44771525 11,5 L11,5 L11,11 L5,11 L5,11 C4.44771525,11 4,11.4477153 4,12 C4,12.5522847 4.44771525,13 5,13 L11,13 L11,19 C11,19.5522847 11.4477153,20 12,20 C12.5522847,20 13,19.5522847 13,19 L13,13 L19,13 C19.5522847,13 20,12.5522847 20,12 C20,11.4477153 19.5522847,11 19,11 L19,11 L13,11 Z"
+                  />
+                </g>
+                <g
+                  class="secondary"
+                >
+                  <path
+                    d="M11.1337822,15.5 C11.0486971,15.3529133 11,15.1821436 11,15 C11,14.4477153 11.4477153,14 12,14 C12.5522847,14 13,14.4477153 13,15 C13,15.1821436 12.9513029,15.3529133 12.8662178,15.5 C12.9513029,15.6470867 13,15.8178564 13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 C11,15.8178564 11.0486971,15.6470867 11.1337822,15.5 Z M13.5,12.8662178 C13.6470867,12.9513029 13.8178564,13 14,13 C14.5522847,13 15,12.5522847 15,12 C15,11.4477153 14.5522847,11 14,11 C13.8178564,11 13.6470867,11.0486971 13.5,11.1337822 C13.3529133,11.0486971 13.1821436,11 13,11 C12.4477153,11 12,11.4477153 12,12 C12,12.5522847 12.4477153,13 13,13 C13.1821436,13 13.3529133,12.9513029 13.5,12.8662178 Z M6,11 C5.44771525,11 5,10.5522847 5,10 C5,9.44771525 5.44771525,9 6,9 C6.55228475,9 7,9.44771525 7,10 C7,10.5522847 6.55228475,11 6,11 Z M10,18 C9.44771525,18 9,17.5522847 9,17 C9,16.4477153 9.44771525,16 10,16 C10.5522847,16 11,16.4477153 11,17 C11,17.5522847 10.5522847,18 10,18 Z M18,11 C17.4477153,11 17,10.5522847 17,10 C17,9.44771525 17.4477153,9 18,9 C18.5522847,9 19,9.44771525 19,10 C19,10.5522847 18.5522847,11 18,11 Z M8,16 C7.44771525,16 7,15.5522847 7,15 C7,14.4477153 7.44771525,14 8,14 C8.55228475,14 9,14.4477153 9,15 C9,15.5522847 8.55228475,16 8,16 Z M10,10 C9.44771525,10 9,9.55228475 9,9 C9,8.44771525 9.44771525,8 10,8 C10.5522847,8 11,8.44771525 11,9 C11,9.55228475 10.5522847,10 10,10 Z M6,20 C5.44771525,20 5,19.5522847 5,19 C5,18.4477153 5.44771525,18 6,18 C6.55228475,18 7,18.4477153 7,19 C7,19.5522847 6.55228475,20 6,20 Z M9,13 C8.44771525,13 8,12.5522847 8,12 C8,11.4477153 8.44771525,11 9,11 C9.55228475,11 10,11.4477153 10,12 C10,12.5522847 9.55228475,13 9,13 Z M5,17 C4.44771525,17 4,16.5522847 4,16 C4,15.4477153 4.44771525,15 5,15 C5.55228475,15 6,15.4477153 6,16 C6,16.5522847 5.55228475,17 5,17 Z M14,15 C13.4477153,15 13,14.5522847 13,14 C13,13.4477153 13.4477153,13 14,13 C14.5522847,13 15,13.4477153 15,14 C15,14.5522847 14.5522847,15 14,15 Z M15,8 C14.4477153,8 14,7.55228475 14,7 C14,6.44771525 14.4477153,6 15,6 C15.5522847,6 16,6.44771525 16,7 C16,7.55228475 15.5522847,8 15,8 Z M14,11 C13.4477153,11 13,10.5522847 13,10 C13,9.44771525 13.4477153,9 14,9 C14.5522847,9 15,9.44771525 15,10 C15,10.5522847 14.5522847,11 14,11 Z M19,7 C18.4477153,7 18,6.55228475 18,6 C18,5.44771525 18.4477153,5 19,5 C19.5522847,5 20,5.44771525 20,6 C20,6.55228475 19.5522847,7 19,7 Z"
+                  />
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </span>
+      <h3
+        class="c5"
+      >
+        Statistics
+      </h3>
+    </header>
+    <div
+      class="c6"
+    >
+      <div
+        style="height:250px"
+      >
+        <div
+          aria-label="The average for currently displayed data is equal to 0."
+          class="c7"
+          height="normal"
+          role="presentation"
+          tabindex="0"
+        >
+          <h3
+            aria-hidden="true"
+            class="c8"
+          >
+            Requests Per Second
+          </h3>
+          <div
+            aria-hidden="true"
+            class="c9"
+          >
+            <div
+              class="c10"
+            />
+          </div>
+          <div
+            class="c11"
+          />
+        </div>
+      </div>
+    </div>
+  </section>,
+]
 `;

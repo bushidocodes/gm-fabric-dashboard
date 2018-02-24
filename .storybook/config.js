@@ -6,6 +6,7 @@ import { setIntlConfig, withIntl } from "storybook-addon-intl";
 import messages from "messages";
 import { flattenMessages } from "utils/i18n";
 import { addLocaleData } from "react-intl";
+import deLocaleData from "react-intl/locale-data/de";
 import enLocaleData from "react-intl/locale-data/en";
 import esLocaleData from "react-intl/locale-data/es";
 
@@ -16,6 +17,7 @@ function loadStories() {
   // require("../stories");
 }
 
+addLocaleData(deLocaleData);
 addLocaleData(enLocaleData);
 addLocaleData(esLocaleData);
 
@@ -23,7 +25,7 @@ const getMessages = locale => flattenMessages(messages[locale]);
 
 // Set intl configuration
 setIntlConfig({
-  locales: ["en-US", "es-ES"],
+  locales: ["en-US", "es-ES", "de-DE"],
   defaultLocale: "en-US",
   getMessages
 });
