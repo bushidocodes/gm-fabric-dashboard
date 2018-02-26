@@ -6,7 +6,7 @@ const ReadoutGroup = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   orphans: 2;
-  width: 100%;
+  flex: 1 1 100%;
   margin-right: -${spacingScale(1)};
 `;
 
