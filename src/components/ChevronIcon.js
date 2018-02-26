@@ -20,7 +20,7 @@ ChevronIcon.propTypes = {
  *   direction = "down",
  *   width = 26,
  *   height = 26,
- *   viewBox = "0 0 26 26",
+ *   viewBox = "0 0 24 24",
  *   stroke = "black",
  *   strokeWidth = 1,
  *   fill = "none",
@@ -31,10 +31,10 @@ ChevronIcon.propTypes = {
  */
 function ChevronIcon({
   direction = "down",
-  width = 26,
-  height = 26,
-  viewBox = "0 0 26 26",
-  stroke = "black",
+  width = 24,
+  height = 24,
+  viewBox = "0 0 24 24",
+  stroke = "currentColor",
   strokeWidth = 1,
   fill = "none",
   ariaLabelledby = "chevron icon",
@@ -43,17 +43,17 @@ function ChevronIcon({
   let points = "";
   switch (direction) {
     case "up":
-      points = "8 16 13.0407259 11 18.1 16 18.1 16";
+      points = "8 16 13 11 18 16";
       break;
     case "left":
-      points = "15 18.1 10 13.0407259 15 8";
+      points = "15 18 10 13 15 8";
       break;
     case "right":
-      points = "10 8 15 13.0592741 10 18.1";
+      points = "10 8 15 13 10 18";
       break;
     case "down":
     default:
-      points = "18.1 11 13.0407259 16 8 11";
+      points = "18 11 13 16 8 11";
       break;
   }
 
@@ -75,7 +75,7 @@ function ChevronIcon({
         fill={fill}
         fillRule="evenodd"
       >
-        <g id="chevron-down" strokeWidth="2" stroke="#000">
+        <g id="chevron-down" strokeWidth="2" stroke="currentColor">
           <polyline id="Arrow" points={points} />
         </g>
       </g>

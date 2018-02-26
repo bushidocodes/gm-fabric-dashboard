@@ -28,8 +28,7 @@ const ReadoutDisplay = styled.div`
 
   &:before {
     content: "";
-    opacity: 0.2;
-    background-color: ${props => props.overallColor.string()};
+    background-color: ${props => props.overallColor.fade(0.8).string()};
     position: absolute;
     top: 0;
     right: 0;

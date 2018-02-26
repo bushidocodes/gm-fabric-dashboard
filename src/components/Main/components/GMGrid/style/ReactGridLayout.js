@@ -2,6 +2,7 @@ const ReactGridLayout = `
   .react-grid-layout {
     position: relative;
     width: 100%;
+    flex: 1 1 100%;
   }
   .react-grid-item {
     transition: all 200ms ease;

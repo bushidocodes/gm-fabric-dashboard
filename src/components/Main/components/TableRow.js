@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
+import Color from "color";
 
 import {
   spacingScale,
@@ -21,20 +22,32 @@ const TableRow = styled.li.attrs({
   flex-wrap: wrap;
   min-height: ${spacingScale(4.5)};
   flex: 0 0 100%;
-  cursor: ${props => (props.selectable ? `pointer` : `default`)};
   transition: all 0.2s ease;
   background-color: ${COLOR_CONTENT_BACKGROUND.string()};
   margin: ${spacingScale(1)} 0 0;
   border-radius: ${BORDER_RADIUS_BASE};
-  box-shadow: 0 0 0 1px ${TABLE_BORDER};
 
-  &:focus {
-    outline: -webkit-focus-ring-color auto 5px;
-  }
+  ${props =>
+    props.selectable &&
+    `
+    box-shadow: 0 0 0 1px ${TABLE_BORDER};
+    cursor: pointer;
 
-  &:focus:active:hover {
-    outline: 0;
-  }
+    &:hover {
+      box-shadow: 0 0 0 2px
+        ${Color(TABLE_BORDER)
+          .darken(0.15)
+          .string()};
+    }
+
+    &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    &:focus:active:hover {
+      outline: 0;
+    }
+  `};
 
   > * {
     ${rowChildSpacing()};

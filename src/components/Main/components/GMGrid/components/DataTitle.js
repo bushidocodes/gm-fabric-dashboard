@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import { FONT_STACK_DATA } from "style/styleVariables";
+import { FONT_SIZE_BASE } from "style/styleVariables";
 
 const DataTitle = styled.h3`
-  text-align: center;
   margin: 0;
-  font-family: ${FONT_STACK_DATA};
+  font-weight: 600;
+  font-size: ${FONT_SIZE_BASE};
 `;
 
 export default DataTitle;

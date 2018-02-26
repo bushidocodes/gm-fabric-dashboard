@@ -4,13 +4,12 @@ import { PropTypes } from "prop-types";
 import { COLOR_SUCCESS, COLOR_DANGER } from "style/styleVariables";
 
 const VizFill = styled.div`
-  background-color: currentColor;
-  border-radius: inherit;
-  bottom: 0;
-  color: ${props =>
+  background-color: ${props =>
     props.colorDegree
       ? `${COLOR_SUCCESS.mix(COLOR_DANGER, props.colorDegree / 100)}`
-      : COLOR_SUCCESS};
+      : COLOR_SUCCESS.string()};
+  border-radius: inherit;
+  bottom: -3px;
   left: 0;
   min-width: 2px;
   position: absolute;

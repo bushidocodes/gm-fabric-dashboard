@@ -241,12 +241,15 @@ const DEFAULT_DYGRAPH_OPTIONS = {
   strokeWidth: 2.0,
   legend: "always",
   fillGraph: true,
+  fillAlpha: 0.3,
   axisLineColor: "rgb(200, 200, 200)",
   gridLineColor: "rgb(200, 200, 200)",
   animatedZooms: true,
   drawAxesAtZero: true,
   labelsSeparateLines: true,
-  includeZero: true
+  hideOverlayOnMouseOut: false,
+  includeZero: true,
+  rightGap: 0
 };
 
 const DEFAULT_LEGEND_FORMATTING = { precision: 3 };

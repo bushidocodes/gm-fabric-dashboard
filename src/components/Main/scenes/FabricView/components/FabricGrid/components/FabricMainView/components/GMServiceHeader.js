@@ -3,16 +3,16 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 import StatusIcon from "components/StatusIcon";
-import { spacingScale } from "style/styleFunctions";
 import { FONT_SIZE_BASE } from "style/styleVariables";
 
 import ServicesIcon from "images/icons/services.svg";
 
 const HeaderTitle = styled.h1`
-  margin-left: ${spacingScale(1)};
+  margin: 0;
   text-transform: capitalize;
   font-size: ${FONT_SIZE_BASE};
   font-weight: 600;
+  line-height: 0.9;
 `;
 
 GMServiceHeader.propTypes = {

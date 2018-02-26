@@ -12,33 +12,34 @@ import { spacingScale } from "style/styleFunctions";
 // Import the Styles needed by React-Select
 import "react-select/dist/react-select.css";
 
+const ControlHeight = spacingScale(3.5);
+
 const GMSelect = styled(Select)`
   flex-grow: 1;
   font-size: ${FONT_SIZE_BASE};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
-  height: 28px;
-  max-width: 125px;
+  height: ${ControlHeight};
   position: relative;
-  width: 100%;
+  max-width: 10em;
   z-index: ${ZINDEX_DROPDOWN};
 
   .Select-control {
-    height: 28px !important;
+    height: ${ControlHeight} !important;
 
     .Select-placeholder {
-      line-height: 28px;
+      line-height: ${ControlHeight};
     }
 
     .Select-value {
-      line-height: 28px !important;
+      line-height: ${ControlHeight} !important;
 
       .Select-value-label {
-        line-height: 28px;
+        line-height: ${ControlHeight};
       }
     }
 
     .Select-input {
-      height: 28px;
+      height: ${ControlHeight};
     }
   }
   & + & {

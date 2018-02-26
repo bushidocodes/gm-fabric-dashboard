@@ -95,7 +95,7 @@ class RoutesGrid extends Component {
                 readoutItems={[
                   {
                     detail: "0.001% Errors",
-                    title: "Best Performing",
+                    title: "Fewest Errors",
                     value: "/"
                   }
                 ]}

@@ -4,7 +4,8 @@ import { spacingScale, contrastColor } from "style/styleFunctions";
 import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 
 const VizBar = styled.div`
-  background-color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
+  border-bottom: 1px dashed
+    ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
   border-radius: 2px;
   bottom: 0;
   height: 1px;

@@ -6,7 +6,6 @@ import { spacingScale } from "style/styleFunctions";
 const DataPair = styled.div`
   display: flex;
   flex-direction: row;
-  padding-right: 15%;
   margin: ${spacingScale(1)};
   position: relative;
   ${props => (props.priority === "primary" ? dataPairPrimary() : "")};

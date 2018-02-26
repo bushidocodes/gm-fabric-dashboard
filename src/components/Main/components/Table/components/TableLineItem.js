@@ -13,6 +13,7 @@ import GMLineChart from "components/Main/components/GMLineChart";
 import TableRow from "components/Main/components/TableRow";
 import TableCol from "components/Main/components/TableCol";
 import TableColVizBar from "components/Main/components/TableColVizBar";
+import TableRowOpenAffordance from "components/Main/components/TableRowOpenAffordance";
 import SparklineCol from "components/Main/components/SparklineCol";
 import TableDrawerCollapse from "components/Main/components/TableDrawerCollapse";
 import VizBar from "components/Main/components/VizBar";
@@ -34,6 +35,10 @@ const FlexParent = styled.div`
     text-overflow: ellipsis;
     min-width: 0;
   }
+`;
+
+const RowKey = styled.span`
+  font-weight: 600;
 `;
 
 /**
@@ -101,7 +106,8 @@ class TableLineItem extends Component {
                 {this.props.verb}
               </Badge>
             )}
-            {this.props.item}
+            <RowKey>{this.props.item}</RowKey>{" "}
+            <TableRowOpenAffordance isOpen={this.state.isOpen} />
           </FlexParent>
           <VizBar>
             <VizFill
@@ -113,17 +119,10 @@ class TableLineItem extends Component {
         <SparklineCol>
           <Sparklines data={this.props.requestsPerSecond_sparkline} height={24}>
             <SparklinesLine
-              style={{
-                stroke: "currentColor",
-                strokeWidth: 1,
-                fill: "none"
-              }}
+              style={{ stroke: "currentColor", strokeWidth: 1, fill: "none" }}
             />
             <SparklinesReferenceLine
-              style={{
-                stroke: "grey",
-                opacity: "0.4"
-              }}
+              style={{ stroke: "grey", opacity: "0.4" }}
               type="mean"
             />
           </Sparklines>

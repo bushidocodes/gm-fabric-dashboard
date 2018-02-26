@@ -7,6 +7,7 @@ import { spacingScale } from "style/styleFunctions";
 const SectionHeader = styled.header`
   display: flex;
   padding: ${spacingScale(1)} ${spacingScale(2)} 0;
+  flex: 0 0 ${spacingScale(5)};
   position: sticky;
   top: 0;
   z-index: ${ZINDEX_STICKY};

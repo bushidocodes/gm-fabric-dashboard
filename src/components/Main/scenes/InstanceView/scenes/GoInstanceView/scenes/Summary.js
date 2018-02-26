@@ -107,7 +107,12 @@ function SummaryGrid({
                   "ms",
                   "ms"
                 )
-              },
+              }
+            ]}
+          />
+          <Readout
+            primary={true}
+            readoutItems={[
               {
                 icon: "Exclamation",
                 iconBorderStyle: "BorderTriangleSmall",
@@ -142,7 +147,11 @@ function SummaryGrid({
                 ),
                 icon: "CPU",
                 value: `${getLatestAttribute(metrics, "system/cpu.pct", 3)}%`
-              },
+              }
+            ]}
+          />
+          <Readout
+            readoutItems={[
               {
                 icon: "Memory",
                 title: intl.formatMessage({
