@@ -12,20 +12,22 @@ defaults: &defaults
   docker:
     - image: circleci/node:carbon
 
+restore: &restore
+  name: Restore cache
+  keys:
+    - cache-{{ .Branch }}-{{ checksum "package.json" }}
+    # fallback to using the latest cache if no exact match is found
+    - cache-{{ .Branch }}-
+    - cache-
+
 version: 2
 jobs:
   setup:
     <<: *defaults
     steps:
       - checkout
-      # Download and cache dependencies
       - restore_cache:
-          name: Restore node_modules and CC test reporter
-          keys:
-          - cache-{{ .Branch }}-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - cache-{{ .Branch }}-
-          - cache-
+          <<: *restore
       - run:
           name: Install dependencies
           command: |
@@ -40,6 +42,12 @@ jobs:
             - node_modules
             - cc-test-reporter
           key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+  test:linters:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          <<: *restore
       - run:
           name: Run linters
           # Setting max warning to treat all eslint warning as errors that break
@@ -55,12 +63,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore node_modules
-          keys:
-          - cache-{{ .Branch }}-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - cache-{{ .Branch }}-
-          - cache-
+          <<: *restore
       # Generate a build
       - run:
           name: Build the application
@@ -81,12 +84,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore node_modules
-          keys:
-          - cache-{{ .Branch }}-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - cache-{{ .Branch }}-
-          - cache-
+          <<: *restore
       - run:
           name: Draft GitHub Release
           command: npm run draft-github-release
@@ -96,12 +94,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore node_modules
-          keys:
-          - cache-{{ .Branch }}-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - cache-{{ .Branch }}-
-          - cache-
+          <<: *restore
       - run:
           name: Run end to end tests
           command: npm run test:e2e
@@ -115,17 +108,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore node_modules and Code Climate Test Reporter
-          keys:
-          - cache-{{ .Branch }}-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - cache-{{ .Branch }}
-          - cache-
+          <<: *restore
       # CircleCI 2.0 no longer allows interpolation of env variables. This is the workaround: 
       # https://discuss.circleci.com/t/using-environment-variables-in-config-yml-not-working/14237
-      - run:
-          name: Prove valid timezone
-          command: date
       - run: 
           command: | 
             mkdir results
@@ -142,18 +127,6 @@ jobs:
           command: |
             circleci tests glob "src/**/*.test.js" | circleci tests split --split-by=timings | \
             xargs npm test -- --testResultsProcessor="jest-junit"  --coverage
-      # Note: When re-running a build in CircleCI, Code Climate returns a
-      # failure state with the error message:
-      #
-      # Error: response from https://api.codeclimate.com/v1/test_reports.
-      # HTTP 409: A test report for commit f4014287c1624ae09d9008a78bd6f343912b976d
-      # already exists
-      #
-      # This causes the CircleCI build to fail. As a workaround, I have
-      # appended `|| true` to the end of the command, which resolves
-      # the issue but also silences all error reporting for the Test Reporter
-      #
-      # https://github.com/codeclimate/test-reporter/issues/192
       - run: 
           name: Format coverage
           command: |
@@ -170,12 +143,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore node_modules and Code Climate Test Reporter
-          keys:
-            - cache-{{ .Branch }}-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - cache-{{ .Branch }}
-            - cache-
+          <<: *restore
       - attach_workspace:
           at: ~/repo
       - run:
@@ -203,6 +171,12 @@ workflows:
   all-but-release:
     jobs:
       - setup:
+          filters:
+            tags:
+              ignore: /^v.*/
+      - test:linters:
+          requires:
+            - setup
           filters:
             tags:
               ignore: /^v.*/
