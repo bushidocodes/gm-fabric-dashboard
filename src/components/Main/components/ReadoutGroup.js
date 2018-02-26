@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { spacingScale } from "style/styleFunctions";
 
 const ReadoutGroup = styled.div`
   display: flex;
@@ -6,6 +7,7 @@ const ReadoutGroup = styled.div`
   justify-content: center;
   orphans: 2;
   width: 100%;
+  margin-right: -${spacingScale(1)};
 `;
 
 export default ReadoutGroup;

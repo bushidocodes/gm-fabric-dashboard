@@ -21,10 +21,8 @@ const ReadoutDisplay = styled.div`
   margin: 0;
   position: relative;
   overflow: hidden;
-
-  &:not(:first-child) {
-    margin-left: ${spacingScale(1)};
-  }
+  margin-right: ${spacingScale(1)};
+  margin-bottom: ${spacingScale(1)};
 
   &:before {
     content: "";
@@ -44,11 +42,6 @@ const ReadoutDisplay = styled.div`
     left: 0;
     right: 0;
     border-bottom: 3px solid ${props => props.overallColor.string()};
-  }
-
-  @media all and (max-width: 1000px) {
-    flex: ${props => (props.cacheCard ? "0 0 300px" : "0 0 100%")};
-    order: ${props => (props.primary ? 0 : 1)};
   }
 
   &:first-child:last-child {
