@@ -42,12 +42,16 @@ jobs:
             - node_modules
             - cc-test-reporter
           key: cache-{{ .Branch }}-{{ checksum "package.json" }}
+      - persist_to_workspace: 
+          root: ~/repo
+          paths:
+            - node_modules
   test:linters:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
+      - attach_workspace:
+          at: ~/repo
       - run:
           name: Run linters
           # Setting max warning to treat all eslint warning as errors that break
@@ -62,8 +66,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
+      - attach_workspace:
+          at: ~/repo
       # Generate a build
       - run:
           name: Build the application
@@ -83,8 +87,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
+      - attach_workspace:
+          at: ~/repo
       - run:
           name: Draft GitHub Release
           command: npm run draft-github-release
@@ -93,8 +97,8 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
+      - attach_workspace:
+          at: ~/repo
       - run:
           name: Run end to end tests
           command: npm run test:e2e
@@ -107,8 +111,8 @@ jobs:
     parallelism: 3
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
+      - attach_workspace:
+          at: ~/repo
       # CircleCI 2.0 no longer allows interpolation of env variables. This is the workaround: 
       # https://discuss.circleci.com/t/using-environment-variables-in-config-yml-not-working/14237
       - run: 
@@ -142,8 +146,6 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          <<: *restore
       - attach_workspace:
           at: ~/repo
       - run:
