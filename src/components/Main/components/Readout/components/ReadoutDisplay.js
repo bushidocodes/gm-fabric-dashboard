@@ -1,50 +1,68 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
-import {
-  COLOR_CONTENT_BACKGROUND,
-  BORDER_RADIUS_BASE,
-  FONT_STACK_BASE
-} from "style/styleVariables";
+import { BORDER_RADIUS_BASE } from "style/styleVariables";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 
 // TO-DO: remove cacheCard props passed to readout- styled-components after implementing reusable card component
 // for "cacheCard", overrule flex-basis of 100%
 const ReadoutDisplay = styled.div`
-  align-items: stretch;
-  background-color: ${props =>
-    props.primary
-      ? contrastColor(COLOR_CONTENT_BACKGROUND, 0.8).string()
-      : contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
-  border-radius: ${BORDER_RADIUS_BASE};
-  color: ${props =>
-    props.primary
-      ? contrastColor(COLOR_CONTENT_BACKGROUND, 0).string()
-      : contrastColor(COLOR_CONTENT_BACKGROUND, 1).string()};
+  color: #333;
   display: flex;
   flex: 1 1 300px;
   flex-direction: column;
-  font-family: ${FONT_STACK_BASE};
-  margin: ${props => (props.primary ? 0 : spacingScale(0.5))};
+  align-items: stretch;
+  justify-content: center;
+  border-radius: ${BORDER_RADIUS_BASE};
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  &:not(:first-child) {
+    margin-left: ${spacingScale(1)};
+  }
+
+  &:before {
+    content: "";
+    opacity: 0.2;
+    background-color: ${props => props.overallColor.string()};
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 3px solid ${props => props.overallColor.string()};
+  }
 
   @media all and (max-width: 1000px) {
     flex: ${props => (props.cacheCard ? "0 0 300px" : "0 0 100%")};
     order: ${props => (props.primary ? 0 : 1)};
   }
+
   &:first-child:last-child {
     flex-grow: 0;
-
-    > * {
-      text-align: center;
-
-      > :first-child {
-        padding-left: 0;
-      }
-    }
   }
+
+  ${props =>
+    props.primary &&
+    `
+    &:before { 
+      opacity: .3;
+    }
+  `};
 `;
 
 ReadoutDisplay.propTypes = {
+  overallColor: PropTypes.color,
   primary: PropTypes.bool
 };
 

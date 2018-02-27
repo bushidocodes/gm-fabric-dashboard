@@ -35,19 +35,21 @@ export default function ReadoutItem({
 }) {
   return (
     <ItemDisplay cacheCard={cacheCard}>
-      {icon && (
-        <ReadoutItemIcon
-          iconBackgroundStyle={iconBackgroundStyle}
-          iconBorderStyle={iconBorderStyle}
-          iconBorderWidth={iconBorderWidth || "2"}
-        >
-          <Glyph name={icon} />
-        </ReadoutItemIcon>
-      )}
       <ReadoutItemData>
-        <ReadoutItemTitle>{title || "—"}</ReadoutItemTitle>
+        <ReadoutItemTitle>
+          {icon && (
+            <ReadoutItemIcon
+              iconBackgroundStyle={iconBackgroundStyle}
+              iconBorderStyle={iconBorderStyle}
+              iconBorderWidth={"1"}
+            >
+              <Glyph name={icon} />
+            </ReadoutItemIcon>
+          )}
+          {title || "—"}
+        </ReadoutItemTitle>
         <ReadoutItemValue>{value || "—"}</ReadoutItemValue>
-        {detail && <ReadoutItemDetail>{detail}</ReadoutItemDetail>}
+        {detail && <ReadoutItemDetail>{detail || "—"}</ReadoutItemDetail>}
         {graphData && (
           <ReadoutItemGraph>
             <Sparklines data={graphData} height={32}>

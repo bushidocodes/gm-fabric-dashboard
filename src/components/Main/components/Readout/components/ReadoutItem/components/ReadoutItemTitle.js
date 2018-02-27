@@ -8,6 +8,7 @@ const ReadoutItemTitle = styled.h2`
   padding: 0;
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   min-height: 1em;
+  display: inline-block;
 `;
 
 export default ReadoutItemTitle;

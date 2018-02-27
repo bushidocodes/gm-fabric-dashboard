@@ -7,7 +7,6 @@ const ReadoutItemDetail = styled.p`
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   margin: 0;
   min-height: 1em;
-  opacity: 0.85;
 `;
 
 export default ReadoutItemDetail;
