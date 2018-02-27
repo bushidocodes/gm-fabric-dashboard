@@ -208,4 +208,12 @@ injectGlobal`
     width: 100%;
   }
 
+  :focus {
+    outline-style: auto;
+    outline-width: 3px;
+    outline-color: ${COLOR_HIGHLIGHT.toString()};
+    outline-color: -webkit-invert;
+    outline-offset: 3px;
+  }
+
 `;
