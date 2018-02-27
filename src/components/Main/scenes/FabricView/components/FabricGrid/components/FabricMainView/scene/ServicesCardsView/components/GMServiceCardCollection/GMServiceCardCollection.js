@@ -3,6 +3,8 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import GMServiceCard from "./components/GMServiceCard";
 
+import { spacingScale } from "style/styleFunctions";
+
 GMServiceCardCollection.propTypes = {
   items: PropTypes.array.isRequired
 };
@@ -11,6 +13,8 @@ const ContentItems = styled.div`
   display: flex;
   flex-flow: row wrap;
   flex-basis: 100%;
+  flex: 1 1 auto;
+  margin: -${spacingScale(0.5)};
 `;
 
 /**

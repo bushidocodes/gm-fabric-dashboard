@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
@@ -8,26 +8,9 @@ import { FONT_SIZE_BASE } from "style/styleVariables";
 
 import ServicesIcon from "images/icons/services.svg";
 
-const Heading = styled.div`
-  font-size: ${FONT_SIZE_BASE};
-  text-align: left;
-  vertical-align: text-bottom;
-  padding: 0;
-  height: ${spacingScale(5)};
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-`;
-
-const IconWrapper = styled.div`
-  width: ${spacingScale(3)};
-  height: ${spacingScale(3)};
-  position: relative;
-  top: -4px;
-`;
-
-const HeaderTitle = styled.span`
+const HeaderTitle = styled.h1`
   margin-left: ${spacingScale(1)};
+  text-transform: capitalize;
   font-size: ${FONT_SIZE_BASE};
   font-weight: 600;
 `;
@@ -45,17 +28,13 @@ export default function GMServiceHeader({
   showStatusIcon = false
 }) {
   return (
-    <Heading>
+    <Fragment>
       {showStatusIcon ? (
-        <IconWrapper>
-          <StatusIcon status={headerTitle} />
-        </IconWrapper>
+        <StatusIcon status={headerTitle} />
       ) : (
-        <IconWrapper>
-          <img src={ServicesIcon} alt="" />
-        </IconWrapper>
+        <img src={ServicesIcon} alt="" />
       )}
       <HeaderTitle>{headerTitle}</HeaderTitle>
-    </Heading>
+    </Fragment>
   );
 }

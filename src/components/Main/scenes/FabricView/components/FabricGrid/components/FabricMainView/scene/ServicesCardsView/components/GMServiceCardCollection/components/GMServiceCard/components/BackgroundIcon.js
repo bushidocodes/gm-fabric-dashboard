@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { spacingScale } from "style/styleFunctions";
-import { COLOR_DANGER, COLOR_WARNING } from "style/styleVariables";
+import {
+  COLOR_DANGER,
+  COLOR_WARNING,
+  COLOR_SUCCESS
+} from "style/styleVariables";
 
 import Icon from "components/Icon";
 import Exclamation from "components/Glyphs/Exclamation";
@@ -42,7 +46,9 @@ export default function BackgroundIcon({ status }) {
     default:
       iconBorderStyle = "BorderCircleSmall";
       iconBackgroundStyle = "BackgroundCircleSmall";
-      iconBaseColor = "#eee";
+      iconBaseColor = COLOR_SUCCESS.lighten(1.2)
+        .desaturate(0.5)
+        .string();
       glyph = "RunningSmall";
   }
 

@@ -1,11 +1,15 @@
-import { PADDING_BASE } from "style/styleVariables";
+import {
+  PADDING_BASE,
+  FONT_SIZE_BASE,
+  BORDER_RADIUS_BASE
+} from "style/styleVariables";
 import { PropTypes } from "prop-types";
 
 import Color from "color";
 import styled from "styled-components";
 
 const CARD_SPACING = PADDING_BASE;
-const CARD_INTERACTION_SCALE = 1.05;
+const CARD_INTERACTION_SCALE = 1.025;
 
 export const CardContainer = styled.div`
   color: ${props => props.cardFontColor};
@@ -13,7 +17,7 @@ export const CardContainer = styled.div`
   border: 1px solid ${props => props.cardBorderColor};
   border-top: 2px solid ${props => props.cardBorderAltColor};
   width: 100%;
-  border-radius: 1px;
+  border-radius: ${BORDER_RADIUS_BASE};
   height: ${props => props.height};
   margin: ${parseInt(CARD_SPACING, 10) / 2}px;
   padding: ${parseInt(PADDING_BASE, 10) * 1.5}px
