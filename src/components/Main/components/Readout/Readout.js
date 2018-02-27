@@ -32,7 +32,7 @@ export default function Readout({
 Readout.propTypes = {
   cacheCard: PropTypes.bool,
   children: PropTypes.element,
-  color: PropTypes.color,
+  color: PropTypes.string,
   primary: PropTypes.bool,
   readoutItems: PropTypes.oneOfType([
     PropTypes.arrayOf(ReadoutItemShape),

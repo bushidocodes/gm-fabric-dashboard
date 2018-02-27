@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
-import { BORDER_RADIUS_BASE, COLOR_SUCCESS } from "style/styleVariables";
+import { BORDER_RADIUS_BASE } from "style/styleVariables";
 import { spacingScale } from "style/styleFunctions";
 
 // TO-DO: remove cacheCard props passed to readout- styled-components after implementing reusable card component
@@ -14,18 +14,14 @@ const ReadoutDisplay = styled.div`
   align-items: stretch;
   justify-content: center;
   border-radius: ${BORDER_RADIUS_BASE};
-  margin: 0;
+  margin: 0 ${spacingScale(1)} ${spacingScale(1)} 0;
   position: relative;
   overflow: hidden;
-
-  &:not(:first-child) {
-    margin-left: ${spacingScale(1)};
-  }
 
   &:before {
     content: "";
     opacity: 0.2;
-    background-color: ${props => props.color.toString()};
+    background-color: ${props => props.color.string()};
     position: absolute;
     top: 0;
     right: 0;
@@ -40,7 +36,7 @@ const ReadoutDisplay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 3px solid ${props => props.color.toString()};
+    border-bottom: 3px solid ${props => props.color.string()};
   }
 
   @media all and (max-width: 1000px) {
@@ -55,16 +51,11 @@ const ReadoutDisplay = styled.div`
   ${props =>
     props.primary &&
     `
-    &:before { 
-      opacity: .3;
+    &:before {
+      opacity: 0.3;
     }
   `};
 `;
-
-ReadoutDisplay.defaultProps = {
-  color: COLOR_SUCCESS,
-  primary: false
-};
 
 ReadoutDisplay.propTypes = {
   color: PropTypes.string,
