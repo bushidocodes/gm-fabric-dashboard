@@ -21,51 +21,52 @@ FabricAppHeaderContent.propTypes = {
 
 function FabricAppHeaderContent({ statusCount, intl }) {
   return (
-    <TabNav>
-      <Tab
-        title={intl.formatMessage({
-          id: "fabricHeaderContent.allServices",
-          defaultMessage: "All Services",
-          description: "Fabric view tab title"
-        })}
-        href="/"
-        icon="Summary"
-        lines={[
-          {
-            name: intl.formatMessage({
-              id: "fabricHeaderContent.services",
-              defaultMessage: "Services",
-              description: "Fabric view tab detail"
-            }),
-            value: statusCount.total
-          }
-        ]}
-      />
-      {microserviceStatuses.map(status => {
-        return (
-          <Tab
-            title={intl.formatMessage({
-              id: `fabricHeaderContent.${status.toLowerCase()}`,
-              defaultMessage: `${status}`,
-              description: "Fabric view tab title"
-            })}
-            href={`/${status}`}
-            icon={status}
-            lines={[
-              {
-                name: intl.formatMessage({
-                  id: "fabricHeaderContent.services",
-                  defaultMessage: "Services",
-                  description: "Fabric view tab detail"
-                }),
-                value: statusCount[status]
-              }
-            ]}
-            key={status}
-          />
-        );
-      })}
-    </TabNav>
+    //   <TabNav>
+    //     <Tab
+    //       title={intl.formatMessage({
+    //         id: "fabricHeaderContent.allServices",
+    //         defaultMessage: "All Services",
+    //         description: "Fabric view tab title"
+    //       })}
+    //       href="/"
+    //       icon="Summary"
+    //       lines={[
+    //         {
+    //           name: intl.formatMessage({
+    //             id: "fabricHeaderContent.services",
+    //             defaultMessage: "Services",
+    //             description: "Fabric view tab detail"
+    //           }),
+    //           value: statusCount.total
+    //         }
+    //       ]}
+    //     />
+    //     {microserviceStatuses.map(status => {
+    //       return (
+    //         <Tab
+    //           title={intl.formatMessage({
+    //             id: `fabricHeaderContent.${status.toLowerCase()}`,
+    //             defaultMessage: `${status}`,
+    //             description: "Fabric view tab title"
+    //           })}
+    //           href={`/${status}`}
+    //           icon={status}
+    //           lines={[
+    //             {
+    //               name: intl.formatMessage({
+    //                 id: "fabricHeaderContent.services",
+    //                 defaultMessage: "Services",
+    //                 description: "Fabric view tab detail"
+    //               }),
+    //               value: statusCount[status]
+    //             }
+    //           ]}
+    //           key={status}
+    //         />
+    //       );
+    //     })}
+    //   </TabNav>
+    null
   );
 }
 
