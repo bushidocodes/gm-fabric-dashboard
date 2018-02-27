@@ -49,7 +49,6 @@ export default function ThreadsTableHeader() {
           description="Header title"
         />
       </TableColHeaderThread>
-      <TableColHeaderThread />
     </TableHeader>
   );
 }

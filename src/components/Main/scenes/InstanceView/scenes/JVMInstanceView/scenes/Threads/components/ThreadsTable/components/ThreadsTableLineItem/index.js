@@ -92,18 +92,22 @@ export default class ThreadsTableLineItem extends Component {
           <StatusIcon status={status} />
         </TableColThread>
         <TableColThread>{`${Number(id)}`}</TableColThread>
-        <TableCol>{name}</TableCol>
-        <TableColThread right>{daemon ? "Yes" : "No"}</TableColThread>
-        <TableColThread right>{priority}</TableColThread>
-        <TableColThread>
+        <TableCol>
+          {name + " "}
           {stack.length ? (
             <Icon>
-              <Glyph name="Threads" />
+              {this.state.isOpen ? (
+                <Glyph name="Threads" glyphColor="rgba(0,0,0,1)" />
+              ) : (
+                <Glyph name="Threads" glyphColor="rgba(0,0,0,.2)" />
+              )}
             </Icon>
           ) : (
             ""
           )}
-        </TableColThread>
+        </TableCol>
+        <TableColThread right>{daemon ? "Yes" : "No"}</TableColThread>
+        <TableColThread right>{priority}</TableColThread>
         <TableDrawerCollapse
           isOpened={this.state.isOpen}
           onClick={evt => {
