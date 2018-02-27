@@ -14,6 +14,16 @@ import {
 import NotFoundError from "components/Main/components/NotFoundError";
 import TableToolbar from "components/Main/components/TableToolbar";
 import FabricMainView from "./components/FabricMainView";
+import LayoutSection from "components/LayoutSection";
+import ErrorBoundary from "components/ErrorBoundary";
+import ReadoutGroup from "components/Main/components/ReadoutGroup";
+import Readout from "components/Main/components/Readout";
+
+import {
+  COLOR_SUCCESS,
+  COLOR_DANGER,
+  COLOR_WARNING
+} from "style/styleVariables";
 
 class FabricGrid extends Component {
   static propTypes = {
@@ -112,6 +122,46 @@ class FabricGrid extends Component {
     if (services && services.length > 0) {
       return (
         <div>
+          <ErrorBoundary>
+            <LayoutSection>
+              <ReadoutGroup>
+                <Readout
+                  overallColor={COLOR_DANGER}
+                  readoutItems={[
+                    {
+                      icon: "Negation",
+                      iconBorderStyle: "BorderSquareSmall",
+                      title: "Services Down",
+                      value: "18"
+                    }
+                  ]}
+                />
+                <Readout
+                  overallColor={COLOR_WARNING}
+                  readoutItems={[
+                    {
+                      icon: "Exclamation",
+                      iconBorderStyle: "BorderTriangleSmall",
+                      title: "Services Warning",
+                      value: "5"
+                    }
+                  ]}
+                />
+                <Readout
+                  overallColor={COLOR_SUCCESS}
+                  readoutItems={[
+                    {
+                      icon: "RunningSmall",
+                      iconBorderStyle: "BorderCircleSmall",
+                      title: "Services Running",
+                      value: "31"
+                    }
+                  ]}
+                />
+              </ReadoutGroup>
+            </LayoutSection>
+          </ErrorBoundary>
+
           <TableToolbar
             displayTypeProps={{
               displayType: displayType,
