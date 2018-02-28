@@ -9,8 +9,17 @@ import {
 import { spacingScale, edgeColor, contrastColor } from "style/styleFunctions";
 
 const LineChartEmpty = styled.div`
-  flex: 1 0 auto;
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: ${spacingScale(1)};
+  text-align: center;
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
 
   h1,
   p,

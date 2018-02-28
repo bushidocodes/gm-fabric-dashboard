@@ -22,6 +22,10 @@ exports[`LineChartDisplay matches snapshot 1`] = `
   width: 100%;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 <div
   className="c0"
   tabIndex={0}

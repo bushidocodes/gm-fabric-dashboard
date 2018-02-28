@@ -14,6 +14,10 @@ const LineChartDisplay = styled.div.attrs({
   flex-direction: column;
   ${props => (props.height ? chartHeight(props.height) : "height:  100%")};
   width: 100%;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default LineChartDisplay;

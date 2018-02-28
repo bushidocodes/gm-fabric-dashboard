@@ -71,11 +71,15 @@ exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
   width: 100%;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c1 {
   font-size: 14px;
   font-weight: 600;
   margin: 0;
-  padding: 8px 16px;
+  padding: 8px 8px 0;
   -webkit-flex: 1 0 40px;
   -ms-flex: 1 0 40px;
   flex: 1 0 40px;
@@ -89,7 +93,14 @@ exports[`<GMLineChart> stateless child component matches snapshot 1`] = `
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-height: 250px;
+  border-radius: 3px;
+  border: 1px solid rgb(217,217,217);
+  margin: 8px;
 }
 
 .c2 > * {
