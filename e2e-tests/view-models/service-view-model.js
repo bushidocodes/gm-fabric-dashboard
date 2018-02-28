@@ -1,24 +1,33 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
-
 import BaseViewModel from "./base-view-model";
+import messages from "../../src/messages";
 
 export default class ServiceViewModel extends BaseViewModel {
-  constructor() {
+  constructor(locale = "en-US") {
     super();
+
     // Navigation
-    this.linkInstances = ReactSelector("TabLink").withText("Instances");
+    this.linkInstances = ReactSelector("TabLink").withText(
+      messages[locale]["serviceHeaderContent"]["instances"]
+    );
     this.textInstancesCount = ReactSelector("TabLink")
-      .withText("Instances")
+      .withText(messages[locale]["serviceHeaderContent"]["instances"])
       .find("dd");
 
     // Toolbar
     this.inputSearchInstances = ReactSelector("ToolbarLeft").find("input");
-    this.selectSort = Selector(".Select-control").withText("Sort");
+    this.selectSort = Selector(".Select-control").withText(
+      messages[locale]["tableToolbar"]["sort"]
+    );
     // this.selectSort needs to be selected first
     // so that the following options are created in the DOM
-    this.optionSortName = Selector(".Select-option").withText("Name");
-    this.optionSortStatus = Selector(".Select-option").withText("Uptime");
+    this.optionSortName = Selector(".Select-option").withText(
+      messages[locale]["serviceView"]["name"]
+    );
+    this.optionSortStatus = Selector(".Select-option").withText(
+      messages[locale]["serviceView"]["uptime"]
+    );
 
     // Instance table
     this.tableRows = ReactSelector("TableRow");

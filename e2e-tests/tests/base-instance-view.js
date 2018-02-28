@@ -110,14 +110,14 @@ test("Verify Routes/Functions Table Functionality", async t => {
   // Sort by Requests
   await t
     .click(instanceViewModel.selectSortRoutes)
-    .click(instanceViewModel.optionSortRoutesRequests);
+    .click(instanceViewModel.optionSortRoutesRoute);
 
   //  Expect that the table rows are sorted in ascending order by requests
   await assertSorted(t, instanceViewModel.routesTableColsRequests);
 
   await t
     .click(instanceViewModel.selectSortRoutes)
-    .click(instanceViewModel.optionSortRoutesRequests);
+    .click(instanceViewModel.optionSortRoutesStatus);
 
   // Expect the table rows are sorted in descending order by requests
   await assertSorted(t, instanceViewModel.routesTableColsRequests, false);
