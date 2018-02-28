@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { COLOR_WHITE } from "style/styleVariables";
+import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 
 const LanguageSelectorWrap = styled.div`
-  color: ${COLOR_WHITE.toString()};
-  font-weight: 700;
+  color: ${COLOR_CONTENT_BACKGROUND.string()};
   cursor: pointer;
+  user-select: none;
+
   > :first-child {
     ${props => (props.visible ? `opacity: 1;` : `opacity: 0.8;`)};
     :hover {

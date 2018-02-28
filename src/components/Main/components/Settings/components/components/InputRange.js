@@ -1,6 +1,5 @@
 import {
   FONT_SIZE_H2,
-  FONT_STACK_BASE,
   FONT_SIZE_BASE,
   FONT_WEIGHT_REGULAR,
   COLOR_BRAND_PRIMARY,
@@ -12,7 +11,6 @@ import { contrastColor } from "style/styleFunctions";
 const InputRange = `
   .input-range__label.input-range__label--value {
     color: ${COLOR_BRAND_PRIMARY.toString()};
-    font-family: ${FONT_STACK_BASE};
     font-size: ${FONT_SIZE_H2};
     font-weight: ${FONT_WEIGHT_REGULAR};
     line-height: 0;

@@ -3,13 +3,13 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 import StatusIcon from "components/StatusIcon";
-import { FONT_SIZE_LG } from "style/styleVariables";
 import { spacingScale } from "style/styleFunctions";
+import { FONT_SIZE_BASE } from "style/styleVariables";
 
 import ServicesIcon from "images/icons/services.svg";
 
 const Heading = styled.div`
-  font-size: ${FONT_SIZE_LG};
+  font-size: ${FONT_SIZE_BASE};
   text-align: left;
   vertical-align: text-bottom;
   padding: 0;
@@ -28,6 +28,8 @@ const IconWrapper = styled.div`
 
 const HeaderTitle = styled.span`
   margin-left: ${spacingScale(1)};
+  font-size: ${FONT_SIZE_BASE};
+  font-weight: 600;
 `;
 
 GMServiceHeader.propTypes = {

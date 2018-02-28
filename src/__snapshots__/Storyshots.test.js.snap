@@ -26,8 +26,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -151,8 +150,10 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 14px;
+  background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,1));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .c2 {
@@ -181,7 +182,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;
@@ -189,11 +190,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 }
 
 .c4 > a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
 }
 
 .c4 > a:hover {
-  color: rgb(255,255,255);
+  color: rgb(217,217,217);
 }
 
 .c10 {
@@ -201,8 +202,8 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   opacity: 1;
   padding: 0 8px;
 }
@@ -216,7 +217,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   background-color: rgb(10,171,42);
   border: none;
   color: rgb(255,255,255);
-  font-size: 11px;
+  font-size: 14px;
   left: 0;
   position: absolute;
   padding: 0.6em;
@@ -269,6 +270,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  text-transform: capitalize;
 }
 
 .c6:before {
@@ -285,7 +287,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 }
 
 .c6 a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -297,7 +299,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 }
 
 .c6 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(204,204,204);
 }
 
 .c6:first-child:before {
@@ -310,8 +312,11 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 
 .c7 {
   color: rgb(255,255,255);
-  font-weight: 700;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c7 > :first-child {
@@ -325,20 +330,19 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 .c8 {
   position: absolute;
   background-color: rgb(255,255,255);
-  border-radius: 6px;
-  color: rgb(0,0,0);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 700;
+  border-radius: 3px;
+  color: rgb(32,32,32);
   opacity: 0;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 0;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   white-space: normal;
-  width: 120px;
-  z-index: 1070;
+  -webkit-flex: 1 1 10em;
+  -ms-flex: 1 1 10em;
+  flex: 1 1 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,6 +350,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  right: 0;
 }
 
 .c9 {
@@ -548,35 +553,22 @@ exports[`Storyshots App Header Banner 1`] = `
 .c0 {
   background: transparent;
   color: rgb(255,255,255);
-  padding: 12px 16px 12px;
+  padding: 8px 16px 8px;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c1 {
-  font-size: 32px;
+  font-size: 36px;
+  font-family: Metropolis;
   margin: 0;
   position: relative;
   display: inline-block;
   z-index: 0;
   max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   text-transform: capitalize;
-}
-
-.c1:after {
-  background-color: rgba(0,0,0,0.5);
-  bottom: 0.25em;
-  content: "";
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  left: 0.25em;
-  position: absolute;
-  right: 0.25em;
-  top: 0.25em;
-  z-index: -1;
+  line-height: 1.2;
 }
 
 .c2 {
@@ -608,7 +600,7 @@ exports[`Storyshots App Header Banner 1`] = `
 
 @media all and (min-width:1000px) {
   .c0 {
-    padding: 16px 32px 24px;
+    padding: 16px 16px 8px;
   }
 }
 
@@ -655,8 +647,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -780,8 +771,10 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   font-size: 14px;
+  background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,1));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .c3 {
@@ -810,7 +803,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;
@@ -818,11 +811,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 .c5 > a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
 }
 
 .c5 > a:hover {
-  color: rgb(255,255,255);
+  color: rgb(217,217,217);
 }
 
 .c11 {
@@ -830,8 +823,8 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   opacity: 1;
   padding: 0 8px;
 }
@@ -845,7 +838,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   background-color: rgb(10,171,42);
   border: none;
   color: rgb(255,255,255);
-  font-size: 11px;
+  font-size: 14px;
   left: 0;
   position: absolute;
   padding: 0.6em;
@@ -898,6 +891,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  text-transform: capitalize;
 }
 
 .c7:before {
@@ -914,7 +908,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 .c7 a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -926,7 +920,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 .c7 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(204,204,204);
 }
 
 .c7:first-child:before {
@@ -939,8 +933,11 @@ exports[`Storyshots App Header Default App Header 1`] = `
 
 .c8 {
   color: rgb(255,255,255);
-  font-weight: 700;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c8 > :first-child {
@@ -954,20 +951,19 @@ exports[`Storyshots App Header Default App Header 1`] = `
 .c9 {
   position: absolute;
   background-color: rgb(255,255,255);
-  border-radius: 6px;
-  color: rgb(0,0,0);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 700;
+  border-radius: 3px;
+  color: rgb(32,32,32);
   opacity: 0;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 0;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   white-space: normal;
-  width: 120px;
-  z-index: 1070;
+  -webkit-flex: 1 1 10em;
+  -ms-flex: 1 1 10em;
+  flex: 1 1 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -975,6 +971,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  right: 0;
 }
 
 .c10 {
@@ -991,6 +988,10 @@ exports[`Storyshots App Header Default App Header 1`] = `
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-overflow: ellipsis;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1003,39 +1004,39 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 4px 0 0;
+  margin: 4px 8px 4px;
 }
 
 .c21 h1 {
-  font-size: 18px;
+  font-size: 14px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   line-height: 1;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
 .c23 {
-  margin: 0 0 4px 24px;
-  font-size: 11px;
+  margin: 0 4px 4px 32px;
+  line-height: 1.2;
   color: rgb(255,255,255);
 }
 
 .c24 {
-  color: rgb(213,213,213);
-  padding-right: 4px;
+  color: rgb(255,255,255);
+  opacity: 0.8;
+  padding-right: 0.5em;
   display: inline-block;
 }
 
 .c25 {
   margin: 0;
   display: inline-block;
+  color: model:rgb;
+  color: 10,171,42;
+  valpha: 1;
 }
 
 .c22 {
@@ -1051,62 +1052,56 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 .c20 {
-  background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;
-  margin: 1px 1px 0 0;
+  margin: 2px;
   overflow: hidden;
-  padding: 4px 8px 8px;
+  padding: 4px 0 0px;
   position: relative;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
+  background-color: #333;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
-.c20::after {
-  border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
-  color: inherit;
+.c20:after {
   content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
   position: absolute;
-  right: 0;
   top: 0;
-  z-index: 100;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 4px;
+  border: 2px solid rgb(10,171,42);
+  opacity: 0;
 }
 
+.c20.active,
+.c20.active:hover {
+  background-color: #000;
+}
+
+.c20.active:after,
+.c20.active:hover:after {
+  opacity: 1;
+}
+
+.c20:focus,
 .c20:hover {
-  background-color: rgb(54,54,54);
-}
-
-.c20:hover:after {
-  opacity: 0.5;
-}
-
-.c20.active {
-  background-color: rgb(77,77,77);
-}
-
-.c20.active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c20:active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c20:focus {
-  outline: rgb(10,171,42) auto 3px;
+  background-color: #222;
 }
 
 .c19 {
@@ -1118,8 +1113,12 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
-  padding: 0 1px 1px 1px;
+  background-color: model:rgb;
+  color: 44.625,44.625,44.625;
+  valpha: 1;
+  padding: 2px;
+  overflow: hidden;
+  position: relative;
 }
 
 .c26 {
@@ -1154,45 +1153,32 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%,auto auto;
-  background-repeat: no-repeat,no-repeat;
-  background-position: top left,top -30px right 20%;
   background-color: rgb(0,0,0);
+  background-image: linear-gradient( to right, #000, rgba(0,0,0,0.3), rgba(0,0,0,0) ), url(mesh-web.jpg);
+  background-size: 100% 100%,120% auto;
+  background-position: center center,left center;
+  background-repeat: no-repeat;
 }
 
 .c16 {
   background: transparent;
   color: rgb(255,255,255);
-  padding: 12px 16px 12px;
+  padding: 8px 16px 8px;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
 .c17 {
-  font-size: 32px;
+  font-size: 36px;
+  font-family: Metropolis;
   margin: 0;
   position: relative;
   display: inline-block;
   z-index: 0;
   max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   text-transform: capitalize;
-}
-
-.c17:after {
-  background-color: rgba(0,0,0,0.5);
-  bottom: 0.25em;
-  content: "";
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  left: 0.25em;
-  position: absolute;
-  right: 0.25em;
-  top: 0.25em;
-  z-index: -1;
+  line-height: 1.2;
 }
 
 .c18 {
@@ -1238,7 +1224,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
 
 @media all and (min-width:1000px) {
   .c16 {
-    padding: 16px 32px 24px;
+    padding: 16px 16px 8px;
   }
 }
 
@@ -1432,7 +1418,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
       Extra, Extra, Read all about it
     </a>
   </div>
-  <div
+  <nav
     class="c19"
   >
     <a
@@ -1833,7 +1819,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
         </div>
       </a>
     </div>
-  </div>
+  </nav>
 </div>
 `;
 
@@ -1862,6 +1848,10 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-overflow: ellipsis;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1874,39 +1864,39 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 4px 0 0;
+  margin: 4px 8px 4px;
 }
 
 .c2 h1 {
-  font-size: 18px;
+  font-size: 14px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   line-height: 1;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 
 .c6 {
-  margin: 0 0 4px 24px;
-  font-size: 11px;
+  margin: 0 4px 4px 32px;
+  line-height: 1.2;
   color: rgb(255,255,255);
 }
 
 .c7 {
-  color: rgb(213,213,213);
-  padding-right: 4px;
+  color: rgb(255,255,255);
+  opacity: 0.8;
+  padding-right: 0.5em;
   display: inline-block;
 }
 
 .c8 {
   margin: 0;
   display: inline-block;
+  color: model:rgb;
+  color: 10,171,42;
+  valpha: 1;
 }
 
 .c3 {
@@ -1922,62 +1912,56 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
 }
 
 .c1 {
-  background-color: rgb(45,45,45);
   font-weight: 400;
   -webkit-flex: 1 1 1%;
   -ms-flex: 1 1 1%;
   flex: 1 1 1%;
-  margin: 1px 1px 0 0;
+  margin: 2px;
   overflow: hidden;
-  padding: 4px 8px 8px;
+  padding: 4px 0 0px;
   position: relative;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
+  background-color: #333;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
-.c1::after {
-  border-radius: 1px;
-  box-shadow: 0 0 1em 1px rgb(10,171,42);
-  color: inherit;
+.c1:after {
   content: "";
-  height: 1px;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
   position: absolute;
-  right: 0;
   top: 0;
-  z-index: 100;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 4px;
+  border: 2px solid rgb(10,171,42);
+  opacity: 0;
 }
 
+.c1.active,
+.c1.active:hover {
+  background-color: #000;
+}
+
+.c1.active:after,
+.c1.active:hover:after {
+  opacity: 1;
+}
+
+.c1:focus,
 .c1:hover {
-  background-color: rgb(54,54,54);
-}
-
-.c1:hover:after {
-  opacity: 0.5;
-}
-
-.c1.active {
-  background-color: rgb(77,77,77);
-}
-
-.c1.active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:active:after {
-  background-color: rgb(84,196,106);
-  opacity: 1;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-}
-
-.c1:focus {
-  outline: rgb(10,171,42) auto 3px;
+  background-color: #222;
 }
 
 .c0 {
@@ -1989,8 +1973,12 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   color: rgb(150,150,150);
-  background-color: rgba(0,0,0,0.30000000000000004);
-  padding: 0 1px 1px 1px;
+  background-color: model:rgb;
+  color: 44.625,44.625,44.625;
+  valpha: 1;
+  padding: 2px;
+  overflow: hidden;
+  position: relative;
 }
 
 .c9 {
@@ -2010,7 +1998,7 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
   align-items: stretch;
 }
 
-<div
+<nav
   class="c0"
 >
   <a
@@ -2411,7 +2399,7 @@ exports[`Storyshots App Header Tab Navigation 1`] = `
       </div>
     </a>
   </div>
-</div>
+</nav>
 `;
 
 exports[`Storyshots Button default 1`] = `
@@ -2421,8 +2409,7 @@ exports[`Storyshots Button default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -2555,8 +2542,7 @@ exports[`Storyshots Button orientations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -2660,8 +2646,7 @@ exports[`Storyshots Button orientations 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -2842,8 +2827,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -2941,8 +2925,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3046,8 +3029,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3151,8 +3133,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3250,8 +3231,7 @@ exports[`Storyshots Button outlines 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3399,8 +3379,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3504,8 +3483,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3610,8 +3588,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3716,8 +3693,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3821,8 +3797,7 @@ exports[`Storyshots Button sizes 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3973,8 +3948,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -3995,10 +3969,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(228,0,0);
-  border-color: rgb(220,0,0);
-  border-top-color: rgb(231,4,4);
-  border-bottom-color: rgb(203,0,0);
+  background-color: rgb(235,0,26);
+  border-color: rgb(228,0,19);
+  border-top-color: rgb(238,4,30);
+  border-bottom-color: rgb(210,0,8);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -4028,18 +4002,18 @@ exports[`Storyshots Button types 1`] = `
 .c0:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(218,0,0);
-  border-color: rgb(212,0,0);
-  border-top-color: rgb(222,3,3);
-  border-bottom-color: rgb(195,0,0);
+  background-color: rgb(226,0,18);
+  border-color: rgb(218,0,11);
+  border-top-color: rgb(229,4,21);
+  border-bottom-color: rgb(202,0,1);
   color: hsl(0,0%,92.5%);
 }
 
 .c0:hover {
-  background-color: rgb(226,0,0);
-  border-color: rgb(219,0,0);
-  border-top-color: rgb(229,4,4);
-  border-bottom-color: rgb(202,0,0);
+  background-color: rgb(233,0,24);
+  border-color: rgb(226,0,18);
+  border-top-color: rgb(237,4,28);
+  border-bottom-color: rgb(208,0,6);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4055,8 +4029,8 @@ exports[`Storyshots Button types 1`] = `
 .c0[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,41.9%);
-  border-color: hsl(0,0%,41.9%);
+  background-color: hsl(353.4,0%,43.3%);
+  border-color: hsl(353.4,0%,43.3%);
   color: hsl(0,0%,94%);
 }
 
@@ -4078,8 +4052,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -4100,10 +4073,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(0,0,255);
-  border-color: rgb(0,0,247);
-  border-top-color: rgb(11,11,251);
-  border-bottom-color: rgb(0,0,228);
+  background-color: rgb(9,77,255);
+  border-color: rgb(0,65,255);
+  border-top-color: rgb(21,84,251);
+  border-bottom-color: rgb(0,51,236);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -4133,18 +4106,18 @@ exports[`Storyshots Button types 1`] = `
 .c1:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(0,0,245);
-  border-color: rgb(0,0,237);
-  border-top-color: rgb(4,4,248);
-  border-bottom-color: rgb(0,0,219);
+  background-color: rgb(0,63,253);
+  border-color: rgb(0,56,245);
+  border-top-color: rgb(10,70,251);
+  border-bottom-color: rgb(0,43,227);
   color: hsl(0,0%,92.5%);
 }
 
 .c1:hover {
-  background-color: rgb(0,0,253);
-  border-color: rgb(0,0,245);
-  border-top-color: rgb(9,9,251);
-  border-bottom-color: rgb(0,0,226);
+  background-color: rgb(3,73,255);
+  border-color: rgb(0,64,250);
+  border-top-color: rgb(15,81,251);
+  border-bottom-color: rgb(0,51,231);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4160,8 +4133,8 @@ exports[`Storyshots Button types 1`] = `
 .c1[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(240,0%,47%);
-  border-color: hsl(240,0%,47%);
+  background-color: hsl(223.39999999999998,0%,48.7%);
+  border-color: hsl(223.39999999999998,0%,48.7%);
   color: hsl(0,0%,94%);
 }
 
@@ -4183,8 +4156,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -4288,8 +4260,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -4310,10 +4281,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(250,198,15);
-  border-color: rgb(251,195,0);
-  border-top-color: rgb(247,198,26);
-  border-bottom-color: rgb(232,177,0);
+  background-color: rgb(248,180,0);
+  border-color: rgb(240,172,0);
+  border-top-color: rgb(251,184,4);
+  border-bottom-color: rgb(222,156,0);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -4343,18 +4314,18 @@ exports[`Storyshots Button types 1`] = `
 .c3:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(249,193,0);
-  border-color: rgb(241,185,0);
-  border-top-color: rgb(251,196,5);
-  border-bottom-color: rgb(223,168,0);
+  background-color: rgb(238,170,0);
+  border-color: rgb(230,163,0);
+  border-top-color: rgb(242,174,4);
+  border-bottom-color: rgb(213,147,0);
   color: hsl(0,0%,92.5%);
 }
 
 .c3:hover {
-  background-color: rgb(252,198,9);
-  border-color: rgb(249,193,0);
-  border-top-color: rgb(248,198,21);
-  border-bottom-color: rgb(230,176,0);
+  background-color: rgb(246,178,0);
+  border-color: rgb(238,171,0);
+  border-top-color: rgb(250,182,4);
+  border-bottom-color: rgb(220,154,0);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4370,8 +4341,8 @@ exports[`Storyshots Button types 1`] = `
 .c3[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(46.69999999999999,0%,48.8%);
-  border-color: hsl(46.69999999999999,0%,48.8%);
+  background-color: hsl(43.5,0%,45.7%);
+  border-color: hsl(43.5,0%,45.7%);
   color: hsl(0,0%,94%);
 }
 
@@ -4393,8 +4364,7 @@ exports[`Storyshots Button types 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -4597,7 +4567,7 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
 }
 
 .c3 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .c3:hover .dygraph-legend {
@@ -4631,15 +4601,19 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   height: auto;
   width: 100%;
 }
 
+.c0:focus {
+  outline: none;
+}
+
 .c1 {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
-  padding: 8px 16px;
+  padding: 8px 8px 0;
   -webkit-flex: 1 0 40px;
   -ms-flex: 1 0 40px;
   flex: 1 0 40px;
@@ -4653,7 +4627,14 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-height: 250px;
+  border-radius: 3px;
+  border: 1px solid rgb(217,217,217);
+  margin: 8px;
 }
 
 .c2 > * {
@@ -4708,7 +4689,7 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
 
 exports[`Storyshots Grouping Header Normal Header 1`] = `
 .c0 {
-  font-size: 18px;
+  font-size: 14px;
   text-align: left;
   vertical-align: text-bottom;
   padding: 0;
@@ -4733,6 +4714,8 @@ exports[`Storyshots Grouping Header Normal Header 1`] = `
 
 .c2 {
   margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 <div
@@ -4775,7 +4758,7 @@ exports[`Storyshots Grouping Header With Status Icon 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
+  font-size: 14px;
   text-align: left;
   vertical-align: text-bottom;
   padding: 0;
@@ -4800,6 +4783,8 @@ exports[`Storyshots Grouping Header With Status Icon 1`] = `
 
 .c4 {
   margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 <div
@@ -6428,11 +6413,11 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -6440,7 +6425,6 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6448,29 +6432,44 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -6492,7 +6491,6 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -6528,7 +6526,6 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
@@ -6630,18 +6627,18 @@ exports[`Storyshots Layout Section default 1`] = `
 }
 
 .c11 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c12 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
@@ -6854,10 +6851,6 @@ exports[`Storyshots NotFoundError default 1`] = `
   overflow: visible;
 }
 
-.c2 {
-  margin-left: 20px;
-}
-
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -6887,7 +6880,7 @@ exports[`Storyshots NotFoundError default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(250,198,15);
+  border: 1px solid rgb(248,180,0);
   border-radius: 6px;
   color: rgb(32,32,32);
   display: -webkit-inline-box;
@@ -6900,7 +6893,7 @@ exports[`Storyshots NotFoundError default 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  font-size: 32px;
+  font-size: 40px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -6909,6 +6902,10 @@ exports[`Storyshots NotFoundError default 1`] = `
   padding: 64px 32px;
   padding-top: 64px;
   padding-bottom: 64px;
+}
+
+.c2 {
+  margin-left: 20px;
 }
 
 <div
@@ -7150,19 +7147,19 @@ exports[`Storyshots Readout A Readout Group 1`] = `
 }
 
 .c4 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
   display: inline-block;
 }
 
 .c8 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
@@ -7586,26 +7583,26 @@ exports[`Storyshots Readout A Readout with Many Items  1`] = `
 }
 
 .c3 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
   display: inline-block;
 }
 
 .c7 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
 .c8 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 14px;
   margin: 0;
+  font-weight: 500;
   min-height: 1em;
 }
 
@@ -7881,7 +7878,6 @@ exports[`Storyshots Readout Readout 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -7983,18 +7979,18 @@ exports[`Storyshots Readout Readout 1`] = `
 }
 
 .c6 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c7 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
@@ -8157,7 +8153,6 @@ exports[`Storyshots Service Card Service Card 1`] = `
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8285,18 +8280,18 @@ exports[`Storyshots Service Card Service Card 1`] = `
 .c2 {
   text-align: left;
   font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   line-height: 1.25;
   margin: 0;
   overflow: hidden;
   color: inherit;
   font-weight: 400;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
 
 .c4 {
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
@@ -8474,7 +8469,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8500,7 +8495,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(0,100%,34%);
+  color: hsl(353.4,100%,36.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8561,15 +8556,14 @@ exports[`Storyshots Service Card Services Grid 1`] = `
 
 .c10 {
   color: white;
-  background-color: hsl(0,100%,42.5%);
-  border: 1px solid hsl(0,100%,42.5%);
-  border-top: 2px solid hsl(0,100%,42.5%);
+  background-color: rgb(235,0,26);
+  border: 1px solid rgb(235,0,26);
+  border-top: 2px solid rgb(235,0,26);
   width: 100%;
   border-radius: 1px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8598,7 +8592,6 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8619,15 +8612,14 @@ exports[`Storyshots Service Card Services Grid 1`] = `
 
 .c13 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8708,34 +8700,33 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   cursor: pointer;
 }
 
+.c11 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.25;
+  margin: 0;
+  overflow: hidden;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
 .c2 {
   text-align: left;
   font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   line-height: 1.25;
   margin: 0;
   overflow: hidden;
   color: inherit;
   font-weight: 400;
-  position: relative;
-  z-index: 2;
-}
-
-.c11 {
-  text-align: left;
-  font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  line-height: 1.25;
-  margin: 0;
-  overflow: hidden;
-  color: inherit;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
 
 .c6 {
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
@@ -9268,7 +9259,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
       title="You do not have permission to manage this service."
     >
       <h1
-        class="c2"
+        class="c11"
       >
         Service 4
       </h1>
@@ -9802,7 +9793,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
       title="You do not have permission to manage this service."
     >
       <h1
-        class="c2"
+        class="c11"
       >
         Service 4
       </h1>
@@ -9949,7 +9940,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10010,15 +10001,14 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
 
 .c1 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10146,12 +10136,11 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
 .c3 {
   text-align: left;
   font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   line-height: 1.25;
   margin: 0;
   overflow: hidden;
   color: inherit;
-  font-weight: 400;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
@@ -10487,7 +10476,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10513,7 +10502,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(0,100%,34%);
+  color: hsl(353.4,100%,36.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10574,15 +10563,14 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c13 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10655,7 +10643,6 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10720,15 +10707,14 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c10 {
   color: white;
-  background-color: hsl(0,100%,42.5%);
-  border: 1px solid hsl(0,100%,42.5%);
-  border-top: 2px solid hsl(0,100%,42.5%);
+  background-color: rgb(235,0,26);
+  border: 1px solid rgb(235,0,26);
+  border-top: 2px solid rgb(235,0,26);
   width: 100%;
   border-radius: 1px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
-  font-size: 11px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10809,28 +10795,27 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   cursor: pointer;
 }
 
+.c11 {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.25;
+  margin: 0;
+  overflow: hidden;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
 .c3 {
   text-align: left;
   font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   line-height: 1.25;
   margin: 0;
   overflow: hidden;
   color: inherit;
   font-weight: 400;
-  position: relative;
-  z-index: 2;
-}
-
-.c11 {
-  text-align: left;
-  font-size: 14px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  line-height: 1.25;
-  margin: 0;
-  overflow: hidden;
-  color: inherit;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   z-index: 2;
 }
@@ -11225,7 +11210,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
       title="Metrics are not available for this service."
     >
       <h1
-        class="c3"
+        class="c11"
       >
         Awesome Service 3
       </h1>
@@ -12240,7 +12225,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
       title="Metrics are not available for this service."
     >
       <h1
-        class="c3"
+        class="c11"
       >
         Awesome Service 11
       </h1>
@@ -12394,7 +12379,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -12407,7 +12392,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -12521,7 +12506,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 8px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
@@ -12558,12 +12543,12 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
 
 .c10 > span {
   color: rgb(77,77,77);
-  font-size: 9px;
+  font-size: 14px;
   -webkit-letter-spacing: 0.08em;
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -12664,7 +12649,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -12929,7 +12914,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -13325,7 +13310,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -13471,7 +13456,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -13484,7 +13469,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -13598,7 +13583,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 8px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
@@ -13635,12 +13620,12 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
 
 .c10 > span {
   color: rgb(77,77,77);
-  font-size: 9px;
+  font-size: 14px;
   -webkit-letter-spacing: 0.08em;
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -13873,7 +13858,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -14005,7 +13990,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -14402,7 +14387,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -14535,7 +14520,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -14932,7 +14917,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -15064,7 +15049,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -15210,7 +15195,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -15223,7 +15208,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -15314,7 +15299,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 8px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
@@ -15351,12 +15336,12 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
 
 .c9 > span {
   color: rgb(77,77,77);
-  font-size: 9px;
+  font-size: 14px;
   -webkit-letter-spacing: 0.08em;
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -15573,7 +15558,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -15707,7 +15692,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -16063,7 +16048,7 @@ exports[`Storyshots Service List Item Service List Item 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 8px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
@@ -16085,12 +16070,12 @@ exports[`Storyshots Service List Item Service List Item 1`] = `
 
 .c7 > span {
   color: rgb(77,77,77);
-  font-size: 9px;
+  font-size: 14px;
   -webkit-letter-spacing: 0.08em;
   -moz-letter-spacing: 0.08em;
   -ms-letter-spacing: 0.08em;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 3px;
   padding: 2px 5px;
   background-color: rgb(249,249,249);
@@ -16263,7 +16248,7 @@ exports[`Storyshots Status Icon Down 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -16283,7 +16268,7 @@ exports[`Storyshots Status Icon Down 1`] = `
 >
   <g
     class="iconBackground"
-    fill="hsl(0, 100%, 42.5%)"
+    fill="rgb(235, 0, 26)"
     fill-opacity=".3"
     fill-rule="evenodd"
     id="SquareSmall"
@@ -16373,7 +16358,7 @@ exports[`Storyshots Status Icon Warning 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -16393,7 +16378,7 @@ exports[`Storyshots Status Icon Warning 1`] = `
 >
   <g
     class="iconBackground"
-    fill="hsl(46.69999999999999, 100%, 46.8%)"
+    fill="hsl(43.5, 100%, 43.8%)"
     fill-opacity=".3"
     fill-rule="evenodd"
     id="TriangleSmall"
@@ -16423,8 +16408,6 @@ exports[`Storyshots Table Functions Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16433,12 +16416,16 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: pointer;
-}
-
-.c10:hover {
-  background-color: hsl(0,0%,98%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c10:focus {
@@ -16493,20 +16480,29 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c15 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 .c13 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -16515,7 +16511,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -16527,7 +16523,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -16540,6 +16536,9 @@ exports[`Storyshots Table Functions Table 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -16547,7 +16546,6 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c12 > div {
-  margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -16558,8 +16556,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -16588,12 +16585,22 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c0 {
-  display: block;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -16602,7 +16609,6 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16610,16 +16616,30 @@ exports[`Storyshots Table Functions Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 400;
+  font-weight: 500;
   overflow: visible;
   width: 100%;
 }
 
 .c9 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -16688,7 +16708,7 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c8 {
-  font-size: 11px;
+  font-size: 50%;
   color: rgb(77,77,77);
 }
 
@@ -16785,9 +16805,7 @@ exports[`Storyshots Table Functions Table 1`] = `
           <div
             class="c12"
           >
-            <div>
-              CatalogStream
-            </div>
+            CatalogStream
           </div>
           <div
             class="c13"
@@ -16802,28 +16820,28 @@ exports[`Storyshots Table Functions Table 1`] = `
           class="c15"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -16831,8 +16849,8 @@ exports[`Storyshots Table Functions Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -16871,9 +16889,7 @@ exports[`Storyshots Table Functions Table 1`] = `
           <div
             class="c12"
           >
-            <div>
-              OrderItem
-            </div>
+            OrderItem
           </div>
           <div
             class="c13"
@@ -16888,28 +16904,28 @@ exports[`Storyshots Table Functions Table 1`] = `
           class="c15"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -16917,8 +16933,8 @@ exports[`Storyshots Table Functions Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -16976,8 +16992,6 @@ exports[`Storyshots Table Instance Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16986,8 +17000,16 @@ exports[`Storyshots Table Instance Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: default;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c4:focus {
@@ -17062,8 +17084,7 @@ exports[`Storyshots Table Instance Table 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -17092,17 +17113,26 @@ exports[`Storyshots Table Instance Table 1`] = `
 }
 
 .c12 span + span {
-  font-size: 80%;
-  opacity: 0.8;
+  font-size: 66.66%;
 }
 
 .c0 {
-  display: block;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -17111,7 +17141,6 @@ exports[`Storyshots Table Instance Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17119,16 +17148,30 @@ exports[`Storyshots Table Instance Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 400;
+  font-weight: 500;
   overflow: visible;
   width: 100%;
 }
 
 .c3 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -17378,8 +17421,6 @@ exports[`Storyshots Table Routes Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17388,12 +17429,16 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: pointer;
-}
-
-.c10:hover {
-  background-color: hsl(0,0%,98%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c10:focus {
@@ -17448,20 +17493,29 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c18 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 .c16 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -17470,7 +17524,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -17482,7 +17536,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -17491,23 +17545,24 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c13 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   text-align: center;
+  line-height: 0.9;
   -webkit-letter-spacing: 0.06em;
   -moz-letter-spacing: 0.06em;
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
   height: fit-content;
-  padding: 2px 4px;
-  background-color: rgb(10,171,42);
+  padding: 4px 4px;
+  background-color: rgba(10,171,42,0.15000000000000002);
   border-radius: 3px;
-  color: rgb(255,255,255);
+  color: rgb(10,171,42);
   margin-right: 4px;
 }
 
 .c13 svg:first-child {
-  margin: -8px -4px -8px -6px;
+  margin: -100% -4px;
 }
 
 .c12 {
@@ -17515,6 +17570,9 @@ exports[`Storyshots Table Routes Table 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -17522,7 +17580,6 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c12 > div {
-  margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -17533,8 +17590,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -17563,12 +17619,22 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c0 {
-  display: block;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -17577,7 +17643,6 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17585,16 +17650,30 @@ exports[`Storyshots Table Routes Table 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 400;
+  font-weight: 500;
   overflow: visible;
   width: 100%;
 }
 
 .c9 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -17663,7 +17742,7 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c8 {
-  font-size: 11px;
+  font-size: 50%;
   color: rgb(77,77,77);
 }
 
@@ -17792,9 +17871,7 @@ exports[`Storyshots Table Routes Table 1`] = `
               </svg>
               GET
             </span>
-            <div>
-              /functionalroles
-            </div>
+            /functionalroles
           </div>
           <div
             class="c16"
@@ -17809,28 +17886,28 @@ exports[`Storyshots Table Routes Table 1`] = `
           class="c18"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -17838,8 +17915,8 @@ exports[`Storyshots Table Routes Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -17910,9 +17987,7 @@ exports[`Storyshots Table Routes Table 1`] = `
               </svg>
               GET
             </span>
-            <div>
-              /ping
-            </div>
+            /ping
           </div>
           <div
             class="c16"
@@ -17927,28 +18002,28 @@ exports[`Storyshots Table Routes Table 1`] = `
           class="c18"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -17956,8 +18031,8 @@ exports[`Storyshots Table Routes Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -18016,8 +18091,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -18121,8 +18195,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -18227,94 +18300,52 @@ exports[`Storyshots Table Toolbar default 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  color: black;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.4;
-  text-align: left;
-  text-transform: none;
-  padding: 1.4px 4px;
-  background-color: rgb(255,255,255);
+  border: 1px solid rgba(0,0,0,0.25);
   border-radius: 3px;
-  border: 1px solid rgb(242,242,242);
-  border-bottom-color: rgb(230,230,230);
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
-  box-shadow: inset 0 0 0 transparent,0 0 0 transparent,0 0 0 transparent;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  text-align: left;
+  background-color: model:rgb;
+  color: 255,255,255;
+  valpha: 1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+  width: 22em;
+  -webkit-flex: 1 1 22em;
+  -ms-flex: 1 1 22em;
+  flex: 1 1 22em;
+  padding: 6px 8px;
 }
 
 .c2::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
-.c2:hover {
-  background-color: rgb(250,250,250);
-  border-color: rgb(237,237,237);
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  border-bottom-color: rgb(217,217,217);
-  color: black;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgb(10,171,42);
-  z-index: 1;
-}
-
 .c2::-webkit-input-placeholder {
-  color: currentColor;
+  color: inherit;
   opacity: 1;
-  text-align: center;
 }
 
 .c2::-moz-placeholder {
-  color: currentColor;
+  color: inherit;
   opacity: 1;
-  text-align: center;
 }
 
 .c2:-ms-input-placeholder {
-  color: currentColor;
+  color: inherit;
   opacity: 1;
-  text-align: center;
 }
 
 .c2::placeholder {
-  color: currentColor;
+  color: inherit;
   opacity: 1;
-  text-align: center;
-}
-
-.c2::-ms-expand {
-  background-color: transparent;
-  border: 0;
 }
 
 .c9 {
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
   flex-grow: 1;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   height: 28px;
   max-width: 125px;
   position: relative;
@@ -18342,10 +18373,14 @@ exports[`Storyshots Table Toolbar default 1`] = `
   height: 28px;
 }
 
+.c9 + .c9 {
+  margin-left: 8px;
+}
+
 .c10 {
   margin-left: 4px;
   opacity: 0.6;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .c0 {
@@ -18670,8 +18705,7 @@ exports[`Storyshots Tooltip default 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -18730,10 +18764,10 @@ exports[`Storyshots Vizfill bar Vizfill bar 1`] = `
 
 .c1 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -18742,7 +18776,7 @@ exports[`Storyshots Vizfill bar Vizfill bar 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: rgb(119,86,21);
+  color: rgb(123,86,34);
   left: 0;
   min-width: 2px;
   position: absolute;

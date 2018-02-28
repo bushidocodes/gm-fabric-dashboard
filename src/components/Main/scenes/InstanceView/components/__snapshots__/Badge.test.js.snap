@@ -2,23 +2,24 @@
 
 exports[`Badge matches snapshot 1`] = `
 .c0 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   text-align: center;
+  line-height: 0.9;
   -webkit-letter-spacing: 0.06em;
   -moz-letter-spacing: 0.06em;
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
   height: fit-content;
-  padding: 2px 4px;
-  background-color: rgb(10,171,42);
+  padding: 4px 4px;
+  background-color: rgba(10,171,42,0.15000000000000002);
   border-radius: 3px;
-  color: rgb(255,255,255);
+  color: rgb(10,171,42);
   margin-right: 4px;
 }
 
 .c0 svg:first-child {
-  margin: -8px -4px -8px -6px;
+  margin: -100% -4px;
 }
 
 <span

@@ -26,9 +26,9 @@ import { blurTableRow } from "utils";
 // this extra flex container is necessary to truncate route name in chrome browser
 const FlexParent = styled.div`
   display: flex;
+  flex: 0 0 100%;
   align-items: center;
   > div {
-    margin-top: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -101,7 +101,7 @@ class TableLineItem extends Component {
                 {this.props.verb}
               </Badge>
             )}
-            <div>{this.props.item}</div>
+            {this.props.item}
           </FlexParent>
           <VizBar>
             <VizFill
@@ -111,11 +111,7 @@ class TableLineItem extends Component {
           </VizBar>
         </TableColVizBar>
         <SparklineCol>
-          <Sparklines
-            data={this.props.requestsPerSecond_sparkline}
-            height={32}
-            preserveAspectRatio="xMaxYMin"
-          >
+          <Sparklines data={this.props.requestsPerSecond_sparkline} height={24}>
             <SparklinesLine
               style={{
                 stroke: "currentColor",

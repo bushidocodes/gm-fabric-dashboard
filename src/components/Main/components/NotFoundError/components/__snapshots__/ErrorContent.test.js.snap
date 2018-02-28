@@ -6,7 +6,7 @@ exports[`ErrorContent matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(250,198,15);
+  border: 1px solid rgb(248,180,0);
   border-radius: 6px;
   color: rgb(32,32,32);
   display: -webkit-inline-box;
@@ -19,7 +19,7 @@ exports[`ErrorContent matches snapshot 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  font-size: 32px;
+  font-size: 40px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

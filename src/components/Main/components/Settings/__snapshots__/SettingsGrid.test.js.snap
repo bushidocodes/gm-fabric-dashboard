@@ -26,8 +26,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -129,8 +128,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -244,11 +242,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c1:first-of-type > * {
-  border-top: 0;
+.c1:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c2 {
@@ -256,7 +254,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -264,15 +261,15 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c7 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
   display: -webkit-box;
@@ -286,18 +283,22 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c3 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c6 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -393,8 +394,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c12 .input-range__label.input-range__label--value {
   color: rgb(10,171,42);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 0;
   margin-left: -50%;
@@ -462,8 +462,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -566,7 +565,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -649,18 +647,18 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c16 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c17 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
@@ -1718,7 +1716,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               icon="Fabric"
               title="Fabric Polling"
             >
-              <styled.section>
+              <styled.section
+                stretch={false}
+              >
                 <section
                   className="c1"
                 >
@@ -2446,7 +2446,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
               icon="ServiceInstance"
               title="Instance Polling"
             >
-              <styled.section>
+              <styled.section
+                stretch={false}
+              >
                 <section
                   className="c1"
                 >
@@ -2947,7 +2949,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
           icon="Tape"
           title="Metrics Cache"
         >
-          <styled.section>
+          <styled.section
+            stretch={false}
+          >
             <section
               className="c1"
             >

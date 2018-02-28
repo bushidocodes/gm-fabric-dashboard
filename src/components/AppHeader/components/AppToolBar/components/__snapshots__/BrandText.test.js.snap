@@ -7,7 +7,7 @@ exports[`BrandText matches snapshot 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-letter-spacing: 0.03em;
   -moz-letter-spacing: 0.03em;
   -ms-letter-spacing: 0.03em;
@@ -15,11 +15,11 @@ exports[`BrandText matches snapshot 1`] = `
 }
 
 .c0 > a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
 }
 
 .c0 > a:hover {
-  color: rgb(255,255,255);
+  color: rgb(217,217,217);
 }
 
 <span

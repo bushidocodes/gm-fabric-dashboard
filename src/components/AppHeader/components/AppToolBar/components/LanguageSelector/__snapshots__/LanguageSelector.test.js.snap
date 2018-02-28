@@ -3,8 +3,11 @@
 exports[`LanguageSelector matches snapshot 1`] = `
 .c0 {
   color: rgb(255,255,255);
-  font-weight: 700;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c0 > :first-child {
@@ -18,20 +21,19 @@ exports[`LanguageSelector matches snapshot 1`] = `
 .c1 {
   position: absolute;
   background-color: rgb(255,255,255);
-  border-radius: 6px;
-  color: rgb(0,0,0);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 700;
+  border-radius: 3px;
+  color: rgb(32,32,32);
   opacity: 0;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 0;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   white-space: normal;
-  width: 120px;
-  z-index: 1070;
+  -webkit-flex: 1 1 10em;
+  -ms-flex: 1 1 10em;
+  flex: 1 1 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,6 +41,7 @@ exports[`LanguageSelector matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  right: 0;
 }
 
 .c2 {

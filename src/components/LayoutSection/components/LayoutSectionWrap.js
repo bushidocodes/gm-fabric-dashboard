@@ -9,13 +9,17 @@ const LayoutSectionWrap = styled.section`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  margin-bottom: ${spacingScale(4)};
+  padding: ${spacingScale(1)};
 
-  &:first-of-type {
-    > * {
-      border-top: 0;
-    }
+  &:not(:first-of-type) {
+    margin-top: ${spacingScale(4)};
   }
+
+  ${props =>
+    props.stretch &&
+    `
+    flex: 1 0 auto;
+  `};
 `;
 
 export default LayoutSectionWrap;

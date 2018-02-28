@@ -172,7 +172,7 @@ function SummaryGrid({
         })}
         icon="Scatterplot"
       >
-        <div style={{ height: "250px" }}>
+        <div style={{ height: "250px", width: "100%" }}>
           <GMLineChart
             dygraph={mapDygraphKeysToNetChange(
               getDygraphOfValue(metrics, [
