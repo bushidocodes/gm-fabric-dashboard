@@ -111,7 +111,7 @@ describe("Fabric Grid Main View", () => {
   });
 
   test("renders all services in list view", () => {
-    FabricGridWrap.find("button[title='List']").simulate("click");
+    FabricGridWrap.find("a[title='List']").simulate("click");
     expect(FabricGridWrap.find("ServicesListItem")).toHaveLength(3);
     expect(FabricGridWrap.find("GMServiceCard")).toHaveLength(0);
     expect(FabricGridWrap.html().includes("AAC Remote Information")).toBe(true);
