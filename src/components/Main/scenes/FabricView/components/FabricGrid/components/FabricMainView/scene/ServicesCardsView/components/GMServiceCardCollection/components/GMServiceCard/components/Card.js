@@ -1,8 +1,4 @@
-import {
-  PADDING_BASE,
-  FONT_SIZE_BASE,
-  BORDER_RADIUS_BASE
-} from "style/styleVariables";
+import { PADDING_BASE, BORDER_RADIUS_BASE } from "style/styleVariables";
 import { PropTypes } from "prop-types";
 
 import Color from "color";

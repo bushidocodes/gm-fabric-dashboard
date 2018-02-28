@@ -4688,63 +4688,35 @@ exports[`Storyshots GMLineChart GMLineChart 1`] = `
 `;
 
 exports[`Storyshots Grouping Header Normal Header 1`] = `
-.c0 {
-  font-size: 14px;
-  text-align: left;
-  vertical-align: text-bottom;
-  padding: 0;
-  height: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+Array [
+  <img
+    alt=""
+    src="services.svg"
+  />,
+  .c0 {
+  margin-left: 4px;
   text-transform: capitalize;
-}
-
-.c1 {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  top: -4px;
-}
-
-.c2 {
-  margin-left: 8px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    <img
-      alt=""
-      src="services.svg"
-    />
-  </div>
-  <span
-    class="c2"
+<h1
+    class="c0"
   >
     Sample Title
-  </span>
-</div>
+  </h1>,
+]
 `;
 
 exports[`Storyshots Grouping Header With Status Icon 1`] = `
-.c3 {
+Array [
+  .c1 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c2 {
+.c0 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -4753,86 +4725,56 @@ exports[`Storyshots Grouping Header With Status Icon 1`] = `
   vertical-align: middle;
 }
 
-.c2:not(:root) {
+.c0:not(:root) {
   overflow: visible;
 }
 
-.c0 {
-  font-size: 14px;
-  text-align: left;
-  vertical-align: text-bottom;
-  padding: 0;
-  height: 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-transform: capitalize;
-}
-
-.c1 {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  top: -4px;
-}
-
-.c4 {
-  margin-left: 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
+<svg
+    aria-labelledby="ariaLabelledby"
+    class="c0"
+    focusable="false"
+    version="1.1"
+    viewBox="0 0 24 24"
+    xlink="http://www.w3.org/1999/xlink"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <svg
-      aria-labelledby="ariaLabelledby"
-      class="c2"
-      focusable="false"
-      version="1.1"
-      viewBox="0 0 24 24"
-      xlink="http://www.w3.org/1999/xlink"
-      xmlns="http://www.w3.org/2000/svg"
+    <g
+      class="iconBackground"
+      fill="rgb(10, 171, 42)"
+      fill-opacity=".3"
+      fill-rule="evenodd"
+      id="Square"
     >
-      <g
-        class="iconBackground"
-        fill="rgb(10, 171, 42)"
-        fill-opacity=".3"
-        fill-rule="evenodd"
-        id="Square"
-      >
-        <path
-          d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
-          id="BackgroundCircleSmall"
-        />
-      </g>
-      <g
-        class="c3"
-        fill="currentColor"
-        title=""
-      >
-        <title />
-        <path
-          d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
-          id="GlyphRunningSmall"
-        />
-      </g>
-    </svg>
-  </div>
-  <span
-    class="c4"
+      <path
+        d="M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
+        id="BackgroundCircleSmall"
+      />
+    </g>
+    <g
+      class="c1"
+      fill="currentColor"
+      title=""
+    >
+      <title />
+      <path
+        d="M11,9.86851709 L11,14.1314829 L14.1972244,12 L11,9.86851709 Z M16,12 L10,16 L10,8 L16,12 Z"
+        id="GlyphRunningSmall"
+      />
+    </g>
+  </svg>,
+  .c0 {
+  margin-left: 4px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+<h1
+    class="c0"
   >
     Stable
-  </span>
-</div>
+  </h1>,
+]
 `;
 
 exports[`Storyshots Icons default 1`] = `
@@ -8099,7 +8041,7 @@ exports[`Storyshots Service Card Service Card 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: #eee;
+  color: hsl(131.89999999999998,44.5%,78.1%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8159,12 +8101,12 @@ exports[`Storyshots Service Card Service Card 1`] = `
 }
 
 .c0 {
-  color: hsl(131.89999999999998,89%,28.4%);
-  background-color: rgb(255,255,255);
-  border: 1px solid rgba(0,0,0,.05);
-  border-top: 2px solid rgb(10,171,42);
+  color: hsl(131.89999999999998,48.9%,7.1%);
+  background-color: hsl(131.89999999999998,48.9%,65.7%);
+  border: 1px solid hsl(131.89999999999998,48.9%,65.7%);
+  border-top: 2px solid hsl(131.89999999999998,48.9%,65.7%);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -8199,9 +8141,9 @@ exports[`Storyshots Service Card Service Card 1`] = `
 
 .c0:hover,
 .c0:focus {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -8210,16 +8152,16 @@ exports[`Storyshots Service Card Service Card 1`] = `
 .c0:focus h1,
 .c0:hover footer,
 .c0:focus footer {
-  -webkit-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  -ms-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  transform: scale(calc(1/1.05)) translate3d(0,0,0);
+  -webkit-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  -ms-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  transform: scale(calc(1/1.025)) translate3d(0,0,0);
 }
 
 .c0:hover .background-icon,
 .c0:focus .background-icon {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
 }
 
 .c0:active {
@@ -8497,7 +8439,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: #eee;
+  color: hsl(131.89999999999998,44.5%,78.1%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8575,7 +8517,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   border: 1px solid rgb(235,0,26);
   border-top: 2px solid rgb(235,0,26);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -8598,12 +8540,12 @@ exports[`Storyshots Service Card Services Grid 1`] = `
 }
 
 .c0 {
-  color: hsl(131.89999999999998,89%,28.4%);
-  background-color: rgb(255,255,255);
-  border: 1px solid rgba(0,0,0,.05);
-  border-top: 2px solid rgb(10,171,42);
+  color: hsl(131.89999999999998,48.9%,7.1%);
+  background-color: hsl(131.89999999999998,48.9%,65.7%);
+  border: 1px solid hsl(131.89999999999998,48.9%,65.7%);
+  border-top: 2px solid hsl(131.89999999999998,48.9%,65.7%);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -8631,7 +8573,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   border: 1px solid rgb(248,180,0);
   border-top: 2px solid rgb(248,180,0);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -10020,7 +9962,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   border: 1px solid rgb(248,180,0);
   border-top: 2px solid rgb(248,180,0);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -10055,9 +9997,9 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
 
 .c1:hover,
 .c1:focus {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -10066,16 +10008,16 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
 .c1:focus h1,
 .c1:hover footer,
 .c1:focus footer {
-  -webkit-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  -ms-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  transform: scale(calc(1/1.05)) translate3d(0,0,0);
+  -webkit-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  -ms-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  transform: scale(calc(1/1.025)) translate3d(0,0,0);
 }
 
 .c1:hover .background-icon,
 .c1:focus .background-icon {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
 }
 
 .c1:active {
@@ -10171,6 +10113,10 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   -webkit-flex-basis: 100%;
   -ms-flex-basis: 100%;
   flex-basis: 100%;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: -4px;
 }
 
 @media all and (min-width:375px) {
@@ -10504,7 +10450,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: #eee;
+  color: hsl(131.89999999999998,44.5%,78.1%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10582,7 +10528,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   border: 1px solid rgb(248,180,0);
   border-top: 2px solid rgb(248,180,0);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -10617,9 +10563,9 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c13:hover,
 .c13:focus {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -10628,16 +10574,16 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 .c13:focus h1,
 .c13:hover footer,
 .c13:focus footer {
-  -webkit-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  -ms-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  transform: scale(calc(1/1.05)) translate3d(0,0,0);
+  -webkit-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  -ms-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  transform: scale(calc(1/1.025)) translate3d(0,0,0);
 }
 
 .c13:hover .background-icon,
 .c13:focus .background-icon {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
 }
 
 .c13:active {
@@ -10649,12 +10595,12 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 }
 
 .c1 {
-  color: hsl(131.89999999999998,89%,28.4%);
-  background-color: rgb(255,255,255);
-  border: 1px solid rgba(0,0,0,.05);
-  border-top: 2px solid rgb(10,171,42);
+  color: hsl(131.89999999999998,48.9%,7.1%);
+  background-color: hsl(131.89999999999998,48.9%,65.7%);
+  border: 1px solid hsl(131.89999999999998,48.9%,65.7%);
+  border-top: 2px solid hsl(131.89999999999998,48.9%,65.7%);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -10689,9 +10635,9 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c1:hover,
 .c1:focus {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -10700,16 +10646,16 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 .c1:focus h1,
 .c1:hover footer,
 .c1:focus footer {
-  -webkit-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  -ms-transform: scale(calc(1/1.05)) translate3d(0,0,0);
-  transform: scale(calc(1/1.05)) translate3d(0,0,0);
+  -webkit-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  -ms-transform: scale(calc(1/1.025)) translate3d(0,0,0);
+  transform: scale(calc(1/1.025)) translate3d(0,0,0);
 }
 
 .c1:hover .background-icon,
 .c1:focus .background-icon {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.025);
+  transform: scale(1.025);
 }
 
 .c1:active {
@@ -10726,7 +10672,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   border: 1px solid rgb(235,0,26);
   border-top: 2px solid rgb(235,0,26);
   width: 100%;
-  border-radius: 1px;
+  border-radius: 3px;
   height: 112px;
   margin: 4px;
   padding: 12px 12px 8px;
@@ -10846,6 +10792,10 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   -webkit-flex-basis: 100%;
   -ms-flex-basis: 100%;
   flex-basis: 100%;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: -4px;
 }
 
 @media all and (min-width:375px) {

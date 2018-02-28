@@ -9,10 +9,10 @@ import { FONT_SIZE_BASE } from "style/styleVariables";
 import ServicesIcon from "images/icons/services.svg";
 
 const HeaderTitle = styled.h1`
-  margin-left: ${spacingScale(1)};
+  margin-left: ${spacingScale(0.5)};
   text-transform: capitalize;
   font-size: ${FONT_SIZE_BASE};
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 GMServiceHeader.propTypes = {
