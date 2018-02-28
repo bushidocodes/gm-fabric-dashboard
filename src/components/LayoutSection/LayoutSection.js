@@ -14,6 +14,7 @@ LayoutSection.propTypes = {
   className: PropTypes.string,
   flex: PropTypes.bool,
   icon: PropTypes.string,
+  stretch: PropTypes.bool,
   title: PropTypes.string.isRequired
 };
 
@@ -22,17 +23,27 @@ LayoutSection.propTypes = {
  * @param {Object} props - refer to propTypes
  */
 
-function LayoutSection({ children, title, icon, flex = false }) {
+function LayoutSection({
+  children,
+  title,
+  icon,
+  flex = false,
+  stretch = false
+}) {
   return (
-    <LayoutSectionWrap>
-      <Header>
-        <SectionIcon>
-          <Icon>
-            <Glyph name={icon} />
-          </Icon>
-        </SectionIcon>
-        <SectionTitle>{title}</SectionTitle>
-      </Header>
+    <LayoutSectionWrap stretch={stretch}>
+      {title && (
+        <Header>
+          {icon && (
+            <SectionIcon>
+              <Icon>
+                <Glyph name={icon} />
+              </Icon>
+            </SectionIcon>
+          )}
+          <SectionTitle>{title}</SectionTitle>
+        </Header>
+      )}
       <SectionContent flex={flex}>{children}</SectionContent>
     </LayoutSectionWrap>
   );

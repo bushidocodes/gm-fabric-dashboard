@@ -18,11 +18,11 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -30,7 +30,6 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,24 +37,38 @@ Array [
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
@@ -611,11 +624,11 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -623,7 +636,6 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -631,24 +643,38 @@ Array [
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
@@ -846,7 +872,7 @@ Array [
       class="c6"
     >
       <div
-        style="height:250px"
+        style="height:250px;width:100%"
       >
         <div
           aria-label="The average for currently displayed data is equal to 0."

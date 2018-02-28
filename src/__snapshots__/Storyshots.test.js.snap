@@ -313,6 +313,10 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 .c7 {
   color: rgb(255,255,255);
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c7 > :first-child {
@@ -326,19 +330,19 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 .c8 {
   position: absolute;
   background-color: rgb(255,255,255);
-  border-radius: 6px;
-  color: rgb(0,0,0);
-  font-weight: 500;
+  border-radius: 3px;
+  color: rgb(32,32,32);
   opacity: 0;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 0;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   white-space: normal;
-  width: 120px;
-  z-index: 1070;
+  -webkit-flex: 1 1 10em;
+  -ms-flex: 1 1 10em;
+  flex: 1 1 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -346,6 +350,7 @@ exports[`Storyshots App Header AppToolbar 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  right: 0;
 }
 
 .c9 {
@@ -929,6 +934,10 @@ exports[`Storyshots App Header Default App Header 1`] = `
 .c8 {
   color: rgb(255,255,255);
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .c8 > :first-child {
@@ -942,19 +951,19 @@ exports[`Storyshots App Header Default App Header 1`] = `
 .c9 {
   position: absolute;
   background-color: rgb(255,255,255);
-  border-radius: 6px;
-  color: rgb(0,0,0);
-  font-weight: 500;
+  border-radius: 3px;
+  color: rgb(32,32,32);
   opacity: 0;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 8px;
+  margin: 0;
   text-align: right;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   white-space: normal;
-  width: 120px;
-  z-index: 1070;
+  -webkit-flex: 1 1 10em;
+  -ms-flex: 1 1 10em;
+  flex: 1 1 10em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -962,6 +971,7 @@ exports[`Storyshots App Header Default App Header 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  right: 0;
 }
 
 .c10 {
@@ -6403,11 +6413,11 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -6415,7 +6425,6 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6423,24 +6432,38 @@ exports[`Storyshots Layout Section default 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
