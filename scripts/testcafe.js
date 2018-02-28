@@ -1,6 +1,7 @@
 const createTestCafe = require("testcafe");
 const glob = require("glob-promise");
 const BrowserStack = require("browserstack");
+const chalk = require("chalk");
 
 // Each sub array defines a batch of browserstack workers.
 // Our current plan allows for a max of 5 workers at a time,
@@ -70,7 +71,9 @@ async function startTests(browsers, createTestCafeInstance) {
   let sessionInfo = await getRunningBrowserstackSessions();
   if (sessionInfo.running_sessions !== 0) {
     console.error(
-      "There are not enough available Browserstack workers to run these tests. Please cancel any running sessions from the Browserstack Automate dashboard and try again."
+      chalk.red(
+        "There are not enough available Browserstack workers to run these tests. \nPlease cancel any running sessions from the Browserstack Automate dashboard and try again. \n"
+      )
     );
   } else {
     // Create a new testcafe instance for each batch of browsers

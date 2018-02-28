@@ -10,7 +10,7 @@ const serviceViewModel = new ServiceViewModel();
 const defaultTimeout = 30;
 
 // The following test all views common to both JVM and GO instance views
-fixture`Instance View`.page`http://localhost:3000`.beforeEach(
+fixture`Instance View`.page`http://localhost:3000/`.beforeEach(
   async t =>
     await t
       .click(fabricViewModel.linkStable)

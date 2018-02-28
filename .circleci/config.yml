@@ -228,14 +228,14 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
-      # - test:e2e:
-      #     requires:
-      #       - setup
-      #     filters:
-      #       tags:
-      #         only: /^v.*/
-      #       branches:
-      #         ignore: /.*/
+      - test:e2e:
+          requires:
+            - setup
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
       - build:
           requires: 
             - setup
@@ -247,7 +247,7 @@ workflows:
               only: /^v.*/
       - draft-github-release:
           requires:
-            # - test:e2e
+            - test:e2e
             - build
           filters:
             branches:
