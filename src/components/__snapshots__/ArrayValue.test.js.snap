@@ -2,8 +2,7 @@
 
 exports[`ArrayValue matches snapshot 1`] = `
 .c0 span + span {
-  font-size: 80%;
-  opacity: 0.8;
+  font-size: 66.66%;
 }
 
 <div

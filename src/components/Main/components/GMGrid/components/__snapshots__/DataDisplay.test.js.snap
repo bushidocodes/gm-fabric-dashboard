@@ -2,13 +2,9 @@
 
 exports[`DataDisplay matches snapshot when table is false 1`] = `
 .c0 {
-  background-color: rgb(245,245,245);
   border-radius: 3px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   height: 100%;
-  padding: 8px;
-  padding-top: 48px;
 }
 
 <div
@@ -18,13 +14,9 @@ exports[`DataDisplay matches snapshot when table is false 1`] = `
 
 exports[`DataDisplay matches snapshot when table is true 1`] = `
 .c0 {
-  background-color: rgb(245,245,245);
   border-radius: 3px;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   height: 100%;
-  padding: 8px;
-  padding-top: 48px;
   text-align: right;
 }
 

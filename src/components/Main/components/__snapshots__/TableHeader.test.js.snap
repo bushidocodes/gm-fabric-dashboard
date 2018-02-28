@@ -15,7 +15,7 @@ exports[`TableHeader matches snapshot 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  font-weight: 400;
+  font-weight: 500;
   overflow: visible;
   width: 100%;
 }

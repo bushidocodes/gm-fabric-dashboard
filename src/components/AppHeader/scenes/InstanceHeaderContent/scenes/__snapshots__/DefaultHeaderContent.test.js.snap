@@ -26,13 +26,13 @@ exports[`DefaultHeaderContent matches snapshot 1`] = `
 }
 
 .c2 h1 {
-  font-size: 18px;
+  font-size: 14px;
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   line-height: 1;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 

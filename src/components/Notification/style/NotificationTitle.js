@@ -1,6 +1,6 @@
 import { spacingScale } from "style/styleFunctions";
 import {
-  FONT_SIZE_SM,
+  FONT_SIZE_BASE,
   FONT_STACK_DATA,
   FONT_WEIGHT_REGULAR
 } from "style/styleVariables";
@@ -11,7 +11,7 @@ const NotificationTitle = `
     font-weight: ${FONT_WEIGHT_REGULAR};
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    font-size: ${FONT_SIZE_SM};
+    font-size: ${FONT_SIZE_BASE}; 
     font-family: ${FONT_STACK_DATA};
     padding: 0;
   }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import {
   CHART_BACKGROUND_COLOR,
-  FONT_SIZE_LG,
+  FONT_SIZE_BASE,
   COLOR_WARNING,
   COLOR_CONTENT_MUTED
 } from "style/styleVariables";
@@ -22,8 +22,7 @@ const LineChartEmpty = styled.div`
   h1 {
     border-bottom: 1px solid ${edgeColor(CHART_BACKGROUND_COLOR)};
     color: ${contrastColor(CHART_BACKGROUND_COLOR, "100%", COLOR_WARNING)};
-    font-weight: bold;
-    font-size: ${FONT_SIZE_LG};
+    font-size: ${FONT_SIZE_BASE};
     margin-bottom: ${spacingScale(2)};
     padding-bottom: ${spacingScale(2)};
   }

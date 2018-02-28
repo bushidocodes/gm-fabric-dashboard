@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import {
   COLOR_WHITE,
-  FONT_STACK_BASE,
-  FONT_SIZE_SM,
+  FONT_SIZE_BASE,
   ZINDEX_TOOLTIP
 } from "style/styleVariables";
 
@@ -10,8 +9,7 @@ const TooltipContent = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
   color: ${COLOR_WHITE.string()};
-  font-family: ${FONT_STACK_BASE};
-  font-size: ${FONT_SIZE_SM};
+  font-size: ${FONT_SIZE_BASE};
   opacity: 0;
   padding: 10px;
   position: absolute;

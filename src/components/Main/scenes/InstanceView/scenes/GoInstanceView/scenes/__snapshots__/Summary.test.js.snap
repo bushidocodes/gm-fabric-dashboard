@@ -60,7 +60,8 @@ Array [
 
 .c5 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -114,7 +115,6 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -150,7 +150,6 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
@@ -252,25 +251,25 @@ Array [
 }
 
 .c13 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c14 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
 .c16 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 14px;
   margin: 0;
+  font-weight: 500;
   min-height: 1em;
   opacity: 0.85;
 }
@@ -292,8 +291,7 @@ Array [
 }
 
 .c15 span + span {
-  font-size: 80%;
-  opacity: 0.8;
+  font-size: 66.66%;
 }
 
 @media all and (max-width:1000px) {
@@ -714,7 +712,8 @@ Array [
 
 .c5 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -769,7 +768,7 @@ Array [
 }
 
 .c10 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .c10:hover .dygraph-legend {
@@ -803,13 +802,13 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   height: auto;
   width: 100%;
 }
 
 .c8 {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
   padding: 8px 16px;
   -webkit-flex: 1 0 40px;

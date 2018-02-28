@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   COLOR_WHITE,
   COLOR_BLACK,
-  FONT_STACK_BASE,
+  FONT_WEIGHT_SEMIBOLD,
   ZINDEX_TOOLTIP
 } from "style/styleVariables";
 
@@ -11,8 +11,7 @@ const LanguageSelectorContent = styled.ul`
   background-color: ${COLOR_WHITE.string()};
   border-radius: 6px;
   color: ${COLOR_BLACK.string()};
-  font-family: ${FONT_STACK_BASE};
-  font-weight: 700;
+  font-weight: ${FONT_WEIGHT_SEMIBOLD};
   opacity: 0;
   padding: 10px;
   margin: 5px 0;

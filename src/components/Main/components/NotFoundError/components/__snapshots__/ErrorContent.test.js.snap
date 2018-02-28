@@ -19,7 +19,7 @@ exports[`ErrorContent matches snapshot 1`] = `
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  font-size: 32px;
+  font-size: 40px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

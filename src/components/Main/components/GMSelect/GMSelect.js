@@ -4,7 +4,6 @@ import styled from "styled-components";
 import {
   ZINDEX_DROPDOWN,
   FONT_WEIGHT_SEMIBOLD,
-  FONT_STACK_BASE,
   FONT_SIZE_BASE
 } from "style/styleVariables";
 
@@ -12,7 +11,6 @@ import {
 import "react-select/dist/react-select.css";
 
 const GMSelect = styled(Select)`
-  font-family: ${FONT_STACK_BASE};
   flex-grow: 1;
   font-size: ${FONT_SIZE_BASE};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 import {
   COLOR_ALT_BACKGROUND,
-  FONT_SIZE_LG,
+  FONT_SIZE_BASE,
   FONT_WEIGHT_SEMIBOLD
 } from "style/styleVariables";
 
@@ -22,7 +22,7 @@ const TabTitle = styled.div`
   margin: ${spacingScale(0.5)} 0 0;
 
   h1 {
-    font-size: ${FONT_SIZE_LG};
+    font-size: ${FONT_SIZE_BASE};
     flex: 1 1 100%;
     line-height: 1;
     margin: 0;

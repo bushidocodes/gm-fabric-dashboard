@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { CHART_BACKGROUND_COLOR, FONT_STACK_DATA } from "style/styleVariables";
+import { CHART_BACKGROUND_COLOR } from "style/styleVariables";
 import { chartHeight } from "style/styleFunctions";
 
 const LineChartDisplay = styled.div.attrs({
@@ -12,7 +12,6 @@ const LineChartDisplay = styled.div.attrs({
   display: flex;
   flex: 1 1 100%;
   flex-direction: column;
-  font-family: ${FONT_STACK_DATA};
   ${props => (props.height ? chartHeight(props.height) : "height:  100%")};
   width: 100%;
 `;

@@ -1,4 +1,4 @@
-import { PADDING_BASE, FONT_SIZE_SM } from "style/styleVariables";
+import { PADDING_BASE } from "style/styleVariables";
 import { PropTypes } from "prop-types";
 
 import Color from "color";
@@ -18,7 +18,6 @@ export const CardContainer = styled.div`
   margin: ${parseInt(CARD_SPACING, 10) / 2}px;
   padding: ${parseInt(PADDING_BASE, 10) * 1.5}px
     ${parseInt(PADDING_BASE, 10) * 1.5}px ${parseInt(PADDING_BASE, 10)}px;
-  font-size: ${FONT_SIZE_SM};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

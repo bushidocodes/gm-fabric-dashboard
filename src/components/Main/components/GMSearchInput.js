@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Magnifier from "images/icons/magnifier.svg";
+import { FONT_WEIGHT_REGULAR, FONT_SIZE_BASE } from "style/styleVariables";
 import { form_control } from "components/globalPatterns";
 
 const SearchInput = styled.input.attrs({
@@ -14,6 +15,10 @@ const SearchInput = styled.input.attrs({
   &::-webkit-search-cancel-button {
     cursor: pointer;
   }
+  font-size: ${FONT_SIZE_BASE};
+  font-weight: ${FONT_WEIGHT_REGULAR};
+  line-height: 1.1;
+
   ${form_control};
 `;
 

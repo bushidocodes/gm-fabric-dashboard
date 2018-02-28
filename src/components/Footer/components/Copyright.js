@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
-import {
-  FONT_SIZE_XS,
-  COLOR_CONTENT,
-  COLOR_CONTENT_BACKGROUND
-} from "style/styleVariables";
+import { COLOR_CONTENT, COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const Copyright = styled.p`
-  font-size: ${FONT_SIZE_XS};
+  font-size: 50%;
   margin: 0;
   flex: 0 0 100%;
   text-align: center;

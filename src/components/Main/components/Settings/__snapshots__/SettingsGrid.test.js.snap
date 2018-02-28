@@ -26,8 +26,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -129,8 +128,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   line-height: 1.4;
   border-style: solid;
@@ -297,7 +295,8 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c6 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -393,8 +392,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 .c12 .input-range__label.input-range__label--value {
   color: rgb(10,171,42);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 400;
   line-height: 0;
   margin-left: -50%;
@@ -462,8 +460,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   background-color: rgba(0,0,0,0.8);
   border-radius: 6px;
   color: rgb(255,255,255);
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   opacity: 0;
   padding: 10px;
   position: absolute;
@@ -566,7 +563,6 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -649,18 +645,18 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c16 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c17 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 

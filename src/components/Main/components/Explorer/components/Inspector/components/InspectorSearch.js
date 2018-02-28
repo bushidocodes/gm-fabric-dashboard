@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-import { COLOR_WHITE, COLOR_HIGHLIGHT } from "style/styleVariables";
+import {
+  COLOR_WHITE,
+  COLOR_HIGHLIGHT,
+  FONT_SIZE_BASE,
+} from "style/styleVariables";
 import { form_control } from "components/globalPatterns";
 
 const InspectorSearch = styled.input`
@@ -10,6 +14,7 @@ const InspectorSearch = styled.input`
 
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
     0 0 0 rgba(0, 0, 0, 0);
+  font-size: ${FONT_SIZE_BASE};
   text-align: left;
   user-select: auto;
   width: calc(100% - 16px);

@@ -71,21 +71,22 @@ export const FONT_GROUP_DATA = "Rubik";
 export const FONT_GROUP_CODE = `"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace`;
 export const FONT_GROUP_DATA_MONO = "Source Code Pro";
 
-export const FONT_STACK_BASE = `${FONT_GROUP_MAIN_TEXT}, ${FONT_GROUP_SYSTEM}`;
+export const FONT_STACK_BASE = `${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_DATA = `${FONT_GROUP_DATA}, ${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_DATA_MONO = `${FONT_GROUP_DATA_MONO}, ${FONT_GROUP_DATA}, ${FONT_GROUP_SYSTEM}`;
 export const FONT_STACK_CODE = FONT_GROUP_CODE;
 
 export const LINE_HEIGHT_BASE = 1.4;
 export const FONT_WEIGHT_REGULAR = 400;
-export const FONT_WEIGHT_SEMIBOLD = 600;
-export const FONT_SIZE_HERO = "32px";
-export const FONT_SIZE_H2 = "24px";
-export const FONT_SIZE_H3 = "22px";
+export const FONT_WEIGHT_SEMIBOLD = 500;
+export const FONT_SIZE_TITLE = "36px";
+export const FONT_SIZE_HERO = "40px";
+export const FONT_SIZE_H2 = "28px";
+export const FONT_SIZE_H3 = "24px";
 export const FONT_SIZE_LG = "18px";
 export const FONT_SIZE_BASE = "14px";
-export const FONT_SIZE_SM = "11px";
-export const FONT_SIZE_XS = "9px";
+export const FONT_SIZE_SM = "12px";
+export const FONT_SIZE_XS = "10px";
 
 // Line chart
 
