@@ -112,8 +112,6 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1065,8 +1063,6 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 

@@ -186,8 +186,6 @@ exports[`Table Toolbar matches snapshot 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -290,8 +288,6 @@ exports[`Table Toolbar matches snapshot 1`] = `
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 

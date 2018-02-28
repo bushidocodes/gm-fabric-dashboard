@@ -97,8 +97,6 @@ exports[`PollingSettings component Matches the snapshot 1`] = `
 }
 
 .c9:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 

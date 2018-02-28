@@ -90,8 +90,6 @@ exports[`Storyshots App Header AppToolbar 1`] = `
 }
 
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -711,8 +709,6 @@ exports[`Storyshots App Header Default App Header 1`] = `
 }
 
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -2473,8 +2469,6 @@ exports[`Storyshots Button default 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -2612,8 +2606,6 @@ exports[`Storyshots Button orientations 1`] = `
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -2717,8 +2709,6 @@ exports[`Storyshots Button orientations 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -2891,8 +2881,6 @@ exports[`Storyshots Button outlines 1`] = `
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -2995,8 +2983,6 @@ exports[`Storyshots Button outlines 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3099,8 +3085,6 @@ exports[`Storyshots Button outlines 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3197,8 +3181,6 @@ exports[`Storyshots Button outlines 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3298,8 +3280,6 @@ exports[`Storyshots Button outlines 1`] = `
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3449,8 +3429,6 @@ exports[`Storyshots Button sizes 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3554,8 +3532,6 @@ exports[`Storyshots Button sizes 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3659,8 +3635,6 @@ exports[`Storyshots Button sizes 1`] = `
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3763,8 +3737,6 @@ exports[`Storyshots Button sizes 1`] = `
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -3867,8 +3839,6 @@ exports[`Storyshots Button sizes 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -4018,8 +3988,6 @@ exports[`Storyshots Button types 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -4122,8 +4090,6 @@ exports[`Storyshots Button types 1`] = `
 }
 
 .c1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -4226,8 +4192,6 @@ exports[`Storyshots Button types 1`] = `
 }
 
 .c2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -4330,8 +4294,6 @@ exports[`Storyshots Button types 1`] = `
 }
 
 .c3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -4434,8 +4396,6 @@ exports[`Storyshots Button types 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -18176,8 +18136,6 @@ exports[`Storyshots Table Toolbar default 1`] = `
 }
 
 .c7:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -18278,8 +18236,6 @@ exports[`Storyshots Table Toolbar default 1`] = `
 }
 
 .c4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 

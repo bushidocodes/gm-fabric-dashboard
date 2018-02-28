@@ -94,8 +94,6 @@ exports[`Button Snapshots matches orientation snapshots 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -207,8 +205,6 @@ exports[`Button Snapshots matches orientation snapshots 2`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -323,8 +319,6 @@ exports[`Button Snapshots matches outline snapshots 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -432,8 +426,6 @@ exports[`Button Snapshots matches outline snapshots 2`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -544,8 +536,6 @@ exports[`Button Snapshots matches outline snapshots 3`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -653,8 +643,6 @@ exports[`Button Snapshots matches outline snapshots 4`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -768,8 +756,6 @@ exports[`Button Snapshots matches outline snapshots 5`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -892,8 +878,6 @@ exports[`Button Snapshots matches size snapshots 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1008,8 +992,6 @@ exports[`Button Snapshots matches size snapshots 2`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1124,8 +1106,6 @@ exports[`Button Snapshots matches size snapshots 3`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1239,8 +1219,6 @@ exports[`Button Snapshots matches size snapshots 4`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1354,8 +1332,6 @@ exports[`Button Snapshots matches size snapshots 5`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1469,8 +1445,6 @@ exports[`Button Snapshots matches type snapshots 1`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1585,8 +1559,6 @@ exports[`Button Snapshots matches type snapshots 2`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1701,8 +1673,6 @@ exports[`Button Snapshots matches type snapshots 3`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1817,8 +1787,6 @@ exports[`Button Snapshots matches type snapshots 4`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
@@ -1933,8 +1901,6 @@ exports[`Button Snapshots matches type snapshots 5`] = `
 }
 
 .c0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0aab2a;
   z-index: 1;
 }
 
