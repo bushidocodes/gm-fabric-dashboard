@@ -48,7 +48,7 @@ jobs:
           name: Cache Code Climate Test Reporter
           paths:
             - cc-test-reporter
-          key: v1-cc-reporter-
+          key: v2-cc-reporter-
       - persist_to_workspace: 
           root: ~/repo
           paths:
