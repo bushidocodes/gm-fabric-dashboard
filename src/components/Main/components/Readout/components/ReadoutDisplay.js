@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
 import { BORDER_RADIUS_BASE } from "style/styleVariables";
-import { contrastColor, spacingScale } from "style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 // TO-DO: remove cacheCard props passed to readout- styled-components after implementing reusable card component
 // for "cacheCard", overrule flex-basis of 100%
@@ -25,7 +25,7 @@ const ReadoutDisplay = styled.div`
   &:before {
     content: "";
     opacity: 0.2;
-    background-color: ${props => props.overallColor.string()};
+    background-color: ${props => props.color.string()};
     position: absolute;
     top: 0;
     right: 0;
@@ -40,7 +40,7 @@ const ReadoutDisplay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 3px solid ${props => props.overallColor.string()};
+    border-bottom: 3px solid ${props => props.color.string()};
   }
 
   @media all and (max-width: 1000px) {
@@ -62,7 +62,7 @@ const ReadoutDisplay = styled.div`
 `;
 
 ReadoutDisplay.propTypes = {
-  overallColor: PropTypes.color,
+  color: PropTypes.color,
   primary: PropTypes.bool
 };
 

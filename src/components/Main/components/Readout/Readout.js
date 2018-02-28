@@ -9,13 +9,13 @@ export default function Readout({
   cacheCard,
   children,
   primary,
-  overallColor,
+  color,
   readoutItems = []
 }) {
   return (
     <ReadoutDisplay
       primary={primary}
-      overallColor={overallColor || COLOR_SUCCESS}
+      color={color || COLOR_SUCCESS}
       cacheCard={cacheCard}
     >
       {readoutItems.map(item => (
@@ -32,7 +32,7 @@ export default function Readout({
 Readout.propTypes = {
   cacheCard: PropTypes.bool,
   children: PropTypes.element,
-  overallColor: PropTypes.color,
+  color: PropTypes.color,
   primary: PropTypes.bool,
   readoutItems: PropTypes.oneOfType([
     PropTypes.arrayOf(ReadoutItemShape),
