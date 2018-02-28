@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { PropTypes } from "prop-types";
 
-import { FONT_SIZE_BASE, BORDER_RADIUS_BASE } from "style/styleVariables";
+import { BORDER_RADIUS_BASE } from "style/styleVariables";
 
 const DataDisplay = styled.div`
   border-radius: ${BORDER_RADIUS_BASE};
-  font-size: ${FONT_SIZE_BASE};
   height: 100%;
   ${props => (props.table ? "text-align: right" : "")};
 `;
