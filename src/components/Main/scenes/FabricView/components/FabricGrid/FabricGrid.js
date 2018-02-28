@@ -123,7 +123,7 @@ class FabricGrid extends Component {
       return (
         <div>
           <ErrorBoundary>
-            <LayoutSection>
+            <LayoutSection title="Summary">
               <ReadoutGroup>
                 <Readout
                   overallColor={COLOR_DANGER}
