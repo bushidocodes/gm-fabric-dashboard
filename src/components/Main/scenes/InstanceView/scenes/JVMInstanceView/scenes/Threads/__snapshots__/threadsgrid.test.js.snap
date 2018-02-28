@@ -2,6 +2,282 @@
 
 exports[`ThreadsGrid View matches snapshot 1`] = `
 Array [
+  .c0 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  color: rgb(32,32,32);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.c0:not(:first-of-type) {
+  margin-top: 32px;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0 8px 0;
+  width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
+}
+
+.c3 {
+  margin: 0 auto;
+  padding: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+}
+
+.c2 {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.c5 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: rgb(230,230,230);
+  border-radius: 3px;
+  color: rgb(0,0,0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 300px;
+  -ms-flex: 1 1 300px;
+  flex: 1 1 300px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 4px;
+}
+
+.c5:first-child:last-child {
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+}
+
+.c5:first-child:last-child > * {
+  text-align: center;
+}
+
+.c5:first-child:last-child > * > :first-child {
+  padding-left: 0;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  -webkit-flex: 1 1 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 75px;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.c6 + .c6:before {
+  border-top: 1px solid currentColor;
+  content: "";
+  left: 0;
+  opacity: 0.125;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.c6 button {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 8px 0;
+}
+
+.c7 {
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.c7:first-child {
+  padding-left: 16px;
+}
+
+.c8 {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  min-height: 1em;
+}
+
+.c9 {
+  font-size: 40px;
+  word-break: break-all;
+  margin: 0;
+  line-height: 1.2;
+  min-height: 1em;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  orphans: 2;
+  width: 100%;
+}
+
+@media all and (max-width:1000px) {
+  .c5 {
+    -webkit-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+<section
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <h3
+        class="c2"
+      >
+        Summary
+      </h3>
+    </header>
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <div
+              class="c7"
+            >
+              <h2
+                class="c8"
+              >
+                Active
+              </h2>
+              <span
+                class="c9"
+              >
+                30
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="c5"
+        >
+          <div
+            class="c6"
+          >
+            <div
+              class="c7"
+            >
+              <h2
+                class="c8"
+              >
+                Idle
+              </h2>
+              <span
+                class="c9"
+              >
+                25
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
   .c2 {
   background-image: url(magnifier.svg);
   background-repeat: no-repeat;
