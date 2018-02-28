@@ -16423,8 +16423,6 @@ exports[`Storyshots Table Functions Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16433,12 +16431,16 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: pointer;
-}
-
-.c10:hover {
-  background-color: hsl(0,0%,98%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c10:focus {
@@ -16549,6 +16551,9 @@ exports[`Storyshots Table Functions Table 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -16556,7 +16561,6 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c12 > div {
-  margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -16596,11 +16600,22 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c0 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -16609,7 +16624,6 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16623,10 +16637,24 @@ exports[`Storyshots Table Functions Table 1`] = `
 }
 
 .c9 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -16792,9 +16820,7 @@ exports[`Storyshots Table Functions Table 1`] = `
           <div
             class="c12"
           >
-            <div>
-              CatalogStream
-            </div>
+            CatalogStream
           </div>
           <div
             class="c13"
@@ -16809,28 +16835,28 @@ exports[`Storyshots Table Functions Table 1`] = `
           class="c15"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -16838,8 +16864,8 @@ exports[`Storyshots Table Functions Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -16878,9 +16904,7 @@ exports[`Storyshots Table Functions Table 1`] = `
           <div
             class="c12"
           >
-            <div>
-              OrderItem
-            </div>
+            OrderItem
           </div>
           <div
             class="c13"
@@ -16895,28 +16919,28 @@ exports[`Storyshots Table Functions Table 1`] = `
           class="c15"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -16924,8 +16948,8 @@ exports[`Storyshots Table Functions Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -16983,8 +17007,6 @@ exports[`Storyshots Table Instance Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16993,8 +17015,16 @@ exports[`Storyshots Table Instance Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: default;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c4:focus {
@@ -17102,11 +17132,22 @@ exports[`Storyshots Table Instance Table 1`] = `
 }
 
 .c0 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -17115,7 +17156,6 @@ exports[`Storyshots Table Instance Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17129,10 +17169,24 @@ exports[`Storyshots Table Instance Table 1`] = `
 }
 
 .c3 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -17382,8 +17436,6 @@ exports[`Storyshots Table Routes Table 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17392,12 +17444,16 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 36px;
-  width: 100%;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   cursor: pointer;
-}
-
-.c10:hover {
-  background-color: hsl(0,0%,98%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: rgb(255,255,255);
+  margin: 8px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px hsl(0,0%,92%);
 }
 
 .c10:focus {
@@ -17529,6 +17585,9 @@ exports[`Storyshots Table Routes Table 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -17536,7 +17595,6 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c12 > div {
-  margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -17576,11 +17634,22 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c0 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .c1 {
@@ -17589,7 +17658,6 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgb(255,255,255);
-  box-shadow: inset 0 -1px hsl(0,0%,92%);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17603,10 +17671,24 @@ exports[`Storyshots Table Routes Table 1`] = `
 }
 
 .c9 {
-  display: block;
   list-style: none;
   margin: 0;
-  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 8px 8px;
 }
 
 .c2 {
@@ -17804,9 +17886,7 @@ exports[`Storyshots Table Routes Table 1`] = `
               </svg>
               GET
             </span>
-            <div>
-              /functionalroles
-            </div>
+            /functionalroles
           </div>
           <div
             class="c16"
@@ -17821,28 +17901,28 @@ exports[`Storyshots Table Routes Table 1`] = `
           class="c18"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -17850,8 +17930,8 @@ exports[`Storyshots Table Routes Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
@@ -17922,9 +18002,7 @@ exports[`Storyshots Table Routes Table 1`] = `
               </svg>
               GET
             </span>
-            <div>
-              /ping
-            </div>
+            /ping
           </div>
           <div
             class="c16"
@@ -17939,28 +18017,28 @@ exports[`Storyshots Table Routes Table 1`] = `
           class="c18"
         >
           <svg
-            preserveAspectRatio="xMaxYMin"
-            viewBox="0 0 240 32"
+            preserveAspectRatio="none"
+            viewBox="0 0 240 24"
           >
             <g>
               <circle
                 cx="2"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <circle
                 cx="238"
-                cy="16"
+                cy="12"
                 r="2"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16 238 30 2 30 2 16"
+                points="2 12 238 12 238 22 2 22 2 12"
                 style="stroke:currentColor;stroke-width:0;fill-opacity:.1;fill:none;pointer-events:auto"
               />
               <polyline
-                points="2 16 238 16"
+                points="2 12 238 12"
                 style="stroke:currentColor;stroke-width:1;stroke-linejoin:round;stroke-linecap:round;fill:none"
               />
             </g>
@@ -17968,8 +18046,8 @@ exports[`Storyshots Table Routes Table 1`] = `
               style="stroke:grey;opacity:0.4"
               x1="2"
               x2="238"
-              y1="18"
-              y2="18"
+              y1="14"
+              y2="14"
             />
           </svg>
         </div>
