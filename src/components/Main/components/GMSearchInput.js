@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 import Magnifier from "images/icons/magnifier.svg";
-import { FONT_WEIGHT_REGULAR, FONT_SIZE_BASE } from "style/styleVariables";
-import { form_control } from "components/globalPatterns";
+import {
+  COLOR_CONTENT_BACKGROUND,
+  FONT_WEIGHT_REGULAR,
+  FONT_SIZE_BASE,
+  BORDER_RADIUS_BASE
+} from "style/styleVariables";
+import { spacingScale } from "style/styleFunctions";
 
 const SearchInput = styled.input.attrs({
   type: "search"
@@ -12,14 +17,26 @@ const SearchInput = styled.input.attrs({
   background-size: contain;
   position: relative;
   text-indent: 20px;
-  &::-webkit-search-cancel-button {
-    cursor: pointer;
-  }
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: ${BORDER_RADIUS_BASE};
+  text-align: left;
+  background-color: ${COLOR_CONTENT_BACKGROUND};
   font-size: ${FONT_SIZE_BASE};
   font-weight: ${FONT_WEIGHT_REGULAR};
   line-height: 1.1;
+  width: 22em;
+  flex: 1 1 22em;
+  padding: ${spacingScale(0.75)} ${spacingScale(1)};
 
-  ${form_control};
+  &::-webkit-search-cancel-button {
+    cursor: pointer;
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
 `;
 
 export default SearchInput;

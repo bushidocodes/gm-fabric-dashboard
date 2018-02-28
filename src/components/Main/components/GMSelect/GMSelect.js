@@ -7,6 +7,8 @@ import {
   FONT_SIZE_BASE
 } from "style/styleVariables";
 
+import { spacingScale } from "style/styleFunctions";
+
 // Import the Styles needed by React-Select
 import "react-select/dist/react-select.css";
 
@@ -38,6 +40,9 @@ const GMSelect = styled(Select)`
     .Select-input {
       height: 28px;
     }
+  }
+  & + & {
+    margin-left: ${spacingScale(1)};
   }
 `;
 
