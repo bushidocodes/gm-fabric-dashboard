@@ -17,6 +17,7 @@ exports[`Copyright should render when screen is 800px or higher 1`] = `
   border-top: 1px solid rgb(230,230,230);
   margin-top: 8px;
   padding: 8px;
+  text-transform: uppercase;
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;

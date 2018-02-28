@@ -11,11 +11,10 @@ const Copyright = styled.p`
   transition: opacity 0.2s ease;
   cursor: default;
   color: ${COLOR_CONTENT};
-
   border-top: 1px solid ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
   margin-top: ${spacingScale(1)};
   padding: ${spacingScale(1)};
-
+  text-transform: uppercase;
   order: 3;
 
   @media all and (min-width: 800px) {
