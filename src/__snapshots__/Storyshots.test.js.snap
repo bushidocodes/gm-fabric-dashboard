@@ -3949,10 +3949,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(228,0,0);
-  border-color: rgb(220,0,0);
-  border-top-color: rgb(231,4,4);
-  border-bottom-color: rgb(203,0,0);
+  background-color: rgb(235,0,26);
+  border-color: rgb(228,0,19);
+  border-top-color: rgb(238,4,30);
+  border-bottom-color: rgb(210,0,8);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -3982,18 +3982,18 @@ exports[`Storyshots Button types 1`] = `
 .c0:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(218,0,0);
-  border-color: rgb(212,0,0);
-  border-top-color: rgb(222,3,3);
-  border-bottom-color: rgb(195,0,0);
+  background-color: rgb(226,0,18);
+  border-color: rgb(218,0,11);
+  border-top-color: rgb(229,4,21);
+  border-bottom-color: rgb(202,0,1);
   color: hsl(0,0%,92.5%);
 }
 
 .c0:hover {
-  background-color: rgb(226,0,0);
-  border-color: rgb(219,0,0);
-  border-top-color: rgb(229,4,4);
-  border-bottom-color: rgb(202,0,0);
+  background-color: rgb(233,0,24);
+  border-color: rgb(226,0,18);
+  border-top-color: rgb(237,4,28);
+  border-bottom-color: rgb(208,0,6);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4009,8 +4009,8 @@ exports[`Storyshots Button types 1`] = `
 .c0[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(0,0%,41.9%);
-  border-color: hsl(0,0%,41.9%);
+  background-color: hsl(353.4,0%,43.3%);
+  border-color: hsl(353.4,0%,43.3%);
   color: hsl(0,0%,94%);
 }
 
@@ -4053,10 +4053,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(0,0,255);
-  border-color: rgb(0,0,247);
-  border-top-color: rgb(11,11,251);
-  border-bottom-color: rgb(0,0,228);
+  background-color: rgb(9,77,255);
+  border-color: rgb(0,65,255);
+  border-top-color: rgb(21,84,251);
+  border-bottom-color: rgb(0,51,236);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -4086,18 +4086,18 @@ exports[`Storyshots Button types 1`] = `
 .c1:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(0,0,245);
-  border-color: rgb(0,0,237);
-  border-top-color: rgb(4,4,248);
-  border-bottom-color: rgb(0,0,219);
+  background-color: rgb(0,63,253);
+  border-color: rgb(0,56,245);
+  border-top-color: rgb(10,70,251);
+  border-bottom-color: rgb(0,43,227);
   color: hsl(0,0%,92.5%);
 }
 
 .c1:hover {
-  background-color: rgb(0,0,253);
-  border-color: rgb(0,0,245);
-  border-top-color: rgb(9,9,251);
-  border-bottom-color: rgb(0,0,226);
+  background-color: rgb(3,73,255);
+  border-color: rgb(0,64,250);
+  border-top-color: rgb(15,81,251);
+  border-bottom-color: rgb(0,51,231);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4113,8 +4113,8 @@ exports[`Storyshots Button types 1`] = `
 .c1[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(240,0%,47%);
-  border-color: hsl(240,0%,47%);
+  background-color: hsl(223.39999999999998,0%,48.7%);
+  border-color: hsl(223.39999999999998,0%,48.7%);
   color: hsl(0,0%,94%);
 }
 
@@ -4261,10 +4261,10 @@ exports[`Storyshots Button types 1`] = `
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: rgb(250,198,15);
-  border-color: rgb(251,195,0);
-  border-top-color: rgb(247,198,26);
-  border-bottom-color: rgb(232,177,0);
+  background-color: rgb(248,180,0);
+  border-color: rgb(240,172,0);
+  border-top-color: rgb(251,184,4);
+  border-bottom-color: rgb(222,156,0);
   color: rgb(255,255,255);
   font-size: 14px;
   border-radius: 3px;
@@ -4294,18 +4294,18 @@ exports[`Storyshots Button types 1`] = `
 .c3:active {
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
-  background-color: rgb(249,193,0);
-  border-color: rgb(241,185,0);
-  border-top-color: rgb(251,196,5);
-  border-bottom-color: rgb(223,168,0);
+  background-color: rgb(238,170,0);
+  border-color: rgb(230,163,0);
+  border-top-color: rgb(242,174,4);
+  border-bottom-color: rgb(213,147,0);
   color: hsl(0,0%,92.5%);
 }
 
 .c3:hover {
-  background-color: rgb(252,198,9);
-  border-color: rgb(249,193,0);
-  border-top-color: rgb(248,198,21);
-  border-bottom-color: rgb(230,176,0);
+  background-color: rgb(246,178,0);
+  border-color: rgb(238,171,0);
+  border-top-color: rgb(250,182,4);
+  border-bottom-color: rgb(220,154,0);
   color: hsl(0,0%,98.5%);
 }
 
@@ -4321,8 +4321,8 @@ exports[`Storyshots Button types 1`] = `
 .c3[disabled]:active {
   cursor: default;
   opacity: 0.8;
-  background-color: hsl(46.69999999999999,0%,48.8%);
-  border-color: hsl(46.69999999999999,0%,48.8%);
+  background-color: hsl(43.5,0%,45.7%);
+  border-color: hsl(43.5,0%,45.7%);
   color: hsl(0,0%,94%);
 }
 
@@ -6840,7 +6840,7 @@ exports[`Storyshots NotFoundError default 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid rgb(250,198,15);
+  border: 1px solid rgb(248,180,0);
   border-radius: 6px;
   color: rgb(32,32,32);
   display: -webkit-inline-box;
@@ -8440,7 +8440,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8466,7 +8466,7 @@ exports[`Storyshots Service Card Services Grid 1`] = `
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(0,100%,34%);
+  color: hsl(353.4,100%,36.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -8527,9 +8527,9 @@ exports[`Storyshots Service Card Services Grid 1`] = `
 
 .c10 {
   color: white;
-  background-color: hsl(0,100%,42.5%);
-  border: 1px solid hsl(0,100%,42.5%);
-  border-top: 2px solid hsl(0,100%,42.5%);
+  background-color: rgb(235,0,26);
+  border: 1px solid rgb(235,0,26);
+  border-top: 2px solid rgb(235,0,26);
   width: 100%;
   border-radius: 1px;
   height: 112px;
@@ -8583,9 +8583,9 @@ exports[`Storyshots Service Card Services Grid 1`] = `
 
 .c13 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
@@ -9911,7 +9911,7 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -9972,9 +9972,9 @@ exports[`Storyshots Service Cards Collection with a single grouping header and g
 
 .c1 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
@@ -10447,7 +10447,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(46.69999999999999,95.9%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10473,7 +10473,7 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
   z-index: 1;
   height: 96px;
   width: 96px;
-  color: hsl(0,100%,34%);
+  color: hsl(353.4,100%,36.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -10534,9 +10534,9 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c13 {
   color: black;
-  background-color: rgb(250,198,15);
-  border: 1px solid rgb(250,198,15);
-  border-top: 2px solid rgb(250,198,15);
+  background-color: rgb(248,180,0);
+  border: 1px solid rgb(248,180,0);
+  border-top: 2px solid rgb(248,180,0);
   width: 100%;
   border-radius: 1px;
   height: 112px;
@@ -10678,9 +10678,9 @@ exports[`Storyshots Service Cards Collection with multiple grouping headers and 
 
 .c10 {
   color: white;
-  background-color: hsl(0,100%,42.5%);
-  border: 1px solid hsl(0,100%,42.5%);
-  border-top: 2px solid hsl(0,100%,42.5%);
+  background-color: rgb(235,0,26);
+  border: 1px solid rgb(235,0,26);
+  border-top: 2px solid rgb(235,0,26);
   width: 100%;
   border-radius: 1px;
   height: 112px;
@@ -12350,7 +12350,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -12363,7 +12363,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -12620,7 +12620,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -12885,7 +12885,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -13281,7 +13281,7 @@ exports[`Storyshots Service List Collection with a grouping header and group of 
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -13427,7 +13427,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -13440,7 +13440,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -13829,7 +13829,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -13961,7 +13961,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -14358,7 +14358,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -14491,7 +14491,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -14888,7 +14888,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -15020,7 +15020,7 @@ exports[`Storyshots Service List Collection with multiple grouping headers and g
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -15166,7 +15166,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -15179,7 +15179,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -15529,7 +15529,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
           >
             <g
               class="iconBackground"
-              fill="hsl(0, 100%, 42.5%)"
+              fill="rgb(235, 0, 26)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="SquareSmall"
@@ -15663,7 +15663,7 @@ exports[`Storyshots Service List Item List of Service List Items 1`] = `
           >
             <g
               class="iconBackground"
-              fill="hsl(46.69999999999999, 100%, 46.8%)"
+              fill="hsl(43.5, 100%, 43.8%)"
               fill-opacity=".3"
               fill-rule="evenodd"
               id="TriangleSmall"
@@ -16219,7 +16219,7 @@ exports[`Storyshots Status Icon Down 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -16239,7 +16239,7 @@ exports[`Storyshots Status Icon Down 1`] = `
 >
   <g
     class="iconBackground"
-    fill="hsl(0, 100%, 42.5%)"
+    fill="rgb(235, 0, 26)"
     fill-opacity=".3"
     fill-rule="evenodd"
     id="SquareSmall"
@@ -16329,7 +16329,7 @@ exports[`Storyshots Status Icon Warning 1`] = `
   z-index: 1;
   height: 24px;
   width: 24px;
-  color: hsl(46.69999999999999,100%,41.6%);
+  color: hsl(43.5,100%,38.9%);
   word-spacing: 0;
   vertical-align: middle;
 }
@@ -16349,7 +16349,7 @@ exports[`Storyshots Status Icon Warning 1`] = `
 >
   <g
     class="iconBackground"
-    fill="hsl(46.69999999999999, 100%, 46.8%)"
+    fill="hsl(43.5, 100%, 43.8%)"
     fill-opacity=".3"
     fill-rule="evenodd"
     id="TriangleSmall"
@@ -18690,7 +18690,7 @@ exports[`Storyshots Vizfill bar Vizfill bar 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: rgb(119,86,21);
+  color: rgb(123,86,34);
   left: 0;
   min-width: 2px;
   position: absolute;

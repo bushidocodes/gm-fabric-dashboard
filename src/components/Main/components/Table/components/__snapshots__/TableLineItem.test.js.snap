@@ -53,7 +53,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
 }
 
 .c7 {
-  color: hsl(0,100%,42.5%);
+  color: rgb(235,0,26);
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -98,7 +98,7 @@ exports[`<TableLineItem/> matches snapshot 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: rgb(32,154,38);
+  color: rgb(33,154,40);
   left: 0;
   min-width: 2px;
   position: absolute;

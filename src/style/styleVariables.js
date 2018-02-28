@@ -12,18 +12,16 @@ import SourceCodePro400 from "./fonts/Source_Code_Pro/SourceCodePro-Regular.ttf"
 export const COLOR_BRAND_PRIMARY = Color("#0aab2a");
 export const COLOR_BRAND_SECONDARY = Color("#002e6e");
 
-export const COLOR_RED = Color("#E4251A");
+export const COLOR_RED = Color("#eb001a");
 export const COLOR_BLACK = Color("#000");
 export const COLOR_GREEN = Color("#0aab2a");
 export const COLOR_WHITE = Color("#fff");
 
 export const COLOR_HIGHLIGHT = COLOR_BRAND_PRIMARY;
-export const COLOR_SUCCESS = Color("#0aab2a");
-export const COLOR_DANGER = Color("red")
-  .darken(0.15)
-  .saturate(0.1);
-export const COLOR_WARNING = Color("#FAC60F");
-export const COLOR_INFO = Color("blue");
+export const COLOR_SUCCESS = COLOR_BRAND_PRIMARY;
+export const COLOR_DANGER = COLOR_RED;
+export const COLOR_WARNING = Color("#f8b400");
+export const COLOR_INFO = Color("#094dff");
 
 export const COLOR_STOP_1 = COLOR_SUCCESS;
 export const COLOR_STOP_2 = COLOR_WARNING.mix(COLOR_DANGER, 0.3).darken(0.1);
