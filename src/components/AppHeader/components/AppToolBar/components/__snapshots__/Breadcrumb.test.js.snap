@@ -14,6 +14,7 @@ exports[`Breadcrumb matches snapshot 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  text-transform: capitalize;
 }
 
 .c0:before {
@@ -30,7 +31,7 @@ exports[`Breadcrumb matches snapshot 1`] = `
 }
 
 .c0 a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,7 +43,7 @@ exports[`Breadcrumb matches snapshot 1`] = `
 }
 
 .c0 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(204,204,204);
 }
 
 .c0:first-child:before {

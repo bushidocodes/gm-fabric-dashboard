@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Collapse from "react-collapse";
 
-import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
-import { spacingScale, contrastColor } from "style/styleFunctions";
+import { spacingScale } from "style/styleFunctions";
 
 const TableDrawerCollapse = styled(Collapse)`
   cursor: default;
@@ -11,9 +10,8 @@ const TableDrawerCollapse = styled(Collapse)`
   overflow: hidden;
   padding: 0;
   white-space: normal;
+
   > div:first-child {
-    box-shadow: inset 0 1px
-      ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.02).string()};
     box-sizing: border-box;
     cursor: default;
     height: auto;

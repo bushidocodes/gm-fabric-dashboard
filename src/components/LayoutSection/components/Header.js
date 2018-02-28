@@ -1,21 +1,14 @@
 import styled from "styled-components";
 
-import { spacingScale, contrastColor } from "style/styleFunctions";
-import {
-  COLOR_CONTENT_BACKGROUND,
-  CONTENT_MAX_WIDTH
-} from "style/styleVariables";
+import { spacingScale } from "style/styleFunctions";
 
 const Header = styled.header`
   align-items: center;
-  border-top: 1px solid
-    ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.15).string()};
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: ${CONTENT_MAX_WIDTH};
-  padding: ${(spacingScale(1), spacingScale(2))};
+  padding: 0 ${spacingScale(1)} 0;
   width: 100%;
+  flex: 0 0 ${spacingScale(3)};
 `;
 
 export default Header;

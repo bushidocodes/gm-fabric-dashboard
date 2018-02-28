@@ -16,9 +16,9 @@ const BrandText = styled.span`
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   letter-spacing: 0.03em;
   > a {
-    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
+    color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 1).string()};
     &:hover {
-      color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 1).string()};
+      color: ${contrastColor(APP_TOOLBAR_BACKGROUND_COLOR, 0.85).string()};
     }
   }
 `;

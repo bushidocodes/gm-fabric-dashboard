@@ -6,8 +6,8 @@ exports[`AppVersionLink matches snapshot 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   opacity: 1;
   padding: 0 8px;
 }
