@@ -48,7 +48,7 @@ exports[`Inspector matches snapshot 1`] = `
   flex: 1 1 auto;
 }
 
-.c5 {
+.c6 {
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
@@ -60,7 +60,7 @@ exports[`Inspector matches snapshot 1`] = `
   word-break: break-all;
 }
 
-.c6 {
+.c7 {
   border-radius: 3px;
   cursor: pointer;
   display: -webkit-box;
@@ -74,19 +74,19 @@ exports[`Inspector matches snapshot 1`] = `
   word-wrap: break-word;
 }
 
-.c6:first-child {
+.c7:first-child {
   margin-top: 8px;
 }
 
-.c6:focus {
+.c7:focus {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-.c6:hover {
+.c7:hover {
   color: rgb(10,171,42);
 }
 
-.c6:active {
+.c7:active {
   color: rgb(10,171,42);
   -webkit-transform: scale(0.9875);
   -ms-transform: scale(0.9875);
@@ -95,7 +95,7 @@ exports[`Inspector matches snapshot 1`] = `
   transition-duration: 0;
 }
 
-.c6:focus:active:hover {
+.c7:focus:active:hover {
   outline: 0;
 }
 
@@ -246,15 +246,34 @@ exports[`Inspector matches snapshot 1`] = `
 }
 
 .c2:focus {
-  box-shadow: inset 0 0 0 rgba(255,255,255,0.5), 0 0 0 1px rgb(71,192,95), 0 0 0 4px rgb(194,234,202);
   outline: none;
 }
 
 .c3 {
-  color: currentColor;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.c3 input {
+  margin-right: 0.5em;
 }
 
 .c4 {
+  color: currentColor;
+}
+
+.c5 {
   color: currentColor;
 }
 
@@ -271,9 +290,11 @@ exports[`Inspector matches snapshot 1`] = `
       type="search"
       value=""
     />
-    <label>
+    <label
+      class="c3"
+    >
       <input
-        class="c3"
+        class="c4"
         name="hideZeroMetric"
         type="checkbox"
       />
@@ -281,9 +302,11 @@ exports[`Inspector matches snapshot 1`] = `
         Hide all metrics with only zero values
       </span>
     </label>
-    <label>
+    <label
+      class="c3"
+    >
       <input
-        class="c4"
+        class="c5"
         name="hideStaticMetric"
         type="checkbox"
       />
@@ -293,88 +316,88 @@ exports[`Inspector matches snapshot 1`] = `
     </label>
   </div>
   <ul
-    class="c5"
+    class="c6"
   >
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/build/revision
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/clientregistry/initialresolution_ms
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/clientregistry/size
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/future_pool/active_tasks
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/future_pool/completed_tasks
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/future_pool/pool_size
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       finagle/timer/deviation_ms.avg
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/closes
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connection_duration.count
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connection_received_bytes.count
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connection_requests.count
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connection_sent_bytes.count
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connections
     </div>
     <div
-      class="c6"
+      class="c7"
       tabindex="0"
     >
       http/connects
