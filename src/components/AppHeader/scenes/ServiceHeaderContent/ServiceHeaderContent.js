@@ -1,11 +1,7 @@
-import React from "react";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { injectIntl, intlShape } from "react-intl";
-
-import Tab from "components/AppHeader/components/Tab";
-import TabNav from "components/AppHeader/components/TabNav";
 
 ServiceHeaderContent.propTypes = {
   instanceCount: PropTypes.number,
@@ -14,30 +10,7 @@ ServiceHeaderContent.propTypes = {
 };
 
 function ServiceHeaderContent({ instanceCount, pathname, intl }) {
-  return (
-    // <TabNav>
-    //   <Tab
-    //     title={intl.formatMessage({
-    //       id: "serviceHeaderContent.instances",
-    //       defaultMessage: "Instances",
-    //       description: "Service view tab title"
-    //     })}
-    //     href={pathname}
-    //     icon="Summary"
-    //     lines={[
-    //       {
-    //         name: intl.formatMessage({
-    //           id: "serviceHeaderContent.instances",
-    //           defaultMessage: "Instances",
-    //           description: "Service view tab detail"
-    //         }),
-    //         value: instanceCount || 0
-    //       }
-    //     ]}
-    //   />
-    // </TabNav>
-    null
-  );
+  return null;
 }
 
 function mapStateToProps(state, ownProps) {
