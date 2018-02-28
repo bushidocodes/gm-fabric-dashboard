@@ -431,7 +431,7 @@ Array [
   text-align: center;
 }
 
-.c10 {
+.c11 {
   -webkit-flex: 1 1 12%;
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
@@ -514,7 +514,7 @@ Array [
   overflow: visible;
 }
 
-.c11 {
+.c10 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -523,7 +523,7 @@ Array [
   vertical-align: middle;
 }
 
-.c11:not(:root) {
+.c10:not(:root) {
   overflow: visible;
 }
 
@@ -591,9 +591,6 @@ Array [
           Priority
         </span>
       </div>
-      <div
-        class="c2"
-      />
     </div>
     <ol
       class="c4"
@@ -648,24 +645,10 @@ Array [
         <div
           class="c9"
         >
-          Test Runnable
-        </div>
-        <div
-          class="c10"
-        >
-          Yes
-        </div>
-        <div
-          class="c10"
-        >
-          8
-        </div>
-        <div
-          class="c6"
-        >
+          Test Runnable 
           <svg
             aria-labelledby="ariaLabelledby"
-            class="c11"
+            class="c10"
             focusable="false"
             version="1.1"
             viewBox="0 0 24 24"
@@ -680,7 +663,7 @@ Array [
               <title />
               <g
                 class="glyph"
-                fill="currentColor"
+                fill="rgba(0,0,0,.2)"
                 transform="translate(0 0) scale(1)"
               >
                 <path
@@ -690,6 +673,16 @@ Array [
               </g>
             </g>
           </svg>
+        </div>
+        <div
+          class="c11"
+        >
+          Yes
+        </div>
+        <div
+          class="c11"
+        >
+          8
         </div>
       </li>
     </ol>

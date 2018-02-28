@@ -141,9 +141,6 @@ exports[`ThreadsTable component matches the snapshot 1`] = `
         Priority
       </span>
     </div>
-    <div
-      class="c2"
-    />
   </div>
   <ol
     class="c4"
