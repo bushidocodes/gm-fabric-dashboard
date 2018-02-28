@@ -209,10 +209,7 @@ injectGlobal`
   }
 
   :focus {
-    outline-style: auto;
-    outline-width: 3px;
-    outline-color: ${COLOR_HIGHLIGHT.toString()};
-    outline-color: -webkit-invert;
+    outline-style: 3px auto ${COLOR_HIGHLIGHT.toString()};
     outline-offset: 3px;
   }
 
