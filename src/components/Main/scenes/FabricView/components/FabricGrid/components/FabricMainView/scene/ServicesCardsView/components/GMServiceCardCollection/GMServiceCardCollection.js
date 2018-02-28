@@ -12,7 +12,6 @@ GMServiceCardCollection.propTypes = {
 const ContentItems = styled.div`
   display: flex;
   flex-flow: row wrap;
-  flex-basis: 100%;
   flex: 1 1 auto;
   margin: -${spacingScale(0.5)};
 `;
