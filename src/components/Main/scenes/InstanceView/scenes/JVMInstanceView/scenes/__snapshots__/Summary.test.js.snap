@@ -490,6 +490,10 @@ Array [
               </span>
             </div>
           </div>
+        </div>
+        <div
+          class="c17"
+        >
           <div
             class="c9"
           >
@@ -625,6 +629,9 @@ Array [
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 8px;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c0:not(:first-of-type) {
@@ -872,33 +879,29 @@ Array [
       class="c6"
     >
       <div
-        style="height:250px;width:100%"
+        aria-label="The average for currently displayed data is equal to 0."
+        class="c7"
+        height="normal"
+        role="presentation"
+        tabindex="0"
       >
-        <div
-          aria-label="The average for currently displayed data is equal to 0."
-          class="c7"
-          height="normal"
-          role="presentation"
-          tabindex="0"
+        <h3
+          aria-hidden="true"
+          class="c8"
         >
-          <h3
-            aria-hidden="true"
-            class="c8"
-          >
-            Requests Per Second
-          </h3>
+          Requests Per Second
+        </h3>
+        <div
+          aria-hidden="true"
+          class="c9"
+        >
           <div
-            aria-hidden="true"
-            class="c9"
-          >
-            <div
-              class="c10"
-            />
-          </div>
-          <div
-            class="c11"
+            class="c10"
           />
         </div>
+        <div
+          class="c11"
+        />
       </div>
     </div>
   </section>,
