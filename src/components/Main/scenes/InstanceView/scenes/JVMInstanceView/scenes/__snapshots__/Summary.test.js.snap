@@ -18,11 +18,11 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -30,7 +30,6 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,29 +37,44 @@ Array [
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -114,7 +128,6 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 4px;
 }
 
@@ -150,7 +163,6 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Metropolis,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   margin: 0;
 }
 
@@ -252,25 +264,25 @@ Array [
 }
 
 .c13 {
-  font-size: 11px;
+  font-size: 14px;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 1em;
 }
 
 .c14 {
-  font-size: 32px;
+  font-size: 40px;
   word-break: break-all;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   min-height: 1em;
 }
 
 .c16 {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 14px;
   margin: 0;
+  font-weight: 500;
   min-height: 1em;
   opacity: 0.85;
 }
@@ -292,8 +304,7 @@ Array [
 }
 
 .c15 span + span {
-  font-size: 80%;
-  opacity: 0.8;
+  font-size: 66.66%;
 }
 
 @media all and (max-width:1000px) {
@@ -613,11 +624,11 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin-bottom: 32px;
+  padding: 8px;
 }
 
-.c0:first-of-type > * {
-  border-top: 0;
+.c0:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 .c1 {
@@ -625,7 +636,6 @@ Array [
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid rgb(217,217,217);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -633,29 +643,44 @@ Array [
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 16px;
+  padding: 0 8px 0;
   width: 100%;
+  -webkit-flex: 0 0 24px;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
 }
 
 .c6 {
   margin: 0 auto;
-  max-width: 1300px;
   padding: 8px;
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
 }
 
 .c2 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding-right: 8px !important;
+  padding-right: 4px !important;
 }
 
 .c5 {
   color: inherit;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -710,7 +735,7 @@ Array [
 }
 
 .c10 .dygraph-legend [style*="bold"] {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .c10:hover .dygraph-legend {
@@ -744,15 +769,19 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  font-family: Rubik,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   height: auto;
   width: 100%;
 }
 
+.c7:focus {
+  outline: none;
+}
+
 .c8 {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
   margin: 0;
-  padding: 8px 16px;
+  padding: 8px 8px 0;
   -webkit-flex: 1 0 40px;
   -ms-flex: 1 0 40px;
   flex: 1 0 40px;
@@ -766,7 +795,14 @@ Array [
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   min-height: 250px;
+  border-radius: 3px;
+  border: 1px solid rgb(217,217,217);
+  margin: 8px;
 }
 
 .c9 > * {
@@ -836,7 +872,7 @@ Array [
       class="c6"
     >
       <div
-        style="height:250px"
+        style="height:250px;width:100%"
       >
         <div
           aria-label="The average for currently displayed data is equal to 0."

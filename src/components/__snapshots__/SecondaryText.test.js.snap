@@ -4,7 +4,7 @@ exports[`SecondaryText matches snapshot 1`] = `
 .c0 {
   margin-left: 4px;
   opacity: 0.6;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 <span

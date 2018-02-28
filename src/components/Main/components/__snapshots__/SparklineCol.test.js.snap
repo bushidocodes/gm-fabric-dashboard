@@ -6,12 +6,21 @@ exports[`SparklineCol matches snapshot 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c0 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 <div

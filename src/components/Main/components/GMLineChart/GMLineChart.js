@@ -10,7 +10,6 @@ import LineChartDetails from "./components/LineChartDetails";
 import LineChartEmpty from "./components/LineChartEmpty";
 import LineDetail from "./components/LineDetail";
 import { screenReaderGraphDescription } from "./utils";
-import Span from "components/Main/components/Span";
 import Icon from "components/Icon";
 import Glyph from "components/Glyphs/index";
 
@@ -77,11 +76,9 @@ function GMLineChart({
         {attributes.length === 0 ? (
           <LineChartEmpty>
             <h1>
-              <Span>
-                <Icon borderStyle="BorderTriangleSmall">
-                  <Glyph name={"Exclamation"} />
-                </Icon>
-              </Span>
+              <Icon borderStyle="BorderTriangleSmall" iconRatio="3">
+                <Glyph name={"Exclamation"} />
+              </Icon>
               <FormattedMessage
                 id="GMLineChart.noChartableData"
                 defaultMessage="No chartable data"

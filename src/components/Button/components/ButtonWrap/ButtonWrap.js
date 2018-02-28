@@ -8,7 +8,6 @@ import generateButtonSize from "./utils/generateButtonSize";
 import generateButtonStyle from "./utils/generateButtonStyle";
 
 import {
-  FONT_STACK_BASE,
   COLOR_BRAND_PRIMARY,
   COLOR_DANGER,
   COLOR_INFO,
@@ -46,7 +45,6 @@ const camelCaseConverter = stringInput => {
 const ButtonWrap = styled.button`
   box-sizing: border-box;
   user-select: none;
-  font-family: ${FONT_STACK_BASE};
   font-weight: ${FONT_WEIGHT_SEMIBOLD};
   border-width: 1px;
   line-height: 1.4;

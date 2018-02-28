@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { FONT_SIZE_SM, COLOR_CONTENT_MUTED } from "style/styleVariables";
+import { COLOR_CONTENT_MUTED } from "style/styleVariables";
 import TableColHeader from "./TableColHeader";
 import Tooltip from "components/Tooltip";
 import { injectIntl, intlShape, FormattedMessage } from "react-intl";
@@ -21,7 +21,7 @@ const PercentileHeader = styled.div`
 `;
 
 const Percent = styled.div`
-  font-size: ${FONT_SIZE_SM};
+  font-size: 50%;
   color: ${COLOR_CONTENT_MUTED.string()};
 `;
 

@@ -72,13 +72,11 @@ export default function GMServiceCard({
       cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
       cardHighlightColor = "#000000";
       cardFontColor = "white";
-      cardFontWeight = "500";
       break;
     case "Warning":
       cardBackgroundColor = cardBorderColor = cardBorderAltColor = baseColor;
       cardHighlightColor = "#000000";
       cardFontColor = "black";
-      cardFontWeight = "400";
       break;
     case "Stable":
     default:

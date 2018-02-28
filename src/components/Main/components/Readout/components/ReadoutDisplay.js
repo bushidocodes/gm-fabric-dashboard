@@ -3,8 +3,7 @@ import { PropTypes } from "prop-types";
 
 import {
   COLOR_CONTENT_BACKGROUND,
-  BORDER_RADIUS_BASE,
-  FONT_STACK_BASE
+  BORDER_RADIUS_BASE
 } from "style/styleVariables";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 
@@ -24,7 +23,6 @@ const ReadoutDisplay = styled.div`
   display: flex;
   flex: 1 1 300px;
   flex-direction: column;
-  font-family: ${FONT_STACK_BASE};
   margin: ${props => (props.primary ? 0 : spacingScale(0.5))};
 
   @media all and (max-width: 1000px) {
