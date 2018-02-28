@@ -26,11 +26,11 @@ jobs:
             - cache-{{ checksum "package-lock.json" }}
       - run:
           name: Update npm to 5.7.1 to get npm ci
-          command: if [ ! -d ./node_modules ]; then sudo npm install npm@5.7.1 -g
+          command: sudo if [ ! -d /home/circleci/repo/node_modules ]; then npm install npm@5.7.1 -g
       - run:
           name: Install dependencies
           command: |
-            if [ ! -d ./node_modules ]; then npm ci
+            if [ ! -d /home/circleci/repo/node_modules ]; then npm ci
       - save_cache:
           name: Cache node_modules
           paths:
