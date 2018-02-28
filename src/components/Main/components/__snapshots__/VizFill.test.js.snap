@@ -5,7 +5,7 @@ exports[`VizFill matches snapshot 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;

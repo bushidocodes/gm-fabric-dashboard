@@ -384,20 +384,29 @@ Array [
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c15 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 .c13 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -406,7 +415,7 @@ Array [
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;

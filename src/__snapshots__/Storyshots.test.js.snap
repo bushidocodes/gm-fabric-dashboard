@@ -16449,20 +16449,29 @@ exports[`Storyshots Table Functions Table 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c15 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 .c13 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -16471,7 +16480,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -16483,7 +16492,7 @@ exports[`Storyshots Table Functions Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -17399,20 +17408,29 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-flex: 1 1 12%;
   flex: 1 1 12%;
   text-align: left;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 0;
+  height: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c18 svg {
-  height: 24px;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  border-radius: 3px;
+  background-color: rgba(144,144,144,0.1);
 }
 
 .c16 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
@@ -17421,7 +17439,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -17433,7 +17451,7 @@ exports[`Storyshots Table Routes Table 1`] = `
   background-color: currentColor;
   border-radius: inherit;
   bottom: 0;
-  color: currentColor;
+  color: rgb(10,171,42);
   left: 0;
   min-width: 2px;
   position: absolute;
@@ -17443,7 +17461,7 @@ exports[`Storyshots Table Routes Table 1`] = `
 
 .c13 {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
   line-height: 0.9;
   -webkit-letter-spacing: 0.06em;
@@ -17451,15 +17469,15 @@ exports[`Storyshots Table Routes Table 1`] = `
   -ms-letter-spacing: 0.06em;
   letter-spacing: 0.06em;
   height: fit-content;
-  padding: 2px 4px;
-  background-color: rgb(10,171,42);
+  padding: 4px 4px;
+  background-color: rgba(10,171,42,0.15000000000000002);
   border-radius: 3px;
-  color: rgb(255,255,255);
+  color: rgb(10,171,42);
   margin-right: 4px;
 }
 
 .c13 svg:first-child {
-  margin: -8px -4px -8px -6px;
+  margin: -100% -4px;
 }
 
 .c12 {
@@ -18678,10 +18696,10 @@ exports[`Storyshots Vizfill bar Vizfill bar 1`] = `
 
 .c1 {
   background-color: rgb(230,230,230);
-  border-radius: 1px 4px 4px 1px;
+  border-radius: 2px;
   bottom: 0;
-  height: 3px;
-  left: 0;
+  height: 1px;
+  left: 16px;
   position: absolute;
   right: 16px;
 }
