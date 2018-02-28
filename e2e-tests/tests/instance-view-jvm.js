@@ -6,7 +6,7 @@ const instanceViewModel = new InstanceJvmViewModel();
 const fabricViewModel = new FabricViewModel();
 const serviceViewModel = new ServiceViewModel();
 
-fixture`Instance View: JVM`.page`http://localhost:3000`.beforeEach(async t => {
+fixture`Instance View: JVM`.page`http://localhost:3000/`.beforeEach(async t => {
   await t
     .click(fabricViewModel.linkStable)
     .click(fabricViewModel.servicesCards.withText("JVM"))

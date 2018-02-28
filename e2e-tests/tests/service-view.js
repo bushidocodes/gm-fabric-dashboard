@@ -2,7 +2,7 @@ import FabricViewModel from "../view-models/fabric-view-model";
 import ServiceViewModel from "../view-models/service-view-model";
 import parseUptimeSeconds from "../helpers/uptime-parser";
 
-fixture`Service View`.page`http://localhost:3000`;
+fixture`Service View`.page`http://localhost:3000/`;
 
 const fabricView = new FabricViewModel();
 const serviceView = new ServiceViewModel();

@@ -5,6 +5,13 @@ import BaseInstanceViewModel from "./base-instance-view-model";
 export default class InstanceGoViewModel extends BaseInstanceViewModel {
   constructor() {
     super();
+    // Summary
+    this.summaryHostCPUReadout = ReactSelector(
+      "ReadoutDisplay ItemDisplay"
+    ).withText("Host CPU Utilized");
+    this.summaryMemoryReadout = ReactSelector(
+      "ReadoutDisplay ItemDisplay"
+    ).withText("Memory Utilized");
 
     // Navigation
     this.linkFunctions = ReactSelector("TabLink").withText("Functions");

@@ -2,7 +2,7 @@ import _ from "lodash";
 
 import FabricViewModel from "../view-models/fabric-view-model";
 
-fixture`Fabric View`.page`http://localhost:3000`;
+fixture`Fabric View`.page`http://localhost:3000/`;
 
 const fabricView = new FabricViewModel();
 const defaultTimeout = 30; // Number of seconds to wait before giving up repeated attempts

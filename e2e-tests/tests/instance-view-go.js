@@ -6,7 +6,7 @@ const instanceViewModel = new InstanceGoViewModel();
 const fabricViewModel = new FabricViewModel();
 const serviceViewModel = new ServiceViewModel();
 
-fixture`Instance View: Go`.page`http://localhost:3000`.beforeEach(async t => {
+fixture`Instance View: Go`.page`http://localhost:3000/`.beforeEach(async t => {
   await t
     .click(fabricViewModel.linkStable)
     .click(fabricViewModel.servicesCards.withText("GO"))
@@ -30,7 +30,7 @@ test("Validate Basic Instance View (Go) Layout", async t => {
   await t.expect(allTabCount).eql(5);
 });
 
-test.skip("Summary View", async t => {
+test("Summary View", async t => {
   /*/ Summary view (Go specific items)
       Tests for other summary view items can be found in ./base-instance-view.js
   /*/
