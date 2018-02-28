@@ -70,6 +70,17 @@ exports[`Table Toolbar matches snapshot 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 500;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,6 +104,17 @@ exports[`Table Toolbar matches snapshot 1`] = `
 }
 
 .c7 {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 500;
+  border-width: 1px;
+  line-height: 1.4;
+  border-style: solid;
+  text-transform: none;
+  text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
