@@ -16,6 +16,9 @@ const AppToolBarHeader = styled.nav`
   flex: 0 0 ${APP_TOOLBAR_HEIGHT};
   flex-direction: row;
   font-size: ${APP_TOOLBAR_FONT_SIZE};
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 `;
 
 export default AppToolBarHeader;

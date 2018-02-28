@@ -16,11 +16,11 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%,auto auto;
-  background-repeat: no-repeat,no-repeat;
-  background-position: top left,top -30px right 20%;
   background-color: rgb(0,0,0);
+  background-image: linear-gradient( to right, #000, rgba(0,0,0,0.3), rgba(0,0,0,0) ), url(mesh-web.jpg);
+  background-size: 100% 100%,120% auto;
+  background-position: center center,left center;
+  background-repeat: no-repeat;
 }
 
 .c15 {
@@ -173,6 +173,9 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-size: 14px;
+  background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,1));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .c3 {
@@ -209,11 +212,11 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 }
 
 .c5 > a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
 }
 
 .c5 > a:hover {
-  color: rgb(255,255,255);
+  color: rgb(217,217,217);
 }
 
 .c11 {
@@ -289,6 +292,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  text-transform: capitalize;
 }
 
 .c7:before {
@@ -305,7 +309,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 }
 
 .c7 a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -317,7 +321,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 }
 
 .c7 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(204,204,204);
 }
 
 .c7:first-child:before {
@@ -378,7 +382,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 .c16 {
   background: transparent;
   color: rgb(255,255,255);
-  padding: 12px 16px 12px;
+  padding: 8px 16px 8px;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -550,7 +554,7 @@ exports[`AppHeader component matches snapshot with fabric view tabs 1`] = `
 
 @media all and (min-width:1000px) {
   .c16 {
-    padding: 16px 32px 24px;
+    padding: 16px 16px 8px;
   }
 }
 
@@ -960,11 +964,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-image: linear-gradient( to right, rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0) ), url(mesh-long.png);
-  background-size: 100% 100%,auto auto;
-  background-repeat: no-repeat,no-repeat;
-  background-position: top left,top -30px right 20%;
   background-color: rgb(0,0,0);
+  background-image: linear-gradient( to right, #000, rgba(0,0,0,0.3), rgba(0,0,0,0) ), url(mesh-web.jpg);
+  background-size: 100% 100%,120% auto;
+  background-position: center center,left center;
+  background-repeat: no-repeat;
 }
 
 .c15 {
@@ -1117,6 +1121,9 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   font-size: 14px;
+  background-image: linear-gradient(to top,rgba(0,0,0,0),rgba(0,0,0,1));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .c3 {
@@ -1153,11 +1160,11 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 }
 
 .c5 > a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
 }
 
 .c5 > a:hover {
-  color: rgb(255,255,255);
+  color: rgb(217,217,217);
 }
 
 .c11 {
@@ -1233,6 +1240,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  text-transform: capitalize;
 }
 
 .c7:before {
@@ -1249,7 +1257,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 }
 
 .c7 a {
-  color: rgb(217,217,217);
+  color: rgb(255,255,255);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1261,7 +1269,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 }
 
 .c7 a:hover {
-  color: rgb(255,255,255);
+  color: rgb(204,204,204);
 }
 
 .c7:first-child:before {
@@ -1322,7 +1330,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 .c16 {
   background: transparent;
   color: rgb(255,255,255);
-  padding: 12px 16px 12px;
+  padding: 8px 16px 8px;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
@@ -1494,7 +1502,7 @@ exports[`AppHeader component matches snapshot with instance view tabs 1`] = `
 
 @media all and (min-width:1000px) {
   .c16 {
-    padding: 16px 32px 24px;
+    padding: 16px 16px 8px;
   }
 }
 
