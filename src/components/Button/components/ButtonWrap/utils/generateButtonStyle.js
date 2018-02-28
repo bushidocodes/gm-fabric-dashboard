@@ -445,8 +445,6 @@ function generateButtonStyle({
   } 
 
   &:focus {
-    // outline: none;
-    // box-shadow: 0 0 0 2px #0aab2a;
     z-index: 1;
   }
 
