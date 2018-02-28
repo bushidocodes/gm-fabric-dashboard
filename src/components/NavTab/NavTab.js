@@ -5,8 +5,11 @@ import Icon from "components/Icon";
 import Glyph from "components/Glyphs/";
 import styled from "styled-components";
 
-import { COLOR_HIGHLIGHT } from "style/styleVariables";
-import { spacingScale } from "style/styleFunctions";
+import {
+  COLOR_HIGHLIGHT,
+  COLOR_CONTENT_BACKGROUND
+} from "style/styleVariables";
+import { spacingScale, contrastColor } from "style/styleFunctions";
 
 NavTab.propTypes = {
   active: PropTypes.bool, // If the button should be style as active or not
@@ -20,15 +23,29 @@ NavTab.propTypes = {
   label: PropTypes.string.isRequired // label for the button
 };
 
+NavTab.defaultProps = {
+  active: false,
+  children: null,
+  clickAction: null,
+  disabled: false,
+  glyph: null,
+  glyphColor: null,
+  glyphRation: "1",
+  iconSize: "1",
+  label: "Label"
+};
+
 const NavTabWrap = styled.a`
   display: flex;
   align-items: center;
-  padding: ${spacingScale(1)};
+  justify-content: center;
+  padding: ${spacingScale(1)} ${spacingScale(2)};
+  flex: 0 1 auto;
   cursor: pointer;
   line-height: 0;
 
   &:hover {
-    box-shadow: inset 0 -1px;
+    box-shadow: inset 0 -1px ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
   }
 
   ${props =>
