@@ -4,6 +4,9 @@ exports[`TabVal matches snapshot 1`] = `
 .c0 {
   margin: 0;
   display: inline-block;
+  color: model:rgb;
+  color: 10,171,42;
+  valpha: 1;
 }
 
 <dd

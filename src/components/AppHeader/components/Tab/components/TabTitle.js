@@ -14,12 +14,12 @@ const TabTitle = styled.div`
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
+  align-items: center;
   text-overflow: ellipsis;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  margin: ${spacingScale(0.5)} 0 0;
+  margin: ${spacingScale(0.5)} ${spacingScale(1)} ${spacingScale(0.5)};
 
   h1 {
     font-size: ${FONT_SIZE_BASE};

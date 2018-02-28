@@ -2,8 +2,9 @@
 
 exports[`TabKey matches snapshot 1`] = `
 .c0 {
-  color: rgb(213,213,213);
-  padding-right: 4px;
+  color: rgb(255,255,255);
+  opacity: 0.8;
+  padding-right: 0.5em;
   display: inline-block;
 }
 
