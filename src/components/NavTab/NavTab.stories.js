@@ -10,13 +10,13 @@ import NavTab from "components/NavTab";
 storiesOf("NavTab", module)
   .addDecorator(withKnobs)
   .addDecorator(StoryRouter())
-  .add("Basic", () => (
+  .add("NavTabGroup", () => (
     <NavTabGroup
-      align={select("align", ["center", "start", "end"], "center")}
-      stretch={boolean("Stretch", false)}
+      align={select("Align Tabs", ["center", "start", "end"], "center")}
+      stretch={boolean("Stretch Tabs", false)}
     >
-      <NavTab />
+      <NavTab disabled label="Disabled tab" />
       <NavTab active label="Active Tab" />
-      <NavTab />
+      <NavTab label="Tab With Icon" glyph="Bell" />
     </NavTabGroup>
   ));

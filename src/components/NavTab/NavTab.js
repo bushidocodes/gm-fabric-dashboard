@@ -1,9 +1,10 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-
-import Icon from "components/Icon";
-import Glyph from "components/Glyphs/";
+import Color from "color";
 import styled from "styled-components";
+
+import Glyph from "components/Glyphs/";
+import Icon from "components/Icon";
 
 import {
   COLOR_HIGHLIGHT,
@@ -35,6 +36,12 @@ NavTab.defaultProps = {
   label: "Label"
 };
 
+const COLOR_TAB_HIGHLIGHT_INACTIVE = contrastColor(
+  COLOR_CONTENT_BACKGROUND,
+  0.5
+).string();
+const COLOR_TAB_HIGHLIGHT_ACTIVE = COLOR_HIGHLIGHT;
+
 const NavTabWrap = styled.a`
   display: flex;
   align-items: center;
@@ -43,9 +50,17 @@ const NavTabWrap = styled.a`
   flex: 0 1 auto;
   cursor: pointer;
   line-height: 0;
+  transition: all 0.15s ease;
 
   &:hover {
-    box-shadow: inset 0 -1px ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
+    box-shadow: inset 0 -1px ${Color(COLOR_TAB_HIGHLIGHT_INACTIVE)
+        .fade(0.5)
+        .string()};
+
+    &:active {
+      box-shadow: inset 0 -1.5px ${COLOR_TAB_HIGHLIGHT_INACTIVE};
+      user-select: none;
+    }
   }
 
   ${props =>
@@ -53,9 +68,34 @@ const NavTabWrap = styled.a`
     `
     &,
     &:hover {
-      box-shadow: inset 0 -2px ${COLOR_HIGHLIGHT.string()};
+      box-shadow: inset 0 -2px ${COLOR_TAB_HIGHLIGHT_ACTIVE.string()};
+
+      &:active {
+        box-shadow: inset 0 -2px ${Color(COLOR_TAB_HIGHLIGHT_ACTIVE)
+          .darken(0.2)
+          .string()};
+      }
+
+  `};
+
+  ${props =>
+    props.disabled &&
+    `
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: .5;
     }
   `};
+
+  & > svg:first-child {
+    margin-left: -${spacingScale(0.5)};
+  }
+
+  & > svg:last-child {
+    margin-right: -${spacingScale(0.5)};
+  }
 `;
 
 /**
