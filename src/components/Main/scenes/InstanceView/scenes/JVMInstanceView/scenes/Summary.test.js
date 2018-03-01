@@ -46,7 +46,7 @@ describe("JVM > SummaryGrid component", () => {
       SummaryGridWrap.dive()
         .dive()
         .find(Readout)
-    ).toHaveLength(3);
+    ).toHaveLength(4);
   });
 
   test("Has an 'uptime' dashboard in first position", () => {
@@ -69,22 +69,25 @@ describe("JVM > SummaryGrid component", () => {
         .html()
         .includes("Avg. Response Time")
     ).toBe(true);
-    expect(
-      SummaryGridWrap.dive()
-        .dive()
-        .find(Readout)
-        .at(1)
-        .html()
-        .includes("Error Rate")
-    ).toBe(true);
   });
 
-  test("Has a 'host CPU utilized' dashboard in third position", () => {
+  test("Has an 'error rate' dashboard in third position", () => {
     expect(
       SummaryGridWrap.dive()
         .dive()
         .find(Readout)
         .at(2)
+        .html()
+        .includes("Error Rate")
+    ).toBe(true);
+  });
+
+  test("Has a 'host CPU utilized' dashboard in fourth position", () => {
+    expect(
+      SummaryGridWrap.dive()
+        .dive()
+        .find(Readout)
+        .at(3)
         .html()
         .includes("Host CPU Cores")
     ).toBe(true);
