@@ -15,7 +15,11 @@ const Footer = styled.footer`
   display: flex;
   flex-flow: row wrap;
   color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.8).string()};
-  background-color: ${COLOR_CONTENT_BACKGROUND.string()};
+  background-image: linear-gradient(
+    to bottom,
+    ${COLOR_CONTENT_BACKGROUND.fade(1).string()},
+    ${COLOR_CONTENT_BACKGROUND.string()}
+  );
   font-size: ${FONT_SIZE_BASE};
   height: auto;
   align-items: stretch;
