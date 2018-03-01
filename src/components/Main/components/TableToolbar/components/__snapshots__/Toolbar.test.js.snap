@@ -6,7 +6,7 @@ exports[`Toolbar matches snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-bottom: 1px solid hsl(0,0%,92%);
+  border-bottom: 1px solid rgb(235,235,235);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

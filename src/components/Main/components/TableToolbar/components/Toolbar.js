@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Color from "color";
 
-import { COLOR_CONTENT_BACKGROUND, TABLE_BORDER } from "style/styleVariables";
+import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { contrastColor, spacingScale } from "style/styleFunctions";
 
 const Toolbar = styled.div`
   align-items: center;
-  border-bottom: 1px solid ${TABLE_BORDER};
+  border-bottom: 1px solid
+    ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.08).string()};
   justify-content: center;
   display: flex;
   flex-direction: row;
