@@ -197,7 +197,7 @@
   },
   "jest": {
     "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "coverageReporters": ["json"],
+    "coverageReporters": ["lcov"],
     "setupFiles": [
       "<rootDir>/config/polyfills.js",
       "raf/polyfill",
