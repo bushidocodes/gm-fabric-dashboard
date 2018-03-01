@@ -120,7 +120,7 @@ jobs:
           # split tests by timing and then run npm test
           command: |
             circleci tests glob "src/**/*.test.js" | circleci tests split --split-by=timings | \
-            xargs npm test -- --testResultsProcessor="jest-junit"  --coverage
+            xargs npm test -- --testResultsProcessor="jest-junit"  --coverage --ci --maxWorkers=2
       - run: 
           name: Format coverage
           command: ./cc-test-reporter format-coverage --output coverage/codeclimate.$CIRCLE_NODE_INDEX.json
@@ -150,8 +150,10 @@ jobs:
           path: junit
       - store_test_results:
           path: junit
-      - store_artifacts:
-          path: coverage
+      # Uploading all of the LCOV assets is time consuming, and we get this info
+      # in CircleCI. However, I'm leaving this here to uncomment if needed.
+      # - store_artifacts:
+      #     path: coverage
 
 # Define a workflow to specify the run order of jobs
 # More info at https://circleci.com/docs/2.0/workflows/
