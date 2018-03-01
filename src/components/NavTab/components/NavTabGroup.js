@@ -1,13 +1,12 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { spacingScale } from "style/styleFunctions";
 
 NavTabGroup.propTypes = {
   align: PropTypes.oneOf(["start", "center", "end"]),
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  position: PropTypes.oneOf(["top", "bottom", "left", "right"]),
   stretch: PropTypes.bool
 };
 
@@ -38,7 +37,7 @@ const NavTabGroupWrap = styled.nav`
  * @param {Object} props - see propTypes
  * @returns JSX.Element
  */
-export default function NavTabGroup({ children, stretch, align, position }) {
+export default function NavTabGroup({ children, stretch, align }) {
   let setAlignment = "";
   switch (align) {
     case "start":
@@ -53,7 +52,7 @@ export default function NavTabGroup({ children, stretch, align, position }) {
   }
 
   return (
-    <NavTabGroupWrap align={setAlignment} position={position} stretch={stretch}>
+    <NavTabGroupWrap align={setAlignment} stretch={stretch}>
       {children}
     </NavTabGroupWrap>
   );
