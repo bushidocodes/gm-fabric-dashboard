@@ -22,19 +22,14 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   border-radius: 3px;
-  margin: 0;
+  margin: 0 8px 8px 0;
   position: relative;
   overflow: hidden;
-}
-
-.c0:not(:first-child) {
-  margin-left: 8px;
 }
 
 .c0:before {
   content: "";
   opacity: 0.2;
-  background-color: rgb(10,171,42);
   position: absolute;
   top: 0;
   right: 0;
@@ -49,7 +44,7 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
   bottom: 0;
   left: 0;
   right: 0;
-  border-bottom: 3px solid rgb(10,171,42);
+  border-bottom: 3px solid;
 }
 
 .c0:first-child:last-child {
@@ -60,9 +55,9 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
 
 @media all and (max-width:1000px) {
   .c0 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -71,29 +66,12 @@ exports[`ReadoutDisplay matches snapshot when primary is false 1`] = `
 
 <div
   className="c0"
-  color={
-    Object {
-      "color": Array [
-        10,
-        171,
-        42,
-      ],
-      "model": "rgb",
-      "valpha": 1,
-    }
-  }
 />
 `;
 
 exports[`ReadoutDisplay matches snapshot when primary is true 1`] = `
 .c0 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  background-color: rgb(51,51,51);
-  border-radius: 3px;
-  color: rgb(255,255,255);
+  color: #333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -104,7 +82,38 @@ exports[`ReadoutDisplay matches snapshot when primary is true 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 0 8px 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.c0:before {
+  content: "";
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c0:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid;
 }
 
 .c0:first-child:last-child {
@@ -113,19 +122,15 @@ exports[`ReadoutDisplay matches snapshot when primary is true 1`] = `
   flex-grow: 0;
 }
 
-.c0:first-child:last-child > * {
-  text-align: center;
-}
-
-.c0:first-child:last-child > * > :first-child {
-  padding-left: 0;
+.c0:before {
+  opacity: 0.3;
 }
 
 @media all and (max-width:1000px) {
   .c0 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;

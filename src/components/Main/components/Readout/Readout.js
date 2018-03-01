@@ -15,7 +15,7 @@ export default function Readout({
   return (
     <ReadoutDisplay
       primary={primary}
-      color={color || COLOR_SUCCESS}
+      color={color || COLOR_SUCCESS.toString()}
       cacheCard={cacheCard}
     >
       {readoutItems.map(item => (

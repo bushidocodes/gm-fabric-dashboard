@@ -14,7 +14,10 @@ exports[`ReadoutGroup matches snapshot 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   orphans: 2;
-  width: 100%;
+  -webkit-flex-basis: 100%;
+  -ms-flex-basis: 100%;
+  flex-basis: 100%;
+  margin-right: -8px;
 }
 
 <div

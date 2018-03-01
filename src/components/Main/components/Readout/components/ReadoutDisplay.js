@@ -21,7 +21,7 @@ const ReadoutDisplay = styled.div`
   &:before {
     content: "";
     opacity: 0.2;
-    background-color: ${props => props.color.string()};
+    background-color: ${props => props.color};
     position: absolute;
     top: 0;
     right: 0;
@@ -36,7 +36,7 @@ const ReadoutDisplay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 3px solid ${props => props.color.string()};
+    border-bottom: 3px solid ${props => props.color};
   }
 
   @media all and (max-width: 1000px) {

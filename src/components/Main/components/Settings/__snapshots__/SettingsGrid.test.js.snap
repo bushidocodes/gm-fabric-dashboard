@@ -548,13 +548,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 }
 
 .c13 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  background-color: rgb(230,230,230);
-  border-radius: 3px;
-  color: rgb(0,0,0);
+  color: #333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -565,7 +559,39 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 4px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 0 8px 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.c13:before {
+  content: "";
+  opacity: 0.2;
+  background-color: rgb(10,171,42);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c13:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid rgb(10,171,42);
 }
 
 .c13:first-child:last-child {
@@ -574,47 +600,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   flex-grow: 0;
 }
 
-.c13:first-child:last-child > * {
-  text-align: center;
-}
-
-.c13:first-child:last-child > * > :first-child {
-  padding-left: 0;
-}
-
 .c14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
-  flex: 0 1 100%;
-  -webkit-flex: 1 1 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 125px;
-  padding: 8px 4px;
   position: relative;
-}
-
-.c14 + .c14:before {
-  border-top: 1px solid currentColor;
-  content: "";
-  left: 0;
-  opacity: 0.125;
-  position: absolute;
-  right: 0;
-  top: 0;
+  padding: 8px;
 }
 
 .c14 button {
@@ -652,6 +640,7 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
   padding: 0;
   font-weight: 500;
   min-height: 1em;
+  display: inline-block;
 }
 
 .c17 {
@@ -664,9 +653,9 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
 
 @media all and (max-width:1000px) {
   .c13 {
-    -webkit-flex: 0 0 300px;
-    -ms-flex: 0 0 300px;
-    flex: 0 0 300px;
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -3048,9 +3037,11 @@ exports[`SettingsGrid component Matches snapshot 1`] = `
                   >
                     <styled.div
                       cacheCard={true}
+                      color="rgb(10, 171, 42)"
                     >
                       <div
                         className="c13"
+                        color="rgb(10, 171, 42)"
                       >
                         <ReadoutItem
                           cacheCard={true}

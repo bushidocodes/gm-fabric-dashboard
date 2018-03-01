@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { PropTypes } from "prop-types";
 
 import { spacingScale } from "style/styleFunctions";
@@ -15,10 +15,15 @@ const ItemDisplay = styled.div`
   }
 
   color: ${props => props.color};
+  ${props =>
+    props.flex &&
+    css`
+      flex: ${props => props.flex};
+    `};
 `;
 
 ItemDisplay.propTypes = {
-  color: PropTypes.color,
+  color: PropTypes.string,
   flex: PropTypes.string
 };
 

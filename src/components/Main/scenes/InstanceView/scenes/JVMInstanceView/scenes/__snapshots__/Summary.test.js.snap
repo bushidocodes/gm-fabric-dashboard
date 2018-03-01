@@ -97,27 +97,8 @@ Array [
   overflow: visible;
 }
 
-.c11 {
-  z-index: 1;
-  height: 48px;
-  width: 48px;
-  color: currentColor;
-  word-spacing: 0;
-  vertical-align: middle;
-}
-
-.c11:not(:root) {
-  overflow: visible;
-}
-
 .c8 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  background-color: rgb(230,230,230);
-  border-radius: 3px;
-  color: rgb(0,0,0);
+  color: #333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -128,7 +109,39 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 4px;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 0 8px 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.c8:before {
+  content: "";
+  opacity: 0.2;
+  background-color: rgb(10,171,42);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c8:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid rgb(10,171,42);
 }
 
 .c8:first-child:last-child {
@@ -137,22 +150,8 @@ Array [
   flex-grow: 0;
 }
 
-.c8:first-child:last-child > * {
-  text-align: center;
-}
-
-.c8:first-child:last-child > * > :first-child {
-  padding-left: 0;
-}
-
-.c17 {
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  background-color: rgb(51,51,51);
-  border-radius: 3px;
-  color: rgb(255,255,255);
+.c16 {
+  color: #333;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -163,56 +162,54 @@ Array [
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin: 0 8px 8px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.c17:first-child:last-child {
+.c16:before {
+  content: "";
+  opacity: 0.2;
+  background-color: rgb(10,171,42);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c16:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid rgb(10,171,42);
+}
+
+.c16:first-child:last-child {
   -webkit-flex-grow: 0;
   -ms-flex-grow: 0;
   flex-grow: 0;
 }
 
-.c17:first-child:last-child > * {
-  text-align: center;
-}
-
-.c17:first-child:last-child > * > :first-child {
-  padding-left: 0;
+.c16:before {
+  opacity: 0.3;
 }
 
 .c9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 0 1 100%;
-  -ms-flex: 0 1 100%;
-  flex: 0 1 100%;
-  -webkit-flex: 1 1 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 75px;
-  padding: 8px 4px;
   position: relative;
-}
-
-.c9 + .c9:before {
-  border-top: 1px solid currentColor;
-  content: "";
-  left: 0;
-  opacity: 0.125;
-  position: absolute;
-  right: 0;
-  top: 0;
+  padding: 8px;
 }
 
 .c9 button {
@@ -222,7 +219,7 @@ Array [
   margin: 8px 0;
 }
 
-.c12 {
+.c10 {
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
@@ -240,38 +237,24 @@ Array [
   padding: 8px 0;
 }
 
-.c12:first-child {
+.c10:first-child {
   padding-left: 16px;
 }
 
-.c10 {
-  -webkit-flex: 0 0 80px;
-  -ms-flex: 0 0 80px;
-  flex: 0 0 80px;
-  height: 48px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
+.c12 {
+  display: inline;
 }
 
-.c13 {
+.c11 {
   font-size: 14px;
   margin: 0;
   padding: 0;
   font-weight: 500;
   min-height: 1em;
+  display: inline-block;
 }
 
-.c14 {
+.c13 {
   font-size: 40px;
   word-break: break-all;
   margin: 0;
@@ -279,12 +262,11 @@ Array [
   min-height: 1em;
 }
 
-.c16 {
+.c15 {
   font-size: 14px;
   margin: 0;
   font-weight: 500;
   min-height: 1em;
-  opacity: 0.85;
 }
 
 .c7 {
@@ -300,18 +282,21 @@ Array [
   -ms-flex-pack: center;
   justify-content: center;
   orphans: 2;
-  width: 100%;
+  -webkit-flex-basis: 100%;
+  -ms-flex-basis: 100%;
+  flex-basis: 100%;
+  margin-right: -8px;
 }
 
-.c15 span + span {
+.c14 span + span {
   font-size: 66.66%;
 }
 
 @media all and (max-width:1000px) {
   .c8 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -319,10 +304,10 @@ Array [
 }
 
 @media all and (max-width:1000px) {
-  .c17 {
-    -webkit-flex: 0 0 100%;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+  .c16 {
+    -webkit-flex-basis: 100%;
+    -ms-flex-basis: 100%;
+    flex-basis: 100%;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -380,6 +365,7 @@ Array [
       >
         <div
           class="c8"
+          color="rgb(10, 171, 42)"
         >
           <div
             class="c9"
@@ -387,51 +373,51 @@ Array [
             <div
               class="c10"
             >
-              <svg
-                aria-labelledby="ariaLabelledby"
-                class="c11"
-                focusable="false"
-                version="1.1"
-                viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  class="c4"
-                  fill="currentColor"
-                  title=""
-                >
-                  <title />
-                  <g
-                    class="glyph"
-                    fill="currentColor"
-                    transform="translate(0 0) scale(1)"
-                  >
-                    <path
-                      d="M18.1298429,7.20118168 L15.5060804,9.82494414 C15.1191719,10.2118526 14.4809862,10.2122484 14.0876093,9.81887154 L14.1811285,9.91239066 C13.7910605,9.52232275 13.7850328,8.88394267 14.1750559,8.49391961 L16.7988183,5.87015715 C16.9812688,5.6877067 17.2767026,5.68732987 17.4650478,5.87567507 L18.1243249,6.53495222 C18.3098228,6.72045014 18.3096724,7.02135216 18.1298429,7.20118168 Z M19.5328064,12.9411765 L15.7652035,12.9411765 C15.2414463,12.9411765 14.8235294,12.5197974 14.8235294,12 C14.8235294,11.4765787 15.2451313,11.0588235 15.7652035,11.0588235 L19.5328064,11.0588235 C19.7908303,11.0588235 20,11.2674603 20,11.5338207 L20,12.4661793 C20,12.728513 19.7871237,12.9411765 19.5328064,12.9411765 Z M16.7988183,18.1298429 L14.1750559,15.5060804 C13.7881474,15.1191719 13.7877516,14.4809862 14.1811285,14.0876093 L14.0876093,14.1811285 C14.4776773,13.7910605 15.1160573,13.7850328 15.5060804,14.1750559 L18.1298429,16.7988183 C18.3122933,16.9812688 18.3126701,17.2767026 18.1243249,17.4650478 L17.4650478,18.1243249 C17.2795499,18.3098228 16.9786478,18.3096724 16.7988183,18.1298429 Z M11.0588235,19.5328064 L11.0588235,15.7652035 C11.0588235,15.2414463 11.4802026,14.8235294 12,14.8235294 C12.5234213,14.8235294 12.9411765,15.2451313 12.9411765,15.7652035 L12.9411765,19.5328064 C12.9411765,19.7908303 12.7325397,20 12.4661793,20 L11.5338207,20 C11.271487,20 11.0588235,19.7871237 11.0588235,19.5328064 Z M5.87015715,16.7988183 L8.49391961,14.1750559 C8.88082811,13.7881474 9.5190138,13.7877516 9.91239066,14.1811285 L9.81887154,14.0876093 C10.2089395,14.4776773 10.2149672,15.1160573 9.82494414,15.5060804 L7.20118168,18.1298429 C7.01873123,18.3122933 6.72329742,18.3126701 6.53495222,18.1243249 L5.87567507,17.4650478 C5.69017716,17.2795499 5.69032763,16.9786478 5.87015715,16.7988183 Z M4.4671936,11.0588235 L8.23479651,11.0588235 C8.75855367,11.0588235 9.17647059,11.4802026 9.17647059,12 C9.17647059,12.5234213 8.75486874,12.9411765 8.23479651,12.9411765 L4.4671936,12.9411765 C4.2091697,12.9411765 4,12.7325397 4,12.4661793 L4,11.5338207 C4,11.271487 4.21287626,11.0588235 4.4671936,11.0588235 Z M7.20118168,5.87015715 L9.82494414,8.49391961 C10.2118526,8.88082811 10.2122484,9.5190138 9.81887154,9.91239066 L9.91239066,9.81887154 C9.52232275,10.2089395 8.88394267,10.2149672 8.49391961,9.82494414 L5.87015715,7.20118168 C5.6877067,7.01873123 5.68732987,6.72329742 5.87567507,6.53495222 L6.53495222,5.87567507 C6.72045014,5.69017716 7.02135216,5.69032763 7.20118168,5.87015715 Z M12.9411765,4.4671936 L12.9411765,8.23479651 C12.9411765,8.75855367 12.5197974,9.17647059 12,9.17647059 C11.4765787,9.17647059 11.0588235,8.75486874 11.0588235,8.23479651 L11.0588235,4.4671936 C11.0588235,4.2091697 11.2674603,4 11.5338207,4 L12.4661793,4 C12.728513,4 12.9411765,4.21287626 12.9411765,4.4671936 Z"
-                      id="Combined-Shape"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div
-              class="c12"
-            >
               <h2
-                class="c13"
+                class="c11"
               >
+                <div
+                  class="c12"
+                >
+                  <svg
+                    aria-labelledby="ariaLabelledby"
+                    class="c3"
+                    focusable="false"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      class="c4"
+                      fill="currentColor"
+                      title=""
+                    >
+                      <title />
+                      <g
+                        class="glyph"
+                        fill="currentColor"
+                        transform="translate(0 0) scale(1)"
+                      >
+                        <path
+                          d="M18.1298429,7.20118168 L15.5060804,9.82494414 C15.1191719,10.2118526 14.4809862,10.2122484 14.0876093,9.81887154 L14.1811285,9.91239066 C13.7910605,9.52232275 13.7850328,8.88394267 14.1750559,8.49391961 L16.7988183,5.87015715 C16.9812688,5.6877067 17.2767026,5.68732987 17.4650478,5.87567507 L18.1243249,6.53495222 C18.3098228,6.72045014 18.3096724,7.02135216 18.1298429,7.20118168 Z M19.5328064,12.9411765 L15.7652035,12.9411765 C15.2414463,12.9411765 14.8235294,12.5197974 14.8235294,12 C14.8235294,11.4765787 15.2451313,11.0588235 15.7652035,11.0588235 L19.5328064,11.0588235 C19.7908303,11.0588235 20,11.2674603 20,11.5338207 L20,12.4661793 C20,12.728513 19.7871237,12.9411765 19.5328064,12.9411765 Z M16.7988183,18.1298429 L14.1750559,15.5060804 C13.7881474,15.1191719 13.7877516,14.4809862 14.1811285,14.0876093 L14.0876093,14.1811285 C14.4776773,13.7910605 15.1160573,13.7850328 15.5060804,14.1750559 L18.1298429,16.7988183 C18.3122933,16.9812688 18.3126701,17.2767026 18.1243249,17.4650478 L17.4650478,18.1243249 C17.2795499,18.3098228 16.9786478,18.3096724 16.7988183,18.1298429 Z M11.0588235,19.5328064 L11.0588235,15.7652035 C11.0588235,15.2414463 11.4802026,14.8235294 12,14.8235294 C12.5234213,14.8235294 12.9411765,15.2451313 12.9411765,15.7652035 L12.9411765,19.5328064 C12.9411765,19.7908303 12.7325397,20 12.4661793,20 L11.5338207,20 C11.271487,20 11.0588235,19.7871237 11.0588235,19.5328064 Z M5.87015715,16.7988183 L8.49391961,14.1750559 C8.88082811,13.7881474 9.5190138,13.7877516 9.91239066,14.1811285 L9.81887154,14.0876093 C10.2089395,14.4776773 10.2149672,15.1160573 9.82494414,15.5060804 L7.20118168,18.1298429 C7.01873123,18.3122933 6.72329742,18.3126701 6.53495222,18.1243249 L5.87567507,17.4650478 C5.69017716,17.2795499 5.69032763,16.9786478 5.87015715,16.7988183 Z M4.4671936,11.0588235 L8.23479651,11.0588235 C8.75855367,11.0588235 9.17647059,11.4802026 9.17647059,12 C9.17647059,12.5234213 8.75486874,12.9411765 8.23479651,12.9411765 L4.4671936,12.9411765 C4.2091697,12.9411765 4,12.7325397 4,12.4661793 L4,11.5338207 C4,11.271487 4.21287626,11.0588235 4.4671936,11.0588235 Z M7.20118168,5.87015715 L9.82494414,8.49391961 C10.2118526,8.88082811 10.2122484,9.5190138 9.81887154,9.91239066 L9.91239066,9.81887154 C9.52232275,10.2089395 8.88394267,10.2149672 8.49391961,9.82494414 L5.87015715,7.20118168 C5.6877067,7.01873123 5.68732987,6.72329742 5.87567507,6.53495222 L6.53495222,5.87567507 C6.72045014,5.69017716 7.02135216,5.69032763 7.20118168,5.87015715 Z M12.9411765,4.4671936 L12.9411765,8.23479651 C12.9411765,8.75855367 12.5197974,9.17647059 12,9.17647059 C11.4765787,9.17647059 11.0588235,8.75486874 11.0588235,8.23479651 L11.0588235,4.4671936 C11.0588235,4.2091697 11.2674603,4 11.5338207,4 L12.4661793,4 C12.728513,4 12.9411765,4.21287626 12.9411765,4.4671936 Z"
+                          id="Combined-Shape"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
                 Uptime
               </h2>
               <span
-                class="c14"
+                class="c13"
               >
                 <div
-                  class="c15"
+                  class="c14"
                 />
               </span>
               <p
-                class="c16"
+                class="c15"
               >
                 Jul 18, 2017, 11:53:01 AM
               </p>
@@ -439,7 +425,8 @@ Array [
           </div>
         </div>
         <div
-          class="c17"
+          class="c16"
+          color="rgb(10, 171, 42)"
         >
           <div
             class="c9"
@@ -447,44 +434,44 @@ Array [
             <div
               class="c10"
             >
-              <svg
-                aria-labelledby="ariaLabelledby"
-                class="c11"
-                focusable="false"
-                version="1.1"
-                viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  class="c4"
-                  fill="currentColor"
-                  title=""
-                >
-                  <title />
-                  <g
-                    class="glyph"
-                    fill="currentColor"
-                    transform="translate(0 0) scale(1)"
-                  >
-                    <path
-                      d="M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z M12,19 C15.8659932,19 19,15.8659932 19,12 C19,8.13400675 15.8659932,5 12,5 C8.13400675,5 5,8.13400675 5,12 C5,15.8659932 8.13400675,19 12,19 Z M16.240877,7.75912299 L12,12 L12,6.00249421 C13.6561655,6.00249421 15.1555419,6.67378791 16.240877,7.75912299 Z M14,3.27103069 L14,3.27103069 C13.3569385,3.12430119 12.6875191,3.04680732 12,3.04680732 C11.3124809,3.04680732 10.6430615,3.12430119 10,3.27103069 L10,3 C10,2.44771525 10.4477153,2 11,2 L13,2 C13.5522847,2 14,2.44771525 14,3 L14,3.27103069 Z"
-                      id="Combined-Shape"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div
-              class="c12"
-            >
               <h2
-                class="c13"
+                class="c11"
               >
+                <div
+                  class="c12"
+                >
+                  <svg
+                    aria-labelledby="ariaLabelledby"
+                    class="c3"
+                    focusable="false"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      class="c4"
+                      fill="currentColor"
+                      title=""
+                    >
+                      <title />
+                      <g
+                        class="glyph"
+                        fill="currentColor"
+                        transform="translate(0 0) scale(1)"
+                      >
+                        <path
+                          d="M12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 C16.418278,4 20,7.581722 20,12 C20,16.418278 16.418278,20 12,20 Z M12,19 C15.8659932,19 19,15.8659932 19,12 C19,8.13400675 15.8659932,5 12,5 C8.13400675,5 5,8.13400675 5,12 C5,15.8659932 8.13400675,19 12,19 Z M16.240877,7.75912299 L12,12 L12,6.00249421 C13.6561655,6.00249421 15.1555419,6.67378791 16.240877,7.75912299 Z M14,3.27103069 L14,3.27103069 C13.3569385,3.12430119 12.6875191,3.04680732 12,3.04680732 C11.3124809,3.04680732 10.6430615,3.12430119 10,3.27103069 L10,3 C10,2.44771525 10.4477153,2 11,2 L13,2 C13.5522847,2 14,2.44771525 14,3 L14,3.27103069 Z"
+                          id="Combined-Shape"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
                 Avg. Response Time
               </h2>
               <span
-                class="c14"
+                class="c13"
               >
                 —
               </span>
@@ -496,56 +483,56 @@ Array [
             <div
               class="c10"
             >
-              <svg
-                aria-labelledby="ariaLabelledby"
-                class="c11"
-                focusable="false"
-                version="1.1"
-                viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  class="iconBorder"
-                  fill="transparent"
-                  id="BorderTriangleSmall"
-                  stroke="currentColor"
-                  stroke-opacity="1"
-                  stroke-width="1"
-                >
-                  <path
-                    d="M12.8582232,4.46378268 L20.8520757,17.3321581 C21.1381526,17.7926802 20.9967369,18.3979184 20.5362148,18.6839954 C20.3807105,18.7805948 20.2012922,18.8317858 20.0182266,18.8317858 L3.98163949,18.8317858 C3.43949497,18.8317858 3,18.3922908 3,17.8501463 C3,17.6661677 3.05170241,17.4858919 3.14921087,17.3298784 L11.1919455,4.461503 C11.4792815,4.00176536 12.0849044,3.86200624 12.544642,4.14934226 C12.671816,4.22882603 12.7790877,4.33639165 12.8582232,4.46378268 Z"
-                  />
-                </g>
-                <g
-                  class="c4"
-                  fill="currentColor"
-                  title=""
-                >
-                  <title />
-                  <g
-                    class="glyph"
-                    fill="currentColor"
-                    transform="translate(0 0) scale(1)"
-                  >
-                    <path
-                      d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
-                      id="Exclamation"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div
-              class="c12"
-            >
               <h2
-                class="c13"
+                class="c11"
               >
+                <div
+                  class="c12"
+                >
+                  <svg
+                    aria-labelledby="ariaLabelledby"
+                    class="c3"
+                    focusable="false"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      class="iconBorder"
+                      fill="transparent"
+                      id="BorderTriangleSmall"
+                      stroke="currentColor"
+                      stroke-opacity="1"
+                      stroke-width="1"
+                    >
+                      <path
+                        d="M12.8582232,4.46378268 L20.8520757,17.3321581 C21.1381526,17.7926802 20.9967369,18.3979184 20.5362148,18.6839954 C20.3807105,18.7805948 20.2012922,18.8317858 20.0182266,18.8317858 L3.98163949,18.8317858 C3.43949497,18.8317858 3,18.3922908 3,17.8501463 C3,17.6661677 3.05170241,17.4858919 3.14921087,17.3298784 L11.1919455,4.461503 C11.4792815,4.00176536 12.0849044,3.86200624 12.544642,4.14934226 C12.671816,4.22882603 12.7790877,4.33639165 12.8582232,4.46378268 Z"
+                      />
+                    </g>
+                    <g
+                      class="c4"
+                      fill="currentColor"
+                      title=""
+                    >
+                      <title />
+                      <g
+                        class="glyph"
+                        fill="currentColor"
+                        transform="translate(0 0) scale(1)"
+                      >
+                        <path
+                          d="M11,14 L13,14 L13,16 L11,16 L11,14 Z M11,9 L13,9 L13,11.0070282 L12.5,13 L11.5,13 L11,11.0070282 L11,9 Z"
+                          id="Exclamation"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
                 Error Rate
               </h2>
               <span
-                class="c14"
+                class="c13"
               >
                 0%
               </span>
@@ -554,6 +541,7 @@ Array [
         </div>
         <div
           class="c8"
+          color="rgb(10, 171, 42)"
         >
           <div
             class="c9"
@@ -561,44 +549,44 @@ Array [
             <div
               class="c10"
             >
-              <svg
-                aria-labelledby="ariaLabelledby"
-                class="c11"
-                focusable="false"
-                version="1.1"
-                viewBox="0 0 24 24"
-                xlink="http://www.w3.org/1999/xlink"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  class="c4"
-                  fill="currentColor"
-                  title=""
-                >
-                  <title />
-                  <g
-                    class="glyph"
-                    fill="currentColor"
-                    transform="translate(0 0) scale(1)"
-                  >
-                    <path
-                      d="M19,14 L19,15 L20,15 L20,16 L19,16 L19,18 C19,18.5522847 18.5522847,19 18,19 L16,19 L16,20 L15,20 L15,19 L14,19 L14,20 L13,20 L13,19 L11,19 L11,20 L10,20 L10,19 L9,19 L9,20 L8,20 L8,19 L6,19 C5.44771525,19 5,18.5522847 5,18 L5,16 L4,16 L4,15 L5,15 L5,14 L4,14 L4,13 L5,13 L5,11 L4,11 L4,10 L5,10 L5,9 L4,9 L4,8 L5,8 L5,6 C5,5.44771525 5.44771525,5 6,5 L8,5 L8,4 L9,4 L9,5 L10,5 L10,4 L11,4 L11,5 L13,5 L13,4 L14,4 L14,5 L15,5 L15,4 L16,4 L16,5 L18,5 C18.5522847,5 19,5.44771525 19,6 L19,8 L20,8 L20,9 L19,9 L19,10 L20,10 L20,11 L19,11 L19,13 L20,13 L20,14 L19,14 Z M6,6 L6,18 L18,18 L18,6 L6,6 Z"
-                      id="Combined-Shape"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div
-              class="c12"
-            >
               <h2
-                class="c13"
+                class="c11"
               >
+                <div
+                  class="c12"
+                >
+                  <svg
+                    aria-labelledby="ariaLabelledby"
+                    class="c3"
+                    focusable="false"
+                    version="1.1"
+                    viewBox="0 0 24 24"
+                    xlink="http://www.w3.org/1999/xlink"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g
+                      class="c4"
+                      fill="currentColor"
+                      title=""
+                    >
+                      <title />
+                      <g
+                        class="glyph"
+                        fill="currentColor"
+                        transform="translate(0 0) scale(1)"
+                      >
+                        <path
+                          d="M19,14 L19,15 L20,15 L20,16 L19,16 L19,18 C19,18.5522847 18.5522847,19 18,19 L16,19 L16,20 L15,20 L15,19 L14,19 L14,20 L13,20 L13,19 L11,19 L11,20 L10,20 L10,19 L9,19 L9,20 L8,20 L8,19 L6,19 C5.44771525,19 5,18.5522847 5,18 L5,16 L4,16 L4,15 L5,15 L5,14 L4,14 L4,13 L5,13 L5,11 L4,11 L4,10 L5,10 L5,9 L4,9 L4,8 L5,8 L5,6 C5,5.44771525 5.44771525,5 6,5 L8,5 L8,4 L9,4 L9,5 L10,5 L10,4 L11,4 L11,5 L13,5 L13,4 L14,4 L14,5 L15,5 L15,4 L16,4 L16,5 L18,5 C18.5522847,5 19,5.44771525 19,6 L19,8 L20,8 L20,9 L19,9 L19,10 L20,10 L20,11 L19,11 L19,13 L20,13 L20,14 L19,14 Z M6,6 L6,18 L18,18 L18,6 L6,6 Z"
+                          id="Combined-Shape"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
                 Host CPU Cores
               </h2>
               <span
-                class="c14"
+                class="c13"
               >
                 8
               </span>
