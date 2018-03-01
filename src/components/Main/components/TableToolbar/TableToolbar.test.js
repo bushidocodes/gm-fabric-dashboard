@@ -2,7 +2,6 @@ import React from "react";
 import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import TableToolbar from "./index.js";
-import Button from "../../../Button";
 import NavTab from "components/NavTab";
 
 const sortByOptions = [
