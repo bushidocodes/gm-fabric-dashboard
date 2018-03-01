@@ -26,11 +26,7 @@ NavTab.propTypes = {
 
 NavTab.defaultProps = {
   active: false,
-  children: null,
   clickAction: null,
-  disabled: false,
-  glyph: null,
-  glyphColor: null,
   glyphRation: "1",
   iconSize: "1",
   label: "Label"
@@ -118,7 +114,7 @@ function NavTab({
     <NavTabWrap
       active={active}
       disabled={disabled}
-      clickAction={clickAction}
+      onClick={clickAction}
       title={label}
       iconSize={iconSize}
     >

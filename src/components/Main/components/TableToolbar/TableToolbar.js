@@ -5,6 +5,7 @@ import { injectIntl, intlShape } from "react-intl";
 // Internal Components
 import SearchInput from "components/Main/components/GMSearchInput";
 import NavTab from "components/NavTab";
+import NavTabGroup from "components/NavTab/components/NavTabGroup";
 import Form from "./components/Form";
 import GMSelect from "components/Main/components/GMSelect";
 import { GMSelectValueRenderer } from "components/Main/components/GMSelect";
@@ -78,28 +79,30 @@ function TableToolbar({
       </ToolbarLeft>
       <ToolbarCenter>
         {displayTypeProps && [
-          <NavTab
-            active={displayTypeProps.displayType === "Cards"}
-            clickAction={() => displayTypeProps.setDisplayType("Cards")}
-            glyph="Card"
-            label={intl.formatMessage({
-              id: "tableToolbar.cards",
-              defaultMessage: "Cards",
-              description: "Display type button"
-            })}
-            key="Cards"
-          />,
-          <NavTab
-            active={displayTypeProps.displayType === "List"}
-            clickAction={() => displayTypeProps.setDisplayType("List")}
-            glyph="List"
-            label={intl.formatMessage({
-              id: "tableToolbar.list",
-              defaultMessage: "List",
-              description: "Display type button"
-            })}
-            key="List"
-          />
+          <NavTabGroup>
+            <NavTab
+              active={displayTypeProps.displayType === "Cards"}
+              clickAction={() => displayTypeProps.setDisplayType("Cards")}
+              glyph="Card"
+              label={intl.formatMessage({
+                id: "tableToolbar.cards",
+                defaultMessage: "Cards",
+                description: "Display type button"
+              })}
+              key="Cards"
+            />
+            <NavTab
+              active={displayTypeProps.displayType === "List"}
+              clickAction={() => displayTypeProps.setDisplayType("List")}
+              glyph="List"
+              label={intl.formatMessage({
+                id: "tableToolbar.list",
+                defaultMessage: "List",
+                description: "Display type button"
+              })}
+              key="List"
+            />
+          </NavTabGroup>
         ]}
         {toolbarCenterChildren}
       </ToolbarCenter>
