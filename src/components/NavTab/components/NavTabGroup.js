@@ -12,7 +12,7 @@ NavTabGroup.propTypes = {
 };
 
 NavTabGroup.defaultProps = {
-  align: "end",
+  align: "start",
   position: "top",
   stretch: false
 };
@@ -22,6 +22,7 @@ const NavTabGroupWrap = styled.nav`
   align-items: stretch;
   flex-direction: row;
   min-height: ${spacingScale(5)};
+  justify-content: ${props => props.align};
 
   & > a {
     ${props =>
@@ -30,20 +31,6 @@ const NavTabGroupWrap = styled.nav`
         flex: 1 1 100%;
       `};
   }
-
-  ${(props => props.align === "end") &&
-    css(`
-    justify-content: flex-end;
-  `)};
-
-  ${(props => props.align === "start") &&
-    css(`
-    justify-content: flex-start;
-  `)};
-  ${(props => props.align === "center") &&
-    css(`
-    justify-content: center;
-  `)};
 `;
 
 /**
@@ -52,8 +39,21 @@ const NavTabGroupWrap = styled.nav`
  * @returns JSX.Element
  */
 export default function NavTabGroup({ children, stretch, align, position }) {
+  let setAlignment = "";
+  switch (align) {
+    case "start":
+      setAlignment = "flex-start";
+      break;
+    case "end":
+      setAlignment = "flex-end";
+      break;
+    case "center":
+    default:
+      setAlignment = "center";
+  }
+
   return (
-    <NavTabGroupWrap align={align} position={position} stretch={stretch}>
+    <NavTabGroupWrap align={setAlignment} position={position} stretch={stretch}>
       {children}
     </NavTabGroupWrap>
   );
