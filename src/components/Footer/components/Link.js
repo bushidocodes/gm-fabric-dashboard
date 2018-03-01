@@ -6,7 +6,9 @@ import {
 } from "style/styleVariables";
 
 const Link = styled.a`
-  color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.4).string()};
+  color: ${contrastColor(COLOR_CONTENT_BACKGROUND, 1)
+    .fade(0.5)
+    .string()};
   padding: 0 ${spacingScale(1)};
 
   &:hover {

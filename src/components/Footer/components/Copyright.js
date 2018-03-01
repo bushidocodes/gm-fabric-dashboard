@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { COLOR_CONTENT, COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
+import { COLOR_CONTENT_BACKGROUND } from "style/styleVariables";
 import { spacingScale, contrastColor } from "style/styleFunctions";
 
 const Copyright = styled.p`
@@ -10,7 +10,6 @@ const Copyright = styled.p`
   text-align: center;
   transition: opacity 0.2s ease;
   cursor: default;
-  color: ${COLOR_CONTENT};
   border-top: 1px solid ${contrastColor(COLOR_CONTENT_BACKGROUND, 0.1).string()};
   margin-top: ${spacingScale(1)};
   padding: ${spacingScale(1)};
