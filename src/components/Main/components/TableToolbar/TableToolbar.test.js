@@ -3,6 +3,7 @@ import { mountWithIntl, renderWithIntl } from "utils/i18nTesting";
 
 import TableToolbar from "./index.js";
 import Button from "../../../Button";
+import NavTab from "components/NavTab";
 
 const sortByOptions = [
   {
@@ -76,42 +77,42 @@ describe("Table Toolbar", () => {
     expect(wrapper.find({ type: "search" })).toHaveLength(0);
   });
 
-  test("renders display type buttons", () => {
-    // Find buttons with title attributes "Cards" and "List"
-    expect(wrapper.find("button").find({ title: "Cards" })).toHaveLength(1);
-    expect(wrapper.find("button").find({ title: "List" })).toHaveLength(1);
+  test("renders display type tabs", () => {
+    // Find tabs with title attributes "Cards" and "List"
+    expect(wrapper.find("a").find({ title: "Cards" })).toHaveLength(1);
+    expect(wrapper.find("a").find({ title: "List" })).toHaveLength(1);
   });
 
-  test("calls setDisplayType when a display type button is clicked", () => {
-    // Simulate a button click and check if setDisplayType was called
+  test("calls setDisplayType when a display type tab is clicked", () => {
+    // Simulate a click and check if setDisplayType was called
     wrapper
-      .find("button")
+      .find("a")
       .find({ title: "Cards" })
       .simulate("click");
     expect(wrapper.props().displayTypeProps.setDisplayType).toHaveBeenCalled();
   });
 
-  test("does not render display type buttons if displayTypeProps is not provided", () => {
+  test("does not render display type tabs if displayTypeProps is not provided", () => {
     wrapper.setProps({
       displayTypeProps: null
     });
-    // Find buttons with title attributes "Cards" and "List"
-    expect(wrapper.find("button").find({ title: "Cards" })).toHaveLength(0);
-    expect(wrapper.find("button").find({ title: "List" })).toHaveLength(0);
+    // Find tabs with title attributes "Cards" and "List"
+    expect(wrapper.find("a").find({ title: "Cards" })).toHaveLength(0);
+    expect(wrapper.find("a").find({ title: "List" })).toHaveLength(0);
   });
 
-  test("adds an active class to button that matches displayType", () => {
-    let cardButton = wrapper.find(Button).at(0);
-    let listButton = wrapper.find(Button).at(1);
-    expect(cardButton.props().active).toBe(true);
-    expect(listButton.props().active).toBe(false);
+  test("adds an active class to tab that matches displayType", () => {
+    let cardTab = wrapper.find(NavTab).at(0);
+    let listTab = wrapper.find(NavTab).at(1);
+    expect(cardTab.props().active).toBe(true);
+    expect(listTab.props().active).toBe(false);
     wrapper.setProps({
       displayTypeProps: { displayType: "List", setDisplayType: jest.fn() }
     });
-    cardButton = wrapper.find(Button).at(0);
-    listButton = wrapper.find(Button).at(1);
-    expect(listButton.props().active).toBe(true);
-    expect(cardButton.props().active).toBe(false);
+    cardTab = wrapper.find(NavTab).at(0);
+    listTab = wrapper.find(NavTab).at(1);
+    expect(listTab.props().active).toBe(true);
+    expect(cardTab.props().active).toBe(false);
   });
 
   // TODO: Figure out how to simulate a change event with react-select so we can test onChange handlers

@@ -6831,6 +6831,251 @@ exports[`Storyshots Layout Section default 1`] = `
 </section>
 `;
 
+exports[`Storyshots NavTab NavTabGroup 1`] = `
+.c5 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c4 {
+  z-index: 1;
+  height: 24px;
+  width: 24px;
+  color: currentColor;
+  word-spacing: 0;
+  vertical-align: middle;
+}
+
+.c4:not(:root) {
+  overflow: visible;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 8px 16px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c2:hover {
+  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
+}
+
+.c2:hover:active {
+  box-shadow: inset 0 -1.5px rgb(128,128,128);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2,
+.c2:hover {
+  box-shadow: inset 0 -2px rgb(10,171,42);
+}
+
+.c2:active,
+.c2:hover:active {
+  box-shadow: inset 0 -2px hsl(131.89999999999998,89%,28.4%);
+}
+
+.c2 > svg:first-child,
+.c2:hover > svg:first-child {
+  margin-left: -4px;
+}
+
+.c2 > svg:last-child,
+.c2:hover > svg:last-child {
+  margin-right: -4px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 8px 16px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c3:hover {
+  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
+}
+
+.c3:hover:active {
+  box-shadow: inset 0 -1.5px rgb(128,128,128);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3 > svg:first-child {
+  margin-left: -4px;
+}
+
+.c3 > svg:last-child {
+  margin-right: -4px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 8px 16px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c1:hover {
+  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
+}
+
+.c1:hover:active {
+  box-shadow: inset 0 -1.5px rgb(128,128,128);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1,
+.c1:hover,
+.c1:focus,
+.c1:active {
+  opacity: .5;
+}
+
+.c1 > svg:first-child {
+  margin-left: -4px;
+}
+
+.c1 > svg:last-child {
+  margin-right: -4px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  min-height: 40px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+<nav
+  class="c0"
+>
+  <a
+    class="c1"
+    disabled=""
+    title="Disabled tab"
+  >
+    <span>
+      Disabled tab
+    </span>
+  </a>
+  <a
+    class="c2"
+    title="Active Tab"
+  >
+    <span>
+      Active Tab
+    </span>
+  </a>
+  <a
+    class="c3"
+    title="Tab With Icon"
+  >
+    <svg
+      aria-labelledby="ariaLabelledby"
+      class="c4"
+      focusable="false"
+      version="1.1"
+      viewBox="0 0 24 24"
+      xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        class="c5"
+        fill="currentColor"
+        title=""
+      >
+        <title />
+        <g
+          class="glyph"
+          fill="currentColor"
+          transform="translate(0 0) scale(1)"
+        >
+          <path
+            d="M17.9964347,17 L6.005,17 L6.005,16.4978587 L7,16.0010707 C7.65952891,15.3415418 7.6745182,13.8169165 8,12.2152034 C8.65952891,8.98608137 11,8 11,8 C11,7.81812902 11,7.48479568 11,7 L13,7 C13,7.49544061 13,7.82877394 13,8 C13,8 15.3404711,8.98608137 16,12.2152034 C16.3254818,13.8254818 16.3404711,15.3501071 17,16.0010707 L18.005,16.4978587 L17.9964347,17 Z M12.005,20 C12.9557495,20 14,18.9507495 14,18 L10.0738758,18 C10.0738758,18.9507495 11.0542505,20 12.005,20 Z"
+            id="Shape"
+          />
+        </g>
+      </g>
+    </svg>
+    <span>
+      Tab With Icon
+    </span>
+  </a>
+</nav>
+`;
+
 exports[`Storyshots NotFoundError default 1`] = `
 .c4 {
   -webkit-transform: scale(1);
@@ -18081,13 +18326,13 @@ exports[`Storyshots Table Routes Table 1`] = `
 `;
 
 exports[`Storyshots Table Toolbar default 1`] = `
-.c6 {
+.c7 {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 
-.c5 {
+.c6 {
   z-index: 1;
   height: 24px;
   width: 24px;
@@ -18096,7 +18341,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   vertical-align: middle;
 }
 
-.c5:not(:root) {
+.c6:not(:root) {
   overflow: visible;
 }
 
@@ -18149,105 +18394,124 @@ exports[`Storyshots Table Toolbar default 1`] = `
   opacity: 1;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 8px 16px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c5:hover {
+  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
+}
+
+.c5:hover:active {
+  box-shadow: inset 0 -1.5px rgb(128,128,128);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c5,
+.c5:hover {
+  box-shadow: inset 0 -2px rgb(10,171,42);
+}
+
+.c5:active,
+.c5:hover:active {
+  box-shadow: inset 0 -2px hsl(131.89999999999998,89%,28.4%);
+}
+
+.c5 > svg:first-child,
+.c5:hover > svg:first-child {
+  margin-left: -4px;
+}
+
+.c5 > svg:last-child,
+.c5:hover > svg:last-child {
+  margin-right: -4px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 8px 16px;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.c8:hover {
+  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
+}
+
+.c8:hover:active {
+  box-shadow: inset 0 -1.5px rgb(128,128,128);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 > svg:first-child {
+  margin-left: -4px;
+}
+
+.c8 > svg:last-child {
+  margin-right: -4px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 8px 16px;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  cursor: pointer;
-  line-height: 0;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  min-height: 40px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
-.c4:hover {
-  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
-}
-
-.c4:hover:active {
-  box-shadow: inset 0 -1.5px rgb(128,128,128);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c4,
-.c4:hover {
-  box-shadow: inset 0 -2px rgb(10,171,42);
-}
-
-.c4:active,
-.c4:hover:active {
-  box-shadow: inset 0 -2px hsl(131.89999999999998,89%,28.4%);
-}
-
-.c4 > svg:first-child,
-.c4:hover > svg:first-child {
-  margin-left: -4px;
-}
-
-.c4 > svg:last-child,
-.c4:hover > svg:last-child {
-  margin-right: -4px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 8px 16px;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  cursor: pointer;
-  line-height: 0;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
-}
-
-.c7:hover {
-  box-shadow: inset 0 -1px rgba(128,128,128,0.5);
-}
-
-.c7:hover:active {
-  box-shadow: inset 0 -1.5px rgb(128,128,128);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.c7 > svg:first-child {
-  margin-left: -4px;
-}
-
-.c7 > svg:last-child {
-  margin-right: -4px;
-}
-
-.c9 {
+.c10 {
   -webkit-flex-grow: 1;
   -ms-flex-grow: 1;
   flex-grow: 1;
@@ -18260,31 +18524,31 @@ exports[`Storyshots Table Toolbar default 1`] = `
   z-index: 1020;
 }
 
-.c9 .Select-control {
+.c10 .Select-control {
   height: 28px !important;
 }
 
-.c9 .Select-control .Select-placeholder {
+.c10 .Select-control .Select-placeholder {
   line-height: 28px;
 }
 
-.c9 .Select-control .Select-value {
+.c10 .Select-control .Select-value {
   line-height: 28px !important;
 }
 
-.c9 .Select-control .Select-value .Select-value-label {
+.c10 .Select-control .Select-value .Select-value-label {
   line-height: 28px;
 }
 
-.c9 .Select-control .Select-input {
+.c10 .Select-control .Select-input {
   height: 28px;
 }
 
-.c9 + .c9 {
+.c10 + .c10 {
   margin-left: 8px;
 }
 
-.c10 {
+.c11 {
   margin-left: 4px;
   opacity: 0.6;
   font-size: 14px;
@@ -18329,7 +18593,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
   justify-content: flex-start;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18402,80 +18666,86 @@ exports[`Storyshots Table Toolbar default 1`] = `
     <div
       class="c3"
     >
-      <a
+      <nav
         class="c4"
-        title="Cards"
       >
-        <svg
-          aria-labelledby="ariaLabelledby"
+        <a
           class="c5"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
+          title="Cards"
         >
-          <g
+          <svg
+            aria-labelledby="ariaLabelledby"
             class="c6"
-            fill="currentColor"
-            title=""
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <title />
             <g
-              class="glyph"
-              transform="translate(0 0) scale(1)"
+              class="c7"
+              fill="currentColor"
+              title=""
             >
-              <path
-                d="M7,4 L17,4 C18.1045695,4 19,4.8954305 19,6 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L7,19 L7,19 C5.8954305,19 5,18.1045695 5,17 L5,6 L5,6 C5,4.8954305 5.8954305,4 7,4 L7,4 Z M10.5,16 L16.5,16 C16.7761424,16 17,16.2238576 17,16.5 C17,16.7761424 16.7761424,17 16.5,17 L10.5,17 C10.2238576,17 10,16.7761424 10,16.5 C10,16.2238576 10.2238576,16 10.5,16 Z M7.5,10 L14.5,10 C14.7761424,10 15,10.2238576 15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L7.5,11 C7.22385763,11 7,10.7761424 7,10.5 C7,10.2238576 7.22385763,10 7.5,10 Z M7.5,12 L10.5,12 C10.7761424,12 11,12.2238576 11,12.5 C11,12.7761424 10.7761424,13 10.5,13 L7.5,13 C7.22385763,13 7,12.7761424 7,12.5 C7,12.2238576 7.22385763,12 7.5,12 Z M8,6 L16,6 C16.5522847,6 17,6.44771525 17,7 L17,8 C17,8.55228475 16.5522847,9 16,9 L8,9 C7.44771525,9 7,8.55228475 7,8 L7,7 C7,6.44771525 7.44771525,6 8,6 Z M7,5 L7,5 C6.44771525,5 6,5.44771525 6,6 L6,17 C6,17.5522847 6.44771525,18 7,18 L17,18 C17.5522847,18 18,17.5522847 18,17 L18,6 C18,5.44771525 17.5522847,5 17,5 L7,5 Z"
-                id="path-1"
-              />
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M7,4 L17,4 C18.1045695,4 19,4.8954305 19,6 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L7,19 L7,19 C5.8954305,19 5,18.1045695 5,17 L5,6 L5,6 C5,4.8954305 5.8954305,4 7,4 L7,4 Z M10.5,16 L16.5,16 C16.7761424,16 17,16.2238576 17,16.5 C17,16.7761424 16.7761424,17 16.5,17 L10.5,17 C10.2238576,17 10,16.7761424 10,16.5 C10,16.2238576 10.2238576,16 10.5,16 Z M7.5,10 L14.5,10 C14.7761424,10 15,10.2238576 15,10.5 C15,10.7761424 14.7761424,11 14.5,11 L7.5,11 C7.22385763,11 7,10.7761424 7,10.5 C7,10.2238576 7.22385763,10 7.5,10 Z M7.5,12 L10.5,12 C10.7761424,12 11,12.2238576 11,12.5 C11,12.7761424 10.7761424,13 10.5,13 L7.5,13 C7.22385763,13 7,12.7761424 7,12.5 C7,12.2238576 7.22385763,12 7.5,12 Z M8,6 L16,6 C16.5522847,6 17,6.44771525 17,7 L17,8 C17,8.55228475 16.5522847,9 16,9 L8,9 C7.44771525,9 7,8.55228475 7,8 L7,7 C7,6.44771525 7.44771525,6 8,6 Z M7,5 L7,5 C6.44771525,5 6,5.44771525 6,6 L6,17 C6,17.5522847 6.44771525,18 7,18 L17,18 C17.5522847,18 18,17.5522847 18,17 L18,6 C18,5.44771525 17.5522847,5 17,5 L7,5 Z"
+                  id="path-1"
+                />
+              </g>
             </g>
-          </g>
-        </svg>
-        <span>
-          Cards
-        </span>
-      </a>
-      <a
-        class="c7"
-        title="List"
-      >
-        <svg
-          aria-labelledby="ariaLabelledby"
-          class="c5"
-          focusable="false"
-          version="1.1"
-          viewBox="0 0 24 24"
-          xlink="http://www.w3.org/1999/xlink"
-          xmlns="http://www.w3.org/2000/svg"
+          </svg>
+          <span>
+            Cards
+          </span>
+        </a>
+        <a
+          class="c8"
+          title="List"
         >
-          <g
+          <svg
+            aria-labelledby="ariaLabelledby"
             class="c6"
-            fill="currentColor"
-            title=""
+            focusable="false"
+            version="1.1"
+            viewBox="0 0 24 24"
+            xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <title />
             <g
-              class="glyph"
-              transform="translate(0 0) scale(1)"
+              class="c7"
+              fill="currentColor"
+              title=""
             >
-              <path
-                d="M5.5,8 C4.67157288,8 4,7.32842712 4,6.5 C4,5.67157288 4.67157288,5 5.5,5 C6.32842712,5 7,5.67157288 7,6.5 C7,7.32842712 6.32842712,8 5.5,8 Z M5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 C6.32842712,10 7,10.6715729 7,11.5 C7,12.3284271 6.32842712,13 5.5,13 Z M5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 C6.32842712,15 7,15.6715729 7,16.5 C7,17.3284271 6.32842712,18 5.5,18 Z M9,5.5 L19,5.5 C19.5522847,5.5 20,5.94771525 20,6.5 L20,6.5 C20,7.05228475 19.5522847,7.5 19,7.5 L9,7.5 C8.44771525,7.5 8,7.05228475 8,6.5 L8,6.5 L8,6.5 C8,5.94771525 8.44771525,5.5 9,5.5 Z M9,10.5 L19,10.5 C19.5522847,10.5 20,10.9477153 20,11.5 C20,12.0522847 19.5522847,12.5 19,12.5 L9,12.5 C8.44771525,12.5 8,12.0522847 8,11.5 C8,10.9477153 8.44771525,10.5 9,10.5 Z M9,15.5 L19,15.5 C19.5522847,15.5 20,15.9477153 20,16.5 C20,17.0522847 19.5522847,17.5 19,17.5 L9,17.5 C8.44771525,17.5 8,17.0522847 8,16.5 C8,15.9477153 8.44771525,15.5 9,15.5 Z"
-                id="Combined-Shape"
-              />
+              <title />
+              <g
+                class="glyph"
+                fill="currentColor"
+                transform="translate(0 0) scale(1)"
+              >
+                <path
+                  d="M5.5,8 C4.67157288,8 4,7.32842712 4,6.5 C4,5.67157288 4.67157288,5 5.5,5 C6.32842712,5 7,5.67157288 7,6.5 C7,7.32842712 6.32842712,8 5.5,8 Z M5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 C6.32842712,10 7,10.6715729 7,11.5 C7,12.3284271 6.32842712,13 5.5,13 Z M5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 C6.32842712,15 7,15.6715729 7,16.5 C7,17.3284271 6.32842712,18 5.5,18 Z M9,5.5 L19,5.5 C19.5522847,5.5 20,5.94771525 20,6.5 L20,6.5 C20,7.05228475 19.5522847,7.5 19,7.5 L9,7.5 C8.44771525,7.5 8,7.05228475 8,6.5 L8,6.5 L8,6.5 C8,5.94771525 8.44771525,5.5 9,5.5 Z M9,10.5 L19,10.5 C19.5522847,10.5 20,10.9477153 20,11.5 C20,12.0522847 19.5522847,12.5 19,12.5 L9,12.5 C8.44771525,12.5 8,12.0522847 8,11.5 C8,10.9477153 8.44771525,10.5 9,10.5 Z M9,15.5 L19,15.5 C19.5522847,15.5 20,15.9477153 20,16.5 C20,17.0522847 19.5522847,17.5 19,17.5 L9,17.5 C8.44771525,17.5 8,17.0522847 8,16.5 C8,15.9477153 8.44771525,15.5 9,15.5 Z"
+                  id="Combined-Shape"
+                />
+              </g>
             </g>
-          </g>
-        </svg>
-        <span>
-          List
-        </span>
-      </a>
+          </svg>
+          <span>
+            List
+          </span>
+        </a>
+      </nav>
     </div>
     <div
-      class="c8"
+      class="c9"
     >
       <div
-        class="Select c9 has-value is-searchable Select--single"
+        class="Select c10 has-value is-searchable Select--single"
       >
         <input
           name="form-field-group-by"
@@ -18503,7 +18773,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
                     Group 
                   </span>
                   <span
-                    class="c10"
+                    class="c11"
                   >
                     Status
                   </span>
@@ -18538,7 +18808,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
         </div>
       </div>
       <div
-        class="Select c9 has-value is-searchable Select--single"
+        class="Select c10 has-value is-searchable Select--single"
       >
         <input
           name="form-field-sort-by"
@@ -18566,7 +18836,7 @@ exports[`Storyshots Table Toolbar default 1`] = `
                     Sort 
                   </span>
                   <span
-                    class="c10"
+                    class="c11"
                   >
                     Name
                   </span>

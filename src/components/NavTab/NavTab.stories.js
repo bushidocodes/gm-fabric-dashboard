@@ -15,8 +15,8 @@ storiesOf("NavTab", module)
       align={select("Align Tabs", ["center", "start", "end"], "center")}
       stretch={boolean("Stretch Tabs", false)}
     >
-      <NavTab disabled label="Disabled tab" />
-      <NavTab active label="Active Tab" />
-      <NavTab label="Tab With Icon" glyph="Bell" />
+      <NavTab disabled label="Disabled tab" clickAction={false} />
+      <NavTab active label="Active Tab" clickAction={false} />
+      <NavTab label="Tab With Icon" glyph="Bell" clickAction={false} />
     </NavTabGroup>
   ));

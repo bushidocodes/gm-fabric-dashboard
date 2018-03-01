@@ -428,7 +428,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
       >
         <span
           class="Select-multi-value-wrapper"
-          id="react-select-2--value"
+          id="react-select-4--value"
         >
           <div
             class="Select-value"
@@ -436,7 +436,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
             <span
               aria-selected="true"
               class="Select-value-label"
-              id="react-select-2--value-item"
+              id="react-select-4--value-item"
               role="option"
             >
               <span>
@@ -456,7 +456,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
             style="display:inline-block"
           >
             <input
-              aria-activedescendant="react-select-2--value"
+              aria-activedescendant="react-select-4--value"
               aria-expanded="false"
               aria-haspopup="false"
               aria-owns=""
@@ -491,7 +491,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
       >
         <span
           class="Select-multi-value-wrapper"
-          id="react-select-3--value"
+          id="react-select-5--value"
         >
           <div
             class="Select-value"
@@ -499,7 +499,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
             <span
               aria-selected="true"
               class="Select-value-label"
-              id="react-select-3--value-item"
+              id="react-select-5--value-item"
               role="option"
             >
               <span>
@@ -519,7 +519,7 @@ exports[`Table Toolbar matches snapshot 1`] = `
             style="display:inline-block"
           >
             <input
-              aria-activedescendant="react-select-3--value"
+              aria-activedescendant="react-select-5--value"
               aria-expanded="false"
               aria-haspopup="false"
               aria-owns=""

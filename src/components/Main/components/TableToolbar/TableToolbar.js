@@ -79,7 +79,7 @@ function TableToolbar({
       </ToolbarLeft>
       <ToolbarCenter>
         {displayTypeProps && [
-          <NavTabGroup>
+          <NavTabGroup key="NavTabGroup">
             <NavTab
               active={displayTypeProps.displayType === "Cards"}
               clickAction={() => displayTypeProps.setDisplayType("Cards")}
