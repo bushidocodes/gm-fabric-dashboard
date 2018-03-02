@@ -1,9 +1,11 @@
 import ReactSelector from "testcafe-react-selectors";
 import BaseView from "./base-view-model";
+import messages from "../../src/messages";
 
 export default class SettingsViewModel extends BaseView {
-  constructor() {
+  constructor(locale = "en-US") {
     super();
+
     this.fabricPollingButton = ReactSelector("ButtonWrap button").nth(0);
     this.fabricInputSlider = ReactSelector("InputRange").nth(0);
     this.instancePollingButton = ReactSelector("ButtonWrap button").nth(1);
@@ -12,7 +14,7 @@ export default class SettingsViewModel extends BaseView {
     this.cacheSizeText = ReactSelector("ReadoutItemValue");
     this.clearCacheButton = ReactSelector("ButtonWrap").withAttribute(
       "title",
-      "Clear Cache"
+      messages[locale]["settingsGrid"]["clearCache"]
     );
     this.clearCacheModalCancelButton = ReactSelector(
       "ButtonWrap"

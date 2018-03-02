@@ -1,19 +1,22 @@
 import ReactSelector from "testcafe-react-selectors";
 import { Selector } from "testcafe";
 import BaseInstanceView from "./base-instance-view-model";
+import messages from "../../src/messages";
 
 export default class InstanceJvmViewModel extends BaseInstanceView {
-  constructor() {
+  constructor(locale = "en-US") {
     super();
     // Summary
     this.summaryHostCPUReadout = ReactSelector(
       "ReadoutDisplay ItemDisplay"
-    ).withText("Host CPU Cores");
+    ).withText(messages[locale]["summary"]["hostCPUCores"]);
 
     // Navigation
-    this.linkThreads = ReactSelector("TabLink").withText("Threads");
+    this.linkThreads = ReactSelector("TabLink").withText(
+      messages[locale]["jvmHeaderContent"]["threads"]
+    );
     this.textThreadsCount = ReactSelector("TabLink")
-      .withText("Threads")
+      .withText(messages[locale]["jvmHeaderContent"]["threads"])
       .find("dd");
     this.linkHTTP = ReactSelector("TabLink").withText("HTTP");
     this.textDetailHTTP = ReactSelector("TabLink")
@@ -30,18 +33,32 @@ export default class InstanceJvmViewModel extends BaseInstanceView {
 
     // Threads Table Toolbar
     this.inputSearchThreads = ReactSelector("ToolbarLeft input");
-    this.selectGroupThreads = Selector(".Select-control").withText("Group");
+    this.selectGroupThreads = Selector(".Select-control").withText(
+      messages[locale]["tableToolbar"]["group"]
+    );
     // this.selectGroupThreads needs to be selected first
     // so that the following options are created in the DOM
-    this.optionGroupThreadsState = Selector(".Select-option").withText("State");
-    this.optionGroupThreadsNone = Selector(".Select-option").withText("None");
+    this.optionGroupThreadsState = Selector(".Select-option").withText(
+      messages[locale]["threadsGrid"]["state"]
+    );
+    this.optionGroupThreadsNone = Selector(".Select-option").withText(
+      messages[locale]["threadsGrid"]["none"]
+    );
 
-    this.selectSortThreads = Selector(".Select-control").withText("Sort");
+    this.selectSortThreads = Selector(".Select-control").withText(
+      messages[locale]["tableToolbar"]["sort"]
+    );
     // this.selectSortThreads needs to be selected first
     // so that the following options are created in the DOM
-    this.optionSortThreadsState = Selector(".Select-option").withText("State");
-    this.optionSortThreadsID = Selector(".Select-option").withText("ID");
-    this.optionSortThreadsName = Selector(".Select-option").withText("Name");
+    this.optionSortThreadsState = Selector(".Select-option").withText(
+      messages[locale]["threadsGrid"]["state"]
+    );
+    this.optionSortThreadsID = Selector(".Select-option").withText(
+      messages[locale]["threadsGrid"]["id"]
+    );
+    this.optionSortThreadsName = Selector(".Select-option").withText(
+      messages[locale]["threadsGrid"]["name"]
+    );
 
     // Threads Table
     this.threadsTableRows = ReactSelector("TableRow");
